@@ -5,6 +5,7 @@ export type ModuleRow = Tables<'modules'>;
 export type ChapitreRow = Tables<'chapitres'>;
 export type QuestionRow = Tables<'questions'>;
 export type FlashcardRow = Tables<'flashcards'>;
+export type UserProgressRow = Tables<'user_progress'>;
 
 export async function getModules() {
   const supabase = await createSupabaseServerClient();
@@ -92,4 +93,68 @@ export async function getLatestChapitres(limit = 24) {
     return [] as ChapitreRow[];
   }
   return data;
+}
+
+export async function getRevisionStats(userId: string) {
+  const supabase = await createSupabaseServerClient();
+
+  const [{ data: progress, error: progressError }, { count: totalQuestions, error: questionsError }, { count: totalFlashcards, error: flashcardsError }] =
+    await Promise.all([
+      supabase.from('user_progress').select('*').eq('user_id', userId),
+      supabase.from('questions').select('*', { count: 'exact', head: true }),
+      supabase.from('flashcards').select('*', { count: 'exact', head: true }),
+    ]);
+
+  if (progressError || questionsError || flashcardsError) {
+    console.error(progressError || questionsError || flashcardsError);
+    return {
+      totalQuestions: totalQuestions ?? 0,
+      totalFlashcards: totalFlashcards ?? 0,
+      revisionDue: 0,
+      mastered: 0,
+      averageScore: 0,
+    };
+  }
+
+  const nowIso = new Date().toISOString().slice(0, 10);
+  const revisionDue = (progress as UserProgressRow[]).filter((item) => item.next_review && item.next_review <= nowIso).length;
+  const mastered = (progress as UserProgressRow[]).filter((item) => (item.resultat ?? 0) >= 4).length;
+  const averageScore =
+    (progress as UserProgressRow[]).length > 0
+      ? (progress as UserProgressRow[]).reduce((acc, item) => acc + (item.resultat ?? 0), 0) / (progress as UserProgressRow[]).length
+      : 0;
+
+  return {
+    totalQuestions: totalQuestions ?? 0,
+    totalFlashcards: totalFlashcards ?? 0,
+    revisionDue,
+    mastered,
+    averageScore,
+  };
+}
+
+export async function searchLearningContent(query: string) {
+  const supabase = await createSupabaseServerClient();
+  const q = query.trim();
+  if (!q) {
+    return { questions: [] as QuestionRow[], chapitres: [] as ChapitreRow[], flashcards: [] as FlashcardRow[] };
+  }
+
+  const [{ data: questions, error: questionsError }, { data: chapitres, error: chapitresError }, { data: flashcards, error: flashcardsError }] =
+    await Promise.all([
+      supabase.from('questions').select('*').ilike('question', `%${q}%`).limit(20),
+      supabase.from('chapitres').select('*').ilike('titre', `%${q}%`).limit(20),
+      supabase.from('flashcards').select('*').ilike('recto', `%${q}%`).limit(20),
+    ]);
+
+  if (questionsError || chapitresError || flashcardsError) {
+    console.error(questionsError || chapitresError || flashcardsError);
+    return { questions: [] as QuestionRow[], chapitres: [] as ChapitreRow[], flashcards: [] as FlashcardRow[] };
+  }
+
+  return {
+    questions: questions ?? [],
+    chapitres: chapitres ?? [],
+    flashcards: flashcards ?? [],
+  };
 }

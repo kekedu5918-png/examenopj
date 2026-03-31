@@ -21,6 +21,20 @@ export default async function DashboardPage() {
         <p className='mt-2 text-slate-300'>Progression centralisee: modules, infractions, cours et simulations.</p>
       </header>
 
+      <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
+        {[
+          { titre: 'Infractions', href: '/dashboard/infractions' },
+          { titre: 'Cours', href: '/dashboard/courses' },
+          { titre: 'Fiches', href: '/dashboard/fiches' },
+          { titre: 'Progression', href: '/dashboard/progression' },
+          { titre: 'Recherche', href: '/dashboard/recherche' },
+        ].map((item) => (
+          <Button key={item.href} asChild variant='secondary' className='justify-start'>
+            <Link href={item.href}>{item.titre}</Link>
+          </Button>
+        ))}
+      </div>
+
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
         {modules.map((module) => (
           <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>

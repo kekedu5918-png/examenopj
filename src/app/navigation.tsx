@@ -15,11 +15,27 @@ export async function Navigation() {
   return (
     <div className='relative flex items-center gap-6'>
       {session ? (
-        <AccountMenu signOut={signOut} />
+        <>
+          <nav className='hidden items-center gap-3 lg:flex'>
+            <Button asChild variant='ghost' size='sm'>
+              <Link href='/dashboard'>Dashboard</Link>
+            </Button>
+            <Button asChild variant='ghost' size='sm'>
+              <Link href='/dashboard/infractions'>Infractions</Link>
+            </Button>
+            <Button asChild variant='ghost' size='sm'>
+              <Link href='/dashboard/courses'>Cours</Link>
+            </Button>
+            <Button asChild variant='ghost' size='sm'>
+              <Link href='/dashboard/progression'>Progression</Link>
+            </Button>
+          </nav>
+          <AccountMenu signOut={signOut} />
+        </>
       ) : (
         <>
           <Button variant='sexy' className='hidden flex-shrink-0 lg:flex' asChild>
-            <Link href='/signup'>Get started for free</Link>
+            <Link href='/signup'>Commencer</Link>
           </Button>
           <Sheet>
             <SheetTrigger className='block lg:hidden'>
@@ -29,9 +45,14 @@ export async function Navigation() {
               <SheetHeader>
                 <Logo />
                 <SheetDescription className='py-8'>
-                  <Button variant='sexy' className='flex-shrink-0' asChild>
-                    <Link href='/signup'>Get started for free</Link>
-                  </Button>
+                  <div className='flex flex-col gap-3'>
+                    <Button variant='secondary' className='flex-shrink-0' asChild>
+                      <Link href='/login'>Connexion</Link>
+                    </Button>
+                    <Button variant='sexy' className='flex-shrink-0' asChild>
+                      <Link href='/signup'>Commencer</Link>
+                    </Button>
+                  </div>
                 </SheetDescription>
               </SheetHeader>
             </SheetContent>
