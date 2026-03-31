@@ -3,6 +3,47 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 export interface Database {
   public: {
     Tables: {
+      chapitres: {
+        Row: {
+          articles: string[] | null;
+          contenu: Json | null;
+          difficulte: string | null;
+          id: string;
+          module_id: string | null;
+          ordre: number | null;
+          pieges_examen: string[] | null;
+          titre: string;
+        };
+        Insert: {
+          articles?: string[] | null;
+          contenu?: Json | null;
+          difficulte?: string | null;
+          id?: string;
+          module_id?: string | null;
+          ordre?: number | null;
+          pieges_examen?: string[] | null;
+          titre: string;
+        };
+        Update: {
+          articles?: string[] | null;
+          contenu?: Json | null;
+          difficulte?: string | null;
+          id?: string;
+          module_id?: string | null;
+          ordre?: number | null;
+          pieges_examen?: string[] | null;
+          titre?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'chapitres_module_id_fkey';
+            columns: ['module_id'];
+            isOneToOne: false;
+            referencedRelation: 'modules';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       customers: {
         Row: {
           id: string;
@@ -25,6 +66,74 @@ export interface Database {
             referencedColumns: ['id'];
           }
         ];
+      };
+      flashcards: {
+        Row: {
+          article_ref: string | null;
+          difficulte: string | null;
+          id: string;
+          module_id: string | null;
+          recto: string;
+          verso: string;
+        };
+        Insert: {
+          article_ref?: string | null;
+          difficulte?: string | null;
+          id?: string;
+          module_id?: string | null;
+          recto: string;
+          verso: string;
+        };
+        Update: {
+          article_ref?: string | null;
+          difficulte?: string | null;
+          id?: string;
+          module_id?: string | null;
+          recto?: string;
+          verso?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'flashcards_module_id_fkey';
+            columns: ['module_id'];
+            isOneToOne: false;
+            referencedRelation: 'modules';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      modules: {
+        Row: {
+          couleur: string | null;
+          created_at: string | null;
+          description: string | null;
+          icone: string | null;
+          id: string;
+          ordre: number | null;
+          slug: string;
+          titre: string;
+        };
+        Insert: {
+          couleur?: string | null;
+          created_at?: string | null;
+          description?: string | null;
+          icone?: string | null;
+          id?: string;
+          ordre?: number | null;
+          slug: string;
+          titre: string;
+        };
+        Update: {
+          couleur?: string | null;
+          created_at?: string | null;
+          description?: string | null;
+          icone?: string | null;
+          id?: string;
+          ordre?: number | null;
+          slug?: string;
+          titre?: string;
+        };
+        Relationships: [];
       };
       prices: {
         Row: {
@@ -102,6 +211,60 @@ export interface Database {
           name?: string | null;
         };
         Relationships: [];
+      };
+      questions: {
+        Row: {
+          article_ref: string | null;
+          chapitre_id: string | null;
+          difficulte: string | null;
+          explication: string | null;
+          id: string;
+          module_id: string | null;
+          options: Json;
+          question: string;
+          reponse_correcte: number;
+          source_fascicule: string | null;
+        };
+        Insert: {
+          article_ref?: string | null;
+          chapitre_id?: string | null;
+          difficulte?: string | null;
+          explication?: string | null;
+          id?: string;
+          module_id?: string | null;
+          options: Json;
+          question: string;
+          reponse_correcte: number;
+          source_fascicule?: string | null;
+        };
+        Update: {
+          article_ref?: string | null;
+          chapitre_id?: string | null;
+          difficulte?: string | null;
+          explication?: string | null;
+          id?: string;
+          module_id?: string | null;
+          options?: Json;
+          question?: string;
+          reponse_correcte?: number;
+          source_fascicule?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'questions_chapitre_id_fkey';
+            columns: ['chapitre_id'];
+            isOneToOne: false;
+            referencedRelation: 'chapitres';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'questions_module_id_fkey';
+            columns: ['module_id'];
+            isOneToOne: false;
+            referencedRelation: 'modules';
+            referencedColumns: ['id'];
+          }
+        ];
       };
       subscriptions: {
         Row: {
@@ -199,6 +362,64 @@ export interface Database {
             foreignKeyName: 'users_id_fkey';
             columns: ['id'];
             isOneToOne: true;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      user_progress: {
+        Row: {
+          created_at: string | null;
+          flashcard_id: string | null;
+          id: string;
+          next_review: string | null;
+          question_id: string | null;
+          resultat: number | null;
+          sm2_efactor: number | null;
+          sm2_interval: number | null;
+          user_id: string | null;
+        };
+        Insert: {
+          created_at?: string | null;
+          flashcard_id?: string | null;
+          id?: string;
+          next_review?: string | null;
+          question_id?: string | null;
+          resultat?: number | null;
+          sm2_efactor?: number | null;
+          sm2_interval?: number | null;
+          user_id?: string | null;
+        };
+        Update: {
+          created_at?: string | null;
+          flashcard_id?: string | null;
+          id?: string;
+          next_review?: string | null;
+          question_id?: string | null;
+          resultat?: number | null;
+          sm2_efactor?: number | null;
+          sm2_interval?: number | null;
+          user_id?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'user_progress_flashcard_id_fkey';
+            columns: ['flashcard_id'];
+            isOneToOne: false;
+            referencedRelation: 'flashcards';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'user_progress_question_id_fkey';
+            columns: ['question_id'];
+            isOneToOne: false;
+            referencedRelation: 'questions';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'user_progress_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
             referencedRelation: 'users';
             referencedColumns: ['id'];
           }

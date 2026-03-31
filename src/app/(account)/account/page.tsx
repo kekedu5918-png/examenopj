@@ -26,6 +26,7 @@ export default async function AccountPage() {
           if (price.id === subscription.price_id) {
             userProduct = product;
             userPrice = price;
+            break;
           }
         }
       }
