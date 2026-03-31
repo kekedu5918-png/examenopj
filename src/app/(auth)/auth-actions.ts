@@ -42,6 +42,22 @@ export async function signInWithEmail(email: string): Promise<ActionResponse> {
   return { data: null, error: null };
 }
 
+export async function signInWithPassword(email: string, password: string): Promise<ActionResponse> {
+  const supabase = await createSupabaseServerClient();
+
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    console.error(error);
+    return { data: null, error };
+  }
+
+  return { data: null, error: null };
+}
+
 export async function signOut(): Promise<ActionResponse> {
   const supabase = await createSupabaseServerClient();
   const { error } = await supabase.auth.signOut();
