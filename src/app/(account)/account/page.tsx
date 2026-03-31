@@ -21,10 +21,12 @@ export default async function AccountPage() {
 
   if (subscription) {
     for (const product of products) {
-      for (const price of product.prices) {
-        if (price.id === subscription.price_id) {
-          userProduct = product;
-          userPrice = price;
+      if (product.prices && product.prices.length > 0) {
+        for (const price of product.prices) {
+          if (price.id === subscription.price_id) {
+            userProduct = product;
+            userPrice = price;
+          }
         }
       }
     }
