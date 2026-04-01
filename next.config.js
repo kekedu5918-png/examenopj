@@ -13,6 +13,19 @@ const nextConfig = {
     return [
       { source: '/about', destination: '/', permanent: true },
       { source: '/about-us', destination: '/', permanent: true },
+      // Domaine canonique : tout le trafic Vercel / www → examenopj.fr
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.examenopj.fr' }],
+        destination: 'https://examenopj.fr/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'examenopj.vercel.app' }],
+        destination: 'https://examenopj.fr/:path*',
+        permanent: true,
+      },
     ];
   },
 };
