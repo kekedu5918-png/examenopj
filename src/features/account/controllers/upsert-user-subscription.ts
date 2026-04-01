@@ -1,7 +1,7 @@
 import Stripe from 'stripe';
 
-import { stripeAdmin } from '@/libs/stripe/stripe-admin';
-import { supabaseAdminClient } from '@/libs/supabase/supabase-admin';
+import { getStripeAdmin } from '@/libs/stripe/stripe-admin';
+import { getSupabaseAdminClient } from '@/libs/supabase/supabase-admin';
 import type { Database } from '@/libs/supabase/types';
 import { toDateTime } from '@/utils/to-date-time';
 import { AddressParam } from '@stripe/stripe-js';
@@ -16,7 +16,7 @@ export async function upsertUserSubscription({
   isCreateAction?: boolean;
 }) {
   // Get customer's userId from mapping table.
-  const { data: customerData, error: noCustomerError } = await supabaseAdminClient
+  const { data: customerData, error: noCustomerError } = await getSupabaseAdminClient()
     .from('customers')
     .select('id')
     .eq('stripe_customer_id', customerId)
@@ -25,7 +25,7 @@ export async function upsertUserSubscription({
 
   const { id: userId } = customerData!;
 
-  const subscription = await stripeAdmin.subscriptions.retrieve(subscriptionId, {
+  const subscription = await getStripeAdmin().subscriptions.retrieve(subscriptionId, {
     expand: ['default_payment_method'],
   });
 
@@ -47,7 +47,7 @@ export async function upsertUserSubscription({
     trial_end: subscription.trial_end ? toDateTime(subscription.trial_end).toISOString() : null,
   };
 
-  const { error } = await supabaseAdminClient.from('subscriptions').upsert([subscriptionData]);
+  const { error } = await getSupabaseAdminClient().from('subscriptions').upsert([subscriptionData]);
   if (error) {
     throw error;
   }
@@ -69,9 +69,9 @@ const copyBillingDetailsToCustomer = async (userId: string, paymentMethod: Strip
   const { name, phone, address } = paymentMethod.billing_details;
   if (!name || !phone || !address) return;
 
-  await stripeAdmin.customers.update(customer, { name, phone, address: address as AddressParam });
+  await getStripeAdmin().customers.update(customer, { name, phone, address: address as AddressParam });
 
-  const { error } = await supabaseAdminClient
+  const { error } = await getSupabaseAdminClient()
     .from('users')
     .update({
       billing_address: { ...address },

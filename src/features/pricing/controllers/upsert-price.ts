@@ -1,6 +1,6 @@
 import Stripe from 'stripe';
 
-import { supabaseAdminClient } from '@/libs/supabase/supabase-admin';
+import { getSupabaseAdminClient } from '@/libs/supabase/supabase-admin';
 import type { Database } from '@/libs/supabase/types';
 
 type Price = Database['public']['Tables']['prices']['Row'];
@@ -20,7 +20,7 @@ export async function upsertPrice(price: Stripe.Price) {
     metadata: price.metadata,
   };
 
-  const { error } = await supabaseAdminClient.from('prices').upsert([priceData]);
+  const { error } = await getSupabaseAdminClient().from('prices').upsert([priceData]);
 
   if (error) {
     throw error;

@@ -48,6 +48,25 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        navy: {
+          50: '#f0f3f9',
+          100: '#d9e2f0',
+          200: '#b3c5e1',
+          300: '#8da8d2',
+          400: '#6b8fc6',
+          500: '#1e3a5f',
+          600: '#1a3354',
+          700: '#12283e',
+          800: '#0d1f33',
+          900: '#0a1628',
+          950: '#060e18',
+        },
+        gold: {
+          300: '#e8c36a',
+          400: '#d4a843',
+          500: '#c49a38',
+          600: '#a07d2e',
+        },
       },
       borderRadius: {
         lg: `var(--radius)`,
@@ -55,8 +74,15 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-montserrat)', ...fontFamily.sans],
+        sans: ['var(--font-inter)', ...fontFamily.sans],
         alt: ['var(--font-montserrat-alternates)'],
+        display: ['Cal Sans', 'var(--font-inter)', 'system-ui', 'sans-serif'],
+        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'hero-glow':
+          'radial-gradient(ellipse 80% 50% at 50% -20%, rgba(37, 99, 235, 0.15), transparent)',
       },
       keyframes: {
         'accordion-down': {
