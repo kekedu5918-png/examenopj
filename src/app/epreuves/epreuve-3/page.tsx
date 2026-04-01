@@ -1,12 +1,5 @@
-import { PlaceholderSection } from '@/components/layout/PlaceholderSection';
+import { Epreuve3Layout } from '@/components/epreuves/epreuve-3/epreuve-3-layout';
 
 export default function Epreuve3Page() {
-  return (
-    <PlaceholderSection
-      badge='Épreuve 3'
-      badgeClassName='bg-violet-500/20 text-violet-300'
-      title='Oral — CR Parquet'
-      subtitle='Préparation à l’oral et compte rendu parquet — parcours à venir.'
-    />
-  );
+  return <Epreuve3Layout />;
 }
