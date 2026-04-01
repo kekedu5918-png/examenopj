@@ -1,9 +1,16 @@
-import { type NextRequest } from 'next/server';
+import { NextResponse, type NextRequest } from 'next/server';
 
 import { updateSession } from '@/libs/supabase/supabase-middleware-client';
 
 export async function middleware(request: NextRequest) {
-  return await updateSession(request);
+  try {
+    return await updateSession(request);
+  } catch (error) {
+    console.error('[middleware] updateSession failed:', error);
+    // Évite un 500 global (MIDDLEWARE_INVOCATION_FAILED) si env Supabase absente / erreur Edge.
+    // La session ne sera pas rafraîchie sur cette requête ; vérifier les variables Vercel.
+    return NextResponse.next({ request });
+  }
 }
 
 export const config = {
