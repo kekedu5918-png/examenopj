@@ -8,9 +8,11 @@ type SectionTitleProps = {
   badge: string;
   badgeClassName?: string;
   title: string;
-  subtitle: string;
+  subtitle?: string;
   className?: string;
 };
+
+const easeOut = [0.21, 0.47, 0.32, 0.98] as const;
 
 export function SectionTitle({ badge, badgeClassName, title, subtitle, className }: SectionTitleProps) {
   return (
@@ -19,7 +21,7 @@ export function SectionTitle({ badge, badgeClassName, title, subtitle, className
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.55, ease: easeOut }}
     >
       <span
         className={cn(
@@ -29,8 +31,8 @@ export function SectionTitle({ badge, badgeClassName, title, subtitle, className
       >
         {badge}
       </span>
-      <h2 className='font-display text-3xl font-bold tracking-tight text-white'>{title}</h2>
-      <p className='text-lg text-gray-400'>{subtitle}</p>
+      <h2 className='font-display text-3xl font-bold tracking-tight text-gray-100'>{title}</h2>
+      {subtitle ? <p className='text-lg text-gray-400'>{subtitle}</p> : null}
     </motion.div>
   );
 }

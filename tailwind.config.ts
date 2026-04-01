@@ -97,11 +97,31 @@ const config: Config = {
           '0%': { rotate: '0deg' },
           '100%': { rotate: '360deg' },
         },
+        'hero-pulse-blue': {
+          '0%, 100%': { transform: 'scale(1)', opacity: '0.08' },
+          '50%': { transform: 'scale(1.2)', opacity: '0.11' },
+        },
+        'hero-pulse-gold': {
+          '0%, 100%': { transform: 'scale(1.15)', opacity: '0.05' },
+          '50%': { transform: 'scale(1)', opacity: '0.08' },
+        },
+        'scroll-bounce': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(8px)' },
+        },
+        'countdown-pulse': {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.02)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin 10s linear infinite',
+        'hero-pulse-blue': 'hero-pulse-blue 8s ease-in-out infinite',
+        'hero-pulse-gold': 'hero-pulse-gold 12s ease-in-out infinite',
+        'scroll-bounce': 'scroll-bounce 2s ease-in-out infinite',
+        'countdown-pulse': 'countdown-pulse 3s ease-in-out infinite',
       },
     },
   },
