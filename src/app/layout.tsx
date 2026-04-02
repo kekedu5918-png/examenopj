@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 
 import { Footer } from '@/components/layout/Footer';
 import { Navbar } from '@/components/layout/Navbar';
@@ -12,9 +12,10 @@ import '@/styles/globals.css';
 
 export const dynamic = 'force-dynamic';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const calSans = localFont({
+  src: './fonts/CalSans-SemiBold.woff2',
+  variable: '--font-cal',
+  weight: '600',
   display: 'swap',
 });
 
@@ -26,14 +27,8 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang='fr' className='dark'>
-      <body
-        className={cn(
-          inter.className,
-          inter.variable,
-          'min-h-screen bg-navy-950 font-body text-white antialiased'
-        )}
-      >
+    <html lang='fr' className={cn('dark', calSans.variable)}>
+      <body className={cn('min-h-screen bg-navy-950 font-sans text-white antialiased')}>
         <div className='flex min-h-screen flex-col'>
           <Navbar />
           <main className='relative flex-1'>{children}</main>

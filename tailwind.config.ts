@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import { fontFamily } from 'tailwindcss/defaultTheme';
 
 /** @type {import('tailwindcss').Config} */
 const config: Config = {
@@ -74,10 +73,10 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
+        sans: ['var(--font-cal), Inter, ui-sans-serif, system-ui'],
         alt: ['var(--font-montserrat-alternates)'],
-        display: ['Cal Sans', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-cal)', 'Inter', 'system-ui', 'sans-serif'],
+        body: ['var(--font-cal)', 'Inter', 'system-ui', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
