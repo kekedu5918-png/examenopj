@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { BaremeBars } from '@/components/epreuves/epreuve-1/bareme-bars';
 import { CopyPhraseCard } from '@/components/epreuves/epreuve-1/copy-phrase-card';
 import { EPREUVE1_PHRASES } from '@/components/epreuves/epreuve-1/phrases-data';
+import { cn } from '@/utils/cn';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
 
