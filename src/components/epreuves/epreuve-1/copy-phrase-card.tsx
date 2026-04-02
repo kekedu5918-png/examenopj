@@ -14,9 +14,10 @@ type CopyPhraseCardProps = {
   title: string;
   text: string;
   note?: string;
+  noteClassName?: string;
 };
 
-export function CopyPhraseCard({ badge, badgeClassName, title, text, note }: CopyPhraseCardProps) {
+export function CopyPhraseCard({ badge, badgeClassName, title, text, note, noteClassName }: CopyPhraseCardProps) {
   const { toast } = useToast();
   const [copied, setCopied] = useState(false);
 
@@ -56,7 +57,9 @@ export function CopyPhraseCard({ badge, badgeClassName, title, text, note }: Cop
       <pre className='whitespace-pre-wrap rounded-xl bg-navy-900 p-4 font-mono text-sm leading-relaxed text-gray-300'>
         {text}
       </pre>
-      {note ? <p className='mt-3 text-xs text-amber-400'>{note}</p> : null}
+      {note ? (
+        <p className={cn('mt-3 text-xs', noteClassName ?? 'text-amber-400')}>{note}</p>
+      ) : null}
     </GlassCard>
   );
 }

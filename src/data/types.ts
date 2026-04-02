@@ -53,5 +53,6 @@ export type QuizQuestion = {
   options: string[];
   correctIndex: number;
   fascicule: number;
+  domaine: 'DPS' | 'DPG' | 'Procédure pénale';
   explication?: string;
 };

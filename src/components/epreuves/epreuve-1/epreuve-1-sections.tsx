@@ -17,16 +17,16 @@ const ease = [...LANDING_EASE] as [number, number, number, number];
 
 const caItems = [
   { nom: 'Bande organisée', art: 'art. 132-71' },
+  { nom: 'Guet-apens', art: 'art. 132-71-1' },
   { nom: 'Préméditation', art: 'art. 132-72' },
   { nom: 'Effraction', art: 'art. 132-73' },
   { nom: 'Escalade', art: 'art. 132-74' },
   { nom: "Usage d'arme", art: 'art. 132-75' },
-  { nom: 'Racisme', art: 'art. 132-76' },
-  { nom: 'Homophobie', art: 'art. 132-76' },
+  { nom: 'Racisme / religion / ethnie', art: 'art. 132-76' },
   { nom: 'Orientation sexuelle', art: 'art. 132-77' },
   { nom: 'Repenti', art: 'art. 132-78' },
   { nom: 'Cybercriminalité', art: 'art. 132-79' },
-  { nom: 'Conjoint / ex-conjoint / PACS', art: 'art. 132-80' },
+  { nom: 'Conjoint ou ex-conjoint / PACS', art: 'art. 132-80' },
 ] as const;
 
 function StepCircle({ n, className }: { n: number; className: string }) {
@@ -165,13 +165,21 @@ export function Epreuve1Sections() {
                 <div className='mt-6 grid gap-3 sm:grid-cols-2'>
                   {caItems.map((ca) => (
                     <div
-                      key={ca.nom}
+                      key={`${ca.nom}-${ca.art}`}
                       className='rounded-lg border border-orange-500/10 bg-orange-500/5 p-3'
                     >
                       <p className='text-sm font-bold text-gray-100'>{ca.nom}</p>
-                      <p className='text-xs text-gray-400'>{ca.art}</p>
+                      <p className='text-xs text-gray-400'>— {ca.art}</p>
                     </div>
                   ))}
+                </div>
+                <div className='mt-6 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4 text-sm text-gray-300'>
+                  <p>
+                    <span aria-hidden>⚠️ </span>
+                    <span className='font-semibold text-amber-200'>Règle d&apos;ordre :</span> Si la CA de
+                    racisme (132-76) ou d&apos;homophobie (132-77) est présente, elle doit être démontrée en{' '}
+                    <span className='font-bold text-amber-100'>DERNIÈRE</span> circonstance aggravante.
+                  </p>
                 </div>
                 <p className='mt-4 text-sm text-gray-500'>
                   Ne pas oublier les CA spécifiques à chaque infraction (ex : art. 311-4 pour le vol)
@@ -370,6 +378,14 @@ export function Epreuve1Sections() {
                   § 2 : « Ces faits prévus par l&apos;art. — et réprimés par l&apos;art. —, constituent [I°]
                   aggravée »
                 </p>
+                <div className='mt-3 rounded-lg border border-blue-500/20 bg-blue-500/[0.05] p-3 text-sm text-gray-300'>
+                  Si changement de classification (ex. : DÉLIT → CRIME), le préciser dans le 2ᵉ paragraphe.
+                  Sinon, pas nécessaire.
+                </div>
+                <p className='mt-3 text-sm italic text-amber-400'>
+                  Note : Si CA de l&apos;homophobie (132-77) ou du racisme (132-76), à démontrer en DERNIÈRE
+                  circonstance aggravante.
+                </p>
               </div>
 
               <div className='ml-2 border-l border-violet-500/30 pl-4'>
@@ -433,9 +449,49 @@ export function Epreuve1Sections() {
               title={p.title}
               text={p.text}
               note={p.note}
+              noteClassName={p.noteClassName}
             />
           ))}
         </div>
+      </section>
+
+      {/* EXEMPLE RÉDACTION CA */}
+      <section id='exemple-ca' data-toc-section className='scroll-mt-28'>
+        <SectionTitle
+          badge='EXEMPLE'
+          badgeClassName='bg-amber-500/20 text-amber-300'
+          title="Exemple de rédaction d'une CA"
+          className='mb-8'
+        />
+        <GlassCard padding='p-6'>
+          <h3 className='text-base font-semibold text-gray-200'>
+            Exemple : CA de discrimination (art. 132-76 ou 132-77 CP)
+          </h3>
+          <div className='mt-4 rounded-xl bg-navy-900 p-4 text-sm leading-relaxed text-gray-300'>
+            <p>
+              « Il s&apos;agit d&apos;une circonstance aggravante générale qui précède l&apos;infraction de{' '}
+              <span className='italic text-blue-400'>[infraction]</span> commise par X.
+            </p>
+            <p className='mt-3'>
+              Elle est prévue à l&apos;alinéa <span className='italic text-blue-400'>[n°]</span> de l&apos;article
+              132-76 (ou 132-77) du code pénal, et a pour effet de relever le maximum de la peine privative de
+              liberté encourue par le ou les auteurs.
+            </p>
+            <p className='mt-3'>
+              Le délit commis par X est passible de <span className='italic text-blue-400'>[durée]</span> ans.
+              L&apos;article 132-76 <span className='italic text-blue-400'>[n°]</span> du code pénal dispose que
+              le maximum de la peine encourue est alors porté à{' '}
+              <span className='italic text-blue-400'>[durée supérieure]</span> ans.
+            </p>
+            <p className='mt-3 font-medium text-gray-200'>
+              → DÉLIT si changement de classification, ne pas oublier → CRIME
+            </p>
+          </div>
+          <div className='mt-4 rounded-lg border border-red-500/20 bg-red-500/[0.05] p-3 text-xs text-gray-300'>
+            Pour deux CA d&apos;une même infraction : on peut faire un SEUL paragraphe avec les 2 CA. Les articles
+            prévu (P) et réprimé (R) doivent référencer la CA la plus grave.
+          </div>
+        </GlassCard>
       </section>
 
       {/* PRQC */}

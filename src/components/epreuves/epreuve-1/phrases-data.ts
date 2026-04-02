@@ -4,9 +4,29 @@ export type Epreuve1Phrase = {
   title: string;
   text: string;
   note?: string;
+  noteClassName?: string;
 };
 
 export const EPREUVE1_PHRASES: Epreuve1Phrase[] = [
+  {
+    badge: 'INTRODUCTION',
+    badgeClassName: 'bg-gold-400/15 text-gold-300',
+    title: 'Introduction du devoir',
+    text: `« Dans le thème proposé, il est possible de relever les faits suivants :
+1 - [I° contextualisée] (I° simple ou I° simple tentée, pas d'aggravation, contextualisation)
+2 - [I° contextualisée n°2]
+3 - [I° contextualisée n°3]... »`,
+    note: 'Lister les infractions SIMPLES, sans aggravation, avec contextualisation. La tentative se mentionne dans le titre si applicable.',
+    noteClassName: 'text-gray-500',
+  },
+  {
+    badge: 'STRUCTURE',
+    badgeClassName: 'bg-blue-500/15 text-blue-300',
+    title: 'Titre du développement — Si tentative',
+    text: '« 1 - Tentative de [I° contextualisée] »',
+    note: "Quand l'infraction simple est une tentative, cela doit apparaître dans le TITRE du développement, et la tentative se démontre au niveau de l'élément matériel de l'I° simple.",
+    noteClassName: 'text-gray-500',
+  },
   {
     badge: 'ÉLÉMENT LÉGAL',
     badgeClassName: 'bg-blue-500/15 text-blue-300',
@@ -49,11 +69,14 @@ export const EPREUVE1_PHRASES: Epreuve1Phrase[] = [
     badgeClassName: 'bg-violet-500/15 text-violet-300',
     title: 'Complice',
     text: `« Toutefois, X, Y et Z n'ont pas agi de la même façon dans la réalisation de [I°].
-Le [I°] commis par X et Y constitue un fait principal punissable.
-En [donnant des indications précises / fournissant des moyens / aidant ou assistant...], Z commet un acte matériel de complicité qui facilite la commission de l'infraction.
-Z agit en connaissance de cause et montre sa volonté de s'associer à l'infraction.
-Ces faits sont prévus à l'article 121-7 et — du CP, et réprimés par les articles 121-6 et — dernier alinéa du CP.
-Z est complice par [méthode] d'un(e) [I°].
+L'infraction simple commise par X constitue un fait principal punissable.
+En [donnant des indications précises / fournissant des moyens / aidant ou assistant / provoquant...], Z commet un acte matériel de complicité qui facilite ou provoque la commission de l'infraction.
+Éléments du thème + Éléments constitutifs de la complicité :
+- Facilite la commission de l'infraction (ex : aide, assistance...)
+- Agit en connaissance de cause
+- Volonté de s'associer à l'infraction
+Ces faits sont prévus par les articles 121-7 al. 2 et [article qui réprime l'infraction simple] du code pénal, et réprimés par les articles 121-6 et [article qui réprime l'infraction avec la circonstance aggravante la plus grave] du même code.
+Z est complice par [aide / assistance / instigations / fourniture de moyens / d'instructions] de l'infraction aggravée.
 Sa responsabilité est pleine et entière. »`,
   },
   {

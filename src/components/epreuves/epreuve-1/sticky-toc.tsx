@@ -9,6 +9,7 @@ const links = [
   { id: 'methodologie', label: 'Méthodologie' },
   { id: 'structure', label: 'Structure' },
   { id: 'phrases', label: 'Phrases types' },
+  { id: 'exemple-ca', label: 'Exemple CA' },
   { id: 'prqc', label: 'PRQC' },
 ] as const;
 

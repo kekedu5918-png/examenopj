@@ -1,0 +1,316 @@
+export type Flashcard = {
+  id: string;
+  fascicule: number;
+  domaine: 'DPS' | 'DPG' | 'Procédure pénale';
+  nom: string;
+  materiel: string[];
+  moral: string;
+  legal: string;
+  peines?: string;
+  tentative?: string;
+  complicite?: string;
+};
+
+export const flashcardsData: Flashcard[] = [
+  {
+    id: 'fc-f03-01',
+    fascicule: 3,
+    domaine: 'DPS',
+    nom: "Conduite sous l'empire d'un état alcoolique",
+    materiel: [
+      "Un conducteur de véhicule ou un accompagnateur d'élève conducteur",
+      "Le taux délictuel : concentration d'alcool dans le sang ≥ 0,80 g/l ou dans l'air expiré ≥ 0,40 mg/l",
+    ],
+    moral:
+      "Volonté de conduire en ayant consommé de l'alcool — infraction intentionnelle (art. 121-3 CP, Cass. crim. 19/12/1994). L'élément moral peut résulter du simple fait de consommer de l'alcool alors que le conducteur sait qu'il va prendre le volant.",
+    legal: "Prévu et réprimé par l'article L.234-1 / I et V du Code de la Route — DÉLIT — 3 ans d'emprisonnement et 9 000 € d'amende",
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f03-02',
+    fascicule: 3,
+    domaine: 'DPS',
+    nom: "Conduite en état d'ivresse",
+    materiel: [
+      "Un conducteur de véhicule ou un accompagnateur d'élève conducteur",
+      "État d'ivresse manifeste constaté par des signes extérieurs (haleine, titubation, propos incohérents, imprécision des réflexes, excitation, perte de concentration) — le taux peut être inférieur au seuil légal",
+    ],
+    moral: "Volonté de conduire en ayant consommé de l'alcool",
+    legal: "Prévu et réprimé par l'article L.234-1 / II et V du Code de la Route — DÉLIT — 3 ans d'emprisonnement et 9 000 € d'amende",
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f03-03',
+    fascicule: 3,
+    domaine: 'DPS',
+    nom: 'Délit de fuite',
+    materiel: [
+      "Le conducteur d'un véhicule ou d'un engin",
+      "Sachant qu'il a causé ou occasionné un accident",
+      "Ne s'arrête pas et tente ainsi d'échapper à la responsabilité pénale ou civile qu'il peut avoir encourue",
+    ],
+    moral: "Conscience d'avoir causé un accident et volonté de se soustraire à sa responsabilité",
+    legal: 'Prévu et réprimé par l’article 434-10 du Code pénal — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f03-04',
+    fascicule: 3,
+    domaine: 'DPS',
+    nom: "Refus d'obtempérer",
+    materiel: [
+      'Le conducteur ou le gardien de la chose',
+      "Refuse de se soumettre aux vérifications prévues par le Code de la route (alcool, stupéfiants, identité, etc.)",
+    ],
+    moral: 'Volonté de refuser les contrôles légaux',
+    legal: 'Prévu et réprimé par l’article L.233-1 du Code de la route — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f03-05',
+    fascicule: 3,
+    domaine: 'DPS',
+    nom: 'Conduite après usage de stupéfiants',
+    materiel: [
+      "Un conducteur ou un accompagnateur d'élève conducteur",
+      'Justifiant de la présence dans l’organisme d’un stupéfiant (dépistage positif)',
+    ],
+    moral: 'Volonté de conduire après consommation de stupéfiants',
+    legal: 'Prévu et réprimé par l’article L.235-1 du Code de la route — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f04-01',
+    fascicule: 4,
+    domaine: 'DPS',
+    nom: "L'outrage",
+    materiel: [
+      'Paroles, gestes ou menaces, écrits ou images non rendus publics, ou envoi d’objets quelconques',
+      'Adressés à une personne chargée d’une mission de service public, dans l’exercice ou à l’occasion de l’exercice de sa mission',
+      'De nature à porter atteinte à sa dignité ou au respect dû à la fonction dont elle est investie',
+    ],
+    moral:
+      'Intention de porter atteinte à la dignité ou au respect dû à la fonction — l’auteur doit avoir connaissance de la qualité de la victime',
+    legal: 'Prévu et réprimé par l’article 433-5 du Code pénal — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f04-02',
+    fascicule: 4,
+    domaine: 'DPS',
+    nom: 'La rébellion',
+    materiel: [
+      'Opposition par violence ou voie de fait',
+      'À une personne dépositaire de l’autorité publique ou chargée d’une mission de service public',
+      'Agissant dans l’exercice de ses fonctions, pour l’exécution des lois, ordres de l’autorité publique, décisions ou mandats de justice',
+    ],
+    moral:
+      "Volonté de s'opposer à l'exécution d'un acte de l'autorité publique — l'auteur doit avoir connaissance de la qualité de la personne",
+    legal: 'Prévu et réprimé par l’article 433-6 du Code pénal — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f04-03',
+    fascicule: 4,
+    domaine: 'DPS',
+    nom: "Le faux et l'usage de faux",
+    materiel: [
+      'Toute altération frauduleuse de la vérité',
+      "Dans un écrit ou tout autre support d'expression de la pensée",
+      'De nature à causer un préjudice',
+      'Par l’un des moyens visés par la loi',
+    ],
+    moral: 'Intention de frauder — volonté consciente d’altérer la vérité',
+    legal: 'Prévu et réprimé par l’article 441-1 du Code pénal — DÉLIT — 3 ans d’emprisonnement et 45 000 € d’amende',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f04-04',
+    fascicule: 4,
+    domaine: 'DPS',
+    nom: 'Corruption passive (fonctionnaire)',
+    materiel: [
+      'Un fonctionnaire ou une personne chargée d’une mission de service public',
+      'Sollicite ou accepte sans droit un avantage quelconque',
+      'En contrepartie de l’accomplissement ou de l’omission d’un acte de sa fonction',
+    ],
+    moral: 'Volonté de corrompre ou d’être corrompu dans l’exercice des fonctions',
+    legal: 'Prévu et réprimé par l’article 432-11 du Code pénal — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f05-01',
+    fascicule: 5,
+    domaine: 'DPS',
+    nom: 'Usage illicite de stupéfiants',
+    materiel: [
+      'Usage, détention ou transport de stupéfiants',
+      'Hors du cadre médical ou scientifique autorisé',
+    ],
+    moral: 'Conscience d’utiliser un produit illicite',
+    legal: 'Prévu et réprimé par l’article L.3421-1 du Code de la santé publique — CONTRAVENTION (en principe)',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f05-02',
+    fascicule: 5,
+    domaine: 'DPS',
+    nom: 'Direction ou organisation de trafic de stupéfiants',
+    materiel: [
+      'Organisation structurée du trafic (groupement, rôles, filières)',
+      'Actes de trafic (import, export, transport, stockage, etc.)',
+    ],
+    moral: 'Intention de participer à un trafic organisé',
+    legal: 'Prévu et réprimé par l’article 222-34 du Code pénal — CRIME (réclusion à perpétuité et amende en tête d’échelle)',
+    tentative: 'OUI',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f06-01',
+    fascicule: 6,
+    domaine: 'DPS',
+    nom: 'Abandon de famille',
+    materiel: [
+      'Obligation alimentaire ou décision / convention',
+      'Défaut d’exécution pendant plus de deux mois',
+    ],
+    moral: 'Volonté de ne pas satisfaire l’obligation',
+    legal: 'Prévu et réprimé par l’article 227-3 du Code pénal — DÉLIT',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f07-01',
+    fascicule: 7,
+    domaine: 'DPS',
+    nom: 'Arme par nature (définition)',
+    materiel: [
+      'Objet conçu pour tuer ou blesser',
+      'Ou objet dangereux utilisé comme arme (arme par usage)',
+    ],
+    moral: 'Conscience de détenir ou d’utiliser l’objet comme arme',
+    legal: 'Définition à l’article 132-75 al. 1 du Code pénal (notion d’arme pour certaines qualifications)',
+    tentative: 'NON',
+    complicite: 'OUI',
+  },
+  {
+    id: 'fc-f09-01',
+    fascicule: 9,
+    domaine: 'DPG',
+    nom: 'La tentative',
+    materiel: [
+      "Un commencement d'exécution",
+      "Une absence de désistement volontaire (l'acte est suspendu ou manque son effet en raison de circonstances indépendantes de la volonté de son auteur)",
+    ],
+    moral: "Intention coupable identique à celle de l'infraction consommée",
+    legal: 'Art. 121-5 CP — Toujours punissable pour les crimes. Pour les délits : si le texte le prévoit. Pour les contraventions : jamais.',
+  },
+  {
+    id: 'fc-f09-02',
+    fascicule: 9,
+    domaine: 'DPG',
+    nom: 'La complicité',
+    materiel: [
+      'Un fait principal punissable',
+      "Un acte matériel de complicité : aide ou assistance, provocation, fourniture d'instructions ou de moyens",
+    ],
+    moral: "Connaissance du caractère délictueux de l'acte et volonté de s'y associer (agit en connaissance de cause)",
+    legal: "Prévue par l'art. 121-7 CP — Réprimée par l'art. 121-6 CP — Le complice est puni comme l'auteur",
+  },
+  {
+    id: 'fc-f09-03',
+    fascicule: 9,
+    domaine: 'DPG',
+    nom: 'La légitime défense',
+    materiel: [
+      'Une attaque réelle, actuelle et injustifiée',
+      'Une riposte concomitante, nécessaire et proportionnée à la gravité de l’atteinte',
+    ],
+    moral: 'Volonté de se défendre face à une agression',
+    legal: "Art. 122-5 CP — Cause d'irresponsabilité pénale (fait justificatif)",
+  },
+  {
+    id: 'fc-f10-01',
+    fascicule: 10,
+    domaine: 'DPG',
+    nom: 'Bande organisée (CA)',
+    materiel: [
+      'Infraction commise en réunion',
+      'Les personnes sont structurées en bande organisée au sens de l’article 132-71 CP',
+    ],
+    moral: 'Intention de participer à l’infraction au sein du groupement',
+    legal: 'Circonstance aggravante — art. 132-71 CP — relève les peines encourues',
+  },
+  {
+    id: 'fc-f10-02',
+    fascicule: 10,
+    domaine: 'DPG',
+    nom: 'Guet-apens (CA)',
+    materiel: [
+      'Attaque ou agression commise à l’issue d’un guet-apens',
+      'Guet-apens : mise en place pour surprendre la victime',
+    ],
+    moral: 'Intention d’agresser dans le cadre du guet-apens',
+    legal: 'Circonstance aggravante — art. 132-71-1 CP',
+  },
+  {
+    id: 'fc-f12-01',
+    fascicule: 12,
+    domaine: 'Procédure pénale',
+    nom: 'Garde à vue du majeur (durée initiale)',
+    materiel: [
+      'Placement en garde à vue d’un majeur',
+      'Dans les conditions légales (motifs art. 62-2 CPP, notification des droits…)',
+    ],
+    moral: 'N/A (mesure d’enquête)',
+    legal: 'Durée maximale initiale : 24 heures — prolongation possible (jusqu’à 24 h supplémentaires selon cas) — art. 706-88 et s. CPP',
+  },
+  {
+    id: 'fc-f12-02',
+    fascicule: 12,
+    domaine: 'Procédure pénale',
+    nom: 'Caractères de l’instruction préparatoire',
+    materiel: [
+      'Procédure écrite',
+      'Secrète',
+      'Non contradictoire (à ce stade)',
+    ],
+    moral: 'N/A',
+    legal: 'Principes généraux du code de procédure pénale — instruction sous contrôle du juge d’instruction',
+  },
+  {
+    id: 'fc-f14-01',
+    fascicule: 14,
+    domaine: 'Procédure pénale',
+    nom: 'Mission de police judiciaire (art. 14 CPP)',
+    materiel: [
+      'Constater les infractions à la loi pénale',
+      'En rassembler les preuves',
+      'En rechercher les auteurs',
+    ],
+    moral: 'N/A (mission institutionnelle)',
+    legal: 'Article 14 du Code de procédure pénale',
+  },
+  {
+    id: 'fc-f15-01',
+    fascicule: 15,
+    domaine: 'Procédure pénale',
+    nom: 'Nullité substantielle (fondement)',
+    materiel: [
+      'Violation d’une règle substantielle de procédure',
+      'Atteinte aux droits de la défense ou à l’équité du procès',
+    ],
+    moral: 'N/A',
+    legal: 'Fondement principal : article 171 du CPP — nullité d’office ou sur demande selon conditions',
+  },
+];
