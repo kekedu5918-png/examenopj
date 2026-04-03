@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { BookOpen, Layers, Shuffle } from 'lucide-react';
 
@@ -46,6 +47,8 @@ const headerItem = {
 };
 
 export function QuizPageClient() {
+  const searchParams = useSearchParams();
+
   const fasciculeNums = useMemo(
     () => [...new Set(quizQuestions.map((q) => q.fascicule))].sort((a, b) => a - b),
     []
@@ -80,6 +83,41 @@ export function QuizPageClient() {
     if (phase !== 'setup') return;
     setLocalBest(readBestQuizPercent(storageKey));
   }, [storageKey, phase]);
+
+  /** Liens profonds depuis la page Cours (`/quiz?mode=domain&domain=DPS`, etc.). */
+  useEffect(() => {
+    const modeParam = searchParams.get('mode');
+    const domainParam = searchParams.get('domain');
+    const fParam = searchParams.get('f');
+
+    if (modeParam === 'global') {
+      setMode('global');
+      return;
+    }
+
+    if (modeParam === 'fascicule' && fParam) {
+      const n = Number.parseInt(fParam, 10);
+      if (!Number.isNaN(n) && fasciculeNums.includes(n)) {
+        setMode('fascicule');
+        setFascicule(n);
+      }
+      return;
+    }
+
+    if (modeParam === 'domain' && domainParam) {
+      const map: Record<string, QuizQuestion['domaine']> = {
+        DPS: 'DPS',
+        DPG: 'DPG',
+        procedure: 'Procédure pénale',
+        'procedure-penale': 'Procédure pénale',
+      };
+      const d = map[domainParam];
+      if (d) {
+        setMode('domain');
+        setDomain(d);
+      }
+    }
+  }, [searchParams, fasciculeNums]);
 
   function buildPool(cfg: LaunchConfig): QuizQuestion[] {
     let pool = filterQuestions(
