@@ -125,6 +125,22 @@ export function FlashcardsPageClient() {
     if (q && CAT_QUERY[q]) setCategoryFilter(CAT_QUERY[q]!);
   }, [searchParams]);
 
+  useEffect(() => {
+    const fid = searchParams.get('f');
+    if (!fid) return;
+    const n = Number.parseInt(fid, 10);
+    if (!Number.isNaN(n)) {
+      setFascicule(n);
+      setCategoryFilter('all');
+      return;
+    }
+    const meta = fasciculesList.find((f) => f.id === fid);
+    if (meta) {
+      setFascicule(meta.numero);
+      setCategoryFilter('all');
+    }
+  }, [searchParams]);
+
   const progressScope = useMemo(
     () => progressScopeFromUI(categoryFilter, fascicule),
     [categoryFilter, fascicule]

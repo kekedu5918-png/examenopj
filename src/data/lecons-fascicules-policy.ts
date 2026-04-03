@@ -1,8 +1,4 @@
 /**
- * Alignement chapitres OPJ Elite → numéros de fascicules.
- * Si tu modifies `eliteChapterToFascicules`, mets à jour l’objet `eliteChapterToFasciculeNums`
- * dans `tools/build-cours-comparatif.mjs`, puis exécute `npm run cours:comparatif`.
- *
  * Règle produit : le texte et la structuration à jour sont celles des fascicules ExamenOPJ.
  * Le contenu des leçons Elite sert de référence / complément ; en cas d’écart, le fascicule prime.
  *
@@ -77,8 +73,8 @@ export const eliteChapterToFascicules: Record<EliteChapterId, ChapterFasciculePo
     note: "Procédures spéciales, CO, mineurs : F14 et mesures d’instruction F12 selon les actes.",
   },
   ch9: {
-    fasciculeNumeros: [8, 14, 15],
-    note: "Libertés publiques : F08 (fascicule dédié) ; cadre procédural F14 ; atteintes aux droits F15.",
+    fasciculeNumeros: [14, 15],
+    note: "Libertés fondamentales, CEDH : cadre procédural F14 ; atteintes aux droits F15.",
   },
   ch10: {
     fasciculeNumeros: [9, 10, 14],
@@ -107,6 +103,8 @@ export const eliteChapterToFascicules: Record<EliteChapterId, ChapterFasciculePo
 };
 
 export function fasciculePath(numero: number): string {
+  const m = fasciculesList.find((f) => f.numero === numero);
+  if (m?.id) return `/fascicules/${m.id}`;
   return `/fascicules/f${String(numero).padStart(2, '0')}`;
 }
 

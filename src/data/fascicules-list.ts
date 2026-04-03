@@ -1,3 +1,42 @@
+// Source : fichiers SDCP public/cours-texte/ — Version 01/12/2025
+
+import { fasciculesChunk01 } from './fascicules-chunk-01';
+import { fasciculesChunk02 } from './fascicules-chunk-02';
+import { fasciculesChunk03 } from './fascicules-chunk-03';
+import { fasciculesChunk04 } from './fascicules-chunk-04';
+import type { Domain, Fascicule, FasciculeChapter } from './fascicules-types';
+
+export type { Domain, Fascicule, FasciculeChapter } from './fascicules-types';
+
+export const FASCICULES: Fascicule[] = [
+  ...fasciculesChunk01,
+  ...fasciculesChunk02,
+  ...fasciculesChunk03,
+  ...fasciculesChunk04,
+];
+
+export const getFasciculeById = (id: string): Fascicule | undefined => FASCICULES.find((f) => f.id === id);
+
+export const getFasciculesByDomain = (domain: Domain): Fascicule[] =>
+  FASCICULES.filter((f) => f.domain === domain);
+
+export const DOMAIN_LABELS: Record<Domain, string> = {
+  DPS: 'Droit pénal spécial',
+  DPG: 'Droit pénal général',
+  PROCEDURE: 'Procédure pénale',
+};
+
+/** Couleur sémantique (UI) */
+export const DOMAIN_COLORS: Record<Domain, string> = {
+  DPS: 'red',
+  DPG: 'violet',
+  PROCEDURE: 'blue',
+};
+
+export const TOTAL_PAGES = FASCICULES.reduce((sum, f) => sum + f.pages, 0);
+
+// ─── Compatibilité avec le code existant (quiz, flashcards, etc.) ───
+
 export type FasciculeMetadata = {
   numero: number;
   titre: string;
@@ -7,304 +46,28 @@ export type FasciculeMetadata = {
   nbInfractions: number;
   chapitres: string[];
   description: string;
+  /** Identifiant route `/fascicules/f01` */
+  id: string;
+  txtFile: string;
 };
 
-export const fasciculesList: FasciculeMetadata[] = [
-  {
-    numero: 1,
-    titre: 'Les crimes et délits contre la personne',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 0,
-    nbInfractions: 0,
-    description:
-      'Atteintes à la vie, à l’intégrité, mise en danger, atteintes aux libertés, à la dignité, à la personnalité…',
-    chapitres: [
-      'La mise en danger de la personne',
-      'Les atteintes aux libertés de la personne',
-      'Les atteintes à la dignité de la personne',
-      'Les atteintes à la personnalité',
-    ],
-  },
-  {
-    numero: 2,
-    titre: 'Les crimes et délits contre les biens',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 0,
-    nbInfractions: 0,
-    description:
-      'Vol, infractions voisines du vol (extorsion, chantage, escroquerie, abus de confiance…), recel, destruction, dégradation, squat…',
-    chapitres: [
-      'Le vol',
-      'Les infractions voisines du vol',
-      'Le recel',
-      'La destruction, la dégradation et les détériorations',
-      'Les infractions relatives au squat',
-    ],
-  },
-  {
-    numero: 3,
-    titre: 'Les infractions à la circulation routière',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 35,
-    nbInfractions: 12,
-    description:
-      "CEA, ivresse, stupéfiants au volant, délit de fuite, refus d'obtempérer, défaut de permis, rodéo motorisé...",
-    chapitres: [
-      "La conduite sous l'empire d'un état alcoolique",
-      "La conduite en état d'ivresse",
-      "La conduite après usage de stupéfiants",
-      'Le délit de fuite',
-      "Le refus d'obtempérer",
-      'Le refus de se soumettre aux vérifications',
-      'Le défaut de permis de conduire',
-      "Le défaut d'assurance",
-      'Les délits relatifs aux plaques et inscriptions',
-      'Le délit de grand excès de vitesse',
-      'Le rodéo motorisé',
-      "L'incitation, l'organisation et la promotion des rodéos motorisés",
-    ],
-  },
-  {
-    numero: 4,
-    titre: "Les crimes et délits contre la nation, l'État et la paix publique",
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 84,
-    nbInfractions: 20,
-    description:
-      'Outrage, rébellion, corruption, faux et usage de faux, association de malfaiteurs, discriminations...',
-    chapitres: [
-      'Les discriminations',
-      "Les atteintes à l'inviolabilité du domicile",
-      'Les atteintes au secret des correspondances',
-      'La concussion',
-      'La corruption',
-      "Le trafic d'influence",
-      "Les menaces envers dépositaire de l'autorité publique",
-      "Les menaces, violences, actes d'intimidation (dérogation service public)",
-      "L'outrage",
-      'La rébellion',
-      'La provocation directe à la rébellion',
-      'La non-dénonciation de crime',
-      'Le témoignage mensonger',
-      "Le faux et l'usage de faux",
-      'Le faux commis dans un document administratif',
-      'Le faux commis dans une écriture publique ou authentique',
-      'La délivrance indue de document administratif',
-      "L'obtention indue de document administratif",
-      'Les faux certificats ou attestations',
-      'La participation à une association de malfaiteurs',
-    ],
-  },
-  {
-    numero: 5,
-    titre: "L'usage et le trafic de stupéfiants",
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 32,
-    nbInfractions: 9,
-    description:
-      'Usage illicite, provocation, direction/organisation trafic, production, importation, transport, facilitation, blanchiment, cession...',
-    chapitres: [
-      "L'usage illicite de stupéfiants",
-      "La provocation d'un majeur à l'usage ou au trafic",
-      "La direction ou l'organisation d'un trafic",
-      'La production ou la fabrication illicites',
-      "L'importation ou l'exportation illicites",
-      "Le transport, la détention, l'offre, la cession, l'acquisition ou l'emploi illicites",
-      "La facilitation à l'usage illicite",
-      'Le blanchiment du produit du trafic',
-      "La cession ou l'offre illicites en vue de consommation personnelle",
-    ],
-  },
-  {
-    numero: 6,
-    titre: 'Les atteintes aux mineurs et à la famille',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 62,
-    nbInfractions: 19,
-    description:
-      "Abandon de famille, non-représentation d'enfant, corruption de mineur, atteintes sexuelles, violences sur mineur...",
-    chapitres: [
-      "L'abandon de famille",
-      "Le non-respect des obligations d'une ordonnance de protection",
-      'Le défaut de notification de changement de domicile au créancier',
-      "La non-représentation d'enfant mineur",
-      'Le défaut de notification de transfert de domicile',
-      "La soustraction d'enfant mineur par ascendant",
-      "La soustraction d'enfant mineur par personne autre qu'un ascendant",
-      "La privation d'aliments ou de soins à mineur de 15 ans",
-      "La soustraction d'un parent à ses obligations légales",
-      "La provocation d'un mineur à l'usage ou au trafic de stupéfiants",
-      "La provocation directe d'un mineur à la consommation d'alcool",
-      "La provocation directe d'un mineur à commettre un crime ou un délit",
-      'La corruption de mineur',
-      'Propositions sexuelles à mineur de 15 ans par communication électronique',
-      "L'exploitation de l'image pornographique d'un mineur",
-      "La diffusion d'un message violent, pornographique ou dangereux susceptible d'être vu par un mineur",
-      'La provocation à la pédopornographie',
-      'Les atteintes sexuelles par un majeur sur un mineur de 15 ans',
-      'Les atteintes sexuelles par un majeur sur un mineur de plus de 15 ans',
-    ],
-  },
-  {
-    numero: 7,
-    titre: 'Les infractions aux régimes des matériels de guerre, armes et munitions',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 38,
-    nbInfractions: 3,
-    description:
-      "Classification des armes (A-B-C-D), acquisition/détention, port/transport sans autorisation...",
-    chapitres: [
-      'Définitions (arme par nature, par usage, par destination)',
-      'Classification des armes et des munitions (catégories A-B-C-D)',
-      "Les règles d'acquisition et de détention",
-      'Les règles de port et de transport',
-      "L'acquisition, la détention ou la cession sans autorisation (cat. A ou B)",
-      'Le port ou transport sans autorisation/motif légitime (cat. A ou B)',
-      'Le port ou transport sans autorisation/motif légitime (cat. C ou D)',
-    ],
-  },
-  {
-    numero: 8,
-    titre: 'Les libertés publiques',
-    domaine: 'DPS',
-    domaineLabel: 'Droit pénal spécial',
-    pages: 0,
-    nbInfractions: 0,
-    description:
-      'Libertés fondamentales, CEDH, limitations encadrées dans le cadre des missions de police judiciaire et de la sécurité publique.',
-    chapitres: [],
-  },
-  {
-    numero: 9,
-    titre: 'De la loi pénale, de la responsabilité pénale',
-    domaine: 'DPG',
-    domaineLabel: 'Droit pénal général',
-    pages: 53,
-    nbInfractions: 0,
-    description:
-      'Classification tripartite, éléments constitutifs, tentative, complicité, responsabilité, irresponsabilité, personnes morales...',
-    chapitres: [
-      'Généralités sur la législation pénale',
-      "Classification des infractions (tripartite, nature, mode de réalisation)",
-      "Les éléments constitutifs de l'infraction (légal, matériel, moral)",
-      "Étendue d'application des lois (temps, espace)",
-      'Principes généraux de la responsabilité pénale',
-      "La complicité et la coaction",
-      "Les causes d'irresponsabilité ou d'atténuation",
-      "L'usage des armes par les forces de l'ordre",
-      'La responsabilité pénale des personnes morales',
-    ],
-  },
-  {
-    numero: 10,
-    titre: 'La sanction',
-    domaine: 'DPG',
-    domaineLabel: 'Droit pénal général',
-    pages: 86,
-    nbInfractions: 0,
-    description:
-      'Classification des peines, concours réel, récidive, réitération, toutes les circonstances aggravantes (132-71 à 132-80)...',
-    chapitres: [
-      'La classification des peines et mesures de sûreté',
-      "Le concours réel d'infractions",
-      'La récidive',
-      "La réitération d'infractions",
-      'Les circonstances aggravantes (bande organisée, guet-apens, préméditation, effraction, escalade, arme, racisme, homophobie, cryptologie, conjoint, ITT, mutilation, mort, minorité 15 ans, vulnérabilité, etc.)',
-    ],
-  },
-  {
-    numero: 11,
-    titre: 'Les cadres juridiques et les actes de la mission de police judiciaire',
-    domaine: 'Procédure pénale',
-    domaineLabel: 'Procédure pénale',
-    pages: 0,
-    nbInfractions: 0,
-    description:
-      'Flagrance, enquête préliminaire, commission rogatoire, actes d’enquête, réquisitions, auditions, perquisitions…',
-    chapitres: [],
-  },
-  {
-    numero: 12,
-    titre: "L'instruction préparatoire, les mandats de justice, le contrôle judiciaire, la détention provisoire",
-    domaine: 'Procédure pénale',
-    domaineLabel: 'Procédure pénale',
-    pages: 64,
-    nbInfractions: 0,
-    description:
-      "Caractères de l'instruction, pouvoirs du JI, mandats (5 types), contrôle judiciaire, ARSE, détention provisoire, justice des mineurs...",
-    chapitres: [
-      "Caractères de la procédure d'instruction (écrit, secret, non contradictoire)",
-      "L'ouverture d'une information",
-      "Les pouvoirs du juge d'instruction",
-      "La clôture de l'instruction (ordonnances)",
-      "Rôle de la chambre de l'instruction",
-      'Le juge des libertés et de la détention (JLD)',
-      'Les mandats de justice (recherche, comparution, amener, arrêt, dépôt)',
-      'Le contrôle judiciaire',
-      "L'assignation à résidence avec surveillance électronique (ARSE)",
-      'La détention provisoire',
-      'Dispositions applicables aux mineurs',
-    ],
-  },
-  {
-    numero: 13,
-    titre: "Les juridictions de jugement, l'exécution des décisions de justice",
-    domaine: 'Procédure pénale',
-    domaineLabel: 'Procédure pénale',
-    pages: 40,
-    nbInfractions: 0,
-    description:
-      "Tribunal de police, correctionnel, cour d'assises, cour criminelle départementale, voies de recours, exécution des peines, JAP...",
-    chapitres: [
-      'Les juridictions de droit commun (tribunal de police, correctionnel, assises, cour criminelle départementale)',
-      "Les juridictions d'exception (mineurs, stupéfiants, terrorisme, économique, criminalité organisée, crimes contre l'humanité, crimes sériels)",
-      'Les voies de recours (opposition, appel, pourvoi en cassation, révision)',
-      "L'exécution des décisions de justice",
-      'La contrainte judiciaire',
-      "Les juridictions de l'application des peines (JAP, TAP, chambre)",
-    ],
-  },
-  {
-    numero: 14,
-    titre: 'Acciaire — Procédure pénale générale',
-    domaine: 'Procédure pénale',
-    domaineLabel: 'Procédure pénale',
-    pages: 68,
-    nbInfractions: 0,
-    description: 'Action publique/civile, ministère public, OPJ/APJ/APJA, habilitation, contrôle de la mission de PJ...',
-    chapitres: [
-      'Action publique et action civile',
-      "L'organisation hiérarchique du ministère public",
-      "Les autorités investies de fonctions de police judiciaire (OPJ, APJ, APJA, assistants d'enquête)",
-      'Principales prérogatives en flagrance, préliminaire, commission rogatoire',
-      'Les fonctionnaires et agents chargés de certaines fonctions de PJ',
-      "Les autorités investies d'une mission occasionnelle de PJ (PR, JI)",
-      "Le contrôle de la mission de police judiciaire (procureur général, IGJ, chambre de l'instruction)",
-    ],
-  },
-  {
-    numero: 15,
-    titre: 'La nullité des actes de procédure',
-    domaine: 'Procédure pénale',
-    domaineLabel: 'Procédure pénale',
-    pages: 13,
-    nbInfractions: 0,
-    description:
-      "Nullités textuelles, nullités substantielles, action en nullité, effets de l'annulation...",
-    chapitres: [
-      "Les nullités textuelles (perquisitions, réquisitions, interceptions, infiltration, vérification d'identité, moyens d'investigation exorbitants)",
-      'Les nullités substantielles',
-      "L'annulation de l'acte (action en nullité, effets)",
-    ],
-  },
-];
+function domainToLegacy(d: Domain): FasciculeMetadata['domaine'] {
+  if (d === 'PROCEDURE') return 'Procédure pénale';
+  return d;
+}
+
+export const fasciculesList: FasciculeMetadata[] = FASCICULES.map((f) => ({
+  numero: f.num,
+  titre: f.title,
+  domaine: domainToLegacy(f.domain),
+  domaineLabel: DOMAIN_LABELS[f.domain],
+  pages: f.pages,
+  nbInfractions: f.infractions?.length ?? 0,
+  description: f.subtitle,
+  chapitres: f.chapters.map((c) => c.title),
+  id: f.id,
+  txtFile: f.txtFile,
+}));
 
 export const cahierMiseAJour = {
   titre: 'Cahier de mise à jour',
@@ -322,3 +85,7 @@ export const cahierMiseAJour = {
     'Circulaire interministérielle CRIM 2025-17/G3-22/07/2025 — Biens mobiliers saisis',
   ],
 } as const;
+
+export function fasciculeDetailPath(id: string): string {
+  return `/fascicules/${id}`;
+}

@@ -84,23 +84,37 @@ export function QuizPageClient() {
     setLocalBest(readBestQuizPercent(storageKey));
   }, [storageKey, phase]);
 
-  /** Liens profonds depuis la page Cours (`/quiz?mode=domain&domain=DPS`, etc.). */
+  /** Liens profonds : `/quiz?f=f03`, `/quiz?mode=fascicule&f=3`, domain, global… */
   useEffect(() => {
     const modeParam = searchParams.get('mode');
     const domainParam = searchParams.get('domain');
     const fParam = searchParams.get('f');
+
+    const resolveFasciculeNum = (raw: string | null): number | null => {
+      if (!raw) return null;
+      const n = Number.parseInt(raw, 10);
+      if (!Number.isNaN(n) && fasciculeNums.includes(n)) return n;
+      const meta = fasciculesList.find((f) => f.id === raw);
+      if (meta && fasciculeNums.includes(meta.numero)) return meta.numero;
+      return null;
+    };
 
     if (modeParam === 'global') {
       setMode('global');
       return;
     }
 
-    if (modeParam === 'fascicule' && fParam) {
-      const n = Number.parseInt(fParam, 10);
-      if (!Number.isNaN(n) && fasciculeNums.includes(n)) {
-        setMode('fascicule');
-        setFascicule(n);
-      }
+    const resolvedF = resolveFasciculeNum(fParam);
+
+    if (modeParam === 'fascicule' && resolvedF != null) {
+      setMode('fascicule');
+      setFascicule(resolvedF);
+      return;
+    }
+
+    if (!modeParam && resolvedF != null) {
+      setMode('fascicule');
+      setFascicule(resolvedF);
       return;
     }
 
