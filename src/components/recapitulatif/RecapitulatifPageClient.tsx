@@ -5,13 +5,14 @@ import { Fragment, useMemo, useState } from 'react';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import {
   filterRecapSections,
   type RecapFasciculeFilter,
   type RecapSection,
 } from '@/data/recapitulatif-data';
 
-function Cell({ text }: { text: string }) {
+function CellPlain({ text }: { text: string }) {
   return (
     <div className='min-w-[200px] max-w-md text-sm text-gray-200'>
       <FlashcardRichText text={text} />
@@ -87,16 +88,16 @@ export function RecapitulatifPageClient() {
                     className='border-b border-white/[0.06] align-top odd:bg-white/[0.02]'
                   >
                     <td className='sticky left-0 z-[1] bg-navy-950/95 px-4 py-3 shadow-[2px_0_8px_rgba(0,0,0,0.2)]'>
-                      <Cell text={row.infraction} />
+                      <CellPlain text={row.infraction} />
                     </td>
                     <td className='px-4 py-3'>
-                      <Cell text={row.legal} />
+                      <CellPlain text={row.legal} />
                     </td>
                     <td className='px-4 py-3'>
-                      <Cell text={row.materiel} />
+                      <RecapBulletCell text={row.materiel} />
                     </td>
                     <td className='px-4 py-3'>
-                      <Cell text={row.moral} />
+                      <RecapBulletCell text={row.moral} />
                     </td>
                   </tr>
                 ))}

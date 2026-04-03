@@ -504,3 +504,34 @@ export function filterRecapSections(filter: RecapFasciculeFilter): RecapSection[
   const tag: RecapSection['fascicule'] = filter === 'f01' ? 'F01' : 'F02';
   return recapSections.filter((s) => s.fascicule === tag);
 }
+
+export type InfractionCatalogItem = {
+  id: string;
+  fascicule: 'F01' | 'F02';
+  fasciculePart?: string;
+  groupTitle: string;
+  infraction: string;
+  legal: string;
+  flashcardsCat: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
+};
+
+/** Liste plate pour la page Infractions (hors placeholder « À compléter »). */
+export function getInfractionsCatalog(): InfractionCatalogItem[] {
+  const out: InfractionCatalogItem[] = [];
+  for (const s of recapSections) {
+    s.rows.forEach((row, ri) => {
+      if (row.infraction.includes('À compléter')) return;
+      out.push({
+        id: `${s.id}-r${ri}`,
+        fascicule: s.fascicule,
+        fasciculePart: s.fasciculePart,
+        groupTitle: s.groupTitle,
+        infraction: row.infraction,
+        legal: row.legal,
+        flashcardsCat: s.fascicule === 'F01' ? 'atteintes-aux-personnes' : 'atteintes-aux-biens',
+      });
+    });
+  }
+  return out;
+}
+

@@ -34,6 +34,14 @@ const facetBadge: Record<FlashcardFacet, { text: string; className: string }> = 
   },
 };
 
+/** Phrase ludique au recto (sans définition du cours). */
+const facetFrontChallenge: Record<FlashcardFacet, string> = {
+  materiel: 'Tu te souviens de l’élément matériel ?',
+  moral: 'Tu te souviens de l’élément moral ?',
+  legal: 'Tu te souviens de l’élément légal ?',
+  materielMoral: 'Tu te souviens des éléments matériel et moral ?',
+};
+
 type FlashcardInterfaceProps = {
   prepared: PreparedFlashcard;
   index: number;
@@ -146,13 +154,14 @@ export function FlashcardInterface({
               </span>
               <span className='text-xs text-gray-500'>{fasciculeLabel}</span>
             </div>
-            <div className='flex flex-1 flex-col items-center justify-center gap-2 px-4'>
+            <div className='flex flex-1 flex-col items-center justify-center gap-4 px-4'>
               <h3 className='text-center font-display text-2xl font-bold text-white'>{card.nom}</h3>
-              {card.definitionCourte ? (
-                <div className='max-w-sm text-center text-sm text-gray-300'>
-                  <FlashcardRichText text={card.definitionCourte} />
-                </div>
-              ) : null}
+              <p className='max-w-xs text-center text-base font-medium text-amber-200/90'>
+                {facetFrontChallenge[facet]}
+              </p>
+              <p className='max-w-sm text-center text-sm text-gray-400'>
+                Pas de triche : retourne la carte quand tu es prêt·e, puis vérifie !
+              </p>
             </div>
             <p className='text-center text-xs text-gold-400'>→ {facetLabel[facet]}</p>
             <div className='mt-2 flex items-center justify-center gap-2 text-sm text-gray-500'>
