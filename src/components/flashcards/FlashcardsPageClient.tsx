@@ -1,19 +1,18 @@
 'use client';
 
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { flashcardsData } from '@/data/flashcards-data';
+import { flashcardsData, type Flashcard } from '@/data/flashcards-data';
 import { fasciculesList } from '@/data/fascicules-list';
 
 import { FlashcardInterface } from './FlashcardInterface';
 import { FlashcardResult } from './FlashcardResult';
 import { recordFlashcardAnswer } from './flashcards-progress';
 import type { ContentStudyMode, FlashcardFacet, PreparedFlashcard } from './types';
-
-const FACETS: FlashcardFacet[] = ['materiel', 'moral', 'legal'];
 
 function shuffle<T>(items: T[]): T[] {
   const a = [...items];
@@ -24,10 +23,51 @@ function shuffle<T>(items: T[]): T[] {
   return a;
 }
 
-function prepareDeck(cards: (typeof flashcardsData)[number][], mode: ContentStudyMode): PreparedFlashcard[] {
+function cardHasPlayableFacet(c: Flashcard, mode: ContentStudyMode): boolean {
+  const hasL = !!c.legal?.trim();
+  const hasMM = !!c.materielMoralComplet?.trim();
+  const hasM = (c.materiel?.length ?? 0) > 0;
+  const hasMo = !!c.moral?.trim();
+  if (mode === 'legal') return hasL;
+  if (mode === 'materiel') return hasMM || hasM;
+  if (mode === 'moral') return hasMM || hasMo;
+  return hasL || hasMM || hasM || hasMo;
+}
+
+function filterCardsByMode(cards: Flashcard[], mode: ContentStudyMode): Flashcard[] {
+  return cards.filter((c) => cardHasPlayableFacet(c, mode));
+}
+
+function pickFacet(card: Flashcard, mode: ContentStudyMode): FlashcardFacet {
+  const hasL = !!card.legal?.trim();
+  const hasMM = !!card.materielMoralComplet?.trim();
+  const hasM = (card.materiel?.length ?? 0) > 0;
+  const hasMo = !!card.moral?.trim();
+
+  if (mode === 'legal') return 'legal';
+  if (mode === 'materiel') {
+    if (hasMM) return 'materielMoral';
+    return 'materiel';
+  }
+  if (mode === 'moral') {
+    if (hasMM) return 'materielMoral';
+    return 'moral';
+  }
+  const opts: FlashcardFacet[] = [];
+  if (hasL) opts.push('legal');
+  if (hasMM) opts.push('materielMoral');
+  if (!hasMM) {
+    if (hasM) opts.push('materiel');
+    if (hasMo) opts.push('moral');
+  }
+  if (opts.length === 0) return 'legal';
+  return opts[Math.floor(Math.random() * opts.length)]!;
+}
+
+function prepareDeck(cards: Flashcard[], mode: ContentStudyMode): PreparedFlashcard[] {
   const prepared: PreparedFlashcard[] = cards.map((card) => ({
     card,
-    facet: mode === 'mixed' ? FACETS[Math.floor(Math.random() * 3)]! : mode,
+    facet: pickFacet(card, mode),
   }));
   return shuffle(prepared);
 }
@@ -36,8 +76,30 @@ function fasciculeMeta(num: number) {
   return fasciculesList.find((f) => f.numero === num);
 }
 
+type CategoryFilter = 'all' | 'atteintes-aux-biens' | 'atteintes-aux-personnes';
+
+function progressScopeFromUI(category: CategoryFilter, fascicule: number | 'all'): string {
+  if (category !== 'all') return `c:${category}`;
+  if (fascicule === 'all') return 'all';
+  return String(fascicule);
+}
+
+function cardMatchesProgressScope(card: Flashcard, scope: string): boolean {
+  if (scope === 'all') return true;
+  if (scope.startsWith('c:')) return card.categorieSlug === scope.slice(2);
+  if (/^\d+$/.test(scope)) return card.fascicule === Number(scope);
+  return true;
+}
+
+const CAT_QUERY: Record<string, CategoryFilter> = {
+  'atteintes-aux-biens': 'atteintes-aux-biens',
+  'atteintes-aux-personnes': 'atteintes-aux-personnes',
+};
+
 export function FlashcardsPageClient() {
+  const searchParams = useSearchParams();
   const [phase, setPhase] = useState<'select' | 'play' | 'result'>('select');
+  const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
   const [fascicule, setFascicule] = useState<number | 'all'>('all');
   const [contentMode, setContentMode] = useState<ContentStudyMode>('mixed');
   const [deck, setDeck] = useState<PreparedFlashcard[]>([]);
@@ -56,18 +118,36 @@ export function FlashcardsPageClient() {
 
   const exitToResultRef = useRef(false);
   const lastModeRef = useRef<ContentStudyMode>('mixed');
-  const lastFasciculeRef = useRef<number | 'all'>('all');
+  const lastScopeRef = useRef<string>('all');
+
+  useEffect(() => {
+    const q = searchParams.get('cat');
+    if (q && CAT_QUERY[q]) setCategoryFilter(CAT_QUERY[q]!);
+  }, [searchParams]);
+
+  const progressScope = useMemo(
+    () => progressScopeFromUI(categoryFilter, fascicule),
+    [categoryFilter, fascicule]
+  );
 
   const filteredSource = useMemo(() => {
+    if (categoryFilter !== 'all') {
+      return flashcardsData.filter((c) => c.categorieSlug === categoryFilter);
+    }
     if (fascicule === 'all') return flashcardsData;
     return flashcardsData.filter((c) => c.fascicule === fascicule);
-  }, [fascicule]);
+  }, [categoryFilter, fascicule]);
+
+  const playableForMode = useMemo(
+    () => filterCardsByMode(filteredSource, contentMode),
+    [filteredSource, contentMode]
+  );
 
   const startSession = useCallback(
-    (cards: (typeof flashcardsData)[number][], mode: ContentStudyMode, fasc: number | 'all') => {
+    (cards: Flashcard[], mode: ContentStudyMode, scope: string) => {
       if (cards.length === 0) return;
       lastModeRef.current = mode;
-      lastFasciculeRef.current = fasc;
+      lastScopeRef.current = scope;
       setDeck(prepareDeck(cards, mode));
       setIndex(0);
       setDirection(1);
@@ -83,7 +163,7 @@ export function FlashcardsPageClient() {
   );
 
   const handleStart = () => {
-    startSession(filteredSource, contentMode, fascicule);
+    startSession(playableForMode, contentMode, progressScope);
   };
 
   const handleExitComplete = useCallback(() => {
@@ -100,7 +180,7 @@ export function FlashcardsPageClient() {
       if (i < 0 || i >= d.length) return;
       const current = d[i]!;
       const id = current.card.id;
-      recordFlashcardAnswer(fascicule, id, kind);
+      recordFlashcardAnswer(progressScope, id, kind);
 
       if (kind === 'know') setKnow((n) => n + 1);
       else if (kind === 'review') {
@@ -118,7 +198,7 @@ export function FlashcardsPageClient() {
         return next;
       });
     },
-    [fascicule]
+    [progressScope]
   );
 
   const handlePrevious = () => {
@@ -146,22 +226,21 @@ export function FlashcardsPageClient() {
   const handleReviewWeak = () => {
     const weak = new Set([...sessionReviewIds, ...sessionDontKnowIds]);
     const cards = flashcardsData.filter((c) => weak.has(c.id));
-    const fasc = lastFasciculeRef.current;
-    const scoped =
-      fasc === 'all' ? cards : cards.filter((c) => c.fascicule === fasc);
+    const scope = lastScopeRef.current;
+    const scoped = cards.filter((c) => cardMatchesProgressScope(c, scope));
     if (scoped.length === 0) {
       setPhase('select');
       return;
     }
-    startSession(scoped, lastModeRef.current, fasc);
+    const mode = lastModeRef.current;
+    startSession(filterCardsByMode(scoped, mode), mode, scope);
   };
 
   const handleRestartAll = () => {
-    const fasc = lastFasciculeRef.current;
+    const scope = lastScopeRef.current;
     const mode = lastModeRef.current;
-    const cards =
-      fasc === 'all' ? flashcardsData : flashcardsData.filter((c) => c.fascicule === fasc);
-    startSession(cards, mode, fasc);
+    const cards = flashcardsData.filter((c) => cardMatchesProgressScope(c, scope));
+    startSession(filterCardsByMode(cards, mode), mode, scope);
   };
 
   const handleChangeFascicule = () => {
@@ -201,25 +280,58 @@ export function FlashcardsPageClient() {
       {phase === 'select' && (
         <GlassCard className='mx-auto max-w-xl space-y-8' padding='p-8'>
           <div className='space-y-2'>
+            <label htmlFor='flash-categorie' className='text-sm font-medium text-gray-300'>
+              Catégorie
+            </label>
+            <select
+              id='flash-categorie'
+              value={categoryFilter}
+              onChange={(e) => {
+                const v = e.target.value as CategoryFilter;
+                setCategoryFilter(v);
+              }}
+              className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
+            >
+              <option value='all'>Toutes les catégories</option>
+              <option value='atteintes-aux-biens'>Atteintes aux biens</option>
+              <option value='atteintes-aux-personnes'>Atteintes aux personnes</option>
+            </select>
+            <p className='text-xs text-gray-500'>
+              Liens directs :{' '}
+              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-biens'>
+                biens
+              </a>
+              {' · '}
+              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-personnes'>
+                personnes
+              </a>
+            </p>
+          </div>
+
+          <div className='space-y-2'>
             <label htmlFor='flash-fascicule' className='text-sm font-medium text-gray-300'>
               Fascicule
             </label>
             <select
               id='flash-fascicule'
+              disabled={categoryFilter !== 'all'}
               value={fascicule === 'all' ? 'all' : String(fascicule)}
               onChange={(e) => {
                 const v = e.target.value;
                 setFascicule(v === 'all' ? 'all' : Number(v));
               }}
-              className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
+              className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:opacity-45'
             >
-              <option value='all'>Toutes les infractions</option>
+              <option value='all'>Tous les fascicules</option>
               {fasciculesList.map((f) => (
                 <option key={f.numero} value={f.numero}>
                   F{f.numero.toString().padStart(2, '0')} — {f.titre}
                 </option>
               ))}
             </select>
+            {categoryFilter !== 'all' ? (
+              <p className='text-xs text-gray-500'>Choisissez « Toutes les catégories » pour filtrer par numéro de fascicule.</p>
+            ) : null}
           </div>
 
           <div className='space-y-3'>
@@ -255,10 +367,15 @@ export function FlashcardsPageClient() {
           {filteredSource.length === 0 ? (
             <p className='text-sm text-amber-200/90'>Aucune flashcard pour ce fascicule pour le moment.</p>
           ) : null}
+          {filteredSource.length > 0 && playableForMode.length === 0 ? (
+            <p className='text-sm text-amber-200/90'>
+              Aucune carte pour ce mode de révision (essayez « Tout mélangé » ou un autre type de contenu).
+            </p>
+          ) : null}
 
           <button
             type='button'
-            disabled={filteredSource.length === 0}
+            disabled={playableForMode.length === 0}
             onClick={handleStart}
             className='w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 text-center text-base font-semibold text-white shadow-lg transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-40'
           >

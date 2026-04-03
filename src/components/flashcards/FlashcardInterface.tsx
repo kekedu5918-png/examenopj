@@ -6,6 +6,7 @@ import { Check, RotateCw, X } from 'lucide-react';
 
 import type { Flashcard } from '@/data/flashcards-data';
 
+import { FlashcardRichText } from './flashcard-rich-text';
 import type { FlashcardFacet, PreparedFlashcard } from './types';
 
 const slideVariants = {
@@ -20,12 +21,17 @@ const facetLabel: Record<FlashcardFacet, string> = {
   materiel: 'Élément matériel',
   moral: 'Élément moral',
   legal: 'Élément légal',
+  materielMoral: 'Éléments matériel et moral',
 };
 
 const facetBadge: Record<FlashcardFacet, { text: string; className: string }> = {
   materiel: { text: 'ÉLÉMENT MATÉRIEL', className: 'bg-red-500/25 text-red-300 border-red-500/40' },
   moral: { text: 'ÉLÉMENT MORAL', className: 'bg-orange-500/25 text-orange-200 border-orange-500/40' },
   legal: { text: 'ÉLÉMENT LÉGAL', className: 'bg-blue-500/25 text-blue-200 border-blue-500/40' },
+  materielMoral: {
+    text: 'MATÉRIEL + MORAL',
+    className: 'bg-violet-500/25 text-violet-200 border-violet-500/40',
+  },
 };
 
 type FlashcardInterfaceProps = {
@@ -43,22 +49,27 @@ type FlashcardInterfaceProps = {
 };
 
 function VersoContent({ card, facet }: { card: Flashcard; facet: FlashcardFacet }) {
+  if (facet === 'materielMoral' && card.materielMoralComplet?.trim()) {
+    return <FlashcardRichText text={card.materielMoralComplet} />;
+  }
   if (facet === 'materiel') {
     return (
       <ul className='list-none space-y-2.5 text-base leading-relaxed text-gray-200'>
         {card.materiel.map((line, i) => (
           <li key={i} className='flex gap-2'>
             <span className='shrink-0 text-gold-400'>•</span>
-            <span>{line}</span>
+            <span>
+              <FlashcardRichText text={line} inline />
+            </span>
           </li>
         ))}
       </ul>
     );
   }
   if (facet === 'moral') {
-    return <p className='text-base leading-relaxed text-gray-200'>{card.moral}</p>;
+    return <FlashcardRichText text={card.moral} />;
   }
-  return <p className='text-base leading-relaxed text-gray-200'>{card.legal}</p>;
+  return <FlashcardRichText text={card.legal} />;
 }
 
 export function FlashcardInterface({
@@ -135,8 +146,13 @@ export function FlashcardInterface({
               </span>
               <span className='text-xs text-gray-500'>{fasciculeLabel}</span>
             </div>
-            <div className='flex flex-1 flex-col items-center justify-center px-4'>
+            <div className='flex flex-1 flex-col items-center justify-center gap-2 px-4'>
               <h3 className='text-center font-display text-2xl font-bold text-white'>{card.nom}</h3>
+              {card.definitionCourte ? (
+                <div className='max-w-sm text-center text-sm text-gray-300'>
+                  <FlashcardRichText text={card.definitionCourte} />
+                </div>
+              ) : null}
             </div>
             <p className='text-center text-xs text-gold-400'>→ {facetLabel[facet]}</p>
             <div className='mt-2 flex items-center justify-center gap-2 text-sm text-gray-500'>
@@ -170,7 +186,11 @@ export function FlashcardInterface({
                 <VersoContent card={card} facet={facet} />
               </div>
             </div>
-            <p className='text-center text-sm text-gold-400'>{card.legal}</p>
+            {(card.versoFooter ?? card.legal).trim() ? (
+              <div className='text-center text-sm text-gold-400'>
+                <FlashcardRichText text={(card.versoFooter ?? card.legal).trim()} />
+              </div>
+            ) : null}
           </div>
         </motion.div>
       </div>

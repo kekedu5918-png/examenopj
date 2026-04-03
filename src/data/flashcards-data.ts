@@ -1,17 +1,70 @@
-export type Flashcard = {
-  id: string;
-  fascicule: number;
-  domaine: 'DPS' | 'DPG' | 'Procédure pénale';
-  nom: string;
-  materiel: string[];
-  moral: string;
-  legal: string;
-  peines?: string;
-  tentative?: string;
-  complicite?: string;
-};
+import type { Flashcard } from '@/data/flashcards-types';
+import { flashcardsF01Part2 } from '@/data/flashcards-f01-part2';
+import { flashcardsF02Extensions } from '@/data/flashcards-f02-extensions';
+
+export type { Flashcard } from '@/data/flashcards-types';
 
 export const flashcardsData: Flashcard[] = [
+  ...flashcardsF01Part2,
+  // ═══ F02 — Crimes et délits contre les biens (Partie 1 — Groupe 1 : Le vol) ═══
+  {
+    id: 'fc-f02-vol-legal',
+    fascicule: 2,
+    domaine: 'DPS',
+    categorie: 'Atteintes aux biens',
+    categorieSlug: 'atteintes-aux-biens',
+    groupe: 'Le vol',
+    nom: 'Le vol',
+    definitionCourte: '**Le vol est la soustraction frauduleuse de la chose d\'autrui.**',
+    materiel: [],
+    moral: '',
+    legal:
+      "*L'article 311-1 du C.P.* définit le vol simple et *l'article 311-3 du C.P.* en prévoit la répression.",
+  },
+  {
+    id: 'fc-f02-vol-mm',
+    fascicule: 2,
+    domaine: 'DPS',
+    categorie: 'Atteintes aux biens',
+    categorieSlug: 'atteintes-aux-biens',
+    groupe: 'Le vol',
+    nom: 'Le vol',
+    definitionCourte: '**Le vol est la soustraction frauduleuse de la chose d\'autrui.**',
+    materiel: [],
+    moral: '',
+    legal: '',
+    materielMoralComplet: `**ÉLÉMENT MATÉRIEL :**
+
+➤ *LA SOUSTRACTION*
+- *Pour soustraire, il faut prendre, enlever, ravir*
+- *La soustraction est réalisée à l'insu et/ou contre le gré*
+
+➤ *LA CHOSE*
+- *Une chose mobilière*
+- *Une chose immobilière devenue mobilière*
+- *L'énergie* (cas assimilé prévu à *l'article 311-2 du C.P.*)
+- *L'information*
+
+➤ *D'AUTRUI*
+- *Une chose commune*
+- *Une chose perdue*
+- *Une épave*
+- *Un trésor*
+- *Une chose illicite*
+Il ne peut pas y avoir vol à s'approprier :
+- *Sa propre chose*
+- *Une chose sans maître*
+- *Une chose abandonnée*
+- *Une personne humaine*
+
+**ÉLÉMENT MORAL :**
+
+➤ **CONSCIENCE DE SOUSTRAIRE UNE CHOSE QUI NE LUI APPARTIENT PAS**
+➤ **VOLONTÉ DE SE COMPORTER, MÊME MOMENTANÉMENT, EN MAÎTRE DE LA CHOSE**`,
+    versoFooter:
+      "*L'article 311-1 du C.P.* définit le vol simple et *l'article 311-3 du C.P.* en prévoit la répression.",
+  },
+  ...flashcardsF02Extensions,
   {
     id: 'fc-f03-01',
     fascicule: 3,

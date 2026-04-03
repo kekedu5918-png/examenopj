@@ -1,0 +1,110 @@
+'use client';
+
+import { Fragment, useMemo, useState } from 'react';
+
+import { GlassCard } from '@/components/ui/GlassCard';
+import { SectionTitle } from '@/components/ui/SectionTitle';
+import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import {
+  filterRecapSections,
+  type RecapFasciculeFilter,
+  type RecapSection,
+} from '@/data/recapitulatif-data';
+
+function Cell({ text }: { text: string }) {
+  return (
+    <div className='min-w-[200px] max-w-md text-sm text-gray-200'>
+      <FlashcardRichText text={text} />
+    </div>
+  );
+}
+
+export function RecapitulatifPageClient() {
+  const [filter, setFilter] = useState<RecapFasciculeFilter>('all');
+
+  const sections = useMemo(() => filterRecapSections(filter), [filter]);
+
+  return (
+    <div className='container pb-20 pt-10'>
+      <SectionTitle
+        badge='SYNTHÈSE'
+        badgeClassName='bg-emerald-500/20 text-emerald-200'
+        title='Récapitulatif'
+        subtitle="Vue d'ensemble des éléments constitutifs (légal, matériel, moral) — titres condensés"
+        className='mb-8'
+      />
+
+      <GlassCard className='mb-8 space-y-4 p-6' padding=''>
+        <p className='text-sm text-gray-400'>
+          Filtre par fascicule. Le détail complet se trouve dans les flashcards correspondantes.
+        </p>
+        <div className='flex flex-wrap gap-2'>
+          {(
+            [
+              ['all', 'Tout'],
+              ['f01', 'F01 — Personnes'],
+              ['f02', 'F02 — Biens'],
+            ] as const
+          ).map(([v, label]) => (
+            <button
+              key={v}
+              type='button'
+              onClick={() => setFilter(v)}
+              className={`rounded-xl border px-4 py-2 text-sm font-medium transition ${
+                filter === v
+                  ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-100'
+                  : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20'
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      </GlassCard>
+
+      <div className='overflow-x-auto rounded-2xl border border-white/10 bg-navy-950/40 shadow-xl'>
+        <table className='w-full min-w-[720px] border-collapse text-left'>
+          <thead>
+            <tr className='border-b border-white/10 bg-navy-900/90 text-xs uppercase tracking-wide text-gray-400'>
+              <th className='sticky left-0 z-10 bg-navy-900/95 px-4 py-3'>Infraction</th>
+              <th className='px-4 py-3'>Élément légal</th>
+              <th className='px-4 py-3'>Élément matériel</th>
+              <th className='px-4 py-3'>Élément moral</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sections.map((section: RecapSection) => (
+              <Fragment key={section.id}>
+                <tr className={section.headerClass}>
+                  <td colSpan={4} className='px-4 py-2.5 text-sm font-semibold'>
+                    {section.fascicule}
+                    {section.fasciculePart ? ` — ${section.fasciculePart}` : ''} — {section.groupTitle}
+                  </td>
+                </tr>
+                {section.rows.map((row, ri) => (
+                  <tr
+                    key={`${section.id}-r-${ri}`}
+                    className='border-b border-white/[0.06] align-top odd:bg-white/[0.02]'
+                  >
+                    <td className='sticky left-0 z-[1] bg-navy-950/95 px-4 py-3 shadow-[2px_0_8px_rgba(0,0,0,0.2)]'>
+                      <Cell text={row.infraction} />
+                    </td>
+                    <td className='px-4 py-3'>
+                      <Cell text={row.legal} />
+                    </td>
+                    <td className='px-4 py-3'>
+                      <Cell text={row.materiel} />
+                    </td>
+                    <td className='px-4 py-3'>
+                      <Cell text={row.moral} />
+                    </td>
+                  </tr>
+                ))}
+              </Fragment>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}

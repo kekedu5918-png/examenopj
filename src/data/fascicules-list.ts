@@ -11,6 +11,39 @@ export type FasciculeMetadata = {
 
 export const fasciculesList: FasciculeMetadata[] = [
   {
+    numero: 1,
+    titre: 'Les crimes et délits contre la personne',
+    domaine: 'DPS',
+    domaineLabel: 'Droit pénal spécial',
+    pages: 0,
+    nbInfractions: 0,
+    description:
+      'Atteintes à la vie, à l’intégrité, mise en danger, atteintes aux libertés, à la dignité, à la personnalité…',
+    chapitres: [
+      'La mise en danger de la personne',
+      'Les atteintes aux libertés de la personne',
+      'Les atteintes à la dignité de la personne',
+      'Les atteintes à la personnalité',
+    ],
+  },
+  {
+    numero: 2,
+    titre: 'Les crimes et délits contre les biens',
+    domaine: 'DPS',
+    domaineLabel: 'Droit pénal spécial',
+    pages: 0,
+    nbInfractions: 0,
+    description:
+      'Vol, infractions voisines du vol (extorsion, chantage, escroquerie, abus de confiance…), recel, destruction, dégradation, squat…',
+    chapitres: [
+      'Le vol',
+      'Les infractions voisines du vol',
+      'Le recel',
+      'La destruction, la dégradation et les détériorations',
+      'Les infractions relatives au squat',
+    ],
+  },
+  {
     numero: 3,
     titre: 'Les infractions à la circulation routière',
     domaine: 'DPS',

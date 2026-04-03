@@ -25,6 +25,7 @@ export const navigation = {
     { name: 'Infractions', href: '/infractions' },
     { name: 'Quiz', href: '/quiz' },
     { name: 'Flashcards', href: '/flashcards' },
+    { name: 'Récapitulatif', href: '/recapitulatif' },
   ],
 } as const;
 

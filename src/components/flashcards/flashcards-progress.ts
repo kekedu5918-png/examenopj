@@ -26,22 +26,23 @@ function parse(raw: string | null): FlashcardsStoredProgress {
   }
 }
 
-export function progressStorageKey(fascicule: number | 'all'): string {
-  return `flashcards-progress-${fascicule === 'all' ? 'all' : String(fascicule)}`;
+/** Portée de session : `all`, numéro de fascicule (`2`), ou `cat-atteintes-aux-biens`. */
+export function progressStorageKey(scope: string): string {
+  return `flashcards-progress-${scope}`;
 }
 
-export function loadFlashcardsProgress(fascicule: number | 'all'): FlashcardsStoredProgress {
+export function loadFlashcardsProgress(scope: string): FlashcardsStoredProgress {
   if (typeof window === 'undefined') return { ...empty };
-  return parse(localStorage.getItem(progressStorageKey(fascicule)));
+  return parse(localStorage.getItem(progressStorageKey(scope)));
 }
 
 export function recordFlashcardAnswer(
-  fascicule: number | 'all',
+  scope: string,
   cardId: string,
   bucket: FlashcardsProgressBucket
 ): void {
   if (typeof window === 'undefined') return;
-  const key = progressStorageKey(fascicule);
+  const key = progressStorageKey(scope);
   const p = parse(localStorage.getItem(key));
   const remove = (id: string) => {
     p.masteredIds = p.masteredIds.filter((x) => x !== id);

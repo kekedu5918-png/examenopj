@@ -14,7 +14,15 @@ import {
   PanelInterpellations,
   PanelPvTechniques,
 } from './pv-cartouches-panels-extra';
-import { PVCard, PVDivider, PVDroitsGroup, PVLine } from './pv-card';
+import {
+  PVAnnexes,
+  PVCard,
+  PVDivider,
+  PVDroitsGroup,
+  PVItalicBullet,
+  PVLine,
+  PVRecueilDemandes,
+} from './pv-card';
 
 const TAB_OPTIONS = [
   { value: 'saisines', label: 'Saisines' },
@@ -78,7 +86,7 @@ export function PVCartouchesSection() {
             id='pv-1'
             title='Saisine / Plainte de Prénom NOM, contre X ou contre Prénom NOM'
           >
-            <PVCard>
+            <PVCard titre='Saisine / Plainte de Prénom NOM, contre X ou contre Prénom NOM'>
               <div className='space-y-2'>
                 <PVLine m='Identité de la victime :' i='Nom, Prénom' />
                 <PVLine m="Bref exposé des faits, éléments d'enquête permettant de qualifier l'infraction avec les circonstances aggravantes." />
@@ -95,7 +103,7 @@ export function PVCartouchesSection() {
           </AccBlock>
 
           <AccBlock id='pv-2' title='Saisine / Témoignage de Prénom NOM'>
-            <PVCard>
+            <PVCard titre='Saisine / Témoignage de Prénom NOM'>
               <div className='space-y-2'>
                 <PVLine m='Identité du témoin' />
                 <PVLine m="Bref exposé des faits, éléments d'enquête permettant de qualifier l'infraction." />
@@ -112,7 +120,7 @@ export function PVCartouchesSection() {
       <TabsContent value='gav' className='mt-0 focus-visible:outline-none'>
         <Accordion type='single' collapsible className='w-full'>
           <AccBlock id='pv-3' title='Notification de placement en GAV — Majeur'>
-            <PVCard>
+            <PVCard titre='Notification de placement en GAV — Majeur'>
               <div className='space-y-2'>
                 <PVLine
                   m='À compter de JJ/MM/AA à … h'
@@ -142,12 +150,12 @@ export function PVCartouchesSection() {
                 i='Avis à tuteur / curateur / mandataire spécial obligatoire'
               />
               <PVLine m='Remise du formulaire de déclaration des droits.' />
-              <PVLine m='Recueil des demandes.' />
+              <PVRecueilDemandes />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-4' title='Notification de placement en retenue — Mineur 10-13 ans'>
-            <PVCard>
+            <PVCard titre='Notification de placement en retenue — Mineur 10-13 ans'>
               <div className='space-y-2'>
                 <PVLine m="Crime ou délit puni d'au moins 5 ans." />
                 <PVLine m='Accord préalable et sous le contrôle du magistrat.' />
@@ -159,9 +167,9 @@ export function PVCartouchesSection() {
                 bullets={[
                   { m: 'Silence' },
                   { m: 'Interprète' },
-                  { m: 'Avis responsable légal', i: 'obligatoire' },
-                  { m: 'Médecin', i: 'obligatoire' },
-                  { m: 'Avocat', i: 'obligatoire' },
+                  { m: 'Avis responsable légal — Obligatoire' },
+                  { m: 'Médecin — Obligatoire' },
+                  { m: 'Avocat — Obligatoire' },
                   { m: 'Droit au respect de la vie privée' },
                   { m: "Droit d'être détenu séparément des majeurs" },
                   { m: 'Communiquer, consulter pièces, observations au magistrat' },
@@ -169,12 +177,12 @@ export function PVCartouchesSection() {
               />
               <PVDivider />
               <PVLine m='Remise du formulaire de déclaration des droits.' />
-              <PVLine m='Recueil des demandes.' />
+              <PVRecueilDemandes />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-5' title='Notification de placement en GAV — Mineur 13-16 ans'>
-            <PVCard>
+            <PVCard titre='Notification de placement en GAV — Mineur 13-16 ans'>
               <div className='space-y-2'>
                 <PVLine
                   m='Art. 62-2 du C.P.P.'
@@ -192,12 +200,13 @@ export function PVCartouchesSection() {
                   { m: 'Communiquer, pièces, observations au magistrat' },
                 ]}
               />
-              <PVLine m='Remise du formulaire, recueil des demandes.' />
+              <PVLine m='Remise du formulaire de déclaration des droits.' />
+              <PVRecueilDemandes />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-6' title='Notification de placement en GAV — Mineur 16-18 ans'>
-            <PVCard>
+            <PVCard titre='Notification de placement en GAV — Mineur 16-18 ans'>
               <div className='space-y-2'>
                 <PVLine m='Art. 62-2 du C.P.P.' i='motifs — durée 24 h + 24 h selon thème' />
                 <PVLine m='Droits identiques + spécificités 16-18 ans' i='selon thème' />
@@ -211,12 +220,13 @@ export function PVCartouchesSection() {
                   { m: 'Communiquer, consulter pièces, observations' },
                 ]}
               />
-              <PVLine m='Remise du formulaire, recueil des demandes.' />
+              <PVLine m='Remise du formulaire de déclaration des droits.' />
+              <PVRecueilDemandes />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-7' title='Placement en GAV — Alcoolisé / Hospitalisé'>
-            <PVCard>
+            <PVCard titre='Placement en GAV — Alcoolisé / Hospitalisé'>
               <div className='space-y-2'>
                 <PVLine m='Notification des droits différée.' />
                 <PVLine m='Justifier les circonstances insurmontables.' />
@@ -225,7 +235,7 @@ export function PVCartouchesSection() {
           </AccBlock>
 
           <AccBlock id='pv-8' title='Audition sur des faits distincts — Majeur'>
-            <PVCard>
+            <PVCard titre='Audition sur des faits distincts — Majeur'>
               <PVDroitsGroup
                 title='Droits'
                 bullets={[
@@ -239,7 +249,7 @@ export function PVCartouchesSection() {
           </AccBlock>
 
           <AccBlock id='pv-9' title='Audition sur des faits distincts — Mineur'>
-            <PVCard>
+            <PVCard titre='Audition sur des faits distincts — Mineur'>
               <PVDroitsGroup
                 title='Droits (maj.) + spécificités mineurs'
                 bullets={[
@@ -255,72 +265,95 @@ export function PVCartouchesSection() {
 
       <TabsContent value='prolongation' className='mt-0 focus-visible:outline-none'>
         <Accordion type='single' collapsible className='w-full'>
-          <AccBlock id='pv-10' title='Prolongation de GAV — Majeur'>
-            <PVCard>
+          <AccBlock id='pv-10' title='Notification de prolongation de GAV — Majeur'>
+            <PVCard titre='Notification de prolongation de GAV (Majeur)'>
               <div className='space-y-2'>
-                <PVLine m='Présentation préalable au magistrat ou téléconsultation.' />
+                <PVLine m='À compter de' i='JJ/MM/AA à h' />
+                <PVLine m='Motif(s) : art. 62-2 du C.P.P. ou 803-3 C.P.P.' />
+                <PVLine m='Durée' i='ex. 24h' />
+                <PVLine m='Présentation préalable à magistrat' i='selon le thème' />
+                <PVItalicBullet
+                  indent={1}
+                  text='(Téléconsultation possible sur autorisation ou magistrat libéré / géolocalisation)'
+                />
               </div>
               <PVDivider />
               <PVDroitsGroup
                 title='Notification des droits'
                 bullets={[
-                  { m: 'Avocat', i: 'obligatoire' },
-                  { m: 'Médecin', i: 'obligatoire' },
+                  { m: 'Avocat — Obligatoire' },
+                  { m: 'Médecin — Obligatoire' },
+                  { i: '(géolocalisation)', sub: true },
                 ]}
               />
               <PVDivider />
-              <PVLine m='Observations.' />
-              <PVLine m='Annexes.' />
+              <PVLine m='Observations remise au magistrat' i='(le cas échéant)' />
+              <PVRecueilDemandes />
+              <PVAnnexes detail='Demande et autorisation de prolongation' />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-11' title='Prolongation retenue — Mineur 10-13 ans'>
-            <PVCard>
+            <PVCard titre='Prolongation retenue — Mineur 10-13 ans'>
               <PVLine m='Durée :' i='12 h maximum + objectifs de droits (cf. thème)' />
               <PVDivider />
               <PVDroitsGroup
                 title='Droits — prolongation'
                 bullets={[
-                  { m: 'Avocat', i: 'obligatoire' },
-                  { m: 'Médecin', i: 'obligatoire' },
+                  { m: 'Avocat — Obligatoire' },
+                  { m: 'Médecin — Obligatoire' },
                 ]}
               />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-12' title='Prolongation GAV — Mineur 13-16 ans'>
-            <PVCard>
+            <PVCard titre='Prolongation GAV — Mineur 13-16 ans'>
               <PVLine m='Durée :' i='24 h (crime ou délit ≥ 5 ans)' />
               <PVLine m="Présentation magistrat, motivations, droits — adapter au thème." />
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-13' title='Prolongation GAV — Mineur 16-18 ans'>
-            <PVCard>
+            <PVCard titre='Prolongation GAV — Mineur 16-18 ans'>
               <PVLine m='Durée :' i='24 h' />
               <PVLine m='Présentation préalable au magistrat' i='obligatoire' />
             </PVCard>
           </AccBlock>
 
-          <AccBlock id='pv-14' title='Notification déroulement et fin de GAV — Majeur'>
-            <PVCard>
+          <AccBlock
+            id='pv-14'
+            title='Notification déroulement et fin de GAV — Majeur (MAFSA)'
+          >
+            <PVCard titre='Notification déroulement et fin de GAV (Majeur) — MAFSA'>
               <div className='space-y-2'>
-                <PVLine m='Déroulement de la mesure, rappels.' />
+                <PVLine m='Déroulement de la mesure' />
+                <PVLine m='Rappels' />
+                <PVLine m='Diligences visant à la mise en œuvre des droits :' />
+                <PVLine m='Ex' i='(selon le thème)' indent={2} />
                 <PVLine
-                  m='Diligences : avis personne, avocat, médecin'
-                  i='dates et heures'
+                  m='Avis personne de son choix / employeur / autorités consulaires'
+                  i='le (date) à heure'
+                  indent={2}
                 />
-                <PVLine m='Heure de fin.' />
                 <PVLine
-                  m='Destination :'
-                  i='présentation au magistrat ou remise en liberté'
+                  m='Avis avocat'
+                  i='le (date) à heure du barreau de (ville), pour des faits de (qualification)'
+                  indent={2}
+                />
+                <PVLine m='Commis' i='(date)' indent={2} />
+                <PVLine m='Avis médecin' i='le (date) à heure' indent={2} />
+                <PVLine m='Heure de fin de la mesure' i='h' />
+                <PVLine
+                  m='Destination de l’intéressé'
+                  i='Présentation magistrat ou remise en liberté (selon le thème)'
                 />
               </div>
             </PVCard>
           </AccBlock>
 
           <AccBlock id='pv-15' title='Notification déroulement et fin — Mineur'>
-            <PVCard>
+            <PVCard titre='Notification déroulement et fin — Mineur'>
               <div className='space-y-2'>
                 <PVLine m='Déroulement de la mesure adapté au mineur, rappels.' />
                 <PVLine m='Diligences : avis responsable légal, avocat, médecin' i='dates et heures' />
