@@ -1,0 +1,2017 @@
+Fascicule n°7
+
+EXAMEN JUIN 2026
+
+TABLE DES MATIÈRES
+INTRODUCTION.....................................................................................................P.1
+DÉFINITIONS.........................................................................................................P.2
+CLASSIFICATION DES ARMES ET DES MUNITIONS.................................................P.7
+LES RÈGLES D’ACQUISITION ET DE DÉTENTION..................................................P.15
+LES RÈGLES DE PORT ET DE TRANSPORT.............................................................P.24
+L’ACQUISITION, LA DÉTENTION OU LA CESSION D’UNE OU DE PLUSIEURS ARMES
+DE CATÉGORIE A OU B OU DES MUNITIONS CORRESPONDANTES SANS
+AUTORISATION....................................................................................................P.27
+LE PORT SANS AUTORISATION OU LE TRANSPORT SANS MOTIF LÉGITIME DE
+MATÉRIELS DE GUERRE, D’ARMES, D’ÉLÉMENTS D’ARME OU DE MUNITIONS DE LA
+CATÉGORIE A OU B...............................................................................................P.30
+LE PORT SANS AUTORISATION OU LE TRANSPORT SANS MOTIF LÉGITIME D'ARMES,
+DE MUNITIONS OU DE LEURS ÉLÉMENTS DE LA CATÉGORIE C OU D....................P.33
+
+INTRODUCTION
+La loi n°2012-304 du 06 mars 2012, relative à l’établissement d’un contrôle des armes
+moderne, simplifié et préventif, a prévu une nomenclature répartissant les armes dans
+quatre catégories en fonction de leur régime juridique d’acquisition et de détention :
+ Catégorie A – pour les matériels de guerre et les armes interdits ;
+ Catégorie B – pour les armes soumises à autorisation ;
+ Catégorie C – pour les armes soumises à déclaration ;
+ Catégorie D – pour les armes et matériels de guerre dont l’acquisition et la détention
+sont libres.
+La première finalité de cette réglementation consiste à moderniser les procédures
+administratives. Ainsi des allègements de formalités concernant les détenteurs légaux
+d’armes à feu ont été mis en place.
+La seconde finalité de cette loi est de contribuer à renforcer la sécurité avec le souci de
+préserver une diffusion maîtrisée des armes et, de ce fait, de garantir l’ordre public. Pour
+ce faire, le législateur a prévu de :
+ Rendre obligatoire des peines complémentaires
+Ainsi, dans le cadre de certaines infractions (atteinte à la vie, atteinte à l’intégrité
+physique ou psychique de la personne...), les peines complémentaires (interdiction de
+détenir et de porter une arme, retrait du permis de chasser, confiscation des armes...),
+jusqu’alors laissées à l’appréciation du juge, sont rendues obligatoires.
+ Renforcer le volet pénal afin de mieux réprimer le trafic illégal d’armes
+ Créer de nouvelles mesures permettant d’interdire l’accès aux armes
+Il s’agit d’interdire l’accès aux armes aux personnes qui ont été condamnées pour
+une infraction en raison d’un comportement violent.
+ Renforcer les saisies administratives
+Désormais toutes les catégories d’armes peuvent faire l’objet d’une saisie
+administrative.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 1
+
+DÉFINITIONS
+
+I - DÉFINITIONS DES ARMES PAR LE CODE PÉNAL
+
+
+ARME PAR NATURE
+« Est une arme tout objet conçu pour tuer ou blesser. » (art. 132-75 al.1 C.P.)
+
+
+
+ARME PAR USAGE OU PAR DESTINATION
+ Art. 132-75 al.2 C.P.
+« Tout autre objet susceptible de présenter un danger pour les personnes est
+assimilé à une arme dès lors qu'il est utilisé pour tuer, blesser ou menacer ou qu'il
+est destiné, par celui qui en est porteur, à tuer, blesser ou menacer. »
+ Art. 132-75 al.3 C.P.
+« Est assimilé à une arme tout objet qui, présentant avec l'arme définie au
+premier alinéa une ressemblance de nature à créer une confusion, est utilisé pour
+menacer de tuer ou de blesser ou est destiné, par celui qui en est porteur, à
+menacer de tuer ou de blesser. »
+ Art. 132-75 al.4 C.P.
+« L’utilisation d’un animal pour tuer, blesser ou menacer est assimilée à l’usage
+d’une arme. En cas de condamnation du propriétaire de l’animal ou si le propriétaire
+est inconnu, le tribunal peut décider de remettre l’animal à une œuvre de protection
+animale reconnue d’utilité publique ou déclarée, laquelle pourra librement en
+disposer. »
+
+II - DÉFINITIONS
+INTÉRIEURE
+
+PAR
+
+LE
+
+CODE
+
+DE
+
+LA
+
+SÉCURITÉ
+
+Au sens de l'article R. 311-1 du C.S.I., on entend par :
+
+
+
+ARMES PAR NATURE ET MUNITIONS
+ 1° Accessoires
+(Abrogé)
+ 2° Arme
+Tout objet ou dispositif conçu ou destiné par nature à tuer, blesser, frapper,
+neutraliser ou à provoquer une incapacité.
+ 3° Arme à canon lisse
+Arme dont l'âme du canon est de section circulaire et ne peut donner aucun
+mouvement de rotation à un projectile unique ou multiple.
+ 4° Arme à canon rayé
+Arme dont l'âme du canon n'est pas de section circulaire et présente une ou
+plusieurs rayures conventionnelles ou polygonales destinées à donner un
+mouvement de rotation à un projectile unique ou multiple.
+ 5° Arme à feu
+Arme qui tire un projectile par l'action de la combustion d'une charge propulsive
+ou qui peut être aisément transformée à cette fin.
+ 6° Arme à répétition automatique
+Toute arme qui, après chaque coup tiré, se recharge automatiquement et qui
+peut, par une seule pression sur la détente, lâcher une rafale de plusieurs coups.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 2
+
+ 7° Arme à répétition manuelle
+Arme qui, après chaque coup tiré, est rechargée manuellement par introduction
+dans le canon d'une munition prélevée dans un système d'alimentation et
+transportée à l'aide d'un mécanisme.
+ 8° Arme à répétition semi-automatique
+Arme qui, après chaque coup tiré, se recharge automatiquement et qui ne peut,
+par une seule pression sur la détente, lâcher plus d'un seul coup.
+ 9° Arme à un coup
+Arme sans système d'alimentation, qui est chargée avant chaque coup par
+introduction manuelle de la munition dans la chambre ou dans un logement prévu à
+cet effet à l'entrée du canon.
+ 10° Arme blanche
+Toute arme dont l'action perforante, tranchante ou contondante n'est due qu'à la
+force humaine ou à un mécanisme auquel elle a été transmise, à l'exclusion d'une
+explosion.
+ 11° Arme camouflée
+Toute arme dissimulée sous la forme d'un autre objet, y compris d'un autre type
+d'arme.
+ 12° Arme d'épaule
+Arme que l'on épaule pour tirer.
+La longueur hors-tout d'une arme d'épaule à crosse amovible ou repliable se
+mesure sans la crosse ou la crosse repliée. La longueur de référence du canon d'une
+arme d'épaule se mesure de l'extrémité arrière de la chambre jusqu'à l'autre
+extrémité du canon, les parties démontables non comprises.
+ 13° Arme de poing
+Arme qui se tient par une poignée à l'aide d'une seule main et qui n'est pas
+destinée à être épaulée. La longueur de référence d'une arme de poing se mesure
+hors tout.
+ 14° Arme incapacitante agissant par projection ou émission
+Arme ayant pour effet de provoquer une incapacité et agissant par projection à
+distance ou émission du procédé ou moyen incapacitant.
+ 15° Arme incapacitante de contact
+Arme de défense ayant pour effet de provoquer une incapacité et agissant à bout
+touchant.
+ 16° Arme neutralisée
+Arme qui a été rendue définitivement impropre au tir de toute munition par
+l'application de procédés techniques assurant que tous les éléments de l'arme à feu
+à neutraliser ont été rendus définitivement inutilisables et impossibles à modifier.
+ 17° Douille amorcée
+Douille qui comporte une amorce sans autre charge de poudre.
+ 18° Douille chargée
+Douille qui comporte une charge de poudre.
+ 19° Élément d'arme
+Partie d'une arme essentielle à son fonctionnement : le canon, la carcasse, la
+boîte de culasse, y compris le cas échéant ses parties supérieures et inférieures, la
+culasse, y compris le cas échéant son ensemble mobile additionnel, le barillet, les
+systèmes de fermetures et la conversion.
+ 20° Élément d'arme neutralisé
+Partie d'une arme essentielle à son fonctionnement rendue définitivement
+impropre à son usage par l'application de procédés techniques définis.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 3
+
+ 21° Élément de munition
+Partie essentielle d'une munition telle que projectile, amorce, douille, douille
+amorcée, douille chargée, douille amorcée et chargée.
+ 22° Munition à projectile expansif
+Munition dont le projectile est spécialement façonné, de quelque façon que ce
+soit, pour foisonner, s'épandre ou champignonner à l'impact.
+Entrent notamment dans cette catégorie les projectiles à pointe creuse.
+ 23° Munition à projectile explosif
+Munition avec projectile contenant une charge explosant lors de l'impact.
+ 24° Munition à projectile incendiaire
+Munition avec projectile contenant un mélange chimique s'enflammant au contact
+de l'air ou lors de l'impact.
+ 25° Munition à projectile perforant
+ a) Munition pour arme d'épaule, avec projectile identifié visuellement le cas
+échéant par un code couleur, contenant un noyau dur en acier trempé ou en
+carbure de tungstène;
+ b) Munition pour arme de poing, contenant un noyau dur en acier trempé ou
+en carbure de tungstène;
+ c) Munition pour arme de poing, avec projectile métallique monolithique ou
+monobloc conçu pour perforer un gilet pare-balle souple (aramide ou équivalent)
+en dotation réglementaire au sein des forces de sécurité intérieure;
+ 26° Munition neutralisée
+Munition dont le projectile a un diamètre inférieur à 20 mm et dont la chambre à
+poudre présente un orifice latéral d'un diamètre au moins égal à 2 mm ne contenant
+plus de poudre et dont l'amorce a été percutée.
+Les munitions à chargement d'emploi particulier, explosives ou incendiaires,
+restent dans tous les cas réputées fonctionnelles.
+ 27° Systèmes d'alimentation des armes
+Constitués par les magasins faisant partie intégrante de l'arme, tubulaires ou
+intégrés dans la boîte de culasse, et les magasins indépendants de l'arme,
+réservoirs, chargeurs et bandes, fixes ou mobiles pendant le tir.
+
+
+
+AUTRES ARMES
+ 1° (Abrogé)
+ 1° bis Arme d'alarme et de signalisation :
+dispositif équipé d'un système d'alimentation conçu uniquement pour le tir de
+munitions à blanc, de produits irritants, d'autres substances actives ou de
+cartouches de signalisation pyrotechnique, qui ne peut être aisément transformé
+pour propulser un projectile par l'action d'une charge propulsive et répond aux
+caractéristiques définies par arrêté conjoint du ministre de l'intérieur et du ministre
+chargé des douanes ;
+ 2° (Abrogé)
+ 3° Arme de spectacle
+Toute arme à feu transformée spécifiquement pour le tir de munitions à blanc,
+notamment lors de représentations théâtrales, de séances de photographies, de
+tournages de films, d'enregistrements télévisuels, de reconstitutions historiques, de
+parades, d'évènements sportifs ou de séances d'entraînement, dont les
+caractéristiques excluent le tir ou la conversion pour le tir de tout projectile. L'arme
+de spectacle reste classée dans sa catégorie originelle, avant sa transformation.
+ 4° Arme didactique
+Arme authentique laissant apparaître ses mécanismes internes sans que son
+fonctionnement n'ait été modifié, ni qu'elle ait subi le procédé de neutralisation.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 4
+
+ 5° Arme factice
+Objet ayant l'apparence d'une arme à feu susceptible d'expulser un projectile non
+métallique avec une énergie à la bouche inférieure à 2 joules.
+ 6° Maquette
+Reproduction d'arme à feu à une échelle autre que 1 : 1 et garantissant la noninterchangeabilité des pièces.
+ 7° Munition inerte
+Munition factice qui ne peut être transformée en une munition active.
+ 8° Lanceur de paintball
+Système permettant de propulser de façon non pyrotechnique un projectile
+destiné à ne laisser sur la cible qu'une trace visualisant l'emplacement de l'impact.
+ 9° Reproduction d'arme
+Arme à feu reproduisant à l'identique une arme ayant existé dans sa forme et
+dans son fonctionnement.
+ 10° Armes qui revêtent une importance historique particulière
+Armes dont la fabrication est antérieure au 1er janvier 1946 qui ne sont pas des
+armes historiques au sens des dispositions des e ou g du IV de l'article R. 311-2.
+
+
+
+ACTIVITÉS EN RELATION AVEC LES ARMES
+ 1° Activité d'intermédiation
+Toute opération à caractère commercial ou à but lucratif dont l'objet consiste, en
+tout ou partie :
+ a) À rapprocher des personnes souhaitant conclure un contrat d'achat ou de
+vente, de prêt ou de location-vente de matériels de guerre, d'armes et de
+munitions, ou à conclure un tel contrat pour le compte d'une des parties ;
+ b) Ou à organiser des transferts d'armes à feu, d'éléments d'arme ou de
+munitions à l'intérieur d'un État membre, depuis un État membre vers un autre
+État membre, depuis un État membre vers un pays tiers ou depuis un pays tiers
+vers un État membre.
+Cette opération d'intermédiation faite au profit de toute personne quel que soit le
+lieu de son établissement prend la forme d'une opération de courtage ou celle d'une
+opération faisant l'objet d'un mandat particulier ou d'un contrat de commission.
+ 2° Activité de fabrication
+Conception, réparation, fabrication, transformation, modification ou assemblage
+d’une arme, de ses éléments essentiels finis ou non finis, ou de munitions.
+ 3° Armurier
+Toute personne physique ou morale dont l'activité professionnelle consiste en
+tout ou en partie dans la fabrication, le commerce, l'échange, la location, le prêt, la
+réparation ou la transformation d'armes, d'éléments d'arme, de munitions et de
+leurs éléments.
+ 4° Commerce de détail
+Activité d'armurier au sens de l'article L. 313-2 du code de la sécurité intérieure,
+effectuée à destination d'un consommateur final.
+ 5° Courtier
+Toute personne physique ou morale qui se livre à une activité d'intermédiation.
+ 6° Dépôt d'armes
+Détention illicite, par une personne ou en bande organisée, dans un ou plusieurs
+lieux, d'armes ou munitions au-delà du nombre maximum légalement autorisé.
+ 7° Fabrication illicite
+ a) Fabrication, transformation, modification ou assemblage d'une arme, de
+ses éléments essentiels finis ou non finis, ou de munitions sans autorisation ou
+sans avoir appliqué les marquages d'identification, à l'exclusion des opérations de
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 5
+
+rechargement effectuées dans un cadre privé à partir d'éléments obtenus de
+manière licite.
+ b) Détention de tout outillage ou matériel spécifique à la fabrication d'une
+arme sans disposer des autorisations de fabrication et de commerce
+correspondantes.
+ 8° Marquage
+Apposition sur l'un ou plusieurs éléments essentiels de toute arme à feu, de
+façon définitive et visible sans démontage, des éléments d'identification constitués
+par :
+ a) L'indication du fabricant, du pays ou lieu de fabrication, de l'année de
+fabrication, du modèle, du calibre et du numéro de série ;
+ b) Les poinçons d'épreuve selon les modalités prévues par les stipulations de
+la convention du 1er juillet 1969 pour la reconnaissance réciproque des poinçons
+d'épreuves des armes à feu portatives ;
+ c) L'éventuelle indication d'une cession opérée par l’État ;
+ d) L'éventuelle indication d'une neutralisation de l'arme, dont le poinçon,
+apposé par l'autorité qui constate la neutralisation, atteste du caractère
+inutilisable de l'arme.
+Ce marquage appliqué aux munitions comporte les mentions du nom du
+fabricant, du numéro d'identification du lot, du calibre, du type de munition et du
+signe de contrôle d'épreuve sur les conditionnements élémentaires.
+ 9° Opérations industrielles
+Opérations industrielles entrant dans le champ d'application de l'article L. 2331-1
+du code de la défense constituées par les opérations de montage, assemblage des
+matériels des catégories A, B et C, de chargement industriel des munitions ainsi que
+par les opérations d'usinage, de moulage ou d'emboutissage les amenant à leur
+forme définitive ou très approchée.
+ 10° Port d'arme
+Fait d'avoir une arme sur soi utilisable immédiatement.
+ 11° Traçabilité
+Obligation d'enregistrement des différents détenteurs successifs d'une arme et
+de ses éléments numérotés, de leur fabrication à la possession finale par le dernier
+acquéreur.
+ 12° Trafic illicite
+importation, exportation, transfert, acquisition, vente, livraison ou transport,
+sans les autorisations nécessaires, d'armes à feu, munitions ou leurs éléments à
+partir, à destination ou au travers du territoire national ou de celui d'un autre État ou
+d'armes à feu, d'éléments d'armes ou de munitions n'ayant pas fait l'objet d'un
+marquage en conformité avec les dispositions de l'article R. 311-5.
+ 13° Transport d'arme
+Fait de déplacer une arme en l'ayant auprès de soi et inutilisable immédiatement.
+
+
+
+NE SONT PAS DES ARMES
+Au sens de l'article R. 311-1 IV du C.S.I. :
+ 1° Les objets tirant un projectile ou projetant des gaz lorsqu'ils développent à la
+bouche une énergie inférieure à 2 joules;
+ 2° Les réducteurs de son constituant des pièces additionnelles ne modifiant pas
+le fonctionnement de l'arme.
+ 3° Les objets conçus aux fins de sauvetage, d'abattage, de pêche au harpon ou
+destinés à des fins industrielles ou techniques, à condition qu'ils ne puissent être
+utilisés que pour ces usages précis.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 6
+
+CLASSIFICATION DES ARMES ET DES
+MUNITIONS
+Cette classification est codifiée par l'article R. 311-2 du C.S.I.
+I - CATÉGORIE A
+Les matériels de guerre et armes interdits à l’acquisition et à la détention relevant de la
+catégorie A sont les suivantes :
+
+
+
+CATÉGORIE A1
+
+Les armes et éléments d’arme interdits à l’acquisition et à la détention qui relèvent
+de la catégorie A1 sont les suivants :
+ Catégorie A1 1°
+Armes à feu camouflées sous la forme d’un autre objet.
+ Catégorie A1 2°
+Armes à feu de poing, quel que soit le type ou le système de fonctionnement,
+permettant le tir de plus de vingt et une munitions sans qu'intervienne un
+réapprovisionnement, dès lors qu'un système d'alimentation d'une capacité
+supérieure à vingt cartouches fait partie intégrante de l'arme à feu ou, s'il est
+amovible, y a été inséré.
+ Catégorie A1 3°
+Armes à feu d'épaule à répétition semi-automatique à percussion annulaire
+permettant le tir de plus de trente et une munitions sans qu'intervienne un
+réapprovisionnement, dès lors qu'un chargeur d'une capacité supérieure à trente
+cartouches fait partie intégrante de l'arme à feu ou, s'il est amovible, y a été inséré.
+ Catégorie A1 3° bis
+Armes à feu d'épaule à répétition semi-automatique à percussion centrale
+permettant de tirer plus de onze coups sans recharger, dès lors :
+ a) Qu'un chargeur d'une capacité supérieure à dix cartouches fait partie
+intégrante de l'arme à feu;
+ b) ou qu'un chargeur amovible d'une capacité supérieure à dix cartouches y a
+été inséré.
+ Catégorie A1 3° ter
+Armes à feu d'épaule à répétition semi-automatique alimentées par bande quelle
+qu'en soit la capacité.
+ Catégorie A1 3° quater
+Armes à feu d'épaule à répétition manuelle permettant le tir de plus de trente et
+une munitions sans qu'intervienne un réapprovisionnement, dès lors qu'un chargeur
+d'une capacité supérieure à trente cartouches fait partie intégrante de l'arme à feu
+ou, s'il est amovible, y a été inséré.
+ Catégorie A1 4°
+Armes à feu à canons rayés et leurs munitions dont le projectile a un diamètre
+maximum supérieur ou égal à 20 mm à l’exception des armes conçues pour tirer
+exclusivement des projectiles non métalliques.
+ Catégorie A1 5°
+Armes à feu à canon lisse et leurs munitions d’un calibre supérieur au calibre 8, à
+l’exclusion des armes de catégorie C ou D classées par arrêté conjoint des ministres
+de la défense, de l’intérieur, et du ministre chargé des douanes .
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 7
+
+ Catégorie A1 6°
+Munitions dont le projectile est supérieur ou égal à 20 mm à l’exception de celles
+utilisées par les armes classées en catégorie C.
+ Catégorie A1 7°
+Éléments de ces armes et éléments de ces munitions.
+ Catégorie A1 8°
+Système d’alimentation d’arme de poing contenant plus de 20 munitions.
+ Catégorie A1 9°
+Système d'alimentation d'arme d'épaule à percussion annulaire contenant plus
+de 30 munitions.
+ Catégorie A1 9° bis
+Système d'alimentation d'arme d'épaule à répétition semi-automatique à
+percussion centrale contenant plus de 10 munitions.
+ Catégorie A1 9° ter
+Système d'alimentation d'arme d'épaule à répétition manuelle et à percussion
+centrale contenant plus de trente munitions.
+ Catégorie A1 10°
+Armes ou type d’armes présentant des caractéristiques techniques équivalentes
+et qui, pour des raisons tenant à leur dangerosité, d’ordre ou de sécurité publics ou
+de défense nationale sont classées dans cette catégorie par arrêté conjoint des
+ministres de la défense, de l’intérieur et du ministre chargé des douanes.
+ Catégorie A1 11°
+Armes à feu à répétition automatique transformées en armes à feu à répétition
+semi-automatique, en armes à feu à répétition manuelle ou en armes à feu à un
+coup.
+ Catégorie A1 12°
+Armes à feu d'épaule à répétition semi-automatique dont la longueur peut être
+réduite à moins de 60 cm à l'aide d'une crosse repliable ou télescopique, ou d'une
+crosse démontable sans outils, sans qu'elles perdent leur fonctionnalité.
+ Catégorie A1 13°
+Couteaux, coutelas et machettes, à lame fixe disposant d'un côté tranchant,
+d'une extrémité pointue, d'un côté dentelé et présentant en complément soit plus
+d'un trou dans la lame, soit plusieurs pointes acérées.
+ Catégorie A1 14°
+Armes contondantes dites " coups de poing américains " d'un modèle postérieur
+au 1er janvier 1900 qui par leur conception permettent à quatre doigts d'être
+protégés et de maintenir l'arme tout en accentuant l'efficacité vulnérante de la
+frappe.
+Sont comprises dans cette catégorie les armes mixtes combinant une arme telle
+que décrite au précédent alinéa avec toute autre arme définie au R. 311-1, à
+l'exception de celles classées dans les autres catégories.
+
+
+
+CATÉGORIE A2
+
+Les armes relevant des matériels de guerre, les matériels destinés à porter ou à
+utiliser au combat les armes à feu, les matériels de protection contre les gaz de combat
+relevant de la catégorie A2 sont les suivants :
+ Catégorie A2 1°
+Armes à feu automatique, leurs éléments spécifiquement conçus pour elles et
+tout dispositif additionnel pouvant se monter sur une arme à feu à répétition semiautomatique permettant le tir en rafale de projectiles ou s'assimilant au tir en rafale
+par l'augmentation de sa vitesse de tir.
+ Catégorie A2 2°
+Munitions à projectiles perforants, explosifs ou incendiaires et leurs éléments.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 8
+
+ Catégorie A2 3°
+Armes auxquelles un rayon laser ou des ondes électromagnétiques de grande
+puissance confèrent des capacités de mise hors de combat ou de destruction.
+ Catégorie A2 4°
+Canons, obusiers, mortiers, lance-roquettes et lance-grenades, de tous calibres,
+lance-projectiles et systèmes de projection spécifiquement destinés à l’usage
+militaire ou au maintien de l’ordre, ainsi que leurs tourelles, affûts, bouches à feu,
+tubes de lancement, lanceurs à munition intégrée, culasses, traîneaux, freins et
+récupérateurs.
+ Catégorie A2 5°
+Munitions et éléments de munitions pour les armes énumérées au 4° ci-dessus.
+ Catégorie A2 6°
+Bombes, torpilles, mines, missiles, grenades, engins incendiaires, chargés ou non
+chargés, leurres. Équipements de lancement ou de largage pour les matériels visés
+au présent alinéa. Artifices et appareils chargés ou non chargés, destinés à faire
+éclater les engins ou munitions visés au 5° et au 6°.
+ Catégorie A2 7°
+Engins nucléaires explosifs, leurs composants spécifiques et les matériels ou
+logiciels spécialisés de développement, de fabrication et d'essai.
+ Catégorie A2 8°
+Véhicules de combat blindés ou non blindés, équipés à poste fixe ou muni d’un
+dispositif spécial permettant le montage ou le transport d’armes, ainsi que leurs
+blindages et leurs tourelles.
+ Catégorie A2 9°
+Aéronefs plus lourds ou plus légers que l’air, montés ou non, à voilure fixe ou
+tournante, pilotés ou non pilotés, conçus pour les besoins militaires, ainsi que leurs
+éléments suivants : moteurs, fuselages, cellules, ailes, empennages.
+ Catégorie A2 10°
+Navires de guerre de toutes espèces ainsi que leurs blindages, tourelles, affûts,
+rampes et tubes de lancement, et les éléments suivants de ces navires : systèmes
+de combat, chaufferies nucléaires, accumulateurs d’électricité pour sous-marins,
+systèmes de propulsion anaérobies.
+ Catégorie A2 11°
+Moteurs aéronautiques spécialement conçus ou modifiés pour les missiles.
+ Catégorie A2 12°
+Matériels de transmission et de télécommunication conçus pour les besoins
+militaires ou à pour la mise en œuvre des forces et leurs logiciels spécialement
+conçus ; matériels de contre mesures électroniques et leurs logiciels spécialement
+conçus.
+ Catégorie A2 13°
+Moyens de cryptologie spécialement conçus ou modifiés pour porter, utiliser ou
+mettre en œuvre les armes, soutenir ou mettre en œuvre les forces armées.
+ Catégorie A2 14°
+Matériels d’observation ou de prise de vues conçus pour l’usage militaire ;
+matériels de visée ou de vision nocturne ou par conditions de visibilité réduite
+utilisant l’intensification de lumière ou l’infrarouge passif destinés exclusivement à
+l’usage militaire et matériels utilisant les mêmes technologies qui peuvent être mis
+en œuvre sans l’aide des mains.
+ Catégorie A2 15°
+Matériels, y compris les calculateurs, de navigation, de détection, d’identification,
+de pointage, de visée ou de désignation d’objectif, de conduite de tir, pour
+l’utilisation des armes et matériels de la présente catégorie.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 9
+
+ Catégorie A2 16°
+Matériels de détection ou de brouillage des communications conçus pour l’usage
+militaire ou la sécurité nationale.
+ Catégorie A2 17°
+Matériels, spécialement conçus pour l’usage militaire, de détection et de
+protection contre les agents biologiques ou chimiques et contre les risques
+radiologiques.
+ Catégorie A2 18°
+Armes ou type d’armes, matériels ou type de matériels présentant des
+caractéristiques techniques équivalentes classés dans cette catégorie pour des
+raisons d’ordre public ou de sécurité nationale définies par arrêté conjoint des
+ministres de la défense, de l’intérieur et des ministres chargés des douanes et de
+l’industrie.
+ Catégorie A2 19°
+Armes spécifiquement destinées à détruire ou à rendre inopérants des aéronefs
+circulant sans personne à bord conçues pour l'usage militaire ou la sécurité
+nationale.
+
+II - CATÉGORIE B
+Les armes soumises à autorisation pour l'acquisition et la détention relevant de la
+catégorie B sont les suivantes :
+ Catégorie B 1°
+Il s’agit des armes à feu de poing et les armes converties en armes de poing non
+comprises dans les autres catégories.
+ Catégorie B 2°
+Il s’agit des armes à feu d’épaule :
+ a) : À répétition semi-automatique à percussion centrale, dont le projectile a
+un diamètre inférieur à 20 mm, d’une capacité supérieure à 3 coups ou équipées
+d’un système d’alimentation amovible et n’excédant pas 11 coups sans
+qu’intervienne un réapprovisionnement ;
+ a bis) : À répétition semi-automatique à percussion annulaire, dont le
+projectile a un diamètre inférieur à 20 mm, d'une capacité supérieure à 3 coups
+ou équipées d'un système d'alimentation amovible et n'excédant pas 31 coups
+sans qu'intervienne un réapprovisionnement.
+ b) : À répétition manuelle, dont le projectile a un diamètre inférieur à 20 mm,
+d’une capacité supérieure à 11 coups et n’excédant pas 31 coups sans
+qu'intervienne un réapprovisionnement ;
+ c) : Dont la longueur totale minimale est inférieure ou égale à 80 centimètres
+ou dont la longueur du canon est inférieure ou égale à 45 centimètres ;
+ d) : À canon lisse à répétition ou semi-automatiques dont la longueur totale
+minimale est inférieure ou égale à 80 centimètres ou dont la longueur du canon
+est inférieure ou égale à 60 cm ;
+ e) : À répétition semi-automatique ayant l'apparence d'une arme
+automatique ;
+ f) : À répétition manuelle munies d'un dispositif de rechargement à pompe
+suivantes :
+-armes à canon lisse ;
+-armes à canon rayé autres que celles répondant aux caractéristiques
+énoncées au b du 1° de la catégorie C ou celles mentionnées au d du même 1°.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 10
+
+ Catégorie B 3°
+Armes à feu fabriquées pour tirer une balle ou plusieurs projectiles non
+métalliques et munitions classées dans cette catégorie par arrêté conjoint du
+ministre de l’intérieur et du ministre chargé des douanes.
+ Catégorie B 4°
+Armes chambrant les calibres suivants, quel que soit leur type ou le système de
+fonctionnement ainsi que leurs munitions, douilles et douilles amorcées, à l’exception
+de celles classées dans la catégorie A :
+ Catégorie B 4°a) calibre 7,62x39
+ Catégorie B 4°b) calibre 5,56x45
+ Catégorie B 4°c) calibre 5,45x39
+ Catégorie B 4°d) calibre 12,7x99
+ Catégorie B 4°e) calibre 14,5 x 114
+ Catégorie B 5°
+Éléments des armes classées aux 1°, 2°,3° et 4° de la présente catégorie.
+ Catégorie B 6°
+Armes à impulsion électrique permettant de provoquer un choc électrique à
+distance et leurs munitions.
+ Catégorie B 7°
+Armes à impulsion électrique de contact permettant de provoquer un choc
+électrique à bout touchant, classées dans cette catégorie par arrêté conjoint du
+ministre de l’intérieur et du ministre chargé des douanes.
+ Catégorie B 8°
+Générateurs d'aérosols incapacitants ou lacrymogènes d'une capacité supérieure
+à 100 ml ou classés dans cette catégorie par arrêté conjoint du ministre de
+l'intérieur et du ministre chargé des douanes.
+ Catégorie B 9°
+Armes ou type d’armes présentant des caractéristiques techniques équivalentes
+qui, pour des raisons tenant à leur dangerosité, à l’ordre public ou de la sécurité
+nationale sont classées dans cette catégorie par arrêté conjoint du ministre de
+l’intérieur et du ministre chargé des douanes.
+ Catégorie B 10°
+Munitions à percussion centrale et leurs éléments conçus pour les armes de
+poing mentionnées au 1° à l’exception de celles classées en catégorie C par arrêté
+conjoint du ministre de l’intérieur et du ministre chargé des douanes.
+ Catégorie B 11°
+Système d'alimentation des armes de catégorie B.
+ Catégorie B 12°
+Armes à répétition manuelle, qui, après chaque coup tiré, sont rechargées par
+introduction dans le canon d’une munition prélevée dans un système d’alimentation
+et transportée à l’aide d’un mécanisme par la seule action du tireur sur la détente.
+ Catégorie B 13°
+Munitions à étui métallique à poudre noire et à percussion centrale, ainsi que
+leurs éléments, conçus pour les armes de poing classées au « e » de la catégorie D,
+à l'exception :
+- des munitions et éléments classés au 6° de la catégorie C;
+- des munitions et éléments de munitions classés aux j et j bis de la catégorie D;
+ Catégorie B 14°
+Armes incapacitantes, au sens du 14° de l'article R. 311-1, qui projettent un
+dispositif d'immobilisation mécanique.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 11
+
+III - CATÉGORIE C
+Les armes soumises à déclaration pour l’acquisition et la détention relevant de la
+catégorie C sont les suivantes :
+ Catégorie C 1°
+Il s’agit des armes à feu d’épaule :
+ a) À répétition semi-automatique dont le projectile a un diamètre inférieur à
+20 mm équipées de systèmes d’alimentation inamovibles permettant le tir de 3
+munitions au plus sans qu'intervienne le réapprovisionnement ;
+ b) À répétition manuelle dont le projectile a un diamètre inférieur à 20 mm
+équipées de systèmes d’alimentation permettant le tir de 11 munitions au plus,
+sans qu'intervienne le réapprovisionnement ;
+ c) À un coup par canon ;
+ d) À répétition manuelle à canon rayé munies d'un dispositif de rechargement
+à pompe chambré pour les calibres 8, 10, 12, 14, 16, 20, 24, 28, 32, 36 et 410,
+d'une capacité inférieure ou égale à 5 coups, dont la longueur totale est
+supérieure à 80 cm, dont la longueur du canon est supérieure à 60 cm et dont la
+crosse est fixe.
+ Catégorie C 2°
+Éléments de ces armes.
+ Catégorie C 3°
+Armes à feu fabriquées pour tirer une balle ou plusieurs projectiles non
+métalliques classées par arrêté conjoint du ministre de l’intérieur et du ministre
+chargé des douanes.
+ Catégorie C 4°
+Armes et lanceurs dont le projectile est propulsé de manière non pyrotechnique
+avec une énergie à la bouche supérieure ou égale à 20 joules.
+ Catégorie C 5°
+Armes ou type d’armes présentant des caractéristiques équivalentes qui, pour
+des raisons tenant à leur dangerosité, à l’ordre public ou à la sécurité nationale sont
+classées dans cette catégorie par arrêté conjoint du ministre de l’intérieur et du
+ministre chargé des douanes.
+ Catégorie C 6°
+Munitions et éléments de munitions classés dans cette catégorie selon les
+modalités prévues au 10° de la catégorie B.
+ Catégorie C 7°
+Munitions et éléments de munitions classés dans ce paragraphe par arrêté
+conjoint du ministre de l’intérieur et du ministre chargé des douanes.
+ Catégorie C 8°
+Autres munitions et éléments de munitions des armes de catégorie C.
+ Catégorie C 9°
+Armes à feu des catégories A, B ou C neutralisées selon les modalités définies
+par arrêté conjoint du ministre de l'intérieur et du ministre chargé des douanes .
+ Catégorie C 10°
+Système d'alimentation des armes de catégorie C.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 12
+
+ Catégorie C 11°
+Munitions à étui ou culot métallique à poudre noire et à percussion centrale, ainsi
+que leurs éléments, conçus pour les armes d'épaule classées au « e » de la catégorie
+D, à l'exception :
+- des munitions et éléments classés au 6° de la catégorie C.
+- des munitions et éléments de munitions classés aux j et j bis de la catégorie D;
+ Catégorie C 12°
+Armes d'alarme et de signalisation.
+
+IV - CATÉGORIE D
+Les armes et matériels dont l’acquisition et la détention sont libres relevant de la
+catégorie D sont les suivants :
+ a) Tous objets susceptibles de constituer une arme dangereuse pour la sécurité
+publique dont :
+ les armes non à feu camouflées ;
+ les poignards, les couteaux-poignards, les matraques, les projecteurs
+hypodermiques et les autres armes figurant sur un arrêté du ministre de
+l'intérieur (Arrêté du 04 juillet 2025 art.1)1;
+ b) Générateurs d'aérosols lacrymogènes ou incapacitants d'une capacité
+inférieure ou égale à 100 ml sauf ceux classés dans une autre catégorie par
+arrêté conjoint du ministre de l'intérieur et du ministre chargé des douanes ;
+ c) Armes à impulsions électriques de contact permettant de provoquer un choc
+électrique à bout touchant sauf celles classées dans une autre catégorie par
+arrêté conjoint du ministre de l'intérieur et du ministre chargé des douanes ;
+ d) Armes classées aux e, f ou g qui ont été neutralisées :
+ e) Armes historiques et de collection dont le modèle est antérieur au 1er janvier
+1900, à l'exception de celles classées dans une autre catégorie, en raison de leur
+dangerosité avérée, notamment en raison de leur année de fabrication, par
+arrêté conjoint du ministre de l'intérieur et du ministre chargé des douanes.
+Le contrôle de la date du modèle et de l'année de fabrication des armes
+importées est effectué dans les cas et selon des modalités qui sont définis par arrêté
+conjoint du ministre de l'intérieur et du ministre chargé de l'industrie ;
+ f) Reproductions d'arme dont le modèle est antérieur au 1er janvier 1900 ne
+pouvant tirer que des munitions sans étui métallique, sauf celles dont la
+technique de fabrication améliore la précision et la durabilité de l'arme.
+Ces reproductions d'armes historiques et de collection ne peuvent être
+importées, mises sur le marché ou cédées que si elles sont conformes aux
+caractéristiques techniques définies par arrêté conjoint du ministre de l'intérieur et
+des ministres chargés de l'industrie et des douanes et constatées dans un procèsverbal d'expertise effectuée par un établissement technique désigné par le ministre
+de l'intérieur, dans les cas et les conditions déterminés par l'arrêté interministériel
+prévu ci-dessus.
+Les reproductions d'armes historiques et de collection qui ne satisfont pas à ces
+dispositions relèvent, selon leurs caractéristiques techniques, du régime applicable
+aux armes des catégories A, B ou C ;
+1 (Arrêté du 4 juillet 20025) Sont classées en catégorie D les armes suivantes :
+– les couteaux à ouverture manuelle dits « papillon » ou « Balisong », dont le manche est constitué de deux poignées pivotantes qui recouvrent
+la lame en position fermée ;
+– les couteaux à cran d'arrêt avec mécanisme d'ouverture automatique (lame déployée sous l'effet d'un ressort, déclenché par pression sur un
+bouton, un levier, ou tout autre dispositif) ;
+– les armes blanches de jet appelées communément « étoiles de Ninja », historiquement conçues pour blesser ou détourner l'attention de
+l'adversaire, dépourvues de manche, disposant de pointes ou d'angles acérés et pouvant se présenter sous différentes formes, notamment en
+étoile, en losange, en triangle et en rectangle ;
+– les armes mixtes d'un modèle antérieur au 1er janvier 1946 qui combinent une arme contondante dite « coup de poing américain » avec une
+arme blanche à lame.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 13
+
+ g) Armes historiques et de collection dont le modèle est postérieur au 1er janvier
+1900 et qui sont énumérées par un arrêté conjoint du ministre de l'intérieur et
+de la défense compte tenu de leur intérêt culturel, historique ou scientifique ;
+ h) Armes et lanceurs dont le projectile est propulsé de manière non
+pyrotechnique avec une énergie à la bouche comprise entre 2 et 20 joules ;
+ h bis) Projectiles conçus pour les armes et lanceurs classés au h de la catégorie
+D et au 4° de la catégorie C, à l'exception de ceux classés au 6°, 7°, 8° et 11°
+de la catégorie C;
+ i) Munitions utilisables dans les armes d'alarme et de signalisation et éléments de
+ces munitions ;
+ j) Éléments des munitions sans étui métallique conçus pour les armes à poudre
+noire classées aux e et f de la catégorie D;
+ j bis) Munitions à étui ou culot métallique à percussion centrale chargées à
+poudre noire et fabriquées avant 1900 et leurs éléments, ainsi que munitions à
+étui ou culot métallique conçus pour les armes à poudre noire autres que ceux à
+percussion centrale et leurs éléments;
+ k) Matériels de guerre dont le modèle est antérieur au 1er janvier 1946 , à
+l’exception des armes mentionnées au 9° du III et dont la neutralisation est
+effectivement garantie par l'application de procédés techniques définis par arrêté
+du ministre de la défense ;
+ l) Matériels de guerre dont le modèle est postérieur au 1er janvier 1946 dont la
+neutralisation est effectivement garantie dans les conditions prévues au k et qui
+sont énumérés par arrêté du ministre de la défense.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 14
+
+LES RÈGLES D’ACQUISITION ET DE
+DÉTENTION
+Les différentes catégories d’armes sont définies par leur
+régime juridique d’acquisition et de détention (article L. 311-2
+du C.S.I.) :
+ A – pour les matériels de guerre et les armes interdits ;
+ B – pour les armes soumises à autorisation ;
+ C – pour les armes soumises à déclaration ;
+ D–pour les armes et les matériels de guerre dont
+l’acquisition et la détention sont libres.
+I - ARMES DE CATÉGORIE A : INTERDICTION
+L’acquisition et la détention des armes de catégorie A sont interdites. Toutefois, des
+autorisations peuvent être délivrées pour ce type d’armement (art. L. 312-2 du C.S.I.).
+
+
+
+FONCTIONNAIRES ET AGENTS PUBLICS (art. R. 312-23 al. 1 du C.S.I.)
+
+Le ministère de l’Intérieur, l’administration des douanes et l’administration
+pénitentiaire, peuvent acquérir et détenir les matériels de guerre, armes, munitions et
+leurs éléments de toute catégorie en vue de leur remise à leurs fonctionnaires et agents
+pour l'exercice de leurs fonctions.
+
+
+
+SPECTACLES (art. R. 312-26 du C.S.I.)
+
+Les entreprises qui se livrent à la location d'armes à des sociétés de production de
+films ou de spectacles, ainsi que les théâtres nationaux peuvent être autorisées à
+acquérir et à détenir des armes de spectacles des catégories A.
+Les producteurs de films et les directeurs d'entreprises de spectacles ou
+organisateurs de spectacles, locataires de ces armes, sont autorisés à les remettre, sous
+leur responsabilité, aux acteurs et figurants pendant le temps nécessaire au tournage ou
+au spectacle.
+Les entreprises mentionnées au premier alinéa peuvent être autorisées à acquérir et
+à détenir des munitions inertes ou à blanc.
+Ces dispositions sont applicables aux locataires et utilisateurs des armes en cause.
+
+
+
+COLLECTIVITÉS PUBLIQUES, MUSÉES, COLLECTIONS (art. R. 312-27
+du C.S.I.)
+
+Sous certaines réserves, le préfet peut autoriser à acquérir et à détenir des matériels
+de guerre, armes, munitions et leurs éléments :
+ 1° Les personnes qui les exposent dans des musées, ouverts au public, pour les
+matériels de guerre, armes et leurs éléments ainsi que les munitions de toutes
+catégories ;
+ 2° Les services de l’État, pour les besoins autres que ceux de la défense
+nationale, les collectivités territoriales et leurs établissements publics, pour les
+matériels de guerre de la catégorie A2 et les armes de catégorie A;
+ 3° Les organismes d'intérêt général ou à vocation culturelle, historique ou
+scientifique, qui contribuent à la conservation, à la connaissance ou l'étude des
+matériels de guerre, pour les matériels de guerre de la catégorie A2 et les armes
+de catégorie A;
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 15
+
+ 4° Les personnes physiques qui contribuent, par la réalisation de collections, à la
+conservation, à la connaissance ou l'étude des matériels de guerre, pour les
+matériels de guerre de la catégorie A2 dont les systèmes d'armes et armes sont
+neutralisés conformément au 3° de l'article R. 2337-2 du code de la défense ;
+ 5° Les établissements d'enseignement et de formation, en vue de
+l'accomplissement de leur mission, pour les matériels de guerre relevant des 8°,
+9° et 10° de la catégorie A2 ;
+ 6° Les organismes et sociétés privés assurant une mission de service ou de
+sécurité publics, pour les matériels de guerre relevant des 14° et 17° de la
+catégorie A2, selon des modalités fixées par arrêté conjoint du ministre de
+l'intérieur et du ministre en charge de l'aviation civile.
+
+
+
+ESSAIS INDUSTRIELS (art. R. 312-30 du C.S.I.)
+
+Peuvent être autorisées à acquérir et à détenir des matériels de guerre, armes,
+munitions et leurs éléments de catégorie A les entreprises qui les testent ou qui se
+livrent à des essais de résistance en les utilisant. Elles remettent, sous leur
+responsabilité, les matériels de guerre, armes, munitions et leurs éléments aux
+personnes qu'elles chargent d'assurer ces missions pendant le temps nécessaire à leur
+accomplissement.
+
+
+
+EXPERTS JUDICIAIRES (art. R. 312-31 du C.S.I.)
+
+Les experts agréés en armes et munitions près la Cour de cassation ou près d'une
+cour d'appel peuvent être autorisés à acquérir et à détenir des armes, munitions ou
+éléments de la catégorie A1 et du 1° de la catégorie A2, en nombre nécessaire aux
+besoins exclusifs de leur activité.
+L'autorisation ne peut porter que sur la détention d'un seul exemplaire d'une arme
+définie par sa marque, son modèle, son calibre et son mode de tir.
+En cas de radiation avant le terme quinquennal de l'inscription, la Cour de cassation
+ou la cour d'appel informe le préfet du département du lieu où l'expert exerce son
+activité (art. R. 312-34 du C.S.I.)
+En cas de cessation d'activité, l'expert en informe dans le délai d'un mois le préfet du
+département du lieu où il exerce son activité.
+
+
+
+TIR SPORTIF
+
+Peut être autorisée à acquérir et à détenir dans une installation sportive, pour la
+pratique du tir sportif, des armes, munitions et leurs éléments du 3° bis, du 7° et du 11°
+de la catégorie A1, la fédération sportive ayant reçu délégation du ministre chargé des
+sports (art. R. 312-39-1 du C.S.I.)
+Peuvent être autorisés pour la pratique du tir sportif à acquérir et à détenir des
+armes, munitions et leurs éléments des 3° bis et 7° de la catégorie A1 (art. R. 312-40
+du C.S.I.) :
+1° Les associations sportives agréées (autorisées également à acquérir des armes
+relevant du 11° de la catégorie A1);
+2° Les personnes majeures et les tireurs sélectionnés de moins de dix-huit ans
+participant à des à des compétitions internationales, dans la limite de 15 armes (Arrêté
+devant être publié avant le 01/01/2024).
+
+II - ARMES DE CATÉGORIE B : AUTORISATION
+L’autorisation d’acquisition et de détention prévue à l’article R. 312-21 du C.S.I. est
+accordée pour une durée de 5 ans renouvelable (art. R. 312-13 C.S.I). La décision, prise
+par le préfet, est notifiée au demandeur dans un délai de 15 jours. À compter de cette
+notification, le bénéficiaire dispose d’un délai de six mois pour acquérir le matériel de
+guerre ou l’arme. Passé ce délai, l’autorisation devient caduque (art. R. 312-12 du C.S.I.).
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 16
+
+Trois mois au plus tard avant la date d’expiration de l’autorisation, son détenteur doit
+déposer une demande de renouvellement. Il en est délivré un récépissé (art. R. 312-14 du
+C.S.I.).
+Le silence gardé pendant trois mois par l'autorité compétente vaut décision de rejet de la
+demande d'autorisation (art. R. 312-10-1 du C.S.I).
+Ces autorisations d’acquisition et de détention concernent les :
+
+
+
+FONCTIONNAIRES ET AGENTS PUBLICS
+
+Le ministère de l'Intérieur peut également acquérir et détenir des armes, munitions
+et leurs éléments relevant de la catégorie B 1°, en vue de leur remise aux élèves
+français de l’École polytechnique lorsqu'ils sont mis à disposition des services de la police
+nationale durant leur formation à l'exercice des responsabilités (art. R. 312-23 al. 2 du
+C.S.I.).
+Les réservistes de la gendarmerie nationale, servant dans la réserve opérationnelle,
+peuvent être autorisés à transporter et détenir des armes, munitions et leurs éléments
+de la catégorie B appartenant à l’État pour l’accomplissement de leur service (art. R.
+312-23-1 du C.S.I.).
+Les fonctionnaires et agents des administrations publiques chargés d'une mission de
+police, les services publics exposés à des risques d’agression, les officiers d'active, les
+officiers généraux du cadre de réserve, les officiers de réserve et les sous-officiers
+d’active sont autorisés à acquérir et à détenir des armes, éléments d'arme et munitions
+et leurs éléments de la catégorie B (art. R. 312-24 du C.S.I.).
+
+
+
+LES ORGANISATIONS INTERNATIONALES (art. R. 312-25-1 du C.S.I.)
+
+Les organisations internationales ainsi que les institutions, organes, organismes et
+services de l'Union européenne ayant leur siège ou un bureau en France peuvent
+également être autorisés par le ministre de l'intérieur à acquérir et à détenir des armes,
+leurs éléments et munitions relevant du 1° de la catégorie B, en vue de les remettre,
+sous leur responsabilité, à leurs agents pour l'exercice de missions tenant à la sécurité
+des personnes et des biens à l'intérieur des enceintes de ces organisations, institutions,
+organes, organismes ou services.
+
+
+
+SPECTACLES (art. R. 312-26 du C.S.I.)
+
+Les entreprises qui se livrent à la location d'armes à des sociétés de production de
+films ou de spectacles, ainsi que les théâtres nationaux peuvent être autorisées à
+acquérir et à détenir des armes de spectacles des catégories B.
+Les producteurs de films et les directeurs d'entreprises de spectacles ou
+organisateurs de spectacles, locataires de ces armes, sont autorisés à les remettre, sous
+leur responsabilité, aux acteurs et figurants pendant le temps nécessaire au tournage ou
+au spectacle.
+Les entreprises mentionnées au premier alinéa peuvent être autorisées à acquérir et
+à détenir des munitions inertes ou à blanc.
+Ces dispositions sont applicables aux locataires et utilisateurs des armes en cause.
+
+
+
+COLLECTIVITÉS PUBLIQUES, MUSÉES, COLLECTIONS (art. R. 312-27
+du C.S.I.)
+
+Sous certaines réserves, le préfet peut autoriser à acquérir et à détenir des matériels
+de guerre, armes, munitions et leurs éléments :
+ 1° Les personnes qui les exposent dans des musées, ouverts au public, pour les
+matériels de guerre, armes et leurs éléments ainsi que les munitions de toutes
+catégories ;
+ 2° Les services de l’État, pour les besoins autres que ceux de la défense
+nationale, les collectivités territoriales et leurs établissements publics, pour les
+armes de catégorie B ;
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 17
+
+ 3° Les organismes d'intérêt général ou à vocation culturelle, historique ou
+scientifique, qui contribuent à la conservation, à la connaissance ou à l'étude des
+matériels de guerre, pour les armes de catégorie B ;
+
+
+
+ESSAIS INDUSTRIELS (art. R. 312-30 du C.S.I.)
+
+Peuvent être autorisées à acquérir et à détenir des matériels de guerre, armes,
+munitions et leurs éléments de catégorie B les entreprises qui les testent ou qui se
+livrent à des essais de résistance en les utilisant. Elles remettent, sous leur
+responsabilité, les matériels de guerre, armes, munitions et leurs éléments aux
+personnes qu'elles chargent d'assurer ces missions pendant le temps nécessaire à leur
+accomplissement.
+
+
+
+EXPERTS JUDICIAIRES (art. R. 312-31 du C.S.I.)
+
+Les experts agréés en armes et munitions près la Cour de cassation ou près d'une
+cour d'appel peuvent être autorisés à acquérir et à détenir des armes, munitions ou
+éléments de la catégorie B, en nombre nécessaire aux besoins exclusifs de leur activité.
+L'autorisation ne peut porter que sur la détention d'un seul exemplaire d'une arme
+définie par sa marque, son modèle, son calibre et son mode de tir.
+En cas de radiation avant le terme quinquennal de l'inscription, la Cour de cassation
+ou la cour d'appel informe le préfet du département du lieu où l'expert exerce son
+activité(art. R. 312-34 du C.S.I.).
+En cas de cessation d'activité, l'expert en informe dans le délai d'un mois le préfet du
+département du lieu où il exerce son activité.
+
+
+
+ACTIVITÉS PRIVÉES DE SÉCURITÉ
+ Agents exerçant une activité de surveillance armée :
+Les agents de surveillance et de gardiennage mentionnés à l’article L. 611-1
+1°bis du C.S.I., qui sont exposés à un risque exceptionnel d'atteinte à leur vie sont
+autorisés à utiliser certaines armes relevant des 1° et 8° de la catégorie B ainsi que
+celles relevant des « a » et « b » de la catégorie D (art. R. 613-3 II du C.S.I.).
+ Convoyeurs des entreprises de transport de fonds :
+Les agents, dont l'activité consiste à transporter et à surveiller jusqu’à leur
+livraison effective des bijoux, des fonds ou des métaux précieux au moyen d’un
+véhicule blindé, mentionnés à l’article L. 611-1 2° du C.S.I., peuvent utiliser les
+armes relevant du 1° de la catégorie B (art. R. 613-41 du C.S.I.).
+ Agents exerçant une activité de protection physique des personnes :
+Les agents chargés de la protection des personnes, mentionnés à l’article L. 6111 3° du C.S.I., lorsqu’ils assurent la protection d'une personne exposée à des risques
+exceptionnels d'atteinte à sa vie, sont autorisés à utiliser certaines armes relevant
+des 1° et 8° de la catégorie B ainsi que celles relevant des « a » et « b » de la
+catégorie D (art. R. 613-3 V du C.S.I.). L'autorisation est délivrée par arrêté du
+ministre de l'intérieur pour une période d'un an, renouvelable.
+ Agents de protection des navires :
+Conformément aux articles L. 611-1 4° du C.S.I. et L. 5541-1 du code des
+transports, des agents sont chargés à la demande et pour le compte d’un armateur
+de protéger les navires battant pavillon français contre des menaces d’actes de
+piraterie.
+
+
+
+PERSONNES EXPOSÉES À DES RISQUES SÉRIEUX DU FAIT DE LEUR
+ACTIVITÉ PROFESSIONNELLE (art. R. 312-39 du C.S.I.)
+
+Peuvent être autorisées à acquérir une arme, des munitions et leurs éléments des 1°,
+8° et 10° de la catégorie B et à les détenir sur le lieu d'exercice de leur activité
+professionnelle les personnes majeures, exposées à des risques sérieux pour leur
+sécurité du fait de la nature ou du lieu d'exercice de cette activité.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 18
+
+Ces personnes peuvent être autorisées à acquérir et détenir à leur domicile ou dans
+une résidence secondaire, pour le même motif, une seconde arme du type mentionné au
+premier alinéa.
+
+
+
+TIR SPORTIF
+
+Peut être autorisée à acquérir et à détenir dans une installation sportive, pour la
+pratique du tir sportif, des armes, munitions et leurs éléments des 1°, 2°, 4°, 5°, 9° et
+10° de la catégorie B, la fédération sportive ayant reçu délégation du ministre chargé
+des sports (art. R. 312-39-1 du C.S.I.).
+Peuvent être autorisés pour la pratique du tir sportif à acquérir et à détenir des
+armes, munitions et leurs éléments des 1°, 2°, 4°, 5°, 9° et 10° de la catégorie B (art.
+R. 312-40 du C.S.I.) :
+ 1° Les associations sportives agréées (autorisées également à acquérir des
+armes relevant du 11° de la catégorie A1) ;
+ 2° Les personnes majeures et les tireurs sélectionnés de moins de dix-huit ans
+participant à des compétitions internationales dans la limite de 15 armes (Arrêté
+devant être publié avant le 01/01/2024).
+L’article R. 411-3-1 du C.S.I. autorise les fonctionnaires actifs de la police nationale,
+membres d’une association sportive (art. R. 312-40 1° du C.S.I.), à pratiquer le tir
+sportif avec l’arme individuelle de service, sous réserve de respecter les obligations
+suivantes (arrêté du 17 septembre 2024):
+ effectuer une déclaration spécifique préalable, par écrit, à leur chef de
+service ;
+ ne faire l’objet d’aucune restriction dans le port ou à l’emploi de l’arme
+individuelle ;
+ être à jour de leurs obligations de formation continue au tir au titre de
+l’entraînement administratif réglementaire ;
+ utiliser exclusivement des munitions manufacturées à balles ordinaires
+chemisées, dans la limite de 3000 par période de douze mois.
+Ils demeurent en outre assujettis aux règles encadrant le port de l’arme hors service
+prévues à l’article 114-4 de l’arrêté du 6 juin 2006 susvisé et par les instructions qui
+l’encadrent (R.G.E.P.N.).
+À l’intérieur des stands de tir, les fonctionnaires se conforment au règlement et aux
+règles de sécurité établies par la Fédération française de tir. En cas d’incident, ils
+doivent rendre compte sans délai par écrit à leur hiérarchie.
+Les tirs sportifs s’effectuent en dehors du temps de service et ne sont pas
+comptabilisés au titre de l’entraînement administratif réglementaire.
+Avec l’autorisation de leur chef de service, les fonctionnaires peuvent acquérir des
+munitions dans les mêmes quantités que celles prévues au 3° de l’article R. 312-47
+du C.S.I., soit 3000 cartouches par arme et par an, et ne peuvent détenir plus de
+1000 munitions par arme. Ils doivent présenter à l’armurier ou au club de tir affilié
+les pièces suivantes :
+ l’autorisation d’acquisition
+ leur carte professionnelle
+ leur licence de tireur sportif
+
+
+
+TIR FORAIN (art. R. 312-44 du C.S.I.)
+
+Les exploitants de tir forain dans certaines conditions peuvent être autorisés à
+acquérir et à détenir des armes de poing à un coup du 1° de la catégorie B à percussion
+annulaire et d'un calibre égal ou inférieur à 6 mm.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 19
+
+
+
+FORMATION DANS LES MÉTIERS DE L'ARMURERIE ET DE L'ARMEMENT
+(art. R. 312-44-1)
+
+Peuvent être autorisés par le préfet, sous réserve, pour les personnes physiques, du
+respect des dispositions de l'article L. 312-6, à acquérir et à détenir des armes et leurs
+éléments relevant de la catégorie B dans la limite de quinze, les organismes privés
+délivrant un enseignement et une formation professionnelle en vue de l'obtention du
+certificat de qualification professionnelle mentionné au b du 2° de l'article R. 313-3.
+
+III - REFUS D’AUTORISATION (ART. R. 312-21 DU
+C.S.I.)
+L'autorisation d'acquisition et de détention des armes, munitions et de leurs éléments de
+la catégorie A ou B n'est pas accordée lorsque le demandeur :
+ 1° Se trouve dans une des situations prévues à l'article L. 312-16 (inscription au
+fichier national des personnes interdites d'acquisition et de détention d'armes
+(F.I.N.I.A.D.A.);
+ 2° A été condamné pour l'une des infractions mentionnées au 1° de l'article L. 312-3
+du présent code figurant au bulletin n° 2 de son casier judiciaire ou dans un
+document équivalent pour les ressortissants d'un État membre de l'Union
+européenne ou d'un autre État partie à l'accord sur l'Espace économique européen ;
+ 3° A un comportement incompatible avec la détention de ces matériels de guerre,
+armes, munitions et leurs éléments, révélé par l'enquête diligentée par le préfet.
+Cette enquête peut donner lieu à la consultation des traitements automatisés de
+données personnelles mentionnés à l'article 26 de la loi n° 78-17 du 6 janvier 1978 ;
+ 4° Fait l'objet d'une mesure de protection juridique en application de l'article 425 du
+code civil, a été ou est admis en soins psychiatriques sans consentement en
+application de l'article 706-135 du code de procédure pénale et des articles L. 32121 à L. 3213-11 du code de la santé publique ou est dans un état physique ou
+psychique manifestement incompatible avec la détention de ces matériels de guerre,
+armes, munitions et leurs éléments.
+L'autorisation peut toutefois être accordée par le préfet dès lors que la personne ayant
+fait l'objet de soins psychiatriques sans consentement présente un certificat médical
+conforme aux dispositions de l'article R. 312-6.
+L'autorité administrative peut interdire l'acquisition et la détention des armes, munitions
+et de leurs éléments des catégories A, B et C aux personnes dont le comportement laisse
+craindre une utilisation dangereuse pour elles-mêmes ou pour autrui (L . 312-3-1 du
+C.S.I.).
+Sont également interdites d’acquisition et de détention d’arme de toutes catégories, les
+personnes faisant l’objet d’une interdiction de détention ou de port d’arme dans le cadre
+d’une ordonnance de protection (art. L. 312-3-2 du C.S.I.).
+NOTA : Les autorisations d’acquisition et de détention de matériels de guerre, armes et munitions peuvent être
+retirées pour des raisons d’ordre public (Art L. 312-11 du code de sécurité intérieure) ou de sécurité des
+personnes (Art L. 312-7 du code de sécurité intérieure) par l’autorité qui les a délivrées.
+
+IV - ARMES DE CATÉGORIE C ET D
+L’acquisition des armes et éléments d’armes de la catégorie C est subordonnée à la
+procédure de déclaration. La détention des armes de cette catégorie par des personnes qui
+ont eu une arme précédemment déclarée et acquise légalement, est autorisée.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 20
+
+L'acquisition par des personnes majeures des armes et de leurs éléments de la catégorie
+C est subordonnée à la présentation (art. L.312-4-1 C.S.I) :
+ d’un certificat médical datant de moins d’un mois ;
+ d'un permis de chasser accompagné d'un titre de validation annuel ou d'un titre de
+validation de l'année précédente ou ;
+ d'une licence de tir en cours de validité de la fédération sportive ou ;
+ d'une carte de collectionneur d’armes.
+Les personnes majeures peuvent acquérir et détenir librement les armes et leurs
+éléments de catégorie D.
+Sont également interdites d’acquisition et de détention d’arme de toutes catégories, les
+personnes faisant l’objet d’une interdiction de détention ou de port d’arme dans le cadre
+d’une ordonnance de protection. (art. L. 312-3-2 du C.S.I.).
+
+V - RÉGIME APPLICABLE AUX MINEURS
+
+
+ACQUISITION ET DÉTENTION
+
+L’acquisition et la détention des matériels de guerre, armes, munitions et leurs
+éléments de toute catégorie par les mineurs sont interdites (art. L. 312-1 du C.S.I.).
+Des exceptions à l’interdiction de détention sont prévues à l’article R. 312-52 du
+C.S.I., sous la condition d’avoir l’autorisation d’une personne exerçant l’autorité
+parentale (sauf si celle-ci est inscrite au FINIADA).
+L’acquisition doit être réalisée par la personne qui exerce l'autorité parentale.
+
+
+
+EXCEPTIONS (ART. R. 312-52 C.S.I)
+ Mineurs de plus de 9 ans
+La détention des armes de la catégorie D (h) et (h bis) est autorisée pour les
+mineurs de plus de 9 ans. Ils doivent être titulaires d’une licence de tir en cours de
+validité.
+ Mineurs de plus de 12 ans
+Les armes et leurs éléments des catégories C peuvent être détenus par des
+mineurs s'ils ont plus de douze ans et sont titulaires d’une licence de tir en cours de
+validité.
+Ils sont autorisés à utiliser les lanceurs de paintball de la catégorie D (h) sur les
+terrains de paintball déclarés en application du code du sport.(art. R. 312-52 al.5 du
+C.S.I.).
+ Mineurs de plus de 16 ans
+Les armes et leurs éléments des catégories C peuvent être détenus par des
+mineurs de plus de seize ans s’ils sont titulaires du permis de chasser.
+La détention des armes historiques et de collection de catégorie D (e), (f) ou (g)
+est possible.
+
+VI - DESSAISISSEMENT DE L’ARME
+
+
+LES CAS DE DESSAISISSEMENT
+ Dispositions générales (art. R. 312-17 du C.S.I.)
+Doivent se dessaisir des armes, éléments et munitions concernés ou faire
+neutraliser les armes concernées dans un délai de trois mois :
+ 1° Les bénéficiaires d'autorisations venues à expiration et dont le
+renouvellement n'a pas été demandé ;
+ 2° (Abrogé)
+ 3° (Abrogé)
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 21
+
+ 4° Les bénéficiaires d'autorisations nulles de plein droit mentionnées à
+l'article R. 312-15.
+Le préfet peut également ordonner la remise ou le dessaisissement des armes,
+éléments ou munitions concernés aux personnes suivantes :
+ 1° Les bénéficiaires d'autorisations qui ont été retirées ;
+ 2° Les bénéficiaires d'autorisations dont le renouvellement a été refusé ;
+ 3° Les bénéficiaires d'autorisations qui ne se sont pas dessaisis de leurs
+armes, éléments ou munitions.
+ Refus de conservation
+ Toute personne mise en possession d'une arme, d'un élément d'arme ou de
+munitions de catégorie A ou B, trouvés par elle ou qui lui sont dévolus par voie
+successorale et qu'elle ne souhaite pas conserver, peut s’en dessaisir, sans avoir
+à les déclarer préalablement par l'intermédiaire du compte individualisé
+mentionné à l’article R. 312-91 du C.S.I.. (art. R. 312-51-1 du C.S.I.)
+ Les mêmes dispositions sont également prévues concernant une arme, d'un
+élément d'arme ou de munitions de catégorie C (art. R. 312-55-1 du C.S.I.)
+ Cas particulier (art. L. 312-11 du C.S.I.)
+ Pour des raisons d'ordre public ou de sécurité des personnes, le représentant
+de l’État dans le département peut ordonner à tout détenteur d'une arme, de
+munitions et de leurs éléments de toute catégorie de s'en dessaisir.
+ Sauf urgence, la procédure est contradictoire. Le préfet fixe le délai au terme
+duquel le détenteur doit s'être dessaisi de son arme, de ses munitions et de leurs
+éléments.
+
+
+
+LES MOYENS DE DESSAISISSEMENT (art. R. 312-74 du C.S.I.)
+
+Le détenteur se dessaisit de l'arme, des munitions ou de leurs éléments dans le délai
+de trois mois qui suit la notification de la décision selon l'une des modalités suivantes :
+ 1° La vente à un armurier ou à un particulier autorisé ;
+ 2° (Abrogé) ;
+ 3° La destruction par un armurier ;
+ 4° La remise à l’État aux fins de destruction ou de valorisation ;
+ 5° Dépôt auprès d'un armurier désigné par l’État et agissant sous son
+contrôle aux fins de la remise mentionnée au 4°.
+
+VII - LA MISE EN POSSESSION
+
+
+ARME DE CATÉGORIE A OU B
+
+Toute personne mise en possession d'une arme, d'un élément d'arme ou de
+munitions de catégorie A ou B, trouvés par elle ou qui lui sont dévolus par voie
+successorale et qu'elle souhaite conserver, déclare cette mise en possession sans délai
+par l'intermédiaire du compte individualisé mentionné à l'article R. 312-91.
+Cette déclaration comporte les informations fixées par arrêté du ministre de
+l'intérieur. Le préfet informe sans délai le commissaire de police ou le commandant de
+brigade de gendarmerie du lieu de domicile de cette déclaration.(art. R. 312-51 C.S.I.).
+Cette personne dispose d'un délai de douze mois à compter de sa déclaration pour
+remplir les conditions nécessaires à l'obtention de l’autorisation de détention ou pour se
+mettre en conformité avec les règles relatives aux quotas. Durant ce laps de temps,
+l'arme, l'élément d'arme ou les munitions sont déposés auprès d'un professionnel
+autorisé pour la catégorie correspondante et inscrits à ce titre au livre de police
+dématérialisé au plus tard trois mois à compter de la déclaration A défaut, le préfet en
+ordonne le dessaisissement
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 22
+
+Si, à l'expiration du délai de douze mois, la personne ne remplit pas les conditions
+fixées à cet alinéa, elle se dessaisit de l'arme, de l'élément d'arme ou des munitions
+concernés, selon les modalités prévues aux articles R. 312-74 et R. 312-75, ou fait
+neutraliser l'arme.
+
+
+
+ARME DE CATÉGORIE C
+
+Toute personne mise en possession d'une arme ou d'un élément d'arme de la
+catégorie C trouvés par elle ou qui lui sont dévolus par voie successorale, si elle souhaite
+conserver, doit se conformer aux dispositions de l’article R.312-55 du C.S.I. :
+– Déclarer une mise en possession, sans délai, par l’intermédiaire du compte
+individualisé mentionné à l’article R. 312-91 du C.S.I ;
+– Joindre un certificat médical datant de moins d’un mois.
+À défaut le préfet peut ordonner le dessaisissement de l’arme selon les modalités
+prévues aux articles R. 312-74 et R. 312-75 du C.S.I.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 23
+
+LES RÈGLES DE PORT ET DE TRANSPORT
+L’article R. 311-1 du C.S.I. (III-10° et 13°) introduit dans la réglementation une
+définition du port et du transport des armes.
+Ainsi, le port d’arme est le fait d’avoir une arme sur soi utilisable immédiatement.
+Le transport d’arme correspond au fait de déplacer une arme en l’ayant auprès de soi et
+inutilisable immédiatement.
+La réglementation ne prévoit pas d’autorisation administrative de transport ou de port
+d’arme pour les particuliers, à l’exception des autorisations ministérielles de port d’arme
+des articles R. 315-5 et R. 315-6 du C.S.I.
+Sur la base de l’article L. 315-1 du code de la sécurité intérieure, l’article R. 315-1 du
+C.S.I. précise les règles générales d’interdiction de port ou de transport des armes selon
+leur catégorie d’appartenance et donc leur dangerosité :
+
+I - CATÉGORIES A ET B
+Interdiction du port des armes, éléments d’arme et munitions ainsi que le transport sans
+motif légitime ;
+
+II - CATÉGORIES C ET D
+Interdiction sans motif légitime du port et du transport des armes, éléments d’arme et
+munitions.
+Dans ce cadre, le port et le transport des couteaux est permis dès lors qu’il existe un
+motif légitime.
+La légitimité du port ou du transport suppose que le couteau porté ou transporté
+présente des caractéristiques d'utilisation par rapport à l'activité pour laquelle il est
+effectivement utilisé.
+La légitimité du port ou du transport peut être contrôlée par les fonctionnaires habilités.
+Elle résulte de l’appréciation des faits et de l’examen des titres de détention.
+Le transport peut s’effectuer dans un cadre professionnel mais également en dehors
+d’une activité professionnelle. (tireur sportif qui se rend à son club avec son arme...)
+Afin de concilier les exigences de sécurité publique et la pratique de certaines activités,
+les articles R. 315-2 et R. 315-3 du C.S.I. prévoient des règles particulières spécifiques
+pour la pratique de la chasse et du tir sportif ainsi que pour la participation à des
+reconstitutions historiques.
+
+III - CONCERNANT LA CHASSE
+Le permis de chasser accompagné d’un titre français de validation de l’année en cours
+vaut titre de port légitime pour les armes, éléments d’armes et munitions de la catégorie C
+ainsi que pour les armes du « a »de la catégorie D pour leur utilisation en action de chasse
+ou pour toute activité qui y est liée. Pour ces mêmes armes, éléments d’armes et
+munitions, le permis de chasser vaut également titre de transport. Dans ce cas, il n’est pas
+nécessaire qu’il soit accompagné d’un titre français de validation de l’année en cours.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 24
+
+IV - CONCERNANT LE TIR SPORTIF
+La licence de tir en cours de validité vaut titre de transport légitime des armes, éléments
+d'arme, systèmes d'alimentation et munitions des catégories A, B et C ainsi que des armes,
+éléments d'arme et munitions de la catégorie D utilisés dans la pratique du sport relevant
+de la fédération qui a délivré la licence.
+
+V - LES COLLECTIONNEURS
+La carte de collectionneur vaut titre de transport légitime des armes de catégorie C pour
+les activités liées à l'exposition dans un musée ouvert au public, à la conservation, à la
+connaissance ou à l'étude des armes.
+
+VI - CONCERNANT
+LES
+AGENTS PUBLICS
+
+FONCTIONNAIRES
+
+ET
+
+Les fonctionnaires et agents des administrations publiques chargés d’une mission de
+police sont autorisés à porter, dans l'exercice ou à l'occasion de leurs fonctions, des armes
+et munitions du 1° de la catégorie B et de la catégorie D qu'ils détiennent dans des
+conditions régulières (art. R. 315-8 DU C.S.I.).
+Les officiers d’active, les officiers généraux du cadre de réserve, les officiers de réserve
+et les sous-officiers d’active portent leurs armes et munitions dans les conditions définies
+par les règlements particuliers qui les concernent (art. R. 315-9 du C.S.I.).
+Les fonctionnaires et agents de l'administration des douanes et de l'administration
+pénitentiaire sont autorisés dans l'exercice de leurs fonctions à transporter, à porter et
+utiliser les armes des catégories A, B, C et D qui leur ont été remises par leur
+administration (art. R. 315-10 du C.S.I.).
+Un fonctionnaire de la police nationale, un officier ou un sous-officier de gendarmerie
+d'active peut accéder, en dehors de son service, à un établissement recevant du public
+(E.R.P.) en étant porteur de son arme (art. R. 315-11 du C.S.I.). Ils sont soumis cependant
+à des dispositions particulières :
+ Ils doivent être à jour de leurs obligations de formation continue en matière d’emploi
+des armes ;
+ Ils ne doivent à aucun moment se séparer de leur arme ;
+ Avant de franchir un point de contrôle de l’accès à l’E.R.P., ils établissent leur qualité
+par la présentation de leur carte professionnelle et du brassard d’identification ;
+ L’arme est portée de façon non visible.
+Si la mission confiée le requiert, les policiers adjoints et les policiers réservistes habilités
+peuvent être autorisés à porter des armes prévues au 1° du II de l’art. R. 311-2 du C.S.I.
+accompagnées de systèmes d’alimentation.(R. 411-7 et R. 411-29 du C.S.I.)
+De même ils peuvent être autorisés par leur chef de service lorsque leur mission le
+requiert au port et transport des grenades à main de désencerclement, grenades à effet
+lacrymogène, armes à impulsion électrique, générateurs d’aérosols lacrymogènes ou
+incapacitants, aux bâtons de défense.
+Les réservistes retraités des corps actifs de la police nationale, s’ils sont titulaires d’une
+habilitation au port et à l’emploi des lanceurs de balles de défense 40 mm et de leurs
+munitions à jour lors de leur intégration dans la réserve opérationnelle peuvent être
+autorisés par le chef de service à porter et transporter ces armes. (art. 411-29 du C.S.I.)
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 25
+
+VII - CONCERNANT
+SÉCURITÉ
+
+LES
+
+ACTIVITÉS
+
+PRIVÉES
+
+DE
+
+Les membres du personnel des entreprises qui se trouvent dans l’obligation d’assurer la
+sécurité de leurs biens ou le gardiennage de leurs immeubles peuvent, lorsque leur mission
+le justifie, être autorisés à porter les armes et munitions dont ils sont pourvus à l'extérieur
+des bâtiments et locaux de ces entreprises.
+Les autorisations sont délivrées par le préfet du département où sont situés les lieux à
+surveiller. Elles sont révocables à tout moment par le préfet qui les a délivrées.
+
+VIII - CONCERNANT LES PERSONNES EXPOSÉES
+DES RISQUES EXCEPTIONNELS D’ATTEINTE
+LEUR VIE
+
+À
+À
+
+Le ministre de l'Intérieur peut autoriser par arrêté toute personne exposée à des risques
+exceptionnels d'atteinte à sa vie, sur sa demande, à porter et transporter une arme de
+poing (art. R. 312-39 C.S.I.) ainsi que les munitions correspondantes dans les limites
+fixées à 50 cartouches par arme (art. R. 312-47 1° C.S.I.).
+Ces personnes peuvent être autorisées à porter cette arme sur le lieu d’exercice de leur
+activité professionnelle (art . R. 315-5-1 C.S.I.).
+
+IX - CONCERNANT LES PERSONNES
+SÉJOURNANT EN FRANCE
+
+ÉTRANGÈRES
+
+Le ministre de l'intérieur peut autoriser par arrêté tout agent relevant d'un
+gouvernement étranger et concourant à une mission de sécurité en France, toute
+personnalité étrangère séjournant en France ainsi que les personnes assurant sa sécurité
+ou toute personne exerçant en France des fonctions au sein d'une représentation
+diplomatique ou d'une organisation internationale ou d'une institution, organe, organisme
+ou service de l'Union européenne, sur la demande du gouvernement du pays dont cet
+agent, cette personnalité ou cette personne est ressortissante ou sur la demande de
+l'organisation internationale ou de l'institution, organe, organisme ou service de l'Union
+européenne concerné, à détenir, porter et transporter une arme de poing (art. R. 315-6 du
+C.S.I.) et, dans les limites fixées à 50 cartouches par arme, les munitions correspondantes
+(art. R. 312-47 1° du C.S.I.), ainsi que deux armes parmi les suivantes : matraque ou
+bâton télescopique classés au a de la catégorie D ou générateur d'aérosol lacrymogène ou
+incapacitant classé au b de la même catégorie.
+L'autorisation ne peut être délivrée, selon le cas, pour une durée supérieure à celle de la
+mission, du séjour de la personnalité ou de l'exercice des fonctions. Dans ce dernier cas,
+l'autorisation est délivrée pour une durée maximale d'un an, renouvelable.
+A titre exceptionnel, le transport de plusieurs armes de poing et de leurs munitions par
+une même personne assurant la sécurité d'une personnalité étrangère peut être autorisé.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 26
+
+L’ACQUISITION, LA DÉTENTION OU LA
+CESSION D’UNE OU DE PLUSIEURS ARMES
+DE CATÉGORIE A OU B OU DES
+MUNITIONS CORRESPONDANTES SANS
+AUTORISATION
+L'acquisition, la détention ou la cession des matériels de
+guerre, armes, éléments d'armes ou munitions relevant des
+catégories A et B, sans l'autorisation prévue au I de l'article L.
+2332-1 du code de la défense, en violation des articles L. 312-1
+à L. 312-4, L. 312-4-3, L. 314-2 et L. 314-3 du code de la
+sécurité intérieure constitue un délit.
+I - ÉLÉMENT LÉGAL
+L’article 222-52 du code pénal réprime le fait d’acquérir, de détenir ou de céder ou sans
+autorisation des matériels de guerre, armes, éléments d'armes ou munitions des catégories
+A ou B.
+
+II - ÉLÉMENT MATÉRIEL
+
+
+L’ACQUISITION, LA CESSION OU LA DÉTENTION
+ L’acquisition
+On entend par acquisition le fait soit d’acheter l’arme ou les munitions à un
+commerçant ou à un particulier, soit de la recevoir sous forme de don ou legs. Pour
+acquérir une arme, il faut que la personne obtienne préalablement une autorisation
+d’acquisition.
+ La cession
+On parle de cession lorsque l’arme et les munitions sont cédées à un tiers sous
+forme de don ou legs, ou vente.
+ La détention
+La loi entend tous les actes par lesquels une personne assure une maîtrise de
+fait, une mainmise matérielle, sur des armes ou des munitions, quelle que soit leur
+nature juridique. Le détenteur n’est pas forcément le propriétaire de l’arme, il peut
+en avoir seulement la jouissance (ex : agent de sécurité). Le détenteur conserve
+l’arme ou les munitions à son domicile ou dans un lieu assimilé.
+Il faut dissocier la notion de détention de celle de port ou transport qui nécessite
+une autorisation spécifique. La personne qui bénéficie uniquement d’une autorisation
+de détention d’arme n’est donc pas autorisée à transporter ou porter cette arme.
+
+
+
+LES ARMES OU LES MUNITIONS CONCERNÉES
+
+L’article 222-52 du code pénal incrimine seulement l'acquisition, la détention ou
+cession des matériels de guerre, armes, éléments d'armes ou munitions relevant des
+catégories A ou B.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 27
+
+Les armes de catégorie A sont classées dans les matériels de guerre et armes
+interdits à l’acquisition et à la détention. Les armes de catégorie B sont des armes
+soumises à autorisation.
+
+
+
+L’ABSENCE D’AUTORISATION
+Nota : Les entreprises de fabrication ou de commerce des matériels de guerre ou de défense des
+premières catégories A ou B ne peuvent exercer leur activité sans bénéficier d’une autorisation
+expresse de l’État, qui par ailleurs est chargé d’assurer leur contrôle (art. L. 2332-1 “I” du code de la
+défense).
+
+Concernant les particuliers, l’État conserve un contrôle strict sur les activités liées à
+l’acquisition ou à la détention d’armes. Sans autorisation expresse, l’acquisition et la
+détention des armes et munitions définies dans les catégories A ou B sont interdites.
+L’autorisation n’est donc pas un droit mais une dérogation, le principe étant l’interdiction.
+Seules les personnes qui ont sollicité et obtenu une autorisation de détention d’arme
+de catégorie A ou B délivrée par le préfet sont autorisées à posséder une telle arme ainsi
+que les munitions correspondantes.
+En matière d’acquisition, de cession et de détention d’armes et de munitions relevant
+des catégories A ou B, les particuliers ne doivent pas contrevenir aux dispositions des
+articles L. 312-1 à L. 312-4, L. 312-4-3, L. 314-2 ou L. 314-3 du code de la sécurité
+intérieure.
+ Les dispositions des articles L. 312-1 à L. 312-4 et L. 312-4-3 du C.S.I.
+Ces articles rappellent que l’acquisition et la détention des matériels de guerre
+des catégories A ou B sont interdites sauf autorisation délivrée par l’État. Cette
+autorisation est généralement accordée aux tireurs sportifs et aux personnes
+exposées à des risques sérieux pour leur sécurité du fait de la nature ou du lieu
+d’exercice de leur activité.
+Le nombre d’armes ou de munitions, les conditions d’âge et les modalités de
+détention diffèrent ; elles peuvent être plus ou moins restrictives en fonction de la
+qualité du détenteur (mineur, tireur sportif, etc.).
+En dehors des catégories A ou B, ces articles précisent les règles en matière de
+détention d’armes pour toutes les autres catégories.
+ Les dispositions des articles L. 314-2 et L. 314-3 du C.S.I.
+Ces articles précisent que les armes et les munitions des catégories A ou B ne
+peuvent être transférées ou cédées d’un particulier à un autre que dans les cas où
+celui à qui l’arme est cédée ou transférée bénéficie d’une autorisation, répondant
+aux conditions indiquées ci-dessus.
+
+III - ÉLÉMENT MORAL
+
+
+VOLONTÉ DE DÉTENIR UNE ARME
+
+
+
+CONSCIENCE DE NE PAS ÊTRE EN POSSESSION DE L'AUTORISATION
+CORRESPONDANTE
+
+IV - CIRCONSTANCES AGGRAVANTES
+ Article 222-52 alinéa 2 du C.P.
+Lorsque l'auteur des faits a été antérieurement condamné pour une ou plusieurs
+infractions mentionnées aux articles 706-73 et 706-73-1 du code de procédure
+pénale à une peine égale ou supérieure à un an d'emprisonnement ferme.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 28
+
+ Article 222-52 alinéa 3 du C.P.
+Lorsque l’infraction est commise par au moins deux personnes agissant en
+qualité d'auteur ou de complice.
+
+V - RÉPRESSION
+
+
+PEINES ENCOURUES
+ Personnes physiques
+
+QUALIFICATION
+
+CLASSIFICATION
+
+SIMPLE
+DÉLIT
+AGGRAVÉE
+
+ARTICLE
+222-52 al.1
+du C.P.
+222-52 al.2
+du C.P.
+222-52 al.3
+du C.P.
+
+CIRCONSTANCES AGGRAVANTES
+
+PEINES PRINCIPALES
+- 5 ans d’emprisonnement
+- 75 000 € d’amende
+- 7 ans d’emprisonnement
+Circonstance prévue au présent alinéa
+- 100 000 € d’amende
+- 10 ans d’emprisonnement
+Circonstance prévue au présent alinéa
+- 500 000 € d’amende
+
+ Personnes morales
+L'article 222-61 du C.P. prévoit la responsabilité pénale pour les personnes
+morales. Elles encourent, outre l'amende suivant les modalités prévues à l'article
+131-38, les peines prévues à l'article 131-39 du C.P.
+TENTATIVE : OUI
+La tentative d'acquisition, de détention ou de cession des matériels de guerre,
+armes, éléments d'armes ou munitions relevant des catégories A ou B, sans
+l'autorisation, est spécialement prévue par l'article 222-60 du C.P.
+
+
+
+
+
+COMPLICITÉ : OUI
+
+
+
+EXEMPTION ET RÉDUCTION DE PEINE : OUI
+Elles sont prévues spécifiquement par :
+ l’article 222-67-1 al.1 du C.P. pour l’exemption de peine :
+« Toute personne qui a tenté de commettre les infractions prévues à la présente
+section est exempte de peine si, ayant averti l'autorité administrative ou judiciaire,
+elle a permis d'éviter leur réalisation. »
+ l’article 222-67-1 al.2 du C.P. pour la réduction de peine :
+« La peine privative de liberté encourue par l'auteur ou le complice de l'une des
+infractions prévues à la présente section est réduite des deux tiers si, ayant averti
+l'autorité administrative ou judiciaire, il a permis de faire cesser la réalisation de
+l'infraction ou d'identifier, le cas échéant, les autres auteurs ou complices. »
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 29
+
+LE PORT SANS AUTORISATION OU LE
+TRANSPORT SANS MOTIF LÉGITIME DE
+MATÉRIELS DE GUERRE, D’ARMES,
+D’ÉLÉMENTS D’ARME OU DE MUNITIONS
+DE LA CATÉGORIE A OU B
+Le fait de porter ou de transporter, hors de son domicile, sans
+motif légitime, et sous réserve des exceptions résultants des
+articles L. 315-1 et L. 315-2 du code de la sécurité intérieure,
+des matériels de guerre, armes, éléments d'arme ou munitions
+relevant des catégories A ou B, même en étant régulièrement
+détenteur constitue un délit.
+I - ÉLÉMENT LÉGAL
+L’article 222-54 du code pénal prévoit et réprime le port et le transport sans motif
+légitime des matériels de guerre, armes, éléments d’arme ou des munitions des catégories
+A ou B.
+
+II - ÉLÉMENT MATÉRIEL
+
+
+LE PORT OU LE TRANSPORT DES MATÉRIELS DE GUERRE, D’ARMES,
+DE MUNITIONS OU D’ÉLÉMENTS CONSTITUTIFS D’ARMES DE
+CATÉGORIE A OU B
+ Le port ou le transport
+Concernant le port, il s’agit de l’action d’avoir l’arme sur soi, à la ceinture, dans
+un étui, dans la poche, etc. et utilisable immédiatement.
+Le transport s’entend comme l’action de déplacer une arme d’un lieu à un autre,
+en dehors du domicile, en l’ayant auprès de soi et inutilisable immédiatement. Elle
+peut être placée dans une valise, dans le coffre d’un véhicule, etc.
+ Les armes, les munitions ou éléments d’armes concernés
+Les armes de catégorie A considérées comme des matériels de guerre et armes
+interdites à l’acquisition et à la détention.
+Les armes de catégorie B, armes soumises à autorisation.
+Le législateur a inclus les éléments des armes même si en tant que tels ils
+peuvent apparaître inoffensifs afin d’éviter le transport d’une arme en pièces
+détachées en toute impunité, pour la remonter dans le lieu de destination ou
+d’emploi.
+
+
+
+L’INTERDICTION DU PORT OU DU TRANSPORT HORS DU DOMICILE
+
+L’auteur doit être trouvé en possession de l’arme, en dehors de son domicile.
+On entend par domicile, le lieu d’habitation de la personne mais également tout
+endroit qui sans être constitutif de domicile n’en est pas pour autant libre d’accès pour
+l’agent de la force publique, dès lors qu’il peut être qualifié de lieu normalement clos.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 30
+
+Il s’agit d’une notion développée par la jurisprudence et qui assimile au domicile les
+lieux qui se trouvent dans l’enceinte de la maison ou à proximité immédiate de celle-ci
+dès lors qu’elles en constituent le prolongement.
+Ces notions de port et de transport doivent être dissociées de l’autorisation de
+détention d’armes. Si elle ne bénéficie pas de dispositions légales ou individuelles
+spécifiques en matière de port et de transport d’armes, la personne qui bénéficie d’une
+autorisation de détention d’arme sera poursuivie pour infraction de port ou transport
+d’arme illégal dès lors que cette arme franchit les limites du domicile, c’est-à-dire du lieu
+où elle est normalement entreposée, et en ce qui concerne le transport lorsque le motif
+n'est pas légitime.
+Dans ces conditions, la personne qui bénéficie d’une autorisation de détention d’arme
+sera poursuivie si elle est trouvée en possession de son arme dans un véhicule, une
+caravane, un bateau, une chambre d’hôtel, sauf si la caravane, le bateau, la chambre
+constituent le domicile de la personne et que l’arme est supposée y être entreposée.
+
+
+
+LES DÉROGATIONS À L’INTERDICTION ABSOLUE DE PORT OU DE
+TRANSPORT
+ L’existence d’une autorisation expresse
+Le port ou le transport d’armes ou d’éléments d’armes peut être autorisé si un
+texte légal le prévoit (articles L. 315-1 et L. 315-2 du code de la sécurité intérieure).
+Il en est ainsi pour certaines professions telles que : militaires, policiers, membres
+des sociétés de sécurité, de transports de fonds ou de vigiles. L’autorisation de port
+n’est cependant pas une règle de portée générale. À cet égard, l’article L. 315-1
+précise bien que les personnels listés dans cet article peuvent être autorisés à
+s’armer mais seulement « pendant l’exercice de leurs fonctions ».
+ L’existence d’un motif légitime de transport
+Le transport de matériel de guerre, d’une arme, d’éléments d’arme ou de
+munitions de catégorie A ou B est également admis s’il existe un motif légitime à son
+déplacement, un déménagement, un transport entre le domicile et l’armurerie, pour
+se rendre sur une compétition ou un entraînement, au titre de la chasse, de la
+reconstitution historique.
+
+III - ÉLÉMENT MORAL
+Il s’agit d’une infraction intentionnelle. L’individu a conscience qu’il ne respecte pas la loi.
+
+
+
+VOLONTÉ DE PORTER OU TRANSPORTER UNE ARME EN DEHORS DE
+SON DOMICILE
+
+
+
+CONSCIENCE DE PORTER OU TRANSPORTER UNE ARME SANS MOTIF
+LÉGITIME
+
+IV - CIRCONSTANCES AGGRAVANTES
+ Article 222-54 alinéa 2 du C.P.
+Si l'auteur des faits a été antérieurement condamné pour une ou plusieurs
+infractions mentionnées aux articles 706-73 et 706-73-1 du code de procédure
+pénale à une peine égale ou supérieure à un an d'emprisonnement ferme.
+ Article 222-54 alinéa 3 du C.P.
+Si le transport d’armes est effectué par au moins deux personnes ou si deux
+personnes au moins sont trouvées ensemble porteuses d’armes.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 31
+
+V - RÉPRESSION
+
+
+PEINES ENCOURUES
+ Personnes physiques
+
+QUALIFICATION
+SIMPLE
+
+CLASSIFICATION
+
+AGGRAVÉE
+
+DÉLIT
+
+ARTICLE
+222-54 al.1 du
+C.P.
+222-54 al.2 du
+C.P.
+222-54 al.3 du
+C.P.
+
+CIRCONSTANCES AGGRAVANTES
+
+Circonstance prévue au présent
+alinéa
+Circonstance prévue au présent
+alinéa
+
+PEINES PRINCIPALES
+- 7 ans d’emprisonnement
+- 100 000 € d’amende
+- 10 ans d’emprisonnement
+- 500 000 € d’amende
+
+ Personnes morales
+L'article 222-61 du C.P. prévoit la responsabilité pénale pour les personnes
+morales. Elles encourent, outre l'amende suivant les modalités prévues à l'article
+131-38, les peines prévues à l'article 131-39 du C.P.
+
+
+
+TENTATIVE : NON
+
+
+
+EXEMPTION OU RÉDUCTION DE PEINE : OUI
+Elles sont prévues spécifiquement par :
+ l’article 222-67-1 al.1 du C.P. pour l’exemption de peine :
+« Toute personne qui a tenté de commettre les infractions prévues à la présente
+section est exempte de peine si, ayant averti l'autorité administrative ou judiciaire,
+elle a permis d'éviter leur réalisation. »
+ l’article 222-67-1 al.2 du C.P. pour la réduction de peine :
+« La peine privative de liberté encourue par l'auteur ou le complice de l'une des
+infractions prévues à la présente section est réduite des deux tiers si, ayant averti
+l'autorité administrative ou judiciaire, il a permis de faire cesser la réalisation de
+l'infraction ou d'identifier, le cas échéant, les autres auteurs ou complices. »
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 32
+
+LE PORT SANS AUTORISATION OU LE
+TRANSPORT SANS MOTIF LÉGITIME
+D'ARMES, DE MUNITIONS OU DE LEURS
+ÉLÉMENTS DE LA CATÉGORIE C OU D
+Quiconque, hors de son domicile et sauf les exceptions
+résultant des dispositions des articles L. 315-1 et L. 315-2, est
+trouvé porteur ou effectue sans motif légitime le transport
+d'armes de catégories C ou D (figurant sur une liste fixée par
+arrêté), de munitions ou de leurs éléments, même s'il en est
+régulièrement détenteur, constitue un délit.
+I - ÉLÉMENT LÉGAL
+L'article L. 317-8 du code de la sécurité intérieure prévoit et réprime le port et le
+transport sans motif légitime des armes, de munitions ou de leurs éléments des catégories
+C ou D (à l'exception de ceux qui présentent une faible dangerosité et figurent sur une liste
+fixée par arrêté).
+
+II - ÉLÉMENT MATÉRIEL
+
+
+LE PORT OU LE TRANSPORT D'ARMES, DE MUNITIONS OU DE LEURS
+ÉLÉMENTS DE CATÉGORIE C OU D
+ Le port ou le transport
+Concernant le port, il s’agit de l’action d’avoir l’arme sur soi, à la ceinture, dans
+un étui, dans la poche, etc et utilisable immédiatement.
+Le transport s’entend comme l’action de déplacer une arme d’un lieu à un autre,
+en dehors du domicile, en l’ayant auprès de soi et inutilisable immédiatement. Elle
+peut être placée dans une valise, dans le coffre d’un véhicule, etc.
+ Les armes, les munitions ou leurs éléments concernés
+ Les armes de catégorie C, armes soumises à déclaration.
+ Les armes de catégories D figurant sur une liste fixée par arrêté.
+Le législateur a inclus les éléments des armes même si en tant que tels ils
+peuvent apparaître inoffensifs afin d'éviter le transport d'une arme en pièces
+détachées en toute impunité, pour la remonter dans le lieu de destination ou
+d'emploi.
+
+
+
+L'INTERDICTION DU PORT OU DU TRANSPORT HORS DU DOMICILE
+
+Il s'agit des mêmes modalités que celles définies pour le port ou le transport sans
+motif légitime de matériels de guerre, d'armes, d'éléments d'armes ou de munitions de
+la catégorie A ou B.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 33
+
+
+
+LES DÉROGATIONS A L'INTERDICTION ABSOLUE DE PORT OU DE
+TRANSPORT
+ L'existence d'un motif légitime de transport
+Le transport d’une arme, de munitions ou d’éléments d’arme de catégorie C ou D
+(sauf dans le cas où il est libre) est également admis s’il existe un motif légitime à
+son déplacement, un déménagement, un transport entre le domicile et l’armurerie,
+pour se rendre sur une compétition ou un entraînement, au titre de la chasse, de la
+reconstitution historique.
+
+III - ÉLÉMENT MORAL
+Il s'agit d'une infraction intentionnelle. L'individu a conscience qu'il ne respecte pas la loi.
+
+
+
+VOLONTÉ DE PORTER OU TRANSPORTER UNE ARME EN DEHORS DE
+SON DOMICILE
+
+
+
+CONSCIENCE DE PORTER OU TRANSPORTER UNE ARME SANS MOTIF
+LÉGITIME
+
+IV - CIRCONSTANCES AGGRAVANTES
+ Article L. 317-9 du C.S.I.
+Si le transport d'armes est effectué par au moins deux personnes ou si deux
+personnes au moins sont trouvées porteuses d'armes.
+
+V - RÉPRESSION
+
+
+PEINES ENCOURUES
+ Personnes physiques
+
+QUALIFICATION
+SIMPLE
+(CATÉGORIE C)
+
+CLASSIFICATION
+
+SIMPLE
+(CATÉGORIE D)
+AGGRAVÉE
+(CATÉGORIE C)
+AGGRAVÉE
+(CATÉGORIE D)
+
+ARTICLE
+L. 317-8 2°
+du C.S.I.
+L. 317-8 3°
+du C.S.I.
+
+DÉLIT
+
+L. 317-9 2°
+du C.S.I.
+L. 317-9 3°
+du C.S.I.
+
+CIRCONSTANCES AGGRAVANTES
+Une des circonstances prévues au
+présent article
+
+Une des circonstances prévues au
+présent article
+
+PEINES PRINCIPALES
+- 2 ans d’emprisonnement
+- 30 000 € d’amende
+- 1 an d’emprisonnement
+- 15 000 € d’amende
+- 5 ans d’emprisonnement
+- 75 000 € d’amende
+- 2 ans d’emprisonnement
+- 30 000 € d’amende
+
+ Personnes morales: NON
+ Amende forfaitaire délictuelle
+ Le dernier alinéa de l’article L 317-8 du C.S.I. permet de recourir à la
+procédure d’amende forfaitaire prévue par les articles 495-17 à 495-25 du C.P.P.
+pour le délit de port ou transport sans motif légitime d’armes, de munitions ou de
+leurs éléments de la catégorie D (sauf s’il s’agit d’armes à feu).
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 34
+
+Pour aller plus loin
+Consultez
+Les Guides Pratiques du Policier
+Armes, munitions, explosifs
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 35
+
+

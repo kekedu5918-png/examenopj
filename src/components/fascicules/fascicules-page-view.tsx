@@ -45,12 +45,12 @@ const domainVisual = {
 
 const filterTabs: { id: DomainFilter; label: string; count?: number; badgeClass: string }[] = [
   { id: 'all', label: 'Tous', badgeClass: 'bg-white/10 text-gray-300 border-white/15' },
-  { id: 'DPS', label: 'Droit pénal spécial', count: 7, badgeClass: 'bg-red-500/15 text-red-300 border-red-500/25' },
+  { id: 'DPS', label: 'Droit pénal spécial', count: 8, badgeClass: 'bg-red-500/15 text-red-300 border-red-500/25' },
   { id: 'DPG', label: 'Droit pénal général', count: 2, badgeClass: 'bg-violet-500/15 text-violet-300 border-violet-500/25' },
   {
     id: 'Procédure pénale',
     label: 'Procédure pénale',
-    count: 4,
+    count: 5,
     badgeClass: 'bg-blue-500/15 text-blue-300 border-blue-500/25',
   },
 ] as const;

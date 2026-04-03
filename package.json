@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "import:pdf": "env-cmd -f ./.env.local node scripts/import-pdf-corpus.mjs"
+    "import:pdf": "env-cmd -f ./.env.local node scripts/import-pdf-corpus.mjs",
+    "elite:lecons": "node tools/parse-elite-chapters.mjs",
+    "cours:comparatif": "node tools/build-cours-comparatif.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

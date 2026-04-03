@@ -1,0 +1,531 @@
+Fascicule n°15
+
+EXAMEN JUIN 2026
+
+TABLE DES MATIÈRES
+LA NULLITÉ DES ACTES DE PROCÉDURE
+CHAPITRE 1 : LES CAS DE NULLITÉ...........................................................P.1
+1.1 - LES NULLITÉS TEXTUELLES............................................................................P.1
+1.1.1 - En matière de perquisitions et de saisies...................................................p.1
+1.1.2 - En matière de réquisitions (art. 60-1 et 77-1-1 C.P.P.).................................p.3
+1.1.3 - En matière d'interception de correspondances (art. 100-7 C.P.P.)..................p.3
+1.1.4 - En matière d'infiltration...........................................................................p.3
+1.1.5 - En matière de vérification d'identité (art. 78-3 C.P.P.)..................................p.3
+1.1.6 - En matière de moyens d’investigation exorbitants.......................................p.4
+1.2 - LES NULLITÉS SUBSTANTIELLES....................................................................P.5
+
+CHAPITRE 2 : L'ANNULATION DE L'ACTE..................................................P.6
+2.1 - L'ACTION EN NULLITÉ....................................................................................P.6
+2.1.1 - Les faits donnant lieu à poursuites font l'objet d'une information judiciaire.....p.6
+2.1.2 - Les faits donnant lieu à poursuites ne font pas l'objet d'une information
+judiciaire (art. 385 C.P.P.).................................................................................. p.9
+2.2 - LES EFFETS DE LA NULLITÉ............................................................................P.9
+2.2.1 - Les effets sur la procédure (art. 174 C.P.P.)...............................................p.9
+2.2.2 - Les effets pour les parties (art. 174 al 1 C.P.P.)..........................................p.9
+
+LA NULLITÉ DES ACTES DE PROCÉDURE
+Afin de garantir les libertés individuelles et le libre exercice des
+droits de la défense tout en assurant l'efficacité des poursuites
+et de la répression, il est essentiel d'exercer un contrôle de
+légalité sur l'ensemble des actes de procédure.
+Si à l'évidence on ne peut faire disparaître la réalité d'une
+arrestation ou d'une détention illégale, il est possible d'annuler
+l'acte procédural qui a enregistré l'acte matériel irrégulier ainsi
+que les actes procéduraux qui en découlent.
+L'annulation détruit donc les effets juridiques et les preuves
+engendrés par cette arrestation ou détention.
+CHAPITRE 1 :
+LES CAS DE NULLITÉ
+On considère qu'il existe deux notions de nullités. Dans certains cas, un texte prévoit
+expressément la nullité de tel ou tel acte accompli de façon irrégulière (ex : art. 59 du C.P.P.
+pour les perquisitions). On parle alors de nullités textuelles. Dans d'autres cas, le texte ne
+prévoit pas de nullité mais l'importance de ses dispositions rend inacceptable le non-respect
+de ces dernières. Il s'agit alors de nullités substantielles.
+Aux termes de l'art. 802 du C.P.P., les nullités textuelles comme substantielles ne peuvent
+être prononcées que lorsque l'irrégularité constatée a eu pour effet de porter atteinte aux
+intérêts de la partie concernée.
+
+1.1 - LES NULLITÉS TEXTUELLES
+Le système des nullités textuelles suppose que la loi prévoit une formalité en indiquant
+qu'elle est requise à peine de nullité. Cela exclut toute appréciation du juge.
+Les nullités textuelles, peu nombreuses, ne sont pas regroupées dans le C.P.P., mais
+mentionnées à la suite de chaque disposition concernée.
+
+1.1.1 - En matière de perquisitions et de saisies
+L'art. 59 al 2 énonce que "les formalités mentionnées aux art. 56, 56-1, 57 et au présent
+article sont prescrites à peine de nullité". Il s'agit des formalités suivantes :
+√ présence de la personne au domicile de laquelle la perquisition a lieu ou, en cas
+d'impossibilité, d'un représentant de son choix ou à défaut de deux témoins ;
+√ mise en œuvre de toutes mesures permettant d'assurer le respect du secret professionnel
+et des droits de la défense ;
+– Dans le cabinet d'un avocat ou à son domicile :
+Elles sont obligatoirement effectuées par un magistrat et en présence du bâtonnier ou de
+son délégué et suite à une décision écrite et motivée du J.L.D. saisi par le magistrat en
+charge du dossier, qui indique la nature de l'infraction ou des infractions sur lesquelles
+portent les investigations, les raisons justifiant la perquisition, l'objet de celle-ci et sa
+proportionnalité au regard de la nature et de la gravité des faits.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 1
+
+Le contenu de cette décision est porté à la connaissance du bâtonnier ou de son délégué dès
+le début de la perquisition par le magistrat effectuant celle-ci. Le magistrat, le bâtonnier ou
+son délégué ont seuls le droit de prendre connaissance des documents découverts lors de la
+perquisition préalablement à leur éventuelle saisie (56-1 C.P.P.).
+– Dans les locaux d'une entreprise de presse, d'une entreprise de communication
+audiovisuelle, d'une entreprise de communication au public en ligne, d'une agence de
+presse, dans les véhicules professionnels de ces entreprises ou agences ou au domicile
+d'un journaliste lorsque les investigations sont liées à leur activité professionnelle, les
+perquisitions sont effectuées par un magistrat (art. 56-2 C.P.P.).
+– Dans le cabinet d'un médecin, d'un notaire ou d'un huissier, les perquisitions sont
+effectuées par un magistrat et en présence de la personne responsable de l'ordre ou de
+l'organisation professionnelle à laquelle appartient l'intéressé ou de son représentant
+(art. 56-3 C.P.P.).
+– Dans les lieux abritant des éléments couverts par le secret de la défense nationale
+définis par l'arrêté du 21 juin 2010 les perquisitions sont effectuées par un magistrat en
+présence du président de la Commission du secret de la défense nationale (art. 56-4
+C.P.P.).
+– Dans les locaux d'une juridiction ou au domicile d'une personne exerçant des fonctions
+juridictionnelles, les perquisitions sont effectuées par un magistrat et en la présence du
+premier président de la cour d'appel ou du premier président de la Cour de cassation ou
+de son délégué (art. 56-5 C.P.P.).
+√ Respect des heures légales (6 h - 21 h) sauf réclamation faite de l'intérieur de la maison
+et cas particuliers prévus par un texte (maison de jeux de hasard, lieu de débauche,
+incendie, inondations, etc.).
+À noter que les perquisitions menées en enquête préliminaire peuvent intervenir en
+l’absence de l’assentiment de la personne, lorsqu’il s’agit d’un crime ou d’un délit puni d’une
+peine d’emprisonnement supérieure ou égale à trois ans ou si la recherche de biens dont la
+confiscation est prévue à l' article 131-21 du code pénal le justifie. À peine de nullité,
+l’autorisation préalable du juge des libertés et de la détention doit respecter les conditions
+fixées par l’article 76 al. 4 du C.P.P. : décision écrite et motivée précisant la qualification de
+l’infraction et l’adresse des lieux. La perquisition ne doit pas avoir un autre objet que la
+recherche et la constatation des infractions visées dans la décision du juge des libertés et de
+la détention ou la saisie des biens dont la confiscation est prévue à l'article 131-21 du code
+pénal.
+Les perquisitions et les saisies peuvent être également opérées en dehors des heures
+légales en matière de criminalité organisée et, à peine de nullité, dans le respect des
+conditions fixées par le code de procédure pénale :
+– art. 706-92 et 706-93 en matière de criminalité organisée,
+– art. 706-28 en matière de trafic de stupéfiants et de participation à une association de
+malfaiteurs ayant pour objet de préparer l'une de ces infractions,
+– art. 706-35 en matière de proxénétisme et de participation à une association de
+malfaiteurs ayant pour objet de préparer l'une de ces infractions.
+√ Enfin, La loi 2019-222 du 23 mars 2019 de programmation 2018-2022 et de réforme pour
+la justice a inséré dans le code de procédure pénale un article 802-2 prévoyant que toute
+personne ayant fait l’objet d’une perquisition ou d’une visite domiciliaire en application des
+dispositions de ce code et qui n’a pas été poursuivie devant une juridiction d’instruction ou
+de jugement au plus tôt six mois après l’accomplissement de cet acte pourra, dans un délai
+d’un an à compter de la date à laquelle elle a eu connaissance de cette mesure, saisir le
+juge des libertés et de la détention d’une demande tendant à son annulation. Auparavant
+seules les personnes poursuivies pouvaient demander la nullité d’une perquisition.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 2
+
+1.1.2 - En matière de réquisitions (art. 60-1 et 77-1-1 C.P.P.)
+À peine de nullité, les éléments obtenus par une réquisition prise en violation des
+dispositions de l'article 2 de la loi du 29/07/1881 sur la liberté de la presse (secret des
+sources des journalistes) ne peuvent être versés au dossier.
+
+1.1.3 - En matière d'interception de correspondances (art. 100-7 C.P.P.)
+Lors de toute interception de correspondances émises par la voie des télécommunications, le
+juge d'instruction (ou le juge des libertés et de la détention en matière de criminalité
+organisée) doit au préalable informer :
+√ le président de l'Assemblée nationale ou du Sénat lorsque l'interception vise un député ou
+un sénateur,
+√ le bâtonnier lorsqu'il s'agit d'intercepter une ligne dépendant du cabinet d'un avocat ou de
+son domicile.
+√ le premier président ou le procureur général lorsque l’interception concerne le cabinet
+d’un magistrat ou son domicile.
+À peine de nullité, ne peuvent être transcrites les correspondances avec un avocat relevant
+de l'exercice des droits de la défense et couvertes par le secret professionnel de la défense
+et du conseil, hors les cas prévus à l'article 56-1-2 du présent code (art. 100-5 al.3 C.P.P.).
+Les correspondances avec un journaliste permettant d'identifier une source en violation de
+l'article 2 de la loi du 29 juillet 1881 sur la liberté de la presse (art. 100-5 al.4 C.P.P.) ne
+peuvent être transcrites, sous peine de nullité.
+
+1.1.4 - En matière d'infiltration
+À peine de nullité, les actes d’infiltration réalisés par l’agent infiltré ne doivent pas constituer
+une incitation à commettre une infraction. Ne constituent pas une incitation à commettre
+une infraction, les actes qui contribuent à la poursuite d’une infraction déjà préparée ou
+débutée au moment où a été accordée l’autorisation par le magistrat, y compris en cas de
+réitération ou d’aggravation de l’infraction initiale (art. 706-81 al. 2 C.P.P.).
+De même, l’autorisation préalable aux opérations d’infiltration, délivrée soit par le procureur
+de la République soit par le juge d’instruction doit respecter, à peine de nullité, les
+conditions de l’article 706-83 du C.P.P. : autorisation écrite et spécialement motivée
+mentionnant les infractions visées, l’identité de l’O.P.J. coordonnateur, la durée de
+l’opération.
+
+1.1.5 - En matière de vérification d'identité (art. 78-3 C.P.P.)
+La vérification, qui fait suite à un contrôle d'identité, doit se dérouler dans les conditions et
+selon les modalités énumérées à l'art. 78-3. Pour l'essentiel, sont imposées à peine de
+nullité, les prescriptions suivantes :
+√ information de la personne retenue sur son droit de faire aviser le procureur de la
+République et de prévenir à tout moment sa famille ou une personne de son choix ;
+√ pour les mineurs, avis immédiat au procureur et assistance du représentant légal ;
+√ délai de rétention fixé à quatre heures maximum ; ou huit heures à Mayotte et dans la
+collectivité territoriale de Guyane.
+√ mention, dans un P.V., de l'ensemble des opérations et diligences effectuées ;
+√ absence de mise en mémoire sur fichiers et destruction dans les six mois de toutes les
+pièces lorsqu'aucune procédure d'enquête ne fait suite à la vérification.
+√ lorsqu’une mesure de garde à vue fait suite à la vérification d’identité, la personne doit
+être aussitôt informée de son droit de faire aviser le procureur de la république.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 3
+
+1.1.6 - En matière de moyens d’investigation exorbitants
+1.1.6.1.1 - La lutte contre le trafic de stupéfiants et le blanchiment
+Dans le cadre de cette lutte, l’article 706-32 du C.P.P. permet aux O.P.J. et sous leur autorité
+aux A.P.J., avec l’autorisation du procureur de la République ou du juge d’instruction :
+√ d’acquérir des produits stupéfiants ;
+√ en vue de cette acquisition, de mettre à disposition des trafiquants des moyens à
+caractère juridique ou financier ainsi que des moyens de transport, de dépôt,
+d’hébergement, de conservation et de télécommunication.
+À peine de nullité, l’autorisation du procureur de la République ou du juge d’instruction, qui
+peut être donnée par tout moyen, est mentionnée ou versée au dossier de la procédure et
+les actes autorisés ne peuvent constituer une incitation ayant déterminé la commission
+d'infraction. Ne constituent pas une incitation à commettre une infraction les actes qui
+contribuent à la poursuite d'une infraction déjà préparée ou débutée au moment où
+l'autorisation mentionnée au présent article a été accordée par le magistrat compétent, y
+compris en cas de réitération ou d'aggravation de l'infraction initiale.
+L’autorisation délivrée par le magistrat peut également permettre aux O.P.J. ou A.P.J. de
+recourir à une identité d’emprunt, y compris en faisant usage d’un dispositif permettant
+d’altérer ou de transformer leur voix ou leur apparence physique.
+1.1.6.1.2 - L’enquête sous pseudonyme
+Aux seules fins de constater les crimes et les délits punis d'une peine d'emprisonnement
+commis par la voie des communications électroniques, et lorsque les nécessités de l'enquête
+ou de l'instruction le justifient, l'article 230-46 du C.P.P. autorise les O.P.J. ou A.P.J. affectés
+dans un service spécialisé et spécialement habilités à cette fin à procéder sous pseudonyme,
+y compris en faisant usage d'un dispositif permettant d'altérer ou de transformer leur voix
+ou leur apparence physique sans en être pénalement responsable, aux actes suivants :
+√ 1° participer à des échanges électroniques, ;
+√ 2° extraire ou conserver les données sur les personnes susceptibles d'être les auteurs de
+ces infractions et tout élément de preuve;
+√ 3° acquérir tout contenu, produit, substance, prélèvement ou service ou transmettre tout
+contenu en réponse à une demande expresse. [Dispositions déclarées non conformes à la
+Constitution par la décision du Conseil constitutionnel n° 2022-846 DC du 19 janvier 2023]
+l'opération est autorisée par le procureur de la République ou par le juge d'instruction saisi
+des faits;
+√ 4° après autorisation du procureur de la République ou du juge d'instruction saisi des
+faits, en vue de l'acquisition, de la transmission ou de la vente par les personnes
+susceptibles d'être les auteurs de ces infractions de tout contenu, produit, substance,
+prélèvement ou service, y compris illicite, mettre à la disposition de ces personnes des
+moyens juridiques ou financiers ainsi que des moyens de transport, de dépôt,
+d'hébergement, de conservation et de télécommunication.
+À peine de nullité, l'autorisation du magistrat prévue aux 3° et 4°, qui peut être donnée par
+tout moyen, est mentionnée ou versée au dossier de la procédure et les actes autorisés ne
+peuvent constituer une incitation ayant déterminé la commission de ces infractions., Ne
+constituent pas une incitation à commettre une infraction les actes qui contribuent à la
+poursuite d'une infraction déjà préparée ou débutée au moment où l'autorisation
+mentionnée au présent article a été accordée par le magistrat compétent, y compris en cas
+de réitération ou d'aggravation de l'infraction initiale.
+1.1.6.1.3 - Autres techniques spéciales d'enquête
+Dans le cadre de la criminalité et la délinquance organisées (Art. 706-73 et 706-73-1 C.P.P.),
+des techniques spéciales d'enquête sont autorisées, selon le cadre juridique, soit par le
+J.L.D. sur requête du procureur de la République, soit par le juge d'instruction après avis du
+procureur de la République.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 4
+
+L'article 706-95-14 précise que les opérations ne peuvent, à peine de nullité, avoir un autre
+objet que la recherche et la constatation des infractions visées dans les décisions du
+magistrat. Le fait que ces opérations révèlent des infractions autres que celles visées dans
+l'autorisation du magistrat ne constitue pas une cause de nullité des procédures incidentes.
+Les opérations concernées par ces dispositions sont :
+√ le recueil des données techniques de connexion et les interceptions de correspondances
+émises par la voie des communications électroniques ;
+√ les sonorisations et des fixations d'images de certains lieux ou véhicules ;
+√ la captation des données informatiques.
+
+1.2 - LES NULLITÉS SUBSTANTIELLES
+L'art. 171 du C.P.P. donne une définition de cette notion : "Il y a nullité lorsque la
+méconnaissance d'une formalité substantielle prévue par une disposition du présent code ou
+toute autre disposition de procédure pénale a porté atteinte aux intérêts de la partie qu'elle
+concerne".
+Selon ce système, la nullité peut être encourue même si la loi est muette. Toutefois, la
+jurisprudence de la Cour de cassation exige, pour prononcer la nullité, une atteinte grave
+aux droits de la défense, ou encore que la recherche et l'établissement de la vérité aient été
+viciés fondamentalement.
+Ainsi, comme le rappelle la circulaire du ministre de la Justice (crim 93-13 du 24.08.1991),
+la suppression des nullités textuelles en matière de garde à vue ne signifie pas que les
+limitations et les garanties prévues par la loi en la matière sont dépourvues de toute
+sanction. Il est par exemple évident qu'une garde à vue ordonnée soit par un A.P.J., soit par
+un O.P.J. territorialement incompétent, sera annulée en raison de la violation d'une règle
+d'ordre public.
+De la même façon, le non-respect de la notification du droit à être assisté par un avocat
+justifie la nullité en raison de l’atteinte portée aux droits de la partie qu'elle concerne.
+En commission rogatoire, l’apparition d’indices graves et concordants à l’encontre d’une
+personne ne permet pas à l’O.P.J. de poursuivre l’audition sans risquer une nullité pour avoir
+fait échec aux droits de la défense (art. 105 C.P.P.).
+Le Conseil constitutionnel dans la décision n°2004-492 du 2 mars 2004 a censuré une
+disposition de la loi portant adaptation aux évolutions de la criminalité qui prévoyait de
+valider a posteriori, toute procédure menée conformément aux dispositions relatives à la
+criminalité organisée alors qu’en définitive la circonstance aggravante de bande organisée
+ne pouvait être retenue.
+Cette décision implique de l’autorité judiciaire, l’autorisation d’utiliser la procédure spécifique
+à la criminalité organisée dans les seuls cas où elle dispose d’une ou plusieurs raisons
+plausibles de soupçonner que les faits constituent l’une des infractions énumérées par
+l’article 706-73 du C.P.P..
+Le Conseil constitutionnel admet que les actes d’enquête ou d’instruction puissent être
+exonérés de nullité dés lors que la circonstance aggravante de bande organisée paraissait
+caractérisée à la date où ils ont été autorisés.
+A contrario, les actes qui auraient été autorisés, en l’absence soit de la circonstance
+aggravante de bande organisée pour les infractions de l’article 706-73 du C.P.P. soit d’une ou
+plusieurs raisons plausibles de soupçonner que les faits constituaient l’une des infractions de
+cet article, pourront faire l’objet d’une annulation.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 5
+
+Lorsque l’enregistrement d’une audition d’un mineur placé en garde à vue ne peut être
+effectué en raison d’une impossibilité technique, il en est fait mention dans un procès-verbal
+d’interrogatoire qui précise la nature de cette impossibilité. Le procureur de la République ou
+le juge d’instruction doit être immédiatement avisé. Le non-respect de ces modalités est une
+cause de nullité (Cass. crim., 26 mars 2008). Bien que ne relevant pas des nullités
+textuelles, la chambre criminelle de la Cour de cassation n’a pas recherché si le défaut
+d’enregistrement de l’interrogatoire représentait une atteinte grave à l’intérêt de l’enfant.
+Le défaut d’enregistrement semble alors basculer dans la catégorie des nullités d’ordre
+public.
+En tout état de cause, qu'elle soit textuelle ou substantielle, la nullité répond à une
+procédure spécifique.
+
+CHAPITRE 2 :
+L'ANNULATION DE L'ACTE
+L'action en nullité diffère selon que les faits motivant les poursuites donnent lieu ou non à
+l'ouverture d'une information. Une fois prononcée, l'annulation produit des effets sur la
+procédure elle-même mais entraîne également des conséquences pour les parties.
+
+2.1 - L'ACTION EN NULLITÉ
+2.1.1 - Les faits donnant lieu à poursuites font l'objet d'une information
+judiciaire
+L'art. 170 du C.P.P. attribue compétence à la chambre de l'instruction pour apprécier les
+éventuelles nullités. Il énumère aussi les personnes qui peuvent saisir cette juridiction aux
+fins d'annulation d'un acte ou d'une pièce de la procédure. Le prononcé de la nullité, quant à
+lui, repose sur des règles légales mais également sur la jurisprudence de la Cour de
+cassation.
+2.1.1.1 - La saisine de la chambre de l'instruction
+2.1.1.1.1 - Les personnes habilitées
+2.1.1.1.1.1 Le juge d'instruction
+Lorsqu'une information judiciaire est ouverte, s'il apparaît au juge d'instruction qu'un acte
+ou une pièce de la procédure est frappée de nullité, il saisit la chambre de l'instruction aux
+fins d'annulation, après avoir pris l'avis du procureur de la République et après avoir informé
+les parties (art. 173 al 1 du C.P.P.).
+L'emploi de l'expression "actes ou pièces de la procédure" vise tout particulièrement le cas
+dans lequel un acte de la procédure se confond avec la pièce qui résulte de
+l'accomplissement de cet acte (ex : C.R. prescrivant une écoute téléphonique ou P.V. la
+transcrivant avec le support de l'enregistrement lui-même). Par contre, ne sont pas visées
+les pièces qui ne résultent pas d'un acte d'instruction (ex : écritures des parties ou mémoire
+en défense produit par l'une d'entre elles).
+2.1.1.1.1.2 Le procureur de la République
+S'il estime qu'une nullité a été commise, ce magistrat "requiert du juge d'instruction
+communication de la procédure en vue de sa transmission à la chambre de l'instruction,
+présente requête aux fins d'annulation à cette chambre et en informe les parties" (art. 173
+al 2 C.P.P.).
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 6
+
+2.1.1.1.1.3 Les parties
+Elles se voient également reconnaître le droit de saisir la chambre de l'instruction par
+requête motivée dont elles adressent, à peine d’irrecevabilité, copie au juge d'instruction qui
+transmet le dossier de la procédure au président de la chambre de l'instruction. La requête
+présentée par les parties doit faire l'objet d'une déclaration au greffe de la chambre de
+l'instruction (art. 173 al 3 C.P.P.).
+Lorsque la détention provisoire de la personne mise en examen se poursuit au-delà d’un
+délai de trois mois et que l’avis de fin d’information n’a pas été délivré, le président de la
+chambre de l’instruction, le ministère public ou les parties peuvent saisir la chambre de
+l’instruction afin qu’elle examine l’ensemble de la procédure. L’audience doit intervenir dans
+un délai de huit jours à compter de la réception de la demande. Les parties peuvent alors
+déposer des mémoires contenant notamment des requêtes en annulation, deux jours
+ouvrables au moins avant la date prévue de l’audience (art. 221-3 C.P.P.).
+2.1.1.1.1.4 Le témoin assisté
+Il peut également formuler une requête en annulation dans les mêmes formes que les
+parties (art. 173 al. 3 C.P.P.). Par contre, sont exclues de l'action en nullité les actes qui
+peuvent faire l'objet d'un appel (ex : décisions rendues en matière de détention provisoire
+ou de contrôle judiciaire) (art. 173 al. 4 C.P.P.).
+2.1.1.1.2 - La réception de la requête par la juridiction
+2.1.1.1.2.1 Les pouvoirs propres du président de la chambre de l'instruction (art. 173 al 5
+C.P.P.)
+Dans les huit jours de la réception du dossier par le greffe de la chambre de l'instruction,
+son président peut, par ordonnance non susceptible de recours, constater que la requête est
+irrecevable dans les cas suivants :
+√ la requête n'a pas fait l'objet d'une déclaration au greffe (art. 173 al 3 C.P.P.),
+√ la requête porte sur des actes de procédure qui peuvent faire l'objet d'un appel de la part
+des parties (art. 173 al 4 C.P.P.),
+√ la requête est présentée par une personne plus de six mois après la notification de sa
+mise en examen. Elle concerne les actes accomplis avant l'interrogatoire de première
+comparution ou l'interrogatoire lui-même ainsi que les interrogatoires ultérieurs (art. 173-1
+al. 1 C.P.P.).
+Il en est de même pour le témoin assisté à compter de sa première audition puis de ses
+auditions ultérieures (art. 173-1 al. 2 C.P.P.).
+Il en est de même pour la partie civile à compter de sa première audition puis de ses
+auditions ultérieures (art. 173-1 al. 3 C.P.P.) :
+√ la requête fait suite à une précédente et invoque des nullités que la partie concernée était
+en mesure de connaître (art. 174 al 1 C.P.P.),
+√ la requête est présentée à l'expiration d'un délai d’un mois si une personne mise en
+examen est détenue ou de trois mois dans les autres cas, à compter de l’avis donné aux
+parties et au témoin assisté par le juge d’instruction, aussitôt que l’information lui paraît
+terminée (art. 175 al. 4 C.P.P.),
+√ la requête n'est pas motivée .
+Lorsqu'il constate l'irrecevabilité de la requête, le président de la chambre de l'instruction
+ordonne que le dossier de l'information soit renvoyé au juge d'instruction.
+Lorsque la requête est recevable, le président réunit la chambre de l'instruction et la
+procédure est transmise au procureur général afin que le dossier puisse être mis en état (1)
+dans les quarante-huit heures de la réception des pièces en matière de détention provisoire
+et dans les dix jours, en toute matière conformément à l'art. 194 al 1 du C.P.P.
+(1) La mise en état (sous-entendu « ...d'être jugé ») est une phase préparatoire du prononcé de la nullité.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 7
+
+2.1.1.1.2.2 Les pouvoirs de la chambre de l'instruction
+La chambre de l'instruction doit statuer dans les deux mois à compter de la transmission du
+dossier au procureur général par le président (art. 194 al 2 C.P.P.).
+Une fois la chambre saisie, toutes les nullités doivent lui être proposées, ce qui n'empêche
+pas qu'elle puisse les relever d'office (art. 174 al 1). À défaut, les parties ne sont plus
+recevables à en faire état, sauf le cas où elles n'auraient pu les connaître. Cette règle
+n'empêche pas les personnes devenues parties après une requête en nullité d'invoquer des
+nullités antérieures à celle-ci. Cela permet une "purge successive des nullités" pouvant
+affecter une information (art. C 174 de la circulaire générale du 01/03/1993.).
+Il est à noter que cette "purge" connaît des modalités différentes selon la nature des faits :
+√ En matière criminelle, l'ordonnance de mise en accusation devant la cour d'assises, prise
+par le juge d'instruction, lorsqu'elle devient définitive couvre les vices de la procédure, sauf
+dans les cas suivants (art. 181 C.P.P.) :
+– l'accusé n'a pas été régulièrement informé de sa mise en examen ou de sa qualité de
+partie à la procédure, de l'avis de fin d'information judiciaire ou de l'ordonnance de
+mise en accusation (si cela ne résulte pas d’une manœuvre de sa part ou de sa
+négligence), ,
+– les parties n’auraient pas pu avoir préalablement connaissance de ces vices de
+procédure.
+√ En matière délictuelle, les parties ne sont plus recevables à présenter une requête à
+l'expiration d'un délai d'un mois si la personne mise en examen est détenue ou de trois mois
+dans les autres cas (art. 175 C.P.P.).
+Les nullités de l’information sont « purgées » par le renvoi ordonné par le juge d’instruction
+ou la chambre de l’instruction, sauf si les moyens de nullité ne pouvaient pas être connus
+par les parties avant la clôture de l'instruction (art. 385 du C.P.P.).
+Ces dispositions sont également applicables en matière contraventionnelle.
+2.1.1.2 - Le prononcé de la nullité
+Basée légalement sur l'art. 802 du C.P.P. lorsqu'un préjudice est apporté à un intérêt privé,
+la nullité peut également reposer sur la jurisprudence de la Cour de cassation qui introduit la
+notion de nullité d'ordre public.
+2.1.1.2.1 - Les nullités d'ordre privé
+L'art. 802 du C.P.P. énonce : « En cas de violation des formes prescrites par la loi à peine de
+nullité ou d'inobservation des formalités substantielles, toute juridiction, y compris la Cour
+de cassation, qui est saisie d'une demande d'annulation ou qui relève d'office une telle
+irrégularité ne peut prononcer la nullité que lorsque celle-ci a eu pour effet de porter
+atteinte aux intérêts de la partie qu'elle concerne ».
+Comme ce texte l'indique, toutes les juridictions, d'instruction comme de jugement, sont
+compétentes pour prononcer la nullité. Par ailleurs, sont visés non seulement tous les actes
+de recherche des preuves accomplis par le juge d'instruction mais également tous ceux qui
+ont été accomplis au cours de l'enquête de police en ce qu'ils font partie de la procédure
+d'instruction.
+Précisons enfin que l'art. 802 vise expressément les nullités textuelles comme les nullités
+substantielles. Par contre, il exclut les nullités d'ordre public.
+2.1.1.2.2 - Les nullités d'ordre public
+En l'absence de critère légal, il est particulièrement difficile de distinguer les nullités d'ordre
+privé des nullités d'ordre public. La notion d'ordre public étant elle-même vague, on peut
+simplement avancer que la nullité d'ordre public, qui ne prend pas en considération l'intérêt
+privé des parties, tend à protéger les règles et les principes fondamentaux qui s'imposent à
+tous et dont la violation est inacceptable.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 8
+
+Ce n'est donc qu'en examinant la jurisprudence et en procédant à une énumération
+forcément incomplète que l'on peut différencier les deux types de nullités.
+Ainsi, peuvent être considérées comme d'ordre public :
+√ les règles relatives à l'organisation, la composition et les compétences des juridictions ;
+√ la délivrance d'une mission technique ayant le caractère d'une expertise à un officier de
+police judiciaire par voie de commission rogatoire.
+Il s'agit en fait de l'ensemble des règles fondamentales qui garantissent le bon
+fonctionnement du système répressif ou de l'ensemble des intérêts généraux de la société.
+
+2.1.2 - Les faits donnant lieu à poursuites ne font pas l'objet d'une
+information judiciaire (art. 385 C.P.P.)
+En matière délictuelle, l'art. 385 du C.P.P. donne compétence au tribunal correctionnel pour
+constater les nullités des procédures qui lui sont soumises.
+Il a donc qualité pour constater toutes les nullités lorsqu'il a été saisi par citation directe ou
+au moyen de la procédure de comparution immédiate ou différée.
+L'art. 385 énonce également la règle selon laquelle « dans tous les cas, les exceptions de
+nullités doivent être présentées avant toute défense au fond ». En conséquence, la nullité ne
+peut être invoquée pour la première fois devant la Cour de cassation ni devant la cour
+d'appel.
+En matière contraventionnelle, l'art. 522 du C.P.P. attribue les mêmes compétences au
+tribunal de police.
+
+2.2 - LES EFFETS DE LA NULLITÉ
+Lorsqu'elle est prononcée, l'annulation produit des effets sur la procédure mais entraîne
+également des conséquences pour les parties.
+
+2.2.1 - Les effets sur la procédure (art. 174 C.P.P.)
+La chambre de l'instruction décide si l'annulation doit être limitée à tout ou partie des actes
+ou pièces de la procédure viciée ou s'étendre à tout ou partie de la procédure ultérieure. En
+cas d'annulation, la chambre de l'instruction pourra évoquer l'affaire ou renvoyer le dossier
+soit au même juge d'instruction, soit à un autre.
+Les actes annulés sont retirés du dossier d'information et classés au greffe de la cour
+d'appel. L'art. 174 al 3 précise qu'il est interdit d'y puiser aucun renseignement contre les
+parties, à peine de poursuites disciplinaires pour les avocats et les magistrats.
+En ce qui concerne les actes ou pièces de la procédure partiellement annulés, ils sont
+« cancellés », c'est-à-dire rayés ou bâtonnés pour être rendus illisibles. Préalablement à
+cette opération, une copie certifiée conforme à l'original est classée au greffe de la cour
+d'appel.
+
+2.2.2 - Les effets pour les parties (art. 174 al 1 C.P.P.)
+Comme dit précédemment, la saisine de la chambre de l'instruction aux fins d'annulation
+permet une "purge successive" des nullités pouvant affecter une information.
+En principe, la partie requérante présente ses moyens de nullités dans sa requête motivée
+et les autres parties doivent les soulever du mémoire qu'elles peuvent déposer en
+application de l'art. 198 du C.P.P(1).À compter du 30/09/25, le dernier mémoire déposé par
+une partie récapitule l’ensemble des moyens pris de la nullité de la procédure, à défaut de
+quoi ils sont réputés avoir été abandonnés.
+En outre, chacune des parties peut soulever tout moyen lors des débats tenus devant la
+chambre de l'instruction.
+(1) Jusqu'au jour de l'audience, les parties peuvent produire des mémoires qu'elles communiquent au ministère
+public et autres parties.
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 9
+
+Après la clôture des débats, les parties qui ont pu avoir connaissance des nullités entachant
+la procédure menée avant la saisine, ne peuvent plus soulever des moyens de ce chef.
+Seules les personnes devenues parties à la procédure après cette saisine pourraient les
+soulever.
+Ces règles reprennent le principe posé par l'art. 595 du C.P.P. qui prévoit que lorsque la
+chambre de l'instruction statue sur le règlement d'une procédure autre que criminelle, les
+moyens pris de nullité doivent lui avoir été proposés pour être ensuite recevables devant la
+chambre criminelle de la Cour de cassation. Ce dispositif a pour effet d'éviter les
+manœuvres dilatoires de certaines parties en interdisant des saisines répétées de la
+chambre de l'instruction.
+
+Version au 01/12/2025
+
+© SDCP – Tous droits réservés
+
+Page 10
+
+

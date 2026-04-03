@@ -171,6 +171,17 @@ export const fasciculesList: FasciculeMetadata[] = [
     ],
   },
   {
+    numero: 8,
+    titre: 'Les libertés publiques',
+    domaine: 'DPS',
+    domaineLabel: 'Droit pénal spécial',
+    pages: 0,
+    nbInfractions: 0,
+    description:
+      'Libertés fondamentales, CEDH, limitations encadrées dans le cadre des missions de police judiciaire et de la sécurité publique.',
+    chapitres: [],
+  },
+  {
     numero: 9,
     titre: 'De la loi pénale, de la responsabilité pénale',
     domaine: 'DPG',
@@ -207,6 +218,17 @@ export const fasciculesList: FasciculeMetadata[] = [
       "La réitération d'infractions",
       'Les circonstances aggravantes (bande organisée, guet-apens, préméditation, effraction, escalade, arme, racisme, homophobie, cryptologie, conjoint, ITT, mutilation, mort, minorité 15 ans, vulnérabilité, etc.)',
     ],
+  },
+  {
+    numero: 11,
+    titre: 'Les cadres juridiques et les actes de la mission de police judiciaire',
+    domaine: 'Procédure pénale',
+    domaineLabel: 'Procédure pénale',
+    pages: 0,
+    nbInfractions: 0,
+    description:
+      'Flagrance, enquête préliminaire, commission rogatoire, actes d’enquête, réquisitions, auditions, perquisitions…',
+    chapitres: [],
   },
   {
     numero: 12,
