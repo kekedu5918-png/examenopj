@@ -5,9 +5,13 @@ import { motion } from 'framer-motion';
 import { Check, RotateCw, X } from 'lucide-react';
 
 import type { Flashcard } from '@/data/flashcards-data';
+import { splitRecapElements } from '@/utils/recap-bullets';
 
 import { FlashcardRichText } from './flashcard-rich-text';
 import type { FlashcardFacet, PreparedFlashcard } from './types';
+
+const VERSO_TEXT =
+  'text-[15px] leading-snug tracking-tight text-gray-100 sm:text-base sm:leading-relaxed';
 
 const slideVariants = {
   enter: (dir: number) => ({ x: dir > 0 ? 300 : -300, opacity: 0 }),
@@ -58,26 +62,63 @@ type FlashcardInterfaceProps = {
 
 function VersoContent({ card, facet }: { card: Flashcard; facet: FlashcardFacet }) {
   if (facet === 'materielMoral' && card.materielMoralComplet?.trim()) {
-    return <FlashcardRichText text={card.materielMoralComplet} />;
+    return (
+      <FlashcardRichText
+        text={card.materielMoralComplet}
+        className={`${VERSO_TEXT} [&_p]:mb-2 [&_p]:text-gray-100 [&_strong]:text-white`}
+      />
+    );
   }
   if (facet === 'materiel') {
+    if (!card.materiel.length) {
+      return <p className={`${VERSO_TEXT} text-gray-500`}>—</p>;
+    }
     return (
-      <ul className='list-none space-y-2.5 text-base leading-relaxed text-gray-200'>
+      <ul className='list-none space-y-3'>
         {card.materiel.map((line, i) => (
-          <li key={i} className='flex gap-2'>
-            <span className='shrink-0 text-gold-400'>•</span>
-            <span>
-              <FlashcardRichText text={line} inline />
+          <li
+            key={i}
+            className='flex gap-3 border-b border-white/[0.07] pb-3 last:border-b-0 last:pb-0'
+          >
+            <span className='mt-0.5 shrink-0 text-lg leading-none text-amber-400' aria-hidden>
+              •
             </span>
+            <div className={`min-w-0 flex-1 break-words ${VERSO_TEXT}`}>
+              <FlashcardRichText text={line} inline />
+            </div>
           </li>
         ))}
       </ul>
     );
   }
   if (facet === 'moral') {
-    return <FlashcardRichText text={card.moral} />;
+    const m = card.moral?.trim() ?? '';
+    if (!m) {
+      return <p className={`${VERSO_TEXT} text-gray-500`}>—</p>;
+    }
+    const moralParts = splitRecapElements(m);
+    if (moralParts.length <= 1) {
+      return <FlashcardRichText text={m} className={`${VERSO_TEXT} [&_p]:text-gray-100`} />;
+    }
+    return (
+      <ul className='list-none space-y-3'>
+        {moralParts.map((line, i) => (
+          <li
+            key={i}
+            className='flex gap-3 border-b border-white/[0.07] pb-3 last:border-b-0 last:pb-0'
+          >
+            <span className='mt-0.5 shrink-0 text-lg leading-none text-amber-400' aria-hidden>
+              •
+            </span>
+            <div className={`min-w-0 flex-1 break-words ${VERSO_TEXT}`}>
+              <FlashcardRichText text={line} inline />
+            </div>
+          </li>
+        ))}
+      </ul>
+    );
   }
-  return <FlashcardRichText text={card.legal} />;
+  return <FlashcardRichText text={card.legal} className={`${VERSO_TEXT} [&_p]:text-gray-100`} />;
 }
 
 export function FlashcardInterface({
@@ -135,13 +176,13 @@ export function FlashcardInterface({
               toggleFlip();
             }
           }}
-          className='relative min-h-[320px] w-full cursor-pointer touch-manipulation rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60'
+          className='relative min-h-[380px] w-full cursor-pointer touch-manipulation rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-amber-500/60 sm:min-h-[420px]'
           style={{ transformStyle: 'preserve-3d' }}
           animate={{ rotateY: flipped ? 180 : 0 }}
           transition={flipTransition}
         >
           <div
-            className='absolute inset-0 flex flex-col rounded-3xl border-2 border-white/[0.1] bg-gradient-to-br from-navy-800 to-navy-900 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)]'
+            className='absolute inset-0 flex min-h-[380px] flex-col rounded-3xl border-2 border-white/[0.1] bg-gradient-to-br from-navy-800 to-navy-900 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)] sm:min-h-[420px]'
             style={{
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
@@ -176,7 +217,7 @@ export function FlashcardInterface({
           </div>
 
           <div
-            className='absolute inset-0 flex flex-col rounded-3xl border-2 border-white/[0.1] bg-gradient-to-br from-navy-900 to-navy-950 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)]'
+            className='absolute inset-0 flex min-h-[380px] flex-col rounded-3xl border-2 border-white/[0.1] bg-gradient-to-br from-navy-900 to-navy-950 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.3)] sm:min-h-[420px]'
             style={{
               backfaceVisibility: 'hidden',
               WebkitBackfaceVisibility: 'hidden',
@@ -190,16 +231,20 @@ export function FlashcardInterface({
                 {b.text}
               </span>
             </div>
-            <div className='flex flex-1 items-center overflow-y-auto py-4'>
-              <div className='max-h-[220px] w-full overflow-y-auto px-2 sm:max-h-none sm:overflow-visible'>
+            <div className='flex min-h-0 flex-1 flex-col py-2'>
+              <div className='min-h-[min(52dvh,320px)] flex-1 overflow-y-auto overscroll-y-contain px-1 [-webkit-overflow-scrolling:touch] sm:min-h-[240px] sm:max-h-[min(58vh,400px)]'>
                 <VersoContent card={card} facet={facet} />
               </div>
             </div>
-            {(card.versoFooter ?? card.legal).trim() ? (
-              <div className='text-center text-sm text-gold-400'>
-                <FlashcardRichText text={(card.versoFooter ?? card.legal).trim()} />
-              </div>
-            ) : null}
+            {(() => {
+              const foot = (card.versoFooter?.trim() || (facet !== 'legal' ? card.legal.trim() : '')) || '';
+              if (!foot) return null;
+              return (
+                <div className='shrink-0 border-t border-white/10 px-2 pt-3 text-center text-sm leading-snug text-gold-400/95'>
+                  <FlashcardRichText text={foot} className='[&_p]:mb-1 [&_p]:last:mb-0' />
+                </div>
+              );
+            })()}
           </div>
         </motion.div>
       </div>

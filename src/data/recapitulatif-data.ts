@@ -512,7 +512,12 @@ export type InfractionCatalogItem = {
   groupTitle: string;
   infraction: string;
   legal: string;
+  materiel: string;
+  moral: string;
   flashcardsCat: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
+  /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
+  tentative?: string;
+  complicite?: string;
 };
 
 /** Liste plate pour la page Infractions (hors placeholder « À compléter »). */
@@ -528,6 +533,8 @@ export function getInfractionsCatalog(): InfractionCatalogItem[] {
         groupTitle: s.groupTitle,
         infraction: row.infraction,
         legal: row.legal,
+        materiel: row.materiel,
+        moral: row.moral,
         flashcardsCat: s.fascicule === 'F01' ? 'atteintes-aux-personnes' : 'atteintes-aux-biens',
       });
     });

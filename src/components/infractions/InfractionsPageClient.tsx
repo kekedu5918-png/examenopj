@@ -2,11 +2,15 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
+import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { getInfractionsCatalog, type InfractionCatalogItem } from '@/data/recapitulatif-data';
+import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
+import { cn } from '@/utils/cn';
 
 function stripForSearch(s: string): string {
   return s
@@ -18,18 +22,23 @@ function stripForSearch(s: string): string {
 export function InfractionsPageClient() {
   const [query, setQuery] = useState('');
   const [fascFilter, setFascFilter] = useState<'all' | 'F01' | 'F02'>('all');
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
-  const catalog = useMemo(() => getInfractionsCatalog(), []);
+  const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
 
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
     return catalog.filter((item) => {
       if (fascFilter !== 'all' && item.fascicule !== fascFilter) return false;
       if (!q) return true;
-      const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)}`;
+      const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
       return hay.includes(q);
     });
   }, [catalog, query, fascFilter]);
+
+  const toggle = (id: string) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <div className='container pb-20 pt-10'>
@@ -38,7 +47,7 @@ export function InfractionsPageClient() {
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='F01 et F02 : repères légaux et liens vers révision (flashcards, récapitulatif).'
+        subtitle='F01 et F02 : clique sur une infraction pour voir les éléments constitutifs. Liens vers flashcards et récapitulatif.'
         className='mb-8'
       />
 
@@ -80,41 +89,111 @@ export function InfractionsPageClient() {
       </GlassCard>
 
       <ul className='space-y-4'>
-        {filtered.map((item: InfractionCatalogItem) => (
-          <li key={item.id}>
-            <article className='rounded-2xl border border-white/10 bg-navy-950/50 p-5 shadow-lg'>
-              <div className='flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between'>
-                <div className='min-w-0 flex-1 space-y-1'>
-                  <p className='text-xs font-medium uppercase tracking-wide text-gray-500'>
-                    {item.fascicule}
-                    {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
-                  </p>
-                  <h2 className='font-display text-lg font-bold text-white md:text-xl'>
-                    <FlashcardRichText text={item.infraction} inline />
-                  </h2>
-                  <p className='text-sm text-gray-400'>
-                    <span className='text-gray-500'>Élément légal : </span>
-                    {item.legal}
-                  </p>
+        {filtered.map((item: InfractionCatalogItem) => {
+          const open = expandedId === item.id;
+          return (
+            <li key={item.id}>
+              <article className='rounded-2xl border border-white/10 bg-navy-950/50 shadow-lg'>
+                <div className='flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between'>
+                  <div className='min-w-0 flex-1'>
+                    <button
+                      type='button'
+                      onClick={() => toggle(item.id)}
+                      aria-expanded={open}
+                      className='group w-full rounded-xl text-left transition-colors hover:bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50'
+                    >
+                      <div className='flex gap-3'>
+                        <span
+                          className={cn(
+                            'mt-1 shrink-0 text-gray-500 transition-transform duration-200',
+                            open && 'rotate-180',
+                          )}
+                          aria-hidden
+                        >
+                          <ChevronDown className='h-5 w-5' />
+                        </span>
+                        <div className='min-w-0 flex-1 space-y-2 pb-1'>
+                          <p className='text-xs font-medium uppercase tracking-wide text-gray-500'>
+                            {item.fascicule}
+                            {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
+                          </p>
+                          <h2 className='font-display text-lg font-bold text-white md:text-xl'>
+                            <FlashcardRichText text={item.infraction} inline />
+                          </h2>
+                          <p className='text-sm text-gray-400'>
+                            <span className='text-gray-500'>Élément légal : </span>
+                            {item.legal}
+                          </p>
+                          <p className='text-xs text-amber-400/80'>
+                            {open ? 'Masquer le détail' : 'Afficher éléments matériel, moral et repères'}
+                          </p>
+                        </div>
+                      </div>
+                    </button>
+
+                    {open ? (
+                      <div
+                        id={`inf-detail-${item.id}`}
+                        className='mt-4 space-y-5 border-t border-white/10 pt-4 pl-8 sm:pl-11'
+                      >
+                        {(item.tentative || item.complicite) && (
+                          <div className='flex flex-wrap gap-2'>
+                            {item.tentative ? (
+                              <span className='rounded-lg border border-violet-500/35 bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-200'>
+                                Tentative : {item.tentative}
+                              </span>
+                            ) : null}
+                            {item.complicite ? (
+                              <span className='rounded-lg border border-cyan-500/35 bg-cyan-500/15 px-3 py-1 text-xs font-semibold text-cyan-200'>
+                                Complicité : {item.complicite}
+                              </span>
+                            ) : null}
+                          </div>
+                        )}
+
+                        <div>
+                          <h3 className='mb-2 text-xs font-bold uppercase tracking-wide text-emerald-400/90'>
+                            Élément matériel
+                          </h3>
+                          <RecapBulletCell text={item.materiel} />
+                        </div>
+                        <div>
+                          <h3 className='mb-2 text-xs font-bold uppercase tracking-wide text-emerald-400/90'>
+                            Élément moral
+                          </h3>
+                          <RecapBulletCell text={item.moral} />
+                        </div>
+                        {!item.tentative && !item.complicite ? (
+                          <p className='text-xs text-gray-500'>
+                            Pour tentative, complicité ou détail pédagogique complet, utilise les flashcards de la
+                            catégorie.
+                          </p>
+                        ) : null}
+                      </div>
+                    ) : null}
+                  </div>
+
+                  <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
+                    <Link
+                      href={`/flashcards?cat=${item.flashcardsCat}`}
+                      onClick={(e) => e.stopPropagation()}
+                      className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
+                    >
+                      Réviser en flashcards
+                    </Link>
+                    <Link
+                      href='/recapitulatif'
+                      onClick={(e) => e.stopPropagation()}
+                      className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
+                    >
+                      Voir le tableau récapitulatif
+                    </Link>
+                  </div>
                 </div>
-                <div className='flex shrink-0 flex-col gap-2 sm:items-end'>
-                  <Link
-                    href={`/flashcards?cat=${item.flashcardsCat}`}
-                    className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
-                  >
-                    Réviser en flashcards
-                  </Link>
-                  <Link
-                    href='/recapitulatif'
-                    className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
-                  >
-                    Voir le tableau récapitulatif
-                  </Link>
-                </div>
-              </div>
-            </article>
-          </li>
-        ))}
+              </article>
+            </li>
+          );
+        })}
       </ul>
 
       {filtered.length === 0 ? (
