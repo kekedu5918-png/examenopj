@@ -2,7 +2,6 @@
 
 import { type FormEvent, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import { describeAuthError } from '@/app/(auth)/auth-error-message';
 import { Button } from '@/components/ui/button';
@@ -15,7 +14,6 @@ type LoginFormProps = {
 };
 
 export function LoginForm({ nextPath }: LoginFormProps) {
-  const router = useRouter();
   const [errorText, setErrorText] = useState<string | null>(null);
   const [pending, setPending] = useState(false);
 
@@ -38,8 +36,9 @@ export function LoginForm({ nextPath }: LoginFormProps) {
         setPending(false);
         return;
       }
-      router.refresh();
-      router.push(dest);
+      // Navigation complète : évite la course refresh RSC /login + push (boucles ou clignotements).
+      const postLogin = `/post-login?next=${encodeURIComponent(dest)}`;
+      window.location.assign(postLogin);
     } catch {
       setErrorText('Connexion impossible. Réessayez ou vérifiez votre connexion.');
       setPending(false);

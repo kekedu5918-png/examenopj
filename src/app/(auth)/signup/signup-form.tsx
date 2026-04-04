@@ -2,7 +2,6 @@
 
 import { type FormEvent, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import { describeAuthError } from '@/app/(auth)/auth-error-message';
 import { Button } from '@/components/ui/button';
@@ -10,7 +9,6 @@ import { Input } from '@/components/ui/input';
 import { createSupabaseBrowserClient } from '@/libs/supabase/supabase-browser';
 
 export function SignUpForm() {
-  const router = useRouter();
   const [errorText, setErrorText] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
   const [pending, setPending] = useState(false);
@@ -40,8 +38,7 @@ export function SignUpForm() {
       }
 
       if (data.session) {
-        router.refresh();
-        router.push('/pricing');
+        window.location.assign('/post-login?next=%2Fpricing');
         return;
       }
 
