@@ -2,19 +2,24 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { BookOpen, Brain, FileEdit, Scale } from 'lucide-react';
+import { BookOpen, Brain, FileEdit, ListOrdered } from 'lucide-react';
 
 import { LANDING_EASE } from '@/components/home/motion';
-import { quizQuestions } from '@/data/quiz-questions';
-import { TOTAL_PAGES } from '@/data/fascicules-list';
 import { cn } from '@/utils/cn';
 
 function easeOutCubic(t: number) {
   return 1 - (1 - t) ** 3;
 }
 
+const STATS = [
+  { value: 15, label: 'Fascicules officiels', suffix: '', icon: BookOpen, iconClass: 'text-blue-400', delay: 0 },
+  { value: 150, label: 'Infractions détaillées', suffix: '+', icon: ListOrdered, iconClass: 'text-red-400', delay: 0.08 },
+  { value: 3, label: 'Épreuves couvertes', suffix: '', icon: FileEdit, iconClass: 'text-gold-400', delay: 0.16 },
+  { value: 500, label: 'Questions de quiz', suffix: '+', icon: Brain, iconClass: 'text-green-400', delay: 0.24 },
+] as const;
+
 type StatTileProps = {
-  icon: typeof BookOpen;
+  icon: (typeof STATS)[number]['icon'];
   value: number;
   suffix?: string;
   label: string;
@@ -24,7 +29,7 @@ type StatTileProps = {
 
 function StatTile({ icon: Icon, value, suffix = '', label, iconClass, delay }: StatTileProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: '-12%' });
+  const isInView = useInView(ref, { once: true, amount: 0.25, margin: '0px' });
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -41,6 +46,13 @@ function StatTile({ icon: Icon, value, suffix = '', label, iconClass, delay }: S
     return () => cancelAnimationFrame(frame);
   }, [isInView, value]);
 
+  useEffect(() => {
+    const id = window.setTimeout(() => {
+      setDisplay((d) => (d < value ? value : d));
+    }, 2400);
+    return () => window.clearTimeout(id);
+  }, [value]);
+
   return (
     <motion.div
       ref={ref}
@@ -54,7 +66,7 @@ function StatTile({ icon: Icon, value, suffix = '', label, iconClass, delay }: S
         <div className={cn('mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/[0.06]', iconClass)}>
           <Icon className='h-7 w-7' strokeWidth={1.75} />
         </div>
-        <p className='font-display text-3xl font-bold tabular-nums text-gray-100'>
+        <p className='font-display text-3xl font-bold tabular-nums text-gray-100' aria-label={`${display}${suffix} ${label}`}>
           {display}
           {suffix}
         </p>
@@ -70,16 +82,17 @@ export function StatsBandSection() {
       <div className='h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent' aria-hidden />
       <div className='border-y border-white/5 bg-navy-900/50 py-12 backdrop-blur-sm'>
         <div className='mx-auto grid max-w-4xl grid-cols-2 gap-6 px-6 md:grid-cols-4'>
-          <StatTile icon={BookOpen} value={15} label='Fascicules officiels' iconClass='text-blue-400' delay={0} />
-          <StatTile icon={Scale} value={TOTAL_PAGES} label='Pages de cours' iconClass='text-red-400' delay={0.08} />
-          <StatTile icon={FileEdit} value={3} label='Épreuves couvertes' iconClass='text-gold-400' delay={0.16} />
-          <StatTile
-            icon={Brain}
-            value={quizQuestions.length}
-            label='Questions de quiz'
-            iconClass='text-green-400'
-            delay={0.24}
-          />
+          {STATS.map((s) => (
+            <StatTile
+              key={s.label}
+              icon={s.icon}
+              value={s.value}
+              suffix={s.suffix}
+              label={s.label}
+              iconClass={s.iconClass}
+              delay={s.delay}
+            />
+          ))}
         </div>
       </div>
     </section>

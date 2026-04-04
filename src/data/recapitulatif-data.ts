@@ -1,4 +1,6 @@
-export type RecapFasciculeFilter = 'all' | 'f01' | 'f02';
+import { recapSectionsF03F07 } from '@/data/recapitulatif-f03-f07';
+
+export type RecapFasciculeFilter = 'all' | 'f01' | 'f02' | 'f03' | 'f04' | 'f05' | 'f06' | 'f07';
 
 export type RecapRow = {
   infraction: string;
@@ -7,9 +9,11 @@ export type RecapRow = {
   moral: string;
 };
 
+export type RecapFasciculeId = 'F01' | 'F02' | 'F03' | 'F04' | 'F05' | 'F06' | 'F07';
+
 export type RecapSection = {
   id: string;
-  fascicule: 'F01' | 'F02';
+  fascicule: RecapFasciculeId;
   fasciculePart?: string;
   groupTitle: string;
   /** Classes Tailwind pour la ligne de groupe */
@@ -497,24 +501,40 @@ export const recapSections: RecapSection[] = [
       },
     ],
   },
+  ...recapSectionsF03F07,
 ];
+
+const FILTER_TO_FASC: Record<Exclude<RecapFasciculeFilter, 'all'>, RecapFasciculeId> = {
+  f01: 'F01',
+  f02: 'F02',
+  f03: 'F03',
+  f04: 'F04',
+  f05: 'F05',
+  f06: 'F06',
+  f07: 'F07',
+};
 
 export function filterRecapSections(filter: RecapFasciculeFilter): RecapSection[] {
   if (filter === 'all') return recapSections;
-  const tag: RecapSection['fascicule'] = filter === 'f01' ? 'F01' : 'F02';
+  const tag = FILTER_TO_FASC[filter];
   return recapSections.filter((s) => s.fascicule === tag);
+}
+
+export function fasciculeToRecapFilter(f: RecapFasciculeId): Exclude<RecapFasciculeFilter, 'all'> {
+  const e = Object.entries(FILTER_TO_FASC).find(([, v]) => v === f);
+  return (e?.[0] ?? 'f01') as Exclude<RecapFasciculeFilter, 'all'>;
 }
 
 export type InfractionCatalogItem = {
   id: string;
-  fascicule: 'F01' | 'F02';
+  fascicule: RecapFasciculeId;
   fasciculePart?: string;
   groupTitle: string;
   infraction: string;
   legal: string;
   materiel: string;
   moral: string;
-  flashcardsCat: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
+  flashcardsCat?: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
   /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
   tentative?: string;
   complicite?: string;
@@ -535,7 +555,12 @@ export function getInfractionsCatalog(): InfractionCatalogItem[] {
         legal: row.legal,
         materiel: row.materiel,
         moral: row.moral,
-        flashcardsCat: s.fascicule === 'F01' ? 'atteintes-aux-personnes' : 'atteintes-aux-biens',
+        flashcardsCat:
+          s.fascicule === 'F01'
+            ? 'atteintes-aux-personnes'
+            : s.fascicule === 'F02'
+              ? 'atteintes-aux-biens'
+              : undefined,
       });
     });
   }

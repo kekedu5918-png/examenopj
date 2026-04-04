@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-import { fasciculesList } from '@/data/fascicules-list';
+import { Button } from '@/components/ui/button';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { Button } from '@/components/ui/button';
+import { fasciculesList } from '@/data/fascicules-list';
 
 const domainBadge: Record<(typeof fasciculesList)[number]['domaine'], string> = {
   DPS: 'bg-red-500/20 text-red-300',

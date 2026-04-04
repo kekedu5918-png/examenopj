@@ -1,6 +1,13 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 
 import { QuizPageClient } from '@/components/quiz/quiz-page-client';
+
+export const metadata: Metadata = {
+  title: 'Quiz',
+  description:
+    "Questions à choix multiples pour tester vos connaissances avant l'examen OPJ : infractions, procédure et cas pratiques.",
+};
 
 export default function QuizPage() {
   return (

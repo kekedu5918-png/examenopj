@@ -1,29 +1,35 @@
 import Image from 'next/image';
 
 import { PricingCard } from '@/features/pricing/components/price-card';
+import { PricingFallbackPlans } from '@/features/pricing/components/pricing-fallback-plans';
 import { getProducts } from '@/features/pricing/controllers/get-products';
 
 import { createCheckoutAction } from '../actions/create-checkout-action';
 
 export async function PricingSection({ isPricingPage }: { isPricingPage?: boolean }) {
   const products = await getProducts();
+  const showFallback = products.length === 0;
 
   const HeadingLevel = isPricingPage ? 'h1' : 'h2';
 
   return (
     <section className='relative rounded-lg bg-black py-8'>
       <div className='relative z-10 m-auto flex max-w-[1200px] flex-col items-center gap-8 px-4 pt-8 lg:pt-[140px]'>
-        <HeadingLevel className='max-w-4xl bg-gradient-to-br from-white to-neutral-200 bg-clip-text text-center text-4xl font-bold text-transparent lg:text-6xl'>
-          Predictable pricing for every use case.
+        <HeadingLevel className='max-w-4xl bg-gradient-to-br from-white to-neutral-200 bg-clip-text text-center text-4xl font-bold text-transparent lg:text-5xl'>
+          Choisissez votre formule
         </HeadingLevel>
-        <p className='text-center text-xl'>
-          Find a plan that fits you. Upgrade at any time to enable additional features.
+        <p className='max-w-2xl text-center text-lg text-gray-300 lg:text-xl'>
+          Accès gratuit · Abonnement sans engagement · Examen Juin 2026
         </p>
-        <div className='flex w-full flex-col items-center justify-center gap-2 lg:flex-row lg:gap-8'>
-          {products.map((product) => {
-            return <PricingCard key={product.id} product={product} createCheckoutAction={createCheckoutAction} />;
-          })}
-        </div>
+        {showFallback ? (
+          <PricingFallbackPlans />
+        ) : (
+          <div className='flex w-full flex-col items-center justify-center gap-2 lg:flex-row lg:gap-8'>
+            {products.map((product) => {
+              return <PricingCard key={product.id} product={product} createCheckoutAction={createCheckoutAction} />;
+            })}
+          </div>
+        )}
       </div>
       <Image
         src='/section-bg.png'

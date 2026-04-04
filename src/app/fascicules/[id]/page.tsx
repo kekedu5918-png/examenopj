@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { FasciculeTextContent } from '@/components/fascicules/FasciculeTextContent';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { DOMAIN_LABELS, FASCICULES, getFasciculeById, type Domain } from '@/data/fascicules-list';
+import { type Domain,DOMAIN_LABELS, FASCICULES, getFasciculeById } from '@/data/fascicules-list';
 import { cn } from '@/utils/cn';
 
 const domainBadge: Record<Domain, string> = {
@@ -23,7 +23,7 @@ export function generateMetadata({ params }: Props): Metadata {
   const f = getFasciculeById(params.id);
   if (!f) return {};
   return {
-    title: `F${String(f.num).padStart(2, '0')} — ${f.title} | ExamenOPJ`,
+    title: `F${String(f.num).padStart(2, '0')} — ${f.title}`,
     description: `${f.subtitle}. ${f.pages} pages. Version SDCP 01/12/2025. Préparation examen OPJ Juin 2026.`,
   };
 }

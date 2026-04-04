@@ -4,9 +4,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
-import { type QuizQuestion } from '@/data/types';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { LANDING_EASE } from '@/components/home/motion';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { type QuizQuestion } from '@/data/types';
 import { cn } from '@/utils/cn';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];

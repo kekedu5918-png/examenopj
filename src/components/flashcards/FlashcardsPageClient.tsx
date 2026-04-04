@@ -6,8 +6,9 @@ import { AnimatePresence } from 'framer-motion';
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { flashcardsData, type Flashcard } from '@/data/flashcards-data';
 import { fasciculesList } from '@/data/fascicules-list';
+import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
+import { recordFlashcardReview } from '@/features/examenopj/actions/record-flashcard-review';
 
 import { FlashcardInterface } from './FlashcardInterface';
 import { FlashcardResult } from './FlashcardResult';
@@ -197,6 +198,7 @@ export function FlashcardsPageClient() {
       const current = d[i]!;
       const id = current.card.id;
       recordFlashcardAnswer(progressScope, id, kind);
+      void recordFlashcardReview({ cardId: id, scope: progressScope, bucket: kind });
 
       if (kind === 'know') setKnow((n) => n + 1);
       else if (kind === 'review') {

@@ -1,11 +1,65 @@
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import { Tables } from '@/libs/supabase/types';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 export type ModuleRow = Tables<'modules'>;
 export type ChapitreRow = Tables<'chapitres'>;
 export type QuestionRow = Tables<'questions'>;
 export type FlashcardRow = Tables<'flashcards'>;
 export type UserProgressRow = Tables<'user_progress'>;
+export type QuizAttemptRow = Tables<'quiz_attempts'>;
+export type FlashcardReviewRow = Tables<'flashcard_reviews'>;
+
+export type FlashcardReviewSummary = {
+  totalCards: number;
+  know: number;
+  review: number;
+  dontKnow: number;
+  lastUpdated: string | null;
+};
+
+export async function getFlashcardReviewSummary(userId: string): Promise<FlashcardReviewSummary> {
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await (supabase as unknown as SupabaseClient<any>)
+    .from('flashcard_reviews')
+    .select('bucket, updated_at')
+    .eq('user_id', userId);
+
+  if (error) {
+    console.error(error);
+    return { totalCards: 0, know: 0, review: 0, dontKnow: 0, lastUpdated: null };
+  }
+
+  const rows = (data ?? []) as Pick<FlashcardReviewRow, 'bucket' | 'updated_at'>[];
+  let last: string | null = null;
+  for (const r of rows) {
+    if (r.updated_at && (!last || r.updated_at > last)) last = r.updated_at;
+  }
+
+  return {
+    totalCards: rows.length,
+    know: rows.filter((r) => r.bucket === 'know').length,
+    review: rows.filter((r) => r.bucket === 'review').length,
+    dontKnow: rows.filter((r) => r.bucket === 'dontKnow').length,
+    lastUpdated: last,
+  };
+}
+
+export async function getRecentQuizAttempts(userId: string, limit = 8) {
+  const supabase = await createSupabaseServerClient();
+  const { data, error } = await supabase
+    .from('quiz_attempts')
+    .select('*')
+    .eq('user_id', userId)
+    .order('created_at', { ascending: false })
+    .limit(limit);
+
+  if (error) {
+    console.error(error);
+    return [] as QuizAttemptRow[];
+  }
+  return data ?? [];
+}
 
 export async function getModules() {
   const supabase = await createSupabaseServerClient();

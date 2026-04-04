@@ -1,6 +1,7 @@
 export const navigation = {
   main: [
     { name: 'Accueil', href: '/' },
+    { name: 'Fondamentaux', href: '/fondamentaux' },
     {
       name: 'Épreuves',
       children: [

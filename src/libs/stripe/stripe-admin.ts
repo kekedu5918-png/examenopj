@@ -10,7 +10,7 @@ export function getStripeAdmin(): Stripe {
     stripeAdminSingleton = new Stripe(getEnvVar(process.env.STRIPE_SECRET_KEY, 'STRIPE_SECRET_KEY'), {
       apiVersion: '2023-10-16',
       appInfo: {
-        name: 'UPDATE_THIS_WITH_YOUR_STRIPE_APP_NAME',
+        name: 'ExamenOPJ',
         version: '0.1.0',
       },
     });

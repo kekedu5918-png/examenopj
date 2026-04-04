@@ -1,16 +1,23 @@
 'use client';
 
-import { Fragment, useMemo, useState } from 'react';
+import { Fragment, useEffect, useMemo, useState } from 'react';
 
-import { GlassCard } from '@/components/ui/GlassCard';
-import { SectionTitle } from '@/components/ui/SectionTitle';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
+import { GlassCard } from '@/components/ui/GlassCard';
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
   filterRecapSections,
   type RecapFasciculeFilter,
   type RecapSection,
 } from '@/data/recapitulatif-data';
+
+function parseRecapQuery(f?: string): RecapFasciculeFilter {
+  if (!f) return 'all';
+  const v = f.toLowerCase();
+  const ok: RecapFasciculeFilter[] = ['all', 'f01', 'f02', 'f03', 'f04', 'f05', 'f06', 'f07'];
+  return ok.includes(v as RecapFasciculeFilter) ? (v as RecapFasciculeFilter) : 'all';
+}
 
 function CellPlain({ text }: { text: string }) {
   return (
@@ -20,8 +27,12 @@ function CellPlain({ text }: { text: string }) {
   );
 }
 
-export function RecapitulatifPageClient() {
-  const [filter, setFilter] = useState<RecapFasciculeFilter>('all');
+export function RecapitulatifPageClient({ initialFasc }: { initialFasc?: string }) {
+  const [filter, setFilter] = useState<RecapFasciculeFilter>(() => parseRecapQuery(initialFasc));
+
+  useEffect(() => {
+    setFilter(parseRecapQuery(initialFasc));
+  }, [initialFasc]);
 
   const sections = useMemo(() => filterRecapSections(filter), [filter]);
 
@@ -42,9 +53,14 @@ export function RecapitulatifPageClient() {
         <div className='flex flex-wrap gap-2'>
           {(
             [
-              ['all', 'Tout'],
-              ['f01', 'F01 — Personnes'],
-              ['f02', 'F02 — Biens'],
+              ['all', 'Tous'],
+              ['f01', 'F01'],
+              ['f02', 'F02'],
+              ['f03', 'F03'],
+              ['f04', 'F04'],
+              ['f05', 'F05'],
+              ['f06', 'F06'],
+              ['f07', 'F07'],
             ] as const
           ).map(([v, label]) => (
             <button

@@ -1,19 +1,10 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { type ReactNode,useState } from 'react';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-import {
-  PanelAuditionsConfrontations,
-  PanelAvisObligatoires,
-  PanelConstatationsTransport,
-  PanelDiversCloture,
-  PanelFouillesPerquisitions,
-  PanelInterpellations,
-  PanelPvTechniques,
-} from './pv-cartouches-panels-extra';
 import {
   PVAnnexes,
   PVCard,
@@ -23,6 +14,15 @@ import {
   PVLine,
   PVRecueilDemandes,
 } from './pv-card';
+import {
+  PanelAuditionsConfrontations,
+  PanelAvisObligatoires,
+  PanelConstatationsTransport,
+  PanelDiversCloture,
+  PanelFouillesPerquisitions,
+  PanelInterpellations,
+  PanelPvTechniques,
+} from './pv-cartouches-panels-extra';
 
 const TAB_OPTIONS = [
   { value: 'saisines', label: 'Saisines' },
@@ -37,6 +37,8 @@ const TAB_OPTIONS = [
   { value: 'divers', label: 'Divers & clôture' },
 ] as const;
 
+export type PVTabValue = (typeof TAB_OPTIONS)[number]['value'];
+
 const tabTriggerClass =
   'shrink-0 rounded-lg px-2.5 py-2 text-[11px] leading-tight data-[state=active]:bg-blue-600 data-[state=active]:text-white data-[state=inactive]:text-gray-400 sm:px-3 sm:text-xs md:text-sm';
 
@@ -49,36 +51,44 @@ function AccBlock({ id, title, children }: { id: string; title: string; children
   );
 }
 
-export function PVCartouchesSection() {
-  const [tab, setTab] = useState<string>('saisines');
+type PVCartouchesSectionProps = { lockCategory?: PVTabValue };
+
+export function PVCartouchesSection({ lockCategory }: PVCartouchesSectionProps = {}) {
+  const [tab, setTab] = useState<string>(lockCategory ?? 'saisines');
+  const active = lockCategory ?? tab;
+  const showNav = !lockCategory;
 
   return (
-    <Tabs value={tab} onValueChange={setTab} className='w-full'>
-      <div className='mb-4 md:hidden'>
-        <label htmlFor='epreuve2-pv-category' className='mb-2 block text-xs font-medium text-gray-400'>
-          Catégorie de PV
-        </label>
-        <select
-          id='epreuve2-pv-category'
-          value={tab}
-          onChange={(e) => setTab(e.target.value)}
-          className='w-full rounded-xl border border-white/15 bg-navy-900/90 px-3 py-3 text-sm text-white shadow-inner focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/30'
-        >
-          {TAB_OPTIONS.map((o) => (
-            <option key={o.value} value={o.value} className='bg-navy-900'>
-              {o.label}
-            </option>
-          ))}
-        </select>
-      </div>
+    <Tabs value={active} onValueChange={showNav ? setTab : () => {}} className='w-full'>
+      {showNav ? (
+        <div className='mb-4 md:hidden'>
+          <label htmlFor='epreuve2-pv-category' className='mb-2 block text-xs font-medium text-gray-400'>
+            Catégorie de PV
+          </label>
+          <select
+            id='epreuve2-pv-category'
+            value={tab}
+            onChange={(e) => setTab(e.target.value)}
+            className='w-full rounded-xl border border-white/15 bg-navy-900/90 px-3 py-3 text-sm text-white shadow-inner focus:border-blue-500/50 focus:outline-none focus:ring-2 focus:ring-blue-500/30'
+          >
+            {TAB_OPTIONS.map((o) => (
+              <option key={o.value} value={o.value} className='bg-navy-900'>
+                {o.label}
+              </option>
+            ))}
+          </select>
+        </div>
+      ) : null}
 
-      <TabsList className='mb-6 hidden h-auto w-full min-w-0 flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5 md:flex'>
-        {TAB_OPTIONS.map((o) => (
-          <TabsTrigger key={o.value} value={o.value} className={tabTriggerClass}>
-            {o.label}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+      {showNav ? (
+        <TabsList className='mb-6 hidden h-auto w-full min-w-0 flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5 md:flex'>
+          {TAB_OPTIONS.map((o) => (
+            <TabsTrigger key={o.value} value={o.value} className={tabTriggerClass}>
+              {o.label}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+      ) : null}
 
       <TabsContent value='saisines' className='mt-0 focus-visible:outline-none'>
         <Accordion type='single' collapsible className='w-full'>

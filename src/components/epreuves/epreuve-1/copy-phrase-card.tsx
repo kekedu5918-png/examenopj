@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import { Check, Copy } from 'lucide-react';
 
-import { GlassCard } from '@/components/ui/GlassCard';
 import { Button } from '@/components/ui/button';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { useToast } from '@/components/ui/use-toast';
 import { cn } from '@/utils/cn';
 

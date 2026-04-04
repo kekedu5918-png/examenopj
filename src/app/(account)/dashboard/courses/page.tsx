@@ -1,18 +1,10 @@
-import { redirect } from 'next/navigation';
-
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getSession } from '@/features/account/controllers/get-session';
 import { getLatestChapitres, getLatestFlashcards } from '@/features/examenopj/controllers/get-dashboard-data';
 
 export default async function CoursesPage() {
-  const session = await getSession();
   const [chapitres, flashcards] = await Promise.all([getLatestChapitres(40), getLatestFlashcards(12)]);
   const sortedChapitres = [...chapitres].sort((a, b) => a.titre.localeCompare(b.titre, 'fr'));
-
-  if (!session) {
-    redirect('/login');
-  }
 
   return (
     <section className='space-y-4 rounded-xl bg-slate-950 p-6'>

@@ -4,11 +4,12 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import { ArticulationTableExample } from '@/components/epreuves/epreuve-2/articulation-table-example';
-import { PVCartouchesSection } from '@/components/epreuves/epreuve-2/pv-cartouches-section';
+import { PVCartouchesSection, type PVTabValue } from '@/components/epreuves/epreuve-2/pv-cartouches-section';
 import { RapportSyntheseSchema } from '@/components/epreuves/epreuve-2/rapport-synthese-blocks';
 import { LANDING_EASE } from '@/components/home/motion';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { SectionTitle } from '@/components/ui/SectionTitle';
+import type { SectionAccordionItem } from '@/components/ui/section-accordion';
+import { SectionAccordion } from '@/components/ui/section-accordion';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
 
@@ -19,137 +20,194 @@ const sectionMotion = {
   transition: { duration: 0.55, ease },
 };
 
+const cartoucheSections: { id: string; trigger: string; badge: string; lock: PVTabValue }[] = [
+  { id: 'cart-saisines', trigger: 'Cartouches — Saisines et plaintes', badge: '3 PV', lock: 'saisines' },
+  { id: 'cart-gav', trigger: 'Cartouches — Garde à vue', badge: '5 PV', lock: 'gav' },
+  {
+    id: 'cart-prolongation',
+    trigger: 'Cartouches — Prolongation et fin de GAV',
+    badge: '4 PV',
+    lock: 'prolongation',
+  },
+  { id: 'cart-avis', trigger: 'Cartouches — Avis obligatoires', badge: '6 PV', lock: 'avis' },
+  { id: 'cart-interpellations', trigger: 'Cartouches — Interpellations', badge: '4 PV', lock: 'interpellations' },
+  {
+    id: 'cart-constatations',
+    trigger: 'Cartouches — Constatations et transport',
+    badge: '5 PV',
+    lock: 'constatations',
+  },
+  { id: 'cart-fouilles', trigger: 'Cartouches — Fouilles et perquisitions', badge: '6 PV', lock: 'fouilles' },
+  { id: 'cart-auditions', trigger: 'Cartouches — Auditions et confrontations', badge: '8 PV', lock: 'auditions' },
+  {
+    id: 'cart-techniques',
+    trigger: 'Cartouches — PV techniques et réquisitions',
+    badge: '5 PV',
+    lock: 'techniques',
+  },
+  { id: 'cart-divers', trigger: 'Cartouches — Divers et clôture', badge: '4 PV', lock: 'divers' },
+];
+
 export function Epreuve2Sections() {
-  return (
-    <div className='mx-auto max-w-4xl space-y-24 px-6 pb-24'>
-      <motion.section id='articulation' className='scroll-mt-28 space-y-10' {...sectionMotion}>
-        <SectionTitle
-          badge='PARTIE I'
-          badgeClassName='bg-blue-500/20 text-blue-300'
-          title="L'articulation de procédure"
-          className='mb-2'
-        />
+  const articulationDef: SectionAccordionItem = {
+    id: 'articulation-def',
+    trigger: "L'articulation de procédure — Définition et forme",
+    badge: '/10',
+    badgeColor: 'blue',
+    defaultOpen: true,
+    content: (
+      <div className='space-y-6'>
+        <div>
+          <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Définition</h3>
+          <GlassCard padding='p-6' className='space-y-4'>
+            <p className='leading-relaxed text-gray-300'>
+              L&apos;articulation de procédure correspond à une liste chronologique des divers procès-verbaux pouvant
+              être établis lors du déroulement d&apos;une enquête. Elle permet de visualiser tous les actes
+              d&apos;investigation devant être réalisés à partir d&apos;un thème donné.
+            </p>
+            <p className='leading-relaxed text-gray-300'>
+              Par cet exercice, le candidat doit montrer qu&apos;il a compris le cheminement d&apos;une procédure. Il
+              doit également présenter une logique d&apos;enquête en lien avec le thème en identifiant les éléments
+              importants.
+            </p>
+          </GlassCard>
+        </div>
 
-        <div className='space-y-6'>
-          <div>
-            <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Définition</h3>
-            <GlassCard padding='p-6' className='space-y-4'>
-              <p className='leading-relaxed text-gray-300'>
-                L&apos;articulation de procédure correspond à une liste chronologique des divers procès-verbaux
-                pouvant être établis lors du déroulement d&apos;une enquête. Elle permet de visualiser tous les actes
-                d&apos;investigation devant être réalisés à partir d&apos;un thème donné.
+        <div>
+          <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Forme</h3>
+          <GlassCard padding='p-6' className='space-y-4'>
+            <p className='leading-relaxed text-gray-300'>
+              Elle se présente sous la forme d&apos;un tableau à deux colonnes. Un procès-verbal correspond aux
+              éléments contenus dans les deux colonnes. Il est séparé du prochain PV par un trait horizontal.
+            </p>
+            <p className='leading-relaxed text-gray-300'>
+              L&apos;articulation de procédure débute au premier procès-verbal et se termine au dernier.
+            </p>
+            <div className='rounded-xl border border-amber-500/20 bg-amber-500/5 p-4'>
+              <p className='text-sm font-semibold text-amber-200'>
+                Tous les procès-verbaux importants doivent être répertoriés.
               </p>
-              <p className='leading-relaxed text-gray-300'>
-                Par cet exercice, le candidat doit montrer qu&apos;il a compris le cheminement d&apos;une procédure.
-                Il doit également présenter une logique d&apos;enquête en lien avec le thème en identifiant les
-                éléments importants.
-              </p>
+            </div>
+          </GlassCard>
+        </div>
+
+        <div>
+          <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Exemple visuel</h3>
+          <ArticulationTableExample />
+        </div>
+
+        <div>
+          <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Organisation</h3>
+          <div className='grid gap-4 md:grid-cols-3'>
+            <GlassCard padding='p-5'>
+              <p className='mb-2 text-xs font-bold uppercase tracking-wide text-white'>En gras</p>
+              <p className='text-sm text-gray-400'>Les mentions devant apparaître en l&apos;état dans les cartouches.</p>
+            </GlassCard>
+            <GlassCard padding='p-5'>
+              <p className='mb-2 text-xs font-bold uppercase italic text-blue-400'>En italique</p>
+              <p className='text-sm text-gray-400'>Les éléments devant apparaître en lien avec le thème.</p>
+            </GlassCard>
+            <GlassCard padding='p-5'>
+              <p className='mb-2 text-xs font-bold uppercase tracking-wide text-white'>Mode télégraphique</p>
+              <p className='text-sm text-gray-400'>Le mode télégraphique est accepté.</p>
             </GlassCard>
           </div>
-
-          <div>
-            <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Forme</h3>
-            <GlassCard padding='p-6' className='space-y-4'>
-              <p className='leading-relaxed text-gray-300'>
-                Elle se présente sous la forme d&apos;un tableau à deux colonnes. Un procès-verbal correspond aux
-                éléments contenus dans les deux colonnes. Il est séparé du prochain PV par un trait horizontal.
+          <div className='mt-6 space-y-3'>
+            <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
+              <p className='text-sm text-gray-300'>
+                Lorsque la rédaction du PV est demandée, la mention « PV rédigé intégralement » sera inscrite.
               </p>
-              <p className='leading-relaxed text-gray-300'>
-                L&apos;articulation de procédure débute au premier procès-verbal et se termine au dernier.
-              </p>
-              <div className='rounded-xl border border-amber-500/20 bg-amber-500/5 p-4'>
-                <p className='text-sm font-semibold text-amber-200'>
-                  Tous les procès-verbaux importants doivent être répertoriés.
-                </p>
-              </div>
             </GlassCard>
-          </div>
-
-          <div>
-            <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>
-              Exemple visuel
-            </h3>
-            <ArticulationTableExample />
-          </div>
-
-          <div>
-            <h3 className='mb-3 text-sm font-semibold uppercase tracking-wider text-gray-400'>Organisation</h3>
-            <div className='grid gap-4 md:grid-cols-3'>
-              <GlassCard padding='p-5'>
-                <p className='mb-2 text-xs font-bold uppercase tracking-wide text-white'>En gras</p>
-                <p className='text-sm text-gray-400'>
-                  Les mentions devant apparaître en l&apos;état dans les cartouches.
-                </p>
-              </GlassCard>
-              <GlassCard padding='p-5'>
-                <p className='mb-2 text-xs font-bold uppercase italic text-blue-400'>En italique</p>
-                <p className='text-sm text-gray-400'>
-                  Les éléments devant apparaître en lien avec le thème.
-                </p>
-              </GlassCard>
-              <GlassCard padding='p-5'>
-                <p className='mb-2 text-xs font-bold uppercase tracking-wide text-white'>Mode télégraphique</p>
-                <p className='text-sm text-gray-400'>Le mode télégraphique est accepté.</p>
-              </GlassCard>
-            </div>
-            <div className='mt-6 space-y-3'>
-              <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
-                <p className='text-sm text-gray-300'>
-                  Lorsque la rédaction du PV est demandée, la mention « PV rédigé intégralement » sera inscrite.
-                </p>
-              </GlassCard>
-              <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
-                <p className='text-sm text-gray-300'>
-                  Dans le cas d&apos;une extension de compétence, le numéro de l&apos;article de référence devra
-                  être visé pour tous les actes (ex. : art. 18 alinéa 3).
-                </p>
-              </GlassCard>
-              <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
-                <p className='text-sm text-gray-300'>
-                  Si un changement de cadre juridique intervient dans le thème, le faire apparaître au moment le plus
-                  approprié.
-                </p>
-              </GlassCard>
-            </div>
+            <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
+              <p className='text-sm text-gray-300'>
+                Dans le cas d&apos;une extension de compétence, le numéro de l&apos;article de référence devra être
+                visé pour tous les actes (ex. : art. 18 alinéa 3).
+              </p>
+            </GlassCard>
+            <GlassCard className='border-amber-500/20 bg-amber-500/5' padding='p-4'>
+              <p className='text-sm text-gray-300'>
+                Si un changement de cadre juridique intervient dans le thème, le faire apparaître au moment le plus
+                approprié.
+              </p>
+            </GlassCard>
           </div>
         </div>
-      </motion.section>
+      </div>
+    ),
+  };
 
-      <motion.section id='cartouches' className='scroll-mt-28 space-y-8' {...sectionMotion}>
-        <SectionTitle
-          badge='PARTIE II'
-          badgeClassName='bg-blue-500/20 text-blue-300'
-          title='Les cartouches de procès-verbaux'
-          subtitle='Tous les types de PV — Cliquez sur une catégorie puis sur un PV pour voir le cartouche'
-          className='mb-2'
-        />
-        <PVCartouchesSection />
-      </motion.section>
+  const articulationExemple: SectionAccordionItem = {
+    id: 'articulation-exemple',
+    trigger: "Exemple d'articulation — Tableau PV commenté",
+    badge: 'Exemple',
+    badgeColor: 'green',
+    defaultOpen: true,
+    content: (
+      <div className='space-y-4'>
+        <p className='text-sm text-gray-400'>
+          Chaque bloc correspond à un procès-verbal : colonne de gauche (côte, numéro, date, OPJ) et contenu du PV à
+          droite. Les cinq premières lignes illustrent un enchaînement type (saisine, GAV, audition, perquisition…) ;
+          la dernière ligne laisse place à la suite de la procédure.
+        </p>
+        <ArticulationTableExample />
+        <div className='grid gap-4 md:grid-cols-2'>
+          <GlassCard padding='p-5'>
+            <p className='mb-2 text-xs font-bold uppercase tracking-wide text-white'>Gras</p>
+            <p className='text-sm text-gray-400'>
+              Dans le PV rédigé, les mentions fixes du cartouche apparaissent en gras, telles que dans le modèle
+              officiel.
+            </p>
+          </GlassCard>
+          <GlassCard padding='p-5'>
+            <p className='mb-2 text-xs font-bold uppercase italic text-blue-400'>Italique</p>
+            <p className='text-sm text-gray-400'>
+              Les éléments propres au thème (noms, qualifications, faits précis…) sont indiqués en italique dans la consigne
+              : ils varient selon l’énoncé.
+            </p>
+          </GlassCard>
+        </div>
+      </div>
+    ),
+  };
 
-      <motion.section id='synthese' className='scroll-mt-28 space-y-6' {...sectionMotion}>
-        <SectionTitle
-          badge='PARTIE III'
-          badgeClassName='bg-blue-500/20 text-blue-300'
-          title='Le rapport de synthèse'
-          className='mb-2'
-        />
-        <GlassCard padding='p-6' className='mb-6'>
+  const cartItems: SectionAccordionItem[] = cartoucheSections.map((c) => ({
+    id: c.id,
+    trigger: c.trigger,
+    badge: c.badge,
+    badgeColor: 'gray' as const,
+    content: <PVCartouchesSection lockCategory={c.lock} />,
+  }));
+
+  const rapportItem: SectionAccordionItem = {
+    id: 'rapport-synthese',
+    trigger: 'Le rapport de synthèse — Structure complète',
+    badge: 'Synthèse',
+    badgeColor: 'blue',
+    content: (
+      <div className='space-y-6'>
+        <GlassCard padding='p-6' className='mb-2'>
           <p className='leading-relaxed text-gray-300'>
             Le rapport de synthèse est un document récapitulatif de l&apos;ensemble de la procédure, destiné au
             magistrat. Il doit être clair, structuré et synthétique.
           </p>
         </GlassCard>
         <RapportSyntheseSchema />
-      </motion.section>
+      </div>
+    ),
+  };
+
+  const items: SectionAccordionItem[] = [articulationDef, articulationExemple, ...cartItems, rapportItem];
+
+  return (
+    <div className='mx-auto max-w-4xl space-y-16 px-6 pb-24'>
+      <SectionAccordion allowMultiple items={items} />
 
       <motion.section id='navigation' className='scroll-mt-28 space-y-6' {...sectionMotion}>
-        <SectionTitle
-          badge='SUITE'
-          badgeClassName='bg-blue-500/20 text-blue-300'
-          title='Continuer la préparation'
-          subtitle='Autres épreuves du concours'
-          className='mb-2'
-        />
+        <div>
+          <p className='text-xs font-semibold uppercase tracking-wide text-blue-400'>Suite</p>
+          <h2 className='font-display text-2xl font-bold text-white'>Continuer la préparation</h2>
+          <p className='mt-2 text-sm text-gray-500'>Autres épreuves du concours</p>
+        </div>
         <div className='grid gap-4 sm:grid-cols-2'>
           <Link
             href='/epreuves/epreuve-1'

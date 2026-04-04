@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { APP_NAME } from '@/constants/site';
+
 export function Logo() {
   return (
     <Link href='/' className='flex w-fit items-center gap-2'>
@@ -10,9 +12,9 @@ export function Logo() {
         height={40}
         priority
         quality={100}
-        alt='UPDATE_THIS_WITH_YOUR_APP_DISPLAY_NAME logo mark'
+        alt={`${APP_NAME} — logo`}
       />
-      <span className='font-alt text-xl text-white'>UPDATE_THIS_WITH_YOUR_APP_DISPLAY_NAME</span>
+      <span className='font-alt text-xl text-white'>{APP_NAME}</span>
     </Link>
   );
 }

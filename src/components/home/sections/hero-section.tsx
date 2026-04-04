@@ -88,7 +88,7 @@ export function HeroSection() {
         </motion.p>
 
         <motion.div
-          className='mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row'
+          className='mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap'
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.5 }}
@@ -98,6 +98,12 @@ export function HeroSection() {
             className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-8 py-4 text-base font-semibold text-white transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(37,99,235,0.4)] will-change-transform'
           >
             Commencer les révisions →
+          </Link>
+          <Link
+            href='/guide-revision-opj'
+            className='inline-flex items-center justify-center rounded-xl border border-gold-500/40 bg-gold-500/10 px-8 py-4 text-base font-semibold text-gold-100 transition-all hover:bg-gold-500/15'
+          >
+            Guide de révision complet
           </Link>
           <Link
             href='/epreuves/epreuve-1'

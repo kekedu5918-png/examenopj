@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { getSession } from '@/features/account/controllers/get-session';
 import { getQuestionsPage } from '@/features/examenopj/controllers/get-dashboard-data';
 
 type Props = {
@@ -15,17 +13,12 @@ type Props = {
 };
 
 export default async function InfractionsPage({ searchParams }: Props) {
-  const session = await getSession();
   const page = Math.max(Number(searchParams?.page ?? '1') || 1, 1);
   const q = searchParams?.q?.trim() || '';
   const difficulte = searchParams?.difficulte?.trim() || '';
   const pageSize = 12;
   const { data: questions, total } = await getQuestionsPage({ page, pageSize, query: q, difficulte });
   const totalPages = Math.max(Math.ceil(total / pageSize), 1);
-
-  if (!session) {
-    redirect('/login');
-  }
 
   return (
     <section className='space-y-4 rounded-xl bg-slate-950 p-6'>

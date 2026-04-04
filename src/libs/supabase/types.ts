@@ -102,6 +102,41 @@ export interface Database {
           }
         ];
       };
+      flashcard_reviews: {
+        Row: {
+          id: string;
+          user_id: string;
+          card_id: string;
+          scope: string;
+          bucket: string;
+          updated_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          card_id: string;
+          scope?: string;
+          bucket: string;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          card_id?: string;
+          scope?: string;
+          bucket?: string;
+          updated_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'flashcard_reviews_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       modules: {
         Row: {
           couleur: string | null;
@@ -262,6 +297,50 @@ export interface Database {
             columns: ['module_id'];
             isOneToOne: false;
             referencedRelation: 'modules';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      quiz_attempts: {
+        Row: {
+          id: string;
+          user_id: string;
+          mode: string;
+          fascicule_num: number | null;
+          domain_key: string | null;
+          score: number;
+          total: number;
+          percent: number;
+          created_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          mode: string;
+          fascicule_num?: number | null;
+          domain_key?: string | null;
+          score: number;
+          total: number;
+          percent: number;
+          created_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          mode?: string;
+          fascicule_num?: number | null;
+          domain_key?: string | null;
+          score?: number;
+          total?: number;
+          percent?: number;
+          created_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'quiz_attempts_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
             referencedColumns: ['id'];
           }
         ];

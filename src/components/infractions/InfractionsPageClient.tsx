@@ -1,16 +1,20 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
-import { getInfractionsCatalog, type InfractionCatalogItem } from '@/data/recapitulatif-data';
-import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
+import {
+  fasciculeToRecapFilter,
+  getInfractionsCatalog,
+  type InfractionCatalogItem,
+} from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
+import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
 
 function stripForSearch(s: string): string {
   return s
@@ -19,8 +23,30 @@ function stripForSearch(s: string): string {
     .toLowerCase();
 }
 
-export function InfractionsPageClient() {
-  const [query, setQuery] = useState('');
+type InfractionsPageClientProps = {
+  initialQuery?: string;
+};
+
+export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClientProps) {
+  const [query, setQuery] = useState(initialQuery);
+
+  useEffect(() => {
+    setQuery(initialQuery);
+  }, [initialQuery]);
+
+  useEffect(() => {
+    const t = window.setTimeout(() => {
+      const trimmed = query.trim();
+      const next = new URL(window.location.href);
+      if (trimmed) next.searchParams.set('q', trimmed);
+      else next.searchParams.delete('q');
+      const path = `${next.pathname}${next.search}`;
+      if (path !== `${window.location.pathname}${window.location.search}`) {
+        window.history.replaceState(null, '', path);
+      }
+    }, 450);
+    return () => window.clearTimeout(t);
+  }, [query]);
   const [fascFilter, setFascFilter] = useState<'all' | 'F01' | 'F02'>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
@@ -47,7 +73,7 @@ export function InfractionsPageClient() {
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='F01 et F02 : clique sur une infraction pour voir les éléments constitutifs. Liens vers flashcards et récapitulatif.'
+        subtitle='F01 à F07 : clique sur une infraction pour voir les éléments constitutifs. Liens vers flashcards (F01–F02) et récapitulatif.'
         className='mb-8'
       />
 
@@ -163,7 +189,7 @@ export function InfractionsPageClient() {
                           </h3>
                           <RecapBulletCell text={item.moral} />
                         </div>
-                        {!item.tentative && !item.complicite ? (
+                        {!item.tentative && !item.complicite && item.flashcardsCat ? (
                           <p className='text-xs text-gray-500'>
                             Pour tentative, complicité ou détail pédagogique complet, utilise les flashcards de la
                             catégorie.
@@ -174,15 +200,21 @@ export function InfractionsPageClient() {
                   </div>
 
                   <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
+                    {item.flashcardsCat ? (
+                      <Link
+                        href={`/flashcards?cat=${item.flashcardsCat}`}
+                        onClick={(e) => e.stopPropagation()}
+                        className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
+                      >
+                        Réviser en flashcards
+                      </Link>
+                    ) : (
+                      <span className='max-w-[11rem] text-right text-xs text-gray-500'>
+                        Flashcards dédiées : catégories F01 / F02 pour l’instant.
+                      </span>
+                    )}
                     <Link
-                      href={`/flashcards?cat=${item.flashcardsCat}`}
-                      onClick={(e) => e.stopPropagation()}
-                      className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
-                    >
-                      Réviser en flashcards
-                    </Link>
-                    <Link
-                      href='/recapitulatif'
+                      href={`/recapitulatif?f=${fasciculeToRecapFilter(item.fascicule)}`}
                       onClick={(e) => e.stopPropagation()}
                       className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
                     >

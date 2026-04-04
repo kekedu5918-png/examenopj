@@ -5,17 +5,17 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-import {
-  DOMAIN_LABELS,
-  FASCICULES,
-  TOTAL_PAGES,
-  cahierMiseAJour,
-  fasciculeDetailPath,
-  type Domain,
-} from '@/data/fascicules-list';
 import { LANDING_EASE } from '@/components/home/motion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import {
+  cahierMiseAJour,
+  type Domain,
+  DOMAIN_LABELS,
+  fasciculeDetailPath,
+  FASCICULES,
+  TOTAL_PAGES,
+} from '@/data/fascicules-list';
 import { cn } from '@/utils/cn';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];

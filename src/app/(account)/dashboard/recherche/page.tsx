@@ -1,7 +1,4 @@
-import { redirect } from 'next/navigation';
-
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getSession } from '@/features/account/controllers/get-session';
 import { searchLearningContent } from '@/features/examenopj/controllers/get-dashboard-data';
 
 type Props = {
@@ -11,9 +8,6 @@ type Props = {
 };
 
 export default async function RecherchePage({ searchParams }: Props) {
-  const session = await getSession();
-  if (!session) redirect('/login');
-
   const query = searchParams?.q?.trim() || '';
   const result = await searchLearningContent(query);
 
@@ -26,7 +20,7 @@ export default async function RecherchePage({ searchParams }: Props) {
         <input
           name='q'
           defaultValue={query}
-          placeholder='Ex: Art.63 CPP, element materiel, garde a vue...'
+          placeholder='Ex. : art. 63 CPP, élément matériel, garde à vue…'
           className='w-full rounded-md bg-slate-950 px-3 py-2 text-sm text-slate-100'
         />
       </form>
@@ -68,7 +62,7 @@ function ResultCard({ title, items }: { title: string; items: string[] }) {
               {text}
             </li>
           ))}
-          {items.length === 0 && <li>Aucun resultat.</li>}
+          {items.length === 0 && <li>Aucun résultat.</li>}
         </ul>
       </CardContent>
     </Card>

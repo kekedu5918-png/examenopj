@@ -16,6 +16,9 @@
 # production
 /build
 
+# perf (npm run perf:lighthouse)
+lighthouse-report.html
+
 # misc
 .DS_Store
 *.pem

@@ -3,8 +3,8 @@
 import { useId } from 'react';
 import { motion } from 'framer-motion';
 
-import { Button } from '@/components/ui/button';
 import { LANDING_EASE } from '@/components/home/motion';
+import { Button } from '@/components/ui/button';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
 

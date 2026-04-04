@@ -3,10 +3,9 @@
 import type { ReactNode } from 'react';
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-
 import { AUDITION_EXTRA_CARTOUCHES } from '@/data/cartouches-data';
 
-import { PVCartoucheFromDef, PVCard, PVDivider, PVLine, PVNote } from './pv-card';
+import { PVCard, PVCartoucheFromDef, PVDivider, PVLine, PVNote } from './pv-card';
 
 function AccBlock({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (

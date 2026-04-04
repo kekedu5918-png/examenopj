@@ -1,6 +1,12 @@
 import { Suspense } from 'react';
+import type { Metadata } from 'next';
 
 import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
+
+export const metadata: Metadata = {
+  title: 'Flashcards',
+  description: 'Révision active par cartes mémoire : recto / verso pour ancrer les points clés du programme OPJ.',
+};
 
 export default function FlashcardsPage() {
   return (

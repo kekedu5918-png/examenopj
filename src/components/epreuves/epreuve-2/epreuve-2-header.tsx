@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+import { EpreuveTabs } from '@/components/epreuves/EpreuveTabs';
 import { LANDING_EASE } from '@/components/home/motion';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
@@ -63,6 +64,10 @@ export function Epreuve2Header() {
       <motion.p variants={item} className='mt-3 text-xl text-gray-400'>
         Articulation de procédure, PV & Rapport de synthèse
       </motion.p>
+
+      <motion.div variants={item} className='mt-8'>
+        <EpreuveTabs active='2' />
+      </motion.div>
 
       <motion.div variants={item} className='mt-8 flex flex-wrap gap-3'>
         <span className='rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-gray-300'>

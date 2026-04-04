@@ -1,6 +1,6 @@
-import type { Flashcard } from '@/data/flashcards-types';
 import { flashcardsF01Part2 } from '@/data/flashcards-f01-part2';
 import { flashcardsF02Extensions } from '@/data/flashcards-f02-extensions';
+import type { Flashcard } from '@/data/flashcards-types';
 
 export type { Flashcard } from '@/data/flashcards-types';
 

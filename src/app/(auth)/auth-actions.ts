@@ -18,10 +18,14 @@ export async function signInWithOAuth(provider: 'github' | 'google'): Promise<Ac
 
   if (error) {
     console.error(error);
-    return { data: null, error: error };
+    return { data: null, error };
   }
 
-  return redirect(data.url);
+  if (!data.url) {
+    return { data: null, error: new Error('URL OAuth indisponible') };
+  }
+
+  redirect(data.url);
 }
 
 export async function signInWithEmail(email: string): Promise<ActionResponse> {

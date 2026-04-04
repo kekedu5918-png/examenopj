@@ -1,5 +1,4 @@
 import eliteLeconsContent from './elite-lecons-content.json';
-
 import type { EliteChapter, EliteLesson } from './elite-lecons-types';
 
 export type { EliteChapter, EliteLesson, EliteLessonSection, EliteLessonSectionTable } from './elite-lecons-types';

@@ -1,24 +1,17 @@
 import Link from 'next/link';
-import { redirect } from 'next/navigation';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { getSession } from '@/features/account/controllers/get-session';
 import { getModules } from '@/features/examenopj/controllers/get-dashboard-data';
 
 export default async function DashboardPage() {
-  const session = await getSession();
   const modules = await getModules();
-
-  if (!session) {
-    redirect('/login');
-  }
 
   return (
     <section className='space-y-6 rounded-xl bg-slate-950 p-6'>
       <header>
         <h1 className='text-3xl font-bold text-slate-50'>Dashboard ExamenOPJ</h1>
-        <p className='mt-2 text-slate-300'>Progression centralisee: modules, infractions, cours et simulations.</p>
+        <p className='mt-2 text-slate-300'>Progression centralisée : modules, infractions, cours et simulations.</p>
       </header>
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
@@ -48,7 +41,7 @@ export default async function DashboardPage() {
             </CardHeader>
             <CardContent>
               <Button asChild className='bg-blue-600 hover:bg-blue-700'>
-                <Link href='/dashboard/courses'>Ouvrir</Link>
+                <Link href='/fascicules'>Consulter les fascicules SDCP</Link>
               </Button>
             </CardContent>
           </Card>

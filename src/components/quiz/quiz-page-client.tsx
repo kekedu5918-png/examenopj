@@ -6,12 +6,13 @@ import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { BookOpen, Layers, Shuffle } from 'lucide-react';
 
-import { quizQuestions } from '@/data/quiz-questions';
-import { fasciculesList } from '@/data/fascicules-list';
-import { type QuizQuestion } from '@/data/types';
 import { LANDING_EASE } from '@/components/home/motion';
-import { SectionTitle } from '@/components/ui/SectionTitle';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { SectionTitle } from '@/components/ui/SectionTitle';
+import { fasciculesList } from '@/data/fascicules-list';
+import { quizQuestions } from '@/data/quiz-questions';
+import { type QuizQuestion } from '@/data/types';
+import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
 import { cn } from '@/utils/cn';
 
 import { QuizInterface } from './quiz-interface';
@@ -22,8 +23,8 @@ import {
   fisherYates,
   getQuizStorageKey,
   type QuizMode,
-  recordQuizBestPercent,
   readBestQuizPercent,
+  recordQuizBestPercent,
 } from './quiz-utils';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
@@ -180,6 +181,17 @@ export function QuizPageClient() {
     setBestAfterQuiz(best);
     setResult({ correct, total });
     setPhase('result');
+
+    if (launchConfig) {
+      void recordQuizAttempt({
+        mode: launchConfig.mode,
+        fasciculeNum: launchConfig.mode === 'fascicule' ? (launchConfig.fascicule ?? null) : null,
+        domainKey: launchConfig.mode === 'domain' ? (launchConfig.domain ?? null) : null,
+        score: correct,
+        total,
+        percent: pct,
+      });
+    }
   }
 
   function handleRecommencer() {

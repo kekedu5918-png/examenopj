@@ -1,14 +1,8 @@
-import { redirect } from 'next/navigation';
-
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { getSession } from '@/features/account/controllers/get-session';
 import { getLatestChapitres } from '@/features/examenopj/controllers/get-dashboard-data';
 
 export default async function FichesPage() {
-  const session = await getSession();
-  if (!session) redirect('/login');
-
   const chapitres = await getLatestChapitres(24);
 
   return (

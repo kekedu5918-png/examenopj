@@ -1,3 +1,4 @@
+import type { Flashcard } from '@/data/flashcards-data';
 import { flashcardsData } from '@/data/flashcards-data';
 import type { InfractionCatalogItem } from '@/data/recapitulatif-data';
 
@@ -10,11 +11,14 @@ function stripBold(s: string): string {
  */
 export function enrichInfractionCatalog(items: InfractionCatalogItem[]): InfractionCatalogItem[] {
   return items.map((item) => {
+    if (!item.flashcardsCat) return item;
+
     const title = stripBold(item.infraction);
     const pool = flashcardsData.filter((c) => c.categorieSlug === item.flashcardsCat);
 
     const exact = pool.filter((c) => c.nom === title);
-    let fc = exact.find((c) => c.tentative != null && c.tentative !== '') ?? exact[0];
+    let fc: Flashcard | undefined =
+      exact.find((c) => c.tentative != null && c.tentative !== '') ?? exact[0];
 
     if (!fc) {
       const long = pool.filter((c) => c.nom.length >= 10);
