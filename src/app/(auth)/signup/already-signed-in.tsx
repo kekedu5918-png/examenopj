@@ -22,7 +22,7 @@ export function AlreadySignedInPanel() {
           <Link href='/entrainement'>Accéder à l&apos;entraînement</Link>
         </Button>
         <Button asChild variant='outline' className='w-full border-white/20 text-white hover:bg-white/10'>
-          <Link href='/pricing#offres-paiement'>Choisir une offre Premium</Link>
+          <Link href='/pricing#tarifs-premium'>Choisir une offre Premium</Link>
         </Button>
         <Button asChild variant='ghost' className='w-full text-slate-400 hover:text-white'>
           <Link href='/'>Retour à l&apos;accueil</Link>

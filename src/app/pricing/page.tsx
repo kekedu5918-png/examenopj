@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 
+import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
 import { FreemiumPricingPlans } from '@/features/pricing/components/freemium-pricing-plans';
-import { PricingCard } from '@/features/pricing/components/price-card';
 import { getProducts } from '@/features/pricing/controllers/get-products';
+import { pickFreemiumStripePrices } from '@/features/pricing/controllers/pick-freemium-stripe-prices';
 
 export const metadata: Metadata = {
   title: 'Tarifs — Préparez-vous sans limite | Examen OPJ',
@@ -13,28 +14,20 @@ export const metadata: Metadata = {
 };
 
 export default async function PricingPage() {
+  const session = await getSession();
   const products = await getProducts();
+  const { monthly, exam } = pickFreemiumStripePrices(products);
+  const freePlanHref = session ? '/entrainement' : '/signup';
 
   return (
     <section className='relative min-h-screen rounded-lg bg-black py-8'>
-      <FreemiumPricingPlans />
-
-      {products.length > 0 ? (
-        <div
-          id='offres-paiement'
-          className='relative z-10 mx-auto max-w-[1200px] scroll-mt-24 border-t border-white/10 px-4 pb-16 pt-12'
-        >
-          <h2 className='text-center text-xl font-bold text-white'>Offres de paiement Stripe</h2>
-          <p className='mx-auto mt-2 max-w-xl text-center text-sm text-gray-500'>
-            Complétez votre abonnement via notre passerelle sécurisée lorsque les prix sont configurés.
-          </p>
-          <div className='mt-8 flex w-full flex-col items-center justify-center gap-8 lg:flex-row'>
-            {products.map((product) => (
-              <PricingCard key={product.id} product={product} createCheckoutAction={createCheckoutAction} />
-            ))}
-          </div>
-        </div>
-      ) : null}
+      <FreemiumPricingPlans
+        freePlanHref={freePlanHref}
+        isLoggedIn={!!session}
+        monthlyPrice={monthly}
+        examPrice={exam}
+        createCheckoutAction={createCheckoutAction}
+      />
 
       <Image
         src='/section-bg.png'

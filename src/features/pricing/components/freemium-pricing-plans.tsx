@@ -1,8 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
+import { isRedirectError } from 'next/dist/client/components/redirect';
 import Link from 'next/link';
 import { Check, X } from 'lucide-react';
+
+import type { Price } from '@/features/pricing/types';
 
 function Li({ ok, children }: { ok: boolean; children: React.ReactNode }) {
   return (
@@ -17,19 +20,57 @@ function Li({ ok, children }: { ok: boolean; children: React.ReactNode }) {
   );
 }
 
-export function FreemiumPricingPlans() {
-  const [billing, setBilling] = useState<'monthly' | 'exam'>('monthly');
+type CreateCheckoutFn = (args: { price: Price }) => Promise<void>;
 
-  const premiumHref =
-    billing === 'monthly' ? '/signup?plan=premium&billing=monthly' : '/signup?plan=premium&billing=exam';
+type FreemiumPricingPlansProps = {
+  freePlanHref: string;
+  isLoggedIn: boolean;
+  monthlyPrice: Price | null;
+  examPrice: Price | null;
+  createCheckoutAction: CreateCheckoutFn;
+};
+
+export function FreemiumPricingPlans({
+  freePlanHref,
+  isLoggedIn,
+  monthlyPrice,
+  examPrice,
+  createCheckoutAction,
+}: FreemiumPricingPlansProps) {
+  const [billing, setBilling] = useState<'monthly' | 'exam'>('monthly');
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+  const [isPending, startTransition] = useTransition();
+
+  const selectedPrice = billing === 'monthly' ? monthlyPrice : examPrice;
+
+  function handlePremiumClick() {
+    setCheckoutError(null);
+    if (!selectedPrice) {
+      setCheckoutError('Ce tarif n’est pas encore disponible en ligne. Réessayez plus tard ou contactez le support.');
+      return;
+    }
+    startTransition(async () => {
+      try {
+        await createCheckoutAction({ price: selectedPrice });
+      } catch (err) {
+        if (isRedirectError(err)) {
+          throw err;
+        }
+        setCheckoutError('Impossible d’ouvrir le paiement. Réessayez ou vérifiez votre connexion.');
+      }
+    });
+  }
+
+  const premiumCtaLabel = isLoggedIn ? 'Payer et activer le Premium' : 'Créer un compte — 7 jours offerts';
 
   return (
-    <div className='relative z-10 mx-auto max-w-5xl px-4 pb-16 pt-8 lg:pt-[100px]'>
+    <div id='tarifs-premium' className='relative z-10 mx-auto max-w-5xl scroll-mt-24 px-4 pb-16 pt-8 lg:pt-[100px]'>
       <h1 className='bg-gradient-to-br from-white to-neutral-200 bg-clip-text text-center text-3xl font-bold text-transparent md:text-4xl'>
         Préparez-vous sans limite
       </h1>
       <p className='mx-auto mt-3 max-w-2xl text-center text-base text-gray-400 md:text-lg'>
-        7 jours d&apos;accès complet offerts à l&apos;inscription. Ensuite : freemium ou Premium.
+        7 jours d&apos;accès complet offerts à l&apos;inscription (sans carte). Ensuite : freemium ou Premium payant
+        ci-dessous.
       </p>
 
       <div className='mx-auto mt-8 flex max-w-md justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] p-1 text-sm'>
@@ -74,7 +115,7 @@ export function FreemiumPricingPlans() {
             <Li ok={false}>Suivi de progression</Li>
           </ul>
           <Link
-            href='/signup'
+            href={freePlanHref}
             className='mt-8 block w-full rounded-xl border border-white/15 py-3 text-center text-sm font-semibold text-gray-200 transition hover:bg-white/5'
           >
             Continuer gratuitement
@@ -111,15 +152,35 @@ export function FreemiumPricingPlans() {
             <Li ok>Examen blanc chronométré (dès disponibilité)</Li>
             <Li ok>Suivi de progression et statistiques</Li>
           </ul>
-          <Link
-            href={premiumHref}
-            className='mt-8 flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 text-sm font-bold text-white shadow-lg transition hover:opacity-95'
-          >
-            Commencer l&apos;essai gratuit de 7 jours
-          </Link>
+
+          {checkoutError ? (
+            <p className='mt-4 rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-center text-xs text-red-200'>
+              {checkoutError}
+            </p>
+          ) : null}
+
+          {isLoggedIn ? (
+            <button
+              type='button'
+              onClick={handlePremiumClick}
+              disabled={isPending || !selectedPrice}
+              className='mt-8 flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 text-sm font-bold text-white shadow-lg transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-50'
+            >
+              {isPending ? 'Redirection vers Stripe…' : premiumCtaLabel}
+            </button>
+          ) : (
+            <Link
+              href='/signup'
+              className='mt-8 flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 text-sm font-bold text-white shadow-lg transition hover:opacity-95'
+            >
+              {premiumCtaLabel}
+            </Link>
+          )}
+
           <p className='mt-3 text-center text-xs text-gray-500'>
-            Annulation possible à tout moment. Pas de carte bancaire requise pour l&apos;essai lorsque l&apos;offre Stripe
-            le permet.
+            {isLoggedIn
+              ? 'Paiement sécurisé par carte (Stripe). Après paiement, retour sur votre compte.'
+              : 'Les 7 jours gratuits sont activés à la création du compte. Le Premium est un abonnement ou un paiement unique selon l’offre choisie.'}
           </p>
         </div>
       </div>

@@ -45,7 +45,7 @@ export function TrialReminderBanner({ daysLeft, endsAtIso }: TrialReminderBanner
         <span className='font-semibold text-amber-100'>Fin de votre essai gratuit dans {jourLabel}.</span>{' '}
         Après cette date, votre compte passera en <strong className='text-amber-50'>freemium</strong> (quotas quiz /
         flashcards). Pour garder un accès illimité,{' '}
-        <Link href='/pricing#offres-paiement' className='font-semibold underline underline-offset-2'>
+        <Link href='/pricing#tarifs-premium' className='font-semibold underline underline-offset-2'>
           choisissez une offre Premium
         </Link>
         .
