@@ -35,8 +35,8 @@ export const coursePillars: CoursePillar[] = [
     rhythm: 'Rythme suggéré : un thème par session',
     steps: [
       { kind: 'read', label: 'Fascicules DPS', href: '/fascicules', hint: 'F03 → F07' },
-      { kind: 'train', label: 'Quiz DPS', href: '/quiz?mode=domain&domain=DPS' },
-      { kind: 'anchor', label: 'Flashcards', href: '/flashcards?cat=atteintes-aux-biens' },
+      { kind: 'train', label: 'Quiz DPS', href: '/entrainement/quiz?mode=domain&domain=DPS' },
+      { kind: 'anchor', label: 'Flashcards', href: '/entrainement/flashcards?cat=atteintes-aux-biens' },
       { kind: 'map', label: 'Référentiel infractions', href: '/infractions' },
     ],
   },
@@ -51,9 +51,9 @@ export const coursePillars: CoursePillar[] = [
     rhythm: 'À alterner avec du DPS pour lier théorie et faits',
     steps: [
       { kind: 'read', label: 'Fascicules DPG', href: '/fascicules', hint: 'F09 & F10' },
-      { kind: 'train', label: 'Quiz DPG', href: '/quiz?mode=domain&domain=DPG' },
-      { kind: 'anchor', label: 'Flashcards personnes', href: '/flashcards?cat=atteintes-aux-personnes' },
-      { kind: 'map', label: 'Récap F01', href: '/recapitulatif' },
+      { kind: 'train', label: 'Quiz DPG', href: '/entrainement/quiz?mode=domain&domain=DPG' },
+      { kind: 'anchor', label: 'Flashcards personnes', href: '/entrainement/flashcards?cat=atteintes-aux-personnes' },
+      { kind: 'map', label: 'Récap F01', href: '/entrainement/recapitulatif' },
     ],
   },
   {
@@ -67,9 +67,9 @@ export const coursePillars: CoursePillar[] = [
     rhythm: 'Bonne entrée après une mise en cause réelle ou un cas fil',
     steps: [
       { kind: 'read', label: 'Fascicules procédure', href: '/fascicules', hint: 'F12 → F15' },
-      { kind: 'train', label: 'Quiz procédure', href: '/quiz?mode=domain&domain=procedure' },
-      { kind: 'anchor', label: 'Flashcards (toutes)', href: '/flashcards' },
-      { kind: 'map', label: 'Récap F02', href: '/recapitulatif' },
+      { kind: 'train', label: 'Quiz procédure', href: '/entrainement/quiz?mode=domain&domain=procedure' },
+      { kind: 'anchor', label: 'Flashcards (toutes)', href: '/entrainement/flashcards' },
+      { kind: 'map', label: 'Récap F02', href: '/entrainement/recapitulatif' },
     ],
   },
   {
@@ -82,9 +82,9 @@ export const coursePillars: CoursePillar[] = [
     iconName: 'Network',
     rhythm: 'Idéal en ouverture ou en fin de semaine',
     steps: [
-      { kind: 'map', label: 'Récapitulatif complet', href: '/recapitulatif' },
+      { kind: 'map', label: 'Récapitulatif complet', href: '/entrainement/recapitulatif' },
       { kind: 'map', label: 'Infractions & liens', href: '/infractions' },
-      { kind: 'train', label: 'Quiz global', href: '/quiz?mode=global' },
+      { kind: 'train', label: 'Quiz global', href: '/entrainement/quiz?mode=global' },
     ],
   },
   {
@@ -97,8 +97,8 @@ export const coursePillars: CoursePillar[] = [
     iconName: 'Sparkles',
     rhythm: '≈ 15 minutes',
     steps: [
-      { kind: 'train', label: 'Quiz 10 questions', href: '/quiz' },
-      { kind: 'anchor', label: 'Flashcards au choix', href: '/flashcards' },
+      { kind: 'train', label: 'Quiz 10 questions', href: '/entrainement/quiz' },
+      { kind: 'anchor', label: 'Flashcards au choix', href: '/entrainement/flashcards' },
       { kind: 'map', label: 'Une infraction au hasard', href: '/infractions' },
     ],
   },

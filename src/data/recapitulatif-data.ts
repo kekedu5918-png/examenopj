@@ -1,6 +1,16 @@
+import { recapSectionF01P1 } from '@/data/recapitulatif-f01-p1';
 import { recapSectionsF03F07 } from '@/data/recapitulatif-f03-f07';
 
-export type RecapFasciculeFilter = 'all' | 'f01' | 'f02' | 'f03' | 'f04' | 'f05' | 'f06' | 'f07';
+export type RecapFasciculeFilter =
+  | 'all'
+  | 'f01p1'
+  | 'f01p2'
+  | 'f02'
+  | 'f03'
+  | 'f04'
+  | 'f05'
+  | 'f06'
+  | 'f07';
 
 export type RecapRow = {
   infraction: string;
@@ -23,21 +33,7 @@ export type RecapSection = {
 
 /** Tableau synthétique : titres condensés (pas le détail des flashcards). */
 export const recapSections: RecapSection[] = [
-  {
-    id: 'f01-p1',
-    fascicule: 'F01',
-    fasciculePart: 'Partie 1',
-    groupTitle: 'F01 — Atteintes aux personnes (partie 1)',
-    headerClass: 'bg-rose-950/80 text-rose-100',
-    rows: [
-      {
-        infraction: '**À compléter**',
-        legal: '—',
-        materiel: '—',
-        moral: '—',
-      },
-    ],
-  },
+  recapSectionF01P1 as RecapSection,
   {
     id: 'f01-p2-a',
     fascicule: 'F01',
@@ -504,8 +500,10 @@ export const recapSections: RecapSection[] = [
   ...recapSectionsF03F07,
 ];
 
-const FILTER_TO_FASC: Record<Exclude<RecapFasciculeFilter, 'all'>, RecapFasciculeId> = {
-  f01: 'F01',
+const FILTER_TO_FASC: Record<
+  Exclude<RecapFasciculeFilter, 'all' | 'f01p1' | 'f01p2'>,
+  RecapFasciculeId
+> = {
   f02: 'F02',
   f03: 'F03',
   f04: 'F04',
@@ -516,13 +514,14 @@ const FILTER_TO_FASC: Record<Exclude<RecapFasciculeFilter, 'all'>, RecapFascicul
 
 export function filterRecapSections(filter: RecapFasciculeFilter): RecapSection[] {
   if (filter === 'all') return recapSections;
-  const tag = FILTER_TO_FASC[filter];
+  if (filter === 'f01p1') {
+    return recapSections.filter((s) => s.fascicule === 'F01' && s.fasciculePart === 'Partie 1');
+  }
+  if (filter === 'f01p2') {
+    return recapSections.filter((s) => s.fascicule === 'F01' && s.fasciculePart === 'Partie 2');
+  }
+  const tag = FILTER_TO_FASC[filter as keyof typeof FILTER_TO_FASC];
   return recapSections.filter((s) => s.fascicule === tag);
-}
-
-export function fasciculeToRecapFilter(f: RecapFasciculeId): Exclude<RecapFasciculeFilter, 'all'> {
-  const e = Object.entries(FILTER_TO_FASC).find(([, v]) => v === f);
-  return (e?.[0] ?? 'f01') as Exclude<RecapFasciculeFilter, 'all'>;
 }
 
 export type InfractionCatalogItem = {
@@ -539,6 +538,22 @@ export type InfractionCatalogItem = {
   tentative?: string;
   complicite?: string;
 };
+
+/** Lien « Voir le récap » depuis une ligne du référentiel. */
+export function infractionToRecapFilter(item: InfractionCatalogItem): Exclude<RecapFasciculeFilter, 'all'> {
+  if (item.fascicule === 'F01') {
+    return item.fasciculePart === 'Partie 1' ? 'f01p1' : 'f01p2';
+  }
+  const e = Object.entries(FILTER_TO_FASC).find(([, v]) => v === item.fascicule);
+  return (e?.[0] ?? 'f02') as Exclude<RecapFasciculeFilter, 'all'>;
+}
+
+/** @deprecated Utiliser infractionToRecapFilter pour F01 P1/P2. */
+export function fasciculeToRecapFilter(f: RecapFasciculeId): Exclude<RecapFasciculeFilter, 'all'> {
+  if (f === 'F01') return 'f01p1';
+  const e = Object.entries(FILTER_TO_FASC).find(([, v]) => v === f);
+  return (e?.[0] ?? 'f02') as Exclude<RecapFasciculeFilter, 'all'>;
+}
 
 /** Liste plate pour la page Infractions (hors placeholder « À compléter »). */
 export function getInfractionsCatalog(): InfractionCatalogItem[] {

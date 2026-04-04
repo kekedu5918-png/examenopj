@@ -4,12 +4,15 @@ import { useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
+import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
 import { cn } from '@/utils/cn';
 
 interface Props {
   fiches: Fiche[];
   categories: Record<Categorie, { label: string; couleur: string }>;
+  /** Utilisateur en freemium (après essai) : contenu réservé au Premium. */
+  contentLocked?: boolean;
 }
 
 const COULEURS: Record<string, { badge: string; border: string; title: string }> = {
@@ -61,7 +64,7 @@ function CategoryChip({
   );
 }
 
-export function FondamentauxPage({ fiches, categories }: Props) {
+export function FondamentauxPage({ fiches, categories, contentLocked = false }: Props) {
   const [categorieActive, setCategorieActive] = useState<Categorie | 'all'>('all');
   const [recherche, setRecherche] = useState('');
   const [ficheOuverte, setFicheOuverte] = useState<string | null>(null);
@@ -81,6 +84,17 @@ export function FondamentauxPage({ fiches, categories }: Props) {
   }, [fiches, categorieActive, recherche]);
 
   const fiche = fiches.find((ff) => ff.id === ficheOuverte) ?? null;
+
+  if (contentLocked) {
+    return (
+      <ContentPremiumOverlay
+        title='Fondamentaux réservés au Premium'
+        description='Après votre semaine d’essai, l’accès aux fiches fondamentales complètes fait partie de l’offre Premium. Les fascicules et le récapitulatif restent disponibles en freemium.'
+      >
+        <div className='h-[28rem] bg-navy-900/50' />
+      </ContentPremiumOverlay>
+    );
+  }
 
   return (
     <div className='flex min-h-[calc(100vh-4rem)] flex-col bg-navy-950 lg:flex-row'>

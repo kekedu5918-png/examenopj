@@ -36,6 +36,9 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/quiz', destination: '/entrainement/quiz', permanent: true },
+      { source: '/flashcards', destination: '/entrainement/flashcards', permanent: true },
+      { source: '/recapitulatif', destination: '/entrainement/recapitulatif', permanent: true },
       { source: '/about', destination: '/a-propos', permanent: true },
       { source: '/about-us', destination: '/a-propos', permanent: true },
       { source: '/guide', destination: '/guide-revision-opj', permanent: true },

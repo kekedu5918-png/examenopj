@@ -8,6 +8,11 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
+import {
+  addDailyFlashcardReviewCount,
+  getDailyFlashcardReviewCount,
+} from '@/features/access/daily-quota-client';
+import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordFlashcardReview } from '@/features/examenopj/actions/record-flashcard-review';
 
 import { FlashcardInterface } from './FlashcardInterface';
@@ -97,8 +102,20 @@ const CAT_QUERY: Record<string, CategoryFilter> = {
   'atteintes-aux-personnes': 'atteintes-aux-personnes',
 };
 
-export function FlashcardsPageClient() {
+type FlashcardsPageClientProps = {
+  initialAccess?: ContentAccessSnapshot;
+};
+
+export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProps) {
   const searchParams = useSearchParams();
+
+  const access: ContentAccessSnapshot = initialAccess ?? {
+    tier: 'full',
+    maxQuizQuestionsPerDay: null,
+    maxFlashcardsPerDay: null,
+  };
+  const maxFlashcardsPerDay = access.maxFlashcardsPerDay;
+
   const [phase, setPhase] = useState<'select' | 'play' | 'result'>('select');
   const [categoryFilter, setCategoryFilter] = useState<CategoryFilter>('all');
   const [fascicule, setFascicule] = useState<number | 'all'>('all');
@@ -116,6 +133,7 @@ export function FlashcardsPageClient() {
   const [dontKnow, setDontKnow] = useState(0);
   const [sessionReviewIds, setSessionReviewIds] = useState<string[]>([]);
   const [sessionDontKnowIds, setSessionDontKnowIds] = useState<string[]>([]);
+  const [fcQuotaTick, setFcQuotaTick] = useState(0);
 
   const exitToResultRef = useRef(false);
   const lastModeRef = useRef<ContentStudyMode>('mixed');
@@ -142,6 +160,16 @@ export function FlashcardsPageClient() {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    if (phase === 'select') setFcQuotaTick((t) => t + 1);
+  }, [phase]);
+
+  const flashRemainingToday = useMemo(() => {
+    if (maxFlashcardsPerDay == null) return null;
+    void fcQuotaTick;
+    return Math.max(0, maxFlashcardsPerDay - getDailyFlashcardReviewCount());
+  }, [maxFlashcardsPerDay, fcQuotaTick]);
+
   const progressScope = useMemo(
     () => progressScopeFromUI(categoryFilter, fascicule),
     [categoryFilter, fascicule]
@@ -165,7 +193,13 @@ export function FlashcardsPageClient() {
       if (cards.length === 0) return;
       lastModeRef.current = mode;
       lastScopeRef.current = scope;
-      setDeck(prepareDeck(cards, mode));
+      let prepared = prepareDeck(cards, mode);
+      if (maxFlashcardsPerDay != null) {
+        const rem = Math.max(0, maxFlashcardsPerDay - getDailyFlashcardReviewCount());
+        if (rem === 0) return;
+        prepared = prepared.slice(0, rem);
+      }
+      setDeck(prepared);
       setIndex(0);
       setDirection(1);
       setKnow(0);
@@ -176,7 +210,7 @@ export function FlashcardsPageClient() {
       exitToResultRef.current = false;
       setPhase('play');
     },
-    []
+    [maxFlashcardsPerDay]
   );
 
   const handleStart = () => {
@@ -209,6 +243,10 @@ export function FlashcardsPageClient() {
         setSessionDontKnowIds((r) => [...r, id]);
       }
 
+      if (maxFlashcardsPerDay != null) {
+        addDailyFlashcardReviewCount(1);
+      }
+
       setDirection(1);
       setIndex((prev) => {
         const next = prev + 1;
@@ -216,7 +254,7 @@ export function FlashcardsPageClient() {
         return next;
       });
     },
-    [progressScope]
+    [progressScope, maxFlashcardsPerDay]
   );
 
   const handlePrevious = () => {
@@ -295,6 +333,20 @@ export function FlashcardsPageClient() {
         className='mb-10'
       />
 
+      {phase === 'select' && flashRemainingToday != null ? (
+        <p className='mx-auto mb-6 max-w-xl rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-center text-sm text-amber-100/90'>
+          Mode gratuit :{' '}
+          <span className='font-semibold'>
+            {flashRemainingToday} flashcard{flashRemainingToday > 1 ? 's' : ''}
+          </span>{' '}
+          restante{flashRemainingToday > 1 ? 's' : ''} aujourd&apos;hui.{' '}
+          <a href='/pricing' className='font-medium text-amber-300 underline-offset-2 hover:underline'>
+            Premium
+          </a>{' '}
+          : illimité.
+        </p>
+      ) : null}
+
       {phase === 'select' && (
         <GlassCard className='mx-auto max-w-xl space-y-8' padding='p-8'>
           <div className='space-y-2'>
@@ -316,11 +368,11 @@ export function FlashcardsPageClient() {
             </select>
             <p className='text-xs text-gray-500'>
               Liens directs :{' '}
-              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-biens'>
+              <a className='text-amber-300/90 underline' href='/entrainement/flashcards?cat=atteintes-aux-biens'>
                 biens
               </a>
               {' · '}
-              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-personnes'>
+              <a className='text-amber-300/90 underline' href='/entrainement/flashcards?cat=atteintes-aux-personnes'>
                 personnes
               </a>
             </p>
@@ -393,7 +445,7 @@ export function FlashcardsPageClient() {
 
           <button
             type='button'
-            disabled={playableForMode.length === 0}
+            disabled={playableForMode.length === 0 || flashRemainingToday === 0}
             onClick={handleStart}
             className='w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 text-center text-base font-semibold text-white shadow-lg transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-40'
           >

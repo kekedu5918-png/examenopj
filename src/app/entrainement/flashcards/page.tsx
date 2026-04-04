@@ -2,13 +2,16 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
+import { getContentAccess } from '@/features/access/get-content-access';
 
 export const metadata: Metadata = {
-  title: 'Flashcards',
+  title: 'Flashcards — Examen OPJ',
   description: 'Révision active par cartes mémoire : recto / verso pour ancrer les points clés du programme OPJ.',
 };
 
-export default function FlashcardsPage() {
+export default async function EntrainementFlashcardsPage() {
+  const access = await getContentAccess();
+
   return (
     <Suspense
       fallback={
@@ -17,7 +20,7 @@ export default function FlashcardsPage() {
         </div>
       }
     >
-      <FlashcardsPageClient />
+      <FlashcardsPageClient initialAccess={access} />
     </Suspense>
   );
 }

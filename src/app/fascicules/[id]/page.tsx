@@ -62,19 +62,19 @@ export default function FasciculeDetailPage({ params }: Props) {
           ) : null}
           <div className='mt-6 flex flex-wrap gap-2'>
             <Link
-              href={`/quiz?mode=fascicule&f=${f.id}`}
+              href={`/entrainement/quiz?mode=fascicule&f=${f.id}`}
               className='inline-flex items-center justify-center rounded-xl bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-500'
             >
               Quiz F{String(f.num).padStart(2, '0')}
             </Link>
             <Link
-              href={`/flashcards?f=${f.id}`}
+              href={`/entrainement/flashcards?f=${f.id}`}
               className='inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-gray-200 transition hover:bg-white/10'
             >
               Flashcards
             </Link>
             <Link
-              href='/recapitulatif'
+              href='/entrainement/recapitulatif'
               className='inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-sm font-medium text-gray-200 transition hover:bg-white/10'
             >
               Récapitulatif

@@ -1,3 +1,4 @@
+import { flashcardsF01P1 } from '@/data/flashcards-f01-p1';
 import { flashcardsF01Part2 } from '@/data/flashcards-f01-part2';
 import { flashcardsF02Extensions } from '@/data/flashcards-f02-extensions';
 import type { Flashcard } from '@/data/flashcards-types';
@@ -5,6 +6,7 @@ import type { Flashcard } from '@/data/flashcards-types';
 export type { Flashcard } from '@/data/flashcards-types';
 
 export const flashcardsData: Flashcard[] = [
+  ...flashcardsF01P1,
   ...flashcardsF01Part2,
   // ═══ F02 — Crimes et délits contre les biens (Partie 1 — Groupe 1 : Le vol) ═══
   {

@@ -1,7 +1,7 @@
 export const navigation = {
   main: [
     { name: 'Accueil', href: '/' },
-    { name: 'Fondamentaux', href: '/fondamentaux' },
+    { name: 'Cours', href: '/cours' },
     {
       name: 'Épreuves',
       children: [
@@ -24,9 +24,7 @@ export const navigation = {
     },
     { name: 'Fascicules', href: '/fascicules' },
     { name: 'Infractions', href: '/infractions' },
-    { name: 'Quiz', href: '/quiz' },
-    { name: 'Flashcards', href: '/flashcards' },
-    { name: 'Récapitulatif', href: '/recapitulatif' },
+    { name: 'Entraînement', href: '/entrainement' },
   ],
 } as const;
 

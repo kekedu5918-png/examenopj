@@ -35,6 +35,13 @@ export const recapSectionsF03F07 = [
         moral: '**CONSCIENCE + VOLONTÉ DE SE SOUSTRAIRE À SA RESPONSABILITÉ PÉNALE OU CIVILE**',
       },
       {
+        infraction: '**L\'homicide routier**',
+        legal: 'Art. 221-18 C.P. (loi n° 2025-622 du 09/07/2025)',
+        materiel:
+          '**CONDUCTEUR DE VTM** / **AU MOINS UNE CIRCONSTANCE DE « VIOLENCE ROUTIÈRE » (ALCOOL, STUPÉFIANTS, EXCÈS DE VITESSE ≥30 KM/H, PERMIS, FUITE, TÉLÉPHONE AU VOLANT, REFUS D\'OBTEMPÉRER, ÉCRAN…)** / **MORT SANS INTENTION** / **CAUSALITÉ**',
+        moral: '**ABSENCE D\'INTENTION HOMICIDE** / **FAUTE QUALIFIÉE + COMPORTEMENT DANGEREUX**',
+      },
+      {
         infraction: '**Le refus d\'obtempérer**',
         legal: 'Art. L. 233-1/I C.R.',
         materiel: '**AGENTS HABILITÉS** / **SOMMATION DE S\'ARRÊTER** / **REFUS D\'OBTEMPÉRER**',

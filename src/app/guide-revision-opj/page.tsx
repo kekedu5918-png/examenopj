@@ -182,7 +182,7 @@ export default function GuideRevisionOpjPage() {
                 <p className='mt-2 text-sm text-gray-400'>Les 15 fascicules intégraux.</p>
               </Link>
               <Link
-                href='/quiz'
+                href='/entrainement/quiz'
                 className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-cyan-500/40 hover:bg-white/[0.06]'
               >
                 <p className='text-xs font-semibold uppercase tracking-wide text-cyan-400'>4</p>
@@ -190,7 +190,7 @@ export default function GuideRevisionOpjPage() {
                 <p className='mt-2 text-sm text-gray-400'>Auto-évaluation après chaque lecture.</p>
               </Link>
               <Link
-                href='/flashcards'
+                href='/entrainement/flashcards'
                 className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-cyan-500/40 hover:bg-white/[0.06] sm:col-span-2'
               >
                 <p className='text-xs font-semibold uppercase tracking-wide text-cyan-400'>5</p>
@@ -220,7 +220,7 @@ export default function GuideRevisionOpjPage() {
               le référentiel infractions
             </Link>{' '}
             ou{' '}
-            <Link href='/recapitulatif' className='text-cyan-400 hover:underline'>
+            <Link href='/entrainement/recapitulatif' className='text-cyan-400 hover:underline'>
               le tableau récapitulatif
             </Link>
             .

@@ -244,14 +244,14 @@ export function FasciculesPageView() {
                     </Link>
                     <div className='mt-3 flex flex-wrap gap-2 border-t border-white/[0.06] px-5 pb-5 pt-3'>
                       <Link
-                        href={`/quiz?mode=fascicule&f=${f.id}`}
+                        href={`/entrainement/quiz?mode=fascicule&f=${f.id}`}
                         className='rounded-lg bg-cyan-600/90 px-3 py-1.5 text-xs font-semibold text-white hover:bg-cyan-500'
                         onClick={(e) => e.stopPropagation()}
                       >
                         Quiz
                       </Link>
                       <Link
-                        href={`/flashcards?f=${f.id}`}
+                        href={`/entrainement/flashcards?f=${f.id}`}
                         className='rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 text-xs font-medium text-gray-200 hover:bg-white/10'
                       >
                         Flashcards

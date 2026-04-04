@@ -8,7 +8,7 @@ export const GUIDE_REVISION_FAQ = [
   {
     question: 'C’est quoi la différence entre le récapitulatif, les flashcards et le référentiel infractions ?',
     answer:
-      'Le référentiel (/infractions) donne tous les éléments constitutifs d’une infraction, avec son article, sa classification et ses peines. C’est la fiche complète. Les flashcards (/flashcards) font travailler la mémoire en isolant un seul élément à la fois (matériel, moral ou légal). Le récapitulatif (/recapitulatif) est un tableau de synthèse pour voir toutes les infractions d’un coup d’œil — utile pour les révisions de fin de cycle. Utiliser les trois est complémentaire, pas redondant.',
+      'Le référentiel (/infractions) donne tous les éléments constitutifs d’une infraction, avec son article, sa classification et ses peines. C’est la fiche complète. Les flashcards (/entrainement/flashcards) font travailler la mémoire en isolant un seul élément à la fois (matériel, moral ou légal). Le récapitulatif (/entrainement/recapitulatif) est un tableau de synthèse pour voir toutes les infractions d’un coup d’œil — utile pour les révisions de fin de cycle. Utiliser les trois est complémentaire, pas redondant.',
   },
   {
     question: 'Comment utiliser le quiz efficacement ?',

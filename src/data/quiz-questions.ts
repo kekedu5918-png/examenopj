@@ -1,6 +1,8 @@
+import { quizQuestionsF01P1 } from '@/data/quiz-questions-f01-p1';
 import { type QuizQuestion } from '@/data/types';
 
 export const quizQuestions: QuizQuestion[] = [
+  ...quizQuestionsF01P1,
   {
     id: 'f03-01',
     question:

@@ -12,6 +12,8 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import { quizQuestions } from '@/data/quiz-questions';
 import { type QuizQuestion } from '@/data/types';
+import { addDailyQuizQuestionCount, getDailyQuizQuestionCount } from '@/features/access/daily-quota-client';
+import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
 import { cn } from '@/utils/cn';
 
@@ -47,8 +49,19 @@ const headerItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease } },
 };
 
-export function QuizPageClient() {
+type QuizPageClientProps = {
+  /** Défini par la page serveur (Premium, essai 7 j, ou freemium). */
+  initialAccess?: ContentAccessSnapshot;
+};
+
+export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const searchParams = useSearchParams();
+
+  const access: ContentAccessSnapshot = initialAccess ?? {
+    tier: 'full',
+    maxQuizQuestionsPerDay: null,
+    maxFlashcardsPerDay: null,
+  };
 
   const fasciculeNums = useMemo(
     () => [...new Set(quizQuestions.map((q) => q.fascicule))].sort((a, b) => a - b),
@@ -73,6 +86,17 @@ export function QuizPageClient() {
   const [launchConfig, setLaunchConfig] = useState<LaunchConfig | null>(null);
   const [result, setResult] = useState({ correct: 0, total: 0 });
   const [bestAfterQuiz, setBestAfterQuiz] = useState<number | null>(null);
+  const [quotaTick, setQuotaTick] = useState(0);
+
+  useEffect(() => {
+    if (phase === 'setup') setQuotaTick((t) => t + 1);
+  }, [phase]);
+
+  const quizRemainingToday = useMemo(() => {
+    if (access.maxQuizQuestionsPerDay == null) return null;
+    void quotaTick;
+    return Math.max(0, access.maxQuizQuestionsPerDay - getDailyQuizQuestionCount());
+  }, [access.maxQuizQuestionsPerDay, quotaTick]);
 
   const storageKey = useMemo(
     () => getQuizStorageKey(mode, mode === 'fascicule' ? fascicule : undefined, mode === 'domain' ? domain : undefined),
@@ -134,7 +158,7 @@ export function QuizPageClient() {
     }
   }, [searchParams, fasciculeNums]);
 
-  function buildPool(cfg: LaunchConfig): QuizQuestion[] {
+  function buildPool(cfg: LaunchConfig, dailyCap?: number | null): QuizQuestion[] {
     let pool = filterQuestions(
       quizQuestions,
       cfg.mode,
@@ -142,17 +166,24 @@ export function QuizPageClient() {
       cfg.mode === 'domain' ? cfg.domain : undefined
     );
     pool = fisherYates(pool);
-    return applyQuestionLimit(pool, cfg.limit);
+    pool = applyQuestionLimit(pool, cfg.limit);
+    if (dailyCap != null && Number.isFinite(dailyCap)) {
+      pool = pool.slice(0, Math.max(0, dailyCap));
+    }
+    return pool;
   }
 
   const poolPreview = useMemo(() => {
-    return buildPool({
-      mode,
-      limit,
-      ...(mode === 'fascicule' ? { fascicule } : {}),
-      ...(mode === 'domain' ? { domain } : {}),
-    });
-  }, [mode, fascicule, domain, limit]);
+    return buildPool(
+      {
+        mode,
+        limit,
+        ...(mode === 'fascicule' ? { fascicule } : {}),
+        ...(mode === 'domain' ? { domain } : {}),
+      },
+      quizRemainingToday
+    );
+  }, [mode, fascicule, domain, limit, quizRemainingToday]);
 
   function handleLaunch() {
     const cfg: LaunchConfig = {
@@ -161,7 +192,9 @@ export function QuizPageClient() {
       ...(mode === 'fascicule' ? { fascicule } : {}),
       ...(mode === 'domain' ? { domain } : {}),
     };
-    const pool = buildPool(cfg);
+    const cap =
+      access.maxQuizQuestionsPerDay == null ? null : Math.max(0, access.maxQuizQuestionsPerDay - getDailyQuizQuestionCount());
+    const pool = buildPool(cfg, cap);
     if (pool.length === 0) return;
     setLaunchConfig(cfg);
     setSessionQuestions(pool);
@@ -182,6 +215,10 @@ export function QuizPageClient() {
     setResult({ correct, total });
     setPhase('result');
 
+    if (access.maxQuizQuestionsPerDay != null) {
+      addDailyQuizQuestionCount(total);
+    }
+
     if (launchConfig) {
       void recordQuizAttempt({
         mode: launchConfig.mode,
@@ -196,7 +233,9 @@ export function QuizPageClient() {
 
   function handleRecommencer() {
     if (!launchConfig) return;
-    const pool = buildPool(launchConfig);
+    const cap =
+      access.maxQuizQuestionsPerDay == null ? null : Math.max(0, access.maxQuizQuestionsPerDay - getDailyQuizQuestionCount());
+    const pool = buildPool(launchConfig, cap);
     if (pool.length === 0) return;
     setSessionQuestions(pool);
     setPhase('quiz');
@@ -270,6 +309,20 @@ export function QuizPageClient() {
             'Choisissez un mode et lancez une série.'
           )}
         </p>
+
+        {quizRemainingToday != null ? (
+          <p className='mb-6 rounded-xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-center text-sm text-amber-100/90'>
+            Mode gratuit :{' '}
+            <span className='font-semibold'>
+              {quizRemainingToday} question{quizRemainingToday > 1 ? 's' : ''}
+            </span>{' '}
+            restante{quizRemainingToday > 1 ? 's' : ''} aujourd&apos;hui (compteur local).{' '}
+            <Link href='/pricing' className='font-medium text-amber-300 underline-offset-2 hover:underline'>
+              Passez Premium pour l&apos;illimité
+            </Link>
+            .
+          </p>
+        ) : null}
 
         <div className='grid gap-6 md:grid-cols-3'>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease }}>
@@ -389,21 +442,28 @@ export function QuizPageClient() {
         <div className='mx-auto mt-10 max-w-xl'>
           <p className='mb-3 text-center text-sm font-medium text-gray-400'>Nombre de questions</p>
           <div className='flex flex-wrap justify-center gap-2'>
-            {([10, 20, 30, 'all'] as const).map((n) => (
-              <button
-                key={String(n)}
-                type='button'
-                onClick={() => setLimit(n)}
-                className={cn(
-                  'rounded-xl px-5 py-2.5 text-sm font-medium transition-colors',
-                  limit === n
-                    ? 'bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-500/40'
-                    : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]'
-                )}
-              >
-                {n === 'all' ? 'Toutes' : n}
-              </button>
-            ))}
+            {([10, 20, 30, 'all'] as const).map((n) => {
+              const want = n === 'all' ? 999 : n;
+              const disabledFreemium =
+                quizRemainingToday != null && (want > quizRemainingToday || quizRemainingToday === 0);
+              return (
+                <button
+                  key={String(n)}
+                  type='button'
+                  disabled={disabledFreemium}
+                  onClick={() => setLimit(n)}
+                  className={cn(
+                    'rounded-xl px-5 py-2.5 text-sm font-medium transition-colors',
+                    limit === n
+                      ? 'bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-500/40'
+                      : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]',
+                    disabledFreemium && 'cursor-not-allowed opacity-35'
+                  )}
+                >
+                  {n === 'all' ? 'Toutes' : n}
+                </button>
+              );
+            })}
           </div>
         </div>
 

@@ -15,7 +15,18 @@ import {
 function parseRecapQuery(f?: string): RecapFasciculeFilter {
   if (!f) return 'all';
   const v = f.toLowerCase();
-  const ok: RecapFasciculeFilter[] = ['all', 'f01', 'f02', 'f03', 'f04', 'f05', 'f06', 'f07'];
+  if (v === 'f01') return 'f01p1';
+  const ok: RecapFasciculeFilter[] = [
+    'all',
+    'f01p1',
+    'f01p2',
+    'f02',
+    'f03',
+    'f04',
+    'f05',
+    'f06',
+    'f07',
+  ];
   return ok.includes(v as RecapFasciculeFilter) ? (v as RecapFasciculeFilter) : 'all';
 }
 
@@ -54,7 +65,8 @@ export function RecapitulatifPageClient({ initialFasc }: { initialFasc?: string 
           {(
             [
               ['all', 'Tous'],
-              ['f01', 'F01'],
+              ['f01p1', 'F01 — P1'],
+              ['f01p2', 'F01 — P2'],
               ['f02', 'F02'],
               ['f03', 'F03'],
               ['f04', 'F04'],

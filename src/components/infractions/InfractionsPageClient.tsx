@@ -9,9 +9,11 @@ import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
-  fasciculeToRecapFilter,
   getInfractionsCatalog,
   type InfractionCatalogItem,
+  infractionToRecapFilter,
+  type RecapFasciculeFilter,
+  type RecapFasciculeId,
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
@@ -21,6 +23,25 @@ function stripForSearch(s: string): string {
     .replace(/\*\*([^*]+)\*\*/g, '$1')
     .replace(/\*([^*]+)\*/g, '$1')
     .toLowerCase();
+}
+
+const FASCICULE_FILTER_MAP: Record<Exclude<RecapFasciculeFilter, 'all' | 'f01p1' | 'f01p2'>, RecapFasciculeId> = {
+  f02: 'F02',
+  f03: 'F03',
+  f04: 'F04',
+  f05: 'F05',
+  f06: 'F06',
+  f07: 'F07',
+};
+
+function matchesInfractionFascicleFilter(
+  item: InfractionCatalogItem,
+  filter: RecapFasciculeFilter,
+): boolean {
+  if (filter === 'all') return true;
+  if (filter === 'f01p1') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 1';
+  if (filter === 'f01p2') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 2';
+  return item.fascicule === FASCICULE_FILTER_MAP[filter];
 }
 
 type InfractionsPageClientProps = {
@@ -47,7 +68,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     }, 450);
     return () => window.clearTimeout(t);
   }, [query]);
-  const [fascFilter, setFascFilter] = useState<'all' | 'F01' | 'F02'>('all');
+  const [fascFilter, setFascFilter] = useState<RecapFasciculeFilter>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
@@ -55,7 +76,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
     return catalog.filter((item) => {
-      if (fascFilter !== 'all' && item.fascicule !== fascFilter) return false;
+      if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
       if (!q) return true;
       const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
       return hay.includes(q);
@@ -93,18 +114,30 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             />
           </div>
           <div className='flex flex-wrap gap-2'>
-            {(['all', 'F01', 'F02'] as const).map((f) => (
+            {(
+              [
+                ['all', 'Tous'],
+                ['f01p1', 'F01 P1'],
+                ['f01p2', 'F01 P2'],
+                ['f02', 'F02'],
+                ['f03', 'F03'],
+                ['f04', 'F04'],
+                ['f05', 'F05'],
+                ['f06', 'F06'],
+                ['f07', 'F07'],
+              ] as const
+            ).map(([v, label]) => (
               <button
-                key={f}
+                key={v}
                 type='button'
-                onClick={() => setFascFilter(f)}
-                className={`rounded-xl border px-4 py-2 text-sm font-medium transition ${
-                  fascFilter === f
+                onClick={() => setFascFilter(v)}
+                className={`rounded-xl border px-3 py-2 text-sm font-medium transition ${
+                  fascFilter === v
                     ? 'border-amber-500/50 bg-amber-500/15 text-amber-100'
                     : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20'
                 }`}
               >
-                {f === 'all' ? 'Tous' : f}
+                {label}
               </button>
             ))}
           </div>
@@ -202,7 +235,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                   <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
                     {item.flashcardsCat ? (
                       <Link
-                        href={`/flashcards?cat=${item.flashcardsCat}`}
+                        href={`/entrainement/flashcards?cat=${item.flashcardsCat}`}
                         onClick={(e) => e.stopPropagation()}
                         className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
                       >
@@ -214,7 +247,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                       </span>
                     )}
                     <Link
-                      href={`/recapitulatif?f=${fasciculeToRecapFilter(item.fascicule)}`}
+                      href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
                       onClick={(e) => e.stopPropagation()}
                       className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
                     >
