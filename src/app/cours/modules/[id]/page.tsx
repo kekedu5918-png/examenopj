@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
+import { cn } from '@/utils/cn';
 
 type Props = { params: { id: string } };
 
@@ -20,13 +21,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-function QuizLink({ id, num }: { id: string; num: number }) {
+function TrainingCard({
+  href,
+  title,
+  description,
+  classTile,
+}: {
+  href: string;
+  title: string;
+  description: string;
+  classTile: string;
+}) {
   return (
     <Link
-      href={`/entrainement/quiz?mode=fascicule&f=${id}`}
-      className='text-sm font-medium text-cyan-400 underline-offset-2 hover:underline'
+      href={href}
+      className={cn(
+        'group flex flex-col rounded-xl border p-4 transition hover:border-cyan-500/35 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60',
+        classTile,
+      )}
     >
-      Quiz sur le thème F{String(num).padStart(2, '0')}
+      <span className='font-semibold text-white group-hover:text-cyan-200'>{title}</span>
+      <span className='mt-1 text-xs leading-relaxed text-gray-500'>{description}</span>
     </Link>
   );
 }
@@ -34,6 +49,12 @@ function QuizLink({ id, num }: { id: string; num: number }) {
 export default function CoursModuleDetailPage({ params }: Props) {
   const m = getCourseModuleById(params.id);
   if (!m) notFound();
+
+  const idx = COURSE_MODULE_IDS.indexOf(m.id);
+  const prevId = idx > 0 ? COURSE_MODULE_IDS[idx - 1]! : null;
+  const nextId = idx >= 0 && idx < COURSE_MODULE_IDS.length - 1 ? COURSE_MODULE_IDS[idx + 1]! : null;
+  const prevMeta = prevId ? getCourseModuleById(prevId) : null;
+  const nextMeta = nextId ? getCourseModuleById(nextId) : null;
 
   return (
     <div className='container pb-20 pt-10 md:pt-14'>
@@ -78,15 +99,77 @@ export default function CoursModuleDetailPage({ params }: Props) {
           <li>Relier chaque infraction ou acte aux grands principes (éléments constitutifs, compétence, cadre procédural).</li>
           <li>Entraînez-vous ensuite avec le quiz et les flashcards sur le même thème.</li>
         </ul>
-        <div className='mt-8 flex flex-wrap gap-6 border-t border-white/10 pt-6'>
-          <QuizLink id={m.id} num={m.numero} />
-          <Link
-            href='/entrainement/flashcards'
-            className='text-sm font-medium text-cyan-400 underline-offset-2 hover:underline'
-          >
-            Flashcards
-          </Link>
+
+        <div className='mt-8 border-t border-white/10 pt-6'>
+          <p className='mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500'>Entraînement sur ce thème</p>
+          <div className='grid gap-3 sm:grid-cols-2'>
+            <TrainingCard
+              href={`/entrainement/quiz?mode=fascicule&f=${m.id}`}
+              title={`Quiz — F${String(m.numero).padStart(2, '0')}`}
+              description='Questions ciblées sur le même regroupement thématique.'
+              classTile='border-cyan-500/20 bg-cyan-500/[0.06]'
+            />
+            <TrainingCard
+              href={`/entrainement/flashcards?f=${m.id}`}
+              title='Flashcards filtrées'
+              description='Paquet limité aux cartes rattachées à ce module, si disponibles.'
+              classTile='border-amber-500/20 bg-amber-500/[0.06]'
+            />
+            <TrainingCard
+              href='/entrainement/articulation'
+      title='Articulation (épreuve 2)'
+              description='Enchaînements qualification / procédure / rédaction.'
+              classTile='border-violet-500/20 bg-violet-500/[0.06]'
+            />
+            <TrainingCard
+              href='/guide-revision-opj'
+              title='Guide de révision'
+              description='Méthode, rythme et priorités pour les dernières semaines.'
+              classTile='border-white/10 bg-white/[0.02]'
+            />
+          </div>
+          <p className='mt-4 text-center text-sm text-gray-500'>
+            <Link href='/entrainement' className='text-cyan-400 underline-offset-2 hover:underline'>
+              Hub entraînement
+            </Link>
+            {' · '}
+            <Link href='/entrainement/flashcards' className='text-cyan-400 underline-offset-2 hover:underline'>
+              Toutes les flashcards
+            </Link>
+          </p>
         </div>
+
+        <nav
+          aria-label='Navigation entre modules'
+          className='mt-10 flex flex-col gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-stretch sm:justify-between'
+        >
+          {prevMeta ? (
+            <Link
+              href={`/cours/modules/${prevMeta.id}`}
+              className='group flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 transition hover:border-white/20 sm:max-w-[48%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60'
+            >
+              <span className='text-xs text-gray-500'>← Précédent</span>
+              <span className='mt-1 text-sm font-medium text-gray-200 group-hover:text-white'>
+                F{String(prevMeta.numero).padStart(2, '0')} — {prevMeta.titre}
+              </span>
+            </Link>
+          ) : (
+            <span className='hidden flex-1 sm:block' />
+          )}
+          {nextMeta ? (
+            <Link
+              href={`/cours/modules/${nextMeta.id}`}
+              className='group flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-right transition hover:border-white/20 sm:max-w-[48%] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60'
+            >
+              <span className='text-xs text-gray-500'>Suivant →</span>
+              <span className='mt-1 text-sm font-medium text-gray-200 group-hover:text-white'>
+                F{String(nextMeta.numero).padStart(2, '0')} — {nextMeta.titre}
+              </span>
+            </Link>
+          ) : (
+            <span className='hidden flex-1 sm:block' />
+          )}
+        </nav>
       </article>
     </div>
   );

@@ -97,6 +97,11 @@
   html {
     @apply h-full;
   }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
   body {
     @apply h-full;
   }

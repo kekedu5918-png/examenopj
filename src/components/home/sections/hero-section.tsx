@@ -114,11 +114,17 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className='mt-16 text-gray-500'
+          className='mt-16 flex flex-col items-center gap-3 text-gray-500'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.8 }}
         >
+          <Link
+            href='/#programme-cours'
+            className='text-sm font-medium text-gray-400 underline-offset-4 transition hover:text-cyan-300/90 hover:underline'
+          >
+            Voir le programme F01–F15
+          </Link>
           <span className='inline-block animate-scroll-bounce text-2xl will-change-transform' aria-hidden>
             ↓
           </span>

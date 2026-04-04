@@ -77,7 +77,7 @@ type FasciculesSectionProps = {
 
 export function FasciculesSection({ groups, cahier, fasciculeCount }: FasciculesSectionProps) {
   return (
-    <section className='px-6 py-24'>
+    <section id='programme-cours' className='scroll-mt-28 px-6 py-24'>
       <div className='mx-auto max-w-6xl'>
         <SectionTitle
           badge='PROGRAMME'
