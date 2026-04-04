@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ClipboardList } from 'lucide-react';
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -11,6 +12,14 @@ export const metadata: Metadata = {
 };
 
 const cards = [
+  {
+    href: '/entrainement/articulation',
+    icon: 'clipboard',
+    title: 'Articulation de procédure',
+    desc: 'Construisez votre articulation cartouche par cartouche — Épreuve 2',
+    badge: 'Épreuve 2',
+    disabled: false,
+  },
   {
     href: '/entrainement/quiz',
     icon: '🎯',
@@ -64,9 +73,13 @@ export default function EntrainementHubPage() {
               className={`h-full transition ${c.disabled ? 'opacity-55' : 'hover:border-cyan-500/25'}`}
             >
               <div className='flex items-start justify-between gap-3'>
-                <span className='text-3xl' aria-hidden>
-                  {c.icon}
-                </span>
+                {c.icon === 'clipboard' ? (
+                  <ClipboardList className='size-8 shrink-0 text-cyan-300' strokeWidth={1.75} aria-hidden />
+                ) : (
+                  <span className='text-3xl' aria-hidden>
+                    {c.icon}
+                  </span>
+                )}
                 {c.badge ? (
                   <span
                     className={`shrink-0 rounded-full px-3 py-1 text-xs font-semibold ${
