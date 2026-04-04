@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSubscription } from '@/features/account/controllers/get-subscription';
 
+import { AlreadySignedInPanel } from './already-signed-in';
 import { SignUpForm } from './signup-form';
 
 export default async function SignUpPage() {
@@ -14,26 +15,30 @@ export default async function SignUpPage() {
     redirect('/account');
   }
 
-  if (session && !subscription) {
-    redirect('/pricing');
-  }
+  const alreadyConnectedNoPremium = session && !subscription;
 
   return (
     <main className='mx-auto flex min-h-[70vh] w-full max-w-md items-center px-4'>
       <div className='w-full space-y-4 rounded-xl border border-slate-800 bg-slate-950 p-6'>
-        <h1 className='text-2xl font-bold text-slate-100'>Créer un compte</h1>
+        <h1 className='text-2xl font-bold text-slate-100'>
+          {alreadyConnectedNoPremium ? 'Votre compte' : 'Créer un compte'}
+        </h1>
         <p className='text-sm text-slate-400'>
-          7 jours d&apos;accès complet gratuit. Aucune carte bancaire requise.
+          {alreadyConnectedNoPremium
+            ? 'Poursuivez avec le contenu gratuit ou passez au Premium.'
+            : "7 jours d'accès complet gratuit. Aucune carte bancaire requise."}
         </p>
 
-        <SignUpForm />
+        {alreadyConnectedNoPremium ? <AlreadySignedInPanel /> : <SignUpForm />}
 
-        <p className='text-center text-sm text-slate-500'>
-          Déjà inscrit ?{' '}
-          <Link href='/login' className='text-blue-400 underline underline-offset-2'>
-            Se connecter
-          </Link>
-        </p>
+        {!alreadyConnectedNoPremium ? (
+          <p className='text-center text-sm text-slate-500'>
+            Déjà inscrit ?{' '}
+            <Link href='/login' className='text-blue-400 underline underline-offset-2'>
+              Se connecter
+            </Link>
+          </p>
+        ) : null}
         <p className='text-center text-xs text-slate-600'>
           En vous inscrivant, vous acceptez nos{' '}
           <Link href='/cgv' className='text-cyan-400 underline underline-offset-2'>

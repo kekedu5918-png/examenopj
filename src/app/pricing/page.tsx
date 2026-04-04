@@ -20,7 +20,10 @@ export default async function PricingPage() {
       <FreemiumPricingPlans />
 
       {products.length > 0 ? (
-        <div className='relative z-10 mx-auto max-w-[1200px] border-t border-white/10 px-4 pb-16 pt-12'>
+        <div
+          id='offres-paiement'
+          className='relative z-10 mx-auto max-w-[1200px] scroll-mt-24 border-t border-white/10 px-4 pb-16 pt-12'
+        >
           <h2 className='text-center text-xl font-bold text-white'>Offres de paiement Stripe</h2>
           <p className='mx-auto mt-2 max-w-xl text-center text-sm text-gray-500'>
             Complétez votre abonnement via notre passerelle sécurisée lorsque les prix sont configurés.
