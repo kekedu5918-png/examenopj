@@ -17,7 +17,7 @@ export default async function DashboardPage() {
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         {[
           { titre: 'Infractions', href: '/dashboard/infractions' },
-          { titre: 'Cours', href: '/dashboard/courses' },
+          { titre: 'Cours', href: '/cours/modules' },
           { titre: 'Fiches', href: '/dashboard/fiches' },
           { titre: 'Progression', href: '/dashboard/progression' },
           { titre: 'Recherche', href: '/dashboard/recherche' },

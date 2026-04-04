@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
 import { cn } from '@/utils/cn';
 
@@ -15,9 +16,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const m = getCourseModuleById(params.id);
   if (!m) return { title: 'Module introuvable' };
+  const synth = getCourseModuleSynthesis(m.id);
   return {
     title: `${m.titre} — Cours OPJ`,
-    description: m.accroche,
+    description: synth?.resume ?? m.accroche,
   };
 }
 
@@ -49,6 +51,8 @@ function TrainingCard({
 export default function CoursModuleDetailPage({ params }: Props) {
   const m = getCourseModuleById(params.id);
   if (!m) notFound();
+
+  const synth = getCourseModuleSynthesis(m.id);
 
   const idx = COURSE_MODULE_IDS.indexOf(m.id);
   const prevId = idx > 0 ? COURSE_MODULE_IDS[idx - 1]! : null;
@@ -117,7 +121,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
             />
             <TrainingCard
               href='/entrainement/articulation'
-      title='Articulation (épreuve 2)'
+              title='Articulation (épreuve 2)'
               description='Enchaînements qualification / procédure / rédaction.'
               classTile='border-violet-500/20 bg-violet-500/[0.06]'
             />

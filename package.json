@@ -11,7 +11,6 @@
     "analyze": "cross-env ANALYZE=true next build",
     "perf:lighthouse": "npx --yes lighthouse@11 --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output html --output-path ./lighthouse-report.html --quiet http://localhost:3000",
     "import:pdf": "env-cmd -f ./.env.local node scripts/import-pdf-corpus.mjs",
-    "elite:lecons": "node tools/parse-elite-chapters.mjs",
     "raster:enquetes": "node scripts/raster-enquetes.mjs"
   },
   "dependencies": {

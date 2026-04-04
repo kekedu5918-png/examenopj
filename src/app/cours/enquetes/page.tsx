@@ -8,7 +8,7 @@ import { ENQUETES } from '@/data/enquetes-data';
 export const metadata: Metadata = {
   title: 'Enquêtes (entraînement) — Examen OPJ',
   description:
-    'Planches pédagogiques Alpha et Bravo : sujet, articulation de procédure, procès-verbal et rapport de synthèse (formation initiale OPJ).',
+    'Planches pédagogiques Alpha et Bravo : sujet, articulation de procédure, procès-verbal et rapport de synthèse pour le concours OPJ.',
 };
 
 export default function EnquetesHubPage() {
