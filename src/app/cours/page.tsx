@@ -15,6 +15,11 @@ const links = [
   { href: '/fondamentaux', title: 'Fondamentaux', desc: 'Notions clés : GAV, contrôle d’identité, juridictions, OPJ/APJ…' },
   { href: '/guide-revision-opj', title: 'Guide de révision', desc: 'Méthode globale et planning de travail jusqu’à l’examen.' },
   { href: '/cours/pv', title: 'Modèles de procès-verbaux', desc: 'Cartouches, mentions légales et exemples de PV rédigés (F11).' },
+  {
+    href: '/cours/enquetes',
+    title: 'Enquêtes FIOPJ',
+    desc: 'Planches Alpha (flagrance) et Bravo (changement de cadre) : sujet, articulation, PV, rapport.',
+  },
 ] as const;
 
 export default function CoursHubPage() {

@@ -200,6 +200,20 @@ export function Epreuve2Sections() {
 
   return (
     <div className='mx-auto max-w-4xl space-y-16 px-6 pb-24'>
+      <GlassCard padding='p-5' className='border-violet-500/25 bg-violet-500/[0.06]'>
+        <p className='text-sm font-semibold text-white'>Enquêtes planches FIOPJ</p>
+        <p className='mt-2 text-sm text-gray-400'>
+          Sujet complet, articulation commentée, PV rédigé et rapport de synthèse pour les thèmes Alpha et Bravo — avec
+          fac-similés des documents officiels.
+        </p>
+        <Link
+          href='/cours/enquetes'
+          className='mt-4 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200'
+        >
+          Ouvrir la rubrique Enquêtes →
+        </Link>
+      </GlassCard>
+
       <SectionAccordion allowMultiple items={items} />
 
       <motion.section id='navigation' className='scroll-mt-28 space-y-6' {...sectionMotion}>

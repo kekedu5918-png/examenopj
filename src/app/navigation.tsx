@@ -1,7 +1,21 @@
 export const navigation = {
   main: [
     { name: 'Accueil', href: '/' },
-    { name: 'Cours', href: '/cours' },
+    {
+      name: 'Cours',
+      children: [
+        {
+          name: 'Hub cours',
+          href: '/cours',
+          description: 'Fascicules, fondamentaux, guide, modèles de PV.',
+        },
+        {
+          name: 'Enquêtes FIOPJ',
+          href: '/cours/enquetes',
+          description: 'Planches Alpha & Bravo : articulation, PV, rapport.',
+        },
+      ],
+    },
     {
       name: 'Épreuves',
       children: [
