@@ -117,7 +117,7 @@ export const quizQuestionsF05: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 5,
     domaine: 'DPS',
-    explication: 'Référence fascicule SDCP (liste 706-73).',
+    explication: 'Référence habituelle : liste 706-73 CPP (criminalité organisée).',
   },
   {
     id: 'f05-q15',
@@ -158,7 +158,7 @@ export const quizQuestionsF05: QuizQuestion[] = [
     correctIndex: 0,
     fascicule: 5,
     domaine: 'DPS',
-    explication: 'Fascicule SDCP F05 : l’association peut exister avant réalisation du trafic ; 222-34 vise la direction d’un groupement dont l’objet est le trafic effectif.',
+    explication: 'L’association peut exister avant réalisation du trafic ; 222-34 vise la direction d’un groupement dont l’objet est le trafic effectif.',
   },
   {
     id: 'f05-q19',

@@ -72,7 +72,7 @@ export const flashcardsF01P1: Flashcard[] = [
     'Atteintes à la vie',
     'Le meurtre avec préméditation (qualification usuelle « assassinat », art. 221-3 C.P.)',
     "**Qualification autonome du *meurtre* aggravé par la préméditation — réclusion à perpétuité.**",
-    "*L'article 221-3 du C.P.* — *Repère SDCP :* ce n'est pas une « tierce » infraction dans le fascicule ; préméditation : *art. 132-72 C.P.*",
+    "*L'article 221-3 du C.P.* — qualification du meurtre avec préméditation ; notion de préméditation : *art. 132-72 C.P.*",
     `**ÉLÉMENT MATÉRIEL :** mêmes éléments que le meurtre + préméditation (dessein formé avant l'action).
 
 **ÉLÉMENT MORAL :** intention homicide + projet réfléchi (intervalle résolution / exécution).`

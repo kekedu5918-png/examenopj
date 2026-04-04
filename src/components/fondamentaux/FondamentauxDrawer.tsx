@@ -174,7 +174,7 @@ export function FondamentauxDrawer({
                       c.outlineBtn
                     )}
                   >
-                    Voir le fascicule →
+                    Voir le module de cours →
                   </Link>
                 ) : null}
               </div>

@@ -29,20 +29,20 @@ export const metadata: Metadata = {
     template: '%s | ExamenOPJ',
   },
   description:
-    "La plateforme de référence pour préparer l'examen d'Officier de Police Judiciaire. Fascicules SDCP, méthodologie, quiz, flashcards.",
+    "Plateforme indépendante pour préparer l'examen d'Officier de Police Judiciaire : fiches de cours, méthodologie, quiz, flashcards.",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
     siteName: 'ExamenOPJ',
     title: 'ExamenOPJ — Révisions OPJ 2026',
     description:
-      "Préparez l'examen OPJ avec les fascicules officiels, quiz et outils de mémorisation.",
+      "Préparez l'examen OPJ avec des contenus pédagogiques, quiz et outils de mémorisation.",
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ExamenOPJ — Révisions OPJ 2026',
     description:
-      "Préparez l'examen OPJ avec les fascicules officiels, quiz et outils de mémorisation.",
+      "Préparez l'examen OPJ avec des contenus pédagogiques, quiz et outils de mémorisation.",
   },
   robots: { index: true, follow: true },
   keywords: [...SEO_KEYWORDS],

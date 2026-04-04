@@ -1,4 +1,4 @@
-/** Sections tableau récapitulatif + référentiel — fascicules F03 à F07 (SDCP 01/12/2025). */
+/** Tableau récapitulatif thématique F03 à F07 — contenu de synthèse à valider avec les textes en vigueur (Légifrance). */
 
 export const recapSectionsF03F07 = [
   {
@@ -248,7 +248,7 @@ export const recapSectionsF03F07 = [
         infraction: '**La provocation directe d’un mineur au trafic de stupéfiants**',
         legal: 'Art. 227-18-1 al.1 C.P.',
         materiel:
-          '**PROVOCATION DIRECTE** du mineur à **transporter, détenir, offrir ou céder** des stupéfiants **ou** à se rendre **complice** de tels actes — vise les **infractions de trafic** (transport, détention, offre, cession illicites) ; *nota fascicule SDCP* : production, fabrication, importation, exportation et acquisition visées ailleurs ne sont **pas** citées dans la définition de *227-18-1*',
+          '**PROVOCATION DIRECTE** du mineur à **transporter, détenir, offrir ou céder** des stupéfiants **ou** à se rendre **complice** de tels actes — vise les **infractions de trafic** (transport, détention, offre, cession illicites) ; production, fabrication, importation, exportation et acquisition peuvent être visées par d’autres qualifications.',
         moral:
           '**CONSCIENCE DE L’AUTEUR D’INCITER UN MINEUR** à l’usage ou au trafic de stupéfiants',
       },
@@ -284,7 +284,7 @@ export const recapSectionsF03F07 = [
         infraction: '**La cession ou l’offre illicite de stupéfiants en vue d’une consommation personnelle**',
         legal: 'Art. 222-39 al.1 C.P.',
         materiel:
-          '**OFFRE OU CESSION** de stupéfiants **À UNE PERSONNE DÉTERMINÉE** en vue de sa **CONSOMMATION PERSONNELLE** (« petits trafics » — *offrir à un mineur pour sa conso* peut poser **222-39 *al.2*** aggravé, *fascicule SDCP*)',
+          '**OFFRE OU CESSION** de stupéfiants **À UNE PERSONNE DÉTERMINÉE** en vue de sa **CONSOMMATION PERSONNELLE** (« petits trafics » — *offrir à un mineur pour sa conso* peut poser **222-39 *al.2*** aggravé).',
         moral: '**CONSCIENCE DE CÉDER OU D’OFFRIR DANS CE CADRE**',
       },
       {

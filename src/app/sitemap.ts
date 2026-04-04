@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-import { FASCICULES } from '@/data/fascicules-list';
+import { COURSE_MODULE_IDS } from '@/data/fascicules-list';
 import { getSiteUrl } from '@/utils/site-url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guide-revision-opj',
   ];
 
-  const coursPages = ['/cours', '/cours/pv'];
+  const coursPages = ['/cours', '/cours/pv', '/cours/modules', '/cours/enquetes'];
 
   const epreuvesPages = ['/epreuves/epreuve-1', '/epreuves/epreuve-2', '/epreuves/epreuve-3'];
 
@@ -27,9 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/entrainement/quiz',
     '/entrainement/flashcards',
     '/entrainement/recapitulatif',
+    '/entrainement/articulation',
   ];
-
-  const fasciculesHub = ['/fascicules'];
 
   const infractionsPages = ['/infractions'];
 
@@ -38,7 +37,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...coursPages,
     ...epreuvesPages,
     ...entrainementPages,
-    ...fasciculesHub,
     ...infractionsPages,
   ];
 
@@ -49,12 +47,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === '' ? 1 : path.startsWith('/entrainement') ? 0.9 : 0.7,
   }));
 
-  const fasciculeEntries: MetadataRoute.Sitemap = FASCICULES.map((f) => ({
-    url: `${base}/fascicules/${f.id}`,
+  const moduleEntries: MetadataRoute.Sitemap = COURSE_MODULE_IDS.map((id) => ({
+    url: `${base}/cours/modules/${id}`,
     lastModified: now,
     changeFrequency: 'monthly',
-    priority: 0.7,
+    priority: 0.75,
   }));
 
-  return [...staticEntries, ...fasciculeEntries];
+  return [...staticEntries, ...moduleEntries];
 }

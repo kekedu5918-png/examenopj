@@ -201,7 +201,7 @@ export function Epreuve2Sections() {
   return (
     <div className='mx-auto max-w-4xl space-y-16 px-6 pb-24'>
       <GlassCard padding='p-5' className='border-violet-500/25 bg-violet-500/[0.06]'>
-        <p className='text-sm font-semibold text-white'>Enquêtes planches FIOPJ</p>
+        <p className='text-sm font-semibold text-white'>Enquêtes planches (entraînement)</p>
         <p className='mt-2 text-sm text-gray-400'>
           Sujet complet, articulation commentée, PV rédigé et rapport de synthèse pour les thèmes Alpha et Bravo — avec
           fac-similés des documents officiels.

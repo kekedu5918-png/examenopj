@@ -23,7 +23,7 @@ export default async function InfractionsPage({ searchParams }: Props) {
   return (
     <section className='space-y-4 rounded-xl bg-slate-950 p-6'>
       <h1 className='text-2xl font-bold text-slate-50'>Infractions (MVP)</h1>
-      <p className='text-slate-300'>Questions issues des fascicules importes en base Supabase.</p>
+      <p className='text-slate-300'>Questions issues du référentiel importé en base Supabase.</p>
       <form className='grid gap-3 rounded-lg border border-slate-800 bg-slate-900 p-4 md:grid-cols-3'>
         <input
           name='q'

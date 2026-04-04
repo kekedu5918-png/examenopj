@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
           </span>
         </div>
         <div style={{ fontSize: 34, color: '#94a3b8', maxWidth: 920, lineHeight: 1.35 }}>{APP_TAGLINE}</div>
-        <div style={{ marginTop: 48, fontSize: 26, color: '#64748b', fontWeight: 600 }}>Fascicules SDCP · Quiz · Flashcards · Méthodologie</div>
+        <div style={{ marginTop: 48, fontSize: 26, color: '#64748b', fontWeight: 600 }}>Cours · Quiz · Flashcards · Méthodologie</div>
       </div>
     ),
     { ...size }

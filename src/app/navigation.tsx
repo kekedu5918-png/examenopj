@@ -7,10 +7,10 @@ export const navigation = {
         {
           name: 'Hub cours',
           href: '/cours',
-          description: 'Fascicules, fondamentaux, guide, modèles de PV.',
+          description: 'Cours synthétiques, fondamentaux, guide, modèles de PV.',
         },
         {
-          name: 'Enquêtes FIOPJ',
+          name: 'Enquêtes (entraînement)',
           href: '/cours/enquetes',
           description: 'Planches Alpha & Bravo : articulation, PV, rapport.',
         },
@@ -36,7 +36,7 @@ export const navigation = {
         },
       ],
     },
-    { name: 'Fascicules', href: '/fascicules' },
+    { name: 'Modules de cours', href: '/cours/modules' },
     { name: 'Infractions', href: '/infractions' },
     { name: 'Entraînement', href: '/entrainement' },
   ],

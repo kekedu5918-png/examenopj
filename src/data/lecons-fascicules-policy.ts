@@ -1,15 +1,12 @@
 /**
- * Règle produit : le texte et la structuration à jour sont celles des fascicules ExamenOPJ.
- * Le contenu des leçons Elite sert de référence / complément ; en cas d’écart, le fascicule prime.
- *
- * Les chapitres Elite « infractions » (ch6, ch7) ne doivent pas être reproduits comme tels :
- * le rangement pédagogique attendu est celui des fascicules DPS (F01–F07), pas la découpe L6xx/L7xx.
+ * Alignement pédagogique : les titres de modules F01–F15 (ExamenOPJ) structurent le parcours.
+ * Les leçons Elite servent de complément ; en cas de divergence, recouper avec les textes en vigueur (Légifrance).
  */
 
-import { fasciculesList } from './fascicules-list';
+import { courseModulePath, fasciculesList } from './fascicules-list';
 
 export const canonicalContentRule =
-  'En cas de divergence entre une leçon OPJ Elite et un fascicule ExamenOPJ, la version fascicule fait foi.';
+  'Recoupez toujours le contenu pédagogique avec le Code pénal, le CPP et la réglementation applicable en vigueur.';
 
 export type EliteChapterId =
   | 'ch1'
@@ -104,8 +101,8 @@ export const eliteChapterToFascicules: Record<EliteChapterId, ChapterFasciculePo
 
 export function fasciculePath(numero: number): string {
   const m = fasciculesList.find((f) => f.numero === numero);
-  if (m?.id) return `/fascicules/${m.id}`;
-  return `/fascicules/f${String(numero).padStart(2, '0')}`;
+  if (m?.id) return courseModulePath(m.id);
+  return courseModulePath(`f${String(numero).padStart(2, '0')}`);
 }
 
 export function fasciculeMetaForChapter(chapterId: EliteChapterId) {

@@ -24,25 +24,22 @@ const flipTransition = { type: 'spring' as const, stiffness: 300, damping: 30 };
 const facetLabel: Record<FlashcardFacet, string> = {
   materiel: 'Élément matériel',
   moral: 'Élément moral',
-  legal: 'Élément légal',
   materielMoral: 'Éléments matériel et moral',
 };
 
 const facetBadge: Record<FlashcardFacet, { text: string; className: string }> = {
   materiel: { text: 'ÉLÉMENT MATÉRIEL', className: 'bg-red-500/25 text-red-300 border-red-500/40' },
   moral: { text: 'ÉLÉMENT MORAL', className: 'bg-orange-500/25 text-orange-200 border-orange-500/40' },
-  legal: { text: 'ÉLÉMENT LÉGAL', className: 'bg-blue-500/25 text-blue-200 border-blue-500/40' },
   materielMoral: {
     text: 'MATÉRIEL + MORAL',
     className: 'bg-violet-500/25 text-violet-200 border-violet-500/40',
   },
 };
 
-/** Phrase ludique au recto (sans définition du cours). */
+/** Question affichée au recto (le cadre légal est rappelé sous le titre). */
 const facetFrontChallenge: Record<FlashcardFacet, string> = {
   materiel: 'Tu te souviens de l’élément matériel ?',
   moral: 'Tu te souviens de l’élément moral ?',
-  legal: 'Tu te souviens de l’élément légal ?',
   materielMoral: 'Tu te souviens des éléments matériel et moral ?',
 };
 
@@ -118,7 +115,7 @@ function VersoContent({ card, facet }: { card: Flashcard; facet: FlashcardFacet 
       </ul>
     );
   }
-  return <FlashcardRichText text={card.legal} className={`${VERSO_TEXT} [&_p]:text-gray-100`} />;
+  return <p className={`${VERSO_TEXT} text-gray-500`}>—</p>;
 }
 
 export function FlashcardInterface({
@@ -197,11 +194,16 @@ export function FlashcardInterface({
             </div>
             <div className='flex flex-1 flex-col items-center justify-center gap-4 px-4'>
               <h3 className='text-center font-display text-2xl font-bold text-white'>{card.nom}</h3>
+              {card.legal?.trim() ? (
+                <div className='max-w-md rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3 text-center'>
+                  <p className='text-xs font-semibold uppercase tracking-wide text-slate-400'>Cadre légal</p>
+                  <div className='mt-2 max-h-40 overflow-y-auto text-sm leading-snug text-slate-200 [-webkit-overflow-scrolling:touch]'>
+                    <FlashcardRichText text={card.legal.trim()} className='[&_em]:text-slate-200 [&_p]:text-slate-200' />
+                  </div>
+                </div>
+              ) : null}
               <p className='max-w-xs text-center text-base font-medium text-amber-200/90'>
                 {facetFrontChallenge[facet]}
-              </p>
-              <p className='max-w-sm text-center text-sm text-gray-400'>
-                Pas de triche : retourne la carte quand tu es prêt·e, puis vérifie !
               </p>
             </div>
             <p className='text-center text-xs text-gold-400'>→ {facetLabel[facet]}</p>
@@ -236,15 +238,11 @@ export function FlashcardInterface({
                 <VersoContent card={card} facet={facet} />
               </div>
             </div>
-            {(() => {
-              const foot = (card.versoFooter?.trim() || (facet !== 'legal' ? card.legal.trim() : '')) || '';
-              if (!foot) return null;
-              return (
-                <div className='shrink-0 border-t border-white/10 px-2 pt-3 text-center text-sm leading-snug text-gold-400/95'>
-                  <FlashcardRichText text={foot} className='[&_p]:mb-1 [&_p]:last:mb-0' />
-                </div>
-              );
-            })()}
+            {card.versoFooter?.trim() ? (
+              <div className='shrink-0 border-t border-white/10 px-2 pt-3 text-center text-sm leading-snug text-gold-400/95'>
+                <FlashcardRichText text={card.versoFooter.trim()} className='[&_p]:mb-1 [&_p]:last:mb-0' />
+              </div>
+            ) : null}
           </div>
         </motion.div>
       </div>

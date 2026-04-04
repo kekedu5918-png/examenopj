@@ -1,5 +1,5 @@
 /**
- * Rasterise les PDF d'enquêtes FIOPJ en PNG (documents scannés).
+ * Rasterise les PDF d'enquêtes (entraînement) en PNG (documents scannés).
  * Usage : node scripts/raster-enquetes.mjs
  * Sources : dossier ENQUETES_SOURCE_DIR ou public/enquetes/*.pdf
  */

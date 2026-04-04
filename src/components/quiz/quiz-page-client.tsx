@@ -72,7 +72,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     return fasciculeNums
       .map((n) => {
         const meta = fasciculesList.find((f) => f.numero === n);
-        return { numero: n, titre: meta?.titre ?? `Fascicule ${n}` };
+        return { numero: n, titre: meta?.titre ?? `Thème F${String(n).padStart(2, '0')}` };
       })
       .filter(Boolean);
   }, [fasciculeNums]);
@@ -344,7 +344,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
               <p className='mt-2 text-sm text-gray-500'>Choisissez un fascicule</p>
               {mode === 'fascicule' ? (
                 <label className='mt-4 block text-left'>
-                  <span className='sr-only'>Fascicule</span>
+                  <span className='sr-only'>Module thématique</span>
                   <select
                     value={fascicule}
                     onChange={(e) => setFascicule(Number(e.target.value))}

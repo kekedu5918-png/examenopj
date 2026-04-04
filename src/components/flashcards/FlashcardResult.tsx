@@ -114,7 +114,7 @@ export function FlashcardResult({
           onClick={onChangeFascicule}
           className='rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:opacity-95'
         >
-          Changer de fascicule
+          Changer de module
         </button>
       </div>
     </motion.div>

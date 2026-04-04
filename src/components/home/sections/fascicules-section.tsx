@@ -44,7 +44,7 @@ function Column({
             className='group will-change-transform'
           >
             <Link
-              href={`/fascicules/${item.id}`}
+              href={`/cours/modules/${item.id}`}
               className='flex items-start gap-3 rounded-xl py-2 transition-transform duration-300 hover:translate-x-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400/60'
             >
               <span
@@ -59,7 +59,7 @@ function Column({
                 <p className='font-medium text-gray-100'>
                   <span className='text-gray-500'>F{String(item.num).padStart(2, '0')}</span> — {item.title}
                 </p>
-                <p className='text-sm text-gray-500'>{item.pages} p.</p>
+                <p className='text-sm text-gray-500'>Fiche synthèse</p>
               </div>
             </Link>
           </motion.li>
@@ -82,8 +82,8 @@ export function FasciculesSection({ groups, cahier, fasciculeCount }: Fascicules
         <SectionTitle
           badge='PROGRAMME'
           badgeClassName='bg-violet-500/20 text-violet-300'
-          title={`${fasciculeCount} fascicules officiels`}
-          subtitle="Le programme complet de l'Académie de Police — Version 01/12/2025"
+          title={`${fasciculeCount} modules thématiques`}
+          subtitle='Programme de préparation : titres de référence et fiches de cours rédactionnelles (à compléter avec les codes et votre formation).'
           className='mx-auto mb-16 max-w-2xl text-center'
         />
 
@@ -115,10 +115,10 @@ export function FasciculesSection({ groups, cahier, fasciculeCount }: Fascicules
           transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.1 }}
         >
           <Link
-            href='/fascicules'
+            href='/cours/modules'
             className='inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-sm font-semibold text-gray-100 transition-all hover:border-white/20 hover:bg-white/10'
           >
-            Explorer tous les fascicules →
+            Voir tous les modules de cours →
           </Link>
         </motion.div>
       </div>

@@ -25,7 +25,7 @@ export const quizQuestionsF07: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 7,
     domaine: 'DPS',
-    explication: 'Fascicule SDCP : 222-52 C.P.',
+    explication: '222-52 C.P. (armes par nature).',
   },
   {
     id: 'f07-q04',
@@ -67,7 +67,7 @@ export const quizQuestionsF07: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 7,
     domaine: 'DPS',
-    explication: 'Définitions du fascicule SDCP.',
+    explication: 'Voir définitions légales des catégories d’armes.',
   },
   {
     id: 'f07-q09',

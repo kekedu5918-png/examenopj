@@ -2,8 +2,8 @@
   "generatedAt": "2026-04-03T18:22:36.232Z",
   "canonicalSource": {
     "id": "fascicule_txt",
-    "label": "Fichiers fascicules (extraits texte SDCP / session)",
-    "priorityRule": "En cas de divergence de fond, de chiffrage de peine, de référence d'article ou de jurisprudence : le texte du fascicule affiché dans « Cours » fait foi. Les leçons de l'application OPJ Elite (chapitres exportés) sont un complément pédagogique, non contractuel par rapport aux fascicules."
+    "label": "Ancien corpus texte (archives internes — ne plus utiliser comme référence publique)",
+    "priorityRule": "En cas de divergence, les textes en vigueur sur Légifrance et votre formation font foi. Les exports pédagogiques tiers (ex. Elite) sont un complément sans valeur normative."
   },
   "methodology": {
     "comparisonType": "thematic_and_volumetric",

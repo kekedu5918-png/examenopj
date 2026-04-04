@@ -7,7 +7,7 @@ export const SEO_KEYWORDS = [
   'examen OPJ',
   'officier de police judiciaire',
   'révision OPJ 2026',
-  'fascicules SDCP',
+  'cours OPJ',
   'droit pénal police',
   'procédure pénale',
   'quiz OPJ',

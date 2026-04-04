@@ -1,9 +1,9 @@
 import type { Flashcard } from '@/data/flashcards-data';
 
-export type FlashcardFacet = 'materiel' | 'moral' | 'legal' | 'materielMoral';
+export type FlashcardFacet = 'materiel' | 'moral' | 'materielMoral';
 
-/** Modes proposés à l’écran (le facet « matériel + moral » est déduit pour les cartes F02, etc.) */
-export type ContentStudyMode = 'materiel' | 'moral' | 'legal' | 'mixed';
+/** Modes proposés à l’écran ; le cadre légal est affiché sur le recto, pas interrogé au verso. */
+export type ContentStudyMode = 'materiel' | 'moral' | 'mixed';
 
 export type PreparedFlashcard = {
   card: Flashcard;

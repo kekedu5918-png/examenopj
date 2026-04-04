@@ -32,7 +32,7 @@ function parseLine(line: string, lineIndex: number): ReactNode {
   });
 }
 
-/** Rendu **gras** et *italique* (syntaxe fascicule / markdown léger), sans HTML externe. */
+/** Rendu **gras** et *italique* (markdown léger), sans HTML externe. */
 export function FlashcardRichText({
   text,
   className,

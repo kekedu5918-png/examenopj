@@ -14,7 +14,7 @@ export default async function Epreuve2Page() {
             href='/cours/enquetes'
             className='text-sm font-medium text-violet-300 underline-offset-4 hover:text-violet-200 hover:underline'
           >
-            Rubrique Enquêtes FIOPJ — planches Alpha (exemple gratuit) et Bravo
+            Rubrique Enquêtes — planches Alpha (exemple gratuit) et Bravo
           </Link>
         </div>
         <ContentPremiumOverlay

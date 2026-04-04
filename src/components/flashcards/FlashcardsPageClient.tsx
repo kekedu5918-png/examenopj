@@ -30,14 +30,12 @@ function shuffle<T>(items: T[]): T[] {
 }
 
 function cardHasPlayableFacet(c: Flashcard, mode: ContentStudyMode): boolean {
-  const hasL = !!c.legal?.trim();
   const hasMM = !!c.materielMoralComplet?.trim();
   const hasM = (c.materiel?.length ?? 0) > 0;
   const hasMo = !!c.moral?.trim();
-  if (mode === 'legal') return hasL;
   if (mode === 'materiel') return hasMM || hasM;
   if (mode === 'moral') return hasMM || hasMo;
-  return hasL || hasMM || hasM || hasMo;
+  return hasMM || hasM || hasMo;
 }
 
 function filterCardsByMode(cards: Flashcard[], mode: ContentStudyMode): Flashcard[] {
@@ -45,12 +43,10 @@ function filterCardsByMode(cards: Flashcard[], mode: ContentStudyMode): Flashcar
 }
 
 function pickFacet(card: Flashcard, mode: ContentStudyMode): FlashcardFacet {
-  const hasL = !!card.legal?.trim();
   const hasMM = !!card.materielMoralComplet?.trim();
   const hasM = (card.materiel?.length ?? 0) > 0;
   const hasMo = !!card.moral?.trim();
 
-  if (mode === 'legal') return 'legal';
   if (mode === 'materiel') {
     if (hasMM) return 'materielMoral';
     return 'materiel';
@@ -60,13 +56,12 @@ function pickFacet(card: Flashcard, mode: ContentStudyMode): FlashcardFacet {
     return 'moral';
   }
   const opts: FlashcardFacet[] = [];
-  if (hasL) opts.push('legal');
   if (hasMM) opts.push('materielMoral');
   if (!hasMM) {
     if (hasM) opts.push('materiel');
     if (hasMo) opts.push('moral');
   }
-  if (opts.length === 0) return 'legal';
+  if (opts.length === 0) return 'materiel';
   return opts[Math.floor(Math.random() * opts.length)]!;
 }
 
@@ -380,7 +375,7 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
 
           <div className='space-y-2'>
             <label htmlFor='flash-fascicule' className='text-sm font-medium text-gray-300'>
-              Fascicule
+              Module thématique (F)
             </label>
             <select
               id='flash-fascicule'
@@ -392,7 +387,7 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
               }}
               className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:opacity-45'
             >
-              <option value='all'>Tous les fascicules</option>
+              <option value='all'>Tous les modules</option>
               {fasciculesList.map((f) => (
                 <option key={f.numero} value={f.numero}>
                   F{f.numero.toString().padStart(2, '0')} — {f.titre}
@@ -400,7 +395,7 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
               ))}
             </select>
             {categoryFilter !== 'all' ? (
-              <p className='text-xs text-gray-500'>Choisissez « Toutes les catégories » pour filtrer par numéro de fascicule.</p>
+              <p className='text-xs text-gray-500'>Choisissez « Toutes les catégories » pour filtrer par thème F01–F15.</p>
             ) : null}
           </div>
 
@@ -420,12 +415,6 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
                 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-orange-500/30'
               )}
               {modeToggle(
-                'legal',
-                'Élément légal',
-                'border-blue-500/50 bg-blue-500/20 text-blue-200',
-                'border-white/10 bg-white/[0.03] text-gray-400 hover:border-blue-500/30'
-              )}
-              {modeToggle(
                 'mixed',
                 'Tout mélangé',
                 'border-gray-400/50 bg-gray-500/20 text-gray-200',
@@ -435,7 +424,7 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
           </div>
 
           {filteredSource.length === 0 ? (
-            <p className='text-sm text-amber-200/90'>Aucune flashcard pour ce fascicule pour le moment.</p>
+            <p className='text-sm text-amber-200/90'>Aucune flashcard pour ce module pour le moment.</p>
           ) : null}
           {filteredSource.length > 0 && playableForMode.length === 0 ? (
             <p className='text-sm text-amber-200/90'>

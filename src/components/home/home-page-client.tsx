@@ -14,7 +14,7 @@ const EpreuvesSection = dynamic(
 
 const FasciculesSection = dynamic(
   () => import('@/components/home/sections/fascicules-section').then((m) => ({ default: m.FasciculesSection })),
-  { loading: () => <HomeSectionSkeleton label='Chargement du programme fascicules' /> },
+  { loading: () => <HomeSectionSkeleton label='Chargement du programme' /> },
 );
 
 const TimelineSection = dynamic(

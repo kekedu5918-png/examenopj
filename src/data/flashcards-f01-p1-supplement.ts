@@ -51,7 +51,7 @@ function pair(
   ];
 }
 
-/** F01 P1 — extension SDCP (tortures, violences aggravées, embuscade, violence routière, violences sexuelles aggravées, images). */
+/** F01 P1 — extension (tortures, violences aggravées, embuscade, violence routière, violences sexuelles aggravées, images). */
 export const flashcardsF01P1Supplement: Flashcard[] = [
   ...pair(
     'fc-f01-torture',

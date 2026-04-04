@@ -100,7 +100,7 @@ export function FreemiumPricingPlans({
           <p className='mt-1 text-sm text-gray-500'>Après la semaine d&apos;essai (freemium)</p>
           <p className='mt-6 text-3xl font-bold text-white'>0€</p>
           <ul className='mt-6 space-y-3'>
-            <Li ok>Accès en lecture aux fascicules</Li>
+            <Li ok>Accès aux fiches de cours (modules thématiques)</Li>
             <Li ok>5 quiz par jour (questions aléatoires)</Li>
             <Li ok>5 flashcards par jour</Li>
             <Li ok>Tableau récapitulatif en accès libre</Li>
@@ -144,7 +144,7 @@ export function FreemiumPricingPlans({
           </div>
           <ul className='mt-6 space-y-3'>
             <Li ok>Tout le contenu gratuit débloqué sans limite</Li>
-            <Li ok>Quiz illimités (tous fascicules, tous modes)</Li>
+            <Li ok>Quiz illimités (tous thèmes, tous modes)</Li>
             <Li ok>Flashcards illimitées</Li>
             <Li ok>Fondamentaux complets</Li>
             <Li ok>Méthodologie détaillée des 3 épreuves</Li>
@@ -202,7 +202,7 @@ export function FreemiumPricingPlans({
         <div className='rounded-xl border border-white/10 bg-white/[0.03] p-5'>
           <dt className='font-semibold text-amber-200/90'>Le contenu est-il à jour ?</dt>
           <dd className='mt-2 text-gray-400'>
-            Oui : version SDCP au 01/12/2025, incluant les lois 2025 (narcotrafic, homicide routier, définition du viol).
+            Le site est mis à jour pour refléter les évolutions majeures du droit ; vérifiez toujours les textes sur Légifrance.
           </dd>
         </div>
         <div className='rounded-xl border border-white/10 bg-white/[0.03] p-5'>

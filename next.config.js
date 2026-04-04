@@ -44,6 +44,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/fascicules', destination: '/cours/modules', permanent: true },
+      { source: '/fascicules/:id', destination: '/cours/modules/:id', permanent: true },
       { source: '/quiz', destination: '/entrainement/quiz', permanent: true },
       { source: '/flashcards', destination: '/entrainement/flashcards', permanent: true },
       { source: '/recapitulatif', destination: '/entrainement/recapitulatif', permanent: true },

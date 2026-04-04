@@ -36,12 +36,12 @@ export default async function DashboardPage() {
                 {module.slug} - {module.titre}
               </CardTitle>
               <CardDescription className='text-slate-300'>
-                {module.description ?? 'Module officiel issu des fascicules ExamenOPJ.'}
+                {module.description ?? 'Module pédagogique ExamenOPJ.'}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <Button asChild className='bg-blue-600 hover:bg-blue-700'>
-                <Link href='/fascicules'>Consulter les fascicules SDCP</Link>
+                <Link href='/cours/modules'>Ouvrir les modules de cours</Link>
               </Button>
             </CardContent>
           </Card>

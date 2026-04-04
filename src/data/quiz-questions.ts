@@ -1,3 +1,4 @@
+import { excludeCadreLegalQuizQuestions } from '@/data/quiz-exclude-cadre-legal';
 import { quizQuestionsF01P1 } from '@/data/quiz-questions-f01-p1';
 import { quizQuestionsF03 } from '@/data/quiz-questions-f03';
 import { quizQuestionsF04 } from '@/data/quiz-questions-f04';
@@ -6,7 +7,7 @@ import { quizQuestionsF06 } from '@/data/quiz-questions-f06';
 import { quizQuestionsF07 } from '@/data/quiz-questions-f07';
 import { type QuizQuestion } from '@/data/types';
 
-export const quizQuestions: QuizQuestion[] = [
+const quizQuestionsRaw: QuizQuestion[] = [
   ...quizQuestionsF01P1,
 
   ...quizQuestionsF03,
@@ -250,4 +251,171 @@ export const quizQuestions: QuizQuestion[] = [
     explication:
       "Art. 802 CPP : pas de nullité sans grief — il faut démontrer que l'irrégularité a porté atteinte aux intérêts de la partie.",
   },
+];
+
+/** Questions transversales « cours » (synthèse) — à enrichir. */
+const quizQuestionsCoursSynth: QuizQuestion[] = [
+  {
+    id: 'cours-01',
+    question: 'L’officier de police judiciaire peut-il, en toute hypothèse, procéder seul à tous les actes de son ressort ?',
+    options: [
+      'Oui, sans limite',
+      'Non : certaines formalités (garde à vue, perquisitions au domicile, etc.) relèvent de cadres et niveaux d’habilitation précis',
+      'Non : seul le juge d’instruction peut agir',
+      'Oui, pour les délits seulement',
+    ],
+    correctIndex: 1,
+    fascicule: 11,
+    domaine: 'Procédure pénale',
+    explication:
+      'Les actes de PJ sont encadrés par le CPP (durées, contrôles, habilitation magistrat selon les actes).',
+  },
+  {
+    id: 'cours-02',
+    question: 'La garde à vue vise principalement à :',
+    options: [
+      'Sanctionner la personne',
+      'Permettre les vérifications d’identité et les palpations de sûreté uniquement',
+      'Faciliter l’enquête (auditions, confrontations, etc.) dans le respect des droits de la personne',
+      'Remplacer une audition libre',
+    ],
+    correctIndex: 2,
+    fascicule: 11,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-03',
+    question: 'Une perquisition au domicile hors consentement nécessite en principe :',
+    options: [
+      'Uniquement l’accord du chef de service',
+      'Une décision judiciaire (sauf cas légaux particuliers prévus par le CPP, ex. flagrance)',
+      'La seule présence de deux témoins',
+      'Un simple procès-verbal d’initiative',
+    ],
+    correctIndex: 1,
+    fascicule: 11,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-04',
+    question: 'L’action civile peut être exercée :',
+    options: [
+      'Devant n’importe quel tribunal administratif',
+      'Devant la juridiction répressive saisie, avec le ministère public ou devant le juge civil si fixation des indemnités',
+      'Uniquement après condamnation définitive',
+      'Uniquement par le parquet',
+    ],
+    correctIndex: 1,
+    fascicule: 14,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-05',
+    question: 'Le parquet exerce :',
+    options: [
+      'Un pouvoir de jugement dans tous les dossiers',
+      'L’action publique et peut renoncer à l’action publique dans les cas prévus par la loi',
+      'Uniquement des fonctions disciplinaires sur les OPJ',
+      'La direction opérationnelle des services de sécurité intérieure',
+    ],
+    correctIndex: 1,
+    fascicule: 14,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-06',
+    question: 'Un élément constitutif « matériel » correspond à :',
+    options: [
+      'La motivation psychologique uniquement',
+      'La sanction prévue',
+      'Le comportement (acte ou omission) et ses circonstances factuelles décrites par la loi',
+      'La date du procès',
+    ],
+    correctIndex: 2,
+    fascicule: 9,
+    domaine: 'DPG',
+  },
+  {
+    id: 'cours-07',
+    question: 'La tentative punissable suppose notamment :',
+    options: [
+      "Un simple désir de commettre l’infraction",
+      'Des débuts d’exécution manqués sans lien avec l’infraction',
+      'Un début d’exécution de l’infraction lorsque la loi la sanctionne (exceptions pour infractions purement formelles)',
+      'La victime doit nécessairement être identifiée',
+    ],
+    correctIndex: 2,
+    fascicule: 9,
+    domaine: 'DPG',
+  },
+  {
+    id: 'cours-08',
+    question: 'En procédure, une nullité « substantielle » vise surtout :',
+    options: [
+      'Les fautes de forme sans incidence sur les droits des parties',
+      'Les atteintes aux droits de la défense ou aux principes fondamentaux du procès',
+      'Les erreurs matérielles dans une date de PV',
+      'Les fautes de ponctuation',
+    ],
+    correctIndex: 1,
+    fascicule: 15,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-09',
+    question: 'La distinction crime / délit est déterminante notamment pour :',
+    options: [
+      'La couleur du dossier',
+      'La compétence d’enquête et de jugement, les délais et les modes d’instruction',
+      'Le sexe de l’accusé',
+      'Le salaire du greffier',
+    ],
+    correctIndex: 1,
+    fascicule: 9,
+    domaine: 'DPG',
+  },
+  {
+    id: 'cours-10',
+    question: 'Une victime qui se constitue partie civile :',
+    options: [
+      'Devient partie au pénal et peut demander réparation du préjudice devant la juridiction répressive',
+      'Ne peut jamais intervenir avant jugement',
+      'Est obligatoirement représentée par le ministère public',
+      'Perd tout recours civil',
+    ],
+    correctIndex: 0,
+    fascicule: 14,
+    domaine: 'Procédure pénale',
+  },
+  {
+    id: 'cours-11',
+    question: 'La provocation d’une infraction, lorsqu’elle est punissable, sanctionne plutôt :',
+    options: [
+      "La seule pensée criminelle",
+      'Les actes d’incitation à commettre une infraction (selon les conditions de la loi)',
+      'La victime qui se défend',
+      'Les erreurs de qualification',
+    ],
+    correctIndex: 1,
+    fascicule: 9,
+    domaine: 'DPG',
+  },
+  {
+    id: 'cours-12',
+    question: 'L’audition de la personne gardée à vue permet notamment de :',
+    options: [
+      'Remplacer l’information des droits',
+      'Recueillir sa déclaration dans le respect du droit au silence et de l’assistance d’un avocat selon le cadre légal',
+      'Condamner immédiatement',
+      'Effectuer une perquisition systématique sans lien',
+    ],
+    correctIndex: 1,
+    fascicule: 11,
+    domaine: 'Procédure pénale',
+  },
+];
+
+export const quizQuestions: QuizQuestion[] = [
+  ...excludeCadreLegalQuizQuestions(quizQuestionsRaw),
+  ...quizQuestionsCoursSynth,
 ];

@@ -7,11 +7,15 @@ export function Footer() {
         <div className='flex flex-col gap-8 md:flex-row md:items-start md:justify-between'>
           <div className='max-w-md space-y-2'>
             <p className='text-sm font-medium text-white'>ExamenOPJ.fr — La référence pour la préparation OPJ</p>
-            <p className='text-sm text-gray-500'>
-              Académie de Police — Documentation SDCP — Examen Juin 2026
-            </p>
+            <p className='text-sm text-gray-500'>Contenus pédagogiques indépendants — préparation concours OPJ</p>
           </div>
           <nav className='flex flex-wrap gap-x-8 gap-y-3 text-sm text-gray-400'>
+            <Link href='/cours/modules' className='transition-colors hover:text-white'>
+              Cours
+            </Link>
+            <Link href='/entrainement' className='transition-colors hover:text-white'>
+              Entraînement
+            </Link>
             <Link href='/fondamentaux' className='transition-colors hover:text-white'>
               Fondamentaux
             </Link>

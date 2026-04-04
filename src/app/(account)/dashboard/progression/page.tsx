@@ -10,7 +10,7 @@ import {
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if (row.mode === 'fascicule' && row.fascicule_num != null) {
-    return `Fascicule F${String(row.fascicule_num).padStart(2, '0')}`;
+    return `Thème F${String(row.fascicule_num).padStart(2, '0')}`;
   }
   if (row.mode === 'domain' && row.domain_key) {
     return `Domaine : ${row.domain_key}`;

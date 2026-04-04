@@ -47,7 +47,7 @@ export function HeroSection() {
           >
             ✦
           </motion.span>
-          Académie de Police — SDCP
+          Préparation examen OPJ
         </motion.div>
 
         <div className='space-y-2 md:space-y-3'>
@@ -83,8 +83,8 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.4 }}
         >
-          La plateforme de référence pour réussir l&apos;examen d&apos;Officier de Police Judiciaire. Méthodologie,
-          fascicules, quiz interactifs.
+          Fiches de cours, méthodologie et entraînement pour l&apos;examen d&apos;Officier de Police Judiciaire — contenus
+          pédagogiques à compléter avec les codes en vigueur.
         </motion.p>
 
         <motion.div
@@ -106,10 +106,10 @@ export function HeroSection() {
             Guide de révision complet
           </Link>
           <Link
-            href='/epreuves/epreuve-1'
+            href='/cours/modules'
             className='inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-base font-semibold text-gray-100 transition-all hover:bg-white/10'
           >
-            Découvrir le programme
+            Modules de cours F01–F15
           </Link>
         </motion.div>
 

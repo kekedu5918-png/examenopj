@@ -94,7 +94,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='F01 à F07 : clique sur une infraction pour voir les éléments constitutifs. Flashcards par fascicule et récapitulatif.'
+        subtitle='F01 à F07 : clique sur une infraction pour voir les éléments constitutifs. Flashcards par thème et récapitulatif.'
         className='mb-8'
       />
 
@@ -243,7 +243,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                       </Link>
                     ) : (
                       <span className='max-w-[11rem] text-right text-xs text-gray-500'>
-                        Fiches sur la page Flashcards (filtre fascicule).
+                        Fiches sur la page Flashcards (filtre par module F).
                       </span>
                     )}
                     <Link

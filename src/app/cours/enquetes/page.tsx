@@ -6,7 +6,7 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { ENQUETES } from '@/data/enquetes-data';
 
 export const metadata: Metadata = {
-  title: 'Enquêtes FIOPJ — Examen OPJ',
+  title: 'Enquêtes (entraînement) — Examen OPJ',
   description:
     'Planches pédagogiques Alpha et Bravo : sujet, articulation de procédure, procès-verbal et rapport de synthèse (formation initiale OPJ).',
 };
@@ -23,10 +23,10 @@ export default function EnquetesHubPage() {
           <span className='text-gray-400'>Enquêtes</span>
         </nav>
         <SectionTitle
-          badge='FIOPJ'
+          badge='CONCOURS'
           badgeClassName='bg-violet-500/20 text-violet-200'
           title='Enquêtes planches'
-          subtitle='Thèmes Alpha (flagrance) et Bravo (changement de cadre) : articulation, PV rédigé, rapport — documents officiels en fac-similé et PDF.'
+          subtitle='Thèmes Alpha (flagrance) et Bravo (changement de cadre) : articulation, PV rédigé, rapport — entraînement sur planches fictives.'
           className='mb-10'
         />
         <EnqueteHub enquetes={ENQUETES} />

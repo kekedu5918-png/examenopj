@@ -1,4 +1,4 @@
-/** F01 — Partie 1 : atteintes aux personnes (SDCP — vie, violences, agressions sexuelles, menaces, atteintes routières, images de violence). */
+/** F01 — Partie 1 : atteintes aux personnes (synthèse : vie, violences, agressions sexuelles, menaces, atteintes routières, images de violence). */
 export const recapSectionF01P1 = {
   id: 'f01-p1',
   fascicule: 'F01',
@@ -17,7 +17,7 @@ export const recapSectionF01P1 = {
       infraction:
         '**Le meurtre avec préméditation (qualification usuelle « assassinat », art. 221-3 C.P.)**',
       legal:
-        'Art. 221-3 C.P. — **Repère SDCP :** qualification du meurtre aggravé par la préméditation (art. 132-72 C.P.), pas une « tierce » infraction distincte dans le fascicule',
+        'Art. 221-3 C.P. — qualification du meurtre aggravé par la préméditation (art. 132-72 C.P.), distinct du meurtre simple',
       materiel: '**MÊMES ÉLÉMENTS QUE LE MEURTRE** / **PRÉMÉDITATION**',
       moral: '**INTENTION HOMICIDE** / **PROJET RÉFLÉCHI — INTERVALLE ENTRE RÉSOLUTION ET EXÉCUTION**',
     },

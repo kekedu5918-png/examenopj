@@ -9,7 +9,7 @@ export function AlreadySignedInPanel() {
       <div className='rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-sm text-amber-100'>
         <p className='font-medium'>Vous êtes déjà connecté.</p>
         <p className='mt-1 text-amber-100/90'>
-          L&apos;essai de 7 jours concerne la création d&apos;un nouveau compte. En freemium, vous avez accès aux fascicules,
+          L&apos;essai de 7 jours concerne la création d&apos;un nouveau compte. En freemium, vous avez accès aux fiches de cours,
           au récapitulatif et à des quotas quotidiens quiz / flashcards. Pour tout débloquer, souscrivez au Premium
           (paiement sécurisé).
         </p>

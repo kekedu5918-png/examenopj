@@ -26,7 +26,7 @@ export const quizQuestionsF01P1: QuizQuestion[] = [
   {
     id: 'f01p1-03',
     question:
-      'Le meurtre avec préméditation (art. 221-3 C.P.) est, dans le fascicule SDCP :',
+      'Le meurtre avec préméditation (art. 221-3 C.P.) est en droit pénal français :',
     options: [
       'Une infraction totalement distincte du meurtre (221-1), sans lien',
       'La qualification du meurtre aggravé par la préméditation',
@@ -37,7 +37,7 @@ export const quizQuestionsF01P1: QuizQuestion[] = [
     fascicule: 1,
     domaine: 'DPS',
     explication:
-      "Art. 221-3 : réclusion criminelle à perpétuité ; en pédagogie SDCP ce n'est pas une « tierce » infraction isolée du meurtre.",
+      "Art. 221-3 : réclusion criminelle à perpétuité ; qualification distincte du meurtre simple avec circonstances de préméditation.",
   },
   {
     id: 'f01p1-04',

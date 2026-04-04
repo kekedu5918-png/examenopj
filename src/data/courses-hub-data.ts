@@ -34,7 +34,7 @@ export const coursePillars: CoursePillar[] = [
     iconName: 'Scale',
     rhythm: 'Rythme suggéré : un thème par session',
     steps: [
-      { kind: 'read', label: 'Fascicules DPS', href: '/fascicules', hint: 'F03 → F07' },
+      { kind: 'read', label: 'Modules DPS', href: '/cours/modules', hint: 'F01 → F08' },
       { kind: 'train', label: 'Quiz DPS', href: '/entrainement/quiz?mode=domain&domain=DPS' },
       { kind: 'anchor', label: 'Flashcards', href: '/entrainement/flashcards?cat=atteintes-aux-biens' },
       { kind: 'map', label: 'Référentiel infractions', href: '/infractions' },
@@ -50,7 +50,7 @@ export const coursePillars: CoursePillar[] = [
     iconName: 'BookMarked',
     rhythm: 'À alterner avec du DPS pour lier théorie et faits',
     steps: [
-      { kind: 'read', label: 'Fascicules DPG', href: '/fascicules', hint: 'F09 & F10' },
+      { kind: 'read', label: 'Modules DPG', href: '/cours/modules', hint: 'F09 & F10' },
       { kind: 'train', label: 'Quiz DPG', href: '/entrainement/quiz?mode=domain&domain=DPG' },
       { kind: 'anchor', label: 'Flashcards personnes', href: '/entrainement/flashcards?cat=atteintes-aux-personnes' },
       { kind: 'map', label: 'Récap F01', href: '/entrainement/recapitulatif' },
@@ -77,7 +77,7 @@ export const coursePillars: CoursePillar[] = [
     title: 'Vision transversale',
     hook: 'Relier qualification, éléments et textes',
     description:
-      'Tableaux récapitulatifs et listes d’infractions pour tester ta vision d’ensemble avant de replonger dans le détail d’un fascicule.',
+      'Tableaux récapitulatifs et listes d’infractions pour tester ta vision d’ensemble avant de replonger dans un module.',
     accent: 'emerald',
     iconName: 'Network',
     rhythm: 'Idéal en ouverture ou en fin de semaine',

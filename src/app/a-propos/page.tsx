@@ -6,7 +6,7 @@ import { APP_NAME, APP_TAGLINE } from '@/constants/site';
 
 export const metadata: Metadata = {
   title: 'À propos',
-  description: `${APP_NAME} : mission, sources pédagogiques (SDCP), méthode de révision et indépendance vis-à-vis de l’administration.`,
+  description: `${APP_NAME} : mission, méthode de révision et contenus pédagogiques indépendants pour préparer le concours OPJ.`,
   alternates: { canonical: '/a-propos' },
 };
 
@@ -21,17 +21,17 @@ export default function AProposPage() {
 
       <LegalSection title='Notre approche'>
         <p>
-          Nous structurons le programme autour des <strong>fascicules et documents de référence</strong> utilisés dans le cursus (dont les
-          supports SDCP / Académie de Police lorsque intégrés dans l’outil), complétés par des <strong>quiz</strong>, des{' '}
-          <strong>flashcards</strong> et des <strong>fiches de synthèse</strong> pour ancrer les notions et les infractions clés.
+          Nous structurons le programme autour de <strong>fiches de cours synthétiques</strong> (titres de modules F01–F15), complétées par des{' '}
+          <strong>quiz</strong>, des <strong>flashcards</strong> et des <strong>outils de révision</strong>. Les textes juridiques à valeur
+          normative restent ceux publiés sur Légifrance et vos supports de formation.
         </p>
       </LegalSection>
 
       <LegalSection title='Indépendance et exactitude'>
         <p>
-          {APP_NAME} est un <strong>outil éditorial et pédagogique indépendant</strong>. Il ne remplace ni les enseignements officiels ni les
-          textes en vigueur. Les contenus peuvent évoluer après mise à jour législative ou réglementaire : en cas de doute, vérifiez toujours
-          les <strong>sources officielles</strong> (Légifrance, BO, circulaires, fascicules à jour).
+          {APP_NAME} est un <strong>outil éditorial et pédagogique indépendant</strong>. Il ne remplace ni les enseignements institutionnels ni les
+          textes en vigueur. En cas de doute, vérifiez toujours les <strong>sources officielles</strong> (Légifrance, Journal officiel,
+          circulaires).
         </p>
       </LegalSection>
 
@@ -43,7 +43,8 @@ export default function AProposPage() {
       </LegalSection>
 
       <p className='text-xs text-slate-500'>
-        {APP_TAGLINE} — Objectif : vous donner un cadre clair, exigeant et réutilisable jusqu’à l’examen.
+        {APP_TAGLINE} — plateforme éditoriale. Les marques et sigles cités le sont à titre d’information ; {APP_NAME} n’est pas un service de
+        l’administration.
       </p>
     </LegalProse>
   );

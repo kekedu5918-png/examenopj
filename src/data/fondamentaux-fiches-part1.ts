@@ -9,7 +9,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Trois cadres juridiques encadrent l'action de l'OPJ : la flagrance, l'enquête préliminaire et la commission rogatoire.",
     source: 'F11 — Art. 53, 75, 81 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -54,7 +54,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Le contrôle d'identité permet à l'OPJ ou l'APJ d'inviter une personne à justifier de son identité dans les cas prévus par la loi.",
     source: 'F11 — Art. 78-2 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -97,7 +97,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       'Mesure de contrainte décidée par l\'OPJ, sous contrôle de l\'autorité judiciaire, maintenant à disposition des enquêteurs une personne soupçonnée.',
     source: 'F11 — Art. 62-2, 63, 63-1 à 64-1 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -154,7 +154,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Acte d'enquête consistant à pénétrer dans un lieu pour y rechercher des preuves ou des personnes.",
     source: 'F11 — Art. 56 à 59, 76 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -198,7 +198,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       'Les mandats sont des actes écrits par lesquels le juge d\'instruction ordonne la comparution, la remise en liberté ou l\'incarcération d\'une personne.',
     source: 'F12 — Art. 122 à 136 C.P.P.',
-    lienFascicule: '/fascicules/f12',
+    lienFascicule: '/cours/modules/f12',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f12',
     regles: [
       {
@@ -255,7 +255,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "L'audition est la procédure par laquelle l'OPJ recueille les déclarations d'une personne. Le statut de la personne entendue détermine les droits applicables.",
     source: 'F11 — Art. 61 à 62, Art. 63-4 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -306,7 +306,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Les réquisitions permettent à l'OPJ d'obtenir de toute personne ou organisme des informations, des données ou des examens techniques nécessaires à l'enquête.",
     source: 'F11 — Art. 60, 60-1, 60-2, 60-3 C.P.P.',
-    lienFascicule: '/fascicules/f11',
+    lienFascicule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
     regles: [
       {
@@ -350,7 +350,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Trois mesures de contrainte alternatives ou cumulatives décidées par le JLD en cours d'instruction, par ordre croissant de sévérité.",
     source: 'F12 — Art. 137 à 148-9 C.P.P.',
-    lienFascicule: '/fascicules/f12',
+    lienFascicule: '/cours/modules/f12',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f12',
     regles: [
       {
@@ -401,7 +401,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       'La nullité est la sanction d\'un acte de procédure irrégulier. Elle détruit ses effets juridiques et ceux des actes qui en découlent.',
     source: 'F15 — Art. 802, 173, 174 C.P.P.',
-    lienFascicule: '/fascicules/f15',
+    lienFascicule: '/cours/modules/f15',
     lienQuiz: '/entrainement/quiz?mode=fascicule&f=f15',
     regles: [
       {

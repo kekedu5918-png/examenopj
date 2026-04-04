@@ -10,7 +10,7 @@ import { GUIDE_REVISION_FAQ } from '@/data/guide-revision-faq';
 export const metadata: Metadata = {
   title: 'Guide de révision OPJ 2026',
   description:
-    'Plan de bataille en 3 phases, chiffres clés de l’examen, épreuves, erreurs à éviter et FAQ. Liens vers fondamentaux, fascicules, quiz et flashcards ExamenOPJ.',
+    'Plan de bataille en 3 phases, chiffres clés de l’examen, épreuves, erreurs à éviter et FAQ. Liens vers fondamentaux, modules de cours, quiz et flashcards.',
   alternates: { canonical: '/guide-revision-opj' },
 };
 
@@ -71,7 +71,7 @@ export default function GuideRevisionOpjPage() {
             <div className='mt-6 grid gap-3 sm:grid-cols-2'>
               {[
                 { t: '3 épreuves écrites + 1 oral', d: 'DPG/DPS, procédure, puis oral parquet.' },
-                { t: '15 fascicules officiels SDCP', d: 'Le programme de référence.' },
+                { t: '15 thèmes de cours (F01–F15)', d: 'Repères pédagogiques à compléter avec les codes.' },
                 { t: 'Coefficient 2 — épreuve 1', d: 'DPG / DPS pèse double.' },
                 { t: 'Note éliminatoire', d: 'Moins de 5/20 à l’épreuve 1.' },
                 { t: 'Session', d: 'Juin 2026.' },
@@ -97,7 +97,7 @@ export default function GuideRevisionOpjPage() {
             <div className='mt-6 space-y-8 border-l-2 border-gold-500/40 pl-6'>
               <div>
                 <p className='font-display text-lg font-semibold text-gold-200'>Phase 1 — Cartographier (semaines 1-4)</p>
-                <p className='mt-2 text-sm font-medium text-gray-200'>Objectif : avoir vu tous les fascicules une première fois.</p>
+                <p className='mt-2 text-sm font-medium text-gray-200'>Objectif : avoir parcouru une première fois tous les modules thématiques.</p>
                 <ul className='mt-3 list-disc space-y-2 pl-5 text-sm leading-relaxed'>
                   <li>
                     Lire <strong className='text-gray-200'>F09 et F10 en premier</strong> (éléments constitutifs +
@@ -174,12 +174,12 @@ export default function GuideRevisionOpjPage() {
                 <p className='mt-2 text-sm text-gray-400'>Méthode + phrases types.</p>
               </Link>
               <Link
-                href='/fascicules'
+                href='/cours/modules'
                 className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-cyan-500/40 hover:bg-white/[0.06]'
               >
                 <p className='text-xs font-semibold uppercase tracking-wide text-cyan-400'>3</p>
-                <p className='mt-2 font-display text-lg font-semibold text-white'>Fascicules</p>
-                <p className='mt-2 text-sm text-gray-400'>Les 15 fascicules intégraux.</p>
+                <p className='mt-2 font-display text-lg font-semibold text-white'>Modules de cours</p>
+                <p className='mt-2 text-sm text-gray-400'>Fiches synthétiques F01–F15 à compléter.</p>
               </Link>
               <Link
                 href='/entrainement/quiz'

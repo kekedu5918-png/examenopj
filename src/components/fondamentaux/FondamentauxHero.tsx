@@ -61,7 +61,7 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
       <div className='relative mx-auto max-w-5xl'>
         <h1 className='font-display text-3xl font-bold tracking-tight text-white sm:text-4xl'>Les Fondamentaux</h1>
         <p className='mt-3 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base'>
-          Les {total} notions clés à maîtriser pour l&apos;examen OPJ — Synthèse des fascicules F09 à F15
+          Les {total} notions clés à maîtriser pour l&apos;examen OPJ — synthèse proposée par ExamenOPJ
         </p>
         <p className='mt-4 text-xs text-slate-500 sm:text-sm'>{miniLine}</p>
 

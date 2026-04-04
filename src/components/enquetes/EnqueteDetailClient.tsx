@@ -79,7 +79,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
         </nav>
 
         <header className='mb-8 border-b border-white/10 pb-8'>
-          <p className='text-xs font-bold uppercase tracking-[0.2em] text-violet-300'>FIOPJ — Planches</p>
+          <p className='text-xs font-bold uppercase tracking-[0.2em] text-violet-300'>Planches — Entraînement</p>
           <h1 className='mt-2 font-display text-3xl font-bold text-white md:text-4xl'>
             Enquête {enquete.code}
           </h1>

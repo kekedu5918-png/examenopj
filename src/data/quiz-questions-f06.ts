@@ -73,7 +73,7 @@ export const quizQuestionsF06: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 6,
     domaine: 'DPS',
-    explication: 'Art. 227-17 C.P. (fascicule SDCP : soustraction à obligations légales).',
+    explication: 'Art. 227-17 C.P. (soustraction aux obligations légales).',
   },
   {
     id: 'f06-q10',
