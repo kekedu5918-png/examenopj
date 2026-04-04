@@ -7,8 +7,8 @@ import { ActionResponse } from '@/types/action-response';
 import { getURL } from '@/utils/get-url';
 
 /**
- * OAuth désactivé côté UI tant que les providers ne sont pas activés dans Supabase.
- * Réactiver les boutons (signup/login) quand Google/GitHub sont configurés.
+ * Actions serveur restantes (OAuth, OTP, déconnexion).
+ * Inscription / connexion par mot de passe : `signup-form.tsx` et `login-form.tsx` (client Supabase + cookies).
  */
 export async function signInWithOAuth(provider: 'github' | 'google'): Promise<ActionResponse> {
   const supabase = await createSupabaseServerClient();
@@ -32,25 +32,6 @@ export async function signInWithOAuth(provider: 'github' | 'google'): Promise<Ac
   redirect(data.url);
 }
 
-export async function signUp(email: string, password: string): Promise<ActionResponse> {
-  const supabase = await createSupabaseServerClient();
-
-  const { error } = await supabase.auth.signUp({
-    email,
-    password,
-    options: {
-      emailRedirectTo: getURL('/auth/callback'),
-    },
-  });
-
-  if (error) {
-    console.error(error);
-    return { data: null, error };
-  }
-
-  return { data: null, error: null };
-}
-
 export async function signInWithEmail(email: string): Promise<ActionResponse> {
   const supabase = await createSupabaseServerClient();
 
@@ -64,22 +45,6 @@ export async function signInWithEmail(email: string): Promise<ActionResponse> {
   if (error) {
     console.error(error);
     return { data: null, error: error };
-  }
-
-  return { data: null, error: null };
-}
-
-export async function signInWithPassword(email: string, password: string): Promise<ActionResponse> {
-  const supabase = await createSupabaseServerClient();
-
-  const { error } = await supabase.auth.signInWithPassword({
-    email,
-    password,
-  });
-
-  if (error) {
-    console.error(error);
-    return { data: null, error };
   }
 
   return { data: null, error: null };

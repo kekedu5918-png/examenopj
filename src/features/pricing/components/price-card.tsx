@@ -8,7 +8,12 @@ import { SexyBoarder } from '@/components/sexy-boarder';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
-import { PriceCardVariant, productMetadataSchema } from '../models/product-metadata';
+import {
+  PriceCardVariant,
+  productMetadataSchema,
+  stripeMetadataToStringRecord,
+  variantHighlightLabel,
+} from '../models/product-metadata';
 import { BillingInterval, Price, ProductWithPrices } from '../types';
 
 export function PricingCard({
@@ -30,7 +35,7 @@ export function PricingCard({
     if (price) return price;
 
     // If no price provided we need to find the right one to render for the product.
-    // First check if the product has a price - in the case of our enterprise product, no price is included.
+    // First check if the product has a price (ex. pack examen sans prix en ligne → contact).
     // We'll return null and handle that case when rendering.
     if (product.prices.length === 0) return null;
 
@@ -44,19 +49,45 @@ export function PricingCard({
   const monthPrice = product.prices.find((price) => price.interval === 'month')?.unit_amount;
   const yearPrice = product.prices.find((price) => price.interval === 'year')?.unit_amount;
   const isBillingIntervalYearly = billingInterval === 'year';
-  const metadata = productMetadataSchema.parse(product.metadata);
-  const buttonVariantMap = {
-    basic: 'default',
-    pro: 'sexy',
-    enterprise: 'orange',
-  } as const;
+
+  const rawRecord = stripeMetadataToStringRecord(product.metadata);
+  const parsedMeta = rawRecord
+    ? productMetadataSchema.safeParse({
+        price_card_variant: rawRecord.price_card_variant,
+        ...(rawRecord.support_level !== undefined && rawRecord.support_level !== ''
+          ? { support_level: rawRecord.support_level }
+          : {}),
+      })
+    : null;
+
+  if (!parsedMeta?.success) {
+    console.error(
+      '[ProductMetadata] Parse failed for:',
+      product.id,
+      parsedMeta && !parsedMeta.success ? parsedMeta.error.flatten() : 'invalid or missing metadata'
+    );
+  }
+
+  const metadata = parsedMeta?.success
+    ? parsedMeta.data
+    : {
+        price_card_variant: 'free' as const,
+        support_level: 'email' as const,
+      };
+
+  /** Styles bouton par variant métadonnées Stripe (free | mensuel | examen). */
+  const buttonVariantByTier: Record<PriceCardVariant, 'default' | 'sexy' | 'orange'> = {
+    free: 'default',
+    mensuel: 'sexy',
+    examen: 'orange',
+  };
 
   function handleBillingIntervalChange(billingInterval: BillingInterval) {
     setBillingInterval(billingInterval);
   }
 
   return (
-    <WithSexyBorder variant={metadata.priceCardVariant} className='w-full flex-1'>
+    <WithSexyBorder variant={metadata.price_card_variant} className='w-full flex-1'>
       <div className='flex w-full flex-col rounded-md border border-zinc-800 bg-black p-4 lg:p-8'>
         <div className='p-4'>
           <div className='mb-1 text-center font-alt text-xl font-bold'>{product.name}</div>
@@ -75,19 +106,21 @@ export function PricingCard({
         {!Boolean(price) && product.prices.length > 1 && <PricingSwitch onChange={handleBillingIntervalChange} />}
 
         <div className='m-auto flex w-fit flex-1 flex-col gap-2 px-8 py-4'>
-          {metadata.generatedImages === 'enterprise' && <CheckItem text={`Unlimited banner images`} />}
-          {metadata.generatedImages !== 'enterprise' && (
-            <CheckItem text={`Generate ${metadata.generatedImages} banner images`} />
-          )}
-          {<CheckItem text={`${metadata.imageEditor} image editing features`} />}
-          {<CheckItem text={`${metadata.supportLevel} support`} />}
+          <CheckItem text={variantHighlightLabel(metadata.price_card_variant)} />
+          <CheckItem
+            text={
+              metadata.support_level === 'live'
+                ? 'Support prioritaire (réponse rapide)'
+                : 'Support par e-mail'
+            }
+          />
         </div>
 
         {createCheckoutAction && (
           <div className='py-4'>
             {currentPrice && (
               <Button
-                variant={buttonVariantMap[metadata.priceCardVariant]}
+                variant={buttonVariantByTier[metadata.price_card_variant]}
                 className='w-full'
                 onClick={() => createCheckoutAction({ price: currentPrice })}
               >
@@ -95,7 +128,7 @@ export function PricingCard({
               </Button>
             )}
             {!currentPrice && (
-              <Button variant={buttonVariantMap[metadata.priceCardVariant]} className='w-full' asChild>
+              <Button variant={buttonVariantByTier[metadata.price_card_variant]} className='w-full' asChild>
                 <Link href='/contact'>Contact Us</Link>
               </Button>
             )}
@@ -115,12 +148,13 @@ function CheckItem({ text }: { text: string }) {
   );
 }
 
+/** Bordure mise en avant pour la carte « mensuel » (plus free / examen sans effet). */
 export function WithSexyBorder({
   variant,
   className,
   children,
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant: PriceCardVariant }) {
-  if (variant === 'pro') {
+  if (variant === 'mensuel') {
     return (
       <SexyBoarder className={className} offset={100}>
         {children}
@@ -139,8 +173,8 @@ function PricingSwitch({ onChange }: { onChange: (value: BillingInterval) => voi
       onValueChange={(newBillingInterval) => onChange(newBillingInterval as BillingInterval)}
     >
       <TabsList className='m-auto'>
-        <TabsTrigger value='month'>Monthly</TabsTrigger>
-        <TabsTrigger value='year'>Yearly</TabsTrigger>
+        <TabsTrigger value='month'>Mensuel</TabsTrigger>
+        <TabsTrigger value='year'>Annuel</TabsTrigger>
       </TabsList>
     </Tabs>
   );
