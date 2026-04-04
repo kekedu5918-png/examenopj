@@ -7,6 +7,7 @@ import { ChevronDown, Menu } from 'lucide-react';
 
 import { navigation } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
+import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
@@ -23,13 +24,19 @@ function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
 }
 
+type TrialReminder = {
+  daysLeft: number;
+  endsAtIso: string;
+};
+
 type NavbarClientProps = {
   isLoggedIn: boolean;
   isPremium: boolean;
   signOut: () => Promise<ActionResponse>;
+  trialReminder: TrialReminder | null;
 };
 
-export function NavbarClient({ isLoggedIn, isPremium, signOut }: NavbarClientProps) {
+export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: NavbarClientProps) {
   const pathname = usePathname();
 
   const linkClass = (active: boolean) =>
@@ -39,8 +46,12 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut }: NavbarClientPro
     );
 
   return (
-    <motion.header
-      className='sticky top-0 z-50 border-b border-white/10 bg-navy-950/80 backdrop-blur-xl'
+    <div className='sticky top-0 z-50'>
+      {trialReminder ? (
+        <TrialReminderBanner daysLeft={trialReminder.daysLeft} endsAtIso={trialReminder.endsAtIso} />
+      ) : null}
+      <motion.header
+        className='border-b border-white/10 bg-navy-950/80 backdrop-blur-xl'
       initial={{ opacity: 0, y: -12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
@@ -210,5 +221,6 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut }: NavbarClientPro
         </div>
       </div>
     </motion.header>
+    </div>
   );
 }

@@ -26,7 +26,7 @@ export default async function SignUpPage() {
         <p className='text-sm text-slate-400'>
           {alreadyConnectedNoPremium
             ? 'Poursuivez avec le contenu gratuit ou passez au Premium.'
-            : "7 jours d'accès complet gratuit. Aucune carte bancaire requise."}
+            : "Dès la création du compte : 7 jours d’accès complet automatique (identique au Premium), puis freemium ou abonnement. Aucune carte bancaire pour s’inscrire."}
         </p>
 
         {alreadyConnectedNoPremium ? <AlreadySignedInPanel /> : <SignUpForm />}

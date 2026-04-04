@@ -1,7 +1,8 @@
+import { isUserInSignupTrialPeriod } from '@/features/access/trial-window';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSubscription } from '@/features/account/controllers/get-subscription';
 
-export const TRIAL_DAYS = 7;
+export { TRIAL_DAYS } from '@/features/access/trial-window';
 
 /** Questions comptées par session de quiz (réponses soumises). */
 export const FREEMIUM_QUIZ_QUESTIONS_PER_DAY = 5;
@@ -16,13 +17,9 @@ export type ContentAccessSnapshot = {
   maxFlashcardsPerDay: number | null;
 };
 
-function msDays(d: number) {
-  return d * 86400000;
-}
-
 /**
- * Accès contenu : abonnement Stripe actif / essai → tout débloqué.
- * Sinon période de grâce 7 jours après création du compte (inscription), puis freemium.
+ * Accès contenu : abonnement Stripe actif → tout débloqué.
+ * Sinon 7 jours complets dès l’inscription (date `auth.users`), puis freemium.
  */
 export async function getContentAccess(): Promise<ContentAccessSnapshot> {
   const subscription = await getSubscription();
@@ -31,12 +28,8 @@ export async function getContentAccess(): Promise<ContentAccessSnapshot> {
   }
 
   const session = await getSession();
-  const createdAt = session?.user?.created_at;
-  if (createdAt) {
-    const created = new Date(createdAt);
-    if (!Number.isNaN(created.getTime()) && Date.now() - created.getTime() < msDays(TRIAL_DAYS)) {
-      return { tier: 'full', maxQuizQuestionsPerDay: null, maxFlashcardsPerDay: null };
-    }
+  if (isUserInSignupTrialPeriod(session?.user?.created_at)) {
+    return { tier: 'full', maxQuizQuestionsPerDay: null, maxFlashcardsPerDay: null };
   }
 
   return {
