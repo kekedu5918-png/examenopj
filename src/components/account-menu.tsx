@@ -25,13 +25,13 @@ export function AccountMenu({ signOut }: { signOut: () => Promise<ActionResponse
     if (response?.error) {
       toast({
         variant: 'destructive',
-        description: 'An error occurred while logging out. Please try again or contact support.',
+        description: 'Erreur lors de la déconnexion. Réessayez ou contactez le support.',
       });
     } else {
       router.refresh();
 
       toast({
-        description: 'You have been logged out.',
+        description: 'Vous avez été déconnecté.',
       });
     }
   }
@@ -43,12 +43,12 @@ export function AccountMenu({ signOut }: { signOut: () => Promise<ActionResponse
       </DropdownMenuTrigger>
       <DropdownMenuContent className='me-4'>
         <DropdownMenuItem asChild>
-          <Link href='/dashboard'>Dashboard</Link>
+          <Link href='/dashboard'>Tableau de bord</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
-          <Link href='/account'>Account</Link>
+          <Link href='/account'>Mon compte</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleLogoutClick}>Log Out</DropdownMenuItem>
+        <DropdownMenuItem onClick={handleLogoutClick}>Déconnexion</DropdownMenuItem>
         <DropdownMenuArrow className='me-4 fill-white' />
       </DropdownMenuContent>
     </DropdownMenu>

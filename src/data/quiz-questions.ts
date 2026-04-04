@@ -1,167 +1,19 @@
 import { quizQuestionsF01P1 } from '@/data/quiz-questions-f01-p1';
+import { quizQuestionsF03 } from '@/data/quiz-questions-f03';
+import { quizQuestionsF04 } from '@/data/quiz-questions-f04';
+import { quizQuestionsF05 } from '@/data/quiz-questions-f05';
+import { quizQuestionsF06 } from '@/data/quiz-questions-f06';
+import { quizQuestionsF07 } from '@/data/quiz-questions-f07';
 import { type QuizQuestion } from '@/data/types';
 
 export const quizQuestions: QuizQuestion[] = [
   ...quizQuestionsF01P1,
-  {
-    id: 'f03-01',
-    question:
-      "Quel est le taux d'alcoolémie constitutif du DÉLIT de conduite sous l'empire d'un état alcoolique ?",
-    options: [
-      "0,25 mg/l d'air expiré ou 0,50 g/l de sang",
-      "0,40 mg/l d'air expiré ou 0,80 g/l de sang",
-      "0,50 mg/l d'air expiré ou 1,00 g/l de sang",
-      "0,80 mg/l d'air expiré ou 1,60 g/l de sang",
-    ],
-    correctIndex: 1,
-    fascicule: 3,
-    domaine: 'DPS',
-    explication:
-      "Art. L.234-1 I et V du C.R. : le délit est caractérisé à partir de 0,40 mg/l d'air expiré ou 0,80 g/l de sang, même en l'absence de tout signe d'ivresse manifeste.",
-  },
-  {
-    id: 'f03-02',
-    question: "L'article L.234-1 du Code de la route définit et réprime quelle infraction ?",
-    options: ['Le délit de fuite', "La conduite sous l'empire d'un état alcoolique", "Le refus d'obtempérer", 'La conduite sous stupéfiants'],
-    correctIndex: 1,
-    fascicule: 3,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f03-03',
-    question: 'Le délit de fuite est prévu par quel article ?',
-    options: ['Art. 433-5 CP', 'Art. 434-10 CP', 'Art. 441-1 CP', 'Art. L.231-1 CR'],
-    correctIndex: 1,
-    fascicule: 3,
-    domaine: 'DPS',
-    explication: 'Art. 434-10 du Code pénal (et non du Code de la route).',
-  },
-  {
-    id: 'f03-04',
-    question: "Le refus d'obtempérer est prévu par quel article ?",
-    options: ['L.221-2 CR', 'L.233-1 CR', 'L.234-8 CR', 'L.236-1 CR'],
-    correctIndex: 1,
-    fascicule: 3,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f03-05',
-    question: 'La conduite après usage de stupéfiants est prévue par quel article ?',
-    options: ['L.234-1 CR', 'L.235-1 CR', 'Art. 222-37 CP', 'Art. L.3421-1 CSP'],
-    correctIndex: 1,
-    fascicule: 3,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f03-06',
-    question: "La tentative est-elle punissable pour la conduite sous l'empire d'un état alcoolique ?",
-    options: ['Oui, toujours', 'Oui, si le texte le prévoit', 'Non', 'Oui, pour les récidivistes uniquement'],
-    correctIndex: 2,
-    fascicule: 3,
-    domaine: 'DPS',
-    explication: 'Tentative : NON. Complicité : OUI.',
-  },
-  {
-    id: 'f04-01',
-    question: "L'outrage est prévu et réprimé par quel article ?",
-    options: ['Art. 433-5 CP', 'Art. 433-6 CP', 'Art. 432-11 CP', 'Art. 434-1 CP'],
-    correctIndex: 0,
-    fascicule: 4,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f04-02',
-    question: 'La rébellion suppose une opposition par :',
-    options: ['Des paroles injurieuses', 'Violence ou voie de fait', "Un refus simple d'obéir", 'Une menace écrite'],
-    correctIndex: 1,
-    fascicule: 4,
-    domaine: 'DPS',
-    explication:
-      "Art. 433-6 CP : opposition par violence ou voie de fait à une personne dépositaire de l'autorité publique.",
-  },
-  {
-    id: 'f04-03',
-    question: "L'association de malfaiteurs (art. 450-1 CP) concerne la préparation d'infractions punies d'au moins :",
-    options: ["1 an d'emprisonnement", "3 ans d'emprisonnement", "5 ans d'emprisonnement", "10 ans d'emprisonnement"],
-    correctIndex: 2,
-    fascicule: 4,
-    domaine: 'DPS',
-    explication:
-      "Art. 450-1 CP : groupement formé ou entente établie en vue de la préparation d'un ou plusieurs crimes ou délits punis d'au moins 5 ans.",
-  },
-  {
-    id: 'f04-04',
-    question: 'La corruption passive est prévue par quel article ?',
-    options: ['Art. 432-10 CP', 'Art. 432-11 CP', 'Art. 433-1 CP', 'Art. 433-2 CP'],
-    correctIndex: 1,
-    fascicule: 4,
-    domaine: 'DPS',
-    explication:
-      'Art. 432-11 : corruption passive (par le fonctionnaire). Art. 433-1 : corruption active (par le particulier).',
-  },
-  {
-    id: 'f04-05',
-    question: "Le faux et l'usage de faux est prévu par quel article ?",
-    options: ['Art. 441-1 CP', 'Art. 441-2 CP', 'Art. 434-10 CP', 'Art. 450-1 CP'],
-    correctIndex: 0,
-    fascicule: 4,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f05-01',
-    question: "L'usage illicite de stupéfiants est prévu par :",
-    options: ['Art. 222-37 CP', 'Art. L.3421-1 du Code de la santé publique', 'Art. 222-34 CP', 'Art. L.235-1 CR'],
-    correctIndex: 1,
-    fascicule: 5,
-    domaine: 'DPS',
-    explication: "L'usage est dans le CSP, pas dans le CP. Le CP réprime le trafic (art. 222-34 à 222-43).",
-  },
-  {
-    id: 'f05-02',
-    question: "La direction ou l'organisation d'un trafic de stupéfiants est punie de :",
-    options: ['5 ans et 75 000 €', '10 ans et 7 500 000 €', '20 ans et 7 500 000 €', 'Réclusion criminelle à perpétuité et 7 500 000 €'],
-    correctIndex: 3,
-    fascicule: 5,
-    domaine: 'DPS',
-    explication: "Art. 222-34 CP : réclusion criminelle à perpétuité et 7 500 000 € d'amende.",
-  },
-  {
-    id: 'f06-01',
-    question: "L'abandon de famille (art. 227-3 CP) nécessite un défaut de paiement pendant plus de :",
-    options: ['1 mois', '2 mois', '3 mois', '6 mois'],
-    correctIndex: 1,
-    fascicule: 6,
-    domaine: 'DPS',
-    explication:
-      'Art. 227-3 CP : ne pas exécuter une décision judiciaire ou convention pendant plus de 2 mois.',
-  },
-  {
-    id: 'f06-02',
-    question: 'Les atteintes sexuelles par un majeur sur un mineur de 15 ans sont prévues par :',
-    options: ['Art. 227-22 CP', 'Art. 227-25 CP', 'Art. 227-27 CP', 'Art. 222-22 CP'],
-    correctIndex: 1,
-    fascicule: 6,
-    domaine: 'DPS',
-  },
-  {
-    id: 'f07-01',
-    question: "L'arme par nature est définie par :",
-    options: ['Art. 132-75 al.1 CP', 'Art. R.311-1 CSI', 'Art. 132-71 CP', 'Art. L.317-1 CSI'],
-    correctIndex: 0,
-    fascicule: 7,
-    domaine: 'DPS',
-    explication: 'Art. 132-75 al.1 CP : « Est une arme tout objet conçu pour tuer ou blesser. »',
-  },
-  {
-    id: 'f07-02',
-    question: 'La loi n°2012-304 du 06/03/2012 classe les armes en combien de catégories ?',
-    options: ['3 (A, B, C)', '4 (A, B, C, D)', '5 (A, B, C, D, E)', '8 (1ère à 8ème)'],
-    correctIndex: 1,
-    fascicule: 7,
-    domaine: 'DPS',
-    explication:
-      '4 catégories : A (matériels de guerre et armes interdits), B (soumises à autorisation), C (soumises à déclaration), D (acquisition et détention libres).',
-  },
+
+  ...quizQuestionsF03,
+  ...quizQuestionsF04,
+  ...quizQuestionsF05,
+  ...quizQuestionsF06,
+  ...quizQuestionsF07,
   {
     id: 'f09-01',
     question: 'La classification tripartite des infractions comprend :',

@@ -12,9 +12,18 @@ describe('getSiteUrl', () => {
     expect(getSiteUrl()).toBe('https://examenopj.fr');
   });
 
-  it('utilise localhost par défaut', async () => {
+  it('utilise localhost par défaut en développement', async () => {
     vi.unstubAllEnvs();
+    vi.stubEnv('NODE_ENV', 'development');
     const { getSiteUrl } = await import('@/utils/site-url');
     expect(getSiteUrl()).toBe('http://localhost:3000');
+  });
+
+  it('utilise examenopj.fr en production si NEXT_PUBLIC_SITE_URL est absent', async () => {
+    vi.unstubAllEnvs();
+    vi.stubEnv('NODE_ENV', 'production');
+    vi.resetModules();
+    const { getSiteUrl } = await import('@/utils/site-url');
+    expect(getSiteUrl()).toBe('https://examenopj.fr');
   });
 });

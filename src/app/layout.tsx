@@ -22,6 +22,7 @@ const calSans = localFont({
 });
 
 export const metadata: Metadata = {
+  /** En prod sans env : https://examenopj.fr (voir getSiteUrl). En dev : http://localhost:3000 */
   metadataBase: new URL(getSiteUrl()),
   title: {
     default: 'ExamenOPJ — Révisions OPJ 2026',

@@ -1,6 +1,11 @@
 import { flashcardsF01P1 } from '@/data/flashcards-f01-p1';
 import { flashcardsF01Part2 } from '@/data/flashcards-f01-part2';
 import { flashcardsF02Extensions } from '@/data/flashcards-f02-extensions';
+import { flashcardsF03 } from '@/data/flashcards-f03';
+import { flashcardsF04 } from '@/data/flashcards-f04';
+import { flashcardsF05 } from '@/data/flashcards-f05';
+import { flashcardsF06 } from '@/data/flashcards-f06';
+import { flashcardsF07 } from '@/data/flashcards-f07';
 import type { Flashcard } from '@/data/flashcards-types';
 
 export type { Flashcard } from '@/data/flashcards-types';
@@ -67,197 +72,11 @@ Il ne peut pas y avoir vol à s'approprier :
       "*L'article 311-1 du C.P.* définit le vol simple et *l'article 311-3 du C.P.* en prévoit la répression.",
   },
   ...flashcardsF02Extensions,
-  {
-    id: 'fc-f03-01',
-    fascicule: 3,
-    domaine: 'DPS',
-    nom: "Conduite sous l'empire d'un état alcoolique",
-    materiel: [
-      "Un conducteur de véhicule ou un accompagnateur d'élève conducteur",
-      "Le taux délictuel : concentration d'alcool dans le sang ≥ 0,80 g/l ou dans l'air expiré ≥ 0,40 mg/l",
-    ],
-    moral:
-      "Volonté de conduire en ayant consommé de l'alcool — infraction intentionnelle (art. 121-3 CP, Cass. crim. 19/12/1994). L'élément moral peut résulter du simple fait de consommer de l'alcool alors que le conducteur sait qu'il va prendre le volant.",
-    legal: "Prévu et réprimé par l'article L.234-1 / I et V du Code de la Route — DÉLIT — 3 ans d'emprisonnement et 9 000 € d'amende",
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f03-02',
-    fascicule: 3,
-    domaine: 'DPS',
-    nom: "Conduite en état d'ivresse",
-    materiel: [
-      "Un conducteur de véhicule ou un accompagnateur d'élève conducteur",
-      "État d'ivresse manifeste constaté par des signes extérieurs (haleine, titubation, propos incohérents, imprécision des réflexes, excitation, perte de concentration) — le taux peut être inférieur au seuil légal",
-    ],
-    moral: "Volonté de conduire en ayant consommé de l'alcool",
-    legal: "Prévu et réprimé par l'article L.234-1 / II et V du Code de la Route — DÉLIT — 3 ans d'emprisonnement et 9 000 € d'amende",
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f03-03',
-    fascicule: 3,
-    domaine: 'DPS',
-    nom: 'Délit de fuite',
-    materiel: [
-      "Le conducteur d'un véhicule ou d'un engin",
-      "Sachant qu'il a causé ou occasionné un accident",
-      "Ne s'arrête pas et tente ainsi d'échapper à la responsabilité pénale ou civile qu'il peut avoir encourue",
-    ],
-    moral: "Conscience d'avoir causé un accident et volonté de se soustraire à sa responsabilité",
-    legal: 'Prévu et réprimé par l’article 434-10 du Code pénal — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f03-04',
-    fascicule: 3,
-    domaine: 'DPS',
-    nom: "Refus d'obtempérer",
-    materiel: [
-      'Le conducteur ou le gardien de la chose',
-      "Refuse de se soumettre aux vérifications prévues par le Code de la route (alcool, stupéfiants, identité, etc.)",
-    ],
-    moral: 'Volonté de refuser les contrôles légaux',
-    legal: 'Prévu et réprimé par l’article L.233-1 du Code de la route — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f03-05',
-    fascicule: 3,
-    domaine: 'DPS',
-    nom: 'Conduite après usage de stupéfiants',
-    materiel: [
-      "Un conducteur ou un accompagnateur d'élève conducteur",
-      'Justifiant de la présence dans l’organisme d’un stupéfiant (dépistage positif)',
-    ],
-    moral: 'Volonté de conduire après consommation de stupéfiants',
-    legal: 'Prévu et réprimé par l’article L.235-1 du Code de la route — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f04-01',
-    fascicule: 4,
-    domaine: 'DPS',
-    nom: "L'outrage",
-    materiel: [
-      'Paroles, gestes ou menaces, écrits ou images non rendus publics, ou envoi d’objets quelconques',
-      'Adressés à une personne chargée d’une mission de service public, dans l’exercice ou à l’occasion de l’exercice de sa mission',
-      'De nature à porter atteinte à sa dignité ou au respect dû à la fonction dont elle est investie',
-    ],
-    moral:
-      'Intention de porter atteinte à la dignité ou au respect dû à la fonction — l’auteur doit avoir connaissance de la qualité de la victime',
-    legal: 'Prévu et réprimé par l’article 433-5 du Code pénal — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f04-02',
-    fascicule: 4,
-    domaine: 'DPS',
-    nom: 'La rébellion',
-    materiel: [
-      'Opposition par violence ou voie de fait',
-      'À une personne dépositaire de l’autorité publique ou chargée d’une mission de service public',
-      'Agissant dans l’exercice de ses fonctions, pour l’exécution des lois, ordres de l’autorité publique, décisions ou mandats de justice',
-    ],
-    moral:
-      "Volonté de s'opposer à l'exécution d'un acte de l'autorité publique — l'auteur doit avoir connaissance de la qualité de la personne",
-    legal: 'Prévu et réprimé par l’article 433-6 du Code pénal — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f04-03',
-    fascicule: 4,
-    domaine: 'DPS',
-    nom: "Le faux et l'usage de faux",
-    materiel: [
-      'Toute altération frauduleuse de la vérité',
-      "Dans un écrit ou tout autre support d'expression de la pensée",
-      'De nature à causer un préjudice',
-      'Par l’un des moyens visés par la loi',
-    ],
-    moral: 'Intention de frauder — volonté consciente d’altérer la vérité',
-    legal: 'Prévu et réprimé par l’article 441-1 du Code pénal — DÉLIT — 3 ans d’emprisonnement et 45 000 € d’amende',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f04-04',
-    fascicule: 4,
-    domaine: 'DPS',
-    nom: 'Corruption passive (fonctionnaire)',
-    materiel: [
-      'Un fonctionnaire ou une personne chargée d’une mission de service public',
-      'Sollicite ou accepte sans droit un avantage quelconque',
-      'En contrepartie de l’accomplissement ou de l’omission d’un acte de sa fonction',
-    ],
-    moral: 'Volonté de corrompre ou d’être corrompu dans l’exercice des fonctions',
-    legal: 'Prévu et réprimé par l’article 432-11 du Code pénal — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f05-01',
-    fascicule: 5,
-    domaine: 'DPS',
-    nom: 'Usage illicite de stupéfiants',
-    materiel: [
-      'Usage, détention ou transport de stupéfiants',
-      'Hors du cadre médical ou scientifique autorisé',
-    ],
-    moral: 'Conscience d’utiliser un produit illicite',
-    legal: 'Prévu et réprimé par l’article L.3421-1 du Code de la santé publique — CONTRAVENTION (en principe)',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f05-02',
-    fascicule: 5,
-    domaine: 'DPS',
-    nom: 'Direction ou organisation de trafic de stupéfiants',
-    materiel: [
-      'Organisation structurée du trafic (groupement, rôles, filières)',
-      'Actes de trafic (import, export, transport, stockage, etc.)',
-    ],
-    moral: 'Intention de participer à un trafic organisé',
-    legal: 'Prévu et réprimé par l’article 222-34 du Code pénal — CRIME (réclusion à perpétuité et amende en tête d’échelle)',
-    tentative: 'OUI',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f06-01',
-    fascicule: 6,
-    domaine: 'DPS',
-    nom: 'Abandon de famille',
-    materiel: [
-      'Obligation alimentaire ou décision / convention',
-      'Défaut d’exécution pendant plus de deux mois',
-    ],
-    moral: 'Volonté de ne pas satisfaire l’obligation',
-    legal: 'Prévu et réprimé par l’article 227-3 du Code pénal — DÉLIT',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
-  {
-    id: 'fc-f07-01',
-    fascicule: 7,
-    domaine: 'DPS',
-    nom: 'Arme par nature (définition)',
-    materiel: [
-      'Objet conçu pour tuer ou blesser',
-      'Ou objet dangereux utilisé comme arme (arme par usage)',
-    ],
-    moral: 'Conscience de détenir ou d’utiliser l’objet comme arme',
-    legal: 'Définition à l’article 132-75 al. 1 du Code pénal (notion d’arme pour certaines qualifications)',
-    tentative: 'NON',
-    complicite: 'OUI',
-  },
+  ...flashcardsF03,
+  ...flashcardsF04,
+  ...flashcardsF05,
+  ...flashcardsF06,
+  ...flashcardsF07,
   {
     id: 'fc-f09-01',
     fascicule: 9,

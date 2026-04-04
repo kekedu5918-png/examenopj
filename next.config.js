@@ -32,7 +32,15 @@ const nextConfig = {
         value: 'max-age=63072000; includeSubDomains; preload',
       });
     }
-    return [{ source: '/:path*', headers: security }];
+    return [
+      { source: '/:path*', headers: security },
+      // Ne pas indexer les déploiements *.vercel.app et autres hôtes non canoniques
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: '(?!examenopj\\.fr).*' }],
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ];
   },
   async redirects() {
     return [
