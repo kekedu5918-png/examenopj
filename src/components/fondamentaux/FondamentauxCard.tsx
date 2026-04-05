@@ -80,6 +80,7 @@ export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function Fo
 
   return (
     <motion.div
+      id={`fiche-${fiche.id}`}
       layout={false}
       initial={{ opacity: 0, y: 14 }}
       animate={{ opacity: 1, y: 0 }}

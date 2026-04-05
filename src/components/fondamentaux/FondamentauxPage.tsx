@@ -69,6 +69,16 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
     []
   );
 
+  /** Lien profond `/fondamentaux#fiche-…` : afficher la bonne catégorie puis faire défiler jusqu’à la carte. */
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const hash = window.location.hash;
+    if (!hash.startsWith('#fiche-')) return;
+    const ficheId = hash.slice('#fiche-'.length);
+    const fiche = fiches.find((x) => x.id === ficheId);
+    if (fiche) setFiltre(fiche.categorie);
+  }, [fiches]);
+
   const isLocked = useCallback(
     (id: string) => contentLocked && !FREEMIUM_UNLOCKED_IDS.has(id),
     [contentLocked]
@@ -77,6 +87,16 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
   const fichesFiltrees = useMemo(() => {
     return fiches.filter((f) => filtre === 'all' || f.categorie === filtre);
   }, [fiches, filtre]);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const id = window.location.hash.slice(1);
+    if (!id.startsWith('fiche-')) return;
+    const t = window.setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 280);
+    return () => window.clearTimeout(t);
+  }, [fichesFiltrees, filtre]);
 
   const registerView = useCallback((id: string) => {
     setViewedIds((prev) => {

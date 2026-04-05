@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
+import { getFondamentauxLinksForCourseModule } from '@/data/fondamentaux-by-module';
 import { cn } from '@/utils/cn';
 
 type Props = { params: { id: string } };
@@ -59,6 +60,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
   const nextId = idx >= 0 && idx < COURSE_MODULE_IDS.length - 1 ? COURSE_MODULE_IDS[idx + 1]! : null;
   const prevMeta = prevId ? getCourseModuleById(prevId) : null;
   const nextMeta = nextId ? getCourseModuleById(nextId) : null;
+  const fondamentauxLinks = getFondamentauxLinksForCourseModule(m.id);
 
   return (
     <div className='container pb-20 pt-10 md:pt-14'>
@@ -149,6 +151,32 @@ export default function CoursModuleDetailPage({ params }: Props) {
           <li>Relier chaque infraction ou acte aux grands principes (éléments constitutifs, compétence, cadre procédural).</li>
           <li>Entraînez-vous ensuite avec le quiz et les flashcards sur le même thème.</li>
         </ul>
+
+        {fondamentauxLinks.length > 0 ? (
+          <div className='not-prose mt-8 border-t border-white/10 pt-6'>
+            <p className='mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500'>Fiches fondamentales liées</p>
+            <p className='mb-3 text-sm text-gray-500'>
+              Notions condensées alignées sur ce thème ; le lien ouvre la page Fondamentaux et fait défiler jusqu’à la fiche.
+            </p>
+            <ul className='m-0 list-none space-y-2 p-0'>
+              {fondamentauxLinks.map((li) => (
+                <li key={li.id}>
+                  <Link
+                    href={li.href}
+                    className='text-sm text-cyan-400 underline-offset-2 hover:text-cyan-300 hover:underline'
+                  >
+                    {li.titre}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <p className='mt-3 text-sm'>
+              <Link href='/fondamentaux' className='text-gray-500 underline-offset-2 hover:text-gray-400 hover:underline'>
+                Toutes les fiches fondamentales
+              </Link>
+            </p>
+          </div>
+        ) : null}
 
         <div className='mt-8 border-t border-white/10 pt-6'>
           <p className='mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500'>Entraînement sur ce thème</p>
