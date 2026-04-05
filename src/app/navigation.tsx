@@ -1,18 +1,32 @@
 export const navigation = {
   main: [
-    { name: 'Accueil', href: '/' },
     {
       name: 'Cours',
       children: [
         {
-          name: 'Hub cours',
-          href: '/cours',
-          description: 'Cours synthétiques, fondamentaux, guide, modèles de PV.',
+          name: 'Fondamentaux',
+          href: '/fondamentaux',
+          description: 'Les notions clés à maîtriser',
         },
         {
-          name: 'Enquêtes (entraînement)',
+          name: 'Enquêtes',
           href: '/cours/enquetes',
-          description: 'Planches Alpha & Bravo : articulation, PV, rapport.',
+          description: 'Mises en situation complètes',
+        },
+      ],
+    },
+    {
+      name: 'Infractions',
+      children: [
+        {
+          name: 'Référentiel',
+          href: '/infractions',
+          description: 'Rechercher une infraction',
+        },
+        {
+          name: 'Récapitulatif',
+          href: '/entrainement/recapitulatif',
+          description: 'Tableau élément légal / matériel / moral',
         },
       ],
     },
@@ -20,25 +34,43 @@ export const navigation = {
       name: 'Épreuves',
       children: [
         {
-          name: 'Épreuve 1 — DPG/DPS',
+          name: 'Épreuve 1 — Qualification juridique',
           href: '/epreuves/epreuve-1',
-          description: 'Méthodologie Droit Pénal',
+          description: 'Méthode et mise en forme',
         },
         {
-          name: 'Épreuve 2 — Procédure',
+          name: 'Épreuve 2 — Procédure (articulation + PV + rapport)',
           href: '/epreuves/epreuve-2',
-          description: 'PV, Articulation, Synthèse',
+          description: 'Rédaction et enchaînements',
         },
         {
-          name: 'Épreuve 3 — Oral',
+          name: 'Épreuve 3 — Oral (compte-rendu parquet)',
           href: '/epreuves/epreuve-3',
-          description: 'CR Parquet',
+          description: 'Préparation orale',
         },
       ],
     },
-    { name: 'Modules de cours', href: '/cours/modules' },
-    { name: 'Infractions', href: '/infractions' },
-    { name: 'Entraînement', href: '/entrainement' },
+    {
+      name: 'Entraînement',
+      children: [
+        {
+          name: 'Quiz (QCM)',
+          href: '/entrainement/quiz',
+          description: 'Questions par thème ou domaine',
+        },
+        {
+          name: 'Flashcards (infractions)',
+          href: '/entrainement/flashcards',
+          description: 'Mémorisation active',
+        },
+        {
+          name: 'Articulation interactive',
+          href: '/entrainement/articulation',
+          description: 'Enchaîner qualification et procédure',
+        },
+      ],
+    },
+    { name: 'Tarifs', href: '/pricing' },
   ],
 } as const;
 

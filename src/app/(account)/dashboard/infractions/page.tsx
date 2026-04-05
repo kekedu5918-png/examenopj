@@ -51,7 +51,7 @@ export default async function InfractionsPage({ searchParams }: Props) {
             <CardHeader>
               <CardTitle className='text-slate-100'>{item.question}</CardTitle>
               <CardDescription className='text-slate-300'>
-                Source: {item.source_fascicule ?? 'N/A'} {item.article_ref ? `- ${item.article_ref}` : ''}
+                Thème : {item.source_fascicule ?? 'N/A'} {item.article_ref ? `— ${item.article_ref}` : ''}
               </CardDescription>
             </CardHeader>
             <CardContent className='text-sm text-slate-200'>

@@ -25,7 +25,7 @@ export default function CgvPage() {
 
       <LegalSection title='2. Services'>
         <p>
-          Le Service propose des contenus et outils de révision en ligne (fascicules, quiz, flashcards, espace
+          Le Service propose des contenus et outils de révision en ligne (fiches de cours, quiz, flashcards, espace
           membre). Les fonctionnalités exactes dépendent de l&apos;offre souscrite au jour de la commande.
         </p>
       </LegalSection>

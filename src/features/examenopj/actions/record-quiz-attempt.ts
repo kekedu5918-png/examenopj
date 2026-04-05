@@ -7,7 +7,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 type QuizAttemptInsert = Database['public']['Tables']['quiz_attempts']['Insert'];
 
 export type RecordQuizAttemptInput = {
-  mode: 'global' | 'fascicule' | 'domain';
+  mode: 'global' | 'fascicule' | 'module' | 'domain';
   fasciculeNum?: number | null;
   domainKey?: string | null;
   score: number;
@@ -26,9 +26,11 @@ export async function recordQuizAttempt(input: RecordQuizAttemptInput): Promise<
     return { ok: true };
   }
 
+  const dbMode = input.mode === 'module' ? 'fascicule' : input.mode;
+
   const row: QuizAttemptInsert = {
     user_id: user.id,
-    mode: input.mode,
+    mode: dbMode,
     fascicule_num: input.fasciculeNum ?? null,
     domain_key: input.domainKey ?? null,
     score: input.score,

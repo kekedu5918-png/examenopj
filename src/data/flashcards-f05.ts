@@ -78,7 +78,7 @@ export const flashcardsF05: Flashcard[] = [
   ),
   ...pair(
     'fc-f05-227-18',
-    'Mineurs (lien fascicule F05)',
+    'Mineurs (thème stupéfiants n°5)',
     'Provocation directe d’un mineur à l’usage de stupéfiants',
     '**Incitation directe et personnelle — distinguée de la propagande non directe (L.3421-4).**',
     '*Art. 227-18 al.1 du Code pénal* — ca *al.2* (mineur de 15 ans, lieux scolaires…).',
@@ -90,7 +90,7 @@ export const flashcardsF05: Flashcard[] = [
   ),
   ...pair(
     'fc-f05-227-18-1',
-    'Mineurs (lien fascicule F05)',
+    'Mineurs (thème stupéfiants n°5)',
     'Provocation directe d’un mineur au trafic de stupéfiants',
     '**Pousser le mineur au transport, à la revente ou à la complicité de trafic.**',
     '*Art. 227-18-1 al.1 du Code pénal*.',

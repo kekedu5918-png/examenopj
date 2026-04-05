@@ -64,9 +64,22 @@ export const COULEURS: Record<
     outlineBtn:
       'border-violet-500/40 text-violet-300 hover:bg-violet-500/10 hover:border-violet-400/60',
   },
+  amber: {
+    badge: 'border-amber-500/30 bg-amber-500/10 text-amber-200',
+    border: 'border-amber-500/40',
+    borderLeft: 'border-l-amber-500',
+    borderHover: 'hover:border-amber-500/50',
+    title: 'text-amber-300',
+    dot: 'bg-amber-400',
+    tabActive: 'bg-amber-500/15 text-amber-100',
+    tabUnderline: 'after:bg-amber-400',
+    tableHeader: 'bg-amber-500/20 text-amber-100',
+    outlineBtn:
+      'border-amber-500/40 text-amber-200 hover:bg-amber-500/10 hover:border-amber-400/60',
+  },
 };
 
-export const CAT_ORDER = ['procedure', 'droit-penal', 'acteurs', 'juridictions'] as const;
+export const CAT_ORDER = ['procedure', 'droit-penal', 'acteurs', 'juridictions', 'special'] as const;
 
 /** Premières fiches accessibles en freemium (ordre pédagogique dans les données). */
 export const FREEMIUM_UNLOCKED_IDS = new Set([

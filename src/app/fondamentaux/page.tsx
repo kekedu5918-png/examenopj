@@ -8,7 +8,7 @@ import { getContentAccess } from '@/features/access/get-content-access';
 export const metadata: Metadata = {
   title: 'Fondamentaux OPJ — Notions clés à maîtriser',
   description:
-    'Les notions clés pour l’examen OPJ : contrôle d’identité, garde à vue, mandats, OPJ/APJ, juridictions, infractions. Synthèse pour la révision 2026.',
+    'Les notions clés pour l’examen OPJ : contrôle d’identité, garde à vue, mandats, OPJ/APJ, juridictions, infractions. Contenu original conforme aux fascicules officiels du programme — synthèse pour la révision 2026.',
 };
 
 export default async function FondamentauxRoutePage() {

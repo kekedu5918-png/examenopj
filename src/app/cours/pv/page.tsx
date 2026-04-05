@@ -7,7 +7,7 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 export const metadata: Metadata = {
   title: 'Modèles de procès-verbaux — Examen OPJ',
   description:
-    'Procès-verbaux types : saisines, GAV, auditions, perquisitions, scellés et transmission — fondé sur le fascicule F11 et le C.P.P.',
+    'Procès-verbaux types : saisines, GAV, auditions, perquisitions, scellés et transmission — méthodologie alignée sur le Code de procédure pénale en vigueur.',
 };
 
 const categories = [

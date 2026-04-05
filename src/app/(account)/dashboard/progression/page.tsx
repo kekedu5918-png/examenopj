@@ -9,7 +9,7 @@ import {
 } from '@/features/examenopj/controllers/get-dashboard-data';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
-  if (row.mode === 'fascicule' && row.fascicule_num != null) {
+  if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
     return `Thème F${String(row.fascicule_num).padStart(2, '0')}`;
   }
   if (row.mode === 'domain' && row.domain_key) {

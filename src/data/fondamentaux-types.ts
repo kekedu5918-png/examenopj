@@ -1,4 +1,4 @@
-export type Categorie = 'procedure' | 'droit-penal' | 'acteurs' | 'juridictions';
+export type Categorie = 'procedure' | 'droit-penal' | 'acteurs' | 'juridictions' | 'special';
 
 export interface Regle {
   label: string;
@@ -20,7 +20,8 @@ export interface Fiche {
   source: string;
   regles: Regle[];
   tableau?: Tableau;
-  lienFascicule?: string;
+  /** Lien vers la fiche synthétique du thème correspondant sur ExamenOPJ. */
+  lienModule?: string;
   lienQuiz?: string;
 }
 
@@ -29,4 +30,5 @@ export const CATEGORIES: Record<Categorie, { label: string; couleur: string }> =
   'droit-penal': { label: 'Droit pénal', couleur: 'red' },
   acteurs: { label: 'Acteurs judiciaires', couleur: 'blue' },
   juridictions: { label: 'Juridictions', couleur: 'violet' },
+  special: { label: 'Thèmes spéciaux', couleur: 'amber' },
 };

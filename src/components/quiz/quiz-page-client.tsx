@@ -24,6 +24,7 @@ import {
   filterQuestions,
   fisherYates,
   getQuizStorageKey,
+  isThemeQuizMode,
   type QuizMode,
   readBestQuizPercent,
   recordQuizBestPercent,
@@ -99,7 +100,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   }, [access.maxQuizQuestionsPerDay, quotaTick]);
 
   const storageKey = useMemo(
-    () => getQuizStorageKey(mode, mode === 'fascicule' ? fascicule : undefined, mode === 'domain' ? domain : undefined),
+    () => getQuizStorageKey(mode, isThemeQuizMode(mode) ? fascicule : undefined, mode === 'domain' ? domain : undefined),
     [mode, fascicule, domain]
   );
 
@@ -109,13 +110,13 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     setLocalBest(readBestQuizPercent(storageKey));
   }, [storageKey, phase]);
 
-  /** Liens profonds : `/quiz?f=f03`, `/quiz?mode=fascicule&f=3`, domain, global… */
+  /** Liens profonds : `/quiz?f=f03`, `/quiz?mode=module&f=3` (ou `mode=fascicule`), domain, global… */
   useEffect(() => {
     const modeParam = searchParams.get('mode');
     const domainParam = searchParams.get('domain');
     const fParam = searchParams.get('f');
 
-    const resolveFasciculeNum = (raw: string | null): number | null => {
+    const resolveThemeNum = (raw: string | null): number | null => {
       if (!raw) return null;
       const n = Number.parseInt(raw, 10);
       if (!Number.isNaN(n) && fasciculeNums.includes(n)) return n;
@@ -129,16 +130,16 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
       return;
     }
 
-    const resolvedF = resolveFasciculeNum(fParam);
+    const resolvedF = resolveThemeNum(fParam);
 
-    if (modeParam === 'fascicule' && resolvedF != null) {
-      setMode('fascicule');
+    if ((modeParam === 'fascicule' || modeParam === 'module') && resolvedF != null) {
+      setMode('module');
       setFascicule(resolvedF);
       return;
     }
 
     if (!modeParam && resolvedF != null) {
-      setMode('fascicule');
+      setMode('module');
       setFascicule(resolvedF);
       return;
     }
@@ -162,7 +163,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     let pool = filterQuestions(
       quizQuestions,
       cfg.mode,
-      cfg.mode === 'fascicule' ? cfg.fascicule : undefined,
+      isThemeQuizMode(cfg.mode) ? cfg.fascicule : undefined,
       cfg.mode === 'domain' ? cfg.domain : undefined
     );
     pool = fisherYates(pool);
@@ -178,7 +179,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
       {
         mode,
         limit,
-        ...(mode === 'fascicule' ? { fascicule } : {}),
+        ...(isThemeQuizMode(mode) ? { fascicule } : {}),
         ...(mode === 'domain' ? { domain } : {}),
       },
       quizRemainingToday
@@ -189,7 +190,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     const cfg: LaunchConfig = {
       mode,
       limit,
-      ...(mode === 'fascicule' ? { fascicule } : {}),
+      ...(isThemeQuizMode(mode) ? { fascicule } : {}),
       ...(mode === 'domain' ? { domain } : {}),
     };
     const cap =
@@ -206,7 +207,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     const key = launchConfig
       ? getQuizStorageKey(
           launchConfig.mode,
-          launchConfig.mode === 'fascicule' ? launchConfig.fascicule : undefined,
+          isThemeQuizMode(launchConfig.mode) ? launchConfig.fascicule : undefined,
           launchConfig.mode === 'domain' ? launchConfig.domain : undefined
         )
       : storageKey;
@@ -222,7 +223,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     if (launchConfig) {
       void recordQuizAttempt({
         mode: launchConfig.mode,
-        fasciculeNum: launchConfig.mode === 'fascicule' ? (launchConfig.fascicule ?? null) : null,
+        fasciculeNum: isThemeQuizMode(launchConfig.mode) ? (launchConfig.fascicule ?? null) : null,
         domainKey: launchConfig.mode === 'domain' ? (launchConfig.domain ?? null) : null,
         score: correct,
         total,
@@ -329,20 +330,20 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
             <div
               role='button'
               tabIndex={0}
-              className={modeCardClass(mode === 'fascicule', 'shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]')}
-              onClick={() => setMode('fascicule')}
+              className={modeCardClass(mode === 'module', 'shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]')}
+              onClick={() => setMode('module')}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  setMode('fascicule');
+                  setMode('module');
                 }
               }}
             >
               <GlassCard hover padding='p-6' className='h-full'>
               <BookOpen className='h-10 w-10 text-cyan-400' strokeWidth={1.25} />
-              <h3 className='mt-4 font-semibold text-white'>Par fascicule</h3>
-              <p className='mt-2 text-sm text-gray-500'>Choisissez un fascicule</p>
-              {mode === 'fascicule' ? (
+              <h3 className='mt-4 font-semibold text-white'>Par module thématique</h3>
+              <p className='mt-2 text-sm text-gray-500'>Choisissez un thème du programme</p>
+              {mode === 'module' ? (
                 <label className='mt-4 block text-left'>
                   <span className='sr-only'>Module thématique</span>
                   <select

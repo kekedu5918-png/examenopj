@@ -6,7 +6,7 @@ import { APP_NAME } from '@/constants/site';
 
 export const metadata: Metadata = {
   title: 'Infractions',
-  description: `${APP_NAME} : référentiel des infractions (F01 à F07) — recherche, éléments légaux, matériel et moral. Préparation examen OPJ.`,
+  description: `${APP_NAME} : référentiel des infractions (thèmes personnes et biens du programme) — recherche, éléments légaux, matériel et moral. Préparation examen OPJ.`,
   alternates: { canonical: '/infractions' },
 };
 

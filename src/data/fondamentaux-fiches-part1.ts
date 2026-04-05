@@ -8,9 +8,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: "Les cadres d'enquête",
     accroche:
       "Trois cadres juridiques encadrent l'action de l'OPJ : la flagrance, l'enquête préliminaire et la commission rogatoire.",
-    source: 'F11 — Art. 53, 75, 81 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 53, 75, 81 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'Flagrance (art. 53 C.P.P.)',
@@ -53,9 +53,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: "Le contrôle d'identité",
     accroche:
       "Le contrôle d'identité permet à l'OPJ ou l'APJ d'inviter une personne à justifier de son identité dans les cas prévus par la loi.",
-    source: 'F11 — Art. 78-2 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 78-2 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'Cas n°1 — Police judiciaire (art. 78-2 al. 1)',
@@ -96,9 +96,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'La garde à vue (GAV)',
     accroche:
       'Mesure de contrainte décidée par l\'OPJ, sous contrôle de l\'autorité judiciaire, maintenant à disposition des enquêteurs une personne soupçonnée.',
-    source: 'F11 — Art. 62-2, 63, 63-1 à 64-1 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 62-2, 63, 63-1 à 64-1 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'Conditions cumulatives (art. 62-2 C.P.P.)',
@@ -108,15 +108,16 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
         alerte: true,
       },
       {
-        label: 'Durée',
+        label: 'Durée (droit commun, art. 63-II C.P.P.)',
         detail:
-          '24h de plein droit. Prolongeable 24h sur autorisation du PR (présentation physique ou visioconférence). En criminalité organisée : 96h (2 prolongations de 24h chacune autorisées par le JLD).',
-        article: 'Art. 63 C.P.P.',
+          "24 h maximum en première phase. Une prolongation d'autre 24 h est possible uniquement si l'infraction soupçonnée est un crime ou un délit puni d'une peine d'emprisonnement supérieure ou égale à un an, et si cette prolongation est l'unique moyen d'atteindre un des six objectifs de l'art. 62-2 ou de permettre la présentation devant l'autorité judiciaire (dont visioconférence). Décision motivée du procureur de la République.",
+        article: 'Art. 63-II C.P.P.',
+        alerte: true,
       },
       {
         label: 'Droits notifiés immédiatement (art. 63-1)',
         detail:
-          "1. Droit de faire prévenir un proche et l'employeur. 2. Droit à un examen médical. 3. Droit à l'assistance d'un avocat (dès le début, sauf report). 4. Droit d'être examiné par un médecin. 5. Droit au silence. 6. Droit à un interprète. 7. Droit d'être informé de la qualification, date, lieu de l'infraction.",
+          "Notifier sans délai : informations sur les droits (proche, employeur), examen médical d'office et possibilité d'un second examen, assistance d'un avocat (sauf reports exceptionnels prévus par la loi), droit au silence, interprète, qualification et circonstances des faits.",
         article: 'Art. 63-1 à 63-3-1 C.P.P.',
       },
       {
@@ -137,13 +138,48 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
           "Avis immédiat au PR lors du placement. Si prolongation : présentation de la personne au PR. Registre de garde à vue tenu obligatoirement.",
         article: 'Art. 63 al. 2 et 64 C.P.P.',
       },
+      {
+        label: 'Mineurs de 13 à 16 ans (régime renforcé)',
+        detail:
+          "Audition ou GAV : présence obligatoire d'un parent, tuteur ou personne majeure désignée ; avocat obligatoire ; possibilités de report encadrées selon le texte. Ne jamais placer un mineur de moins de 13 ans en GAV.",
+        article: 'Art. 61-8 et 63-2 C.P.P.',
+        alerte: true,
+      },
+      {
+        label: 'Reprise de garde à vue entrecoupée',
+        detail:
+          "Si la personne est déférée au parquet puis réintégrée en GAV : la durée totale reste plafonnée par la loi ; chaque phase doit être motivée et contrôlée. Une rupture mal documentée dans les notifications ou présentations peut entraîner un grief utile (nullité substantielle).",
+        article: 'Art. 63 et 803 C.P.P.',
+        alerte: true,
+      },
     ],
     tableau: {
-      colonnes: ['Cadre', 'Durée initiale', 'Prolongation', 'Autorisation'],
+      colonnes: ['Cadre', 'Plafond usuel', 'Prolongations exceptionnelles', 'Autorité'],
       lignes: [
-        ['Droit commun', '24h', '+24h', 'Procureur de la République'],
-        ['Crim. organisée', '48h', '+24h + 24h', 'JLD (sur présentation)'],
-        ['Terrorisme', '48h', '+24h + 24h', 'JLD'],
+        [
+          'Droit commun (crime ou délit ≥ 1 an pour +24 h)',
+          '24 h puis +24 h',
+          '—',
+          'PR (prolongation)',
+        ],
+        [
+          'Infractions art. 706-73 (hors cas particuliers)',
+          'Comme le droit commun puis au-delà de 48 h',
+          'Soit 2 × 24 h (total 96 h), soit 1 × 48 h si le justifie',
+          'JLD ou JI (écrit motivé, présentation en règle générale)',
+        ],
+        [
+          'Infractions art. 706-73-1 et 706-74',
+          'Identique droit commun',
+          'Pas le régime 706-88',
+          'PR pour la prolongation ordinaire',
+        ],
+        [
+          'Terrorisme (art. 706-88-1)',
+          'Jusqu’à 144 h',
+          'Mécanisme dérogatoire spécifique',
+          'JLD / magistrats habilités',
+        ],
       ],
     },
   },
@@ -153,9 +189,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'La perquisition',
     accroche:
       "Acte d'enquête consistant à pénétrer dans un lieu pour y rechercher des preuves ou des personnes.",
-    source: 'F11 — Art. 56 à 59, 76 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 56 à 59, 76 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'En flagrance (art. 56)',
@@ -189,6 +225,20 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
           "Tout ce qui peut servir à la manifestation de la vérité peut être saisi. Chaque objet saisi est mis sous scellé, inventorié, et une liste est remise à la personne.",
         article: 'Art. 56 et D 15-5-1-1 C.P.P.',
       },
+      {
+        label: 'Fouilles et palpations de sûreté (personnes)',
+        detail:
+          "À distinguer de la visite à corps à nu : la palpation de sûreté sécurise l'intervention ; la fouille intégrale (vide-sacs) prolonge le contrôle. Fondement : cadre d'enquête, proportionnalité, dignité — relever les traces horaires, l'identité des enquêteurs et la présence avocat / représentants lorsque le texte l'exige.",
+        article: 'Art. 56 et 59 C.P.P.',
+        alerte: true,
+      },
+      {
+        label: 'Dérogations criminalité organisée',
+        detail:
+          "Certaines hypothèses (infractions d'atteinte aux biens en bande organisée, criminalité organisée, stupéfiants) autorisent des temps d'intervention ou des modalités dérogatoires (y compris fenêtres nocturnes) sous contrôle du JLD et motifs écrits.",
+        article: 'Art. 706-73 et suivants C.P.P.',
+        alerte: true,
+      },
     ],
   },
   {
@@ -197,9 +247,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'Les mandats de justice',
     accroche:
       'Les mandats sont des actes écrits par lesquels le juge d\'instruction ordonne la comparution, la remise en liberté ou l\'incarcération d\'une personne.',
-    source: 'F12 — Art. 122 à 136 C.P.P.',
-    lienFascicule: '/cours/modules/f12',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f12',
+    source: 'Art. 122 à 136 C.P.P.',
+    lienModule: '/cours/modules/f12',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f12',
     regles: [
       {
         label: 'Mandat de recherche',
@@ -254,15 +304,16 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'Les auditions',
     accroche:
       "L'audition est la procédure par laquelle l'OPJ recueille les déclarations d'une personne. Le statut de la personne entendue détermine les droits applicables.",
-    source: 'F11 — Art. 61 à 62, Art. 63-4 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 61 à 62, Art. 63-4 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'Témoin (art. 62 C.P.P.)',
         detail:
-          "Personne à l'encontre de laquelle il n'existe aucune raison plausible de soupçonner une infraction. Retenu max 4h. Pas de droit à l'avocat. Prête serment (dire la vérité). Peut être convoqué par l'OPJ.",
+          "Personne sans raison plausible de soupçon. Audition : retenu le temps strictement nécessaire, sans excéder 4 h par audition ; plusieurs auditions de 4 h sont possibles si la personne a quitté librement les locaux entre-temps et qu'une convocation a été remise. Pas d'avocat. Serment de dire la vérité. Si des soupçons apparaissent : placement en GAV si conditions réunies (art. 62 al. 4).",
         article: 'Art. 62 C.P.P.',
+        alerte: true,
       },
       {
         label: 'Audition libre (art. 61-1 C.P.P.)',
@@ -305,9 +356,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'Les réquisitions',
     accroche:
       "Les réquisitions permettent à l'OPJ d'obtenir de toute personne ou organisme des informations, des données ou des examens techniques nécessaires à l'enquête.",
-    source: 'F11 — Art. 60, 60-1, 60-2, 60-3 C.P.P.',
-    lienFascicule: '/cours/modules/f11',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f11',
+    source: 'Art. 60, 60-1, 60-2, 60-3 C.P.P.',
+    lienModule: '/cours/modules/f11',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
       {
         label: 'Réquisitions à personne qualifiée (art. 60)',
@@ -349,9 +400,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'Contrôle judiciaire, ARSE et détention provisoire',
     accroche:
       "Trois mesures de contrainte alternatives ou cumulatives décidées par le JLD en cours d'instruction, par ordre croissant de sévérité.",
-    source: 'F12 — Art. 137 à 148-9 C.P.P.',
-    lienFascicule: '/cours/modules/f12',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f12',
+    source: 'Art. 137 à 148-9 C.P.P.',
+    lienModule: '/cours/modules/f12',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f12',
     regles: [
       {
         label: 'Contrôle judiciaire (CJ) — art. 138',
@@ -400,9 +451,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'Les nullités de procédure',
     accroche:
       'La nullité est la sanction d\'un acte de procédure irrégulier. Elle détruit ses effets juridiques et ceux des actes qui en découlent.',
-    source: 'F15 — Art. 802, 173, 174 C.P.P.',
-    lienFascicule: '/cours/modules/f15',
-    lienQuiz: '/entrainement/quiz?mode=fascicule&f=f15',
+    source: 'Art. 802, 173, 174 C.P.P.',
+    lienModule: '/cours/modules/f15',
+    lienQuiz: '/entrainement/quiz?mode=module&f=f15',
     regles: [
       {
         label: 'Nullités textuelles',

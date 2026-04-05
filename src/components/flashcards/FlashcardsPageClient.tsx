@@ -374,11 +374,11 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
           </div>
 
           <div className='space-y-2'>
-            <label htmlFor='flash-fascicule' className='text-sm font-medium text-gray-300'>
+            <label htmlFor='flash-theme' className='text-sm font-medium text-gray-300'>
               Module thématique (F)
             </label>
             <select
-              id='flash-fascicule'
+              id='flash-theme'
               disabled={categoryFilter !== 'all'}
               value={fascicule === 'all' ? 'all' : String(fascicule)}
               onChange={(e) => {

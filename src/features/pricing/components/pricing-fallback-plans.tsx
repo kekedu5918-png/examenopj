@@ -10,7 +10,7 @@ const PLANS_FALLBACK = [
     period: '',
     description: 'Pour commencer et évaluer la plateforme',
     features: [
-      'Accès à tous les 15 fascicules (texte intégral)',
+      'Accès à toutes les fiches des 15 thèmes du programme',
       'Référentiel infractions F01 et F02',
       'Quiz : 10 questions par session',
       'Flashcards : accès limité',
@@ -27,7 +27,7 @@ const PLANS_FALLBACK = [
     description: 'Pour une préparation complète et sans limites',
     features: [
       'Tout le plan Gratuit',
-      'Quiz illimité — par fascicule, domaine, global',
+      'Quiz illimité — par thème, domaine, global',
       'Toutes les flashcards (150+ infractions)',
       'Récapitulatif complet F01–F15',
       'Infractions F03 à F15 dans le référentiel',

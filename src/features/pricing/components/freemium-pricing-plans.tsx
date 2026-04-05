@@ -190,7 +190,7 @@ export function FreemiumPricingPlans({
         <div className='rounded-xl border border-white/10 bg-white/[0.03] p-5'>
           <dt className='font-semibold text-amber-200/90'>Que se passe-t-il après les 7 jours ?</dt>
           <dd className='mt-2 text-gray-400'>
-            Votre compte passe automatiquement en accès freemium. Vous conservez les fascicules en lecture et le
+            Votre compte passe automatiquement en accès freemium. Vous conservez les modules de cours en lecture et le
             récapitulatif. Les quiz sont limités à 5 par jour, les flashcards à 5 par jour. Les fondamentaux et la
             méthodologie des épreuves sont réservés au Premium.
           </dd>

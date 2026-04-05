@@ -108,7 +108,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
           <p className='mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500'>Entraînement sur ce thème</p>
           <div className='grid gap-3 sm:grid-cols-2'>
             <TrainingCard
-              href={`/entrainement/quiz?mode=fascicule&f=${m.id}`}
+              href={`/entrainement/quiz?mode=module&f=${m.id}`}
               title={`Quiz — F${String(m.numero).padStart(2, '0')}`}
               description='Questions ciblées sur le même regroupement thématique.'
               classTile='border-cyan-500/20 bg-cyan-500/[0.06]'

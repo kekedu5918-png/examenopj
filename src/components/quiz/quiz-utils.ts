@@ -1,6 +1,10 @@
 import { type QuizQuestion } from '@/data/types';
 
-export type QuizMode = 'global' | 'fascicule' | 'domain';
+export type QuizMode = 'global' | 'fascicule' | 'module' | 'domain';
+
+export function isThemeQuizMode(mode: QuizMode): boolean {
+  return mode === 'fascicule' || mode === 'module';
+}
 
 export function fisherYates<T>(array: T[]): T[] {
   const arr = [...array];
@@ -18,7 +22,7 @@ export function filterQuestions(
   domain?: QuizQuestion['domaine']
 ): QuizQuestion[] {
   if (mode === 'global') return [...all];
-  if (mode === 'fascicule' && fascicule != null) return all.filter((q) => q.fascicule === fascicule);
+  if (isThemeQuizMode(mode) && fascicule != null) return all.filter((q) => q.fascicule === fascicule);
   if (mode === 'domain' && domain) return all.filter((q) => q.domaine === domain);
   return [...all];
 }
@@ -36,7 +40,7 @@ export function getQuizStorageKey(
   fascicule?: number,
   domain?: QuizQuestion['domaine']
 ): string {
-  if (mode === 'fascicule' && fascicule != null) return `quiz-best-fascicule-${fascicule}`;
+  if (isThemeQuizMode(mode) && fascicule != null) return `quiz-best-fascicule-${fascicule}`;
   if (mode === 'domain' && domain) return `quiz-best-domain-${domain}`;
   return 'quiz-best-global';
 }

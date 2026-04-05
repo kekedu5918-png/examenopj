@@ -1,8 +1,11 @@
-import { type NextRequest } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 import { updateSession } from '@/libs/supabase/supabase-middleware-client';
 
 export async function middleware(request: NextRequest) {
+  if (request.nextUrl.pathname.startsWith('/cours-texte')) {
+    return new NextResponse(null, { status: 404, statusText: 'Not Found' });
+  }
   return await updateSession(request);
 }
 

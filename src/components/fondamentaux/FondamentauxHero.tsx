@@ -19,6 +19,7 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
       'droit-penal': 0,
       acteurs: 0,
       juridictions: 0,
+      special: 0,
     };
     for (const f of fiches) {
       m[f.categorie] += 1;
@@ -30,7 +31,6 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
   const pct = total > 0 ? Math.min(100, Math.round((viewedCount / total) * 100)) : 0;
 
   const miniLine = CAT_ORDER.map((key) => {
-    const cfg = categories[key];
     const n = counts[key];
     const short =
       key === 'procedure'
@@ -39,7 +39,9 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
           ? 'Droit pénal'
           : key === 'acteurs'
             ? 'Acteurs'
-            : 'Juridictions';
+            : key === 'juridictions'
+              ? 'Juridictions'
+              : 'Spéciaux';
     return `${n} fiche${n > 1 ? 's' : ''} ${short}`;
   }).join(' · ');
 

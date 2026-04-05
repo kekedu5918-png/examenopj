@@ -17,28 +17,29 @@ export const examenModules: ExamenModule[] = [
   {
     id: '_01',
     titre: 'Procédure pénale',
-    description: 'Fiches F11–F15 : mission PJ, instruction, juridictions, parquet, nullités.',
+    description:
+      'Synthèses procédure : mission PJ, instruction, juridictions, parquet, nullités — thèmes 11 à 15 du programme.',
     href: '/cours/modules#cours-domain-PROCEDURE',
     ordre: 1,
   },
   {
     id: '_02',
     titre: 'Infractions personnes',
-    description: 'Référentiel et fiches F01 : atteintes aux personnes.',
+    description: 'Référentiel et thème « personnes » (programme n°1) : atteintes aux personnes.',
     href: '/dashboard/infractions',
     ordre: 2,
   },
   {
     id: '_03',
     titre: 'Biens et circulation',
-    description: 'Atteintes aux biens, route et thèmes voisins (F02, F03…).',
+    description: 'Atteintes aux biens, circulation routière et thèmes voisins du programme.',
     href: '/dashboard/infractions',
     ordre: 3,
   },
   {
     id: '_04',
     titre: 'Droit pénal général',
-    description: 'Fiches F09–F10 : loi pén, responsabilité, peines et récidive.',
+    description: 'Droit pénal général : loi pénale, responsabilité, peines et récidive (thèmes 9 et 10).',
     href: '/cours/modules#cours-domain-DPG',
     ordre: 4,
   },

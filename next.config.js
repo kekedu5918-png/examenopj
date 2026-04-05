@@ -34,6 +34,10 @@ const nextConfig = {
     }
     return [
       { source: '/:path*', headers: security },
+      {
+        source: '/cours-texte/:path*',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
       // Ne pas indexer les déploiements *.vercel.app et autres hôtes non canoniques
       {
         source: '/:path*',
@@ -42,9 +46,19 @@ const nextConfig = {
       },
     ];
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: '/cours-texte/:path*',
+          destination: '/404',
+        },
+      ],
+    };
+  },
   async redirects() {
     return [
-      { source: '/fascicules', destination: '/cours/modules', permanent: true },
+      { source: '/fascicules', destination: '/programme', permanent: true },
       { source: '/fascicules/:id', destination: '/cours/modules/:id', permanent: true },
       { source: '/quiz', destination: '/entrainement/quiz', permanent: true },
       { source: '/flashcards', destination: '/entrainement/flashcards', permanent: true },

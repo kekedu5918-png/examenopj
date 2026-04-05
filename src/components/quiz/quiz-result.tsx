@@ -21,7 +21,7 @@ export function QuizResult({ correct, total, bestPercent, onRecommencer, onChang
   const pct = total > 0 ? Math.round((correct / total) * 1000) / 10 : 0;
   const emoji = pct >= 90 ? '🏆' : pct >= 70 ? '🎯' : pct >= 50 ? '👍' : '📖';
   const msg =
-    pct >= 90 ? 'Excellent !' : pct >= 70 ? 'Très bien !' : pct >= 50 ? 'Pas mal, continuez !' : 'Reprenez les fascicules';
+    pct >= 90 ? 'Excellent !' : pct >= 70 ? 'Très bien !' : pct >= 50 ? 'Pas mal, continuez !' : 'Reprenez les fiches du programme';
 
   const scoreColor = pct >= 70 ? 'text-emerald-400' : pct >= 50 ? 'text-amber-400' : 'text-red-400';
   const wrong = total - correct;

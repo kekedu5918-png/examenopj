@@ -59,7 +59,7 @@ export function RecapitulatifPageClient({ initialFasc }: { initialFasc?: string 
 
       <GlassCard className='mb-8 space-y-4 p-6' padding=''>
         <p className='text-sm text-gray-400'>
-          Filtre par fascicule. Le détail complet se trouve dans les flashcards correspondantes.
+          Filtre par thème du programme. Le détail complet se trouve dans les flashcards correspondantes.
         </p>
         <div className='flex flex-wrap gap-2'>
           {(

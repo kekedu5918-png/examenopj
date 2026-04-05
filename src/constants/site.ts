@@ -2,6 +2,11 @@
 export const APP_NAME = 'ExamenOPJ';
 export const APP_TAGLINE = "Révisions pour l'examen d'Officier de Police Judiciaire";
 
+export const EXAM_DATE = new Date('2026-06-15');
+export const EXAM_LABEL = 'Juin 2026';
+export const EXAM_YEAR = 2026;
+export const PROGRAM_VERSION = 'Programme officiel en vigueur';
+
 /** Mots-clés SEO (page d’accueil / marque) — à enrichir avec vos requêtes Analytics Search Console. */
 export const SEO_KEYWORDS = [
   'examen OPJ',

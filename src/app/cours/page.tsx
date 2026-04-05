@@ -10,7 +10,7 @@ import { cn } from '@/utils/cn';
 export const metadata: Metadata = {
   title: 'Cours — Examen OPJ',
   description:
-    'Parcours pédagogique : fiches de synthèse F01–F15, fondamentaux, guide de révision et outils de rédaction pour le concours OPJ.',
+    'Parcours pédagogique : sommaire du programme, fiches de synthèse par thème, fondamentaux, guide de révision et outils de rédaction pour le concours OPJ.',
 };
 
 function moduleDomainKey(m: (typeof fasciculesList)[number]): Domain {
@@ -27,10 +27,16 @@ const DOMAIN_BADGE: Record<Domain, string> = {
 
 const hubLinks = [
   {
-    href: '/cours/modules',
-    title: 'Fiches F01–F15',
-    desc: 'Synthèses structurées par thème : droit pénal spécial, général et procédure.',
+    href: '/programme',
+    title: 'Programme (sommaire)',
+    desc: 'Les 15 thèmes officiels : structure, domaines DPS / DPG / procédure et liens vers l’entraînement.',
     accent: 'from-cyan-500/15 to-transparent',
+  },
+  {
+    href: '/cours/modules',
+    title: 'Fiches par thème',
+    desc: 'Synthèses structurées : droit pénal spécial, général et procédure.',
+    accent: 'from-sky-500/15 to-transparent',
   },
   { href: '/fondamentaux', title: 'Fondamentaux', desc: 'GAV, contrôles, mandats, OPJ/APJ, juridictions.', accent: 'from-violet-500/15 to-transparent' },
   {
@@ -76,10 +82,16 @@ export default function CoursHubPage() {
         />
         <div className='relative mt-8 flex flex-wrap gap-3'>
           <Link
-            href='/cours/modules'
+            href='/programme'
             className='inline-flex items-center rounded-xl bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition hover:bg-cyan-400'
           >
-            Ouvrir les fiches F01–F15
+            Voir le programme
+          </Link>
+          <Link
+            href='/cours/modules'
+            className='inline-flex items-center rounded-xl border border-cyan-500/50 px-5 py-2.5 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-500/10'
+          >
+            Fiches par thème
           </Link>
           <Link
             href='/entrainement'

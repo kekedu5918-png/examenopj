@@ -166,9 +166,9 @@ export function FondamentauxDrawer({
                     Quiz sur ce thème →
                   </Link>
                 ) : null}
-                {fiche.lienFascicule ? (
+                {fiche.lienModule ? (
                   <Link
-                    href={fiche.lienFascicule}
+                    href={fiche.lienModule}
                     className={cn(
                       'inline-flex flex-1 items-center justify-center rounded-lg border px-4 py-2.5 text-sm font-medium transition-colors sm:flex-none',
                       c.outlineBtn

@@ -106,7 +106,7 @@ export default function GuideRevisionOpjPage() {
                   <li>
                     Puis <strong className='text-gray-200'>F01, F02, F03</strong> : infractions les plus fréquentes.
                   </li>
-                  <li>Quiz court (10 questions) après chaque fascicule.</li>
+                  <li>Quiz court (10 questions) après chaque module thématique.</li>
                   <li>Ne pas chercher à tout retenir : repérer les zones opaques.</li>
                 </ul>
               </div>
