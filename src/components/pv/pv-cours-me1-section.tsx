@@ -1,5 +1,6 @@
 'use client';
 
+import { PVCoursPhaseAExercises } from '@/components/pv/pv-cours-phase-a-exercises';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 import { PVMe1VerbatimPlainte } from './pv-me1-verbatim-plainte';
@@ -38,6 +39,8 @@ export function PVCoursMe1Section() {
           <PVRedactionPlainteExercise />
         </TabsContent>
       </Tabs>
+
+      <PVCoursPhaseAExercises />
     </div>
   );
 }

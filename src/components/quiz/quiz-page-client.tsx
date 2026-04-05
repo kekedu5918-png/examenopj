@@ -532,6 +532,19 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         </div>
 
         <div className='mt-12 flex flex-col items-center gap-6'>
+          {poolPreview.length === 0 ? (
+            <p className='max-w-lg text-center text-sm leading-relaxed text-rose-200/95'>
+              Aucune question valide pour cette sélection (entrées filtrées : énoncé trop court, options manquantes ou
+              correction hors plage). Choisissez un autre module, le quiz global ou le domaine « Procédure » — les jeux
+              mélangés contiennent en général plus de volume.
+            </p>
+          ) : (
+            <p className='text-center text-sm text-gray-400'>
+              <span className='font-semibold tabular-nums text-cyan-300/90'>{poolPreview.length}</span> question
+              {poolPreview.length > 1 ? 's' : ''} prête{poolPreview.length > 1 ? 's' : ''} pour une série avec les réglages
+              actuels (après mélange et plafond éventuel).
+            </p>
+          )}
           <button
             type='button'
             onClick={handleLaunch}

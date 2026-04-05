@@ -13,6 +13,11 @@ export const navigation = {
           href: '/cours/enquetes',
           description: 'Mises en situation complètes',
         },
+        {
+          name: 'Procès-verbaux (ME1)',
+          href: '/cours/pv',
+          description: 'Modèles deux colonnes, mentions obligatoires et exercices à trous',
+        },
       ],
     },
     {
@@ -77,6 +82,11 @@ export const navigation = {
           name: 'Articulation interactive',
           href: '/entrainement/articulation',
           description: 'Enchaîner qualification et procédure',
+        },
+        {
+          name: 'Procès-verbaux (texte à trous)',
+          href: '/cours/pv',
+          description: 'ME1 : plainte, notification GAV, fin de GAV et suite du programme',
         },
       ],
     },

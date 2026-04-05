@@ -19,7 +19,7 @@ const toc = [
   { id: 'epreuves', label: 'Les 3 épreuves' },
   { id: 'plan', label: 'Plan en 3 phases' },
   { id: 'erreurs', label: 'Erreurs fréquentes' },
-  { id: 'outils', label: 'Les 5 outils' },
+  { id: 'outils', label: 'Les 6 outils' },
   { id: 'faq', label: 'FAQ' },
 ] as const;
 
@@ -155,7 +155,7 @@ export default function GuideRevisionOpjPage() {
           </section>
 
           <section id='outils' className='scroll-mt-24'>
-            <h2 className='font-display text-2xl font-bold text-white'>Les 5 outils</h2>
+            <h2 className='font-display text-2xl font-bold text-white'>Les 6 outils</h2>
             <div className='mt-6 grid gap-4 sm:grid-cols-2'>
               <Link
                 href='/fondamentaux'
@@ -191,11 +191,21 @@ export default function GuideRevisionOpjPage() {
               </Link>
               <Link
                 href='/entrainement/flashcards'
-                className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-cyan-500/40 hover:bg-white/[0.06] sm:col-span-2'
+                className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-cyan-500/40 hover:bg-white/[0.06]'
               >
                 <p className='text-xs font-semibold uppercase tracking-wide text-cyan-400'>5</p>
                 <p className='mt-2 font-display text-lg font-semibold text-white'>Flashcards</p>
                 <p className='mt-2 text-sm text-gray-400'>Mémorisation quotidienne.</p>
+              </Link>
+              <Link
+                href='/cours/pv'
+                className='rounded-2xl border border-white/15 bg-white/[0.04] p-6 transition hover:border-emerald-500/40 hover:bg-white/[0.06]'
+              >
+                <p className='text-xs font-semibold uppercase tracking-wide text-emerald-400'>6</p>
+                <p className='mt-2 font-display text-lg font-semibold text-white'>Procès-verbaux ME1</p>
+                <p className='mt-2 text-sm text-gray-400'>
+                  Modèles, mentions et textes à trous pour l’épreuve 2 — à enchaîner après la méthode rédactionnelle.
+                </p>
               </Link>
             </div>
           </section>

@@ -4,6 +4,12 @@ import Link from 'next/link';
 import { PVCoursMe1Section } from '@/components/pv/pv-cours-me1-section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import {
+  PV_FIN_GAV_VERBATIM_MODELE,
+  PV_NOTIFICATION_GAV_VERBATIM_MODELE,
+} from '@/data/pv-me1-verbatim-phase-a';
+import { PV_PAGE_SAMPLES } from '@/data/pv-page-catalog';
+import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   title: 'Modèles de procès-verbaux — Examen OPJ',
@@ -24,61 +30,8 @@ const categories = [
   'Clôture et transmission',
 ] as const;
 
-const samples = [
-  {
-    title: 'PV de saisine / plainte',
-    articles: ['Art. 15-3 C.P.P.', 'Art. 10-2 C.P.P.'],
-    mentions:
-      'Identité du plaignant, date/heure/lieu, circonstances, préjudice (matériel, physique, moral), ITT, N° sécurité sociale, partie civile.',
-    erreurs:
-      'Omission de mentions obligatoires, notification des droits de la victime incomplète, qualification imprécise des faits.',
-  },
-  {
-    title: 'PV de notification de placement en GAV',
-    articles: ['Art. 63-1 C.P.P.', 'Art. 62-2 C.P.P.', 'Art. 63-III C.P.P.'],
-    mentions:
-      'Huit droits (infraction, durée, prévenir un tiers, médecin, avocat, silence, déclarations/interrogatoire, interprète) ; heure de début ; motifs au sens de l’art. 62-2 (six motifs).',
-    erreurs:
-      'Notification tardive ou imprécise, méconnaissance du chrono GAV, confusion avec audition libre.',
-  },
-  {
-    title: "PV d'audition de victime",
-    articles: ['Art. 10-2 C.P.P.'],
-    mentions: 'Identité vérifiée, notification des droits, Q/R détaillées, relecture et signature, ITT et partie civile.',
-    erreurs: 'Questions orientées, absence de relecture, oubli des droits de la victime.',
-  },
-  {
-    title: "PV d'audition de témoin",
-    articles: ['Art. 62 C.P.P.', 'Art. 78 C.P.P.'],
-    mentions:
-      'Cadre flagrance ou enquête préliminaire, identité, durée (ex. 4 h hors soupçon), Q/R, relecture, pas de serment sauf cas prévus.',
-    erreurs:
-      'Confusion de qualité (témoin / suspect), absence de relecture, audition au-delà des durées légales.',
-  },
-  {
-    title: "PV d'audition du suspect en audition libre",
-    articles: ['Art. 61-1 C.P.P.'],
-    mentions:
-      'Qualification des faits, droit de quitter les locaux, avocat, interprète, silence, mention explicite : la personne n’est pas en GAV.',
-    erreurs:
-      'Ambiguïté sur le régime (libre / GAV), défaut de notification des droits spécifiques à l’audition libre.',
-  },
-  {
-    title: 'PV de perquisition',
-    articles: ['Art. 56 C.P.P.', 'Art. 76 C.P.P.'],
-    mentions:
-      'Heures légales (6 h–21 h sauf cas), présence ou deux témoins, assentiment écrit en préliminaire, état des saisies, scellés.',
-    erreurs:
-      'Nullité pour horaires non dérogés, carence de témoins, inventaire incomplet des supports numériques.',
-  },
-  {
-    title: 'PV de fin de GAV',
-    articles: ['Art. 64 C.P.P.'],
-    mentions:
-      'Motifs, début et fin avec horodatage, auditions et temps de repos, alimentation, destination (liberté, défèrement, etc.).',
-    erreurs: 'Délais dépassés, mentions chronologiques incohérentes, destination omise.',
-  },
-] as const;
+const phaseACount = PV_PAGE_SAMPLES.filter((s) => s.phase === 'A').length;
+const phaseBCount = PV_PAGE_SAMPLES.filter((s) => s.phase === 'B').length;
 
 export default function ModelesPVPage() {
   return (
@@ -90,6 +43,39 @@ export default function ModelesPVPage() {
         subtitle='Structure par rubrique : cartouche, articles, mentions et erreurs fréquentes (nullités possibles)'
         className='mb-8'
       />
+
+      <nav
+        aria-label='Accès rapide sur la page PV'
+        className='mb-8 flex flex-wrap items-center gap-2 rounded-2xl border border-white/10 bg-navy-950/50 px-4 py-3'
+      >
+        <span className='w-full text-[10px] font-bold uppercase tracking-wider text-gray-500 sm:mr-1 sm:w-auto sm:self-center'>
+          Accès rapide
+        </span>
+        <Link
+          href='#me1-pv'
+          className='rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-medium text-emerald-200 hover:bg-emerald-500/20'
+        >
+          ME1 — modèles &amp; exercices
+        </Link>
+        <Link
+          href='#pv-exercice-notification-gav'
+          className='rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-gray-300 hover:border-white/20'
+        >
+          À trous — notification GAV
+        </Link>
+        <Link
+          href='#pv-exercice-fin-gav'
+          className='rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-gray-300 hover:border-white/20'
+        >
+          À trous — fin de GAV
+        </Link>
+        <Link
+          href='#pv-fiche-plainte'
+          className='rounded-lg border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-gray-300 hover:border-white/20'
+        >
+          Fiche plainte
+        </Link>
+      </nav>
 
       <GlassCard className='mb-10 p-6' padding=''>
         <h2 className='text-sm font-semibold uppercase tracking-wide text-gray-400'>Programme PV (rappel)</h2>
@@ -110,25 +96,89 @@ export default function ModelesPVPage() {
           droite), rattachement aux rubriques N°, <strong className='font-mono text-gray-300'>AFFAIRE</strong>,{' '}
           <strong className='font-mono text-gray-300'>OBJET</strong>.{' '}
           <Link href='#me1-pv' className='font-medium text-emerald-400/90 underline-offset-2 hover:underline'>
-            Aller directement aux modèles ME1 et à l’exercice
+            Aller directement aux modèles ME1 et aux exercices
           </Link>
           .
         </p>
+
+        <div className='mt-6 rounded-xl border border-cyan-500/20 bg-cyan-500/[0.06] p-4 text-sm text-gray-300'>
+          <p className='font-semibold text-cyan-200'>Inventaire de production (ME1)</p>
+          <ul className='mt-2 list-inside list-disc space-y-1 text-gray-400'>
+            <li>
+              <strong className='text-gray-200'>Phase A — priorité examen</strong> ({phaseACount} fiches) : modèles /
+              exercices à trous pour la plainte, la notification de GAV et la fin de GAV.
+            </li>
+            <li>
+              <strong className='text-gray-200'>Phase B — couverture programme</strong> ({phaseBCount} fiches) : audits,
+              auditions, perquisition, etc. — contenu pédagogique présent ; exercices interactifs à étendre.
+            </li>
+            <li>
+              <strong className='text-gray-200'>Contrôle qualité</strong> : chaque retranscription finale doit être
+              collationnée avec le PDF ME1 et Légifrance (date de relecture à noter sur la fiche concernée).
+            </li>
+          </ul>
+        </div>
+      </GlassCard>
+
+      <GlassCard className='mb-10 p-6' padding=''>
+        <h2 className='text-sm font-semibold uppercase tracking-wide text-gray-400'>Retranscriptions phase A (rappels)</h2>
+        <div className='mt-4 grid gap-4 md:grid-cols-2'>
+          <div className='rounded-xl border border-white/10 bg-navy-950/50 p-4'>
+            <p className='text-xs font-bold uppercase tracking-wide text-emerald-400/90'>Notification de GAV</p>
+            <p className='mt-2 whitespace-pre-wrap font-mono text-[11px] leading-relaxed text-gray-400'>
+              {PV_NOTIFICATION_GAV_VERBATIM_MODELE}
+            </p>
+          </div>
+          <div className='rounded-xl border border-white/10 bg-navy-950/50 p-4'>
+            <p className='text-xs font-bold uppercase tracking-wide text-emerald-400/90'>Fin de GAV</p>
+            <p className='mt-2 whitespace-pre-wrap font-mono text-[11px] leading-relaxed text-gray-400'>
+              {PV_FIN_GAV_VERBATIM_MODELE}
+            </p>
+          </div>
+        </div>
       </GlassCard>
 
       <PVCoursMe1Section />
 
       <div className='space-y-6'>
-        {samples.map((s) => (
-          <article key={s.title} className='rounded-2xl border border-white/10 bg-navy-950/50 p-6'>
-            <h2 className='font-display text-lg font-bold text-white'>{s.title}</h2>
-            <p className='mt-2 text-xs text-amber-200/80'>
-              {s.articles.join(' · ')}
-            </p>
+        {PV_PAGE_SAMPLES.map((s) => (
+          <article
+            key={s.slug}
+            id={`pv-fiche-${s.slug}`}
+            className='scroll-mt-24 rounded-2xl border border-white/10 bg-navy-950/50 p-6'
+          >
+            <div className='flex flex-wrap items-start justify-between gap-3'>
+              <h2 className='font-display text-lg font-bold text-white'>{s.title}</h2>
+              <span
+                className={cn(
+                  'shrink-0 rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+                  s.phase === 'A'
+                    ? 'border-emerald-500/35 bg-emerald-500/15 text-emerald-100'
+                    : 'border-slate-500/35 bg-slate-600/20 text-slate-200',
+                )}
+              >
+                Phase {s.phase}
+              </span>
+            </div>
+            <p className='mt-2 text-xs text-amber-200/80'>{s.articles.join(' · ')}</p>
             <h3 className='mt-4 text-xs font-bold uppercase tracking-wide text-emerald-400/90'>Mentions / structure</h3>
             <p className='mt-2 text-sm text-gray-300'>{s.mentions}</p>
             <h3 className='mt-4 text-xs font-bold uppercase tracking-wide text-rose-400/90'>Erreurs fréquentes</h3>
             <p className='mt-2 text-sm text-gray-400'>{s.erreurs}</p>
+            <div className='mt-4 border-t border-white/10 pt-4'>
+              {s.exercise.status === 'live' && s.exercise.href ? (
+                <Link
+                  href={s.exercise.href}
+                  className='inline-flex items-center rounded-xl border border-emerald-500/40 bg-emerald-500/15 px-4 py-2 text-sm font-semibold text-emerald-100 transition hover:bg-emerald-500/25'
+                >
+                  {s.exercise.label} →
+                </Link>
+              ) : (
+                <span className='inline-flex rounded-xl border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-gray-500'>
+                  {s.exercise.label}
+                </span>
+              )}
+            </div>
           </article>
         ))}
       </div>

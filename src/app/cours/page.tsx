@@ -47,8 +47,8 @@ const hubLinks = [
   },
   {
     href: '/cours/pv',
-    title: 'Modèles de PV',
-    desc: 'Mentions, cartouches et exemples de procès-verbaux pour l’épreuve 3.',
+    title: 'Procès-verbaux ME1',
+    desc: 'Deux colonnes, mentions légales, modèles verbatim et textes à trous pour l’épreuve 2.',
     accent: 'from-emerald-500/15 to-transparent',
   },
   {

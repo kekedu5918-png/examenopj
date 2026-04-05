@@ -53,6 +53,13 @@ const STEPS: Step[] = [
     href: '/epreuves/epreuve-2',
   },
   {
+    id: 'pv-me1',
+    title: 'Procès-verbaux ME1',
+    description: 'Modèles verbatim, mentions légales et textes à trous (plainte, notification GAV, fin de GAV…).',
+    href: '/cours/pv',
+    hint: 'Même exigence de forme qu’au fascicule officiel : en-tête deux colonnes, N°, AFFAIRE, OBJET.',
+  },
+  {
     id: 'articulation',
     title: 'Articulation interactive',
     description: 'Construire la ligne de temps des cartouches ; corrige-type Alpha/Bravo avec ?ref=.',

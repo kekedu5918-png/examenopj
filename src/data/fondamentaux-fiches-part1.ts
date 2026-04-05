@@ -102,7 +102,8 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     titre: 'La garde à vue (GAV)',
     accroche:
       'Mesure de contrainte décidée par l\'OPJ, sous contrôle de l\'autorité judiciaire, maintenant à disposition des enquêteurs une personne soupçonnée.',
-    source: 'Art. 62-2, 63, 63-1 à 64-1 C.P.P.',
+    source:
+      'Art. 62-2, 63, 63-1 à 64-1 C.P.P. · Code de la justice pénale des mineurs (retenue) — relecture Légifrance obligatoire avant examen.',
     lienModule: '/cours/modules/f11',
     lienQuiz: '/entrainement/quiz?mode=module&f=f11',
     regles: [
@@ -133,9 +134,16 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
         alerte: true,
       },
       {
-        label: 'Personnes non placées en GAV',
+        label: 'Personnes non placées en garde à vue (mesure art. 62-2 sens GAV)',
         detail:
-          'Mineurs de 13 ans (jamais). Agents diplomatiques. Présidents de la République. Certains fonctionnaires consulaires (sauf crime flagrant).',
+          'Mineurs de moins de 13 ans : pas de placement en garde à vue au sens du titre II du livre IV du CPP ; privation de liberté encadrée par le régime de la retenue (CJPM — voir bloc dédié). Agents diplomatiques. Président de la République. Certains agents consulaires (sauf crime flagrant selon le texte).',
+        alerte: true,
+      },
+      {
+        label: 'Mineurs de 10 à 13 ans — retenue (pas GAV)',
+        detail:
+          'Mesure de dernier recours pour atteindre les finalités de l’art. 62-2 CPP, avec accord préalable du magistrat habilité. Durée : 12 heures ; prolongation possible d’autant (12 h) dans les hypothèses strictement prévues par le CJPM et son décret d’application (notamment selon la gravité des faits). Avocat, information des représentants légaux, examen médical : régime protecteur. À vérifier sur Légifrance (CPP livre V / CJPM) : ne pas confondre avec le plafond du majeur.',
+        article: 'CJPM (retenue) ; CPP art. 810-3 et s. (mineurs) — recouper fascicule F06',
         alerte: true,
       },
       {
@@ -145,10 +153,10 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
         article: 'Art. 63 al. 2 et 64 C.P.P.',
       },
       {
-        label: 'Mineurs de 13 à 16 ans (régime renforcé)',
+        label: 'Mineurs de 13 à 16 ans — garde à vue (durées)',
         detail:
-          "Audition ou GAV : présence obligatoire d'un parent, tuteur ou personne majeure désignée ; avocat obligatoire ; possibilités de report encadrées selon le texte. Ne jamais placer un mineur de moins de 13 ans en GAV.",
-        article: 'Art. 61-8 et 63-2 C.P.P.',
+          "Peuvent être placés en garde à vue si les conditions générales sont réunies. Durée initiale maximale : 24 h. Prolongation d'une nouvelle durée de 24 h (48 h au total) uniquement si l'infraction soupçonnée est punie d'une peine criminale ou d'une peine d'emprisonnement d'au moins cinq ans (seuil distinct du droit commun majeur : art. 63-II CPP, alinéas relatifs à la garde à vue des mineurs). Présence du représentant légal ou personne désignée, avocat obligatoire, examen médical, enregistrement : art. 63-2. Ne pas appliquer par analogie le plafond du majeur sans relire le texte mineurs.",
+        article: 'Art. 61-8, 63-II (mineurs), 63-2 C.P.P.',
         alerte: true,
       },
       {
@@ -185,6 +193,18 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
           'Jusqu’à 144 h',
           'Mécanisme dérogatoire spécifique',
           'JLD / magistrats habilités',
+        ],
+        [
+          'Mineur 13–16 ans (GAV)',
+          '24 h',
+          '+24 h si infraction punie ≥ 5 ans emprisonnement (texte sur mineurs)',
+          'PR (prolongation) + garanties 63-2',
+        ],
+        [
+          'Mineur 10–13 ans (retenue, pas GAV)',
+          '12 h (prolongation 12 h — cas légaux)',
+          'Magistrat, dernier recours, art. 62-2',
+          'CJPM / fascicule F06',
         ],
       ],
     },
