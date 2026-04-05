@@ -84,8 +84,54 @@ export default function CoursModuleDetailPage({ params }: Props) {
 
       <article className='prose prose-invert max-w-none rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8'>
         <p className='text-sm font-semibold uppercase tracking-wide text-amber-200/90'>Synthèse pédagogique</p>
-        <p className='mt-3 leading-relaxed text-gray-300'>{m.accroche}</p>
-        <p className='mt-4 text-sm leading-relaxed text-gray-500'>
+        <p className='mt-3 text-sm leading-relaxed text-gray-500'>{m.accroche}</p>
+        {synth ? (
+          <>
+            <p className='mt-5 leading-relaxed text-gray-200'>{synth.resume}</p>
+            {synth.axes.length > 0 ? (
+              <div className='mt-8'>
+                <p className='text-sm font-semibold uppercase tracking-wide text-gray-500'>Axes de travail</p>
+                <ul className='mt-4 list-none space-y-6 pl-0'>
+                  {synth.axes.map((axe) => (
+                    <li key={axe.titre} className='rounded-lg border border-white/10 bg-white/[0.03] p-4'>
+                      <p className='font-medium text-cyan-200/95'>{axe.titre}</p>
+                      <ul className='mt-2 mb-0 list-disc space-y-1 pl-5 text-sm leading-relaxed text-gray-400'>
+                        {axe.points.map((pt) => (
+                          <li key={pt}>{pt}</li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {synth.pratiqueOpj.length > 0 ? (
+              <div className='mt-8'>
+                <p className='text-sm font-semibold uppercase tracking-wide text-gray-500'>Côté terrain (OPJ)</p>
+                <ul className='mt-3 list-disc space-y-2 pl-5 text-gray-400'>
+                  {synth.pratiqueOpj.map((p) => (
+                    <li key={p} className='text-sm leading-relaxed'>
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+            {synth.pieges.length > 0 ? (
+              <div className='mt-8 rounded-lg border border-amber-500/25 bg-amber-500/[0.06] p-4'>
+                <p className='text-sm font-semibold uppercase tracking-wide text-amber-200/90'>Pièges fréquents</p>
+                <ul className='mt-3 mb-0 list-disc space-y-2 pl-5 text-sm leading-relaxed text-amber-100/85'>
+                  {synth.pieges.map((p) => (
+                    <li key={p}>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </>
+        ) : (
+          <p className='mt-5 leading-relaxed text-gray-300'>{m.accroche}</p>
+        )}
+        <p className='mt-8 text-sm leading-relaxed text-gray-500'>
           Ce module ne reproduit aucun support édité par un tiers. Complétez cette fiche avec vos notes, le Code pénal,
           le Code de procédure pénale et les textes en vigueur sur{' '}
           <a
