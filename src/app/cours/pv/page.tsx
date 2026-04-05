@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { PVCoursMe1Section } from '@/components/pv/pv-cours-me1-section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 
 export const metadata: Metadata = {
   title: 'Modèles de procès-verbaux — Examen OPJ',
   description:
-    'Procès-verbaux types : saisines, GAV, auditions, perquisitions, scellés et transmission — méthodologie alignée sur le Code de procédure pénale en vigueur.',
+    'Procès-verbaux types (ME1, épreuve 2) : modèle verbatim deux colonnes, mentions marginales, exercices à trous et rédaction du corps — CPP et fascicule officiel.',
 };
 
 const categories = [
@@ -91,7 +92,7 @@ export default function ModelesPVPage() {
       />
 
       <GlassCard className='mb-10 p-6' padding=''>
-        <h2 className='text-sm font-semibold uppercase tracking-wide text-gray-400'>Filtrer par catégorie</h2>
+        <h2 className='text-sm font-semibold uppercase tracking-wide text-gray-400'>Programme PV (rappel)</h2>
         <ul className='mt-3 flex flex-wrap gap-2'>
           {categories.map((c) => (
             <li key={c}>
@@ -103,9 +104,15 @@ export default function ModelesPVPage() {
         </ul>
         <p className='mt-4 text-sm text-gray-500'>
           Chaque PV comporte un <strong className='text-gray-300'>cartouche</strong> (identification du service, affaire,
-          date et lieu) et des <strong className='text-gray-300'>mentions légales</strong> renvoyant au C.P.P.
+          date et lieu) et des <strong className='text-gray-300'>mentions légales</strong> renvoyant au C.P.P. Pour l’
+          <strong className='text-gray-300'>épreuve 2</strong>, se référer au fascicule ME1 : mise en page en{' '}
+          <strong className='text-gray-300'>deux colonnes</strong> (coordonnées du service à gauche, filet, bloc principal à
+          droite), rattachement aux rubriques N°, <strong className='font-mono text-gray-300'>AFFAIRE</strong>,{' '}
+          <strong className='font-mono text-gray-300'>OBJET</strong>.
         </p>
       </GlassCard>
+
+      <PVCoursMe1Section />
 
       <div className='space-y-6'>
         {samples.map((s) => (
