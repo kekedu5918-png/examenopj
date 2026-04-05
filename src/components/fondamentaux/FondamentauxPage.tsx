@@ -95,8 +95,9 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
 
       <div className='mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8'>
         <p className='mb-6 text-center text-sm text-slate-500'>
-          Cliquez sur une fiche pour l’ouvrir en <strong className='text-slate-300'>pleine page</strong> (synthèse
-          lisible, tableau et liens quiz / module).
+          Ouvrez une fiche en <strong className='text-slate-300'>pleine page</strong> : parcours conseillé{' '}
+          <strong className='text-slate-400'>synthèse → pièges → à retenir</strong>, badge fascicule{' '}
+          <strong className='font-mono text-slate-400'>F##</strong>, puis module de cours.
         </p>
         <div
           key={filtre}

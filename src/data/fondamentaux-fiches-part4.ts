@@ -1,10 +1,46 @@
 import type { Fiche } from './fondamentaux-types';
 
+const F06_REPERES_MINIERS_FAMILLE: Fiche = {
+  id: 'repères-f06-mineurs-famille',
+  categorie: 'droit-penal',
+  titre: 'F06 — Mineurs, famille et vulnérabilité (repères)',
+  accroche:
+    'Complète les fiches L303 / L307 (CJPM, GAV mineur, magistrat) : méthode pour le volet « infractions » du fascicule n°6 du programme officiel — à recouper avec le Code pénal et votre support de formation.',
+  source: 'Programme fascicule n°6 (SDCP / IREP) — repères méthode',
+  lienModule: '/cours/modules/f06',
+  fasciculeId: 'f06',
+  fasciculeNumero: 6,
+  fasciculeDomaine: 'DPS',
+  indispensableExamen: true,
+  regles: [
+    {
+      label: 'Victime mineure vs auteur mineur',
+      detail:
+        'Ne pas mélanger les infractions « sur » mineur et la procédure pénale « pour » mineur : pour ce dernier, le CJPM et les leçons L303 / L307 structurent les auditions, la garde à vue et la présentation au magistrat.',
+      article: 'C.pén. · CJPM',
+      alerte: true,
+    },
+    {
+      label: 'Qualification et aggravations',
+      detail:
+        'Raisonner en L.A.M. ; vérifier systématiquement les circonstances liées à l’âge, au lien d’autorité ou à la vulnérabilité — elles déterminent souvent le quantum ou le régime de juridiction.',
+      article: 'C.pén. (titres sur mineurs, violences, atteintes sexuelles)',
+    },
+    {
+      label: 'Signalement, protection, coordination',
+      detail:
+        'Tracer dans le PV les suites confiées au parquet / JDE / services sociaux ; l’OPJ consigne les constatations factuelles sans « conclure » pédagogiquement hors compétence.',
+      article: 'Cadre institutionnel formation',
+    },
+  ],
+};
+
 /**
  * Synthèses « programme complet » (thèmes type fascicules F08 à F15 du cursus SDCP / IREP).
  * Référence : vérifier toujours Légifrance — objectif examen = vision transversale lisible en 5 minutes.
  */
 export const FONDAMENTAUX_PART4: Fiche[] = [
+  F06_REPERES_MINIERS_FAMILLE,
   {
     id: 'synthese-liberte-loi-sanction',
     categorie: 'droit-penal',

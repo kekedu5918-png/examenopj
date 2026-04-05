@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { getFondamentauxCoverageRows, getFondamentauxModulesSansFiche } from '@/data/fondamentaux-coverage';
+import { quizHrefForFasciculeId } from '@/data/fondamentaux-fascicule-reperes';
 
 export function FondamentauxCoveragePanel() {
   const rows = getFondamentauxCoverageRows();
@@ -14,16 +15,18 @@ export function FondamentauxCoveragePanel() {
       <GlassCard padding='p-6' className='border-white/10'>
         <h2 className='font-display text-lg font-bold text-white'>Audit de couverture (fascicules → fiches)</h2>
         <p className='mt-2 text-sm text-gray-400'>
-          Table de traçabilité entre les <strong className='text-gray-200'>titres de modules</strong> du programme et les fiches « Fondamentaux ». Lors
-          d’une mise à jour de fascicule ou de votre document personnel, vérifiez chaque ligne et complétez les modules encore sans fiche dédiée.
+          Table de traçabilité entre les <strong className='text-gray-200'>modules F01–F15</strong> et les fiches (y compris les id{' '}
+          <strong className='text-gray-200'>L…</strong> issues du corpus étendu). Chaque fiche longue affiche aussi son numéro de fascicule — vérifier
+          toujours le texte sur <strong className='text-gray-200'>Légifrance et votre support officiel</strong>.
         </p>
 
         <div className='mt-6 overflow-x-auto rounded-xl border border-white/10'>
-          <table className='w-full min-w-[640px] border-collapse text-left text-sm'>
+          <table className='w-full min-w-[720px] border-collapse text-left text-sm'>
             <thead>
               <tr className='border-b border-white/10 bg-white/[0.04] text-xs uppercase tracking-wide text-gray-500'>
                 <th className='px-3 py-2'>Module</th>
                 <th className='px-3 py-2'>Fiches (id)</th>
+                <th className='px-3 py-2'>Quiz</th>
               </tr>
             </thead>
             <tbody>
@@ -36,6 +39,14 @@ export function FondamentauxCoveragePanel() {
                     <div className='text-xs text-gray-500'>{r.titre}</div>
                   </td>
                   <td className='px-3 py-2 font-mono text-xs text-gray-300'>{r.ficheIds.join(', ')}</td>
+                  <td className='px-3 py-2'>
+                    <Link
+                      href={quizHrefForFasciculeId(r.moduleId)}
+                      className='text-sm font-medium text-emerald-400/95 hover:text-emerald-300'
+                    >
+                      Thème F{r.numero.toString().padStart(2, '0')}
+                    </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>

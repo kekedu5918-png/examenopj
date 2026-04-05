@@ -63,7 +63,12 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
       <div className='relative mx-auto max-w-5xl'>
         <h1 className='font-display text-3xl font-bold tracking-tight text-white sm:text-4xl'>Les Fondamentaux</h1>
         <p className='mt-3 max-w-3xl text-sm leading-relaxed text-slate-400 sm:text-base'>
-          Les {total} notions clés à maîtriser pour l&apos;examen OPJ — synthèse proposée par ExamenOPJ
+          Les {total} fiches raccord avec le <strong className='font-semibold text-slate-200'>programme en 15 fascicules</strong>{' '}
+          (F01–F15) : synthèses courtes, fiches longues alignées corpus, pièges d&apos;examen et modules de cours — à{' '}
+          <strong className='font-semibold text-slate-200'>valider sur Légifrance</strong>.
+        </p>
+        <p className='mt-2 max-w-3xl text-xs leading-relaxed text-slate-500 sm:text-sm'>
+          Repérez le badge <span className='text-gold-400'>⭐ Oral / écrit</span> pour les thèmes les plus opérés au concours.
         </p>
         <p className='mt-4 text-xs text-slate-500 sm:text-sm'>{miniLine}</p>
 

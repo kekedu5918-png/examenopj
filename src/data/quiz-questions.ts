@@ -5,11 +5,13 @@ import { quizQuestionsF04 } from '@/data/quiz-questions-f04';
 import { quizQuestionsF05 } from '@/data/quiz-questions-f05';
 import { quizQuestionsF06 } from '@/data/quiz-questions-f06';
 import { quizQuestionsF07 } from '@/data/quiz-questions-f07';
+import { quizQuestionsFasciculesTheorie } from '@/data/quiz-questions-fascicules-theorie';
 import { type QuizQuestion } from '@/data/types';
 
 const quizQuestionsRaw: QuizQuestion[] = [
   ...quizQuestionsF01P1,
 
+  ...quizQuestionsFasciculesTheorie,
   ...quizQuestionsF03,
   ...quizQuestionsF04,
   ...quizQuestionsF05,
