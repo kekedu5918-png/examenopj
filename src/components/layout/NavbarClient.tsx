@@ -3,12 +3,11 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ChevronDown, Menu } from 'lucide-react';
+import { ChevronDown, Menu, Zap } from 'lucide-react';
 
 import { navigation } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
-import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import {
   DropdownMenu,
@@ -69,13 +68,28 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: 
           <nav className='hidden items-center gap-1 lg:flex'>
             {navigation.main.map((item) => {
               if ('href' in item) {
+                if (item.href === '/pricing' && isPremium) {
+                  return null;
+                }
                 const active = isActive(pathname, item.href);
+                const isPremiumLink = item.href === '/pricing';
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={cn('relative px-3 py-2', linkClass(active))}
+                    className={cn(
+                      'relative inline-flex items-center gap-1.5 px-3 py-2',
+                      isPremiumLink
+                        ? cn(
+                            'rounded-md text-sm font-semibold transition-colors',
+                            active
+                              ? 'text-gold-300'
+                              : 'text-gold-400/90 hover:text-gold-300'
+                          )
+                        : linkClass(active)
+                    )}
                   >
+                    {isPremiumLink ? <Zap className='h-3.5 w-3.5 shrink-0 opacity-90' aria-hidden /> : null}
                     {item.name}
                     {active ? (
                       <span className='absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-gold-400' />
@@ -131,16 +145,6 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: 
           </nav>
 
           <div className='flex items-center gap-2'>
-            {!isPremium ? (
-              <Button
-                asChild
-                size='sm'
-                className='hidden border-gold-500/40 bg-gold-500/15 text-gold-300 hover:bg-gold-500/25 hover:text-gold-200 sm:inline-flex'
-              >
-                <Link href='/pricing'>Premium ✨</Link>
-              </Button>
-            ) : null}
-
             <Sheet>
               <SheetTrigger className='inline-flex rounded-lg p-2 text-white lg:hidden' aria-label='Menu'>
                 <Menu className='h-6 w-6' />
@@ -155,16 +159,23 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: 
                 <nav className='mt-6 flex max-h-[calc(100vh-8rem)] flex-col gap-1 overflow-y-auto pb-8'>
                   {navigation.main.map((item) => {
                     if ('href' in item) {
+                      if (item.href === '/pricing' && isPremium) {
+                        return null;
+                      }
                       const active = isActive(pathname, item.href);
+                      const isPremiumLink = item.href === '/pricing';
                       return (
                         <SheetClose key={item.href} asChild>
                           <Link
                             href={item.href}
                             className={cn(
-                              'rounded-lg px-3 py-3 text-sm font-medium',
-                              active ? 'bg-white/10 text-white' : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                              'flex items-center gap-2 rounded-lg px-3 py-3 text-sm font-medium',
+                              active ? 'bg-white/10 text-white' : 'text-gray-400 hover:bg-white/5 hover:text-white',
+                              isPremiumLink && !active && 'border border-gold-500/30 bg-gold-500/10 text-gold-200',
+                              isPremiumLink && active && 'border border-gold-500/40 bg-gold-500/15 text-gold-100'
                             )}
                           >
+                            {isPremiumLink ? <Zap className='h-4 w-4 shrink-0 text-gold-400' aria-hidden /> : null}
                             {item.name}
                           </Link>
                         </SheetClose>
@@ -217,16 +228,6 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: 
                     </SheetClose>
                   )}
 
-                  {!isPremium ? (
-                    <SheetClose asChild>
-                      <Link
-                        href='/pricing'
-                        className='mt-2 rounded-lg border border-gold-500/40 bg-gold-500/15 px-3 py-3 text-center text-sm font-medium text-gold-300'
-                      >
-                        Premium ✨
-                      </Link>
-                    </SheetClose>
-                  ) : null}
                 </nav>
               </SheetContent>
             </Sheet>

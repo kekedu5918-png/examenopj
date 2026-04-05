@@ -70,7 +70,7 @@ export const navigation = {
         },
       ],
     },
-    { name: 'Tarifs', href: '/pricing' },
+    { name: 'Premium', href: '/pricing' },
   ],
 } as const;
 
