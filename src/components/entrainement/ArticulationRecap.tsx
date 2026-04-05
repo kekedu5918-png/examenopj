@@ -1,18 +1,31 @@
 'use client';
 
+import { useMemo } from 'react';
 import { Printer } from 'lucide-react';
 
+import { evaluerCartouchesParRessource } from '@/components/entrainement/articulation-check';
 import type { CartoucheData } from '@/components/entrainement/articulation-types';
+import { ArticulationChecklist } from '@/components/entrainement/ArticulationChecklist';
 import { CartoucheValidee } from '@/components/entrainement/CartoucheValidee';
+import { getArticulationReferenceModel } from '@/data/articulation-reference-models';
 
 type Props = {
   titreArticulation: string;
   cartouches: CartoucheData[];
   onRecommencer: () => void;
+  referenceEnqueteId?: string;
 };
 
-export function ArticulationRecap({ titreArticulation, cartouches, onRecommencer }: Props) {
+export function ArticulationRecap({ titreArticulation, cartouches, onRecommencer, referenceEnqueteId }: Props) {
   const valides = cartouches.filter((c) => c.valide);
+
+  const modele = useMemo(() => getArticulationReferenceModel(referenceEnqueteId), [referenceEnqueteId]);
+
+  const evalRef = useMemo(() => {
+    if (!modele) return null;
+    const titresUser = valides.map((c) => c.titre.trim());
+    return evaluerCartouchesParRessource(modele.titresOrdre, titresUser);
+  }, [modele, valides]);
   const dateStr = new Intl.DateTimeFormat('fr-FR', {
     dateStyle: 'long',
   }).format(new Date());
@@ -38,6 +51,15 @@ export function ArticulationRecap({ titreArticulation, cartouches, onRecommencer
           {valides.length} côte{valides.length > 1 ? 's' : ''} PV — Articulé le {dateStr}
         </p>
       </div>
+
+      {evalRef && modele ? (
+        <ArticulationChecklist
+          items={evalRef.items}
+          ordreRespecte={evalRef.ordreRespecte}
+          titreModele={`Enquête ${modele.enqueteId.toUpperCase()}`}
+        />
+      ) : null}
+
       <div className='flex flex-wrap gap-3 print:hidden'>
         <button
           type='button'

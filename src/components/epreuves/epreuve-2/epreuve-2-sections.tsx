@@ -206,13 +206,39 @@ export function Epreuve2Sections() {
           Sujet complet, articulation commentée, PV rédigé et rapport de synthèse pour les thèmes Alpha et Bravo — avec
           fac-similés des documents officiels.
         </p>
-        <Link
-          href='/cours/enquetes'
-          className='mt-4 inline-flex text-sm font-medium text-violet-300 transition hover:text-violet-200'
-        >
-          Ouvrir la rubrique Enquêtes →
-        </Link>
+        <div className='mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm'>
+          <Link href='/cours/enquetes' className='font-medium text-violet-300 transition hover:text-violet-200'>
+            Rubrique Enquêtes →
+          </Link>
+          <Link href='/epreuves' className='font-medium text-gray-400 transition hover:text-gray-300'>
+            Vue 3 épreuves
+          </Link>
+          <Link href='/entrainement/articulation' className='font-medium text-gray-400 transition hover:text-gray-300'>
+            Articulation interactive
+          </Link>
+        </div>
       </GlassCard>
+
+      <div className='grid gap-6 md:grid-cols-2'>
+        <GlassCard padding='p-5' className='border-red-500/30 bg-red-500/[0.06]'>
+          <p className='text-xs font-bold uppercase tracking-wide text-red-300'>Erreurs qui peuvent coûter très cher</p>
+          <ul className='mt-3 list-inside list-disc space-y-2 text-sm text-gray-300'>
+            <li>Cartouche sans titre opérationnel clair ou sans qualité OPJ/APJ.</li>
+            <li>Mélange des cadres (flagrant / préliminaire) sans acte de changement.</li>
+            <li>PV en « roman » : le jury attend du télégraphique et des renvois maîtrisés.</li>
+            <li>Rapport de synthèse hors consigne de forme (gras, italique, structure imposée).</li>
+          </ul>
+        </GlassCard>
+        <GlassCard padding='p-5' className='border-emerald-500/30 bg-emerald-500/[0.06]'>
+          <p className='text-xs font-bold uppercase tracking-wide text-emerald-300'>Check-list veille de concours</p>
+          <ul className='mt-3 list-inside list-disc space-y-2 text-sm text-gray-300'>
+            <li>Relire une articulation complète (Alpha ou Bravo) en 20 minutes chrono.</li>
+            <li>Refaire une grille de rapport sur papier sans supports.</li>
+            <li>Vérifier les mentions obligatoires GAV / avis sur un sujet tiré au hasard.</li>
+            <li>Dormir : le jour J, la méthode doit être du réflexe, pas de la lecture.</li>
+          </ul>
+        </GlassCard>
+      </div>
 
       <SectionAccordion allowMultiple items={items} />
 

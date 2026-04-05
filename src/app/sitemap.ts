@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const coursPages = ['/cours', '/cours/pv', '/cours/modules', '/cours/enquetes'];
 
-  const epreuvesPages = ['/epreuves/epreuve-1', '/epreuves/epreuve-2', '/epreuves/epreuve-3'];
+  const epreuvesPages = ['/epreuves', '/epreuves/epreuve-1', '/epreuves/epreuve-2', '/epreuves/epreuve-3'];
 
   const entrainementPages = [
     '/entrainement',
@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/entrainement/flashcards',
     '/entrainement/recapitulatif',
     '/entrainement/articulation',
+    '/parcours-candidat',
   ];
 
   const infractionsPages = ['/infractions'];

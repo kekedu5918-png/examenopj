@@ -34,6 +34,11 @@ export const navigation = {
       name: 'Épreuves',
       children: [
         {
+          name: 'Vue d’ensemble (3 épreuves)',
+          href: '/epreuves',
+          description: 'Durées, attendus correcteurs, liens rapides',
+        },
+        {
           name: 'Épreuve 1 — Qualification juridique',
           href: '/epreuves/epreuve-1',
           description: 'Méthode et mise en forme',
@@ -53,6 +58,11 @@ export const navigation = {
     {
       name: 'Entraînement',
       children: [
+        {
+          name: 'Parcours candidat',
+          href: '/parcours-candidat',
+          description: 'Fondamentaux → récap → enquête → épreuve 2 → articulation',
+        },
         {
           name: 'Quiz (QCM)',
           href: '/entrainement/quiz',

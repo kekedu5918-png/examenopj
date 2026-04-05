@@ -9,6 +9,12 @@ export const quizQuestionsF03: QuizQuestion[] = [
     fascicule: 3,
     domaine: 'DPS',
     explication: 'Art. L.234-1 I et V C.R. : seuil délictuel 0,40 mg/l air expiré ou 0,80 g/l de sang.',
+    hardcoreAliases: [
+      '0,40 mg/l et 0,80 g/l',
+      '0.40 mg l air 0.80 g l sang',
+      '0,40 mg/l air 0,80 g/l sang',
+      'l.234-1 seuil délictuel',
+    ],
   },
   {
     id: 'f03-q02',
@@ -39,6 +45,7 @@ export const quizQuestionsF03: QuizQuestion[] = [
     fascicule: 3,
     domaine: 'DPS',
     explication: '434-10 C.P. (complété par L.231-1 C.R.).',
+    hardcoreAliases: ['434-10', 'art 434-10', 'article 434-10 code pénal', '434-10 cp délit de fuite'],
   },
   {
     id: 'f03-q05',

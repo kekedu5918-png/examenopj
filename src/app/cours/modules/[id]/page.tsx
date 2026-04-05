@@ -2,8 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { ModuleEnquetesLinks } from '@/components/cours/ModuleEnquetesLinks';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
+import { getEnquetesLinkedToModule } from '@/data/enquetes-by-module';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
 import { getFondamentauxLinksForCourseModule } from '@/data/fondamentaux-by-module';
 import { cn } from '@/utils/cn';
@@ -61,6 +63,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
   const prevMeta = prevId ? getCourseModuleById(prevId) : null;
   const nextMeta = nextId ? getCourseModuleById(nextId) : null;
   const fondamentauxLinks = getFondamentauxLinksForCourseModule(m.id);
+  const enquetesLiees = getEnquetesLinkedToModule(m.id);
 
   return (
     <div className='container pb-20 pt-10 md:pt-14'>
@@ -177,6 +180,8 @@ export default function CoursModuleDetailPage({ params }: Props) {
             </p>
           </div>
         ) : null}
+
+        <ModuleEnquetesLinks enquetes={enquetesLiees} />
 
         <div className='mt-8 border-t border-white/10 pt-6'>
           <p className='mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500'>Entraînement sur ce thème</p>

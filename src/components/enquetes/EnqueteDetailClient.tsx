@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 
 import { EnqueteArticulation } from '@/components/enquetes/EnqueteArticulation';
+import { EnquetePedagoPanel } from '@/components/enquetes/EnquetePedagoPanel';
 import { EnquetePV } from '@/components/enquetes/EnquetePV';
 import { EnqueteRapport } from '@/components/enquetes/EnqueteRapport';
 import { EnqueteSujet } from '@/components/enquetes/EnqueteSujet';
@@ -17,7 +18,16 @@ type Props = {
 };
 
 function CadrePill({ cadre }: { cadre: string }) {
-  const mixed = cadre.includes('→') || cadre.toLowerCase().includes('changement');
+  const c = cadre.toLowerCase();
+  const mixed = cadre.includes('→') || c.includes('changement');
+  const transversal = c.includes('transversal');
+  if (transversal) {
+    return (
+      <span className='inline-flex rounded-full border border-violet-500/35 bg-violet-500/15 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-violet-200'>
+        Transversal
+      </span>
+    );
+  }
   return (
     <span
       className={cn(
@@ -27,7 +37,7 @@ function CadrePill({ cadre }: { cadre: string }) {
           : 'border-emerald-500/35 bg-emerald-500/15 text-emerald-200',
       )}
     >
-      {mixed ? 'Évolution du cadre' : 'Flagrant délit'}
+      {mixed ? 'Évolution du cadre' : 'Flagrant / saisine'}
     </span>
   );
 }
@@ -59,9 +69,51 @@ function renderDoc(enquete: EnqueteMeta, doc: EnqueteDocument) {
 }
 
 export function EnqueteDetailClient({ enquete }: Props) {
+  const isPedago = enquete.contenuMode === 'pedago';
   const [tab, setTab] = useState(enquete.documents[0]?.id ?? '');
 
   const tabs = useMemo(() => enquete.documents.map((d) => ({ id: d.id, label: d.label })), [enquete.documents]);
+
+  if (isPedago) {
+    return (
+      <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pb-24 pt-10 md:pt-14'>
+        <div className='mx-auto max-w-5xl px-4 md:px-6'>
+          <nav className='mb-8 text-sm text-gray-500'>
+            <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
+              Cours
+            </Link>
+            <span className='mx-2'>/</span>
+            <Link href='/cours/enquetes' className='text-violet-400 hover:text-violet-300'>
+              Enquêtes
+            </Link>
+            <span className='mx-2'>/</span>
+            <span className='text-gray-400'>{enquete.code}</span>
+          </nav>
+
+          <header className='mb-8 border-b border-white/10 pb-8'>
+            <p className='text-xs font-bold uppercase tracking-[0.2em] text-violet-300'>Parcours enquête — {enquete.themeCourt}</p>
+            <h1 className='mt-2 font-display text-3xl font-bold text-white md:text-4xl'>{enquete.titre}</h1>
+            <p className='mt-2 text-lg text-gray-300'>
+              {enquete.cadre}
+            </p>
+            <div className='mt-4 flex flex-wrap items-center gap-2'>
+              <CadrePill cadre={enquete.cadre} />
+              {enquete.premium ? (
+                <span className='inline-flex rounded-full border border-amber-500/40 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-amber-200'>
+                  Premium 🔒
+                </span>
+              ) : null}
+              <span className='inline-flex rounded-full border border-cyan-500/35 bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-cyan-200'>
+                Fiche péda (PDF à venir)
+              </span>
+            </div>
+          </header>
+
+          <EnquetePedagoPanel enquete={enquete} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pb-24 pt-10 md:pt-14'>

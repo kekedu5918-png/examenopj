@@ -32,8 +32,8 @@ export default async function EnqueteDetailPage({ params }: Props) {
   if (locked) {
     return (
       <ContentPremiumOverlay
-        title="Enquête Bravo — réservée au Premium"
-        description="L'enquête Bravo (violences aggravées, changement de cadre, saisine incidente) et les enquêtes suivantes sont accessibles avec l'offre Premium. L'enquête Alpha reste disponible comme exemple complet."
+        title={`Enquête ${enquete.code} — réservée au Premium`}
+        description="Cette enquête (planches ou fiche péda complète) est débloquée avec l’offre Premium. L’enquête Alpha reste disponible comme exemple gratuit avec documents PDF."
       >
         {inner}
       </ContentPremiumOverlay>

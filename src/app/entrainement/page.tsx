@@ -13,6 +13,14 @@ export const metadata: Metadata = {
 
 const cards = [
   {
+    href: '/parcours-candidat',
+    icon: '🧭',
+    title: 'Parcours candidat',
+    desc: 'Enchaînement guidé : fondamentaux, récap prioritaire, flashcards, enquêtes, épreuve 2, articulation.',
+    badge: 'Recommandé',
+    disabled: false,
+  },
+  {
     href: '/entrainement/articulation',
     icon: 'clipboard',
     title: 'Articulation de procédure',

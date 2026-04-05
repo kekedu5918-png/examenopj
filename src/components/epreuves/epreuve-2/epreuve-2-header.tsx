@@ -36,7 +36,7 @@ export function Epreuve2Header() {
         <span className='mx-2 text-gray-600' aria-hidden>
           &gt;
         </span>
-        <Link href='/' className='transition-colors hover:text-gray-300'>
+        <Link href='/epreuves' className='transition-colors hover:text-gray-300'>
           Épreuves
         </Link>
         <span className='mx-2 text-gray-600' aria-hidden>

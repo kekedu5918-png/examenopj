@@ -8,6 +8,7 @@ import { cn } from '@/utils/cn';
 
 import { FONDAMENTAUX_VUES_STORAGE_KEY, FREEMIUM_UNLOCKED_IDS } from './fondamentaux-theme';
 import { FondamentauxCard } from './FondamentauxCard';
+import { FondamentauxCoveragePanel } from './FondamentauxCoveragePanel';
 import { FondamentauxDrawer } from './FondamentauxDrawer';
 import { type FiltreCategorie, FondamentauxFilters } from './FondamentauxFilters';
 import { FondamentauxHero } from './FondamentauxHero';
@@ -193,6 +194,8 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
           <p className='py-16 text-center text-slate-500'>Aucune fiche dans cette catégorie.</p>
         ) : null}
       </div>
+
+      <FondamentauxCoveragePanel />
 
       {drawerFiche ? (
         <FondamentauxDrawer

@@ -27,6 +27,9 @@ export type EnqueteDocument = {
   label: string;
 };
 
+/** `planches` : PDF + fac-similés. `pedago` : fiche thématique (planches complètes à venir). */
+export type EnqueteContenuMode = 'planches' | 'pedago';
+
 export type EnqueteMeta = {
   id: string;
   code: string;
@@ -45,6 +48,12 @@ export type EnqueteMeta = {
   procedure: string;
   documents: EnqueteDocument[];
   premium: boolean;
+  contenuMode?: EnqueteContenuMode;
+  /** Sous-titre pédagogique (home / frise). */
+  themeCourt?: string;
+  liensModules?: { href: string; label: string }[];
+  /** Bullets « ce que l’épreuve 2 teste » sur les fiches pedago. */
+  objectifsEpreuve2?: string[];
 };
 
 /** Affichage : pages raster (fidélité pixel) + PDF officiel. */

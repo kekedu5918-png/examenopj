@@ -8,6 +8,9 @@ export const metadata: Metadata = {
     'Tableau synthétique des infractions : éléments légal, matériel et moral (F01 à F07).',
 };
 
-export default function EntrainementRecapitulatifPage({ searchParams }: { searchParams: { f?: string } }) {
-  return <RecapitulatifPageClient initialFasc={searchParams.f} />;
+type RecapSearch = { f?: string; priorite?: string };
+
+export default function EntrainementRecapitulatifPage({ searchParams }: { searchParams: RecapSearch }) {
+  const prioriteOn = searchParams.priorite === '1' || searchParams.priorite === 'true';
+  return <RecapitulatifPageClient initialFasc={searchParams.f} initialPrioriteVue={prioriteOn} />;
 }

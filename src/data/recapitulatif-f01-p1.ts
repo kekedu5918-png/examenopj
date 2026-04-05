@@ -12,6 +12,8 @@ export const recapSectionF01P1 = {
       materiel:
         '**ACTE POSITIF DE VIOLENCE DONNANT VOLONTAIREMENT LA MORT** / **MORT DE LA VICTIME** / **LIEN DE CAUSALITÉ**',
       moral: '**INTENTION HOMICIDE (ANIMUS NECANDI)** / **APPRÉCIÉE AU MOMENT DE L\'ACTE**',
+      priorite: 'core',
+      noteExamen: 'Socle programme — citez la définition au mot près.',
     },
     {
       infraction:
@@ -54,12 +56,15 @@ export const recapSectionF01P1 = {
       legal: 'Art. 222-11 C.P.',
       materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **ITT > 8 JOURS**',
       moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      priorite: 'core',
+      noteExamen: 'Très fréquent — maîtrisez le seuil ITT et le quantum.',
     },
     {
       infraction: '**Les violences ayant entraîné une ITT ≤ 8 jours ou sans ITT**',
       legal: 'Art. 222-13 C.P. / Art. R.625-1 C.P.',
       materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **ITT ≤ 8 JOURS OU AUCUNE ITT**',
       moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les violences habituelles sur conjoint ou concubin**',
@@ -80,6 +85,8 @@ export const recapSectionF01P1 = {
       materiel:
         '**PÉNÉTRATION SEXUELLE OU ACTE BUCCO-GÉNITAL** / **ABSENCE DE CONSENTEMENT CARACTÉRISÉE PAR VIOLENCE, CONTRAINTE, MENACE OU SURPRISE** / **SURPRISE** (ex. : hypnose, ivresse de la victime, sommeil, état de sidération — Cass. crim. 11 sept. 2024)',
       moral: '**CONSCIENCE DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ D\'IMPOSER L\'ACTE**',
+      priorite: 'core',
+      noteExamen: 'Qualification et absent consentement : citez la définition intégralement.',
     },
     {
       infraction: '**L\'agression sexuelle (autre que le viol)**',
@@ -107,6 +114,7 @@ export const recapSectionF01P1 = {
       legal: 'Art. 222-17 al. 1 C.P.',
       materiel: '**MENACE** / **MATÉRIALISÉE PAR ÉCRIT, IMAGE OU OBJET**',
       moral: '**VOLONTÉ D\'INTIMIDER**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les menaces de mort — sans condition**',

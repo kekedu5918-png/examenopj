@@ -432,6 +432,35 @@ export function Epreuve3Sections() {
     </div>
   );
 
+  const visionIaContent = (
+    <div className='space-y-4 text-sm text-gray-400'>
+      <p>
+        Cahier des charges produit pour une <strong className='text-gray-200'>mise en situation orale d’entraînement</strong> (hors épreuve
+        réelle), à valider avant tout développement — phase ultérieure.
+      </p>
+      <ul className='list-disc space-y-2 pl-5'>
+        <li>
+          <strong className='text-gray-200'>RGPD / vie privée</strong> : finalité limitée à la préparation personnelle, durée de conservation
+          courte ou suppression immédiate après analyse, information transparente, exercice des droits (accès, effacement), DPA fournisseur si
+          traitement externalisé.
+        </li>
+        <li>
+          <strong className='text-gray-200'>Audio et vidéo</strong> : consentement libre et explicite avant enregistrement, option audio seul,
+          pas de relecture « cachée » par défaut ; chiffrement au repos et contrôle d’accès.
+        </li>
+        <li>
+          <strong className='text-gray-200'>Modèle de feedback</strong> : critères alignés sur l’épreuve 3 (structure du CR parquet, hiérarchie
+          faits / actes / personnes / suites, ton professionnel) ; mention obligatoire que l’IA peut se tromper ; pas de score présenté comme
+          verdict du jury.
+        </li>
+        <li>
+          <strong className='text-gray-200'>Exploitabilité</strong> : plafonds de coût API, garde-fous de fiabilité, mode dégradé sans cloud si
+          indisponibilité.
+        </li>
+      </ul>
+    </div>
+  );
+
   const items: SectionAccordionItem[] = [
     {
       id: 'format',
@@ -497,6 +526,13 @@ export function Epreuve3Sections() {
       badge: 'Synthèse',
       badgeColor: 'blue',
       content: recapContent,
+    },
+    {
+      id: 'vision-oral-ia',
+      trigger: 'Vision produit — Oral d’entraînement assisté (phase ultérieure)',
+      badge: 'Spec',
+      badgeColor: 'gray',
+      content: visionIaContent,
     },
   ];
 

@@ -7,6 +7,7 @@ import { AlertTriangle, Check, XCircle } from 'lucide-react';
 import { BaremeBars } from '@/components/epreuves/epreuve-1/bareme-bars';
 import { EPREUVE1_PHRASES } from '@/components/epreuves/epreuve-1/phrases-data';
 import { LANDING_EASE } from '@/components/home/motion';
+import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { Button } from '@/components/ui/button';
 import { CopyBox } from '@/components/ui/CopyBox';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -591,6 +592,22 @@ export function Epreuve1Sections() {
 
   return (
     <div className='mx-auto max-w-4xl space-y-10 px-6 pb-24'>
+      <MethodoRappel title='Attendu épreuve 1 — qualification' variant='accent'>
+        <p>
+          Chaque infraction doit être traitée en <strong>PRQC</strong> avec des éléments légal, matériel et moral{' '}
+          <strong>reproduits tels que dans le référentiel</strong> (titres EXACTS), pas approximés.
+        </p>
+        <p>
+          <Link href='/guide-revision-opj' className='font-semibold text-emerald-200 underline'>
+            Guide de révision
+          </Link>
+          {' · '}
+          <Link href='/entrainement/recapitulatif' className='font-semibold text-emerald-200 underline'>
+            Récap éléments constitutifs
+          </Link>
+        </p>
+      </MethodoRappel>
+
       <SectionAccordion allowMultiple className='pb-4' items={items} />
 
       <section className='py-8' aria-labelledby='autres-epreuves'>

@@ -9,6 +9,7 @@ export const quizQuestionsF01P1: QuizQuestion[] = [
     fascicule: 1,
     domaine: 'DPS',
     explication: "Art. 221-1 : donner volontairement la mort à autrui. Qualification : crime — réclusion criminelle à 30 ans.",
+    hardcoreAliases: ['221-1', '221-1 cp', 'article 221-1 du code pénal', 'code pénal 221-1'],
   },
   {
     id: 'f01p1-02',
@@ -84,6 +85,7 @@ export const quizQuestionsF01P1: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 1,
     domaine: 'DPS',
+    hardcoreAliases: ['222-11', 'article 222-11', '222-11 cp', 'art. 222-11 c.p.'],
   },
   {
     id: 'f01p1-08',

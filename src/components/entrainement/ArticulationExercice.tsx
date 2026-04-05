@@ -22,7 +22,14 @@ function makeEmpty(id: number): CartoucheData {
 
 const initialCartouches: CartoucheData[] = [makeEmpty(1)];
 
-export function ArticulationExercice() {
+export type ArticulationExerciceProps = {
+  /** alpha / bravo : affiche le corrigé-type titre par titre après « Terminer ». */
+  referenceEnqueteId?: string;
+  /** Prérempli quand on arrive depuis une fiche enquête (?ref=). */
+  suggestedTitre?: string;
+};
+
+export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: ArticulationExerciceProps) {
   const [cartouches, setCartouches] = useState<CartoucheData[]>(initialCartouches);
   const [titreArticulation, setTitreArticulation] = useState('');
   const [termine, setTermine] = useState(false);
@@ -47,6 +54,12 @@ export function ArticulationExercice() {
     }
     setAllowPersist(true);
   }, []);
+
+  useEffect(() => {
+    if (!allowPersist || draftPrompt) return;
+    if (!suggestedTitre?.trim()) return;
+    setTitreArticulation((t) => (t.trim() === '' ? suggestedTitre : t));
+  }, [allowPersist, draftPrompt, suggestedTitre]);
 
   useEffect(() => {
     if (!allowPersist) return;
@@ -119,7 +132,7 @@ export function ArticulationExercice() {
 
   const handleRecommencer = useCallback(() => {
     setCartouches(initialCartouches);
-    setTitreArticulation('');
+    setTitreArticulation(suggestedTitre?.trim() ? suggestedTitre : '');
     setTermine(false);
     setFlashingId(null);
     try {
@@ -127,7 +140,7 @@ export function ArticulationExercice() {
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [suggestedTitre]);
 
   const reprendreBrouillon = useCallback(() => {
     if (!draftPrompt) return;
@@ -141,12 +154,15 @@ export function ArticulationExercice() {
   const ignorerBrouillon = useCallback(() => {
     setDraftPrompt(null);
     setAllowPersist(true);
+    setCartouches(initialCartouches);
+    setTermine(false);
+    setTitreArticulation(suggestedTitre?.trim() ? suggestedTitre : '');
     try {
       localStorage.removeItem(STORAGE_KEY);
     } catch {
       /* ignore */
     }
-  }, []);
+  }, [suggestedTitre]);
 
   const validesCount = cartouches.filter((c) => c.valide).length;
   const showTerminer = cartouches.length >= 2 || validesCount >= 1;
@@ -159,6 +175,7 @@ export function ArticulationExercice() {
           titreArticulation={titreArticulation}
           cartouches={cartouches}
           onRecommencer={handleRecommencer}
+          referenceEnqueteId={referenceEnqueteId}
         />
       </div>
     );
@@ -208,6 +225,15 @@ export function ArticulationExercice() {
         <p className='mt-3 text-sm leading-relaxed text-gray-400'>
           Construisez votre articulation cartouche par cartouche. Remplissez le titre, le contenu, la date, l&apos;heure
           et la qualité de chaque côte PV. Le numéro s&apos;incrémente automatiquement.
+          {referenceEnqueteId ? (
+            <>
+              {' '}
+              <span className='text-cyan-200/90'>
+                Modèle attendu des titres (Alpha / Bravo) après « Terminer » si <code className='rounded bg-white/10 px-1'>?ref=</code>{' '}
+                correspond.
+              </span>
+            </>
+          ) : null}
         </p>
         <div className='mt-4'>
           <label htmlFor='titre-art' className='text-xs font-semibold uppercase tracking-wide text-gray-500'>

@@ -350,6 +350,15 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           </p>
         ) : null}
 
+        <div className='mx-auto mb-10 max-w-3xl rounded-2xl border border-cyan-500/20 bg-cyan-500/[0.07] px-5 py-4 text-center text-sm text-cyan-50'>
+          <p className='font-semibold text-cyan-100'>Parcours conseillé</p>
+          <p className='mt-2 text-cyan-50/95'>
+            <strong>L’examen n’est pas en QCM.</strong> Le QCM sert à accélérer la reconnaissance des points ; le mode{' '}
+            <strong>hardcore</strong> (saisie libre) rapproche l’entraînement du concours écrit et de l’oral technique.
+            Enchaînez : quelques séries QCM pour la couverture, puis les mêmes thèmes en hardcore.
+          </p>
+        </div>
+
         <div className='grid gap-6 md:grid-cols-3'>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease }}>
             <div

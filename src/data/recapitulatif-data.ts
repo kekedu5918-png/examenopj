@@ -12,11 +12,17 @@ export type RecapFasciculeFilter =
   | 'f06'
   | 'f07';
 
+/** Grille pédagogique honnête (pas une statistique d’annales). */
+export type RecapPriorite = 'core' | 'freq' | 'secours';
+
 export type RecapRow = {
   infraction: string;
   legal: string;
   materiel: string;
   moral: string;
+  priorite?: RecapPriorite;
+  /** Ex. « Très souvent cité au programme » — mention éditoriale. */
+  noteExamen?: string;
 };
 
 export type RecapFasciculeId = 'F01' | 'F02' | 'F03' | 'F04' | 'F05' | 'F06' | 'F07';
@@ -279,6 +285,8 @@ export const recapSections: RecapSection[] = [
         materiel: 'LA SOUSTRACTION / LA CHOSE / D\'AUTRUI',
         moral:
           'CONSCIENCE DE SOUSTRAIRE UNE CHOSE QUI NE LUI APPARTIENT PAS / VOLONTÉ DE SE COMPORTER, MÊME MOMENTANÉMENT, EN MAÎTRE DE LA CHOSE',
+        priorite: 'core',
+        noteExamen: 'Régime des qualifications aggravées (ex. local d’habitation) souvent couplé au sujet.',
       },
     ],
   },
@@ -313,6 +321,7 @@ export const recapSections: RecapSection[] = [
         legal: 'Art. 313-1 C.P.',
         materiel: 'UN MOYEN DE TROMPERIE / UNE REMISE / AU PRÉJUDICE D\'UNE VICTIME',
         moral: 'CONSCIENCE DE L\'AUTEUR D\'UTILISER DES MOYENS FRAUDULEUX EN VUE D\'OBTENIR UNE REMISE DE LA VICTIME',
+        priorite: 'freq',
       },
       {
         infraction: '**Les filouteries**',
@@ -326,6 +335,7 @@ export const recapSections: RecapSection[] = [
         materiel:
           'UNE REMISE PRÉALABLE DE LA CHOSE / UN ACTE MATÉRIEL DE DÉTOURNEMENT / AU PRÉJUDICE D\'AUTRUI',
         moral: 'CONSCIENCE DE LA PRÉCARITÉ DE LA DÉTENTION ET DE L\'OBLIGATION COMBINÉE DE RESTITUTION',
+        priorite: 'freq',
       },
     ],
   },
@@ -524,6 +534,25 @@ export function filterRecapSections(filter: RecapFasciculeFilter): RecapSection[
   return recapSections.filter((s) => s.fascicule === tag);
 }
 
+const PRIORITE_ORDER: Record<RecapPriorite, number> = {
+  core: 0,
+  freq: 1,
+  secours: 2,
+};
+
+/** Filtre fascicule + n’affiche que les lignes prioritaires éditoriales, triées core → freq → secours. */
+export function filterRecapSectionsPrioritaires(filter: RecapFasciculeFilter): RecapSection[] {
+  const base = filterRecapSections(filter);
+  return base
+    .map((s) => ({
+      ...s,
+      rows: [...s.rows]
+        .filter((r) => r.priorite)
+        .sort((a, b) => PRIORITE_ORDER[a.priorite!] - PRIORITE_ORDER[b.priorite!]),
+    }))
+    .filter((s) => s.rows.length > 0);
+}
+
 export type InfractionCatalogItem = {
   id: string;
   fascicule: RecapFasciculeId;
@@ -533,6 +562,8 @@ export type InfractionCatalogItem = {
   legal: string;
   materiel: string;
   moral: string;
+  priorite?: RecapPriorite;
+  noteExamen?: string;
   flashcardsCat?: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
   /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
   tentative?: string;
@@ -570,6 +601,8 @@ export function getInfractionsCatalog(): InfractionCatalogItem[] {
         legal: row.legal,
         materiel: row.materiel,
         moral: row.moral,
+        priorite: row.priorite,
+        noteExamen: row.noteExamen,
         flashcardsCat:
           s.fascicule === 'F01'
             ? 'atteintes-aux-personnes'
