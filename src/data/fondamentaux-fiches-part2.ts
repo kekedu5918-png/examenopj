@@ -217,8 +217,9 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
       {
         label: 'Pourvoi en cassation (voie extraordinaire)',
         detail:
-          'Devant la Cour de cassation. Contrôle de légalité uniquement (pas le fond). Délai : 5 jours. Si cassation : renvoi devant une autre cour d\'appel.',
+          'Devant la Cour de cassation. Contrôle de légalité uniquement (pas le fond des faits). Délai très court : 5 jours à compter de la notification ou de la signification, selon les cas (attention aux délais francs et aux règles de calcul). Si cassation : renvoi devant une autre cour d\'appel pour rejuger.',
         article: 'Art. 567 C.P.P.',
+        alerte: true,
       },
       {
         label: 'Révision (voie extraordinaire)',

@@ -22,7 +22,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Enquête préliminaire (art. 75 C.P.P.)',
         detail:
-          "Cadre de droit commun, sans urgence. Perquisitions uniquement avec assentiment exprès de la personne, sauf autorisation du JLD. Pas de délai légal sauf délai raisonnable.",
+          "Cadre de droit commun, sans urgence. Perquisition au domicile : assentiment exprès de la personne, ou — sans assentiment — autorisation préalable du JLD si les faits sont un crime, un délit puni d’une peine d’emprisonnement supérieure ou égale à trois ans, ou si la recherche porte sur des biens dont la confiscation est prévue à l’article 131-21 C. pén. ; la décision du JLD doit être écrite, motivée et respecter les conditions de l’article 76 al. 4 C.P.P. Pas de délai légal de l’enquête sauf délai raisonnable et respect de la contradiction.",
         article: 'Art. 75 à 78 C.P.P.',
       },
       {
@@ -43,7 +43,12 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       colonnes: ['Cadre', 'Déclenchement', 'Perquisition', 'Durée / suite'],
       lignes: [
         ['Flagrance', 'Crime/délit flagrant', 'Sans assentiment (selon cas)', '8 j sans discontinuité ; +8 j si crime ou délit ≥ 5 ans et investigations non différables'],
-        ['Préliminaire', 'Toute infraction', 'Avec assentiment ou JLD', 'Pas de plafond légal (série + contradiction)'],
+        [
+          'Préliminaire',
+          'Toute infraction',
+          'Assentiment ou JLD (crime, délit ≥ 3 ans, confiscation 131-21 C. pén., selon art. 76)',
+          'Pas de plafond légal (série + contradiction)',
+        ],
         ['Commission rogatoire', 'Délégation JI', 'Selon délégation', "Durée de l'information"],
       ],
     },
@@ -203,8 +208,8 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'En enquête préliminaire (art. 76)',
         detail:
-          "Nécessite l'assentiment exprès de la personne chez qui la perquisition a lieu (écrit, signé). Sinon, autorisation préalable du JLD requise.",
-        article: 'Art. 76 C.P.P.',
+          "Assentiment exprès (écrit, signé) de la personne concernée, ou perquisition sans assentiment sur autorisation préalable du JLD lorsqu’il s’agit d’un crime, d’un délit puni d’au moins trois ans d’emprisonnement ou de la recherche de biens passibles de confiscation (art. 131-21 C. pén.) : la décision du JLD doit être écrite et motivée (qualification, adresse, objet, proportionnalité ; art. 76 al. 4). À défaut : nullité (art. 59 al. 2 en chaîne avec ces exigences).",
+        article: 'Art. 76 et 59 C.P.P.',
         alerte: true,
       },
       {
@@ -460,7 +465,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Nullités textuelles',
         detail:
-          "Formalités dont la loi dispose qu'elles sont prescrites « à peine de nullité ». Ex. : art. 59 C.P.P. (perquisitions), 60-1 (réquisitions), 100-7 (interceptions). L’art. 802-2 C.P.P. encadre aussi certaines suites en cas de perquisition irrégulière sur lieu de privilège ou de consultation défense.",
+          "Formalités dont la loi dispose qu'elles sont prescrites « à peine de nullité ». Ex. : art. 59 C.P.P. (perquisitions et formalités des art. 56 à 57), 60-1 et 77-1-1 (réquisitions), 78-3 (rétention d’identité), 100-7 (interceptions). L’art. 802-2 C.P.P. encadre aussi certaines suites lorsque la personne n’a pas été poursuivie dans un délai après perquisition ou visite domiciliaire.",
         article: 'Art. 802 et 802-2 C.P.P.',
       },
       {

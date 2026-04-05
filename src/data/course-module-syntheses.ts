@@ -49,6 +49,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Confondre intention homicide et simple violence ayant entraîné la mort sans intention.',
       'Oublier les effets des circonstances (mineur, lien familial, qualité de la victime) sur la compétence et la peine.',
+      'Violences avec ITT : vérifier le seuil et la qualification retenue par le parquet (correctionnel vs assises selon les cas).',
     ],
   },
   f02: {
@@ -73,12 +74,14 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
         titre: 'Biens et numérique',
         points: [
           'Intrusion frauduleuse, atteintes aux systèmes, infractions liées aux moyens de paiement.',
+          'Extorsion et abus de faiblesse : distinguer la contrainte psychologique de la simple tromperie.',
         ],
       },
     ],
     pratiqueOpj: [
       'Relier scellés, relevés et saisies à la suite probatoire du dossier (chaîne de possession).',
       'Distinguer ce qui relève du constat immédiat de ce qui relève de l’analyse juridique approfondie.',
+      'Sur le recel : ancrer la conscience de l’origine illicite dans les déclarations, messages et objectivements.',
     ],
     pieges: [
       'Mélanger abus de confiance et escroquerie sur les faits d’« abusement » de la bonne foi.',
@@ -114,6 +117,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     ],
     pieges: [
       'Confondre les régimes de la simple fuite et des blessures avec obligation d’assistance.',
+      'Rodéo et refus d’obtempérer : ne pas amalgamer qualification, circonstances aggravantes et compétence sans relire le texte.',
     ],
   },
   f04: {
@@ -136,10 +140,12 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
         titre: 'Associations et atteintes collectives',
         points: [
           'Associations de malfaiteurs et infractions connexes.',
+          'Apologie du terrorisme et atteintes aux symboles : situer la gravité et les infractions annexes (provocation, menaces).',
         ],
       },
     ],
     pratiqueOpj: [
+      'Sur l’outrage ou la rébellion : citer les termes exacts, le contexte et les qualités des personnes visées (conditions de l’infraction).',
       'Préserver la sécurité des intervenants et la légalité des interpellations face à des faits de violence institutionnelle.',
       'Documenter précisément les paroles et actes à l’encontre des forces de l’ordre ou du magistrat.',
     ],
@@ -154,13 +160,15 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Usage et figures de trafic',
         points: [
-          'Distinguer usage simple, traffic, import et infractions aggravées.',
+          'Distinguer usage, détention, offre, traffic, import ; connaître les seuils et formes aggravées (réunion, mineur, violences).',
+          'Lien avec association de malfaiteurs et blanchiment des produits du trafic.',
         ],
       },
       {
         titre: 'Mineurs et protection',
         points: [
           'Infractions impliquant des mineurs ou la provocation ; sensibilité procédurale.',
+          'Collaboration parquet pour GAV, perquisitions et qualifications pouvant ouvrir le livre IV bis C.P.P.',
         ],
       },
     ],
@@ -170,6 +178,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     ],
     pieges: [
       'Oublier les infractions périphériques (association, blanchiment) qui structurent le dossier.',
+      'Confondre usage et détention : le discernement du juge et du parquet repose sur les circonstances concrètes (quantité, emballage, matériel).',
     ],
   },
   f06: {
@@ -186,6 +195,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
         titre: 'Autorité parentale et délais',
         points: [
           'Abandon, non-représentation d’enfant, infractions à l’autorité parentale.',
+          'Violences conjugales avec enfant : articuler mesures de protection, signalements et audition adaptée.',
         ],
       },
     ],
@@ -195,6 +205,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     ],
     pieges: [
       'Négliger la chronologie familiale dans les violences conjugales impliquant des enfants.',
+      'Corruption de mineur et atteintes sexuelles : vérifier la qualification (âge, contrainte, lien d’autorité) plutôt qu’un intitulé générique.',
     ],
   },
   f07: {
@@ -204,21 +215,24 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Catégories et interdictions',
         points: [
-          'Armes soumises à autorisation vs prohibées ; régimes spécifiques pour certaines professions.',
+          'Catégories A à D ; armes proches de l’arme de guerre ; régimes chasse / tir / administrations.',
         ],
       },
       {
         titre: 'Infractions usuelles',
         points: [
-          'Port illicile, détention non déclarée, falsification de documents.',
+          'Port, transport, détention sans autorisation ; acquisition ou détention prohibée ; vol ou recel d’arme.',
+          'Relever les circonstances aggravantes (réunion, usage avec violences, lieux sensibles).',
         ],
       },
     ],
     pratiqueOpj: [
       'Sécuriser la saisine des armes et la chaîne des scellés ; photographier et inventorier méthodiquement.',
+      'Consigner l’état de fonctionnement (chargeur, culasse), les marquages et la correspondance catégories / documents.',
     ],
     pieges: [
       'Confondre armes de catégories différentes et leurs régimes de répression.',
+      'Munitions, accessoires et répliques : ne pas assimiler à un jouet sans analyser le cadre légal applicable.',
     ],
   },
   f08: {
@@ -234,15 +248,17 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Contrôles et mesures',
         points: [
-          'Contrôle d’identité, fouilles ; proportionnalité et motivation dans les écrits.',
+          'Contrôle d’identité (78-2), rétention courte (78-3), fouilles et actes proportionnés ; motivation dans les écrits.',
+          'Liberté d’aller et venir, vie privée : liens avec la recevabilité des preuves et le contrôle de légalité.',
         ],
       },
     ],
     pratiqueOpj: [
-      'Expliciter dans le PV les motifs et les délais pour limiter les nullités et les griefs.',
+      'Expliciter dans le PV les motifs, le cadre légal invoqué et les délais pour limiter nullités et griefs.',
     ],
     pieges: [
       'Oublier l’impact des atteintes disproportionnées sur la recevabilité des suites pénales.',
+      'Utiliser le contrôle d’identité comme prétexte à un acte d’enquête non prévu par la loi.',
     ],
   },
   f09: {
@@ -252,21 +268,23 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Infraction et responsabilité',
         points: [
-          'Légale, matérielle, morale ; personnes morales et mineurs (repères).',
+          'Légale, matérielle, morale ; personnes morales (encadrement distinct) et mineurs (responsabilité pénale et éducative).',
         ],
       },
       {
         titre: 'Tentative, complicité, concours',
         points: [
-          'Conditions de punissabilité ; unité ou pluralité d’infractions.',
+          'Conditions de punissabilité ; unité ou pluralité d’infractions ; consommation et mobile.',
         ],
       },
     ],
     pratiqueOpj: [
       'Présenter au parquet une qualification provisoire argumentée sans figer la juridiction.',
+      'Séparer dans le PV faits objectifs, indices et appréciation provisoire des éléments moraux.',
     ],
     pieges: [
       'Confondre cause d’irresponsabilité et simple circonstance atténuante.',
+      'Imprudence punissable (délit ou crime involontaire) vs simple accident non fautif : le lien de causalité et l’obligation violée.',
     ],
   },
   f10: {
@@ -282,15 +300,18 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Récidive et circonstances',
         points: [
-          'Effets sur les peines encourues et sur la procédure applicable.',
+          'Récidive légale : conditions de constitution et effets sur le périmètre de peine.',
+          'Circonstances atténuantes et aggravantes ; peines complémentaires (interdictions, travail d’intérêt général, etc.).',
         ],
       },
     ],
     pratiqueOpj: [
       'Rappeler dans les rapports les antécédents pertinents et les qualifications retenues antérieurement.',
+      'Pour l’épreuve : rattacher chaque chef aux peines encourues (fourchettes) sans improviser hors texte.',
     ],
     pieges: [
       'Mélanger concours idéal et concours réel dans l’exposé des faits.',
+      'Oublier que la récidive suppose souvent une condamnation antérieure au sens précis de la loi pour la même nature d’infraction.',
     ],
   },
   f11: {
@@ -313,7 +334,8 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Perquisitions et saisies',
         points: [
-          'Consentement, décision judiciaire, horaires, personnes présentes.',
+          'Flagrance vs préliminaire : sans assentiment dès lors que le cadre le permet ; en préliminaire, assentiment ou JLD (crime, délit ≥ 3 ans, confiscation 131-21 C. pén., art. 76 al. 4).',
+          'Lieux protégés (avocat, presse, etc.), horaires 6h–21h et formalités art. 56–59 à peine de nullité.',
         ],
       },
     ],
@@ -323,6 +345,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Erreurs sur les délais de GAV ou sur la notification des droits — source fréquente de nullités.',
       'Confondre « 8 + 8 jours » systématique en flagrance avec le seuil du délit ≥ 5 ans et l’exigence de continuité des investigations.',
+      'Penser que toute perquisition en préliminaire exige l’assentiment : oublier le cas JLD (crime / délit ≥ 3 ans / confiscation).',
     ],
   },
   f12: {
@@ -338,7 +361,8 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Libertés et détention',
         points: [
-          'JLD, retraits et prolongations, expertise à ordonner côté enquête.',
+          'Contrôle judiciaire, assignation à résidence, bracelet ; révision et levée par le JLD.',
+          'Détention provisoire : exceptionnalité, motivation ; mandats d’amener, de dépôt vs mandat de recherche (effets différents).',
         ],
       },
     ],
@@ -348,82 +372,98 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Confondre les qualifications procédurales devant le juge d’instruction et en enquête préliminaire.',
       'Mandat de recherche (art. 122 al. 2 C.P.P.) : porter sur la recherche et le placement en GAV dès l’appréhension, et non seulement une présentation « au greffe » du juge.',
+      'Mandat de dépôt : ordre de mise en détention provisoire une fois la personne sous le coup d’un placement à ordonner ; ne pas le confondre avec le mandat de recherche.',
     ],
   },
   f13: {
     resume:
-      'Juridictions, compétences, phases de jugement et principes d’exécution des décisions — pour cadrer le traitement du dossier jusqu’au sort des peines.',
+      'Juridictions, compétences, phases de jugement et principes d’exécution : tribunal de police, correctionnel, cour criminelle départementale et cour d’assises ; recours et exécution des peines.',
     axes: [
       {
         titre: 'Ordre judiciaire et compétence',
         points: [
-          'Police, correctionnel, cour d’assises ; règles de saisine.',
+          'Contravention → tribunal de police ; délit → correctionnel ; crimes selon périmètre CCD (15–20 ans) ou cour d’assises (jurés).',
+          'Tribunal administratif : certaines sanctions de police administrative ; ordre judiciaire pénal : infractions du code pénal — ne pas mélanger compétences, parties et recours.',
         ],
       },
       {
         titre: 'Jugement et exécution',
         points: [
-          'Voies de recours sommaires ; lien avec l’exécution des peines et le SPIP (repères).',
+          'Opposition, appel (effet suspensif sauf exceptions), pourvoi en cassation (contrôle de légalité).',
+          'Exécution provisoire vs suspension : SPIP, détention et peines alternatives (repères pour le dossier).',
         ],
       },
     ],
     pratiqueOpj: [
-      'Adapter le défèrement et les PV au niveau de juridiction attendu selon la qualification.',
+      'Adapter le défèrement, les qualifications et les PV au niveau de juridiction réellement saisie.',
+      'Mentionner les gardes à vue et actes critiques avec les dates pour le calendrier de comparution et de recours.',
     ],
     pieges: [
       'Erreurs de délais de comparution ou de citation selon la juridiction.',
+      'Confondre appel (fond, cour d’appel) et cassation (moyens de droit, Cour de cassation) ou oublier le caractère très bref du pourvoi pénal.',
     ],
   },
   f14: {
     resume:
-      'Action publique et civile, parquet, police judiciaire, dévolution et articulation avec les parties : comprendre qui décide quoi à chaque étape.',
+      'Action publique et civile, opportunité des poursuites, ministère public, OPJ / APJ / assistants d’enquête et contrôle de la mission de PJ : qui saisit, qui décide, qui exécute.',
     axes: [
       {
         titre: 'Parquet et poursuites',
-        points: ['Opportunité des poursuites, saisines, orientations d’enquête.'],
+        points: [
+          'Principe d’opportunité des poursuites et ses limites légales ; alternatives (art. 41-1), composition pénale, mise en mouvement de l’action.',
+          'Prescription et extinction : transaction, retrait de plainte (infractions poursuites sur plainte), amnistie, décès, chose jugée.',
+        ],
       },
       {
         titre: 'Parties et voies procédurales',
         points: [
-          'Partie civile, indemnisation, liens avec le pénal.',
+          'Partie civile devant le pénal ; constitution et effets sur la procédure ; réparation et lien avec l’action civile autonome.',
+          'Modalités de saisine : citation, convocation, comparution immédiate, CRPC (repères) — sans confondre les régimes.',
         ],
       },
       {
-        titre: 'Acteurs de la PJ',
+        titre: 'Acteurs de la PJ et contrôle',
         points: [
-          'Rôle OPJ / APJ, déférence au magistrat et rendus compte.',
+          'Attributions et périmètres : OPJ, APJ, assistants d’enquête selon le cadre (flagrance, préliminaire, CR).',
+          'Rendus compte au PR, contrôle du parquet et du juge d’instruction ; indivisibilité et caractère du ministère public.',
         ],
       },
     ],
     pratiqueOpj: [
-      'Rendre compte par écrit de façon claire pour permettre une orientation pénale cohérente.',
+      'Rendre compte par écrit : faits, qualifications proposées, mesures déjà posées et suite demandée — sans usurper la décision du parquet.',
+      'Tracer les réquisitions écrites et les réponses pour les actes sensibles (perquisitions, GAV prolongée, technique).',
     ],
     pieges: [
       'Anticiper une décision de classement ou de qualification sans instruction du parquet.',
+      'Confondre CRPC et composition pénale, ou oublier que l’action civile n’a pas le même sort que l’action publique.',
     ],
   },
   f15: {
     resume:
-      'Nullités de procédure : distinguer motifs textuels et griefs substantiels, effets sur les actes et stratégie de rédaction pour limiter les irrégularités.',
+      'Nullités textuelles et substantielles : respect des formalités « à peine de nullité » (perquisitions, réquisitions, interceptions…) ; toujours le grief au centre (art. 802) ; effet cascade (art. 174).',
     axes: [
       {
         titre: 'Typologie',
         points: [
-          'Nullités « automatiques » vs celles soumises à démonstration du grief.',
+          'Nullité textuelle : la loi exclut l’appréciation du juge sur l’existence de la sanction.',
+          'Nullité substantielle : atteinte à la défense ou formalité essentielle ; prononcée seulement s’il y a grief (art. 802).',
         ],
       },
       {
-        titre: 'Conséquences',
+        titre: 'Conséquences et voies',
         points: [
-          'Exclusion de preuve vs simple régularisation selon les cas.',
+          'Effets sur l’acte et les actes subséquents (art. 174) ; instruction vs absence d’information (chambre de l’instruction, art. 173 ; art. 385 au pénal sans instruction).',
+          'Art. 802-2 : possibilité d’information sur suites après perquisition / visite sans poursuite dans le délai légal.',
         ],
       },
     ],
     pratiqueOpj: [
-      'Vérifier systématiquement dates, signatures, notifications et identités dans les PV critiques.',
+      'Pour les perquisitions : personnes présentes ou représentées, horaires, lieux protégés (avocat, presse, ordres) selon les textes ; citer l’autorisation dans le PV.',
+      'Vérifier systématiquement dates, signatures, notifications et identités dans les PV de GAV, garde et auditions.',
     ],
     pieges: [
-      'Penser qu’une erreur matérielle mineure entraine toujours nullité sans grief.',
+      'Penser qu’une erreur matérielle mineure entraîne toujours nullité sans grief (art. 802 : condition du grief).',
+      'Croire qu’une violation d’une formalité « à peine de nullité » suffit sans démontrer le grief : l’art. 802 conditionne le prononcé (textuelle ou substantielle).',
     ],
   },
 };
