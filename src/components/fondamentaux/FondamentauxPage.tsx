@@ -1,6 +1,7 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { useToast } from '@/components/ui/use-toast';
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
@@ -9,7 +10,6 @@ import { cn } from '@/utils/cn';
 import { FONDAMENTAUX_VUES_STORAGE_KEY, FREEMIUM_UNLOCKED_IDS } from './fondamentaux-theme';
 import { FondamentauxCard } from './FondamentauxCard';
 import { FondamentauxCoveragePanel } from './FondamentauxCoveragePanel';
-import { FondamentauxDrawer } from './FondamentauxDrawer';
 import { type FiltreCategorie, FondamentauxFilters } from './FondamentauxFilters';
 import { FondamentauxHero } from './FondamentauxHero';
 import { FondamentauxPremiumGate } from './FondamentauxPremiumGate';
@@ -40,109 +40,46 @@ function readViewedIds(): Set<string> {
   }
 }
 
-function persistViewedIds(ids: Set<string>) {
-  try {
-    localStorage.setItem(FONDAMENTAUX_VUES_STORAGE_KEY, JSON.stringify([...ids]));
-  } catch {
-    /* ignore */
-  }
-}
-
 export function FondamentauxPage({ fiches, categories, contentLocked = false }: Props) {
   const { toast } = useToast();
+  const router = useRouter();
   const [filtre, setFiltre] = useState<FiltreCategorie>('all');
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [drawerFiche, setDrawerFiche] = useState<Fiche | null>(null);
   const [viewedIds, setViewedIds] = useState<Set<string>>(new Set());
-  const returnFocusRef = useRef<HTMLElement | null>(null);
-  const closeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setViewedIds(readViewedIds());
   }, []);
 
-  useEffect(
-    () => () => {
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-      }
-    },
-    []
-  );
+  useEffect(() => {
+    const refresh = () => setViewedIds(readViewedIds());
+    window.addEventListener('focus', refresh);
+    document.addEventListener('visibilitychange', refresh);
+    return () => {
+      window.removeEventListener('focus', refresh);
+      document.removeEventListener('visibilitychange', refresh);
+    };
+  }, []);
 
-  /** Lien profond `/fondamentaux#fiche-…` : afficher la bonne catégorie puis faire défiler jusqu’à la carte. */
+  /** Anciens liens #fiche-… → page plein écran. */
   useEffect(() => {
     if (typeof window === 'undefined') return;
     const hash = window.location.hash;
     if (!hash.startsWith('#fiche-')) return;
     const ficheId = hash.slice('#fiche-'.length);
     const fiche = fiches.find((x) => x.id === ficheId);
-    if (fiche) setFiltre(fiche.categorie);
-  }, [fiches]);
+    if (fiche) {
+      router.replace(`/fondamentaux/${ficheId}`);
+    }
+  }, [fiches, router]);
 
   const isLocked = useCallback(
     (id: string) => contentLocked && !FREEMIUM_UNLOCKED_IDS.has(id),
-    [contentLocked]
+    [contentLocked],
   );
 
   const fichesFiltrees = useMemo(() => {
     return fiches.filter((f) => filtre === 'all' || f.categorie === filtre);
   }, [fiches, filtre]);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const id = window.location.hash.slice(1);
-    if (!id.startsWith('fiche-')) return;
-    const t = window.setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 280);
-    return () => window.clearTimeout(t);
-  }, [fichesFiltrees, filtre]);
-
-  const registerView = useCallback((id: string) => {
-    setViewedIds((prev) => {
-      if (prev.has(id)) {
-        return prev;
-      }
-      const next = new Set(prev);
-      next.add(id);
-      persistViewedIds(next);
-      return next;
-    });
-  }, []);
-
-  const openDrawer = useCallback(
-    (fiche: Fiche, fromEl: HTMLElement | null) => {
-      if (isLocked(fiche.id)) {
-        return;
-      }
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-        closeTimerRef.current = null;
-      }
-      returnFocusRef.current = fromEl;
-      registerView(fiche.id);
-      setDrawerFiche(fiche);
-      setDrawerOpen(true);
-    },
-    [isLocked, registerView]
-  );
-
-  const onDrawerOpenChange = useCallback((open: boolean) => {
-    setDrawerOpen(open);
-    if (!open) {
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current);
-      }
-      closeTimerRef.current = setTimeout(() => {
-        setDrawerFiche(null);
-        closeTimerRef.current = null;
-      }, 320);
-    } else if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current);
-      closeTimerRef.current = null;
-    }
-  }, []);
 
   const onPremiumBackdrop = useCallback(() => {
     toast({
@@ -157,6 +94,10 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
       <FondamentauxFilters fiches={fiches} categories={categories} value={filtre} onChange={setFiltre} />
 
       <div className='mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8'>
+        <p className='mb-6 text-center text-sm text-slate-500'>
+          Cliquez sur une fiche pour l’ouvrir en <strong className='text-slate-300'>pleine page</strong> (synthèse
+          lisible, tableau et liens quiz / module).
+        </p>
         <div
           key={filtre}
           className={cn('grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3')}
@@ -184,7 +125,6 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
                 categorieLabel={cat.label}
                 couleurKey={cat.couleur}
                 index={index}
-                onOpen={(el) => openDrawer(fi, el)}
               />
             );
           })}
@@ -196,16 +136,6 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
       </div>
 
       <FondamentauxCoveragePanel />
-
-      {drawerFiche ? (
-        <FondamentauxDrawer
-          fiche={drawerFiche}
-          open={drawerOpen}
-          onOpenChange={onDrawerOpenChange}
-          categories={categories}
-          returnFocusRef={returnFocusRef}
-        />
-      ) : null}
     </div>
   );
 }

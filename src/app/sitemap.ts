@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { COURSE_MODULE_IDS } from '@/data/fascicules-list';
+import { FICHES } from '@/data/fondamentaux-data';
 import { getSiteUrl } from '@/utils/site-url';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -56,5 +57,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticEntries, ...moduleEntries];
+  const fondamentauxFicheEntries: MetadataRoute.Sitemap = FICHES.map((f) => ({
+    url: `${base}/fondamentaux/${f.id}`,
+    lastModified: now,
+    changeFrequency: 'monthly',
+    priority: 0.72,
+  }));
+
+  return [...staticEntries, ...moduleEntries, ...fondamentauxFicheEntries];
 }

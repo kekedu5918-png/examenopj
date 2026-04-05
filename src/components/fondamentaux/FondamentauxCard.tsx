@@ -1,6 +1,6 @@
 'use client';
 
-import { forwardRef } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Table2 } from 'lucide-react';
 
@@ -15,25 +15,22 @@ interface Props {
   categorieLabel: string;
   couleurKey: string;
   index: number;
-  onOpen?: (target: HTMLElement) => void;
-  /** Fiche derrière le gate premium : pas d’interaction clavier sur le bouton. */
+  /** Fiche derrière le gate premium : pas de lien. */
   locked?: boolean;
 }
 
 const cardClass = (c: (typeof COULEURS)['emerald'], locked: boolean | undefined) =>
   cn(
-    'group relative w-full rounded-xl border border-white/10 bg-white/[0.03] p-5 text-left shadow-lg shadow-black/20 transition-all duration-200',
+    'group relative block w-full rounded-xl border border-white/10 bg-white/[0.03] p-5 text-left shadow-lg shadow-black/20 transition-all duration-200',
     !locked && 'hover:z-[1] hover:scale-[1.02] hover:shadow-xl hover:shadow-black/30',
-    !locked && 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500/50',
+    !locked &&
+      'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500/50',
     'border-l-4',
     c.borderLeft,
-    !locked && c.borderHover
+    !locked && c.borderHover,
   );
 
-export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function FondamentauxCard(
-  { fiche, categorieLabel, couleurKey, index, onOpen, locked = false },
-  ref
-) {
+export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, locked = false }: Props) {
   const c = COULEURS[couleurKey] ?? COULEURS.emerald;
   const alertCount = fiche.regles.filter((r) => r.alerte).length;
   const rulesCount = fiche.regles.length;
@@ -47,7 +44,7 @@ export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function Fo
         <div
           className={cn(
             'flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.04] transition-colors group-hover:border-white/20',
-            c.title
+            c.title,
           )}
           aria-hidden
         >
@@ -55,7 +52,9 @@ export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function Fo
         </div>
       </div>
 
-      <h3 className='mb-2 font-display text-base font-bold leading-snug text-white group-hover:text-white sm:text-lg'>{fiche.titre}</h3>
+      <h3 className='mb-2 font-display text-base font-bold leading-snug text-white group-hover:text-white sm:text-lg'>
+        {fiche.titre}
+      </h3>
       <p className='line-clamp-2 text-sm leading-relaxed text-slate-400'>{fiche.accroche}</p>
 
       <div className='mt-4 flex flex-wrap items-center gap-2'>
@@ -75,6 +74,11 @@ export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function Fo
           </span>
         ) : null}
       </div>
+      {!locked ? (
+        <span className='mt-4 inline-flex text-xs font-medium text-emerald-400/90 group-hover:text-emerald-300'>
+          Lire la fiche complète →
+        </span>
+      ) : null}
     </>
   );
 
@@ -89,15 +93,10 @@ export const FondamentauxCard = forwardRef<HTMLButtonElement, Props>(function Fo
       {locked ? (
         <div className={cardClass(c, true)}>{inner}</div>
       ) : (
-        <button
-          ref={ref}
-          type='button'
-          onClick={(e) => onOpen?.(e.currentTarget)}
-          className={cardClass(c, false)}
-        >
+        <Link href={`/fondamentaux/${fiche.id}`} className={cardClass(c, false)}>
           {inner}
-        </button>
+        </Link>
       )}
     </motion.div>
   );
-});
+}

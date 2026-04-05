@@ -406,7 +406,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     categorie: 'procedure',
     titre: 'Contrôle judiciaire, ARSE et détention provisoire',
     accroche:
-      "Trois mesures de contrainte alternatives ou cumulatives décidées par le JLD en cours d'instruction, par ordre croissant de sévérité.",
+      "Trois paliers de contrainte encadrés par le JLD après renvoi au tribunal ou en cours d’instruction : du CJ (obligations sous liberté) à l’ARSE (assignation surveillée), jusqu’à la détention provisoire si les mesures atténuées s’avèrent insuffisantes. À l’examen : maîtrise des critères de proportionnalité et des décideurs.",
     source: 'Art. 137 à 148-9 C.P.P.',
     lienModule: '/cours/modules/f12',
     lienQuiz: '/entrainement/quiz?mode=module&f=f12',
@@ -414,41 +414,54 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Contrôle judiciaire (CJ) — art. 138',
         detail:
-          "Mesure la moins restrictive. Le mis en examen reste libre mais doit respecter des obligations (ne pas quitter le territoire, pointer, ne pas rencontrer certaines personnes, etc.). 17 obligations listées à l'art. 138 C.P.P.",
+          "Mesure la moins restrictive : le mis en examen demeure libre sous un ensemble d’obligations (ex. : ne pas quitter le territoire, présentations au greffe, interdiction de rencontrer certaines personnes, réparation du préjudice, soins, etc.). Le catalogue est fixé par la loi ; le JLD choisit parmi ces obligations celles qui sont nécessaires et proportionnées.",
         article: 'Art. 138 C.P.P.',
       },
       {
-        label: 'ARSE — Assignation à résidence avec surveillance électronique',
+        label: 'ARSE — principe et effet sur la liberté',
         detail:
-          "Assignation au domicile avec bracelet électronique. Plus restrictive que le CJ mais moins que la détention. Nécessite accord du mis en examen.",
-        article: 'Art. 142-5 C.P.P.',
-      },
-      {
-        label: 'Détention provisoire (DP) — art. 143-1',
-        detail:
-          "Incarcération du mis en examen avant jugement. Conditions : infraction punie d'au moins 3 ans (ou 1 an dans certains cas). Le JLD décide, saisi par le JI. Durée maximale variable selon qualification (crime/délit).",
-        article: 'Art. 143-1 C.P.P.',
+          "L’assignation à résidence avec surveillance électronique (ARSE) astreint le mis en examen à rester dans un périmètre défini (souvent le domicile), avec contrôle par bracelet ou autre dispositif. C’est une mesure intermédiaire, nettement plus lourde que le simple CJ. Le législateur encadre strictement les hypothèses ; vérifiez sur Légifrance les cas où l’accord de la personne est requis ou les exceptions prévues par le texte en vigueur.",
+        article: 'Art. 142-3 à 142-8 C.P.P.',
         alerte: true,
       },
       {
-        label: '⚠️ Principe de présomption d\'innocence',
+        label: 'Décision du JLD et audition préalable',
         detail:
-          "La détention provisoire est une mesure EXCEPTIONNELLE. Le principe est la liberté (art. préliminaire C.P.P.). La DP ne peut être prononcée que si le CJ et l'ARSE sont insuffisants.",
+          "Le juge des libertés et de la détention statue après avoir entendu le mis en examen — ou son avocat — en principe en audience publique, sauf renonciation ou impossibilité caractérisée. Cette phase est déterminante pour la légalité et la motivation de la mesure.",
+        article: 'Art. 139-1 C.P.P.',
+      },
+      {
+        label: 'Détention provisoire (DP) — conditions et proportionnalité',
+        detail:
+          "La DP ne peut être ordonnée que si elle est seule à même d’empêcher l’atteinte aux victimes ou témoins, la fuite du mis en examen, la conservation des preuves ou la manifestation du trouble à l’ordre public exceptionnel dû à l’infraction. Elle doit en outre être proportionnée à l’infraction et à la personnalité de l’intéressé. Le plafond de durée et les prolongations suivent les distinctions crime / délit : à consolider sur les articles 143-1 et suivants et 144 C.P.P. pour votre concours.",
+        article: 'Art. 143-1 et s. C.P.P.',
         alerte: true,
       },
       {
-        label: 'Qui décide ?',
+        label: 'Présomption d’innocence et exceptionnalité de la DP',
         detail:
-          'Le JLD (Juge des Libertés et de la Détention) — saisi par le JI. En enquête de police : le JLD peut également intervenir pour autoriser certains actes (perquisitions de nuit, écoutes, etc.).',
-        article: 'Art. 137-1 C.P.P.',
+          "La liberté est la règle. La détention provisoire est subsidiaire : le JLD ne peut l’ordonner qu’à défaut de suffisance des mesures atténuées (CJ, ARSE…) au regard des mêmes finalités (sauvegarde de la procédure, protection des tiers).",
+        alerte: true,
+      },
+      {
+        label: 'Mainlevée, modification et maintien',
+        detail:
+          "Le JLD peut à tout moment, d’office ou sur requête, assouplir, substituer ou lever une mesure si les motifs qui l’ont justifiée ont disparu ou si la mesure n’est plus proportionnée. Le maintien prolongé de la DP est un sujet d’actualité juridique : pensez « révision périodique » dans vos restitutions écrites.",
+        article: 'Art. 148 C.P.P.',
+      },
+      {
+        label: 'Rôle du juge d’instruction vs JLD',
+        detail:
+          "Le magistrat instructeur conduit l’information ; il adresse des réquisitions au JLD concernant placement sous CJ, ARSE ou DP. Ce sont des fonctions distinctes : à l’oral comme à l’écrit, ne pas confondre « qui propose » et « qui statue » sur les libertés.",
+        article: 'Art. 137-1, 180 C.P.P.',
       },
     ],
     tableau: {
-      colonnes: ['Mesure', 'Liberté', 'Conditions', 'Décidée par'],
+      colonnes: ['Mesure', 'Liberté', 'Logique', 'Décideur'],
       lignes: [
-        ['Contrôle judiciaire', 'Oui (avec obligations)', 'Toute infraction', 'JLD'],
-        ['ARSE', 'Partielle (domicile)', 'Accord requis', 'JLD'],
-        ['Détention provisoire', 'Non', "≥ 3 ans d'emprisonnement", 'JLD (saisi par JI)'],
+        ['Contrôle judiciaire', 'Oui (obligations)', 'Privilégier dès que les risques sont couverts sans incarcération', 'JLD'],
+        ['ARSE', 'Très limitée (périmètre + surveillance)', 'Mesure intermédiaire encadrée (texte + technique)', 'JLD'],
+        ['Détention provisoire', 'Non', 'Exceptionnelle : griefs impossibles à couvrir autrement', 'JLD'],
       ],
     },
   },

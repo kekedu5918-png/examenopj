@@ -6,6 +6,6 @@ export function getFondamentauxLinksForCourseModule(moduleId: string): { id: str
   return FICHES.filter((f) => f.lienModule === prefix).map((f) => ({
     id: f.id,
     titre: f.titre,
-    href: `/fondamentaux#fiche-${f.id}`,
+    href: `/fondamentaux/${f.id}`,
   }));
 }
