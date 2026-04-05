@@ -24,7 +24,7 @@ export const PRIORITE_ORDER: Record<RecapPriorite, number> = {
 
 export const PRIORITE_EXAMEN_BADGE: Record<RecapPriorite, { label: string; className: string }> = {
   core: {
-    label: 'Examen — prioritaire',
+    label: 'Prioritaire',
     className: 'border-rose-400/45 bg-rose-500/18 text-rose-50',
   },
   freq: {
@@ -565,6 +565,20 @@ export function filterRecapSectionsPrioritaires(filter: RecapFasciculeFilter): R
       .map((r) => ({ ...r, priorite: r.priorite ?? 'secours' }))
       .sort((a, b) => PRIORITE_ORDER[a.priorite!] - PRIORITE_ORDER[b.priorite!]),
   }));
+}
+
+/** Ne garde que les lignes d’une strate de priorité (référentiel / récap). */
+export function filterRecapRowsByPriorite(
+  sections: RecapSection[],
+  tier: RecapPriorite | 'all',
+): RecapSection[] {
+  if (tier === 'all') return sections;
+  return sections
+    .map((s) => ({
+      ...s,
+      rows: s.rows.filter((r) => (r.priorite ?? 'secours') === tier),
+    }))
+    .filter((s) => s.rows.length > 0);
 }
 
 export type InfractionCatalogItem = {

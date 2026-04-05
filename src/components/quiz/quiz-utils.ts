@@ -2,6 +2,22 @@ import { type QuizQuestion } from '@/data/types';
 
 export type QuizMode = 'global' | 'fascicule' | 'module' | 'domain';
 
+/** Exclut les entrées corrompues ou incomplètes (évite un QCM « vide » à l’écran). */
+export function isValidQuizQuestion(q: QuizQuestion): boolean {
+  const text = typeof q.question === 'string' ? q.question.trim() : '';
+  if (text.length < 8) return false;
+  if (!Array.isArray(q.options) || q.options.length < 4) return false;
+  if (!q.options.every((o) => typeof o === 'string' && o.trim().length > 0)) return false;
+  if (
+    typeof q.correctIndex !== 'number' ||
+    q.correctIndex < 0 ||
+    q.correctIndex >= q.options.length
+  ) {
+    return false;
+  }
+  return true;
+}
+
 export function isThemeQuizMode(mode: QuizMode): boolean {
   return mode === 'fascicule' || mode === 'module';
 }
@@ -21,10 +37,12 @@ export function filterQuestions(
   fascicule?: number,
   domain?: QuizQuestion['domaine']
 ): QuizQuestion[] {
-  if (mode === 'global') return [...all];
-  if (isThemeQuizMode(mode) && fascicule != null) return all.filter((q) => q.fascicule === fascicule);
-  if (mode === 'domain' && domain) return all.filter((q) => q.domaine === domain);
-  return [...all];
+  let pool: QuizQuestion[];
+  if (mode === 'global') pool = [...all];
+  else if (isThemeQuizMode(mode) && fascicule != null) pool = all.filter((q) => q.fascicule === fascicule);
+  else if (mode === 'domain' && domain) pool = all.filter((q) => q.domaine === domain);
+  else pool = [...all];
+  return pool.filter(isValidQuizQuestion);
 }
 
 export function applyQuestionLimit(

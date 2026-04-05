@@ -7,11 +7,16 @@ import { CAT_ORDER, COULEURS } from './fondamentaux-theme';
 
 export type FiltreCategorie = Categorie | 'all';
 
+export type VueOrganisationFondamentaux = 'programme' | 'theme';
+
 interface Props {
   fiches: Fiche[];
   categories: Record<Categorie, { label: string; couleur: string }>;
   value: FiltreCategorie;
   onChange: (c: FiltreCategorie) => void;
+  /** Regroupement : ordre officiel F01–F15 ou par grande catégorie du site. */
+  vueOrganisation: VueOrganisationFondamentaux;
+  onVueOrganisationChange: (v: VueOrganisationFondamentaux) => void;
   /** N’afficher que les fiches `indispensableExamen` (combiné avec la catégorie). */
   prioriteExamenOnly: boolean;
   onPrioriteExamenOnlyChange: (v: boolean) => void;
@@ -22,6 +27,8 @@ export function FondamentauxFilters({
   categories,
   value,
   onChange,
+  vueOrganisation,
+  onVueOrganisationChange,
   prioriteExamenOnly,
   onPrioriteExamenOnlyChange,
 }: Props) {
@@ -30,6 +37,33 @@ export function FondamentauxFilters({
   return (
     <div className='sticky top-16 z-30 border-b border-white/10 bg-navy-950/95 px-4 py-3 backdrop-blur-md sm:px-8'>
       <div className='mx-auto max-w-5xl'>
+        <div className='mb-3 flex flex-wrap gap-2 border-b border-white/[0.06] pb-3'>
+          <span className='mr-1 self-center text-[10px] font-bold uppercase tracking-wider text-slate-600'>Affichage</span>
+          <button
+            type='button'
+            onClick={() => onVueOrganisationChange('programme')}
+            className={cn(
+              'rounded-xl border px-3 py-2 text-xs font-semibold transition',
+              vueOrganisation === 'programme'
+                ? 'border-violet-500/45 bg-violet-500/15 text-violet-100'
+                : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/15 hover:text-slate-200',
+            )}
+          >
+            Programme F01–F15
+          </button>
+          <button
+            type='button'
+            onClick={() => onVueOrganisationChange('theme')}
+            className={cn(
+              'rounded-xl border px-3 py-2 text-xs font-semibold transition',
+              vueOrganisation === 'theme'
+                ? 'border-violet-500/45 bg-violet-500/15 text-violet-100'
+                : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/15 hover:text-slate-200',
+            )}
+          >
+            Par thème (site)
+          </button>
+        </div>
         <div className='flex max-w-full gap-2 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'>
           <TabButton
             active={value === 'all'}

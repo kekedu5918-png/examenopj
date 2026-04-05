@@ -73,6 +73,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     return () => window.clearTimeout(t);
   }, [query]);
   const [fascFilter, setFascFilter] = useState<RecapFasciculeFilter>('all');
+  const [prioriteTier, setPrioriteTier] = useState<RecapPriorite | 'all'>('all');
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
@@ -81,6 +82,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     const q = stripForSearch(query.trim());
     const list = catalog.filter((item) => {
       if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
+      if (prioriteTier !== 'all' && (item.priorite ?? 'secours') !== prioriteTier) return false;
       if (!q) return true;
       const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
       return hay.includes(q);
@@ -93,7 +95,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       if (fasc !== 0) return fasc;
       return a.groupTitle.localeCompare(b.groupTitle) || a.id.localeCompare(b.id);
     });
-  }, [catalog, query, fascFilter]);
+  }, [catalog, query, fascFilter, prioriteTier]);
 
   const toggle = (id: string) => {
     setExpandedId((prev) => (prev === id ? null : id));
@@ -152,6 +154,42 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                 {label}
               </button>
             ))}
+          </div>
+        </div>
+        <div className='space-y-2 border-t border-white/10 pt-4'>
+          <p className='text-xs font-medium text-gray-500'>Priorité examen (regroupe par strate)</p>
+          <div className='flex flex-wrap gap-2'>
+            {(
+              [
+                ['all', 'Toutes'] as const,
+                ['core', 'Prioritaire'] as const,
+                ['freq', 'Très probable'] as const,
+                ['secours', 'À sécuriser'] as const,
+              ] as const
+            ).map(([v, label]) => {
+              const tier = v as RecapPriorite | 'all';
+              const active = prioriteTier === tier;
+              const tierBadge = tier === 'all' ? null : PRIORITE_EXAMEN_BADGE[tier];
+              return (
+                <button
+                  key={v}
+                  type='button'
+                  onClick={() => setPrioriteTier(tier)}
+                  className={cn(
+                    'rounded-xl border px-3 py-2 text-sm font-medium transition',
+                    active
+                      ? tier === 'all'
+                        ? 'border-amber-500/50 bg-amber-500/15 text-amber-100'
+                        : tierBadge
+                          ? cn(tierBadge.className, 'border-transparent text-white')
+                          : 'border-white/10 bg-white/10'
+                      : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
+                  )}
+                >
+                  {label}
+                </button>
+              );
+            })}
           </div>
         </div>
         <p className='flex flex-wrap items-center gap-2 text-sm text-gray-500'>

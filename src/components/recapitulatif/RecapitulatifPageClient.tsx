@@ -7,6 +7,7 @@ import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
+  filterRecapRowsByPriorite,
   filterRecapSections,
   filterRecapSectionsPrioritaires,
   PRIORITE_EXAMEN_BADGE,
@@ -52,6 +53,7 @@ export function RecapitulatifPageClient({
 }) {
   const [filter, setFilter] = useState<RecapFasciculeFilter>(() => parseRecapQuery(initialFasc));
   const [vueConcours, setVueConcours] = useState(() => Boolean(initialPrioriteVue));
+  const [prioriteTier, setPrioriteTier] = useState<RecapPriorite | 'all'>('all');
 
   useEffect(() => {
     setFilter(parseRecapQuery(initialFasc));
@@ -62,9 +64,9 @@ export function RecapitulatifPageClient({
   }, [initialPrioriteVue]);
 
   const sections = useMemo(() => {
-    if (vueConcours) return filterRecapSectionsPrioritaires(filter);
-    return filterRecapSections(filter);
-  }, [filter, vueConcours]);
+    const base = vueConcours ? filterRecapSectionsPrioritaires(filter) : filterRecapSections(filter);
+    return filterRecapRowsByPriorite(base, prioriteTier);
+  }, [filter, vueConcours, prioriteTier]);
 
   const compact = vueConcours;
 
@@ -114,6 +116,35 @@ export function RecapitulatifPageClient({
             </button>
           ))}
         </div>
+        <div className='flex flex-col gap-2 border-t border-white/10 pt-4'>
+          <p className='text-xs font-medium text-gray-500'>Raccourci priorité (filtre les lignes du tableau)</p>
+          <div className='flex flex-wrap gap-2'>
+            {(
+              [
+                ['all', 'Toutes', ''] as const,
+                ['core', 'Prioritaire', PRIORITE_EXAMEN_BADGE.core.className] as const,
+                ['freq', 'Très probable', PRIORITE_EXAMEN_BADGE.freq.className] as const,
+                ['secours', 'À sécuriser', PRIORITE_EXAMEN_BADGE.secours.className] as const,
+              ] as const
+            ).map(([v, label, badgeCn]) => (
+              <button
+                key={v}
+                type='button'
+                onClick={() => setPrioriteTier(v)}
+                className={cn(
+                  'rounded-xl border px-3 py-2 text-sm font-medium transition',
+                  prioriteTier === v
+                    ? v === 'all'
+                      ? 'border-gray-400/40 bg-white/10 text-gray-100'
+                      : cn('text-white', badgeCn, 'border-transparent')
+                    : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        </div>
         <div className='flex flex-wrap gap-2 border-t border-white/10 pt-4'>
           <button
             type='button'
@@ -146,6 +177,7 @@ export function RecapitulatifPageClient({
         <p className='text-xs text-neutral-600'>
           Examen OPJ — récapitulatif {filter === 'all' ? 'complet' : String(filter).toUpperCase()}
           {vueConcours ? ' — tri priorité examen' : ''}
+          {prioriteTier !== 'all' ? ` — ${PRIORITE_EXAMEN_BADGE[prioriteTier].label}` : ''}
         </p>
       </div>
 

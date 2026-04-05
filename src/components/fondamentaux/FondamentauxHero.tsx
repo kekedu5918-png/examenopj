@@ -69,10 +69,11 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
           <strong className='font-semibold text-slate-200'>valider sur Légifrance</strong>.
         </p>
         <p className='mt-2 max-w-3xl text-xs leading-relaxed text-slate-500 sm:text-sm'>
-          Repérez le badge <span className='text-gold-400'>⭐ Oral / écrit</span> pour les thèmes les plus opérés au concours
-          {' — '}
+          Liste en <strong className='font-medium text-slate-400'>vue programme (F01–F15)</strong> ou{' '}
+          <strong className='font-medium text-slate-400'>par thème</strong> sous les onglets — repérez le badge{' '}
+          <span className='text-gold-400'>⭐ Oral / écrit</span> ({' '}
           <span className='tabular-nums text-slate-400'>{indispensableCount}</span> fiche
-          {indispensableCount > 1 ? 's' : ''} dans cette priorité (filtre sous les onglets).
+          {indispensableCount > 1 ? 's' : ''} ).
         </p>
         <p className='mt-4 text-xs text-slate-500 sm:text-sm'>{miniLine}</p>
 

@@ -16,6 +16,27 @@ function RichInline({ text, className }: { text: string; className?: string }) {
   return <span className={className}>{text}</span>;
 }
 
+function stripHtmlLite(s: string): string {
+  return s
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function enBrefLines(fiche: Fiche): string[] {
+  if (fiche.cles?.length) {
+    return fiche.cles.slice(0, 4).map((k) => stripHtmlLite(k)).filter(Boolean);
+  }
+  const items = fiche.blocsDetail?.[0]?.items;
+  if (items?.length) {
+    return items
+      .slice(0, 4)
+      .map((line) => stripHtmlLite(line))
+      .filter((l) => l.length > 12);
+  }
+  return [];
+}
+
 type Props = {
   fiche: Fiche;
   categories: Record<Categorie, { label: string; couleur: string }>;
@@ -30,6 +51,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
   const isPage = variant === 'page';
   const reperesSommaire = getReperesSommaireForModuleId(fiche.fasciculeId);
   const quizHref = fiche.lienQuiz ?? (fiche.fasciculeId ? quizHrefForFasciculeId(fiche.fasciculeId) : null);
+  const bref = enBrefLines(fiche);
 
   return (
     <article aria-labelledby={titleId} className={cn(isPage && 'pb-12')}>
@@ -81,10 +103,9 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
         <div className='mb-10 rounded-2xl border border-gold-500/35 bg-gradient-to-br from-gold-500/[0.12] to-amber-600/[0.06] px-5 py-4 sm:px-6'>
           <p className='text-[11px] font-bold uppercase tracking-[0.2em] text-gold-400'>Priorité concours</p>
           <p className='mt-2 text-sm leading-relaxed text-slate-100'>
-            Thème très opéré à l&apos;écrit et à l&apos;oral : enchaînez{' '}
-            <strong className='text-white'>Synthèse détaillée</strong> →{' '}
-            <strong className='text-white'>Pièges d&apos;examen</strong> →{' '}
-            <strong className='text-white'>À retenir</strong>, puis recoupez sur Légifrance.
+            Thème très opéré : lisez d&apos;abord <strong className='text-white'>En bref</strong> et les{' '}
+            <strong className='text-white'>pièges</strong>, creusez ensuite la{' '}
+            <strong className='text-white'>synthèse détaillée</strong>, puis validez sur Légifrance.
           </p>
         </div>
       ) : null}
@@ -126,6 +147,36 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
         </div>
       ) : null}
 
+      {bref.length ? (
+        <section className='mb-10' aria-label='En bref'>
+          <div className='mb-4 flex flex-wrap items-center gap-2'>
+            <span className='flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-500/35 bg-emerald-500/10 text-base' aria-hidden>
+              🎯
+            </span>
+            <h2 className='text-xs font-bold uppercase tracking-[0.22em] text-emerald-400/95'>
+              En bref — mémo express
+            </h2>
+          </div>
+          <p className='mb-4 text-sm text-slate-500'>Quatre repères maximum avant de passer au détail.</p>
+          <ul className='grid gap-3 sm:grid-cols-2'>
+            {bref.map((line, i) => (
+              <li
+                key={`bref-${i}`}
+                className='flex gap-3 rounded-2xl border border-emerald-500/20 bg-gradient-to-br from-emerald-950/35 to-navy-950/40 px-4 py-3.5 shadow-sm shadow-black/20'
+              >
+                <span
+                  className='flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-500/20 font-mono text-xs font-bold text-emerald-200'
+                  aria-hidden
+                >
+                  {i + 1}
+                </span>
+                <span className='min-w-0 text-[15px] leading-snug text-slate-100'>{line}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       {reperesSommaire?.parties.length ? (
         <section className='mb-12' aria-label='Parties du sommaire officiel (repère)'>
           <p className='mb-4 text-xs leading-relaxed text-slate-500'>
@@ -151,50 +202,21 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
         </section>
       ) : null}
 
-      {fiche.blocsDetail?.length ? (
-        <section className='mb-12' aria-label='Synthèse détaillée'>
-          <h2 className='mb-6 text-xs font-bold uppercase tracking-[0.22em] text-slate-500'>
-            Synthèse détaillée
-          </h2>
-          <div className='space-y-10'>
-            {fiche.blocsDetail.map((bloc, bi) => (
-              <div key={`${bloc.titre}-${bi}`} className='space-y-4'>
-                <h3 className='border-b border-white/10 pb-2 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-gold-400/90'>
-                  {bloc.titre}
-                </h3>
-                {bloc.items?.length ? (
-                  <ul className='space-y-3 border-l-2 border-white/[0.08] pl-4'>
-                    {bloc.items.map((line, li) => (
-                      <li
-                        key={`${bloc.titre}-${bi}-${li}`}
-                        className='text-[15px] leading-[1.7] text-slate-300 [&_b]:font-semibold [&_b]:text-white'
-                      >
-                        <RichInline text={line.trimStart()} />
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-                {bloc.tableau ? (
-                  <div className='overflow-x-auto rounded-xl border border-white/10'>
-                    <FondamentauxTableau tableau={bloc.tableau} couleurKey={cat.couleur} />
-                  </div>
-                ) : null}
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : null}
-
       {fiche.piegesExamen?.length ? (
         <section className='mb-12' aria-label="Pièges d'examen">
-          <h2 className='mb-5 text-xs font-bold uppercase tracking-[0.22em] text-rose-400/90'>
-            Pièges d&apos;examen
-          </h2>
+          <div className='mb-5 flex flex-wrap items-center gap-2'>
+            <span className='rounded-lg border border-rose-500/40 bg-rose-500/15 px-2 py-0.5 text-lg leading-none' aria-hidden>
+              ⚠️
+            </span>
+            <h2 className='text-xs font-bold uppercase tracking-[0.22em] text-rose-400/90'>
+              Pièges d&apos;examen
+            </h2>
+          </div>
           <div className='space-y-3'>
             {fiche.piegesExamen.map((p, i) => (
               <div
                 key={`piege-${i}`}
-                className='rounded-xl border border-rose-500/25 bg-rose-950/20 px-5 py-4 text-[15px] leading-relaxed text-rose-50/90'
+                className='rounded-2xl border border-rose-500/30 bg-gradient-to-r from-rose-950/45 to-navy-950/30 px-5 py-4 text-[15px] leading-relaxed text-rose-50/95 shadow-sm shadow-black/15'
               >
                 {p}
               </div>
@@ -205,19 +227,72 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
 
       {fiche.cles?.length ? (
         <section className='mb-12' aria-label='À retenir'>
-          <h2 className='mb-5 text-xs font-bold uppercase tracking-[0.22em] text-gold-400/90'>
-            À retenir
-          </h2>
-          <ul className='space-y-2 rounded-xl border border-gold-500/20 bg-gold-500/[0.06] p-5'>
+          <div className='mb-5 flex flex-wrap items-center gap-2'>
+            <span className='text-lg leading-none' aria-hidden>
+              ✨
+            </span>
+            <h2 className='text-xs font-bold uppercase tracking-[0.22em] text-gold-400/90'>
+              À retenir
+            </h2>
+          </div>
+          <ul className='space-y-2.5 rounded-2xl border border-gold-500/25 bg-gradient-to-br from-gold-500/[0.08] to-amber-950/20 p-5'>
             {fiche.cles.map((k, i) => (
-              <li key={`cle-${i}`} className='flex gap-2.5 text-[15px] leading-snug text-slate-200'>
-                <span className='shrink-0 text-gold-400' aria-hidden>
-                  ⚡
+              <li key={`cle-${i}`} className='flex gap-3 text-[15px] leading-snug text-slate-100'>
+                <span className='mt-0.5 shrink-0 font-mono text-xs font-bold text-gold-400' aria-hidden>
+                  {String(i + 1).padStart(2, '0')}
                 </span>
                 <span className='min-w-0'>{k}</span>
               </li>
             ))}
           </ul>
+        </section>
+      ) : null}
+
+      {fiche.blocsDetail?.length ? (
+        <section className='mb-12' aria-label='Synthèse détaillée'>
+          <div className='mb-6 flex flex-wrap items-center gap-2'>
+            <span className='text-lg leading-none' aria-hidden>
+              📚
+            </span>
+            <h2 className='text-xs font-bold uppercase tracking-[0.22em] text-slate-400'>
+              Synthèse détaillée
+            </h2>
+          </div>
+          <div className='space-y-8'>
+            {fiche.blocsDetail.map((bloc, bi) => (
+              <div
+                key={`${bloc.titre}-${bi}`}
+                className='rounded-2xl border border-white/[0.1] bg-gradient-to-b from-white/[0.05] to-transparent p-5 shadow-lg shadow-black/20 sm:p-6'
+              >
+                <h3 className='mb-4 flex items-baseline gap-3 font-mono text-[11px] font-bold uppercase tracking-[0.14em] text-gold-400/95'>
+                  <span
+                    className='flex h-6 min-w-[1.5rem] items-center justify-center rounded-md bg-gold-500/20 font-mono text-[10px] text-gold-200'
+                    aria-hidden
+                  >
+                    {bi + 1}
+                  </span>
+                  {bloc.titre}
+                </h3>
+                {bloc.items?.length ? (
+                  <ul className='space-y-3'>
+                    {bloc.items.map((line, li) => (
+                      <li
+                        key={`${bloc.titre}-${bi}-${li}`}
+                        className='relative rounded-xl border border-white/[0.06] bg-navy-950/50 py-3 pl-4 pr-3 text-[15px] leading-[1.7] text-slate-300 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:rounded-l-xl before:bg-gold-500/40 [&_b]:font-semibold [&_b]:text-white'
+                      >
+                        <RichInline text={line.trimStart()} />
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {bloc.tableau ? (
+                  <div className='mt-4 overflow-x-auto rounded-xl border border-white/10'>
+                    <FondamentauxTableau tableau={bloc.tableau} couleurKey={cat.couleur} />
+                  </div>
+                ) : null}
+              </div>
+            ))}
+          </div>
         </section>
       ) : null}
 
