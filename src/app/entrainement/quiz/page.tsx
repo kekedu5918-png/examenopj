@@ -7,7 +7,7 @@ import { getContentAccess } from '@/features/access/get-content-access';
 export const metadata: Metadata = {
   title: 'Quiz — Examen OPJ',
   description:
-    "Questions à choix multiples pour tester vos connaissances avant l'examen OPJ : infractions, procédure et cas pratiques.",
+    "QCM et mode hardcore (réponse libre) pour l'examen OPJ : infractions, procédure et cas pratiques. Lien direct : ?hardcore=1.",
 };
 
 export default async function EntrainementQuizPage() {

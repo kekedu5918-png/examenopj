@@ -35,14 +35,18 @@ export function applyQuestionLimit(
   return questions.slice(0, Math.min(limit, questions.length));
 }
 
+export type QuizAnswerMode = 'mcq' | 'hardcore';
+
 export function getQuizStorageKey(
   mode: QuizMode,
   fascicule?: number,
-  domain?: QuizQuestion['domaine']
+  domain?: QuizQuestion['domaine'],
+  answerMode: QuizAnswerMode = 'mcq'
 ): string {
-  if (isThemeQuizMode(mode) && fascicule != null) return `quiz-best-fascicule-${fascicule}`;
-  if (mode === 'domain' && domain) return `quiz-best-domain-${domain}`;
-  return 'quiz-best-global';
+  const suffix = answerMode === 'hardcore' ? ':hardcore' : '';
+  if (isThemeQuizMode(mode) && fascicule != null) return `quiz-best-fascicule-${fascicule}${suffix}`;
+  if (mode === 'domain' && domain) return `quiz-best-domain-${domain}${suffix}`;
+  return `quiz-best-global${suffix}`;
 }
 
 export function readBestQuizPercent(key: string): number | null {

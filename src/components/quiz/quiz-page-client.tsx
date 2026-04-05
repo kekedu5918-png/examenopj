@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { BookOpen, Layers, Shuffle } from 'lucide-react';
+import { BookOpen, Keyboard, Layers, ListOrdered, Shuffle } from 'lucide-react';
 
 import { LANDING_EASE } from '@/components/home/motion';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -18,6 +18,7 @@ import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-atte
 import { cn } from '@/utils/cn';
 
 import { QuizInterface } from './quiz-interface';
+import { QuizInterfaceHardcore } from './quiz-interface-hardcore';
 import { QuizResult } from './quiz-result';
 import {
   applyQuestionLimit,
@@ -25,6 +26,7 @@ import {
   fisherYates,
   getQuizStorageKey,
   isThemeQuizMode,
+  type QuizAnswerMode,
   type QuizMode,
   readBestQuizPercent,
   recordQuizBestPercent,
@@ -39,6 +41,7 @@ type LaunchConfig = {
   fascicule?: number;
   domain?: QuizQuestion['domaine'];
   limit: 10 | 20 | 30 | 'all';
+  answerMode: QuizAnswerMode;
 };
 
 const headerContainer = {
@@ -83,6 +86,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const [fascicule, setFascicule] = useState<number>(fasciculeNums[0] ?? 3);
   const [domain, setDomain] = useState<QuizQuestion['domaine']>('DPS');
   const [limit, setLimit] = useState<10 | 20 | 30 | 'all'>(10);
+  const [answerMode, setAnswerMode] = useState<QuizAnswerMode>('mcq');
   const [sessionQuestions, setSessionQuestions] = useState<QuizQuestion[]>([]);
   const [launchConfig, setLaunchConfig] = useState<LaunchConfig | null>(null);
   const [result, setResult] = useState({ correct: 0, total: 0 });
@@ -100,8 +104,14 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   }, [access.maxQuizQuestionsPerDay, quotaTick]);
 
   const storageKey = useMemo(
-    () => getQuizStorageKey(mode, isThemeQuizMode(mode) ? fascicule : undefined, mode === 'domain' ? domain : undefined),
-    [mode, fascicule, domain]
+    () =>
+      getQuizStorageKey(
+        mode,
+        isThemeQuizMode(mode) ? fascicule : undefined,
+        mode === 'domain' ? domain : undefined,
+        answerMode
+      ),
+    [mode, fascicule, domain, answerMode]
   );
 
   const [localBest, setLocalBest] = useState<number | null>(null);
@@ -109,6 +119,14 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     if (phase !== 'setup') return;
     setLocalBest(readBestQuizPercent(storageKey));
   }, [storageKey, phase]);
+
+  /** `?hardcore=1` : mode réponse libre au chargement (une fois, évite d’écraser le choix utilisateur). */
+  useEffect(() => {
+    const p = typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('hardcore') : null;
+    if (p === '1' || p === 'true') {
+      setAnswerMode('hardcore');
+    }
+  }, []);
 
   /** Liens profonds : `/quiz?f=f03`, `/quiz?mode=module&f=3` (ou `mode=fascicule`), domain, global… */
   useEffect(() => {
@@ -179,17 +197,19 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
       {
         mode,
         limit,
+        answerMode,
         ...(isThemeQuizMode(mode) ? { fascicule } : {}),
         ...(mode === 'domain' ? { domain } : {}),
       },
       quizRemainingToday
     );
-  }, [mode, fascicule, domain, limit, quizRemainingToday]);
+  }, [mode, fascicule, domain, limit, answerMode, quizRemainingToday]);
 
   function handleLaunch() {
     const cfg: LaunchConfig = {
       mode,
       limit,
+      answerMode,
       ...(isThemeQuizMode(mode) ? { fascicule } : {}),
       ...(mode === 'domain' ? { domain } : {}),
     };
@@ -208,7 +228,8 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
       ? getQuizStorageKey(
           launchConfig.mode,
           isThemeQuizMode(launchConfig.mode) ? launchConfig.fascicule : undefined,
-          launchConfig.mode === 'domain' ? launchConfig.domain : undefined
+          launchConfig.mode === 'domain' ? launchConfig.domain : undefined,
+          launchConfig.answerMode
         )
       : storageKey;
     const best = recordQuizBestPercent(key, pct);
@@ -267,7 +288,11 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
             ← Quitter le quiz
           </button>
         </div>
-        <QuizInterface questions={sessionQuestions} onComplete={handleQuizComplete} />
+        {(launchConfig?.answerMode ?? answerMode) === 'hardcore' ? (
+          <QuizInterfaceHardcore questions={sessionQuestions} onComplete={handleQuizComplete} />
+        ) : (
+          <QuizInterface questions={sessionQuestions} onComplete={handleQuizComplete} />
+        )}
       </div>
     );
   }
@@ -295,7 +320,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
               badge='ENTRAÎNEMENT'
               badgeClassName='bg-cyan-500/20 text-cyan-300'
               title='Quiz OPJ'
-              subtitle='Testez vos connaissances'
+              subtitle='QCM ou mode hardcore : réponses libres, comme à l’oral ou au papier'
               className='[&_h2]:font-display [&_h2]:text-4xl [&_h2]:font-bold [&_h2]:text-white md:[&_h2]:text-5xl'
             />
           </motion.div>
@@ -441,6 +466,35 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         </div>
 
         <div className='mx-auto mt-10 max-w-xl'>
+          <p className='mb-3 text-center text-sm font-medium text-gray-400'>Format des réponses</p>
+          <div className='mb-8 flex flex-wrap justify-center gap-2'>
+            <button
+              type='button'
+              onClick={() => setAnswerMode('mcq')}
+              className={cn(
+                'inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors',
+                answerMode === 'mcq'
+                  ? 'bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-500/45'
+                  : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]'
+              )}
+            >
+              <ListOrdered className='h-4 w-4 opacity-80' aria-hidden />
+              QCM (4 choix)
+            </button>
+            <button
+              type='button'
+              onClick={() => setAnswerMode('hardcore')}
+              className={cn(
+                'inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors',
+                answerMode === 'hardcore'
+                  ? 'bg-amber-500/20 text-amber-200 ring-1 ring-amber-500/45'
+                  : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]'
+              )}
+            >
+              <Keyboard className='h-4 w-4 opacity-80' aria-hidden />
+              Hardcore (saisie libre)
+            </button>
+          </div>
           <p className='mb-3 text-center text-sm font-medium text-gray-400'>Nombre de questions</p>
           <div className='flex flex-wrap justify-center gap-2'>
             {([10, 20, 30, 'all'] as const).map((n) => {

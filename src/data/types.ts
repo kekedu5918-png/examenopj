@@ -55,4 +55,9 @@ export type QuizQuestion = {
   fascicule: number;
   domaine: 'DPS' | 'DPG' | 'Procédure pénale';
   explication?: string;
+  /**
+   * Mode réponse libre : formulations alternatives acceptées après normalisation
+   * (synonymes, « art. » vs « article », abréviations courantes).
+   */
+  hardcoreAliases?: string[];
 };
