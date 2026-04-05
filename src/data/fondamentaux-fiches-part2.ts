@@ -126,7 +126,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
       {
         label: "Prescription de l'action publique",
         detail:
-          'Crimes : 20 ans. Délits : 6 ans. Contraventions : 1 an. Infractions sexuelles sur mineurs : prescription rallongée (30 ans pour crimes, à compter de la majorité).',
+          "Délai de base (C. pén.) : crimes 20 ans, délits 6 ans, contraventions 1 an — sauf loi spéciale qui allonge ou diffère le point de départ. Atteintes sexuelles sur mineurs : délais souvent portés à 30 ans (crimes) ou 20 ans (délits) à compter de la majorité de la victime, selon l'infraction (art. 706-47 C. pén. et textes connexes). Terrorisme, certains stupéfiants aggravés : prescription allongée (repère courant 30 / 20 ans selon qualification). Faits demeurés occultes puis révélés : application des règles d'exception prévues par le législateur. Non-dénonciation d'atteintes sur mineur (434-3 C. pén.) : délai propre, souvent 10 ou 20 ans à compter de la majorité selon les cas.",
         alerte: true,
       },
       {

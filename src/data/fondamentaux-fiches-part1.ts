@@ -15,8 +15,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Flagrance (art. 53 C.P.P.)',
         detail:
-          "Crime ou délit se commettant actuellement, ou venant de se commettre. Ou flagrance par présomption : clameur publique, découverte d'objets, traces ou indices. Durée initiale : 8 jours, prolongeable sur autorisation du PR.",
+          "Crime ou délit en cours ou venant de se commettre, ou présomption (clameur, indices matériels). L'enquête peut se poursuivre sans discontinuité pendant 8 jours sous contrôle du PR (continuité des investigations, pas seulement des PV). Prolongation exceptionnelle d'autant de 8 jours : uniquement si l'infraction est un crime ou un délit puni d'au moins 5 ans d'emprisonnement et si les investigations ne peuvent être différées. Si la chaîne d'opération est interrompue : poursuite en enquête préliminaire ou sur commission rogatoire.",
         article: 'Art. 53 à 73 C.P.P.',
+        alerte: true,
       },
       {
         label: 'Enquête préliminaire (art. 75 C.P.P.)',
@@ -39,11 +40,11 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       },
     ],
     tableau: {
-      colonnes: ['Cadre', 'Déclenchement', 'Perquisition', 'Durée max'],
+      colonnes: ['Cadre', 'Déclenchement', 'Perquisition', 'Durée / suite'],
       lignes: [
-        ['Flagrance', 'Crime/délit flagrant', 'Sans assentiment', '8 j. + 8 j.'],
-        ['Préliminaire', 'Toute infraction', 'Avec assentiment ou JLD', 'Délai raisonnable'],
-        ['Commission rogatoire', 'Délégation JI', 'Selon délégation', 'Durée information'],
+        ['Flagrance', 'Crime/délit flagrant', 'Sans assentiment (selon cas)', '8 j sans discontinuité ; +8 j si crime ou délit ≥ 5 ans et investigations non différables'],
+        ['Préliminaire', 'Toute infraction', 'Avec assentiment ou JLD', 'Pas de plafond légal (série + contradiction)'],
+        ['Commission rogatoire', 'Délégation JI', 'Selon délégation', "Durée de l'information"],
       ],
     },
   },
@@ -254,8 +255,9 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Mandat de recherche',
         detail:
-          "Ordonné par le JI contre une personne suspectée dont on ignore la résidence. Permet à tout OPJ d'appréhender la personne et de la présenter devant le JI.",
+          "Ordre à la force publique de rechercher la personne et de la placer en garde à vue dès qu'elle est trouvée (art. 122 al. 2 C.P.P.). Décerné le plus souvent par le juge d'instruction dans le cadre d'une information ; exécution par OPJ/APJ désignés. Ne pas confondre avec une simple convocation : l'exécution matérielle encadre la privation de liberté selon le CPP.",
         article: 'Art. 122 C.P.P.',
+        alerte: true,
       },
       {
         label: 'Mandat de comparution',
@@ -458,8 +460,8 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Nullités textuelles',
         detail:
-          "Prévues expressément par un texte. Ex : perquisition sans les formalités de l'art. 59 C.P.P., réquisition sans respect de l'art. 60-1, interception de correspondances (art. 100-7).",
-        article: 'Art. 802 C.P.P.',
+          "Formalités dont la loi dispose qu'elles sont prescrites « à peine de nullité ». Ex. : art. 59 C.P.P. (perquisitions), 60-1 (réquisitions), 100-7 (interceptions). L’art. 802-2 C.P.P. encadre aussi certaines suites en cas de perquisition irrégulière sur lieu de privilège ou de consultation défense.",
+        article: 'Art. 802 et 802-2 C.P.P.',
       },
       {
         label: 'Nullités substantielles',

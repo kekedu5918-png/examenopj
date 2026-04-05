@@ -300,7 +300,8 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       {
         titre: 'Cadres d’enquête',
         points: [
-          'Différences pratiques entre enquête préliminaire et flagrance pour la cohérence des actes.',
+          'Préliminaire vs flagrance : perquisitions, continuité des opérations, passage en préliminaire ou CR si la chaîne flagrancielle est rompue.',
+          'Flagrance : 8 jours sans discontinuité ; prolongation +8 j uniquement si crime ou délit puni d’au moins 5 ans et investigations non différables.',
         ],
       },
       {
@@ -321,6 +322,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     ],
     pieges: [
       'Erreurs sur les délais de GAV ou sur la notification des droits — source fréquente de nullités.',
+      'Confondre « 8 + 8 jours » systématique en flagrance avec le seuil du délit ≥ 5 ans et l’exigence de continuité des investigations.',
     ],
   },
   f12: {
@@ -345,6 +347,7 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     ],
     pieges: [
       'Confondre les qualifications procédurales devant le juge d’instruction et en enquête préliminaire.',
+      'Mandat de recherche (art. 122 al. 2 C.P.P.) : porter sur la recherche et le placement en GAV dès l’appréhension, et non seulement une présentation « au greffe » du juge.',
     ],
   },
   f13: {
