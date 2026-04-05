@@ -24,12 +24,12 @@ const STEPS: Step[] = [
     title: 'Fondamentaux',
     description: 'Les notions procédure / pénales à avoir sur le bout des doigts, alignées sur les fascicules.',
     href: '/fondamentaux',
-    hint: 'Ouvrez les fiches marquées comme prioritaires dans votre planning.',
+    hint: 'Les nouvelles synthèses « programme complet » couvrent aussi les thèmes F08–F15 (libertés, loi pénale, sanction, PJ, instruction, juridictions, parquet, nullités).',
   },
   {
     id: 'recap-priorites',
-    title: 'Récap « priorité concours »',
-    description: 'Tableau éléments légal / matériel / moral — focus sur les infractions cœur pour l’épreuve 1.',
+    title: 'Récap « priorité examen »',
+    description: 'Même tableau : toutes les lignes triées du plus indispensable au « à sécuriser » — idéal épreuve 1.',
     href: '/entrainement/recapitulatif?priorite=1',
     hint: 'Révisez mot pour mot ; sans éléments exacts = risque de 0 sur la qualification.',
   },
@@ -126,7 +126,7 @@ export function ParcoursCandidatClient() {
         badge='PARCOURS'
         badgeClassName='bg-gold-500/20 text-gold-200'
         title='Parcours candidat'
-        subtitle='Enchaînement recommandé : fondamentaux → récap prioritaire → flashcards → enquête → épreuve 2 → articulation. Cocher les étapes faites (sauvegardé dans ce navigateur).'
+        subtitle='Enchaînement recommandé : fondamentaux → récap priorité examen → flashcards → enquête → épreuve 2 → articulation. Cocher les étapes faites (sauvegardé dans ce navigateur).'
         className='mb-8 max-w-3xl'
       />
 

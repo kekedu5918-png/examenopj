@@ -14,6 +14,7 @@ export const recapSectionsF03F07 = [
           '**UN CONDUCTEUR DE VÉHICULE OU UN ACCOMPAGNATEUR D’ÉLÈVE CONDUCTEUR** (véhicules y compris cycles et traction animale) / **CONDUITE OU ACCOMPAGNEMENT SUR VOIE OUVERTE À LA CIRCULATION PUBLIQUE** / **ÉTAT ALCOOLIQUE : TAUX DÉLICTUEL ≥ 0,80 G/L SANG OU ≥ 0,40 MG/L AIR EXPIRÉ** / **TAUX CONTRAVENTIONNEL (AUTRES CAS) : ≥ 0,50 G/L OU 0,25 MG/L** ; **SEUILS BAS POUR TC, PERMIS PROBATOIRE, APPRENTISSAGE**',
         moral:
           '**VOLONTÉ DE CONDUIRE EN AYANT CONSOMMÉ DE L’ALCOOL** — infraction intentionnelle (*Cass. crim.* 19/12/1994) / Repères : immunité diplomatique applicable ; parlementaires (dépistage possible en flagrant délit).',
+        priorite: 'core' as const,
       },
       {
         infraction: '**La conduite en état d’ivresse manifeste**',
@@ -21,6 +22,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUCTEUR OU ACCOMPAGNATEUR** / **ÉTAT D’IVRESSE MANIFESTE** : signes extérieurs perceptibles (élocution, équilibre, coordination, agressivité, etc.) / **PAS DE SEUIL CHIFFRÉ OBLIGATOIRE**',
         moral: '**CONSCIENCE D’ÊTRE EN ÉTAT D’IVRESSE AU MOMENT DE CONDUIRE**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**La conduite après usage de stupéfiants**',
@@ -28,6 +30,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUCTEUR OU ACCOMPAGNATEUR D’ÉLÈVE CONDUCTEUR** / **USAGE DE SUBSTANCES OU PLANTES CLASSÉES COMME STUPÉFIANTS** établi par **ANALYSE SANGUINE OU SALIVAIRE**',
         moral: '**VOLONTÉ DE CONDUIRE EN AYANT FAIT USAGE DE STUPÉFIANTS**',
+        priorite: 'core' as const,
       },
       {
         infraction: '**Le délit de fuite**',
@@ -36,6 +39,7 @@ export const recapSectionsF03F07 = [
           '**CONDUCTEUR DE VÉHICULE OU ENGIN** (terrestre, fluvial ou maritime) / **ACCIDENT** : dommage matériel ou corporel / **ABSENCE D’ARRÊT** et **TENTATIVE D’ÉCHAPPER** à la responsabilité pénale ou civile',
         moral:
           '**CONNAISSANCE D’AVOIR CAUSÉ OU OCCASIONNÉ UN ACCIDENT** / **VOLONTÉ D’ÉCHAPPER À LA RESPONSABILITÉ**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**L’homicide routier**',
@@ -43,6 +47,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUCTEUR DE VTM** / **CIRCONSTANCE DE « VIOLENCE ROUTIÈRE »** (alcool, stupéfiants, excès de vitesse ≥ 30 km/h, défaut de permis, fuite, téléphone au volant, refus d’obtempérer, écran, etc.) / **MORT SANS INTENTION DE LA DONNER** / **CAUSALITÉ**',
         moral: '**ABSENCE D’INTENTION HOMICIDE** / **FAUTE QUALIFIÉE ET COMPORTEMENT DANGEREUX**',
+        priorite: 'core' as const,
       },
       {
         infraction: '**Le refus d’obtempérer**',
@@ -50,6 +55,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUCTEUR** / **SOMMATION DE S’ARRÊTER** par agent **HABILITÉ**, **INSIGNES APPARENTS** / **REFUS : NE PAS S’ARRÊTER**',
         moral: '**CONSCIENCE DE LA SOMMATION** / **VOLONTÉ DE NE PAS OBTEMPÉRER**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**Le refus de se soumettre aux vérifications (alcool / stupéfiants)**',
@@ -64,6 +70,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUIRE UN VÉHICULE** **SANS PERMIS ADAPTÉ** À LA CATÉGORIE / **OU** permis **ANNULÉ, INVALIDÉ, SUSPENDU OU RETENU**',
         moral: '**VOLONTÉ DE CONDUIRE EN SACHANT NE PAS ÊTRE LÉGITIMEMENT TITULAIRE**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**Le défaut d’assurance**',
@@ -71,6 +78,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**MISE EN CIRCULATION** d’un **VÉHICULE TERRESTRE À MOTEUR** ou **REMORQUE** / **ABSENCE DE GARANTIE RC** obligatoire',
         moral: '**CONSCIENCE DE NE PAS ÊTRE ASSURÉ**',
+        priorite: 'secours' as const,
       },
       {
         infraction: '**Les délits relatifs aux plaques et inscriptions**',
@@ -85,6 +93,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**CONDUCTEUR** / **DÉPASSEMENT ≥ 50 KM/H** par rapport à la vitesse maximale autorisée / **(CONTRAVENTION 5e CLASSE EN RÉCIDIVE → QUALIFICATION DÉLICTUELLE)**',
         moral: '**VOLONTÉ DE DÉPASSER LA VITESSE AUTORISÉE**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**Le rodéo motorisé**',
@@ -99,6 +108,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**INCITER, ORGANISER OU PROMOUVOIR** la commission d’un rodéo motorisé / **PAR TOUT MOYEN** (réseaux sociaux, appels, etc.)',
         moral: '**VOLONTÉ D’INCITER, D’ORGANISER OU DE PROMOUVOIR**',
+        priorite: 'secours' as const,
       },
     ],
   },
@@ -226,6 +236,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**USAGE** (consommation / absorption) d’une **SUBSTANCE OU PLANTE CLASSÉE STUPÉFIANT** au sens de l’**art. L.5132-7 C.S.P.** / **Peut inclure** acquisition, détention ou transport lorsque **DESTINÉS À L’USAGE EXCLUSIF** de la personne (appréciation au cas par cas)',
         moral: '**USAGE INTENTIONNEL EN CONNAISSANCE DE CAUSE**',
+        priorite: 'freq' as const,
       },
       {
         infraction:
@@ -235,6 +246,7 @@ export const recapSectionsF03F07 = [
           '**ACTE DE PROVOCATION OU DE PUBLICITÉ** : provocation (directe ou indirecte) encourageant ou incitant l’usage ou le trafic — **même non suivie d’effet** — à l’infraction d’**usage *L.3421-1*** ou aux infractions **222-34 à 222-39 C.P.** / **OU** **présentation sous un jour favorable** de ces infractions / **OU** provocation à l’usage de substances **présentées comme** ayant les effets de stupéfiants (*al.2*)',
         moral:
           '**PROVOQUER OU PRÉSENTER EN CONNAISSANCE DE CAUSE** — *alinéa 1* ; *al.2* : provocation en connaissance de cause à l’usage de substances **présentées comme** stupéfiants',
+        priorite: 'secours' as const,
       },
       {
         infraction: '**La provocation directe d’un mineur à l’usage illicite de stupéfiants**',
@@ -243,6 +255,7 @@ export const recapSectionsF03F07 = [
           '**PROVOCATION DIRECTE** : agissements encourageant ou incitant l’usage illicite — **relation précise et incontestable** et **lien étroit** entre provocation et faits (*Cass. crim.*) / **s’adresser à un mineur identifié** (parole, SMS, message électronique, etc.) / **Se distingue de *L.3421-4*** (apologie ou propagande sans incitation directe vers un mineur identifié) — **cible : usage illicite** (*227-18*)',
         moral:
           '**CONSCIENCE DE L’AUTEUR D’INCITER UN MINEUR** à l’usage ou au trafic — volonté d’agir en connaissance de cause',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**La provocation directe d’un mineur au trafic de stupéfiants**',
@@ -251,6 +264,7 @@ export const recapSectionsF03F07 = [
           '**PROVOCATION DIRECTE** du mineur à **transporter, détenir, offrir ou céder** des stupéfiants **ou** à se rendre **complice** de tels actes — vise les **infractions de trafic** (transport, détention, offre, cession illicites) ; production, fabrication, importation, exportation et acquisition peuvent être visées par d’autres qualifications.',
         moral:
           '**CONSCIENCE DE L’AUTEUR D’INCITER UN MINEUR** à l’usage ou au trafic de stupéfiants',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**La direction ou l’organisation d’un trafic de stupéfiants**',
@@ -264,6 +278,7 @@ export const recapSectionsF03F07 = [
         legal: 'Art. 222-35 al.1 C.P.',
         materiel: '**PRODUCTION OU FABRICATION** de stupéfiants **SANS AUTORISATION**',
         moral: '**CONSCIENCE DE PRODUIRE OU FABRIQUER ILLICITEMENT**',
+        priorite: 'freq' as const,
       },
       {
         infraction: '**L’importation ou l’exportation illicites de stupéfiants**',
@@ -271,6 +286,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**IMPORTATION OU EXPORTATION ILLICITES** : **importation** : pénétration ou tentative sur le territoire national **en possession** de stupéfiants (y compris destination étrangère alléguée) ; **exportation** : hypothèses plus rares / **Stupéfiants** au sens **222-41 C.P.** (listes **L.5132-7 C.S.P.**) — désignation précise de la substance',
         moral: '**IMPORTER OU EXPORTER EN CONNAISSANCE DE CAUSE** des stupéfiants sans droit',
+        priorite: 'freq' as const,
       },
       {
         infraction:
@@ -279,6 +295,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**TRANSPORT** : transporter sans autorisation (*ex.* porteur sur la voie publique — peut cumuler **transport et détention**, *Cass. crim.*) / **DÉTENTION** : possession de stupéfiants (y compris à proximité, *cache sous matelas d’un codétenu* si lien de droit établi) ; **détention illicite** seulement si **inscrite dans un trafic** ou **222-39** / **OFFRE, CESSION, ACQUISITION, EMPLOI** illicites — **trafic entre plusieurs personnes** ; **cession à personne déterminée pour sa conso perso.** → **222-39**',
         moral: '**CONSCIENCE D’AGIR DANS LE TRAFIC** ou sans droit selon l’acte',
+        priorite: 'core' as const,
       },
       {
         infraction: '**La cession ou l’offre illicite de stupéfiants en vue d’une consommation personnelle**',
@@ -293,6 +310,7 @@ export const recapSectionsF03F07 = [
         materiel:
           '**FAUSSE JUSTIFICATION DE L’ORIGINE** du bien provenant du trafic **OU** **concours au placement, à la dissimulation ou à la conversion** du produit du trafic',
         moral: '**CONSCIENCE QUE LE BIEN PROVIENT DU TRAFIC**',
+        priorite: 'secours' as const,
       },
     ],
   },

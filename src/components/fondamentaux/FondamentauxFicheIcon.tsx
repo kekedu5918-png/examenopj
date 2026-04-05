@@ -4,6 +4,7 @@ import type { LucideIcon } from 'lucide-react';
 import {
   ArrowBigUp,
   BarChart3,
+  BookMarked,
   Briefcase,
   Building2,
   CircleDot,
@@ -75,6 +76,9 @@ const ICONS: Record<string, LucideIcon> = {
   'disparitions-inquietantes': MapPinned,
   'entraide-internationale': Globe2,
   'tentative-penale': Target,
+  'synthese-liberte-loi-sanction': BookMarked,
+  'synthese-pj-instruction-jugement': ClipboardList,
+  'synthese-parquet-controle-nullite': Landmark,
 };
 
 export function FondamentauxFicheIcon({

@@ -12,8 +12,30 @@ export type RecapFasciculeFilter =
   | 'f06'
   | 'f07';
 
-/** Grille pédagogique honnête (pas une statistique d’annales). */
+/** Grille « priorité examen » : ce qu’il faut maîtriser en premier (sans prétendre aux annales). */
 export type RecapPriorite = 'core' | 'freq' | 'secours';
+
+/** Ordre d’affichage : du plus « à savoir par cœur » (core) au plus de secours (secours). */
+export const PRIORITE_ORDER: Record<RecapPriorite, number> = {
+  core: 0,
+  freq: 1,
+  secours: 2,
+};
+
+export const PRIORITE_EXAMEN_BADGE: Record<RecapPriorite, { label: string; className: string }> = {
+  core: {
+    label: 'Examen — prioritaire',
+    className: 'border-rose-400/45 bg-rose-500/18 text-rose-50',
+  },
+  freq: {
+    label: 'Très probable',
+    className: 'border-amber-400/40 bg-amber-500/14 text-amber-50',
+  },
+  secours: {
+    label: 'À sécuriser',
+    className: 'border-slate-400/35 bg-slate-600/20 text-slate-100',
+  },
+};
 
 export type RecapRow = {
   infraction: string;
@@ -534,23 +556,15 @@ export function filterRecapSections(filter: RecapFasciculeFilter): RecapSection[
   return recapSections.filter((s) => s.fascicule === tag);
 }
 
-const PRIORITE_ORDER: Record<RecapPriorite, number> = {
-  core: 0,
-  freq: 1,
-  secours: 2,
-};
-
-/** Filtre fascicule + n’affiche que les lignes prioritaires éditoriales, triées core → freq → secours. */
+/** Filtre fascicule + toutes les lignes, triées par priorité examen (non renseignée = secours). */
 export function filterRecapSectionsPrioritaires(filter: RecapFasciculeFilter): RecapSection[] {
   const base = filterRecapSections(filter);
-  return base
-    .map((s) => ({
-      ...s,
-      rows: [...s.rows]
-        .filter((r) => r.priorite)
-        .sort((a, b) => PRIORITE_ORDER[a.priorite!] - PRIORITE_ORDER[b.priorite!]),
-    }))
-    .filter((s) => s.rows.length > 0);
+  return base.map((s) => ({
+    ...s,
+    rows: [...s.rows]
+      .map((r) => ({ ...r, priorite: r.priorite ?? 'secours' }))
+      .sort((a, b) => PRIORITE_ORDER[a.priorite!] - PRIORITE_ORDER[b.priorite!]),
+  }));
 }
 
 export type InfractionCatalogItem = {
@@ -601,7 +615,7 @@ export function getInfractionsCatalog(): InfractionCatalogItem[] {
         legal: row.legal,
         materiel: row.materiel,
         moral: row.moral,
-        priorite: row.priorite,
+        priorite: row.priorite ?? 'secours',
         noteExamen: row.noteExamen,
         flashcardsCat:
           s.fascicule === 'F01'

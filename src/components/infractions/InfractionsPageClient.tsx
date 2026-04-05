@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { ChevronDown } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { BookOpen, ChevronDown } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
@@ -12,8 +13,11 @@ import {
   getInfractionsCatalog,
   type InfractionCatalogItem,
   infractionToRecapFilter,
+  PRIORITE_EXAMEN_BADGE,
+  PRIORITE_ORDER,
   type RecapFasciculeFilter,
   type RecapFasciculeId,
+  type RecapPriorite,
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
@@ -75,11 +79,19 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
-    return catalog.filter((item) => {
+    const list = catalog.filter((item) => {
       if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
       if (!q) return true;
       const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
       return hay.includes(q);
+    });
+    return list.sort((a, b) => {
+      const pa = PRIORITE_ORDER[(a.priorite ?? 'secours') as RecapPriorite];
+      const pb = PRIORITE_ORDER[(b.priorite ?? 'secours') as RecapPriorite];
+      if (pa !== pb) return pa - pb;
+      const fasc = a.fascicule.localeCompare(b.fascicule);
+      if (fasc !== 0) return fasc;
+      return a.groupTitle.localeCompare(b.groupTitle) || a.id.localeCompare(b.id);
     });
   }, [catalog, query, fascFilter]);
 
@@ -94,7 +106,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='F01 à F07 : clique sur une infraction pour voir les éléments constitutifs. Flashcards par thème et récapitulatif.'
+        subtitle='F01 à F07 : tri par priorité examen (à maîtriser en premier). Détail des éléments au clic — enchaîne avec flashcards et tableau récap.'
         className='mb-8'
       />
 
@@ -142,17 +154,27 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             ))}
           </div>
         </div>
-        <p className='text-sm text-gray-500'>
-          {filtered.length} infraction{filtered.length > 1 ? 's' : ''} affichée{filtered.length > 1 ? 's' : ''}
+        <p className='flex flex-wrap items-center gap-2 text-sm text-gray-500'>
+          <BookOpen className='h-4 w-4 text-amber-400/80' aria-hidden />
+          <span>
+            {filtered.length} infraction{filtered.length > 1 ? 's' : ''} — ordre : priorité examen → fascicule
+          </span>
         </p>
       </GlassCard>
 
       <ul className='space-y-4'>
-        {filtered.map((item: InfractionCatalogItem) => {
+        {filtered.map((item: InfractionCatalogItem, index: number) => {
           const open = expandedId === item.id;
+          const pTier = (item.priorite ?? 'secours') as RecapPriorite;
+          const badge = PRIORITE_EXAMEN_BADGE[pTier];
           return (
-            <li key={item.id}>
-              <article className='rounded-2xl border border-white/10 bg-navy-950/50 shadow-lg'>
+            <motion.li
+              key={item.id}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.28, delay: Math.min(index * 0.02, 0.35), ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
+              <article className='rounded-2xl border border-white/10 bg-navy-950/50 shadow-lg transition-[box-shadow,border-color] duration-300 hover:border-amber-500/15 hover:shadow-lg hover:shadow-amber-900/10'>
                 <div className='flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between'>
                   <div className='min-w-0 flex-1'>
                     <button
@@ -176,9 +198,19 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                             {item.fascicule}
                             {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
                           </p>
-                          <h2 className='font-display text-lg font-bold text-white md:text-xl'>
-                            <FlashcardRichText text={item.infraction} inline />
-                          </h2>
+                          <div className='flex flex-wrap items-center gap-2'>
+                            <h2 className='font-display text-lg font-bold text-white md:text-xl'>
+                              <FlashcardRichText text={item.infraction} inline />
+                            </h2>
+                            <span
+                              className={cn(
+                                'rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+                                badge.className,
+                              )}
+                            >
+                              {badge.label}
+                            </span>
+                          </div>
                           <p className='text-sm text-gray-400'>
                             <span className='text-gray-500'>Élément légal : </span>
                             {item.legal}
@@ -256,7 +288,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                   </div>
                 </div>
               </article>
-            </li>
+            </motion.li>
           );
         })}
       </ul>

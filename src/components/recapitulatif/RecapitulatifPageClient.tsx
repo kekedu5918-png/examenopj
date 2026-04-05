@@ -9,6 +9,7 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
   filterRecapSections,
   filterRecapSectionsPrioritaires,
+  PRIORITE_EXAMEN_BADGE,
   type RecapFasciculeFilter,
   type RecapPriorite,
   type RecapSection,
@@ -32,12 +33,6 @@ function parseRecapQuery(f?: string): RecapFasciculeFilter {
   ];
   return ok.includes(v as RecapFasciculeFilter) ? (v as RecapFasciculeFilter) : 'all';
 }
-
-const PRIORITE_BADGE: Record<RecapPriorite, { label: string; className: string }> = {
-  core: { label: 'Cœur', className: 'border-rose-400/40 bg-rose-500/15 text-rose-100' },
-  freq: { label: 'Fréquent', className: 'border-amber-400/35 bg-amber-500/12 text-amber-100' },
-  secours: { label: 'Secours', className: 'border-slate-400/30 bg-slate-500/15 text-slate-200' },
-};
 
 function CellPlain({ text, compact }: { text: string; compact?: boolean }) {
   return (
@@ -88,8 +83,8 @@ export function RecapitulatifPageClient({
 
       <GlassCard className='mb-8 space-y-4 p-6 print:hidden' padding=''>
         <p className='text-sm text-gray-400'>
-          Filtre par fascicule. La vue « Priorité concours » n’affiche qu’une <strong className='text-gray-200'>grille pédagogique</strong> (pas une
-          proba issue d’annales) : entraînement ciblé épreuve 1.
+          Filtre par fascicule. La vue « Priorité examen » classe <strong className='text-gray-200'>toutes les lignes</strong> du fascicule choisi : d’abord
+          ce qu’il faut maîtriser absolument, puis le très probable, enfin le « à sécuriser » (grille pédagogique, pas statistique d’annales).
         </p>
         <div className='flex flex-wrap gap-2'>
           {(
@@ -142,7 +137,7 @@ export function RecapitulatifPageClient({
                 : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
             )}
           >
-            Priorité concours (cœur → fréquent → secours)
+            Priorité examen (prioritaire → très probable → à sécuriser)
           </button>
         </div>
       </GlassCard>
@@ -150,7 +145,7 @@ export function RecapitulatifPageClient({
       <div className='mb-4 hidden print:block'>
         <p className='text-xs text-neutral-600'>
           Examen OPJ — récapitulatif {filter === 'all' ? 'complet' : String(filter).toUpperCase()}
-          {vueConcours ? ' — sélection prioritaire' : ''}
+          {vueConcours ? ' — tri priorité examen' : ''}
         </p>
       </div>
 
@@ -176,50 +171,49 @@ export function RecapitulatifPageClient({
                     {section.fasciculePart ? ` — ${section.fasciculePart}` : ''} — {section.groupTitle}
                   </td>
                 </tr>
-                {section.rows.map((row, ri) => (
-                  <tr
-                    key={`${section.id}-r-${ri}`}
-                    className={cn(
-                      'border-b border-white/[0.06] align-top print:border-neutral-200',
-                      ri % 2 === 0 ? 'bg-white/[0.02] print:bg-white' : 'bg-transparent print:bg-neutral-50',
-                    )}
-                  >
-                    <td
+                {section.rows.map((row, ri) => {
+                  const pTier = (row.priorite ?? 'secours') as RecapPriorite;
+                  return (
+                    <tr
+                      key={`${section.id}-r-${ri}`}
                       className={cn(
-                        'sticky left-0 z-[1] px-3 py-2 shadow-[2px_0_8px_rgba(0,0,0,0.2)] print:static print:shadow-none',
-                        'bg-navy-950/95 print:bg-inherit',
+                        'border-b border-white/[0.06] align-top print:border-neutral-200',
+                        ri % 2 === 0 ? 'bg-white/[0.02] print:bg-white' : 'bg-transparent print:bg-neutral-50',
                       )}
                     >
-                      <CellPlain text={row.infraction} compact={compact} />
-                      {row.noteExamen ? (
-                        <p className='mt-1 text-[11px] leading-snug text-gray-500 print:text-neutral-600'>{row.noteExamen}</p>
-                      ) : null}
-                    </td>
-                    <td className='px-2 py-2 align-top'>
-                      {row.priorite ? (
+                      <td
+                        className={cn(
+                          'sticky left-0 z-[1] px-3 py-2 shadow-[2px_0_8px_rgba(0,0,0,0.2)] print:static print:shadow-none',
+                          'bg-navy-950/95 print:bg-inherit',
+                        )}
+                      >
+                        <CellPlain text={row.infraction} compact={compact} />
+                        {row.noteExamen ? (
+                          <p className='mt-1 text-[11px] leading-snug text-gray-500 print:text-neutral-600'>{row.noteExamen}</p>
+                        ) : null}
+                      </td>
+                      <td className='px-2 py-2 align-top'>
                         <span
                           className={cn(
                             'inline-flex rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
-                            PRIORITE_BADGE[row.priorite].className,
+                            PRIORITE_EXAMEN_BADGE[pTier].className,
                           )}
                         >
-                          {PRIORITE_BADGE[row.priorite].label}
+                          {PRIORITE_EXAMEN_BADGE[pTier].label}
                         </span>
-                      ) : (
-                        <span className='text-xs text-gray-600 print:text-neutral-500'>—</span>
-                      )}
-                    </td>
-                    <td className='px-3 py-2'>
-                      <CellPlain text={row.legal} compact={compact} />
-                    </td>
-                    <td className='px-3 py-2'>
-                      <RecapBulletCell text={row.materiel} compact={compact} />
-                    </td>
-                    <td className='px-3 py-2'>
-                      <RecapBulletCell text={row.moral} compact={compact} />
-                    </td>
-                  </tr>
-                ))}
+                      </td>
+                      <td className='px-3 py-2'>
+                        <CellPlain text={row.legal} compact={compact} />
+                      </td>
+                      <td className='px-3 py-2'>
+                        <RecapBulletCell text={row.materiel} compact={compact} />
+                      </td>
+                      <td className='px-3 py-2'>
+                        <RecapBulletCell text={row.moral} compact={compact} />
+                      </td>
+                    </tr>
+                  );
+                })}
               </Fragment>
             ))}
           </tbody>

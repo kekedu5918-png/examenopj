@@ -22,6 +22,8 @@ export const recapSectionF01P1 = {
         'Art. 221-3 C.P. — qualification du meurtre aggravé par la préméditation (art. 132-72 C.P.), distinct du meurtre simple',
       materiel: '**MÊMES ÉLÉMENTS QUE LE MEURTRE** / **PRÉMÉDITATION**',
       moral: '**INTENTION HOMICIDE** / **PROJET RÉFLÉCHI — INTERVALLE ENTRE RÉSOLUTION ET EXÉCUTION**',
+      priorite: 'core',
+      noteExamen: 'Qualification aggravée du meurtre : citez la préméditation et le lien avec le meurtre simple.',
     },
     {
       infraction: '**L\'empoisonnement**',
@@ -30,6 +32,7 @@ export const recapSectionF01P1 = {
         '**ADMINISTRATION DE SUBSTANCES DE NATURE À ENTRAÎNER LA MORT** / **SANS EXIGENCE DE DÉCÈS (INFRACTION FORMELLE)**',
       moral:
         '**CONNAISSANCE DE LA NATURE MORTELLE DE LA SUBSTANCE** / **ET INTENTION DE DONNER LA MORT — LES DEUX SONT REQUISES (Cass. crim. 18 juin 2003 : la seule connaissance du caractère mortel ne suffit pas)**',
+      priorite: 'secours',
     },
     {
       infraction: '**L\'homicide involontaire**',
@@ -44,12 +47,14 @@ export const recapSectionF01P1 = {
       materiel:
         '**VIOLENCES PHYSIQUES OU PSYCHIQUES** (ex. choc émotif grave sans contact : Cass. crim. 18 mars 2008) / **MORT** / **LIEN DE CAUSALITÉ**',
       moral: '**VOLONTÉ DE VIOLENCES** / **ABSENCE D\'INTENTION DE DONNER LA MORT**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les violences ayant entraîné une mutilation ou infirmité permanente**',
       legal: 'Art. 222-9 C.P.',
       materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **MUTILATION OU INFIRMITÉ PERMANENTE**',
       moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les violences ayant entraîné une ITT supérieure à 8 jours**',
@@ -71,6 +76,8 @@ export const recapSectionF01P1 = {
       legal: 'Art. 222-14-3 C.P.',
       materiel: '**RÉPÉTITION DES VIOLENCES** / **CONJOINT, CONCUBIN OU PARTENAIRE DE PACS**',
       moral: '**VOLONTÉ DE VIOLENCES RÉPÉTÉES**',
+      priorite: 'freq',
+      noteExamen: 'Rupture conventionnelle ou PACS : attention aux qualifications voisines.',
     },
     {
       infraction: '**L\'administration de substances nuisibles**',
@@ -78,6 +85,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**SUBSTANCES NUISIBLES ATTEIGNANT INTÉGRITÉ PHYSIQUE OU PSYCHIQUE** / **PEINE SELON RÉSULTAT**',
       moral: '**CONNAISSANCE DU CARACTÈRE NUISIBLE** / **VOLONTÉ D\'ADMINISTRER**',
+      priorite: 'secours',
     },
     {
       infraction: '**Le viol**',
@@ -86,7 +94,7 @@ export const recapSectionF01P1 = {
         '**PÉNÉTRATION SEXUELLE OU ACTE BUCCO-GÉNITAL** / **ABSENCE DE CONSENTEMENT CARACTÉRISÉE PAR VIOLENCE, CONTRAINTE, MENACE OU SURPRISE** / **SURPRISE** (ex. : hypnose, ivresse de la victime, sommeil, état de sidération — Cass. crim. 11 sept. 2024)',
       moral: '**CONSCIENCE DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ D\'IMPOSER L\'ACTE**',
       priorite: 'core',
-      noteExamen: 'Qualification et absent consentement : citez la définition intégralement.',
+      noteExamen: 'Définition intégrale + absent consentement ; articulation mineurs : 222-23-1, 227-25, 227-27.',
     },
     {
       infraction: '**L\'agression sexuelle (autre que le viol)**',
@@ -94,6 +102,8 @@ export const recapSectionF01P1 = {
       materiel:
         '**ATTEINTE SEXUELLE (PHYSIQUE OU PSYCHIQUE)** / **VIOLENCE, CONTRAINTE, MENACE OU SURPRISE** / **SANS PÉNÉTRATION**',
       moral: '**CONSCIENCE DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ D\'ACTE À CARACTÈRE SEXUEL**',
+      priorite: 'core',
+      noteExamen: 'Pas de pénétration : VCMS ; attention aux incriminations spécialisées mineurs / vulnérabilité.',
     },
     {
       infraction: '**L\'exhibition sexuelle**',
@@ -101,6 +111,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**EXPOSITION DE PARTIES SEXUELLES** / **IMPOSÉE À LA VUE D\'AUTRUI** / **LIEU ACCESSIBLE AU PUBLIC**',
       moral: '**VOLONTÉ DE S\'EXHIBER** / **CONSCIENCE D\'ÊTRE VU OU SUSCEPTIBLE D\'ÊTRE VU**',
+      priorite: 'freq',
     },
     {
       infraction: '**Le harcèlement sexuel**',
@@ -108,6 +119,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**PROPOS OU COMPORTEMENTS RÉPÉTITIFS À CONNOTATION SEXUELLE OU SEXISTE** / **OU PRESSION GRAVE** / **ATTEINTE À LA DIGNITÉ**',
       moral: '**CONSCIENCE DU CARACTÈRE DÉGRADANT, HUMILIANT OU OFFENSANT**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les menaces de commettre un crime ou un délit contre les personnes — sans condition**',
@@ -121,30 +133,35 @@ export const recapSectionF01P1 = {
       legal: 'Art. 222-17 al. 2 C.P.',
       materiel: '**MENACE DE MORT** / **MATÉRIALISÉE**',
       moral: '**VOLONTÉ D\'INTIMIDER**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les menaces de crime ou délit contre les personnes — avec condition**',
       legal: 'Art. 222-18 al. 1 C.P.',
       materiel: '**MENACE** / **ACCOMPAGNÉE D\'UNE CONDITION**',
       moral: '**VOLONTÉ D\'OBTENIR QUELQUE CHOSE SOUS LA MENACE**',
+      priorite: 'secours',
     },
     {
       infraction: '**Les menaces de mort — avec condition**',
       legal: 'Art. 222-18 al. 2 C.P.',
       materiel: '**MENACE DE MORT** / **CONDITION**',
       moral: '**VOLONTÉ D\'OBTENIR SOUS MENACE DE MORT**',
+      priorite: 'secours',
     },
     {
       infraction: '**Les blessures involontaires — ITT > 3 mois**',
       legal: 'Art. 222-19 C.P.',
       materiel: '**FAUTE D\'IMPRUDENCE OU MANQUEMENT** / **ITT > 3 MOIS** / **CAUSALITÉ**',
       moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les blessures involontaires — ITT ≤ 3 mois**',
       legal: 'Art. R.625-2 C.P. / Art. 222-20 C.P.',
       materiel: '**FAUTE D\'IMPRUDENCE** / **ITT ≤ 3 MOIS** / **CAUSALITÉ**',
       moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les tortures et actes de barbarie**',
@@ -153,6 +170,7 @@ export const recapSectionF01P1 = {
         '**ACTES DE TORTURE OU BARBARIE** — gravité exceptionnelle, volonté de nier la dignité humaine (C.A. Lyon 19/01/1996) / **SOUFFRANCE PHYSIQUE OU MORALE D\'INTENSITÉ INSUPPORTABLE** / **SUR PERSONNE VIVANTE**',
       moral:
         '**INTENTION COUPABLE** / **VOLONTÉ DE CAUSER UNE SOUFFRANCE EXCEPTIONNELLEMENT AIGÜE OU DE NIER LA DIGNITÉ HUMAINE**',
+      priorite: 'core',
     },
     {
       infraction: '**Les violences habituelles sur mineur de 15 ans ou personne vulnérable**',
@@ -160,6 +178,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**VIOLENCES HABITUELLES (AU MOINS 2 FOIS)** / **MINEUR DE 15 ANS OU PERSONNE VULNÉRABLE** (vulnérabilité apparente ou connue)',
       moral: '**VOLONTÉ DE VIOLENCES RÉPÉTÉES** / **CONSCIENCE DE LA QUALITÉ DE MINEUR OU DE LA VULNÉRABILITÉ**',
+      priorite: 'core',
     },
     {
       infraction:
@@ -168,6 +187,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**VIOLENCES AVEC USAGE OU MENACE D\'UNE ARME** / **VICTIME : DAP, SAPEUR-/MARIN-POMPIER OU AGENT RÉSEAU DE TRANSPORT DE VOYAGEURS** / **DANS L\'EXERCICE OU DU FAIT DES FONCTIONS** / **QUALITÉ APPARENTE OU CONNUE**',
       moral: '**VOLONTÉ DE VIOLENCES** / **CONNAISSANCE DE LA QUALITÉ DE LA VICTIME**',
+      priorite: 'core',
     },
     {
       infraction: '**La participation à un groupement violent**',
@@ -175,6 +195,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**PARTICIPATION SCIEMMENT À UN GROUPEMENT (MÊME TEMPORAIRE)** / **EN VUE DE LA PRÉPARATION (FAITS MATÉRIELS) DE VIOLENCES CONTRE LES PERSONNES OU DÉGRADATIONS DE BIENS**',
       moral: '**PARTICIPATION VOLONTAIRE ET EN CONNAISSANCE DE CAUSE** / **CONSCIENCE DU BUT VIOLENT**',
+      priorite: 'freq',
     },
     {
       infraction:
@@ -183,6 +204,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**GENDARMERIE, POLICE NATIONALE, PÉNITENTIAIRE, DOUANES OU ÉLU LOCAL** / **EXERCICE OU FAIT DES FONCTIONS OU DU MANDAT** / **QUALITÉ CONNUE OU APPARENTE** / **ITT ≤ 8 J OU SANS ITT**',
       moral: '**VOLONTÉ DE VIOLENCES** / **CONNAISSANCE DE LA QUALITÉ DE LA VICTIME**',
+      priorite: 'freq',
     },
     {
       infraction: '**L\'embuscade**',
@@ -190,6 +212,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**ATTENDRE DANS UN LIEU DÉTERMINÉ** / **POUR COMETTRE VIOLENCES AVEC USAGE OU MENACE D\'UNE ARME** / **VICTIME D\'UN DES PERSONNELS VISÉS (DAP, GN, PN, PÉNITENTIAIRE, DOUANES, POMPIERS, PROFESSIONNEL DE SANTÉ…) DANS L\'EXERCICE OU DU FAIT DES FONCTIONS**',
       moral: '**VOLONTÉ DE S\'EMBUSQUER** / **INTENTION DE VIOLENCES AVEC ARME**',
+      priorite: 'secours',
     },
     {
       infraction: '**Les appels et messages malveillants / agressions sonores (trouble de la tranquillité)**',
@@ -204,6 +227,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**CONDUCTEUR DE VTM** / **FAUTE + AU MOINS UN COMPORTEMENT DANGEREUX PRÉVU PAR LA LOI (éthanol, stupéfiants, excès vitesse ≥30 km/h, défaut de permis, fuite, téléphone tenu, refus d\'obtempérer, écran, etc.)** / **MORT** / **CAUSALITÉ** / **PAS D\'INTENTION DE DONNER LA MORT**',
       moral: '**ABSENCE D\'INTENTION HOMICIDE** / **COMMISSION D\'UNE FAUTE QUALIFIÉE AVEC COMPORTEMENT DANGEREUX**',
+      priorite: 'core',
     },
     {
       infraction: '**Les blessures routières — ITT > 3 mois**',
@@ -211,6 +235,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**CONDUCTEUR VTM** / **ITT > 3 MOIS** / **MÊMES COMPORTEMENTS DANGEREUX QUE L\'HOMICIDE ROUTIER** / **CAUSALITÉ**',
       moral: '**ABSENCE D\'INTENTION DE BLESSER** / **FAUTE QUALIFIÉE + CIRCONSTANCE AGGRAVANTE ROUTIÈRE**',
+      priorite: 'freq',
     },
     {
       infraction: '**Les blessures routières — ITT ≤ 3 mois**',
@@ -225,6 +250,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**CONDUCTEUR VTM** / **ITT ≤ 3 MOIS** / **FAUTE D\'IMPRUDENCE OU MANQUEMENT** / **SANS LES CIRCONSTANCES DE « VIOLENCE ROUTIÈRE » DU 221-18/19/20** / **CAUSALITÉ**',
       moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      priorite: 'freq',
     },
     {
       infraction: '**Le viol commis par un majeur sur un mineur de 15 ans**',
@@ -239,6 +265,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**PÉNÉTRATION OU ACTE BUCCO-GÉNITAL** / **ASCENDANT, FRÈRE/SŒUR, ONCLE/TANTE, NEVEU/NIÈCE OU CONJOINT (OU ÉQUIVALENT) D\'AUTORITÉ SUR LA VICTIME** / **MINEUR** / **VICTIME MINEURE : PAS DE PREUVE DE VCMS**',
       moral: '**CONNAISSANCE DU LIEN FAMILIAL**',
+      priorite: 'core',
     },
     {
       infraction: '**Les agressions sexuelles sur personne vulnérable**',
@@ -246,6 +273,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**ATTEINTE SEXUELLE SANS PÉNÉTRATION** / **PAR VCMS** / **VICTIME VULNÉRABLE (ÂGE, MALADIE, INFIRMITÉ, DÉFICIENCE, GROSSESSE…)** — apparent ou connu',
       moral: '**CONSCIENCE DE LA VULNÉRABILITÉ** / **VOLONTÉ D\'ACTE À CARACTÈRE SEXUEL**',
+      priorite: 'freq',
     },
     {
       infraction: '**L\'agression sexuelle commise par un majeur sur un mineur de 15 ans**',
@@ -260,6 +288,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**ATTEINTE SANS PÉNÉTRATION** / **LIENS FAMILIAUX COMME AU 222-23-2** / **MINEUR** / **PAS DE VCMS À PROUVER POUR LE MINEUR**',
       moral: '**CONNAISSANCE DU LIEN FAMILIAL**',
+      priorite: 'freq',
     },
     {
       infraction: '**L\'administration de substance pour viol ou agression sexuelle**',
@@ -267,6 +296,7 @@ export const recapSectionF01P1 = {
       materiel:
         '**ADMINISTRATION À L\'INSU D\'UNE SUBSTANCE ALTÉRANT DISCERNEMENT OU CONTRÔLE** / **EN VUE D\'UN VIOL OU D\'UNE AGRESSION SEXUELLE**',
       moral: '**CONNAISSANCE DE LA NATURE DE LA SUBSTANCE** / **VOLONTÉ D\'ALTÉRER LE DISCERNEMENT EN VUE DE L\'INFRACTION SEXUELLE**',
+      priorite: 'freq',
     },
     {
       infraction: '**L\'enregistrement d\'images de violences (happy slapping)**',
@@ -280,6 +310,7 @@ export const recapSectionF01P1 = {
       legal: 'Art. 222-33-3 al. 2 C.P.',
       materiel: '**DIFFUSION PAR QUELQUE MOYEN** (internet, réseaux sociaux, MMS…)',
       moral: '**CONSCIENCE ET VOLONTÉ DE PORTER À LA CONNAISSANCE D\'AUTRUI**',
+      priorite: 'secours',
     },
   ],
 };
