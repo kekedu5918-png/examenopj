@@ -83,5 +83,68 @@ Plainte de Michel DUPONT,
 (Morbihan)
 ---`;
 
+/** Exemple 5 — plainte par représentant (cadre de la victime), bloc droit jusqu’aux signatures. */
+export const ME1_PV_BLOC_DROIT_EX5 = `PROCÈS-VERBAL
+PV n° …/…/…
+L’an (année),
+Le (jour, mois), à (heures, minutes)
+Nous, (Prénom, NOM)
+(Grade du rédacteur)
+En fonction à (service) de (VILLE)
+OFFICIER DE POLICE JUDICIAIRE en résidence à (VILLE),
+AFFAIRE :
+C/ (Prénom, NOM)
+(qualification de l’infraction)
+OBJET :
+Plainte de…
+---
+---
+---
+--- Je dépose plainte contre […] pour (… faits) au nom de
+(… victime) en qualité de […].----------------------------------------
+--- Après lecture faite personnellement, M. (prénom, nom)
+persiste et signe le présent avec Nous.------------------------------
+L’intéressé L’Officier de Police Judiciaire`;
+
+/** Squelette du corps (Ex. 4) à injecter dans la zone de rédaction. */
+export const ME1_PV_CORPS_SQUELETTE_EX4 = `--- OFFICIER DE POLICE JUDICIAIRE en résidence à (VILLE),- - - - -
+--- Étant au service.---------------------------------------------------
+--- Constatons que se présente M. ou Mme (prénom, nom),
+accompagné de M. ou Mme (prénom, nom, adresse), lui servant
+d’interprète en langue (…) qui nous informe que (prénom, nom) a
+été victime de (infraction, date, lieu).--------------------------------
+--- Agissant en…(flagrant délit ou enquête préliminaire).-----------
+--- Vu les articles.-----------------------------------------------------
+--- Par le truchement de l’interprète.--------------------------------
+--- Informons M. (prénom, nom) des droits mentionnés à l’article
+10-2 du code de procédure pénale et l’entendons comme suit :- - -
+--- Après lecture et traduction faites par M. (prénom, nom)
+interprète, M. (prénom, nom) persiste et signe le présent avec
+nous.-------------------------------------------------------------------
+L’intéressé(e) L'interprète L’O.P.J.`;
+
+/** Squelette du corps (Ex. 5) : à placer sous la rubrique OBJET (trois lignes --- puis acte). */
+export const ME1_PV_CORPS_SQUELETTE_EX5 = `---
+---
+---
+--- Je dépose plainte contre […] pour (… faits) au nom de
+(… victime) en qualité de […].----------------------------------------
+--- Après lecture faite personnellement, M. (prénom, nom)
+persiste et signe le présent avec Nous.------------------------------
+L’intéressé L’Officier de Police Judiciaire`;
+
+/** Les six parties du PV rappelées par le fascicule (structure / techniques). */
+export const ME1_PARTIES_PROC_VERBAL = [
+  { titre: 'Titre', detail: '« PROCÈS-VERBAL »' },
+  { titre: 'Incipit', detail: 'Date et heure en toutes lettres, identité du rédacteur, lieu, cadre juridique, personnes présentes.' },
+  { titre: 'Corps', detail: 'Constatations, auditions, Q/R au présent, mentions légales de l’acte.' },
+  { titre: 'Énonciation terminale', detail: 'Clôture, signatures (déclarant, interprète, OPJ selon le cas).' },
+  { titre: 'Pagination', detail: 'Recto, suite de PV sans nouvel incipit, rappel N° / objet / feuillet.' },
+  { titre: 'Marge', detail: 'N° procédure / cote PV, rubriques AFFAIRE et OBJET.' },
+] as const;
+
 export const ME1_SOURCE_LABEL =
   'Fascicule ME1 — La procédure pénale policière (SDCP / examen type juin 2026). Texte d’appui pédagogique.';
+
+/** Clé localStorage pour le brouillon d’exercice PV ME1. */
+export const PV_ME1_EXERCISE_STORAGE_KEY = 'examenopj-pv-me1-exercise-v1';

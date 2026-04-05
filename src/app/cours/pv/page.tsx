@@ -108,7 +108,11 @@ export default function ModelesPVPage() {
           <strong className='text-gray-300'>épreuve 2</strong>, se référer au fascicule ME1 : mise en page en{' '}
           <strong className='text-gray-300'>deux colonnes</strong> (coordonnées du service à gauche, filet, bloc principal à
           droite), rattachement aux rubriques N°, <strong className='font-mono text-gray-300'>AFFAIRE</strong>,{' '}
-          <strong className='font-mono text-gray-300'>OBJET</strong>.
+          <strong className='font-mono text-gray-300'>OBJET</strong>.{' '}
+          <Link href='#me1-pv' className='font-medium text-emerald-400/90 underline-offset-2 hover:underline'>
+            Aller directement aux modèles ME1 et à l’exercice
+          </Link>
+          .
         </p>
       </GlassCard>
 

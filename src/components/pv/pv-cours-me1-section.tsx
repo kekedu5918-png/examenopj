@@ -10,21 +10,22 @@ const tabClass =
 
 export function PVCoursMe1Section() {
   return (
-    <div className='mt-14'>
+    <div id='me1-pv' className='mt-14 scroll-mt-24'>
       <h2 className='font-display text-xl font-bold text-white sm:text-2xl'>
         Fascicule ME1 — procès-verbaux (épreuve 2)
       </h2>
       <p className='mt-2 max-w-3xl text-sm text-slate-400'>
-        Modèle officiel « La procédure pénale policière » : reproduction du formalisme en deux colonnes (en-tête service à
-        gauche, corps du PV à droite), mentions marginales types, puis exercice à trous ({' '}
-        <span className='font-mono text-slate-300'>xxx</span>) et zone de rédaction pour le corps (
-        <span className='font-mono text-slate-300'>---</span>).
+        Modèle officiel « La procédure pénale policière » : <strong className='text-slate-200'>deux colonnes</strong> (coordonnées du service à
+        gauche, bloc PV à droite), <strong className='text-slate-200'>mentions N° / AFFAIRE / OBJET</strong>, exemples 4 et 5, copie et impression
+        dédiées. Onglet exercice : champs à compléter ({' '}
+        <span className='font-mono text-slate-300'>xxx</span>), canevas ME1 injectable, <strong className='text-slate-200'>sauvegarde locale</strong>{' '}
+        du brouillon.
       </p>
 
       <Tabs defaultValue='verbatim' className='mt-6 w-full'>
         <TabsList className='mb-6 flex h-auto min-h-0 w-full flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5'>
           <TabsTrigger value='verbatim' className={tabClass}>
-            Modèle verbatim (Ex. 4)
+            Modèles verbatim ME1
           </TabsTrigger>
           <TabsTrigger value='exercice' className={tabClass}>
             Exercice de rédaction
