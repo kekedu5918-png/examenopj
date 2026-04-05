@@ -44,6 +44,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
   const { toast } = useToast();
   const router = useRouter();
   const [filtre, setFiltre] = useState<FiltreCategorie>('all');
+  const [prioriteExamenOnly, setPrioriteExamenOnly] = useState(false);
   const [viewedIds, setViewedIds] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -78,8 +79,12 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
   );
 
   const fichesFiltrees = useMemo(() => {
-    return fiches.filter((f) => filtre === 'all' || f.categorie === filtre);
-  }, [fiches, filtre]);
+    let list = fiches.filter((f) => filtre === 'all' || f.categorie === filtre);
+    if (prioriteExamenOnly) {
+      list = list.filter((f) => f.indispensableExamen);
+    }
+    return list;
+  }, [fiches, filtre, prioriteExamenOnly]);
 
   const onPremiumBackdrop = useCallback(() => {
     toast({
@@ -91,7 +96,14 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
   return (
     <div className='min-h-[calc(100vh-4rem)] bg-navy-950'>
       <FondamentauxHero fiches={fiches} categories={categories} viewedCount={viewedIds.size} />
-      <FondamentauxFilters fiches={fiches} categories={categories} value={filtre} onChange={setFiltre} />
+      <FondamentauxFilters
+        fiches={fiches}
+        categories={categories}
+        value={filtre}
+        onChange={setFiltre}
+        prioriteExamenOnly={prioriteExamenOnly}
+        onPrioriteExamenOnlyChange={setPrioriteExamenOnly}
+      />
 
       <div className='mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8'>
         <p className='mb-6 text-center text-sm text-slate-500'>
@@ -132,7 +144,11 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
         </div>
 
         {fichesFiltrees.length === 0 ? (
-          <p className='py-16 text-center text-slate-500'>Aucune fiche dans cette catégorie.</p>
+          <p className='py-16 text-center text-slate-500'>
+            {prioriteExamenOnly
+              ? 'Aucune fiche « indispensable examen » dans cette catégorie. Essayez « Tout » ou désactivez le filtre.'
+              : 'Aucune fiche dans cette catégorie.'}
+          </p>
         ) : null}
       </div>
 

@@ -125,23 +125,31 @@ export const FASCICULE_REPERES_SOMMAIRE: Record<string, FasciculeReperesSommaire
     ],
   },
   f12: {
-    intro: 'Instruction, mandats et liberté : phase préparatoire devant le juge d’instruction.',
+    intro:
+      'Table des matières type fascicule n°12 (SDCP / IREP, session juin 2026) : instruction préparatoire, mandats, contrôle judiciaire, ARSE, détention provisoire, mineurs.',
     parties: [
-      'Ouverture et déroulement de l’instruction',
-      'Mandats de justice (dépôt, amener, comparution, recherche)',
-      'Contrôle judiciaire et placement sous surveillance électronique',
-      'Détention provisoire et prolongations',
-      'Chambre de l’instruction et recours (aperçu)',
+      'Instruction préparatoire — caractères (écrit, secret, non-contradictoire) ; ouverture d’une information ; pouvoirs du juge d’instruction (constatations, expertise, auditions témoins / assistés / PME / PC) ; clôture (renvoi, mise en accusation art. 181 CPP, non-lieu art. 177 CPP)',
+      'Chambre de l’instruction (art. 191 à 221-3 CPP) : composition, révision, évocation, infirmation / annulation, audience de contrôle',
+      'Juge des libertés et de la détention (JLD) : instruction et enquête (écoutes, perquisitions / GAV / réquisitions / témoins / techniques spéciales art. 706-95-11 s., saisies patrimoine art. 706-148, saisies conservatoires) ; CJ / DP ; application des peines ; sécurité intérieure / terrorisme',
+      'Mandats de justice (art. 122 à 136 CPP) : recherche, comparution, amener, arrêt, dépôt — délivrance / notification / exécution ; sanctions des irrégularités',
+      'Contrôle judiciaire : conditions de mise en œuvre (JI, JLD, chambre de l’instruction, juridictions de jugement) ; obligations PP / PM ; organisation ; modification, mainlevée, durée, transformation en détention ; tableau',
+      'Assignation à résidence avec surveillance électronique (ARSE) : conditions, modalités, déroulement',
+      'Détention provisoire : placement (JI, JLD, chambre) ; déroulement (durée, mise en état, prolongations) ; fin (règlement, demandes de mise en liberté, libération de plein droit / d’office / sur réquisitions / santé) ; réparation DPP injustifiée (art. 149 s.) ; tableaux délais délits / crimes',
+      'Mineurs (CJPM) : principes (présomption de discernement, primauté de l’éducatif…) ; instruction (JI, CJ, ARSE art. L.333-1 s., DP art. L.334-1 s., clôture)',
     ],
   },
   f13: {
-    intro: 'Jugement et exécution : juridictions, procès et application des peines.',
+    intro:
+      'Table des matières type fascicule n°13 (SDCP / IREP) : principes généraux, juridictions de jugement, recours, exécution des décisions.',
     parties: [
-      'Organisation des juridictions pénales et compétences',
-      'Mise en état, audience, jugement et appel',
-      'Exécution des peines privatives de liberté et alternatives',
-      'Peines non emprisonnables et mesures alternatives',
-      'Victime, partie civile et exécution des obligations (repères)',
+      'Principes généraux (art. préliminaire CPP : procès équitable, présomption d’innocence, secret défense, traduction, délai raisonnable, possibilité d’appel, etc.)',
+      'Juridictions de droit commun : tribunal de police (art. 521–549 CPP) ; tribunal correctionnel (art. 381–495-25) ; cour d’assises (art. 231–380-15) ; cour criminelle départementale (art. 380-16–380-22)',
+      'Juridictions d’exception : mineurs, stupéfiants, terrorisme, juridictions JEF, criminalité organisée, crimes contre l’humanité / crimes de guerre, crimes sériels ou non élucidés, autres spécialisées',
+      'Voies de recours : ordinaires et extraordinaires ; cour d’appel et Cour de cassation (réf. C. org. judiciaire)',
+      'Tableaux d’organisation judiciaire en matière pénale',
+      'Exécution des décisions — principes : parties intervenantes ; décision définitive (opposition, appel, cassation) ; peines privatives de liberté ; peines non privatives de liberté (PP / PM)',
+      'Garantie d’exécution : contrainte judiciaire (art. 754 CPP : signification, demande d’incarcération, durée, fin)',
+      'Juridictions de l’application des peines : JAP, TAP, chambre de l’application des peines (compétence, composition, décisions)',
     ],
   },
   f14: {

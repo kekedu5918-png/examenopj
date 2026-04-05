@@ -28,6 +28,7 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
   }, [fiches]);
 
   const total = fiches.length;
+  const indispensableCount = useMemo(() => fiches.filter((f) => f.indispensableExamen).length, [fiches]);
   const pct = total > 0 ? Math.min(100, Math.round((viewedCount / total) * 100)) : 0;
 
   const miniLine = CAT_ORDER.map((key) => {
@@ -68,7 +69,10 @@ export function FondamentauxHero({ fiches, categories, viewedCount }: Props) {
           <strong className='font-semibold text-slate-200'>valider sur Légifrance</strong>.
         </p>
         <p className='mt-2 max-w-3xl text-xs leading-relaxed text-slate-500 sm:text-sm'>
-          Repérez le badge <span className='text-gold-400'>⭐ Oral / écrit</span> pour les thèmes les plus opérés au concours.
+          Repérez le badge <span className='text-gold-400'>⭐ Oral / écrit</span> pour les thèmes les plus opérés au concours
+          {' — '}
+          <span className='tabular-nums text-slate-400'>{indispensableCount}</span> fiche
+          {indispensableCount > 1 ? 's' : ''} dans cette priorité (filtre sous les onglets).
         </p>
         <p className='mt-4 text-xs text-slate-500 sm:text-sm'>{miniLine}</p>
 
