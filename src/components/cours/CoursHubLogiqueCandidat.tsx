@@ -68,6 +68,12 @@ export function CoursHubLogiqueCandidat({ variant = 'full' }: CoursHubLogiqueCan
         </p>
         <div className='mt-4 flex flex-wrap gap-2'>
           <Link
+            href='/cours#cours-methode-title'
+            className='inline-flex rounded-lg border border-cyan-500/35 bg-cyan-500/10 px-3 py-1.5 text-sm font-medium text-cyan-100 transition hover:bg-cyan-500/15'
+          >
+            Méthode 4 temps (page Cours) →
+          </Link>
+          <Link
             href='/cours#cours-logique-candidat'
             className='inline-flex rounded-lg border border-gold-500/35 bg-gold-500/10 px-3 py-1.5 text-sm font-medium text-gold-100 transition hover:bg-gold-500/15'
           >

@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Eye, EyeOff } from 'lucide-react';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { Eye, EyeOff, HelpCircle, ListOrdered, Maximize2, Minimize2 } from 'lucide-react';
 
 import { ModelePVOfficielLayout } from '@/components/modeles-pv/ModelePVOfficielLayout';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useToast } from '@/components/ui/use-toast';
-import { getModelePVBySlug } from '@/data/modeles-pv';
+import { getModelePVBySlug,MODELES_PV } from '@/data/modeles-pv';
 import type { SujetRedactionPV } from '@/data/sujets-redaction-pv';
 import { SUJETS_REDACTION_PV } from '@/data/sujets-redaction-pv';
 import { cn } from '@/utils/cn';
@@ -169,6 +170,34 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
   /** Modèle masqué à côté de la rédaction : le candidat démasque seulement si besoin. */
   const [modeleDemasque, setModeleDemasque] = useState(false);
 
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+  const espaceEtendu = searchParams.get('espace') === '1';
+  const [sujetsSheetOpen, setSujetsSheetOpen] = useState(false);
+  const [aidePvOpen, setAidePvOpen] = useState(false);
+  const [aidePvSlug, setAidePvSlug] = useState<string | null>(null);
+
+  const setEspaceEtendu = useCallback(
+    (v: boolean) => {
+      const p = new URLSearchParams(searchParams.toString());
+      if (v) p.set('espace', '1');
+      else p.delete('espace');
+      const q = p.toString();
+      router.replace(q ? `${pathname}?${q}` : pathname, { scroll: false });
+    },
+    [pathname, router, searchParams],
+  );
+
+  useEffect(() => {
+    if (!espaceEtendu) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [espaceEtendu]);
+
   useEffect(() => {
     setHistory(loadHistory());
   }, []);
@@ -309,10 +338,9 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
     URL.revokeObjectURL(url);
   };
 
-  return (
-    <div className='grid gap-6 lg:grid-cols-[minmax(0,280px)_1fr] xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)]'>
-      <aside className='space-y-4 rounded-2xl border border-white/[0.08] bg-examen-card p-4 lg:sticky lg:top-24 lg:self-start'>
-        <div className='flex gap-1 rounded-lg bg-white/[0.04] p-1'>
+  const renderSidebarBody = () => (
+    <>
+      <div className='flex gap-1 rounded-lg bg-white/[0.04] p-1'>
           <button
             type='button'
             onClick={() => setSidebarTab('sujets')}
@@ -376,7 +404,10 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                 <button
                   key={s.id}
                   type='button'
-                  onClick={() => setSujetId(s.id)}
+                  onClick={() => {
+                    setSujetId(s.id);
+                    setSujetsSheetOpen(false);
+                  }}
                   className={cn(
                     'w-full rounded-xl border p-3 text-left transition-colors',
                     s.id === sujet.id
@@ -420,9 +451,82 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
             )}
           </div>
         )}
-      </aside>
+    </>
+  );
 
-      <div className='min-w-0 space-y-6'>
+  return (
+    <>
+      <div
+        className={cn(
+          'grid gap-6',
+          espaceEtendu
+            ? 'fixed inset-0 z-[220] grid max-h-[100dvh] grid-rows-[auto_minmax(0,1fr)] bg-[#07070d]'
+            : 'lg:grid-cols-[minmax(0,280px)_1fr] xl:grid-cols-[minmax(0,300px)_minmax(0,1fr)]',
+        )}
+      >
+        {espaceEtendu ? (
+          <div className='flex h-12 shrink-0 items-center gap-2 border-b border-white/[0.1] bg-[#0a0a12] px-3 md:h-14 md:px-4'>
+            <Button
+              type='button'
+              variant='outline'
+              size='sm'
+              className='shrink-0 gap-1.5 border-white/15'
+              onClick={() => setEspaceEtendu(false)}
+            >
+              <Minimize2 className='h-3.5 w-3.5' aria-hidden />
+              <span className='hidden sm:inline'>Quitter l’espace</span>
+            </Button>
+            <Button
+              type='button'
+              variant='secondary'
+              size='sm'
+              className='shrink-0 gap-1.5'
+              onClick={() => setSujetsSheetOpen(true)}
+            >
+              <ListOrdered className='h-3.5 w-3.5' aria-hidden />
+              Sujets
+            </Button>
+            <Button
+              type='button'
+              variant='secondary'
+              size='sm'
+              className='shrink-0 gap-1.5'
+              onClick={() => {
+                setAidePvSlug(null);
+                setAidePvOpen(true);
+              }}
+            >
+              <HelpCircle className='h-3.5 w-3.5' aria-hidden />
+              Aide
+            </Button>
+            <span
+              className='min-w-0 flex-1 truncate font-display text-xs font-semibold text-white sm:text-sm'
+              title={sujet.titre}
+            >
+              {sujet.titre}
+            </span>
+            {chronoOn ? (
+              <span className='shrink-0 font-mono-label text-xs tabular-nums text-examen-accent'>
+                {formatElapsed(chronoSec)}
+              </span>
+            ) : null}
+          </div>
+        ) : null}
+        <aside
+          className={cn(
+            'space-y-4 rounded-2xl border border-white/[0.08] bg-examen-card p-4 lg:sticky lg:top-24 lg:self-start',
+            espaceEtendu && 'hidden',
+          )}
+        >
+          {renderSidebarBody()}
+        </aside>
+
+        <div
+          className={cn(
+            'min-w-0 space-y-6',
+            espaceEtendu && 'min-h-0 overflow-y-auto px-3 py-4 md:px-5',
+          )}
+        >
         <header className='flex flex-col gap-3 border-b border-white/[0.08] pb-4 sm:flex-row sm:items-center sm:justify-between'>
           <div>
             <h2 className='font-display text-lg font-bold text-white md:text-xl'>{sujet.titre}</h2>
@@ -450,6 +554,43 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                 {formatElapsed(chronoSec)}
               </div>
             )}
+            {!espaceEtendu ? (
+              <>
+                <Button
+                  type='button'
+                  variant='outline'
+                  size='sm'
+                  className='gap-1.5 border-white/15 lg:hidden'
+                  onClick={() => setSujetsSheetOpen(true)}
+                >
+                  <ListOrdered className='h-3.5 w-3.5' aria-hidden />
+                  Sujets
+                </Button>
+                <Button
+                  type='button'
+                  variant='outline'
+                  size='sm'
+                  className='gap-1.5 border-white/15'
+                  onClick={() => setEspaceEtendu(true)}
+                >
+                  <Maximize2 className='h-3.5 w-3.5' aria-hidden />
+                  <span className='hidden sm:inline'>Espace rédaction</span>
+                </Button>
+                <Button
+                  type='button'
+                  variant='secondary'
+                  size='sm'
+                  className='gap-1.5'
+                  onClick={() => {
+                    setAidePvSlug(null);
+                    setAidePvOpen(true);
+                  }}
+                >
+                  <HelpCircle className='h-3.5 w-3.5' aria-hidden />
+                  Aide
+                </Button>
+              </>
+            ) : null}
             {result ? (
               <div className='flex rounded-lg border border-white/[0.1] p-0.5'>
                 <button
@@ -712,6 +853,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
             </p>
           </div>
         ) : null}
+        </div>
       </div>
 
       <Sheet open={sheetOpen} onOpenChange={setSheetOpen}>
@@ -732,6 +874,73 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
           ) : null}
         </SheetContent>
       </Sheet>
-    </div>
+
+      <Sheet open={sujetsSheetOpen} onOpenChange={setSujetsSheetOpen}>
+        <SheetContent
+          side='left'
+          className='w-full overflow-y-auto border-white/[0.08] bg-examen-card sm:max-w-md'
+        >
+          <SheetHeader>
+            <SheetTitle className='text-white'>Sujets et corrections</SheetTitle>
+          </SheetHeader>
+          <div className='mt-6 space-y-4'>{renderSidebarBody()}</div>
+        </SheetContent>
+      </Sheet>
+
+      <Sheet
+        open={aidePvOpen}
+        onOpenChange={(open) => {
+          setAidePvOpen(open);
+          if (!open) setAidePvSlug(null);
+        }}
+      >
+        <SheetContent
+          side='right'
+          className='w-full overflow-y-auto border-white/[0.08] bg-examen-card sm:max-w-xl md:max-w-2xl'
+        >
+          <SheetHeader>
+            <SheetTitle className='text-white'>Exemples de PV</SheetTitle>
+          </SheetHeader>
+          {!aidePvSlug ? (
+            <ul className='mt-6 space-y-2 pb-6'>
+              {MODELES_PV.map((m) => (
+                <li key={m.id}>
+                  <button
+                    type='button'
+                    onClick={() => setAidePvSlug(m.id)}
+                    className='w-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-left transition-colors hover:border-white/[0.14]'
+                  >
+                    <p className='text-sm font-semibold text-white'>{m.titre}</p>
+                    <p className='mt-1 text-[11px] text-examen-inkMuted'>{m.fascicule}</p>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className='mt-6 pb-8'>
+                <Button type='button' variant='outline' size='sm' onClick={() => setAidePvSlug(null)}>
+                  ← Liste des modèles
+                </Button>
+                {(() => {
+                  const m = getModelePVBySlug(aidePvSlug);
+                  return m ? (
+                    <div className='mt-6'>
+                      <ModelePVOfficielLayout modele={m} />
+                      <Link
+                        href={`/cours/modeles-pv/${m.id}`}
+                        className='mt-6 inline-flex text-sm font-semibold text-examen-accent hover:underline'
+                      >
+                        Fiche modèle complète →
+                      </Link>
+                    </div>
+                  ) : (
+                    <p className='mt-4 text-sm text-examen-inkMuted'>Modèle introuvable.</p>
+                  );
+                })()}
+              </div>
+          )}
+        </SheetContent>
+      </Sheet>
+    </>
   );
 }

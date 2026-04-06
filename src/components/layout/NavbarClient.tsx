@@ -181,8 +181,13 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
             >
               <ExamenOpjLogo size={logoSize} className='block' />
             </span>
-            <span className='font-display text-sm font-bold leading-none tracking-tight text-white sm:text-[0.95rem]'>
-              Examen
+            <span className='flex items-baseline gap-1.5'>
+              <span className='font-display text-sm font-bold leading-none tracking-tight text-white sm:text-[0.95rem]'>
+                Examen
+              </span>
+              <span className='font-display text-sm font-bold leading-none tracking-tight text-gray-400 transition group-hover:text-gray-300 sm:text-[0.95rem]'>
+                OPJ
+              </span>
             </span>
             <span className='rounded-md border border-white/[0.12] bg-white/[0.04] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-examen-inkMuted'>
               2026

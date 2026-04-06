@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Lock } from 'lucide-react';
@@ -55,7 +56,11 @@ export default async function RedactionPVPage({ searchParams }: Props) {
           </Link>
         </div>
       ) : (
-        <RedactionPVAtelierClient key={initialSujetId ?? 'default'} initialSujetId={initialSujetId} />
+        <Suspense
+          fallback={<div className='min-h-[60vh] animate-pulse rounded-2xl border border-white/[0.06] bg-white/[0.03]' />}
+        >
+          <RedactionPVAtelierClient key={initialSujetId ?? 'default'} initialSujetId={initialSujetId} />
+        </Suspense>
       )}
     </div>
   );

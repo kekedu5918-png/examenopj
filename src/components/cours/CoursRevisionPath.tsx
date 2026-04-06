@@ -30,8 +30,12 @@ export function CoursRevisionPath({ className }: Props) {
             Fil de révision — 7 leçons
           </h2>
           <p className='mt-2 max-w-2xl text-sm leading-relaxed text-slate-400'>
-            Suivez l’ordre proposé : chaque étape regroupe l’essentiel à activer sur le site (fiches, récap, quiz, ME1). Le
-            découpage par fascicule F01–F15 reste disponible plus bas comme index officiel.
+            Chaque étape indique quoi lancer sur le site (fondamentaux, récap F01/F02, quiz, PV). C’est votre colonne vertébrale
+            après les blocs « méthode » et « priorités P0 » au-dessus ; le sommaire officiel F01–F15 reste sur la page{' '}
+            <Link href='/programme' className='text-cyan-300 underline-offset-2 hover:underline'>
+              Programme
+            </Link>
+            .
           </p>
         </div>
       </div>

@@ -17,6 +17,11 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
+  INFRACTION_FAMILY_OPTIONS,
+  type InfractionFamily,
+  matchesInfractionFamily,
+} from '@/data/infractions-family-filter';
+import {
   getInfractionsCatalog,
   type InfractionCatalogItem,
   infractionToRecapFilter,
@@ -83,7 +88,11 @@ function groupFilteredForListAccordion(items: InfractionCatalogItem[]) {
     arr.push(item);
     map.set(v, arr);
   }
-  const entries = [...map.entries()].sort(([ka], [kb]) => {
+  const entries = [...map.entries()].sort(([ka, groupA], [kb, groupB]) => {
+    const minPri = (items: InfractionCatalogItem[]) =>
+      Math.min(...items.map((i) => PRIORITE_ORDER[(i.priorite ?? 'secours') as RecapPriorite]));
+    const priCmp = minPri(groupA) - minPri(groupB);
+    if (priCmp !== 0) return priCmp;
     const [fa, pa, ta] = ka.split(LIST_GROUP_SEP);
     const [fb, pb, tb] = kb.split(LIST_GROUP_SEP);
     const ia = fascOrder.indexOf(fa as RecapFasciculeId);
@@ -121,6 +130,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
   const [query, setQuery] = useState(initialQuery);
   const [fascFilter, setFascFilter] = useState<RecapFasciculeFilter>('all');
+  const [familyFilter, setFamilyFilter] = useState<InfractionFamily>('all');
   const [prioriteTier, setPrioriteTier] = useState<RecapPriorite | 'all'>('all');
   const [selected, setSelected] = useState<InfractionCatalogItem | null>(null);
   const [deepLinkReady, setDeepLinkReady] = useState(false);
@@ -175,6 +185,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
     const list = catalog.filter((item) => {
+      if (!matchesInfractionFamily(item, familyFilter)) return false;
       if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
       if (prioriteTier !== 'all' && (item.priorite ?? 'secours') !== prioriteTier) return false;
       if (!q) return true;
@@ -189,7 +200,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       if (fasc !== 0) return fasc;
       return a.groupTitle.localeCompare(b.groupTitle) || a.id.localeCompare(b.id);
     });
-  }, [catalog, query, fascFilter, prioriteTier]);
+  }, [catalog, query, fascFilter, familyFilter, prioriteTier]);
 
   const openInListe = (id: string) => {
     const p = new URLSearchParams(searchParams.toString());
@@ -207,7 +218,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='F01 à F07 : filtres rapides ; une infraction s’ouvre en bulle (fiche express). Enchaîne avec flashcards et récap.'
+        subtitle='Filtrez par famille (personnes, biens, route…) et par probabilité à l’examen : le plus attendu d’abord. Fiche express en bulle, tableau exportable, mode flash.'
         className='mb-6'
       />
 
@@ -232,7 +243,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
           </div>
           <div className='w-full shrink-0 space-y-1 lg:w-56'>
             <label htmlFor='inf-strate' className='text-xs font-medium text-gray-500'>
-              Strate (sans doubler les raccourcis fascicule)
+              Probabilité à l’examen
             </label>
             <select
               id='inf-strate'
@@ -240,15 +251,36 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
               onChange={(e) => setPrioriteTier(e.target.value as RecapPriorite | 'all')}
               className='w-full rounded-xl border border-white/10 bg-navy-900/90 px-3 py-3 text-sm text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
             >
-              <option value='all'>Toutes les strates</option>
-              <option value='core'>Prioritaire</option>
-              <option value='freq'>Très probable</option>
-              <option value='secours'>À sécuriser</option>
+              <option value='all'>Toutes (tri du + au − probable)</option>
+              <option value='core'>Uniquement prioritaires</option>
+              <option value='freq'>Uniquement très probables</option>
+              <option value='secours'>Uniquement à sécuriser</option>
             </select>
           </div>
         </div>
         <div>
-          <p className='mb-2 text-xs font-medium text-gray-500'>Fascicule (programme)</p>
+          <p className='mb-2 text-xs font-medium text-gray-500'>Famille d’infractions</p>
+          <p className='mb-2 text-[11px] text-gray-600'>Regroupement lisible : personnes, biens, route, etc. (croise avec le fascicule ci‑dessous si besoin.)</p>
+          <div className='flex flex-wrap gap-2'>
+            {INFRACTION_FAMILY_OPTIONS.map((opt) => (
+              <button
+                key={opt.id}
+                type='button'
+                title={opt.hint}
+                onClick={() => setFamilyFilter(opt.id)}
+                className={`rounded-xl border px-3 py-2 text-left text-sm font-medium transition ${
+                  familyFilter === opt.id
+                    ? 'border-rose-500/50 bg-rose-500/15 text-rose-50'
+                    : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20'
+                }`}
+              >
+                {opt.label}
+              </button>
+            ))}
+          </div>
+        </div>
+        <div>
+          <p className='mb-2 text-xs font-medium text-gray-500'>Affiner par fascicule (programme officiel)</p>
           <div className='flex flex-wrap gap-2'>
             {(
               [
@@ -301,8 +333,10 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         <p className='flex flex-wrap items-center gap-2 text-sm text-gray-500'>
           <BookOpen className='h-4 w-4 text-amber-400/80' aria-hidden />
           <span>
-            {filtered.length} infraction{filtered.length > 1 ? 's' : ''} — tri : strate sélectionnée, puis fascicule et
-            thème
+            {filtered.length} infraction{filtered.length > 1 ? 's' : ''}
+            {prioriteTier === 'all'
+              ? ' — ordre : probabilité examen (prioritaire → à sécuriser), puis fascicule et thème'
+              : ' — filtre strate actif ; ordre conservé à l’intérieur de chaque thème'}
           </span>
         </p>
       </GlassCard>

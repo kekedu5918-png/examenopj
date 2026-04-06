@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ExternalLink, Sparkles } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import { InfractionAudioCoach } from '@/components/infractions/InfractionAudioCoach';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { Button } from '@/components/ui/button';
 import {
@@ -86,6 +87,13 @@ export function InfractionDetailContent({ item, className }: Props) {
         </p>
         <RecapBulletCell text={item.moral} />
       </div>
+
+      <InfractionAudioCoach
+        infractionLabel={item.infraction}
+        legal={item.legal}
+        materiel={item.materiel}
+        moral={item.moral}
+      />
 
       {item.noteExamen ? (
         <p className='rounded-xl border border-amber-500/25 bg-amber-500/10 px-3 py-2 text-xs text-amber-100/90'>

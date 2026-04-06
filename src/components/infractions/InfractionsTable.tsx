@@ -7,11 +7,16 @@ import { ArrowRight, X } from 'lucide-react';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { InfractionDetailContent } from '@/components/infractions/InfractionDetailContent';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
-import type { InfractionCatalogItem } from '@/data/recapitulatif-data';
+import {
+  type InfractionCatalogItem,
+  PRIORITE_EXAMEN_BADGE,
+  PRIORITE_ORDER,
+  type RecapPriorite,
+} from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 import { condenseMaterielKeys, derivePeineFromLegal, peineTierTextClass, stripMdBold } from '@/utils/infraction-display-derive';
 
-type SortKey = 'nom' | 'article' | 'peine';
+type SortKey = 'examen' | 'nom' | 'article' | 'peine';
 type SortDir = 'asc' | 'desc';
 
 function peineSortValue(legal: string): number {
@@ -28,7 +33,7 @@ type Props = {
 };
 
 export function InfractionsTable({ rows, onOpenInListe }: Props) {
-  const [sortKey, setSortKey] = useState<SortKey>('nom');
+  const [sortKey, setSortKey] = useState<SortKey>('examen');
   const [sortDir, setSortDir] = useState<SortDir>('asc');
   const [drawerItem, setDrawerItem] = useState<InfractionCatalogItem | null>(null);
 
@@ -44,6 +49,14 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
     const list = [...rows];
     const dir = sortDir === 'asc' ? 1 : -1;
     list.sort((a, b) => {
+      if (sortKey === 'examen') {
+        const pa = PRIORITE_ORDER[(a.priorite ?? 'secours') as RecapPriorite];
+        const pb = PRIORITE_ORDER[(b.priorite ?? 'secours') as RecapPriorite];
+        if (pa !== pb) return (pa - pb) * dir;
+        const fasc = a.fascicule.localeCompare(b.fascicule, 'fr');
+        if (fasc !== 0) return fasc * dir;
+        return stripMdBold(a.infraction).localeCompare(stripMdBold(b.infraction), 'fr') * dir;
+      }
       if (sortKey === 'nom') {
         const cmp = stripMdBold(a.infraction).localeCompare(stripMdBold(b.infraction), 'fr');
         return cmp * dir;
@@ -66,7 +79,7 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
       'ELEMENT_MORAL_TEXTE',
       'PEINE',
     ];
-    const lines = rows.map((r) => {
+    const lines = sorted.map((r) => {
       const peine = derivePeineFromLegal(r.legal);
       const esc = (s: string) => `"${s.replace(/"/g, '""')}"`;
       return [
@@ -89,7 +102,7 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
     a.download = `infractions-opj-${new Date().toISOString().slice(0, 10)}.csv`;
     a.click();
     URL.revokeObjectURL(url);
-  }, [rows]);
+  }, [sorted]);
 
   const SortInd = ({ k }: { k: SortKey }) =>
     sortKey === k ? (
@@ -105,9 +118,40 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
   return (
     <div className='space-y-3'>
       <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
-        <p className='text-xs text-[#8888A0]'>
-          Astuce : utilisez Ctrl+F pour rechercher dans la page une fois le tableau affiché.
-        </p>
+        <div className='min-w-0 space-y-2'>
+          <p className='text-xs font-semibold uppercase tracking-wide text-[#8888A0]'>Tri du tableau</p>
+          <div className='flex flex-wrap gap-2'>
+            {(
+              [
+                ['examen', 'Probabilité examen', '↑ prioritaire d’abord'] as const,
+                ['nom', 'Nom', 'A → Z'] as const,
+                ['article', 'Article', ''] as const,
+                ['peine', 'Peine', ''] as const,
+              ] as const
+            ).map(([k, label, hint]) => (
+              <button
+                key={k}
+                type='button'
+                onClick={() => toggleSort(k)}
+                className={cn(
+                  'rounded-lg border px-3 py-1.5 text-xs font-medium transition',
+                  sortKey === k
+                    ? 'border-[#4F6EF7]/55 bg-[#4F6EF7]/15 text-white'
+                    : 'border-white/10 bg-white/[0.04] text-gray-400 hover:border-white/20',
+                )}
+              >
+                {label}
+                {sortKey === k ? (sortDir === 'asc' ? ' ↑' : ' ↓') : ''}
+                {hint && sortKey === k && k === 'examen' ? (
+                  <span className='ml-1 text-[10px] opacity-80'>({hint})</span>
+                ) : null}
+              </button>
+            ))}
+          </div>
+          <p className='text-[11px] text-[#8888A0]'>
+            Astuce : Ctrl+F pour chercher dans le tableau une fois affiché.
+          </p>
+        </div>
         <button
           type='button'
           onClick={exportCsv}
@@ -128,9 +172,24 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
         />
         <p className='mb-2 text-center text-[10px] text-[#8888A0] md:hidden'>← faites glisser →</p>
         <div className='overflow-x-auto rounded-xl border border-white/[0.08]'>
-          <table role='grid' className='w-full min-w-[1050px] border-collapse text-left'>
+          <table role='grid' className='w-full min-w-[1120px] border-collapse text-left'>
             <thead>
               <tr className='border-b border-white/[0.08] bg-[#16161F]'>
+                <th scope='col' className='w-[118px] min-w-[118px] px-2 py-3 text-xs font-semibold uppercase tracking-wider text-[#8888A0]'>
+                  <button
+                    type='button'
+                    onClick={() => toggleSort('examen')}
+                    className='inline-flex flex-col items-start rounded text-left focus-visible:outline focus-visible:ring-2 focus-visible:ring-[#4F6EF7]/60'
+                  >
+                    <span className='inline-flex items-center'>
+                      Examin.
+                      <SortInd k='examen' />
+                    </span>
+                    <span className='mt-1 text-[9px] font-normal normal-case tracking-normal text-[#8888A0]/85'>
+                      + → − probable
+                    </span>
+                  </button>
+                </th>
                 <th scope='col' className='min-w-[200px] px-3 py-3 text-xs font-semibold uppercase tracking-wider text-[#8888A0]'>
                   <button
                     type='button'
@@ -251,11 +310,23 @@ function TableRow({
   onArrowListe: () => void;
 }) {
   const peine = derivePeineFromLegal(item.legal);
+  const pTier = (item.priorite ?? 'secours') as RecapPriorite;
+  const pBadge = PRIORITE_EXAMEN_BADGE[pTier];
   return (
     <tr
       className='cursor-pointer border-b border-white/[0.04] transition-colors hover:bg-white/[0.02]'
       onClick={onRowClick}
     >
+      <td className='w-[118px] min-w-[118px] px-2 py-3 align-top'>
+        <span
+          className={cn(
+            'inline-flex max-w-[7.5rem] rounded-md border px-1.5 py-0.5 text-[9px] font-bold uppercase leading-tight tracking-wide',
+            pBadge.className,
+          )}
+        >
+          {pBadge.label}
+        </span>
+      </td>
       <td className='min-w-[200px] px-3 py-3 align-top'>
         <p className='font-medium text-white'>
           <FlashcardRichText text={item.infraction} inline />

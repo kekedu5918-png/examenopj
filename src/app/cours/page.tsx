@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandidat';
+import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -10,7 +11,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const coursTitle = 'Cours — Examen OPJ';
 const coursDescription =
-  'Par où commencer : fondamentaux, infractions à réciter, thèmes prioritaires au concours — sans vous imposer l’ordre des fascicules.';
+  'Méthode de révision (comprendre, fixer, appliquer, contrôler), priorités P0, fondamentaux et fil en 7 leçons — pour maximiser ce que vous retenez.';
 
 export const metadata: Metadata = {
   title: coursTitle,
@@ -72,6 +73,8 @@ export default function CoursHubPage() {
           className='relative mb-0 text-left md:max-w-3xl'
         />
       </div>
+
+      <CoursMethodeRevision />
 
       <CoursHubLogiqueCandidat />
 

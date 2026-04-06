@@ -7,6 +7,11 @@ export type NavMegaChild = {
 
 export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
+    name: 'Plan de révision',
+    href: '/cours',
+    description: 'Méthode en 4 temps, priorités P0, fil 7 leçons — quoi faire concrètement',
+  },
+  {
     name: 'Modules & fiches',
     href: '/cours/modules',
     description: 'Priorité concours (P0/P1) ou index officiel — fondamentaux en appui',
