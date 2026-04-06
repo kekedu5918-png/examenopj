@@ -63,8 +63,8 @@ export default function AProposPage() {
       </section>
 
       <p className='text-base text-slate-200'>
-        {APP_NAME} est une plateforme de révision pour la préparation au concours d&apos;
-        <strong>officier de police judiciaire</strong>, avec un accent sur les <strong>épreuves écrites</strong>, l&apos;
+        {APP_NAME} est une plateforme de révision pour la préparation à l&apos;
+        <strong>examen OPJ</strong> (Police nationale), avec un accent sur les <strong>épreuves écrites</strong>, l&apos;
         <strong>oral</strong> et la <strong>procédure pénale</strong>.
       </p>
 

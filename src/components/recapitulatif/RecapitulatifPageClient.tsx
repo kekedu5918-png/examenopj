@@ -48,7 +48,7 @@ export function RecapitulatifPageClient({
   initialPrioriteVue,
 }: {
   initialFasc?: string;
-  /** Ouvre directement la vue « Priorité concours » (ex. lien parcours candidat). */
+  /** Ouvre directement la vue « Priorité examen OPJ » (ex. lien parcours candidat). */
   initialPrioriteVue?: boolean;
 }) {
   const [filter, setFilter] = useState<RecapFasciculeFilter>(() => parseRecapQuery(initialFasc));

@@ -220,7 +220,9 @@ export function PricingMarketingPage({
             Accès complet
           </div>
           <h2 className='font-display text-xl font-bold text-white'>Accès complet</h2>
-          <p className='mt-1 text-sm text-examen-inkMuted'>Tout débloquer pour une préparation intensive jusqu&apos;au concours.</p>
+          <p className='mt-1 text-sm text-examen-inkMuted'>
+            Tout débloquer pour une préparation intensive jusqu&apos;à l&apos;examen OPJ.
+          </p>
           <p className='mt-6 font-display text-3xl font-bold text-white'>
             {displayPrice} €<span className='text-base font-medium text-examen-inkMuted'>{periodLabel}</span>
           </p>

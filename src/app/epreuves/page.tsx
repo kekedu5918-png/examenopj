@@ -9,7 +9,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const epTitle = 'Les 3 épreuves — Vue d’ensemble | Examen OPJ';
 const epDescription =
-  'Durées, compétences évaluées et attentes des correcteurs pour les trois épreuves du concours OPJ : qualification juridique, procédure rédigée, oral parquet.';
+  'Durées, compétences évaluées et attentes des correcteurs pour les trois épreuves de l’examen OPJ : qualification juridique, procédure rédigée, oral.';
 
 export const metadata: Metadata = {
   title: epTitle,
@@ -78,7 +78,7 @@ export default function EpreuvesHubPage() {
         </nav>
 
         <SectionTitle
-          badge='CONCOURS'
+          badge='EXAMEN OPJ'
           badgeClassName='bg-gold-500/20 text-gold-200'
           title='Les trois épreuves'
           subtitle='Ce que les correcteurs attendent — méthode commune et liens vers chaque épreuve détaillée'

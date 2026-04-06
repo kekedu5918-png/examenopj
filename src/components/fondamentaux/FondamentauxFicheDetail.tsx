@@ -102,7 +102,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
 
       {fiche.indispensableExamen ? (
         <div className='mb-10 rounded-2xl border border-gold-500/35 bg-gradient-to-br from-gold-500/[0.12] to-amber-600/[0.06] px-5 py-4 sm:px-6'>
-          <p className='text-[11px] font-bold uppercase tracking-[0.2em] text-gold-400'>Priorité concours</p>
+          <p className='text-[11px] font-bold uppercase tracking-[0.2em] text-gold-400'>Priorité examen OPJ</p>
           <p className='mt-2 text-sm leading-relaxed text-slate-100'>
             Thème très opéré : lisez d&apos;abord <strong className='text-white'>En bref</strong> et les{' '}
             <strong className='text-white'>pièges</strong>, creusez ensuite la{' '}

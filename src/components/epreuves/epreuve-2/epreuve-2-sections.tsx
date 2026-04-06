@@ -230,7 +230,7 @@ export function Epreuve2Sections() {
           </ul>
         </GlassCard>
         <GlassCard padding='p-5' className='border-emerald-500/30 bg-emerald-500/[0.06]'>
-          <p className='text-xs font-bold uppercase tracking-wide text-emerald-300'>Check-list veille de concours</p>
+          <p className='text-xs font-bold uppercase tracking-wide text-emerald-300'>Check-list veille d’examen OPJ</p>
           <ul className='mt-3 list-inside list-disc space-y-2 text-sm text-gray-300'>
             <li>Relire une articulation complète (Alpha ou Bravo) en 20 minutes chrono.</li>
             <li>Refaire une grille de rapport sur papier sans supports.</li>
@@ -246,7 +246,7 @@ export function Epreuve2Sections() {
         <div>
           <p className='text-xs font-semibold uppercase tracking-wide text-blue-400'>Suite</p>
           <h2 className='font-display text-2xl font-bold text-white'>Continuer la préparation</h2>
-          <p className='mt-2 text-sm text-gray-500'>Autres épreuves du concours</p>
+          <p className='mt-2 text-sm text-gray-500'>Autres épreuves de l’examen OPJ</p>
         </div>
         <div className='grid gap-4 sm:grid-cols-2'>
           <Link

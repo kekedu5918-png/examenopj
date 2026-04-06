@@ -7,7 +7,7 @@ const PHASES = [
     titre: 'Comprendre',
     icone: BookOpen,
     texte:
-      'Lisez une fiche ou un fondamental en cherchant activement : pourquoi cette règle, quel piège au concours ? Ne serrez pas les yeux : surlignez, reformulez à voix basse.',
+      'Lisez une fiche ou un fondamental en cherchant activement : pourquoi cette règle, quel piège à l’examen OPJ ? Ne serrez pas les yeux : surlignez, reformulez à voix basse.',
     liens: [
       { href: '/fondamentaux', label: 'Fondamentaux' },
       { href: '/cours/modules', label: 'Fiches thématiques' },

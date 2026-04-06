@@ -8,7 +8,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 export const metadata: Metadata = {
   title: 'Flashcards — Examen OPJ',
   description:
-    'Cartes mémoire pour ancrer éléments constitutifs et procédure : filtrage par thème, révision active pour le concours OPJ.',
+    'Cartes mémoire pour ancrer éléments constitutifs et procédure : filtrage par thème, révision active pour l’examen OPJ.',
   alternates: { canonical: '/flashcards' },
   ...openGraphForPage(
     '/flashcards',

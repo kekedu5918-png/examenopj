@@ -128,7 +128,7 @@ export function ModuleExamBridge({ module, synth }: Props) {
       <section aria-labelledby={`exam-bridge-${module.id}`}>
         <div className='flex flex-wrap items-center gap-2'>
           <h2 id={`exam-bridge-${module.id}`} className='text-sm font-semibold uppercase tracking-wide text-cyan-200/90'>
-            Concours : poids du thème
+            Examen OPJ : poids du thème
           </h2>
           <span
             className={cn(

@@ -13,7 +13,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const modsTitle = 'Modules de cours — Programme OPJ';
 const modsDescription =
-  'Fiches thématiques : vue priorité concours (P0 / P1) ou index officiel par domaine, fondamentaux en appui. Préparation examen 2026.';
+  'Fiches thématiques : vue priorité examen OPJ (P0 / P1) ou index officiel par domaine, fondamentaux en appui. Préparation examen 2026.';
 
 export const metadata: Metadata = {
   title: modsTitle,
@@ -52,7 +52,7 @@ export default function CoursModulesPage() {
         badge='COURS'
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title='Modules thématiques'
-        subtitle='Deux entrées complémentaires : les leçons synthétiques (parcours global), puis les fiches détaillées — affichées par défaut selon la priorité concours, avec bascule vers l’ordre officiel par domaine.'
+        subtitle='Deux entrées complémentaires : les leçons synthétiques (parcours global), puis les fiches détaillées — affichées par défaut selon la priorité examen OPJ, avec bascule vers l’ordre officiel par domaine.'
         className='mb-8'
       />
 
@@ -116,7 +116,7 @@ export default function CoursModulesPage() {
 
       <h2 className='mb-2 font-display text-xl font-bold text-white'>Toutes les fiches thématiques</h2>
       <p className='mb-6 max-w-2xl text-sm text-slate-400'>
-        Recherche et filtres : par défaut, tri selon la pression concours (P0 / P1). Basculez vers « programme officiel » pour
+        Recherche et filtres : par défaut, tri selon la pression à l’examen OPJ (P0 / P1). Basculez vers « programme officiel » pour
         la même grille que le sommaire ministériel (DPS, DPG, procédure).
       </p>
       <CoursModulesExplorer modules={explorerModules} defaultView='priority' />

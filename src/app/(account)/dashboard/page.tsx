@@ -133,7 +133,7 @@ export default async function DashboardPage() {
         </CardHeader>
         <CardContent className='space-y-2 text-sm text-slate-200'>
           <p>1. Parcourez le hub Cours : fil en 7 leçons ou parcours candidat selon votre niveau.</p>
-          <p>2. Pour chaque fiche F : lire le bloc « Concours » puis quiz / flashcards sur le même thème.</p>
+          <p>2. Pour chaque fiche F : lire le bloc « Examen OPJ » puis quiz / flashcards sur le même thème.</p>
           <p>3. À mi-parcours : articulation ou enquête type ; en fin : sujet blanc sur les trois épreuves.</p>
         </CardContent>
       </Card>

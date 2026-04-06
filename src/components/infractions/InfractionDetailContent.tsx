@@ -88,12 +88,7 @@ export function InfractionDetailContent({ item, className }: Props) {
         <RecapBulletCell text={item.moral} />
       </div>
 
-      <InfractionAudioCoach
-        infractionLabel={item.infraction}
-        legal={item.legal}
-        materiel={item.materiel}
-        moral={item.moral}
-      />
+      <InfractionAudioCoach legal={item.legal} materiel={item.materiel} moral={item.moral} />
 
       {item.noteExamen ? (
         <p className='rounded-xl border border-amber-500/25 bg-amber-500/10 px-3 py-2 text-xs text-amber-100/90'>

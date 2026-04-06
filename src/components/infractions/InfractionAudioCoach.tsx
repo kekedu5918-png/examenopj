@@ -6,46 +6,57 @@ import { Headphones, Pause, Play, RotateCcw, Square } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/utils/cn';
 import { stripMdBold } from '@/utils/infraction-display-derive';
-import { chunkForSpeech, listFrenchVoicesRanked, textForSpeech } from '@/utils/infraction-speech';
+import { chunkForSpeech, listFrenchVoicesRanked } from '@/utils/infraction-speech';
 
 type Props = {
-  infractionLabel: string;
   legal: string;
   materiel: string;
   moral: string;
   className?: string;
 };
 
-const RATE_MIN = 0.82;
-const RATE_MAX = 1;
+const RATE_MIN = 0.88;
+const RATE_MAX = 1.04;
+const DEFAULT_RATE = 0.96;
+const DEFAULT_PITCH = 0.94;
+
+function pitchForTag(tag: string): number {
+  if (tag.startsWith('légal')) return 0.96;
+  if (tag.startsWith('matériel')) return DEFAULT_PITCH;
+  if (tag.startsWith('moral')) return 0.93;
+  return DEFAULT_PITCH;
+}
 
 /**
- * Lecture vocale L → M → M en chaîne, avec boucle et choix de voix française.
- * Utilise la synthèse du navigateur : sur Edge / Chrome, choisir une voix « Google » ou « Neural » si disponible.
+ * Lecture vocale : uniquement élément légal, matériel et moral (sans titre d’infraction ni intro).
+ * Voix et débit calibrés pour un rendu plus fluide sur Chrome / Edge (voix neurales).
  */
-export function InfractionAudioCoach({ infractionLabel, legal, materiel, moral, className }: Props) {
+export function InfractionAudioCoach({ legal, materiel, moral, className }: Props) {
   const idBase = useId();
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([]);
   const [voiceUri, setVoiceUri] = useState<string>('');
-  const [rate, setRate] = useState(0.9);
+  const [rate, setRate] = useState(DEFAULT_RATE);
   const [loop, setLoop] = useState(true);
   const [playing, setPlaying] = useState(false);
   const [phase, setPhase] = useState<string>('');
   const cancelRef = useRef(false);
 
-  const label = useMemo(() => textForSpeech(stripMdBold(infractionLabel)), [infractionLabel]);
-
   const scriptParts = useMemo(() => {
-    const intro = `Infraction : ${label}.`;
+    const out: { tag: string; text: string }[] = [];
     const leg = chunkForSpeech(stripMdBold(legal));
+    leg.forEach((t, i) =>
+      out.push({ tag: `légal-${i}`, text: i === 0 ? `Élément légal. ${t}` : t }),
+    );
     const matParts = chunkForSpeech(stripMdBold(materiel));
+    matParts.forEach((t, i) =>
+      out.push({ tag: `matériel-${i}`, text: i === 0 ? `Élément matériel. ${t}` : t }),
+    );
     const morParts = chunkForSpeech(stripMdBold(moral));
-    const out: { tag: string; text: string }[] = [{ tag: 'intro', text: intro }];
-    leg.forEach((t, i) => out.push({ tag: `légal-${i}`, text: `Élément légal. ${t}` }));
-    matParts.forEach((t, i) => out.push({ tag: `matériel-${i}`, text: `Élément matériel. ${t}` }));
-    morParts.forEach((t, i) => out.push({ tag: `moral-${i}`, text: `Élément moral. ${t}` }));
+    morParts.forEach((t, i) =>
+      out.push({ tag: `moral-${i}`, text: i === 0 ? `Élément moral. ${t}` : t }),
+    );
     return out;
-  }, [label, legal, materiel, moral]);
+  }, [legal, materiel, moral]);
 
   const refreshVoices = useCallback(() => {
     const ranked = listFrenchVoicesRanked();
@@ -72,6 +83,7 @@ export function InfractionAudioCoach({ infractionLabel, legal, materiel, moral, 
   const runFromIndex = useCallback(
     (startIdx: number) => {
       if (typeof window === 'undefined' || !window.speechSynthesis) return;
+      if (scriptParts.length === 0) return;
       cancelRef.current = false;
       window.speechSynthesis.cancel();
 
@@ -98,14 +110,13 @@ export function InfractionAudioCoach({ infractionLabel, legal, materiel, moral, 
             ? 'Élément légal'
             : part.tag.startsWith('matériel')
               ? 'Élément matériel'
-              : part.tag.startsWith('moral')
-                ? 'Élément moral'
-                : 'Introduction',
+              : 'Élément moral',
         );
         const u = new SpeechSynthesisUtterance(part.text);
         u.lang = 'fr-FR';
         u.rate = rate;
-        u.pitch = 1;
+        u.volume = 1;
+        u.pitch = pitchForTag(part.tag);
         if (voiceObj) u.voice = voiceObj;
         u.onend = () => speakIdx(i + 1);
         u.onerror = () => {
@@ -148,10 +159,12 @@ export function InfractionAudioCoach({ infractionLabel, legal, materiel, moral, 
           <div>
             <h3 className='text-xs font-bold uppercase tracking-wide text-violet-200'>Révision vocale</h3>
             <p className='mt-1 max-w-md text-[11px] leading-relaxed text-slate-400'>
-              Écoute en boucle légal, matériel et moral. Pour une voix plus naturelle, utilisez{' '}
-              <strong className='font-medium text-slate-300'>Chrome ou Edge</strong> et, si proposé, une voix{' '}
-              <strong className='font-medium text-slate-300'>Google français</strong> ou{' '}
-              <strong className='font-medium text-slate-300'>Neural</strong> dans le menu ci‑dessous.
+              Séquence unique : <strong className='font-medium text-slate-300'>légal</strong>, puis{' '}
+              <strong className='font-medium text-slate-300'>matériel</strong>, puis{' '}
+              <strong className='font-medium text-slate-300'>moral</strong> — rien d’autre. Pour un ton plus naturel et
+              souple, privilégiez <strong className='font-medium text-slate-300'>Chrome ou Edge</strong> et une voix{' '}
+              <strong className='font-medium text-slate-300'>Microsoft / Google française</strong> ou marquée{' '}
+              <strong className='font-medium text-slate-300'>Neural</strong> dans le menu.
             </p>
           </div>
         </div>
@@ -220,7 +233,7 @@ export function InfractionAudioCoach({ infractionLabel, legal, materiel, moral, 
             onChange={(e) => setRate(parseFloat(e.target.value))}
             className='mt-2 w-full accent-violet-500'
           />
-          <p className='mt-1 text-[10px] text-slate-600'>Un peu plus lent aide à mémoriser.</p>
+          <p className='mt-1 text-[10px] text-slate-600'>Un léger débit vers 0,96 reste lisible et moins « robot ».</p>
         </div>
       </div>
 

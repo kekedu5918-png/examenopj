@@ -68,7 +68,7 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     titre: 'Route, stupéfiants, armes, atteintes aux institutions',
     accroche: 'Blocs à régimes spéciaux : seuils de taux, classifications, infractions aux personnes dépositaires de l’autorité publique.',
     dureeIndicative: '3 à 5 jours',
-    objectifs: ['Textes du Code de la route et C.S.P. utiles au concours', 'Outrage, rébellion, faux et usage'],
+    objectifs: ['Textes du Code de la route et C.S.P. utiles à l’examen OPJ', 'Outrage, rébellion, faux et usage'],
     liens: [
       { href: '/cours/modules/f03', label: 'F03 — circulation' },
       { href: '/cours/modules/f05', label: 'F05 — stupéfiants' },
@@ -92,11 +92,11 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     ordre: 7,
     titre: 'Épreuve 2 : ME1, enquêtes, articulation',
     accroche: 'Une leçon = une séance de mise en forme : PV comme au fascicule, puis sujets complets et oral structuré.',
-    dureeIndicative: 'En continu jusqu’au concours',
+    dureeIndicative: 'En continu jusqu’à l’examen OPJ',
     objectifs: ['Deux colonnes, huis clos, chronologie', 'Enchaînement minute par minute sur des sujets types'],
     liens: [
       { href: '/cours/pv', label: 'Procès-verbaux ME1' },
-      { href: '/cours/enquetes', label: 'Enquêtes type concours' },
+      { href: '/cours/enquetes', label: 'Enquêtes type examen OPJ' },
       { href: '/entrainement/articulation', label: 'Articulation' },
     ],
  },

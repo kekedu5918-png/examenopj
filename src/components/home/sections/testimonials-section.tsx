@@ -10,7 +10,7 @@ const TESTIMONIALS = [
   {
     initials: 'S.T.',
     role: 'Candidat reconversion, brigade',
-    text: '« L’articulation et les enquêtes types m’ont fait gagner un temps fou sur l’épreuve 2. Enfin un outil calé sur la logique du concours, pas du droit généraliste. »',
+    text: '« L’articulation et les enquêtes types m’ont fait gagner un temps fou sur l’épreuve 2. Enfin un outil calé sur la logique de l’examen OPJ, pas du droit généraliste. »',
   },
   {
     initials: 'K.R.',

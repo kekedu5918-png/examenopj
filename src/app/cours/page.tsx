@@ -24,7 +24,7 @@ const hubLinks = [
   {
     href: '/cours/modules',
     title: 'Fiches thématiques',
-    desc: 'Une vue « priorité concours » ou l’index par domaine : vous choisissez.',
+    desc: 'Une vue « priorité examen OPJ » ou l’index par domaine : vous choisissez.',
     accent: 'from-sky-500/15 to-transparent',
   },
   {
@@ -47,7 +47,7 @@ const hubLinks = [
   },
   {
     href: '/cours/enquetes',
-    title: 'Enquêtes type concours',
+    title: 'Enquêtes type examen OPJ',
     desc: 'Sujet, articulation, PV et rapport : entraînement sur planches complètes.',
     accent: 'from-cyan-500/15 to-transparent',
   },
@@ -69,7 +69,7 @@ export default function CoursHubPage() {
           badge='PARCOURS'
           badgeClassName='bg-violet-500/25 text-violet-200'
           title='Cours'
-          subtitle='Pas besoin de suivre l’ordre F01–F15 pour bien réviser. Commencez par ce qui structure votre métier (fondamentaux + qualifications), enchaînez avec les thèmes que le concours cible souvent (P0), puis le fil en 7 leçons ou le parcours candidat selon votre niveau.'
+          subtitle='Pas besoin de suivre l’ordre F01–F15 pour bien réviser. Commencez par ce qui structure votre métier (fondamentaux + qualifications), enchaînez avec les thèmes que l’examen OPJ cible souvent (P0), puis le fil en 7 leçons ou le parcours candidat selon votre niveau.'
           className='relative mb-0 text-left md:max-w-3xl'
         />
       </div>

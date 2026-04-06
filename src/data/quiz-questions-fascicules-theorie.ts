@@ -465,7 +465,7 @@ export const quizQuestionsFasciculesTheorie: QuizQuestion[] = [
   {
     id: 'f12-q-051',
     question:
-      'Parmi les cinq mandats traditionnellement étudiés pour le concours, lequel permet de conduire la personne devant le juge sans pour autant signifier une incarcération immédiate comme effet propre ?',
+      'Parmi les cinq mandats traditionnellement étudiés pour l’examen OPJ, lequel permet de conduire la personne devant le juge sans pour autant signifier une incarcération immédiate comme effet propre ?',
     options: ['Le mandat d’arrêt', 'Le mandat d’amener', 'Le mandat de dépôt', 'Le mandat de recherche'],
     correctIndex: 1,
     fascicule: 12,

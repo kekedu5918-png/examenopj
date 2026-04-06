@@ -1,5 +1,5 @@
 /**
- * Grille concours : épreuves × compétences × fascicules (F01–F15).
+ * Grille examen OPJ : épreuves × compétences × fascicules (F01–F15).
  * Données statiques — alimente Cours, modules, entraînement et sujets blancs.
  */
 
@@ -101,7 +101,7 @@ export const EXAM_SHORT_LABEL: Record<ExamNumber, string> = {
 
 export type FasciculeExamProfile = {
   fasciculeId: string;
-  /** Dernière ligne droite : P0 = prioriser absolument avant le concours. */
+  /** Dernière ligne droite : P0 = prioriser absolument avant l’examen OPJ. */
   priority: RevisionPriority;
   /** Où le thème pèse le plus pour l’écrit et l’oral. */
   primaryEpreuves: ExamNumber[];

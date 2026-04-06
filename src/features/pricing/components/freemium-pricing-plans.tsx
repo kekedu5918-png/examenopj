@@ -209,7 +209,7 @@ export function FreemiumPricingPlans({
           <dt className='font-semibold text-amber-200/90'>Quelle est la différence avec l&apos;offre jusqu&apos;à l&apos;examen ?</dt>
           <dd className='mt-2 text-gray-400'>
             Le paiement unique à 29,90€ vous donne un accès complet jusqu&apos;au 30 juin 2026 — souvent plus économique si
-            vous vous inscrivez plus de trois mois avant le concours.
+            vous vous inscrivez plus de trois mois avant l&apos;examen OPJ.
           </dd>
         </div>
       </dl>

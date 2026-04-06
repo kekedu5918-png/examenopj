@@ -150,7 +150,7 @@ export const ENQUETES: EnqueteMeta[] = [
     titre: 'Enquête Echo — Stupéfiants et organisation',
     cadre: 'Enquête préliminaire / flagrance selon phase',
     resume:
-      'Bascule entre saisies de consommation et faits d\'organisation : perquisitions, scellés, prolongations, saisine parquet. Pensée « concours » : rubriques et synthesis rapport.',
+      'Bascule entre saisies de consommation et faits d\'organisation : perquisitions, scellés, prolongations, saisine parquet. Pensée « dossier type examen OPJ » : rubriques et synthesis rapport.',
     qualification: 'Usage / détention / trafic (schéma à caler sur les faits du sujet)',
     articles: 'L. 3421-1 et s. CSP ; art. 222-37 et s. C.P.',
     premium: true,
@@ -239,7 +239,7 @@ export const ENQUETES: EnqueteMeta[] = [
     titre: 'Enquête Patrimoniale — Synthèse infractions contre les biens',
     cadre: 'Transversal (révision)',
     resume:
-      "Vue consolidée : vols, escroqueries, abus de confiance, destructions. Sert de bouclage avant concours — pas de planche PDF unique, mais une grille d'articulation type.",
+      "Vue consolidée : vols, escroqueries, abus de confiance, destructions. Sert de bouclage avant l’examen OPJ — pas de planche PDF unique, mais une grille d'articulation type.",
     qualification: 'Vol — escroquerie — abus de confiance (rassise en pratique)',
     articles: 'Livre III CP (biens) — rappel des seuils et qualifs',
     premium: true,

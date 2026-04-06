@@ -81,7 +81,7 @@ const PHASES: Phase[] = [
   },
   {
     id: 'concours',
-    title: 'Concours',
+    title: 'Examen OPJ',
     weeks: 'Semaines 21–26',
     objective: 'Chronométrage, sujets blancs E1+E2+E3, oral enregistré : mode « examen réel ».',
     cards: [
@@ -196,7 +196,7 @@ export function ParcoursCandidatClient() {
         badge='PARCOURS'
         badgeClassName='bg-gold-500/20 text-gold-200'
         title='Parcours candidat — 26 semaines'
-        subtitle='Trois phases pour enchaîner fondations, approfondissement et simulation concours. Cochez la checklist : tout reste dans ce navigateur (localStorage).'
+        subtitle='Trois phases pour enchaîner fondations, approfondissement et simulation examen OPJ. Cochez la checklist : tout reste dans ce navigateur (localStorage).'
         className='mb-10 max-w-3xl'
       />
 

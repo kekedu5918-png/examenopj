@@ -116,7 +116,7 @@ export function Epreuve3Sections() {
         </p>
         <p className='mt-3 text-sm text-gray-400'>
           Le compte-rendu téléphonique au parquet garde une valeur pédagogique pour structurer l’oral, mais le format exact
-          est celui fixé par votre session et le livret du concours.
+          est celui fixé par votre session et le livret de l’examen OPJ.
         </p>
       </GlassCard>
 

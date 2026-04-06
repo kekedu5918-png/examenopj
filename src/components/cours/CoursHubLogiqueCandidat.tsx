@@ -62,7 +62,7 @@ export function CoursHubLogiqueCandidat({ variant = 'full' }: CoursHubLogiqueCan
           Logique d’étude (pas l’ordre F01–F15)
         </h2>
         <p className='mt-2 max-w-3xl text-sm text-gray-400'>
-          Les fiches ci‑dessous sont triées par <strong className='font-semibold text-gray-200'>priorité concours</strong>{' '}
+          Les fiches ci‑dessous sont triées par <strong className='font-semibold text-gray-200'>priorité examen OPJ</strong>{' '}
           par défaut. Les <strong className='font-semibold text-gray-200'>fondamentaux</strong> (actes, GAV, mandats) restent
           le socle à côté du droit pénal spécial.
         </p>
@@ -99,7 +99,7 @@ export function CoursHubLogiqueCandidat({ variant = 'full' }: CoursHubLogiqueCan
         Le programme officiel est rangé en fascicules F01–F15 ; pour réviser efficacement, ce n’est pas l’ordre le plus
         naturel. Ici : les{' '}
         <strong className='font-semibold text-gray-200'>fondamentaux opérationnels</strong> (OPJ au quotidien), puis les{' '}
-        <strong className='font-semibold text-gray-200'>thèmes prioritaires au concours</strong> (P0), avec les épreuves où
+        <strong className='font-semibold text-gray-200'>thèmes prioritaires à l’examen OPJ</strong> (P0), avec les épreuves où
         ils pèse le plus. Le numéro F reste indiqué pour croiser avec votre documentation.
       </p>
 
@@ -142,7 +142,7 @@ export function CoursHubLogiqueCandidat({ variant = 'full' }: CoursHubLogiqueCan
       <div className='mt-8'>
         <div className='flex flex-col gap-2 md:flex-row md:items-end md:justify-between'>
           <div>
-            <h3 className='font-display text-lg font-bold text-white'>Thèmes prioritaires au concours (P0)</h3>
+            <h3 className='font-display text-lg font-bold text-white'>Thèmes prioritaires à l’examen OPJ (P0)</h3>
             <p className='mt-1 max-w-2xl text-sm text-gray-500'>
               Ordre recommandé selon la pression aux trois épreuves — le numéro F n’est qu’un repère de recoupement.
             </p>
@@ -151,7 +151,7 @@ export function CoursHubLogiqueCandidat({ variant = 'full' }: CoursHubLogiqueCan
             href='/cours/modules'
             className='shrink-0 text-sm font-semibold text-gold-200 hover:text-gold-100 hover:underline'
           >
-            Voir toutes les fiches avec tri concours →
+            Voir toutes les fiches avec tri examen OPJ →
           </Link>
         </div>
 

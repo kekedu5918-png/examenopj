@@ -103,7 +103,7 @@ export function CoursModulesExplorer({ modules, defaultView = 'programme' }: Pro
                   : 'border-white/10 bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]',
               )}
             >
-              Par priorité concours
+              Par priorité examen OPJ
             </button>
             <button
               type='button'
@@ -121,7 +121,7 @@ export function CoursModulesExplorer({ modules, defaultView = 'programme' }: Pro
         </div>
         <p className='text-xs leading-relaxed text-gray-500'>
           {listView === 'priority'
-            ? 'Les thèmes les plus décisifs à la loupe du concours en premier (P0), sans vous forcer à suivre l’ordre F01–F15. Le numéro F reste indiqué pour le recoupement avec votre programme papier.'
+            ? 'Les thèmes les plus décisifs à l’examen OPJ en premier (P0), sans vous forcer à suivre l’ordre F01–F15. Le numéro F reste indiqué pour le recoupement avec votre programme papier.'
             : 'Vue ministérielle : droit pénal spécial, droit pénal général, procédure — comme l’index officiel.'}
         </p>
       </div>

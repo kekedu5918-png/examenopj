@@ -113,14 +113,14 @@ const cardsE2: HubCard[] = [
     href: '/cours/pv',
     Icon: PenLine,
     title: 'Cours PV ME1',
-    desc: 'Modèles verbatim, deux colonnes et textes à trous alignés concours.',
+    desc: 'Modèles verbatim, deux colonnes et textes à trous alignés examen OPJ.',
     badge: null,
     exam: 2,
   },
   {
     href: '/cours/enquetes',
     Icon: FileText,
-    title: 'Enquêtes type concours',
+    title: 'Enquêtes type examen OPJ',
     desc: 'Planches complètes : sujet, PV, articulation — pont vers épreuve 2.',
     badge: null,
     exam: 2,
@@ -170,7 +170,7 @@ const cardsTransversal: HubCard[] = [
     Icon: Sparkles,
     title: 'Sujets blancs complets',
     desc: 'Trois sessions : même affaire sur les trois épreuves — conditions réelles (Premium).',
-    badge: 'Concours',
+    badge: 'Examen OPJ',
     badgeClass: 'bg-emerald-500/20 text-emerald-200',
     exam: 'transversal',
   },
@@ -264,7 +264,7 @@ export default function EntrainementHubPage() {
         <SectionBlock
           examNum={2}
           title={EXAM_SHORT_LABEL[2]}
-          subtitle='Dossier avec codes : articulation, PV, questions ciblées — calé sur la même logique que les sujets blancs et les enquêtes type concours.'
+          subtitle='Dossier avec codes : articulation, PV, questions ciblées — calé sur la même logique que les sujets blancs et les enquêtes type examen OPJ.'
         >
           <CardGrid items={cardsE2} />
         </SectionBlock>

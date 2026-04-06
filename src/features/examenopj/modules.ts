@@ -10,7 +10,7 @@ export const examenModules: ExamenModule[] = [
   {
     id: '_00',
     titre: 'Stratégie de révision',
-    description: 'Méthode, planning et charge cognitive jusqu’au concours.',
+    description: 'Méthode, planning et charge cognitive jusqu’à l’examen OPJ.',
     href: '/guide-revision-opj',
     ordre: 0,
   },

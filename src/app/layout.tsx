@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: '%s | ExamenOPJ — Préparation OPJ 2026',
   },
   description:
-    "Préparez l'examen d'Officier de Police Judiciaire juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
+    "Préparez l'examen OPJ juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -46,14 +46,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'ExamenOPJ — Préparation OPJ 2026',
     description:
-      "Préparez l'examen d'Officier de Police Judiciaire juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
+      "Préparez l'examen OPJ juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
     images: [{ url: OG_IMAGE_PATH, width: 1200, height: 630, alt: 'ExamenOPJ — Préparation OPJ 2026' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ExamenOPJ — Préparation OPJ 2026',
     description:
-      "Préparez l'examen d'Officier de Police Judiciaire juin 2026 : modules, quiz, flashcards et procédure pénale.",
+      "Préparez l'examen OPJ juin 2026 : modules, quiz, flashcards et procédure pénale.",
     images: [`${siteUrl}${OG_IMAGE_PATH}`],
   },
   robots: { index: true, follow: true },

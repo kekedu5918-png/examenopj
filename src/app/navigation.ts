@@ -14,7 +14,7 @@ export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
     name: 'Modules & fiches',
     href: '/cours/modules',
-    description: 'Priorité concours (P0/P1) ou index officiel — fondamentaux en appui',
+    description: 'Priorité examen OPJ (P0/P1) ou index officiel — fondamentaux en appui',
   },
   {
     name: 'Modèles de PV',

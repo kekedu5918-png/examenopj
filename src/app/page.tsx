@@ -10,7 +10,7 @@ const DOMAIN_ORDER: { domain: Domain }[] = [{ domain: 'DPS' }, { domain: 'DPG' }
 
 const homeTitle = 'ExamenOPJ — Révisions OPJ 2026 | Fiches, quiz, méthodologie & procédure pénale';
 const homeDescription =
-  "La référence pour préparer l'examen OPJ juin 2026. Fiches F01–F15, quiz, flashcards, entraînement à la procédure pénale.";
+  "Méthode structurée pour préparer l'examen OPJ juin 2026 : fiches F01–F15, quiz, flashcards, entraînement à la procédure pénale.";
 
 export const metadata: Metadata = {
   title: { absolute: homeTitle },

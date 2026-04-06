@@ -100,7 +100,7 @@ export function FondamentauxFilters({
             type='button'
             role='switch'
             aria-checked={prioriteExamenOnly}
-            aria-label='Filtrer les fiches marquées priorité concours'
+            aria-label='Filtrer les fiches marquées priorité examen OPJ'
             onClick={() => onPrioriteExamenOnlyChange(!prioriteExamenOnly)}
             className={cn(
               'flex items-center gap-2 rounded-xl border px-3 py-2 text-left text-sm transition-colors',

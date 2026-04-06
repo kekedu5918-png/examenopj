@@ -5,7 +5,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const pTitle = 'Parcours candidat — Examen OPJ';
 const pDesc =
-  'Plans 26 semaines : cartographier, approfondir, mode concours. Liens quiz, modules, sujets blancs et checklist locale.';
+  'Plans 26 semaines : cartographier, approfondir, mode examen OPJ. Liens quiz, modules, sujets blancs et checklist locale.';
 
 export const metadata: Metadata = {
   title: pTitle,

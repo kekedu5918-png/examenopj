@@ -10,7 +10,7 @@ export type CourseModuleSynthesis = {
   axes: { titre: string; points: string[] }[];
   /** Ce qui compte pour l’exercice concret d’OPJ (procédure, qualification, PV). */
   pratiqueOpj: string[];
-  /** Erreurs fréquentes en révision / concours. */
+  /** Erreurs fréquentes en révision / examen OPJ. */
   pieges: string[];
   /** Attendus explicites à l’examen (afficés « Attendus à l’examen »). */
   examenAttendus?: string[];

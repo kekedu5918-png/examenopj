@@ -12,9 +12,19 @@ export function textForSpeech(raw: string): string {
     .trim();
 }
 
+/** Rythme plus naturel pour la synthèse vocale (pauses, évite l’effet liste sèche). */
+export function polishForSpeechFlow(raw: string): string {
+  let t = textForSpeech(raw);
+  t = t.replace(/\s*—\s*/g, ', ');
+  t = t.replace(/\s*;\s*/g, '. ');
+  t = t.replace(/\s+([,.])/g, '$1');
+  t = t.replace(/\s+/g, ' ').trim();
+  return t;
+}
+
 /** Découpe un long texte pour éviter certains plafonds moteurs TTS. */
 export function chunkForSpeech(text: string, maxLen = 280): string[] {
-  const t = textForSpeech(text);
+  const t = polishForSpeechFlow(text);
   if (t.length <= maxLen) return t ? [t] : [];
   const parts: string[] = [];
   let rest = t;
@@ -37,9 +47,12 @@ export function scoreFrenchVoice(v: SpeechSynthesisVoice): number {
   let s = 0;
   if (!/^fr/i.test(v.lang.trim())) return -1;
   if (n.includes('google')) s += 120;
-  if (n.includes('neural') || n.includes('natural') || n.includes('premium')) s += 90;
-  if (n.includes('microsoft')) s += 50;
-  if (/(hortense|denise|sylvie|aude|celeste|virginie|thomas)/i.test(n)) s += 35;
+  if (n.includes('neural') || n.includes('natural') || n.includes('premium') || n.includes('wavenet')) s += 95;
+  if (n.includes('microsoft') || n.includes('edge') || n.includes('azure')) s += 55;
+  if (n.includes('polly') || n.includes('lova')) s += 70;
+  if (/(hortense|denise|sylvie|aude|celeste|virginie|thomas|henri|alfred|jacqueline|yves|evelyne)/i.test(n))
+    s += 40;
+  if (/(amelie|nathan|daniel|marie)/i.test(n)) s += 25;
   if (n.includes('fr-fr')) s += 10;
   return s;
 }

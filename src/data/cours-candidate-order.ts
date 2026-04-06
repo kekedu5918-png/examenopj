@@ -1,6 +1,6 @@
 /**
  * Ordre d’étude « vue candidat » : P0 d’abord, puis pondération globale aux trois épreuves.
- * Les numéros F restent en rappel discret — la logique affichée est celle du concours.
+ * Les numéros F restent en rappel discret — la logique affichée est celle de l’examen OPJ.
  */
 
 import { type FasciculeExamProfile,getFasciculeExamProfile } from '@/data/exam-competency-map';
@@ -21,7 +21,7 @@ export function compareModulesForCandidate(a: { id: string }, b: { id: string })
   return a.id.localeCompare(b.id);
 }
 
-/** Toutes les fiches, triées pour l’affichage « priorité concours ». */
+/** Toutes les fiches, triées pour l’affichage « priorité examen OPJ ». */
 export function getFasciculesOrderedForCandidate(): FasciculeMetadata[] {
   return [...fasciculesList].sort(compareModulesForCandidate);
 }

@@ -16,7 +16,7 @@ export const GUIDE_REVISION_FAQ = [
       'Pas pour mémoriser, mais pour détecter les lacunes. Faire un quiz de 10 questions juste après avoir étudié un module, noter les questions ratées, relire la partie correspondante, refaire le quiz 3 jours plus tard. Ne jamais faire plus de 20 questions d’affilée — l’attention chute. Préférer des sessions courtes et fréquentes.',
   },
   {
-    question: 'Quelles sources utiliser pour préparer le concours ?',
+    question: 'Quelles sources utiliser pour préparer l’examen OPJ ?',
     answer:
       'Le Code pénal, le Code de procédure pénale et Légifrance sont les références juridiques. Les supports de votre formation et les synthèses pédagogiques (comme celles proposées sur ce site) aident à structurer le travail, mais ne se substituent pas aux textes officiels.',
   },

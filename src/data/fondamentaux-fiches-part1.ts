@@ -453,7 +453,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Détention provisoire (DP) — conditions et proportionnalité',
         detail:
-          "La DP ne peut être ordonnée que si elle est seule à même d’empêcher l’atteinte aux victimes ou témoins, la fuite du mis en examen, la conservation des preuves ou la manifestation du trouble à l’ordre public exceptionnel dû à l’infraction. Elle doit en outre être proportionnée à l’infraction et à la personnalité de l’intéressé. Le plafond de durée et les prolongations suivent les distinctions crime / délit : à consolider sur les articles 143-1 et suivants et 144 C.P.P. pour votre concours.",
+          "La DP ne peut être ordonnée que si elle est seule à même d’empêcher l’atteinte aux victimes ou témoins, la fuite du mis en examen, la conservation des preuves ou la manifestation du trouble à l’ordre public exceptionnel dû à l’infraction. Elle doit en outre être proportionnée à l’infraction et à la personnalité de l’intéressé. Le plafond de durée et les prolongations suivent les distinctions crime / délit : à consolider sur les articles 143-1 et suivants et 144 C.P.P. pour votre examen OPJ.",
         article: 'Art. 143-1 et s. C.P.P.',
         alerte: true,
       },

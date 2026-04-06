@@ -382,7 +382,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           <p className='font-semibold text-cyan-100'>Parcours conseillé</p>
           <p className='mt-2 text-cyan-50/95'>
             <strong>L’examen n’est pas en QCM.</strong> Le QCM sert à accélérer la reconnaissance des points ; le mode{' '}
-            <strong>hardcore</strong> (saisie libre) rapproche l’entraînement du concours écrit et de l’oral technique.
+            <strong>hardcore</strong> (saisie libre) rapproche l’entraînement de l’écrit et de l’oral à l’examen OPJ.
             Enchaînez : quelques séries QCM pour la couverture, puis les mêmes thèmes en hardcore.
           </p>
         </div>
