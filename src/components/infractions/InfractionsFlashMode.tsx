@@ -7,6 +7,7 @@ import { Check, ChevronLeft, ChevronRight, Filter, X } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
+import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import type { InfractionCatalogItem } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 import {
@@ -15,14 +16,7 @@ import {
   loadFlashResults,
   saveFlashMark,
 } from '@/utils/flash-infractions-storage';
-import {
-  classifyMoral,
-  condenseMaterielKeys,
-  derivePeineFromLegal,
-  moralKindBadgeClass,
-  moralKindLabel,
-  stripMdBold,
-} from '@/utils/infraction-display-derive';
+import { condenseMaterielKeys, derivePeineFromLegal, stripMdBold } from '@/utils/infraction-display-derive';
 
 type FascOpt = 'all' | 'F01' | 'F02';
 
@@ -368,14 +362,12 @@ export function InfractionsFlashMode({ filtered }: Props) {
                   </div>
                   <div>
                     <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Élément moral</p>
-                    <span
-                      className={cn(
-                        'mt-1 inline-flex rounded-md px-2 py-0.5 text-xs font-semibold',
-                        moralKindBadgeClass(classifyMoral(current.moral)),
-                      )}
-                    >
-                      {moralKindLabel(classifyMoral(current.moral))}
-                    </span>
+                    <p className='mt-1 text-[11px] leading-relaxed text-[#8888A0]'>
+                      À réciter mot pour mot (libellé du programme).
+                    </p>
+                    <div className='mt-2 rounded-xl border border-sky-500/20 bg-sky-500/[0.06] p-3'>
+                      <RecapBulletCell text={current.moral} compact />
+                    </div>
                   </div>
                   <div>
                     <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Peine</p>

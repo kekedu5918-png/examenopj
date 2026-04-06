@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
+import { Eye, EyeOff } from 'lucide-react';
 
 import { ModelePVOfficielLayout } from '@/components/modeles-pv/ModelePVOfficielLayout';
 import { Button } from '@/components/ui/button';
@@ -165,6 +166,8 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
   const [result, setResult] = useState<CorrectionPVResult | null>(null);
   const [viewMode, setViewMode] = useState<'edit' | 'result'>('edit');
   const [history, setHistory] = useState<CorrectionPVHistoryEntry[]>([]);
+  /** Modèle masqué à côté de la rédaction : le candidat démasque seulement si besoin. */
+  const [modeleDemasque, setModeleDemasque] = useState(false);
 
   useEffect(() => {
     setHistory(loadHistory());
@@ -187,6 +190,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
     setChronoSec(0);
     setResult(null);
     setViewMode('edit');
+    setModeleDemasque(false);
     setHydrated(true);
   }, [sujet.id]);
 
@@ -491,24 +495,111 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
         </div>
 
         {!loading && (viewMode === 'edit' || !result) ? (
-          <div className='relative'>
-            <textarea
-              value={texte}
-              onChange={(e) => setTexte(e.target.value)}
-              onKeyDown={onKeyDown}
-              disabled={loading}
-              placeholder={
-                'Rédigez votre procès-verbal ici...\nCommencez par la formule d\'ouverture officielle.'
-              }
-              className='box-border min-h-[600px] w-full resize-y rounded-xl border border-white/[0.12] p-4 pb-10 text-sm leading-relaxed text-[#F0F0F5] placeholder:text-white/35 focus:border-examen-accent/50 focus:outline-none focus:ring-1 focus:ring-examen-accent/30'
-              style={{
-                backgroundColor: '#0D0D14',
-                fontFamily: 'var(--font-jetbrains-mono), ui-monospace, monospace',
-              }}
-            />
-            <span className='pointer-events-none absolute bottom-3 right-4 text-[11px] text-white/45'>
-              {mots} {mots <= 1 ? 'mot' : 'mots'}
-            </span>
+          <div
+            className={cn(
+              'grid gap-6',
+              modeleRef ? 'lg:grid-cols-[minmax(0,1fr)_minmax(260px,380px)]' : '',
+            )}
+          >
+            <div className='relative min-w-0'>
+              <textarea
+                value={texte}
+                onChange={(e) => setTexte(e.target.value)}
+                onKeyDown={onKeyDown}
+                disabled={loading}
+                placeholder={
+                  'Rédigez votre procès-verbal ici...\nCommencez par la formule d\'ouverture officielle.'
+                }
+                className='box-border min-h-[600px] w-full resize-y rounded-xl border border-white/[0.12] p-4 pb-10 text-sm leading-relaxed text-[#F0F0F5] placeholder:text-white/35 focus:border-examen-accent/50 focus:outline-none focus:ring-1 focus:ring-examen-accent/30'
+                style={{
+                  backgroundColor: '#0D0D14',
+                  fontFamily: 'var(--font-jetbrains-mono), ui-monospace, monospace',
+                }}
+              />
+              <span className='pointer-events-none absolute bottom-3 right-4 text-[11px] text-white/45'>
+                {mots} {mots <= 1 ? 'mot' : 'mots'}
+              </span>
+            </div>
+
+            {modeleRef ? (
+              <aside className='flex min-w-0 flex-col gap-3 lg:sticky lg:top-24 lg:self-start'>
+                <div className='flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/[0.08] bg-examen-raised/80 px-3 py-2'>
+                  <div>
+                    <p className='text-[10px] font-bold uppercase tracking-wider text-examen-inkMuted'>
+                      Aide-mémoire (masquée)
+                    </p>
+                    <p className='text-xs text-examen-inkMuted'>
+                      Démasquez seulement si besoin, puis masquez pour reprendre la rédaction.
+                    </p>
+                  </div>
+                  <Button
+                    type='button'
+                    variant='secondary'
+                    size='sm'
+                    className='shrink-0 gap-1.5 border-white/10'
+                    onClick={() => setModeleDemasque((v) => !v)}
+                  >
+                    {modeleDemasque ? (
+                      <>
+                        <EyeOff className='h-3.5 w-3.5' aria-hidden />
+                        Masquer
+                      </>
+                    ) : (
+                      <>
+                        <Eye className='h-3.5 w-3.5' aria-hidden />
+                        Démasquer
+                      </>
+                    )}
+                  </Button>
+                </div>
+
+                <div className='relative overflow-hidden rounded-xl border border-white/[0.1] bg-[#0D0D14] shadow-lg'>
+                  <div
+                    className={cn(
+                      'max-h-[min(70vh,640px)] overflow-y-auto overscroll-contain px-2 py-3 sm:px-3',
+                      !modeleDemasque && 'pointer-events-none select-none',
+                    )}
+                  >
+                    <div
+                      className={cn(
+                        'origin-top transition-[filter,opacity,transform] duration-300',
+                        !modeleDemasque && 'scale-[0.98] blur-md opacity-40',
+                      )}
+                    >
+                      <ModelePVOfficielLayout modele={modeleRef} />
+                    </div>
+                  </div>
+
+                  {!modeleDemasque ? (
+                    <div
+                      className='absolute inset-0 flex flex-col items-center justify-center gap-3 bg-examen-canvas/80 px-4 backdrop-blur-[6px]'
+                      aria-hidden={false}
+                    >
+                      <p className='max-w-[240px] text-center text-xs leading-relaxed text-examen-ink'>
+                        Modèle masqué — en cas de trou de mémoire, appuyez sur{' '}
+                        <span className='font-semibold text-examen-accent'>Démasquer</span>.
+                      </p>
+                      <Button type='button' size='sm' onClick={() => setModeleDemasque(true)} className='gap-1.5'>
+                        <Eye className='h-3.5 w-3.5' aria-hidden />
+                        Afficher le modèle
+                      </Button>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className='flex flex-wrap gap-2'>
+                  <Button type='button' variant='outline' size='sm' onClick={() => setSheetOpen(true)}>
+                    Plein écran
+                  </Button>
+                  <Link
+                    href={`/cours/modeles-pv/${modeleRef.id}`}
+                    className='inline-flex items-center rounded-md border border-white/10 px-3 py-1.5 text-xs font-medium text-examen-accent hover:bg-white/[0.04]'
+                  >
+                    Fiche modèle →
+                  </Link>
+                </div>
+              </aside>
+            ) : null}
           </div>
         ) : null}
 

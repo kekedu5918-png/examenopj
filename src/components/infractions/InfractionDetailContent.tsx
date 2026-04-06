@@ -80,6 +80,10 @@ export function InfractionDetailContent({ item, className }: Props) {
       </div>
       <div className='rounded-2xl border border-sky-500/20 bg-sky-500/[0.06] p-4'>
         <h3 className='mb-2 text-xs font-bold uppercase tracking-wide text-sky-300'>Élément moral</h3>
+        <p className='mb-3 text-[11px] leading-relaxed text-sky-200/80'>
+          Libellé à maîtriser comme dans le programme — l’examen attend la formulation complète, pas un simple qualificatif
+          « intentionnel » ou « non intentionnel ».
+        </p>
         <RecapBulletCell text={item.moral} />
       </div>
 

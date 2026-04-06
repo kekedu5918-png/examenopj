@@ -7,9 +7,9 @@ export type NavMegaChild = {
 
 export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
-    name: 'Modules F01 – F15',
+    name: 'Modules & fiches',
     href: '/cours/modules',
-    description: 'Fiches synthèse par thème officiel',
+    description: 'Priorité concours (P0/P1) ou index officiel — fondamentaux en appui',
   },
   {
     name: 'Modèles de PV',

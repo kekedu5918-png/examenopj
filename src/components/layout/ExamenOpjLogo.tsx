@@ -23,7 +23,12 @@ export function ExamenOpjLogo({ className, size = 40 }: Props) {
       viewBox='0 0 180 220'
       width={size}
       height={size}
-      className={cn('shrink-0', className)}
+      className={cn(
+        'shrink-0',
+        /* Lisibilité sur fond sombre / header transparent : halo léger + léger contraste */
+        'drop-shadow-[0_2px_14px_rgba(120,180,255,0.45)] contrast-110 saturate-110',
+        className,
+      )}
       aria-hidden
     >
       <defs>

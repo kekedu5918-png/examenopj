@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandidat';
 import { type CoursModuleExplorerItem, CoursModulesExplorer } from '@/components/cours/CoursModulesExplorer';
 import { CoursModulesJsonLd } from '@/components/cours/CoursModulesJsonLd';
 import { LeconsSyntheseList } from '@/components/cours/LeconsSyntheseList';
@@ -12,7 +13,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const modsTitle = 'Modules de cours — Programme OPJ';
 const modsDescription =
-  'Fiches OPJ F01–F15 : axes de travail, pièges fréquents, quiz et flashcards. Préparation examen juin 2026.';
+  'Fiches thématiques : vue priorité concours (P0 / P1) ou index officiel par domaine, fondamentaux en appui. Préparation examen 2026.';
 
 export const metadata: Metadata = {
   title: modsTitle,
@@ -51,9 +52,11 @@ export default function CoursModulesPage() {
         badge='COURS'
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title='Modules thématiques'
-        subtitle='Vue synthétisée en chapitres (parcours type « leçons »), puis l’index officiel F01–F15 avec recherche et filtres.'
+        subtitle='Deux entrées complémentaires : les leçons synthétiques (parcours global), puis les fiches détaillées — affichées par défaut selon la priorité concours, avec bascule vers l’ordre officiel par domaine.'
         className='mb-8'
       />
+
+      <CoursHubLogiqueCandidat variant='compact' />
 
       <section className='mb-12' aria-labelledby='titre-lecons-synthese'>
         <h2 id='titre-lecons-synthese' className='font-display text-xl font-bold text-white md:text-2xl'>
@@ -68,9 +71,10 @@ export default function CoursModulesPage() {
       </section>
 
       <GlassCard hover padding='p-5' className='mb-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-transparent'>
-        <p className='text-sm font-semibold text-white'>Avant de parcourir la grille F01–F15</p>
+        <p className='text-sm font-semibold text-white'>Parcours guidé en 7 étapes</p>
         <p className='mt-2 text-sm text-slate-400'>
-          Commencez par le fil de révision en 7 leçons sur la page Cours : procédure d’abord, puis thèmes, puis épreuve 2.
+          Sur la page Cours, un fil de révision alterne procédure, thèmes lourds et préparation épreuve 2 — en parallèle des
+          priorités P0 ci‑dessus.
         </p>
         <Link
           href='/cours#revision-fil'
@@ -110,12 +114,12 @@ export default function CoursModulesPage() {
         </Link>
       </div>
 
-      <h2 className='mb-2 font-display text-xl font-bold text-white'>Index officiel F01–F15</h2>
+      <h2 className='mb-2 font-display text-xl font-bold text-white'>Toutes les fiches thématiques</h2>
       <p className='mb-6 max-w-2xl text-sm text-slate-400'>
-        Titres du programme national : recherche, filtre par domaine et accès aux fiches détaillées (axes, concours,
-        entraînements).
+        Recherche et filtres : par défaut, tri selon la pression concours (P0 / P1). Basculez vers « programme officiel » pour
+        la même grille que le sommaire ministériel (DPS, DPG, procédure).
       </p>
-      <CoursModulesExplorer modules={explorerModules} />
+      <CoursModulesExplorer modules={explorerModules} defaultView='priority' />
     </div>
   );
 }

@@ -172,10 +172,18 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
         <div className='mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4'>
           <Link
             href='/'
-            className='group flex shrink-0 items-center gap-1 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
+            className='group flex shrink-0 items-center gap-2 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
             aria-label='ExamenOPJ — accueil'
           >
-            <ExamenOpjLogo size={logoSize} />
+            <span
+              className='inline-flex rounded-xl bg-white/[0.08] p-1 ring-1 ring-white/15 shadow-[0_0_20px_rgba(79,110,247,0.15)] transition group-hover:bg-white/[0.12]'
+              aria-hidden
+            >
+              <ExamenOpjLogo size={logoSize} className='block' />
+            </span>
+            <span className='font-display text-sm font-bold leading-none tracking-tight text-white sm:text-[0.95rem]'>
+              Examen
+            </span>
             <span className='rounded-md border border-white/[0.12] bg-white/[0.04] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-examen-inkMuted'>
               2026
             </span>
