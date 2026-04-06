@@ -12,7 +12,7 @@ export function Footer() {
           <div>
             <p className='mb-3 text-xs font-semibold uppercase tracking-widest text-examen-inkMuted'>Contenus</p>
             <div className='mb-4'>
-              <ExamenOpjLogo size='sm' className='text-white' />
+              <ExamenOpjLogo size={28} />
             </div>
             <p className='mb-4 max-w-xs text-sm leading-relaxed text-examen-inkMuted'>
               La référence pour la préparation OPJ

@@ -22,7 +22,8 @@ export default function SujetsBlancsIndexPage() {
         </h1>
         <p className='mt-4 text-sm leading-relaxed text-examen-inkMuted md:text-base'>
           Trois sessions cohérentes : la même affaire fictive sur l’épreuve écrite de qualification, le dossier de procédure
-          et l’oral devant jury. L’index est libre ; le détail complet est réservé aux abonnés Premium.
+          et l’oral devant jury. Chaque session indique les fiches modules F à revoir avant de chronométrer. L’index est
+          libre ; le détail complet est réservé aux abonnés Premium.
         </p>
       </header>
 

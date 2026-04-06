@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { PrepareSujetBlancPrerequis } from '@/components/sujets-blancs/PrepareSujetBlancPrerequis';
 import { SujetBlancDetailClient } from '@/components/sujets-blancs/SujetBlancDetailClient';
 import { getSujetBlancById, getSujetsBlancsIds } from '@/data/sujets-blancs';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
@@ -42,6 +43,8 @@ export default async function SujetBlancDetailPage({ params }: Props) {
         <p className='mt-2 text-sm text-examen-inkMuted'>{sujet.description}</p>
         <p className='mt-2 text-xs font-semibold uppercase tracking-wide text-examen-accent'>Thème : {sujet.theme}</p>
       </header>
+
+      <PrepareSujetBlancPrerequis sujet={sujet} />
 
       <SujetBlancDetailClient sujet={sujet} userHasPremium={userHasPremium} />
     </div>

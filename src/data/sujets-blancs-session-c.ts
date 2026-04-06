@@ -12,6 +12,7 @@ export const SESSION_BLANC_C: SujetBlanc = {
   titre: 'Session fictive 2026 — C',
   description: 'Vol avec violence, arme et séquestration : dossier exigeant sur les trois épreuves.',
   theme: 'Vol aggravé avec arme + séquestration',
+  themesFascicules: ['f02', 'f04', 'f08'],
   difficulte: 'avance',
   corrigeDisponible: false,
   isPremium: true,

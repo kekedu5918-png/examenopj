@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { fasciculesList, getCourseModuleById } from '@/data/fascicules-list';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/examenopj/controllers/get-dashboard-data';
 
@@ -15,6 +16,11 @@ function formatQuizMode(row: { mode: string; fascicule_num: number | null; domai
   return row.mode;
 }
 
+function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number | null }) {
+  if ((row.mode !== 'fascicule' && row.mode !== 'module') || row.fascicule_num == null) return null;
+  return fasciculesList.find((f) => f.numero === row.fascicule_num) ?? null;
+}
+
 export default async function DashboardPage() {
   const session = await getSession();
   const [modules, revisionStats, recentAttempts] = session
@@ -22,6 +28,7 @@ export default async function DashboardPage() {
     : await Promise.all([getModules(), Promise.resolve(null), Promise.resolve([])]);
 
   const lastAttempt = recentAttempts[0] ?? null;
+  const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
   const featuredModules = modules.slice(0, 6);
 
   return (
@@ -34,18 +41,20 @@ export default async function DashboardPage() {
           </Badge>
         </div>
         <p className='mt-2 max-w-3xl text-slate-300'>
-          Votre espace de travail est prêt. Commencez par les modules de cours, puis alternez avec les quiz pour ancrer les
-          notions.
+          Chaque fiche cours indique le poids du thème aux Épreuves 1–3 et renvoie vers quiz, articulation et sujets blancs
+          associés. Utilisez les raccourcis ci-dessous pour enchaîner théorie et entraînement.
         </p>
       </header>
 
-      <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-5'>
+      <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         {[
-          { titre: 'Commencer les cours', href: '/cours/modules' },
+          { titre: 'Hub Cours (par où commencer)', href: '/cours' },
+          { titre: 'Toutes les fiches F01–F15', href: '/cours/modules' },
+          { titre: 'Entraînement par épreuve', href: '/entrainement' },
+          { titre: 'Sujets blancs complets', href: '/sujets-blancs' },
           { titre: 'Réviser les infractions', href: '/dashboard/infractions' },
-          { titre: 'Consulter les fiches', href: '/dashboard/fiches' },
-          { titre: 'Suivre ma progression', href: '/dashboard/progression' },
-          { titre: 'Rechercher un point précis', href: '/dashboard/recherche' },
+          { titre: 'Ma progression', href: '/dashboard/progression' },
+          { titre: 'Recherche', href: '/dashboard/recherche' },
         ].map((item) => (
           <Button key={item.href} asChild variant='secondary' className='justify-start'>
             <Link href={item.href}>{item.titre}</Link>
@@ -72,11 +81,27 @@ export default async function DashboardPage() {
                 Dernière activité : {lastAttempt.created_at ? new Date(lastAttempt.created_at).toLocaleString('fr-FR') : 'n/a'}
               </p>
               <div className='flex flex-wrap gap-2'>
-                <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
-                  <Link href='/dashboard/progression'>Reprendre depuis ma progression</Link>
+                {lastModuleMeta ? (
+                  <>
+                    <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
+                      <Link href={`/cours/modules/${lastModuleMeta.id}`}>
+                        Revoir la fiche {formatQuizMode(lastAttempt)}
+                      </Link>
+                    </Button>
+                    <Button asChild variant='secondary'>
+                      <Link href={`/quiz?mode=module&f=${lastModuleMeta.id}`}>Quiz sur ce thème</Link>
+                    </Button>
+                  </>
+                ) : (
+                  <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
+                    <Link href='/quiz'>Continuer les quiz</Link>
+                  </Button>
+                )}
+                <Button asChild variant='outline' className='border-slate-600'>
+                  <Link href='/sujets-blancs'>Passer en sujet blanc</Link>
                 </Button>
                 <Button asChild variant='secondary'>
-                  <Link href='/dashboard/infractions'>Lancer une nouvelle session</Link>
+                  <Link href='/dashboard/progression'>Ma progression</Link>
                 </Button>
               </div>
             </>
@@ -107,9 +132,9 @@ export default async function DashboardPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className='space-y-2 text-sm text-slate-200'>
-          <p>1. Ouvrez les modules et lisez un premier fascicule en continu.</p>
-          <p>2. Enchaînez avec un quiz ciblé sur le même thème.</p>
-          <p>3. Revenez ensuite sur les fiches des points faibles.</p>
+          <p>1. Parcourez le hub Cours : fil en 7 leçons ou parcours candidat selon votre niveau.</p>
+          <p>2. Pour chaque fiche F : lire le bloc « Concours » puis quiz / flashcards sur le même thème.</p>
+          <p>3. À mi-parcours : articulation ou enquête type ; en fin : sujet blanc sur les trois épreuves.</p>
         </CardContent>
       </Card>
 
@@ -121,23 +146,28 @@ export default async function DashboardPage() {
       </div>
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
-        {featuredModules.map((module) => (
-          <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>
-            <CardHeader>
-              <CardTitle className='text-slate-100'>
-                {module.slug} - {module.titre}
-              </CardTitle>
-              <CardDescription className='text-slate-300'>
-                {module.description ?? 'Module pédagogique ExamenOPJ.'}
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Button asChild className='bg-blue-600 hover:bg-blue-700'>
-                <Link href='/cours/modules'>Ouvrir ce parcours</Link>
-              </Button>
-            </CardContent>
-          </Card>
-        ))}
+        {featuredModules.map((module) => {
+          const coursePath = getCourseModuleById(module.slug)
+            ? `/cours/modules/${module.slug}`
+            : '/cours/modules';
+          return (
+            <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>
+              <CardHeader>
+                <CardTitle className='text-slate-100'>
+                  {module.slug} - {module.titre}
+                </CardTitle>
+                <CardDescription className='text-slate-300'>
+                  {module.description ?? 'Module pédagogique ExamenOPJ.'}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button asChild className='bg-blue-600 hover:bg-blue-700'>
+                  <Link href={coursePath}>Ouvrir la fiche cours</Link>
+                </Button>
+              </CardContent>
+            </Card>
+          );
+        })}
       </div>
     </section>
   );

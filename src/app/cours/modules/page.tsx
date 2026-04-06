@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { type CoursModuleExplorerItem, CoursModulesExplorer } from '@/components/cours/CoursModulesExplorer';
 import { CoursModulesJsonLd } from '@/components/cours/CoursModulesJsonLd';
+import { LeconsSyntheseList } from '@/components/cours/LeconsSyntheseList';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
@@ -50,9 +51,21 @@ export default function CoursModulesPage() {
         badge='COURS'
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title='Modules thématiques'
-        subtitle='Les titres officiels ci-dessous complètent le fil de révision : ouvrez une fiche quand vous en avez besoin, dans l’ordre qui vous convient — en suivant d’abord le parcours en 7 leçons si vous débutez.'
+        subtitle='Vue synthétisée en chapitres (parcours type « leçons »), puis l’index officiel F01–F15 avec recherche et filtres.'
         className='mb-8'
       />
+
+      <section className='mb-12' aria-labelledby='titre-lecons-synthese'>
+        <h2 id='titre-lecons-synthese' className='font-display text-xl font-bold text-white md:text-2xl'>
+          Parcours synthétisé
+        </h2>
+        <p className='mt-2 max-w-2xl text-sm text-slate-400'>
+          Neuf chapitres pour cadrer le programme avant de tout parcourir : mots-clés en une ligne, entrée directe vers la
+          fiche ou le module. Le compteur indique combien de fiches F associées sont déjà ouvertes sur cet appareil (marquage
+          automatique à la visite).
+        </p>
+        <LeconsSyntheseList className='mt-6' />
+      </section>
 
       <GlassCard hover padding='p-5' className='mb-10 border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-transparent'>
         <p className='text-sm font-semibold text-white'>Avant de parcourir la grille F01–F15</p>
@@ -97,6 +110,11 @@ export default function CoursModulesPage() {
         </Link>
       </div>
 
+      <h2 className='mb-2 font-display text-xl font-bold text-white'>Index officiel F01–F15</h2>
+      <p className='mb-6 max-w-2xl text-sm text-slate-400'>
+        Titres du programme national : recherche, filtre par domaine et accès aux fiches détaillées (axes, concours,
+        entraînements).
+      </p>
       <CoursModulesExplorer modules={explorerModules} />
     </div>
   );

@@ -12,6 +12,10 @@ export type CourseModuleSynthesis = {
   pratiqueOpj: string[];
   /** Erreurs fréquentes en révision / concours. */
   pieges: string[];
+  /** Attendus explicites à l’examen (afficés « Attendus à l’examen »). */
+  examenAttendus?: string[];
+  /** Terrain OPJ vs restitution attendue sur copie / oral. */
+  copieVsTerrain?: { terrain: string; copie: string }[];
 };
 
 export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
@@ -51,6 +55,17 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Oublier les effets des circonstances (mineur, lien familial, qualité de la victime) sur la compétence et la peine.',
       'Violences avec ITT : vérifier le seuil et la qualification retenue par le parquet (correctionnel vs assises selon les cas).',
     ],
+    examenAttendus: [
+      'Épreuve 1 : hiérarchiser violences, homicides et formes aggravées ; titres du programme exacts, PRQC lisible.',
+      'Épreuve 2 : du constat (victime, traces, réunion) à la suite procédurale sans confondre fait constaté et qualification définitive.',
+      'Oral : exposer en quelques phrases élément légal / matériel / moral sur les atteintes aux personnes les plus fréquentes.',
+    ],
+    copieVsTerrain: [
+      {
+        terrain: 'Vous constatez, sécurisez, auditionnez et transmettez des faits bruts au parquet.',
+        copie: 'Vous démontrez la qualification par les éléments constitutifs avec un plan maîtrisé et la terminologie du programme.',
+      },
+    ],
   },
   f02: {
     resume:
@@ -87,6 +102,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Mélanger abus de confiance et escroquerie sur les faits d’« abusement » de la bonne foi.',
       'Négliger la circonstance d’effraction ou de violence pour le vol aggravé.',
     ],
+    examenAttendus: [
+      'Épreuve 1 : distinguer vol, escroquerie, abus de confiance, recel — concours et peines si le sujet l’exige.',
+      'Épreuve 2 : relier saisies et PV aux infractions retenues dans l’articulation (pas seulement une liste d’articles).',
+    ],
   },
   f03: {
     resume:
@@ -118,6 +137,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Confondre les régimes de la simple fuite et des blessures avec obligation d’assistance.',
       'Rodéo et refus d’obtempérer : ne pas amalgamer qualification, circonstances aggravantes et compétence sans relire le texte.',
+    ],
+    examenAttendus: [
+      'Épreuve 1 : cas ou dissertation sur homicide / blessures involontaires, délit de fuite et compétence.',
+      'Épreuve 2 : chronologie des constats, expertises et auditions alignés sur le cadre (EP / flagrance).',
     ],
   },
   f04: {
@@ -152,6 +175,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Sous-estimer la gravité de certaines atteintes à magistrats ou jurés alors que les faits semblent « verbaux ».',
     ],
+    examenAttendus: [
+      'Épreuve 1 : outrage, rébellion, faux et entrave — rattachement au programme sans catalogue gratuit.',
+      'Épreuve 2 : cadre des auditions et constats lorsque fonctionnaires ou justice sont visés.',
+    ],
   },
   f05: {
     resume:
@@ -180,6 +207,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Oublier les infractions périphériques (association, blanchiment) qui structurent le dossier.',
       'Confondre usage et détention : le discernement du juge et du parquet repose sur les circonstances concrètes (quantité, emballage, matériel).',
     ],
+    examenAttendus: [
+      'Épreuve 1 : trafic, usage, figures aggravées (mineur, réunion) et peines.',
+      'Épreuve 2 : cohérence des saisies, analyses et qualifications avec les suites parquet.',
+    ],
   },
   f06: {
     resume:
@@ -206,6 +237,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Négliger la chronologie familiale dans les violences conjugales impliquant des enfants.',
       'Corruption de mineur et atteintes sexuelles : vérifier la qualification (âge, contrainte, lien d’autorité) plutôt qu’un intitulé générique.',
+    ],
+    examenAttendus: [
+      'Épreuve 1 : mineurs victimes, autorité parentale et qualifications voisines.',
+      'Oral : sensibilité des auditions et articulation avec la protection de l’enfance.',
     ],
   },
   f07: {
@@ -234,6 +269,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Confondre armes de catégories différentes et leurs régimes de répression.',
       'Munitions, accessoires et répliques : ne pas assimiler à un jouet sans analyser le cadre légal applicable.',
     ],
+    examenAttendus: [
+      'Épreuve 1 : catégories, détention, port et circonstances aggravantes.',
+      'Épreuve 2 : PV de saisie et inventaire exploitables dans les questions dossier.',
+    ],
   },
   f08: {
     resume:
@@ -259,6 +298,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Oublier l’impact des atteintes disproportionnées sur la recevabilité des suites pénales.',
       'Utiliser le contrôle d’identité comme prétexte à un acte d’enquête non prévu par la loi.',
+    ],
+    examenAttendus: [
+      'Épreuve 1 : proportionnalité, recevabilité et lien avec nullités (aperçu).',
+      'Épreuve 2 : motivation des contrôles et mesures dans les écrits type PV.',
     ],
   },
   f09: {
@@ -286,6 +329,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Confondre cause d’irresponsabilité et simple circonstance atténuante.',
       'Imprudence punissable (délit ou crime involontaire) vs simple accident non fautif : le lien de causalité et l’obligation violée.',
     ],
+    examenAttendus: [
+      'Épreuve 1 : éléments constitutifs, complicité, tentative et concours — socle transversal.',
+      'Toute copie DPS s’appuie implicitement sur F09 : structurez sans vous perdre en théorie pure.',
+    ],
   },
   f10: {
     resume:
@@ -312,6 +359,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Mélanger concours idéal et concours réel dans l’exposé des faits.',
       'Oublier que la récidive suppose souvent une condamnation antérieure au sens précis de la loi pour la même nature d’infraction.',
+    ],
+    examenAttendus: [
+      'Épreuve 1 : peines, circonstances et récidive après qualification des chefs.',
+      'Épreuve 2 : cohérence entre qualifications déférées et exposes peines dans les réponses.',
     ],
   },
   f11: {
@@ -347,6 +398,16 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Confondre « 8 + 8 jours » systématique en flagrance avec le seuil du délit ≥ 5 ans et l’exigence de continuité des investigations.',
       'Penser que toute perquisition en préliminaire exige l’assentiment : oublier le cas JLD (crime / délit ≥ 3 ans / confiscation).',
     ],
+    examenAttendus: [
+      'Épreuve 2 : cœur du dossier — enchaîner cadre (flagrance / EP / CR), actes coercitifs et PV de synthèse.',
+      'Épreuve 1 : maîtriser les incidences pénales des irrégularités graves (lien avec nullités sans faire du cours abstrait).',
+    ],
+    copieVsTerrain: [
+      {
+        terrain: 'Vous opérez les actes et les consignez pour permettre au parquet et au juge de trancher.',
+        copie: 'Vous démontrez que chaque mesure était légalement fondée, motivée et chronologiquement cohérente avec la qualification visée.',
+      },
+    ],
   },
   f12: {
     resume:
@@ -373,6 +434,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Confondre les qualifications procédurales devant le juge d’instruction et en enquête préliminaire.',
       'Mandat de recherche (art. 122 al. 2 C.P.P.) : porter sur la recherche et le placement en GAV dès l’appréhension, et non seulement une présentation « au greffe » du juge.',
       'Mandat de dépôt : ordre de mise en détention provisoire une fois la personne sous le coup d’un placement à ordonner ; ne pas le confondre avec le mandat de recherche.',
+    ],
+    examenAttendus: [
+      'Épreuve 2 : commissions rogatoires, mesures privatives de liberté et questions sur le secret de l’instruction.',
+      'Oral : synthèse sur le rôle OPJ sous statut d’instruction (respect du juge d’instruction).',
     ],
   },
   f13: {
@@ -401,6 +466,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Erreurs de délais de comparution ou de citation selon la juridiction.',
       'Confondre appel (fond, cour d’appel) et cassation (moyens de droit, Cour de cassation) ou oublier le caractère très bref du pourvoi pénal.',
+    ],
+    examenAttendus: [
+      'Épreuve 1 : compétence matérielle et juridiction penchant selon la qualification.',
+      'Épreuve 2 : défèrement, comparution et cohérence dossier / juridiction saisie.',
     ],
   },
   f14: {
@@ -437,6 +506,16 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
       'Anticiper une décision de classement ou de qualification sans instruction du parquet.',
       'Confondre CRPC et composition pénale, ou oublier que l’action civile n’a pas le même sort que l’action publique.',
     ],
+    examenAttendus: [
+      'Épreuve 2 : opportunité des poursuites, saisine du parquet et rôle OPJ / APJ dans les écrits.',
+      'Oral : posture « rendre compte sans décider » — nuances attendues par le jury.',
+    ],
+    copieVsTerrain: [
+      {
+        terrain: 'Vous proposez et exécutez ; le parquet et le juge tranchent.',
+        copie: 'Vous montrez la chaîne décisionnelle (réquisitions, suites données) sans vous substituer au magistrat.',
+      },
+    ],
   },
   f15: {
     resume:
@@ -464,6 +543,10 @@ export const courseModuleSyntheses: Record<string, CourseModuleSynthesis> = {
     pieges: [
       'Penser qu’une erreur matérielle mineure entraîne toujours nullité sans grief (art. 802 : condition du grief).',
       'Croire qu’une violation d’une formalité « à peine de nullité » suffit sans démontrer le grief : l’art. 802 conditionne le prononcé (textuelle ou substantielle).',
+    ],
+    examenAttendus: [
+      'Épreuve 2 : analyses de nullité sur PV, perquisitions ou auditions — articuler texte, grief et effet (art. 802, 174).',
+      'Épreuve 1 : incidence sur recevabilité des preuves ou des poursuites lorsque le sujet l’aborde.',
     ],
   },
 };

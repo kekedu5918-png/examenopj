@@ -51,9 +51,10 @@ type NavbarClientProps = {
   isPremium: boolean;
   signOut: () => Promise<ActionResponse>;
   trialReminder: TrialReminder | null;
+  logoSize?: number;
 };
 
-export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: NavbarClientProps) {
+export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, logoSize = 40 }: NavbarClientProps) {
   const pathname = usePathname();
   const scrollY = useScrollPosition();
   const scrolled = scrollY > 20;
@@ -174,7 +175,7 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder }: 
             className='group flex shrink-0 items-center gap-1 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
             aria-label='ExamenOPJ — accueil'
           >
-            <ExamenOpjLogo size='sm' />
+            <ExamenOpjLogo size={logoSize} />
             <span className='rounded-md border border-white/[0.12] bg-white/[0.04] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-examen-inkMuted'>
               2026
             </span>

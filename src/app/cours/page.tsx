@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { ChevronDown } from 'lucide-react';
 
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -11,7 +12,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 
 const coursTitle = 'Cours — Examen OPJ';
 const coursDescription =
-  'Parcours pédagogique : sommaire du programme, fiches de synthèse par thème, fondamentaux, guide de révision et outils de rédaction pour le concours OPJ.';
+  'Par où commencer : fil de révision aligné sur les trois épreuves, fiches F01–F15, fondamentaux et lien avec sujets blancs.';
 
 export const metadata: Metadata = {
   title: coursTitle,
@@ -84,30 +85,74 @@ export default function CoursHubPage() {
           badge='PARCOURS'
           badgeClassName='bg-violet-500/25 text-violet-200'
           title='Cours'
-          subtitle='Un fil de révision clair, puis les fiches par thème : tout reste aligné sur le programme officiel — à recouper avec vos fascicules et Légifrance.'
+          subtitle='Alignés sur le programme officiel et sur les trois épreuves — chaque fiche indique où le thème pèse (DPS, procédure, oral) et vers quels entraînements / sujets blancs aller.'
           className='relative mb-0 text-left md:max-w-2xl'
         />
-        <div className='relative mt-8 flex flex-wrap gap-3'>
+      </div>
+
+      <section className='mt-12' aria-labelledby='cours-commencer'>
+        <h2 id='cours-commencer' className='font-display text-xl font-bold text-white md:text-2xl'>
+          Commencer ici
+        </h2>
+        <p className='mt-2 max-w-2xl text-sm text-gray-400'>
+          Choisissez une entrée : le fil en 7 leçons si vous débutez sur le site ; le parcours chronologique candidat si vous
+          avez déjà parcouru le programme officiel.
+        </p>
+        <div className='mt-6 grid gap-4 md:grid-cols-2'>
           <Link
-            href='/programme'
-            className='inline-flex items-center rounded-xl bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-navy-950 transition hover:bg-cyan-400'
+            href='#revision-fil'
+            className='group block rounded-2xl border border-cyan-500/35 bg-gradient-to-br from-cyan-500/15 to-transparent p-6 transition hover:border-cyan-400/55 focus-visible:outline focus-visible:ring-2 focus-visible:ring-cyan-500/50'
           >
-            Voir le programme
+            <p className='text-xs font-bold uppercase tracking-widest text-cyan-300/90'>Je découvre</p>
+            <p className='mt-2 font-display text-lg font-bold text-white group-hover:text-cyan-100'>
+              Fil de révision — 7 leçons
+            </p>
+            <p className='mt-2 text-sm text-gray-400'>
+              Ordre pédagogique (procédure d’abord, puis thèmes lourds, puis épreuve 2). Descendez à la section suivante.
+            </p>
+            <span className='mt-4 inline-flex text-sm font-semibold text-cyan-300'>Défiler vers le fil ↓</span>
           </Link>
           <Link
-            href='/cours/modules'
-            className='inline-flex items-center rounded-xl border border-cyan-500/50 px-5 py-2.5 text-sm font-semibold text-cyan-200 transition hover:bg-cyan-500/10'
+            href='/parcours-candidat'
+            className='group block rounded-2xl border border-gold-500/30 bg-gradient-to-br from-gold-500/10 to-transparent p-6 transition hover:border-gold-400/50 focus-visible:outline focus-visible:ring-2 focus-visible:ring-gold-500/40'
           >
-            Fiches par thème
+            <p className='text-xs font-bold uppercase tracking-widest text-gold-200/90'>J’ai déjà lu le programme</p>
+            <p className='mt-2 font-display text-lg font-bold text-white group-hover:text-gold-100'>
+              Parcours candidat (phases + checklist)
+            </p>
+            <p className='mt-2 text-sm text-gray-400'>
+              Semaines type, lien explicite Épreuve 1 / 2 / 3, sujets blancs en phase finale.
+            </p>
+            <span className='mt-4 inline-flex text-sm font-semibold text-gold-200'>Ouvrir le parcours →</span>
+          </Link>
+        </div>
+        <div className='mt-4 flex flex-wrap gap-3'>
+          <Link
+            href='/cours/modules#lecons-synthese'
+            className='inline-flex items-center rounded-xl border border-cyan-500/35 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-500/15'
+          >
+            9 chapitres synthétisés
+          </Link>
+          <Link
+            href='/programme'
+            className='inline-flex items-center rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-gray-200 transition hover:bg-white/5'
+          >
+            Sommaire officiel F01–F15
           </Link>
           <Link
             href='/entrainement'
-            className='inline-flex items-center rounded-xl border border-white/15 px-5 py-2.5 text-sm font-semibold text-gray-200 transition hover:bg-white/5'
+            className='inline-flex items-center rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-gray-200 transition hover:bg-white/5'
           >
-            Entraînement
+            Entraînement par épreuve
+          </Link>
+          <Link
+            href='/sujets-blancs'
+            className='inline-flex items-center rounded-xl border border-white/15 px-4 py-2 text-sm font-medium text-gray-200 transition hover:bg-white/5'
+          >
+            Sujets blancs complets
           </Link>
         </div>
-      </div>
+      </section>
 
       <div className='mt-16'>
         <CoursRevisionPath />
@@ -136,37 +181,42 @@ export default function CoursHubPage() {
       </div>
 
       <div className='mt-20 border-t border-white/10 pt-16'>
-        <h2 className='mb-2 font-display text-xl font-bold text-white'>Index officiel du programme (F01–F15)</h2>
-        <p className='mb-6 max-w-2xl text-sm text-gray-500'>
-          Référence par numéro de fascicule : utile pour retrouver un titre précis après le fil de révision ci-dessus. Chaque
-          carte ouvre la fiche de synthèse du module.
-        </p>
-        <ul className='grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
-          {ordered.map((m) => {
-            const d = moduleDomainKey(m);
-            return (
-              <li key={m.id}>
-                <Link
-                  href={`/cours/modules/${m.id}`}
-                  className='group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition hover:border-white/20 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60'
-                >
-                  <span
-                    className={cn(
-                      'w-fit rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide',
-                      DOMAIN_BADGE[d],
-                    )}
+        <details className='group rounded-2xl border border-white/10 bg-white/[0.02] p-4 md:p-6'>
+          <summary className='flex cursor-pointer list-none items-center justify-between gap-3 font-display text-lg font-bold text-white marker:content-none [&::-webkit-details-marker]:hidden'>
+            <span>Index officiel du programme (F01–F15)</span>
+            <ChevronDown className='h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180' aria-hidden />
+          </summary>
+          <p className='mt-3 max-w-2xl text-sm text-gray-500'>
+            Référence par numéro de fascicule : ouvrez une fiche pour la grille concours (épreuves, entraînements, sujets
+            blancs liés).
+          </p>
+          <ul className='mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3'>
+            {ordered.map((m) => {
+              const d = moduleDomainKey(m);
+              return (
+                <li key={m.id}>
+                  <Link
+                    href={`/cours/modules/${m.id}`}
+                    className='group flex flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4 transition hover:border-white/20 hover:bg-white/[0.05] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60'
                   >
-                    {DOMAIN_LABELS[d]}
-                  </span>
-                  <span className='mt-2 text-xs font-bold text-gray-500'>F{String(m.numero).padStart(2, '0')}</span>
-                  <span className='mt-1 font-display text-sm font-semibold leading-snug text-white group-hover:text-cyan-100'>
-                    {m.titre}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
+                    <span
+                      className={cn(
+                        'w-fit rounded-full border px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide',
+                        DOMAIN_BADGE[d],
+                      )}
+                    >
+                      {DOMAIN_LABELS[d]}
+                    </span>
+                    <span className='mt-2 text-xs font-bold text-gray-500'>F{String(m.numero).padStart(2, '0')}</span>
+                    <span className='mt-1 font-display text-sm font-semibold leading-snug text-white group-hover:text-cyan-100'>
+                      {m.titre}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </details>
       </div>
     </div>
   );

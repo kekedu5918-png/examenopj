@@ -43,6 +43,7 @@ export const SESSION_BLANC_A: SujetBlanc = {
   description:
     'Violences en réunion et chaîne de trafic impliquant un mineur : même fil rouge sur dissertation, dossier procédure et oral.',
   theme: 'Violences en réunion et trafic mineur de stupéfiants',
+  themesFascicules: ['f01', 'f05', 'f06'],
   difficulte: 'avance',
   corrigeDisponible: true,
   isPremium: true,

@@ -13,6 +13,7 @@ export const SESSION_BLANC_B: SujetBlanc = {
   description:
     'Homicide involontaire sur la voie publique et délit de fuite : même affaire traitée en écrit, procédure et oral.',
   theme: 'Homicide involontaire AVP + délit de fuite',
+  themesFascicules: ['f03'],
   difficulte: 'intermediaire',
   corrigeDisponible: false,
   isPremium: true,

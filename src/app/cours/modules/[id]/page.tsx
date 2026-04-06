@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 
 import { CourseModuleJsonLd } from '@/components/cours/CourseModuleJsonLd';
 import { ModuleEnquetesLinks } from '@/components/cours/ModuleEnquetesLinks';
+import { ModuleExamBridge } from '@/components/cours/ModuleExamBridge';
 import { ModuleQuizProgressBar } from '@/components/cours/ModuleQuizProgressBar';
 import { ModuleVisitRecorder } from '@/components/cours/ModuleVisitRecorder';
 import { ModelesPVModuleSection } from '@/components/modeles-pv/ModelesPVModuleSection';
@@ -12,7 +13,6 @@ import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
 import { getEnquetesLinkedToModule } from '@/data/enquetes-by-module';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
 import { getFondamentauxLinksForCourseModule } from '@/data/fondamentaux-by-module';
-import { cn } from '@/utils/cn';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 type Props = { params: { id: string } };
@@ -33,31 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: path },
     ...openGraphForPage(path, title, description),
   };
-}
-
-function TrainingCard({
-  href,
-  title,
-  description,
-  classTile,
-}: {
-  href: string;
-  title: string;
-  description: string;
-  classTile: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        'group flex flex-col rounded-xl border p-4 transition hover:border-cyan-500/35 hover:bg-white/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-400/60',
-        classTile,
-      )}
-    >
-      <span className='font-semibold text-white group-hover:text-cyan-200'>{title}</span>
-      <span className='mt-1 text-xs leading-relaxed text-gray-500'>{description}</span>
-    </Link>
-  );
 }
 
 export default function CoursModuleDetailPage({ params }: Props) {
@@ -99,6 +74,10 @@ export default function CoursModuleDetailPage({ params }: Props) {
       />
 
       <ModuleQuizProgressBar moduleId={m.id} />
+
+      <div className='mb-8 rounded-xl border border-cyan-500/20 bg-gradient-to-br from-navy-900/50 to-transparent p-6 md:p-8'>
+        <ModuleExamBridge module={m} synth={synth} />
+      </div>
 
       <article className='prose prose-invert max-w-none rounded-xl border border-white/10 bg-white/[0.02] p-6 md:p-8'>
         <p className='text-sm font-semibold uppercase tracking-wide text-amber-200/90'>Synthèse pédagogique</p>
@@ -197,45 +176,6 @@ export default function CoursModuleDetailPage({ params }: Props) {
         <ModuleEnquetesLinks enquetes={enquetesLiees} />
 
         <ModelesPVModuleSection fasciculeNumero={m.numero} />
-
-        <div className='mt-8 border-t border-white/10 pt-6'>
-          <p className='mb-4 text-sm font-semibold uppercase tracking-wide text-gray-500'>Entraînement sur ce thème</p>
-          <div className='grid gap-3 sm:grid-cols-2'>
-            <TrainingCard
-              href={`/quiz?mode=module&f=${m.id}`}
-              title={`Quiz — F${String(m.numero).padStart(2, '0')}`}
-              description='Questions ciblées sur le même regroupement thématique.'
-              classTile='border-cyan-500/20 bg-cyan-500/[0.06]'
-            />
-            <TrainingCard
-              href={`/flashcards?f=${m.id}`}
-              title='Flashcards filtrées'
-              description='Paquet limité aux cartes rattachées à ce module, si disponibles.'
-              classTile='border-amber-500/20 bg-amber-500/[0.06]'
-            />
-            <TrainingCard
-              href='/entrainement/articulation'
-              title='Articulation (épreuve 2)'
-              description='Enchaînements qualification / procédure / rédaction.'
-              classTile='border-violet-500/20 bg-violet-500/[0.06]'
-            />
-            <TrainingCard
-              href='/guide-revision-opj'
-              title='Guide de révision'
-              description='Méthode, rythme et priorités pour les dernières semaines.'
-              classTile='border-white/10 bg-white/[0.02]'
-            />
-          </div>
-          <p className='mt-4 text-center text-sm text-gray-500'>
-            <Link href='/entrainement' className='text-cyan-400 underline-offset-2 hover:underline'>
-              Hub entraînement
-            </Link>
-            {' · '}
-            <Link href='/flashcards' className='text-cyan-400 underline-offset-2 hover:underline'>
-              Toutes les flashcards
-            </Link>
-          </p>
-        </div>
 
         <nav
           aria-label='Navigation entre modules'

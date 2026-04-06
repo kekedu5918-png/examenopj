@@ -35,6 +35,8 @@ export type SujetBlanc = {
   titre: string;
   description: string;
   theme: string;
+  /** Fascicules F01–F15 mobilisés dans la session (prérequis / pont cours). */
+  themesFascicules: string[];
   difficulte: 'intermediaire' | 'avance';
   epreuve1: Epreuve1DPS;
   epreuve2: Epreuve2Procedure;

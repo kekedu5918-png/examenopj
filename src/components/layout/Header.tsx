@@ -19,6 +19,7 @@ export async function Header() {
       isPremium={premium}
       signOut={signOut}
       trialReminder={trialReminder}
+      logoSize={36}
     />
   );
 }
