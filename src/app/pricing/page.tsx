@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { PricingMarketingPage } from '@/components/pricing/PricingMarketingPage';
+import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
 import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
 import { getProducts } from '@/features/pricing/controllers/get-products';
@@ -11,7 +11,7 @@ export const dynamic = 'force-dynamic';
 
 const title = 'Tarifs — Examen OPJ';
 const description =
-  "Gratuit ou accès complet : guide, modules, quiz, flashcards et sujets blancs. Tarifs mensuel ou annuel (-20 % sur l'annuel).";
+  'Gratuit, 9,90 €/mois ou 49 € jusqu’au 11 juin 2026 : enquêtes, PV, articulation, fondamentaux et quiz.';
 
 export const metadata: Metadata = {
   title,
@@ -36,13 +36,13 @@ export default async function PricingPage() {
     console.error('[pricing] getProducts', e);
   }
 
-  const { monthly, yearly } = pickFreemiumStripePrices(products);
+  const { monthly, exam } = pickFreemiumStripePrices(products);
 
   return (
-    <PricingMarketingPage
+    <PricingThreeColumnPage
       isLoggedIn={!!session}
       monthlyPrice={monthly}
-      yearlyPrice={yearly}
+      examPrice={exam}
       createCheckoutAction={createCheckoutAction}
     />
   );

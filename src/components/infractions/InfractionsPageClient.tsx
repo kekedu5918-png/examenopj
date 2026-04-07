@@ -218,7 +218,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='Filtrez par famille (personnes, biens, route…) et par probabilité à l’examen : le plus attendu d’abord. Fiche express en bulle, tableau exportable, mode flash.'
+        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Utilise le filtre par fascicule et la recherche pour cibler tes révisions. Familles (personnes, biens…) et probabilité à l’examen : le plus attendu d’abord.'
         className='mb-6'
       />
 

@@ -1,32 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import type { FormEvent } from 'react';
 
 export function ExamenBlancWaitlistCard() {
   const [email, setEmail] = useState('');
-  const [count, setCount] = useState<number | null>(null);
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>('idle');
   const [message, setMessage] = useState<string | null>(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    (async () => {
-      try {
-        const r = await fetch('/api/waitlist', { method: 'GET' });
-        if (!r.ok) return;
-        const j: unknown = await r.json();
-        if (!cancelled && j && typeof j === 'object' && 'count' in j && typeof (j as { count: unknown }).count === 'number') {
-          setCount((j as { count: number }).count);
-        }
-      } catch {
-        /* ignore */
-      }
-    })();
-    return () => {
-      cancelled = true;
-    };
-  }, []);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
@@ -50,9 +30,6 @@ export function ExamenBlancWaitlistCard() {
       }
       setStatus('ok');
       setEmail('');
-      if (j && typeof j === 'object' && 'count' in j && typeof (j as { count: unknown }).count === 'number') {
-        setCount((j as { count: number }).count);
-      }
       setMessage('Vous serez notifié à l’ouverture.');
     } catch {
       setStatus('err');
@@ -98,13 +75,7 @@ export function ExamenBlancWaitlistCard() {
         </p>
       ) : null}
       <p className='mt-4 text-xs text-examen-inkMuted'>
-        {count !== null ? (
-          <>
-            <span className='tabular-nums font-medium text-white'>{count}</span> candidats déjà inscrits sur la liste
-          </>
-        ) : (
-          'Chargement du compteur…'
-        )}
+        Liste d’intérêt pour les sessions blanches — pas de chiffre public affiché.
       </p>
     </div>
   );

@@ -134,30 +134,6 @@ export function ExamenOpjLogo({ className, size = 40 }: Props) {
       >
         EXAMEN
       </text>
-      <text
-        x='30.600'
-        y='59.400'
-        fontFamily='serif'
-        fontSize='10.800'
-        fill='#c0c0c0'
-        textAnchor='middle'
-        dominantBaseline='middle'
-        opacity='.82'
-      >
-        ✦
-      </text>
-      <text
-        x='149.400'
-        y='59.400'
-        fontFamily='serif'
-        fontSize='10.800'
-        fill='#c0c0c0'
-        textAnchor='middle'
-        dominantBaseline='middle'
-        opacity='.82'
-      >
-        ✦
-      </text>
       <rect x='66.600' y='144.000' width='46.800' height='7.200' fill={`url(#${p}-gb)`} rx='1.800' />
       <rect x='73.800' y='151.200' width='32.400' height='3.600' fill='#c0c0c0' opacity='.3' rx='1.350' />
       <rect x='85.950' y='71.100' width='8.100' height='73.800' fill={`url(#${p}-gb)`} rx='1.980' />

@@ -15,7 +15,8 @@ export function Footer() {
               <ExamenOpjLogo size={28} />
             </div>
             <p className='mb-4 max-w-xs text-sm leading-relaxed text-examen-inkMuted'>
-              Méthode et outils pour préparer l’examen OPJ — site indépendant, non affilié à l’administration.
+              ExamenOPJ.fr — Préparation OPJ 2026. Contenus issus de la formation en présentiel · Mis à jour en temps réel.
+              Site indépendant · Non affilié à l’administration.
             </p>
             <ul className='space-y-2'>
               <li>
@@ -85,8 +86,7 @@ export function Footer() {
               </li>
             </ul>
             <p className='mt-6 text-xs leading-relaxed text-examen-inkMuted/80' suppressHydrationWarning>
-              Les informations officielles sur les sessions et inscriptions relèvent des services compétents (Police
-              nationale, JO). © {new Date().getFullYear()} ExamenOPJ.fr
+              © {new Date().getFullYear()} ExamenOPJ.fr
             </p>
           </div>
         </div>

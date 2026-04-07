@@ -27,7 +27,7 @@ export function TimelineSection() {
           badge='FORMATION'
           badgeClassName='bg-cyan-500/20 text-cyan-300'
           title='Programme par enquête'
-          subtitle='Dix thèmes d’enquête fictifs pour structurer la révision'
+          subtitle='Dix thèmes d’enquête types pour structurer la révision'
           className='mx-auto mb-16 max-w-xl text-center'
         />
 

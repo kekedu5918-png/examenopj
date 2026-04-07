@@ -38,7 +38,7 @@ export function SignUpForm() {
       }
 
       if (data.session) {
-        window.location.assign('/post-login?next=%2Fpricing');
+        window.location.assign('/post-login?next=%2Fbienvenue');
         return;
       }
 

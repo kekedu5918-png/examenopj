@@ -1,21 +1,12 @@
 'use client';
 
-import { useCallback, useEffect, useId, useRef, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Menu, Sparkles, X } from 'lucide-react';
+import { Menu, Sparkles, X } from 'lucide-react';
 
-import {
-  NAV_COURS_CHILDREN,
-  NAV_ENTRAINEMENT_CHILDREN,
-  NAV_EPREUVES_CHILDREN,
-  NAV_GUIDE_HREF,
-  NAV_INFRACTIONS_HREF,
-  NAV_PREMIUM_HREF,
-  NAV_SUJETS_BLANCS_BADGE_DEADLINE_MS,
-  type NavMegaChild,
-} from '@/app/navigation';
+import { NAV_PREMIUM_HREF, NAV_PRIMARY_LINKS } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
@@ -39,8 +30,6 @@ function ActiveDot() {
   );
 }
 
-type MegaKey = 'cours' | 'epreuves' | 'entrainement';
-
 type TrialReminder = {
   daysLeft: number;
   endsAtIso: string;
@@ -58,25 +47,8 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
   const pathname = usePathname();
   const scrollY = useScrollPosition();
   const scrolled = scrollY > 20;
-  const [mega, setMega] = useState<MegaKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [showSujetsBlancsNouveau, setShowSujetsBlancsNouveau] = useState(false);
-  const wrapRef = useRef<HTMLDivElement>(null);
   const mobileMenuId = useId();
-
-  useEffect(() => {
-    setShowSujetsBlancsNouveau(Date.now() < NAV_SUJETS_BLANCS_BADGE_DEADLINE_MS);
-  }, []);
-
-  const closeMega = useCallback(() => setMega(null), []);
-
-  useEffect(() => {
-    function onDoc(e: MouseEvent) {
-      if (!wrapRef.current?.contains(e.target as Node)) closeMega();
-    }
-    document.addEventListener('mousedown', onDoc);
-    return () => document.removeEventListener('mousedown', onDoc);
-  }, [closeMega]);
 
   useEffect(() => {
     if (!mobileOpen) return;
@@ -89,12 +61,7 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
 
   useEffect(() => {
     setMobileOpen(false);
-    closeMega();
-  }, [pathname, closeMega]);
-
-  const coursOpen = NAV_COURS_CHILDREN.some((c) => isActivePath(pathname, c.href));
-  const eprOpen = NAV_EPREUVES_CHILDREN.some((c) => isActivePath(pathname, c.href));
-  const entrainOpen = NAV_ENTRAINEMENT_CHILDREN.some((c) => isActivePath(pathname, c.href));
+  }, [pathname]);
 
   const headerSurface = cn(
     'border-b transition-[background-color,border-color,backdrop-filter] duration-300',
@@ -103,62 +70,14 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
       : 'border-transparent bg-transparent',
   );
 
-  function megaPanel(items: readonly NavMegaChild[], panelId: string, animKey: string) {
-    return (
-      <motion.div
-        key={animKey}
-        id={panelId}
-        role='menu'
-        initial={MOTION_INITIAL_FOR_SEO}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -4 }}
-        transition={{ duration: 0.15, ease: [0.22, 1, 0.36, 1] }}
-        className='absolute left-0 top-full z-50 mt-2 w-[min(100vw-2rem,20rem)] rounded-xl border border-white/[0.08] bg-[#16161F] p-2 shadow-xl'
-      >
-        <ul className='space-y-0.5' role='none'>
-          {items.map((item) => {
-            const active = isActivePath(pathname, item.href);
-            const showNouveau = item.badge === 'nouveau' && showSujetsBlancsNouveau && item.href === '/sujets-blancs';
-            return (
-              <li key={item.href} role='none'>
-                <Link
-                  role='menuitem'
-                  href={item.href}
-                  className={cn(
-                    'block rounded-lg px-3 py-2.5 transition-colors hover:bg-white/[0.06]',
-                    active && 'bg-examen-accent/10',
-                  )}
-                  onClick={closeMega}
-                >
-                  <span className='flex items-start justify-between gap-2'>
-                    <span className={cn('font-medium', active ? 'text-examen-accent' : 'text-white')}>{item.name}</span>
-                    {showNouveau ? (
-                      <span
-                        className='shrink-0 animate-pulse rounded-full bg-emerald-500/25 px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide text-emerald-200 ring-1 ring-emerald-400/35'
-                        aria-hidden
-                      >
-                        Nouveau
-                      </span>
-                    ) : null}
-                  </span>
-                  <span className='mt-0.5 block text-xs text-examen-inkMuted'>{item.description}</span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </motion.div>
-    );
-  }
-
   const navLinkClass = (active: boolean) =>
     cn(
-      'relative inline-flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45',
+      'relative whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3',
       active ? 'text-examen-accent' : 'text-examen-inkMuted hover:text-examen-ink',
     );
 
   return (
-    <div ref={wrapRef} className='sticky top-0 z-50'>
+    <div className='sticky top-0 z-50'>
       {trialReminder ? (
         <TrialReminderBanner daysLeft={trialReminder.daysLeft} endsAtIso={trialReminder.endsAtIso} />
       ) : null}
@@ -169,100 +88,41 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className='mx-auto flex h-16 max-w-6xl items-center justify-between gap-3 px-4'>
+        <div className='mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-3 sm:px-4'>
           <Link
             href='/'
-            className='group flex shrink-0 items-center gap-2 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
+            className='group flex min-w-0 shrink items-center gap-2 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
             aria-label='ExamenOPJ — accueil'
           >
             <span
-              className='inline-flex rounded-xl bg-white/[0.08] p-1 ring-1 ring-white/15 shadow-[0_0_20px_rgba(79,110,247,0.15)] transition group-hover:bg-white/[0.12]'
+              className='inline-flex shrink-0 rounded-xl bg-white/[0.08] p-1 ring-1 ring-white/15 shadow-[0_0_20px_rgba(79,110,247,0.15)] transition group-hover:bg-white/[0.12]'
               aria-hidden
             >
               <ExamenOpjLogo size={logoSize} className='block' />
             </span>
-            <span className='flex items-baseline gap-1.5'>
-              <span className='font-display text-sm font-bold leading-none tracking-tight text-white sm:text-[0.95rem]'>
-                Examen
+            <span className='hidden min-w-0 sm:block'>
+              <span className='font-display text-[0.7rem] font-black leading-none tracking-[0.12em] text-white sm:text-xs'>
+                EXAMEN OPJ
               </span>
-              <span className='font-display text-sm font-bold leading-none tracking-tight text-gray-400 transition group-hover:text-gray-300 sm:text-[0.95rem]'>
-                OPJ
+              <span className='ml-2 inline-block rounded-md border border-white/[0.12] bg-white/[0.04] px-1.5 py-0.5 align-middle text-[9px] font-bold uppercase tracking-wide text-examen-inkMuted'>
+                2026
               </span>
-            </span>
-            <span className='rounded-md border border-white/[0.12] bg-white/[0.04] px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-examen-inkMuted'>
-              2026
             </span>
           </Link>
 
-          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-1 lg:flex'>
-            <div className='relative'>
-              <button
-                type='button'
-                className={navLinkClass(mega === 'cours' || coursOpen)}
-                aria-expanded={mega === 'cours'}
-                aria-haspopup='menu'
-                aria-controls='nav-mega-cours'
-                onClick={() => setMega((m) => (m === 'cours' ? null : 'cours'))}
-              >
-                Cours
-                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
-                {coursOpen ? <ActiveDot /> : null}
-              </button>
-              <AnimatePresence>
-                {mega === 'cours' ? megaPanel(NAV_COURS_CHILDREN, 'nav-mega-cours', 'mega-cours') : null}
-              </AnimatePresence>
-            </div>
-
-            <Link href={NAV_INFRACTIONS_HREF} className={navLinkClass(isActivePath(pathname, NAV_INFRACTIONS_HREF))}>
-              Infractions
-              {isActivePath(pathname, NAV_INFRACTIONS_HREF) ? <ActiveDot /> : null}
-            </Link>
-
-            <div className='relative'>
-              <button
-                type='button'
-                className={navLinkClass(mega === 'epreuves' || eprOpen)}
-                aria-expanded={mega === 'epreuves'}
-                aria-haspopup='menu'
-                aria-controls='nav-mega-epreuves'
-                onClick={() => setMega((m) => (m === 'epreuves' ? null : 'epreuves'))}
-              >
-                Épreuves
-                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
-                {eprOpen ? <ActiveDot /> : null}
-              </button>
-              <AnimatePresence>
-                {mega === 'epreuves' ? megaPanel(NAV_EPREUVES_CHILDREN, 'nav-mega-epreuves', 'mega-epreuves') : null}
-              </AnimatePresence>
-            </div>
-
-            <div className='relative'>
-              <button
-                type='button'
-                className={navLinkClass(mega === 'entrainement' || entrainOpen)}
-                aria-expanded={mega === 'entrainement'}
-                aria-haspopup='menu'
-                aria-controls='nav-mega-entrainement'
-                onClick={() => setMega((m) => (m === 'entrainement' ? null : 'entrainement'))}
-              >
-                Entraînement
-                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
-                {entrainOpen ? <ActiveDot /> : null}
-              </button>
-              <AnimatePresence>
-                {mega === 'entrainement'
-                  ? megaPanel(NAV_ENTRAINEMENT_CHILDREN, 'nav-mega-entrainement', 'mega-entrainement')
-                  : null}
-              </AnimatePresence>
-            </div>
-
-            <Link href={NAV_GUIDE_HREF} className={navLinkClass(isActivePath(pathname, NAV_GUIDE_HREF))}>
-              Guide
-              {isActivePath(pathname, NAV_GUIDE_HREF) ? <ActiveDot /> : null}
-            </Link>
+          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-0.5 overflow-x-auto lg:flex xl:gap-1'>
+            {NAV_PRIMARY_LINKS.map((item) => {
+              const active = isActivePath(pathname, item.href);
+              return (
+                <Link key={item.href} href={item.href} className={navLinkClass(active)}>
+                  {item.label}
+                  {active ? <ActiveDot /> : null}
+                </Link>
+              );
+            })}
           </nav>
 
-          <div className='hidden items-center gap-2 lg:flex'>
+          <div className='hidden shrink-0 items-center gap-2 lg:flex'>
             {!isPremium ? (
               <Link
                 href={NAV_PREMIUM_HREF}
@@ -362,88 +222,33 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 </button>
               </div>
               <nav className='flex flex-1 flex-col overflow-y-auto px-2 py-4' aria-label='Navigation mobile'>
-                <p className='px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-examen-inkMuted'>Cours</p>
-                {NAV_COURS_CHILDREN.map((item) => (
+                {NAV_PRIMARY_LINKS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className='border-b border-white/[0.06] px-3 py-3 text-sm text-examen-ink hover:bg-white/[0.04]'
+                    className='border-b border-white/[0.06] px-3 py-3 text-sm font-medium text-examen-ink hover:bg-white/[0.04]'
                     onClick={() => setMobileOpen(false)}
                   >
-                    {item.name}
+                    {item.label}
                   </Link>
                 ))}
-                <p className='mt-4 px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-examen-inkMuted'>
-                  Infractions
-                </p>
-                <Link
-                  href={NAV_INFRACTIONS_HREF}
-                  className='border-b border-white/[0.06] px-3 py-3 text-sm text-examen-ink hover:bg-white/[0.04]'
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Référentiel infractions
-                </Link>
-                <p className='mt-4 px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-examen-inkMuted'>
-                  Épreuves
-                </p>
-                {NAV_EPREUVES_CHILDREN.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className='flex items-center justify-between gap-2 border-b border-white/[0.06] px-3 py-3 text-sm text-examen-ink hover:bg-white/[0.04]'
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.name}
-                    {item.badge === 'nouveau' && showSujetsBlancsNouveau && item.href === '/sujets-blancs' ? (
-                      <span className='shrink-0 rounded-full bg-emerald-500/25 px-2 py-0.5 text-[9px] font-bold uppercase text-emerald-200'>
-                        Nouveau
-                      </span>
-                    ) : null}
-                  </Link>
-                ))}
-                <p className='mt-4 px-3 pb-2 text-xs font-semibold uppercase tracking-wider text-examen-inkMuted'>
-                  Entraînement
-                </p>
-                {NAV_ENTRAINEMENT_CHILDREN.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className='border-b border-white/[0.06] px-3 py-3 text-sm text-examen-ink hover:bg-white/[0.04]'
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <Link
-                  href={NAV_GUIDE_HREF}
-                  className='border-b border-white/[0.06] px-3 py-3 text-sm text-examen-ink hover:bg-white/[0.04]'
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Guide de révision
-                </Link>
               </nav>
 
               {!isPremium ? (
                 <div className='border-t border-white/[0.06] p-4'>
-                  <div className='rounded-xl border border-examen-premium/25 bg-gradient-to-br from-examen-accent/15 to-examen-premium/10 p-4'>
-                    <p className='text-sm font-semibold text-white'>Passer Premium</p>
-                    <p className='mt-1 text-xs text-examen-inkMuted'>Quiz illimités, flashcards complètes, articulation.</p>
-                    <Link
-                      href={NAV_PREMIUM_HREF}
-                      className='mt-3 block w-full rounded-lg bg-examen-accent py-2.5 text-center text-sm font-semibold text-white hover:bg-examen-accentHover'
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      Découvrir les offres
-                    </Link>
-                  </div>
+                  <Link
+                    href={NAV_PREMIUM_HREF}
+                    className='block w-full rounded-lg bg-examen-accent py-2.5 text-center text-sm font-semibold text-white hover:bg-examen-accentHover'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Voir Premium
+                  </Link>
                 </div>
               ) : null}
 
               <div className='mt-auto border-t border-white/[0.06] p-4'>
                 {isLoggedIn ? (
-                  <div className='space-y-3'>
-                    <AccountMenu signOut={signOut} />
-                  </div>
+                  <AccountMenu signOut={signOut} />
                 ) : (
                   <div className='flex flex-col gap-2'>
                     <Link

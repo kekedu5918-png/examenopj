@@ -1,12 +1,8 @@
 import type { Metadata } from 'next';
 
-import type { FasciculeHomeGroup } from '@/components/home/home-fascicule-types';
 import { HomePageClient } from '@/components/home/home-page-client';
-import { DOMAIN_LABELS, fasciculesList, legislativeHighlights } from '@/data/fascicules-list';
-import type { Domain } from '@/data/fascicules-types';
+import { getInfractionsCatalog } from '@/data/recapitulatif-data';
 import { openGraphForPage } from '@/utils/seo-metadata';
-
-const DOMAIN_ORDER: { domain: Domain }[] = [{ domain: 'DPS' }, { domain: 'DPG' }, { domain: 'PROCEDURE' }];
 
 const homeTitle = 'ExamenOPJ — Révisions OPJ 2026 | Fiches, quiz, méthodologie & procédure pénale';
 const homeDescription =
@@ -20,29 +16,13 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const fasciculeGroups: FasciculeHomeGroup[] = DOMAIN_ORDER.map(({ domain }) => ({
-    domain,
-    label: DOMAIN_LABELS[domain],
-    items: fasciculesList
-      .filter((m) => {
-        if (domain === 'DPS') return m.domaine === 'DPS';
-        if (domain === 'DPG') return m.domaine === 'DPG';
-        return m.domaine === 'Procédure pénale';
-      })
-      .map((m) => ({
-        id: m.id,
-        num: m.numero,
-        title: m.titre,
-      })),
-  }));
+  const infractionPreview = getInfractionsCatalog()
+    .slice(0, 6)
+    .map((i) => ({
+      id: i.id,
+      infraction: i.infraction,
+      fascicule: i.fascicule,
+    }));
 
-  const fasciculeCount = fasciculeGroups.reduce((acc, g) => acc + g.items.length, 0);
-
-  return (
-    <HomePageClient
-      fasciculeGroups={fasciculeGroups}
-      cahier={{ titre: legislativeHighlights.titre, periode: legislativeHighlights.periode }}
-      fasciculeCount={fasciculeCount}
-    />
-  );
+  return <HomePageClient infractionPreview={infractionPreview} />;
 }

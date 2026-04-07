@@ -22,7 +22,7 @@ export default async function PostLoginPage({ searchParams = {} }: PostLoginPage
   const nextPath = safeInternalPath(searchParams.next, '/dashboard');
 
   if (!premium) {
-    redirect('/pricing');
+    redirect(nextPath);
   }
 
   if (nextPath.startsWith('/dashboard') || nextPath.startsWith('/account') || nextPath.startsWith('/manage-subscription')) {

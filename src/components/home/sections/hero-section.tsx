@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, HelpCircle } from 'lucide-react';
 
-import { WrittenExamDaysCount } from '@/components/home/hydration-safe-day-counts';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { cn } from '@/utils/cn';
 
@@ -28,59 +27,44 @@ export function HeroSection() {
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: LANDING_EASE }}
-            className='mb-6 inline-flex items-center gap-2 rounded-full border border-white/[0.1] bg-white/[0.04] px-4 py-2'
+            className='mb-6 inline-flex max-w-md flex-col gap-1 rounded-2xl border border-emerald-500/25 bg-emerald-500/[0.08] px-4 py-3 sm:flex-row sm:items-center sm:gap-3'
           >
-            <span className='h-2 w-2 shrink-0 rounded-full bg-examen-success shadow-[0_0_0_3px_rgba(34,197,94,0.25)] animate-ex-pulse-dot' aria-hidden />
-            <span className='text-sm font-medium text-examen-inkMuted'>
-              Examen juin 2026 · <WrittenExamDaysCount className='tabular-nums text-examen-ink' /> jours
+            <span className='h-2.5 w-2.5 shrink-0 rounded-full bg-emerald-400 shadow-[0_0_0_4px_rgba(52,211,153,0.25)] animate-ex-pulse-dot' aria-hidden />
+            <span className='text-sm font-semibold leading-snug text-emerald-100'>
+              Formation en cours · Mis à jour en temps réel
             </span>
           </motion.div>
 
-          <div className='space-y-1'>
-            <motion.p
-              className='text-lg font-medium tracking-tight text-examen-inkMuted md:text-xl'
-              style={{ letterSpacing: '-0.02em' }}
-              initial={MOTION_INITIAL_FOR_SEO}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.05 }}
-            >
-              Préparez votre
-            </motion.p>
+          <div className='space-y-2'>
             <motion.h1
-              className='bg-gradient-to-b from-white to-[#8888A0] bg-clip-text font-display text-5xl font-black leading-[1.05] tracking-tight text-transparent md:text-7xl lg:text-8xl'
+              className='bg-gradient-to-b from-white to-[#8888A0] bg-clip-text font-display text-4xl font-black leading-[1.1] tracking-tight text-transparent sm:text-5xl md:text-6xl lg:text-7xl'
               style={{ letterSpacing: '-0.02em' }}
               initial={MOTION_INITIAL_FOR_SEO}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.1 }}
+              transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.05 }}
             >
-              EXAMEN OPJ
+              Préparez l&apos;examen OPJ
+              <br />
+              <span className='text-white'>avec la formation réelle.</span>
             </motion.h1>
-            <motion.p
-              className='text-lg font-medium tracking-tight text-examen-inkMuted md:text-xl'
-              style={{ letterSpacing: '-0.02em' }}
-              initial={MOTION_INITIAL_FOR_SEO}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.18 }}
-            >
-              avec méthode.
-            </motion.p>
           </div>
 
           <motion.p
             className='mt-8 max-w-xl text-base leading-relaxed text-examen-inkMuted md:text-lg'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.22 }}
+            transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.12 }}
           >
-            15 modules, quiz ciblés, articulation de procédure. Tout ce qu&apos;il faut pour arriver le 11 juin prêt et
-            confiant.
+            Ce site retranscrit la formation OPJ en présentiel au fil des cours. Enquêtes types, PV conformes aux
+            fascicules, articulation, infractions — exactement ce que l&apos;examen demande, par quelqu&apos;un qui le
+            prépare.
           </motion.p>
 
           <motion.div
             className='mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.28 }}
+            transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.2 }}
           >
             <Link
               href='/signup'
@@ -93,13 +77,14 @@ export function HeroSection() {
               <ArrowRight className='size-4' aria-hidden />
             </Link>
             <Link
-              href='/cours/modules'
+              href='#enquetes-pilier'
               className={cn(
                 'inline-flex items-center justify-center gap-2 rounded-lg border border-white/[0.12] bg-transparent px-8 py-4 text-base font-semibold text-examen-ink transition focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45',
                 !reduceMotion && 'hover:bg-white/[0.05]',
               )}
             >
-              Voir le programme
+              Voir les enquêtes
+              <ArrowRight className='size-4' aria-hidden />
             </Link>
           </motion.div>
 
@@ -107,20 +92,13 @@ export function HeroSection() {
             className='mt-6 text-sm text-examen-inkMuted'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.45, delay: 0.38 }}
+            transition={{ duration: 0.45, delay: 0.28 }}
           >
             <span className='text-examen-success'>✓</span> Sans carte bancaire{' '}
             <span className='mx-2 text-white/20'>·</span>{' '}
-            <span className='text-examen-success'>✓</span> Accès immédiat
-          </motion.p>
-          <motion.p
-            className='mt-3 text-sm font-medium text-examen-ink'
-            initial={MOTION_INITIAL_FOR_SEO}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.45, delay: 0.42 }}
-          >
-            {/* TODO: brancher un compteur réel (Supabase / analytics) si disponible. */}
-            +1&nbsp;200 candidats inscrits · révisions OPJ 2026
+            <span className='text-examen-success'>✓</span> Accès immédiat{' '}
+            <span className='mx-2 text-white/20'>·</span>{' '}
+            <span className='text-examen-success'>✓</span> Session 2026
           </motion.p>
         </div>
 

@@ -332,6 +332,9 @@ function TableRow({
           <FlashcardRichText text={item.infraction} inline />
         </p>
         <div className='mt-2 flex flex-wrap gap-1.5'>
+          <span className='rounded-md border border-rose-500/35 bg-rose-500/10 px-2 py-0.5 text-[9px] font-bold uppercase text-rose-200'>
+            Épreuve 1 — Qualif.
+          </span>
           <span className='rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-bold text-[#8888A0]'>
             {item.fascicule}
           </span>

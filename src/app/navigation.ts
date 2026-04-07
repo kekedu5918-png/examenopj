@@ -1,3 +1,13 @@
+/** Navigation principale unifiée (ordre = hiérarchie des piliers). */
+export const NAV_PRIMARY_LINKS = [
+  { href: '/cours/enquetes', label: 'Enquêtes' },
+  { href: '/epreuves', label: 'Épreuves' },
+  { href: '/infractions', label: 'Infractions' },
+  { href: '/fondamentaux', label: 'Fondamentaux' },
+  { href: '/cours', label: 'Cours' },
+  { href: '/guide-revision-opj', label: 'Guide' },
+] as const;
+
 export type NavMegaChild = {
   readonly name: string;
   readonly href: string;

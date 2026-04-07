@@ -15,9 +15,10 @@ import {
 } from './fondamentaux-theme';
 import { FondamentauxCard } from './FondamentauxCard';
 import { FondamentauxCoveragePanel } from './FondamentauxCoveragePanel';
-import { type FiltreCategorie, FondamentauxFilters,type VueOrganisationFondamentaux } from './FondamentauxFilters';
+import { type FiltreCategorie, FondamentauxFilters, type VueOrganisationFondamentaux } from './FondamentauxFilters';
 import { FondamentauxHero } from './FondamentauxHero';
 import { FondamentauxPremiumGate } from './FondamentauxPremiumGate';
+import { FondamentauxStructuredIntro } from './FondamentauxStructuredIntro';
 
 interface Props {
   fiches: Fiche[];
@@ -148,6 +149,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
 
   return (
     <div className='min-h-[calc(100vh-4rem)] bg-navy-950'>
+      <FondamentauxStructuredIntro />
       <FondamentauxHero fiches={fiches} categories={categories} viewedCount={viewedIds.size} />
       <FondamentauxFilters
         fiches={fiches}

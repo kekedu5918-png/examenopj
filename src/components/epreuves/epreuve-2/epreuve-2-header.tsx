@@ -50,20 +50,17 @@ export function Epreuve2Header() {
 
       <motion.span
         variants={item}
-        className='mb-4 inline-block rounded-full border border-blue-500/20 bg-blue-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-blue-400'
+        className='mb-4 inline-block rounded-full border border-amber-500/30 bg-amber-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-wider text-amber-200'
       >
-        ÉPREUVE 2
+        La plus technique · La plus décisive
       </motion.span>
 
-      <motion.h1
-        variants={item}
-        className='font-display text-5xl font-bold text-white md:text-6xl'
-      >
-        PROCÉDURE PÉNALE
+      <motion.h1 variants={item} className='font-display text-4xl font-bold text-white md:text-5xl'>
+        Épreuve 2 — Procédure pénale (4 heures)
       </motion.h1>
 
       <motion.p variants={item} className='mt-3 text-xl text-gray-400'>
-        Articulation de procédure, PV & Rapport de synthèse
+        Rédaction de PV · Articulation de procédure · Rapport de synthèse
       </motion.p>
 
       <motion.div variants={item} className='mt-8'>
