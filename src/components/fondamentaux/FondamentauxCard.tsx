@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AlertTriangle, BookMarked, Table2, Target } from 'lucide-react';
+import { AlertTriangle, BookMarked, Clock, Table2, Target } from 'lucide-react';
 
 import type { Fiche } from '@/data/fondamentaux-data';
 import type { FasciculeDomaineMeta } from '@/data/fondamentaux-types';
@@ -16,6 +16,8 @@ interface Props {
   categorieLabel: string;
   couleurKey: string;
   index: number;
+  /** Temps de lecture estimé (minutes). */
+  estimatedMinutes?: number;
   /** Fiche derrière le gate premium : pas de lien. */
   locked?: boolean;
 }
@@ -63,7 +65,14 @@ const cardClass = (c: (typeof COULEURS)['emerald'], locked: boolean | undefined)
     !locked && c.borderHover,
   );
 
-export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, locked = false }: Props) {
+export function FondamentauxCard({
+  fiche,
+  categorieLabel,
+  couleurKey,
+  index,
+  estimatedMinutes,
+  locked = false,
+}: Props) {
   const c = COULEURS[couleurKey] ?? COULEURS.emerald;
   const alertCount = fiche.regles.filter((r) => r.alerte).length;
   const repères = countRepères(fiche);
@@ -108,6 +117,13 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
         {fiche.titre}
       </h3>
       <p className='line-clamp-2 text-sm leading-relaxed text-slate-400'>{fiche.accroche}</p>
+
+      {estimatedMinutes != null ? (
+        <p className='mt-3 inline-flex items-center gap-1.5 text-[11px] font-medium text-slate-500'>
+          <Clock className='h-3.5 w-3.5 shrink-0 opacity-80' aria-hidden />
+          ≈ {estimatedMinutes} min de lecture
+        </p>
+      ) : null}
 
       <div className='mt-4 flex flex-wrap items-center gap-2'>
         <span

@@ -47,6 +47,20 @@ export type Fascicule = {
   notionsCles?: string[];
 };
 
+export type QuizCadreEnquete = 'flagrance' | 'preliminaire' | 'cr' | 'transversal';
+
+export type QuizEnqueteCode =
+  | 'alpha'
+  | 'bravo'
+  | 'charlie'
+  | 'delta'
+  | 'echo'
+  | 'foxtrot'
+  | 'golf'
+  | 'india'
+  | 'accident'
+  | 'patrimoniale';
+
 export type QuizQuestion = {
   id: string;
   question: string;
@@ -60,4 +74,10 @@ export type QuizQuestion = {
    * (synonymes, « art. » vs « article », abréviations courantes).
    */
   hardcoreAliases?: string[];
+  /** Ciblage pédagogique — filtrage quiz par épreuve. */
+  epreuveCible?: 1 | 2 | 3;
+  cadreEnquete?: QuizCadreEnquete;
+  enqueteCode?: QuizEnqueteCode;
+  /** Lien vers rubrique fondamentaux (`/fondamentaux/[id]`). */
+  fondamentalSlug?: string;
 };

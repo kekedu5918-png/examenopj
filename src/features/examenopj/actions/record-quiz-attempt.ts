@@ -10,6 +10,8 @@ export type RecordQuizAttemptInput = {
   mode: 'global' | 'fascicule' | 'module' | 'domain';
   fasciculeNum?: number | null;
   domainKey?: string | null;
+  /** Résumé des filtres métier (stocké en `domain_key` côté base si le mode n’est pas « domaine »). */
+  filterContext?: string | null;
   score: number;
   total: number;
   percent: number;
@@ -28,11 +30,16 @@ export async function recordQuizAttempt(input: RecordQuizAttemptInput): Promise<
 
   const dbMode = input.mode === 'module' ? 'fascicule' : input.mode;
 
+  const domainKeyResolved =
+    input.mode === 'domain'
+      ? (input.domainKey ?? null)
+      : (input.filterContext ?? input.domainKey ?? null);
+
   const row: QuizAttemptInsert = {
     user_id: user.id,
     mode: dbMode,
     fascicule_num: input.fasciculeNum ?? null,
-    domain_key: input.domainKey ?? null,
+    domain_key: domainKeyResolved,
     score: input.score,
     total: input.total,
     percent: Math.round(input.percent * 100) / 100,

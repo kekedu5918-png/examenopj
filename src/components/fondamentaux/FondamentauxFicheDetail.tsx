@@ -2,7 +2,8 @@ import Link from 'next/link';
 import { AlertTriangle, BookOpen, ListChecks, Target } from 'lucide-react';
 
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
-import { getReperesSommaireForModuleId, quizHrefForFasciculeId } from '@/data/fondamentaux-fascicule-reperes';
+import { getReperesSommaireForModuleId } from '@/data/fondamentaux-fascicule-reperes';
+import { getEstimatedMinutesForFiche, resolveQuizHrefForFiche } from '@/data/fondamentaux-quiz-href';
 import { cn } from '@/utils/cn';
 
 import { COULEURS, DRAWER_MODULE_BTN } from './fondamentaux-theme';
@@ -51,11 +52,27 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
   const titleId = `fondamentaux-fiche-title-${fiche.id}`;
   const isPage = variant === 'page';
   const reperesSommaire = getReperesSommaireForModuleId(fiche.fasciculeId);
-  const quizHref = fiche.lienQuiz ?? (fiche.fasciculeId ? quizHrefForFasciculeId(fiche.fasciculeId) : null);
+  const quizHref = resolveQuizHrefForFiche(fiche);
   const bref = enBrefLines(fiche);
+  const readingMinutes = getEstimatedMinutesForFiche(fiche);
 
-  return (
-    <article aria-labelledby={titleId} className={cn(isPage && 'pb-12')}>
+  const tocItems: { href: string; label: string }[] = [];
+  if (bref.length) tocItems.push({ href: '#fond-bref', label: 'En bref' });
+  if (reperesSommaire?.parties.length) tocItems.push({ href: '#fond-reperes', label: 'Sommaire F' });
+  if (fiche.piegesExamen?.length) tocItems.push({ href: '#fond-pieges', label: 'Pièges' });
+  if (fiche.cles?.length) tocItems.push({ href: '#fond-retenir', label: 'À retenir' });
+  if (fiche.blocsDetail?.length) tocItems.push({ href: '#fond-synthese', label: 'Synthèse' });
+  if (fiche.regles.length > 0) tocItems.push({ href: '#fond-regles', label: 'Points clés' });
+  if (fiche.tableau) tocItems.push({ href: '#fond-tableau', label: 'Tableau' });
+
+  const quizShortHref = quizHref
+    ? quizHref.includes('?')
+      ? `${quizHref}&limit=5`
+      : `${quizHref}?limit=5`
+    : null;
+
+  const body = (
+    <article aria-labelledby={titleId} className={cn(isPage && 'pb-12', 'min-w-0 flex-1')}>
       <header
         className={cn(
           'border-b border-white/10 pb-8',
@@ -87,6 +104,11 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
               {fiche.titre}
             </h1>
             <p className='mt-3 font-mono text-sm text-slate-500'>{fiche.source}</p>
+            {isPage ? (
+              <p className='mt-3 text-xs text-slate-500'>
+                Temps de lecture estimé : <span className='font-semibold text-slate-300'>≈ {readingMinutes} min</span>
+              </p>
+            ) : null}
           </div>
         </div>
       </header>
@@ -149,7 +171,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {bref.length ? (
-        <section className='mb-10' aria-label='En bref'>
+        <section id='fond-bref' className='mb-10 scroll-mt-28' aria-label='En bref'>
           <div className='mb-4 flex flex-wrap items-center gap-2'>
             <span className='flex h-8 w-8 items-center justify-center rounded-lg border border-emerald-500/35 bg-emerald-500/10 text-emerald-300' aria-hidden>
               <Target className='h-4 w-4' strokeWidth={1.75} />
@@ -179,7 +201,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {reperesSommaire?.parties.length ? (
-        <section className='mb-12' aria-label='Parties du sommaire officiel (repère)'>
+        <section id='fond-reperes' className='mb-12 scroll-mt-28' aria-label='Parties du sommaire officiel (repère)'>
           <p className='mb-4 text-xs leading-relaxed text-slate-500'>
             Liste de repère issue du <strong className='font-medium text-slate-400'>sommaire type</strong> du fascicule (titres de
             chapitres, pas le corps du texte). À recouper avec votre support officiel et Légifrance.
@@ -204,7 +226,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {fiche.piegesExamen?.length ? (
-        <section className='mb-12' aria-label="Pièges d'examen">
+        <section id='fond-pieges' className='mb-12 scroll-mt-28' aria-label="Pièges d'examen">
           <div className='mb-5 flex flex-wrap items-center gap-2'>
             <span className='flex h-8 w-8 items-center justify-center rounded-lg border border-rose-500/35 bg-rose-500/10 text-rose-200' aria-hidden>
               <AlertTriangle className='h-4 w-4' strokeWidth={1.75} />
@@ -227,7 +249,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {fiche.cles?.length ? (
-        <section className='mb-12' aria-label='À retenir'>
+        <section id='fond-retenir' className='mb-12 scroll-mt-28' aria-label='À retenir'>
           <div className='mb-5 flex flex-wrap items-center gap-2'>
             <span className='flex h-8 w-8 items-center justify-center rounded-lg border border-gold-500/35 bg-gold-500/10 text-gold-200' aria-hidden>
               <ListChecks className='h-4 w-4' strokeWidth={1.75} />
@@ -250,7 +272,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {fiche.blocsDetail?.length ? (
-        <section className='mb-12' aria-label='Synthèse détaillée'>
+        <section id='fond-synthese' className='mb-12 scroll-mt-28' aria-label='Synthèse détaillée'>
           <div className='mb-6 flex flex-wrap items-center gap-2'>
             <span className='flex h-8 w-8 items-center justify-center rounded-lg border border-white/15 bg-white/[0.06] text-slate-300' aria-hidden>
               <BookOpen className='h-4 w-4' strokeWidth={1.75} />
@@ -298,7 +320,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {fiche.regles.length > 0 ? (
-        <section className='mb-12' aria-label='Points clés'>
+        <section id='fond-regles' className='mb-12 scroll-mt-28' aria-label='Points clés'>
           <h2 className='mb-6 text-xs font-bold uppercase tracking-[0.22em] text-slate-500'>
             Règles et points clés
           </h2>
@@ -345,7 +367,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       ) : null}
 
       {fiche.tableau ? (
-        <section className='mb-12' aria-label='Tableau comparatif'>
+        <section id='fond-tableau' className='mb-12 scroll-mt-28' aria-label='Tableau comparatif'>
           <h2 className='mb-5 text-xs font-bold uppercase tracking-[0.22em] text-slate-500'>
             Tableau comparatif
           </h2>
@@ -365,6 +387,16 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
           Aller plus loin
         </p>
         <div className='flex flex-col gap-3 sm:flex-row sm:flex-wrap'>
+          {quizShortHref ? (
+            <Link
+              href={quizShortHref}
+              className={cn(
+                'inline-flex flex-1 items-center justify-center rounded-xl border border-emerald-500/40 bg-emerald-500/10 px-5 py-3.5 text-sm font-semibold text-emerald-100 transition-colors hover:bg-emerald-500/20 sm:min-w-[200px]',
+              )}
+            >
+              5 QCM sur ce thème →
+            </Link>
+          ) : null}
           {quizHref ? (
             <Link
               href={quizHref}
@@ -373,7 +405,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
                 c.outlineBtn,
               )}
             >
-              Quiz sur ce thème →
+              Quiz complet (toutes questions) →
             </Link>
           ) : null}
           {fiche.lienModule && fiche.fasciculeNumero == null ? (
@@ -396,5 +428,40 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
         </div>
       </footer>
     </article>
+  );
+
+  if (!isPage || tocItems.length === 0) {
+    return body;
+  }
+
+  return (
+    <div className='flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-10'>
+      <aside className='hidden shrink-0 lg:sticky lg:top-28 lg:block lg:w-52'>
+        <nav
+          aria-label='Sur cette page'
+          className='rounded-xl border border-white/10 bg-[#0b1118]/90 p-4 shadow-lg shadow-black/20'
+        >
+          <p className='mb-3 text-[10px] font-bold uppercase tracking-wider text-slate-500'>Sur cette page</p>
+          <ul className='space-y-2 text-sm'>
+            {tocItems.map((item) => (
+              <li key={item.href}>
+                <a href={item.href} className='text-slate-400 transition hover:text-emerald-200'>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          {quizShortHref ? (
+            <Link
+              href={quizShortHref}
+              className='mt-4 flex w-full items-center justify-center rounded-lg border border-emerald-500/35 bg-emerald-500/10 px-3 py-2 text-center text-xs font-semibold text-emerald-100 hover:bg-emerald-500/20'
+            >
+              5 QCM
+            </Link>
+          ) : null}
+        </nav>
+      </aside>
+      {body}
+    </div>
   );
 }

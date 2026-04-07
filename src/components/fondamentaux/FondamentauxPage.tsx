@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { useToast } from '@/components/ui/use-toast';
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
 import { groupFichesByProgramme } from '@/data/fondamentaux-display-order';
+import { getEstimatedMinutesForFiche } from '@/data/fondamentaux-quiz-href';
 import { cn } from '@/utils/cn';
 
 import {
@@ -124,6 +125,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
             categorieLabel={cat.label}
             couleurKey={cat.couleur}
             index={index}
+            estimatedMinutes={getEstimatedMinutesForFiche(fi)}
             locked
           />
         </FondamentauxPremiumGate>
@@ -136,6 +138,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
         categorieLabel={cat.label}
         couleurKey={cat.couleur}
         index={index}
+        estimatedMinutes={getEstimatedMinutesForFiche(fi)}
       />
     );
   };

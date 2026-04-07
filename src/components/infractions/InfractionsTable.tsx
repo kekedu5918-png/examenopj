@@ -53,8 +53,8 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
         const pa = PRIORITE_ORDER[(a.priorite ?? 'secours') as RecapPriorite];
         const pb = PRIORITE_ORDER[(b.priorite ?? 'secours') as RecapPriorite];
         if (pa !== pb) return (pa - pb) * dir;
-        const fasc = a.fascicule.localeCompare(b.fascicule, 'fr');
-        if (fasc !== 0) return fasc * dir;
+        const th = a.groupTitle.localeCompare(b.groupTitle, 'fr');
+        if (th !== 0) return th * dir;
         return stripMdBold(a.infraction).localeCompare(stripMdBold(b.infraction), 'fr') * dir;
       }
       if (sortKey === 'nom') {
@@ -72,7 +72,6 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
   const exportCsv = useCallback(() => {
     const header = [
       'INFRACTION',
-      'FASCICULE',
       'THEME',
       'ARTICLE',
       'ELEMENT_MATERIEL_CONDENSE',
@@ -84,7 +83,6 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
       const esc = (s: string) => `"${s.replace(/"/g, '""')}"`;
       return [
         esc(stripMdBold(r.infraction)),
-        r.fascicule,
         esc(r.groupTitle),
         esc(r.legal),
         esc(condenseMaterielKeys(r.materiel)),
@@ -172,7 +170,7 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
         />
         <p className='mb-2 text-center text-[10px] text-[#8888A0] md:hidden'>← faites glisser →</p>
         <div className='overflow-x-auto rounded-xl border border-white/[0.08]'>
-          <table role='grid' className='w-full min-w-[1120px] border-collapse text-left'>
+          <table role='grid' className='w-full min-w-[1000px] border-collapse text-left'>
             <thead>
               <tr className='border-b border-white/[0.08] bg-[#16161F]'>
                 <th scope='col' className='w-[118px] min-w-[118px] px-2 py-3 text-xs font-semibold uppercase tracking-wider text-[#8888A0]'>
@@ -334,9 +332,6 @@ function TableRow({
         <div className='mt-2 flex flex-wrap gap-1.5'>
           <span className='rounded-md border border-rose-500/35 bg-rose-500/10 px-2 py-0.5 text-[9px] font-bold uppercase text-rose-200'>
             Épreuve 1 — Qualif.
-          </span>
-          <span className='rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-bold text-[#8888A0]'>
-            {item.fascicule}
           </span>
           <span className='max-w-full truncate rounded-md border border-[#4F6EF7]/30 bg-[#4F6EF7]/10 px-2 py-0.5 text-[10px] font-semibold text-[#4F6EF7]'>
             {item.groupTitle}

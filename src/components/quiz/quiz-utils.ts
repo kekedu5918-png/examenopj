@@ -1,4 +1,4 @@
-import { type QuizQuestion } from '@/data/types';
+import { type QuizCadreEnquete, type QuizEnqueteCode, type QuizQuestion } from '@/data/types';
 
 export type QuizMode = 'global' | 'fascicule' | 'module' | 'domain';
 
@@ -56,12 +56,61 @@ export function filterQuestions(
   return pool.filter(isValidQuizQuestion);
 }
 
+export type QuizTaxonomyFilter = {
+  epreuve?: 1 | 2 | 3;
+  cadreEnquete?: QuizCadreEnquete;
+  enqueteCode?: QuizEnqueteCode | string;
+  fondamentalSlug?: string;
+};
+
+/** Filtre les questions selon les métadonnées optionnelles (ET logique sur les dimensions renseignées). */
+export function applyTaxonomyFilter(
+  pool: QuizQuestion[],
+  tax: Partial<QuizTaxonomyFilter> | null | undefined
+): QuizQuestion[] {
+  if (!tax) return pool;
+  const hasE = tax.epreuve != null;
+  const hasC = tax.cadreEnquete != null;
+  const hasEn = tax.enqueteCode != null && tax.enqueteCode !== '';
+  const hasF = tax.fondamentalSlug != null && tax.fondamentalSlug !== '';
+
+  if (!hasE && !hasC && !hasEn && !hasF) return pool;
+
+  return pool.filter((q) => {
+    if (hasE) {
+      if (q.epreuveCible != null && q.epreuveCible !== tax.epreuve) return false;
+    }
+    if (hasC) {
+      if (q.cadreEnquete != null && q.cadreEnquete !== tax.cadreEnquete) return false;
+    }
+    if (hasEn) {
+      if (q.enqueteCode != null && q.enqueteCode !== tax.enqueteCode) return false;
+    }
+    if (hasF) {
+      if (q.fondamentalSlug != null && q.fondamentalSlug !== tax.fondamentalSlug) return false;
+    }
+    return true;
+  });
+}
+
+export function serializeQuizFilterContext(tax: Partial<QuizTaxonomyFilter> | null | undefined): string | null {
+  if (!tax) return null;
+  const parts: string[] = [];
+  if (tax.epreuve != null) parts.push(`ep=${tax.epreuve}`);
+  if (tax.cadreEnquete) parts.push(`cad=${tax.cadreEnquete}`);
+  if (tax.enqueteCode) parts.push(`enq=${tax.enqueteCode}`);
+  if (tax.fondamentalSlug) parts.push(`fond=${tax.fondamentalSlug}`);
+  if (parts.length === 0) return null;
+  return `quizctx:${parts.join('|')}`;
+}
+
 export function applyQuestionLimit(
   questions: QuizQuestion[],
-  limit: 10 | 20 | 30 | 'all'
+  limit: 10 | 20 | 30 | 'all' | number
 ): QuizQuestion[] {
   if (limit === 'all') return questions;
-  return questions.slice(0, Math.min(limit, questions.length));
+  const n = typeof limit === 'number' ? Math.min(200, Math.max(1, Math.floor(limit))) : limit;
+  return questions.slice(0, Math.min(n, questions.length));
 }
 
 export type QuizAnswerMode = 'mcq' | 'hardcore';

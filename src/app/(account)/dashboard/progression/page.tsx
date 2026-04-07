@@ -12,6 +12,9 @@ function formatQuizMode(row: { mode: string; fascicule_num: number | null; domai
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
     return `Thème F${String(row.fascicule_num).padStart(2, '0')}`;
   }
+  if (row.domain_key?.startsWith('quizctx:')) {
+    return `Filtres : ${row.domain_key.slice('quizctx:'.length)}`;
+  }
   if (row.mode === 'domain' && row.domain_key) {
     return `Domaine : ${row.domain_key}`;
   }

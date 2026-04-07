@@ -4,14 +4,15 @@ import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, Sparkles, X } from 'lucide-react';
+import { ChevronDown, Menu, Sparkles, X } from 'lucide-react';
 
-import { NAV_PREMIUM_HREF, NAV_PRIMARY_LINKS } from '@/app/navigation';
+import { NAV_GROUPS, NAV_PREMIUM_HREF } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import { UrgencyBanner } from '@/components/layout/UrgencyBanner';
+import { GlobalSearch } from '@/components/search/GlobalSearch';
 import { useScrollPosition } from '@/hooks/use-scroll-position';
 import { ActionResponse } from '@/types/action-response';
 import { cn } from '@/utils/cn';
@@ -110,19 +111,52 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
             </span>
           </Link>
 
-          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-0.5 overflow-x-auto lg:flex xl:gap-1'>
-            {NAV_PRIMARY_LINKS.map((item) => {
-              const active = isActivePath(pathname, item.href);
+          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-1 overflow-x-auto lg:flex xl:gap-2'>
+            {NAV_GROUPS.map((group) => {
+              const groupActive = group.links.some((l) => isActivePath(pathname, l.href));
               return (
-                <Link key={item.href} href={item.href} className={navLinkClass(active)}>
-                  {item.label}
-                  {active ? <ActiveDot /> : null}
-                </Link>
+                <div key={group.id} className='group/navdrop relative'>
+                  <button
+                    type='button'
+                    className={cn(navLinkClass(groupActive), 'inline-flex items-center gap-1')}
+                    aria-expanded={false}
+                    aria-haspopup='menu'
+                  >
+                    {group.label}
+                    <ChevronDown className='h-3.5 w-3.5 opacity-70 transition group-hover/navdrop:rotate-180' aria-hidden />
+                    {groupActive ? <ActiveDot /> : null}
+                  </button>
+                  <div
+                    role='menu'
+                    className='invisible absolute left-0 top-full z-[60] min-w-[240px] pt-2 opacity-0 transition-[opacity,visibility] duration-150 group-hover/navdrop:visible group-hover/navdrop:opacity-100 group-focus-within/navdrop:visible group-focus-within/navdrop:opacity-100'
+                  >
+                    <div className='rounded-xl border border-white/[0.08] bg-examen-raised/95 py-2 shadow-xl shadow-black/40 backdrop-blur-md'>
+                      {group.links.map((item) => {
+                        const active = isActivePath(pathname, item.href);
+                        return (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            role='menuitem'
+                            className={cn(
+                              'block px-4 py-2.5 text-sm transition-colors',
+                              active ? 'bg-white/[0.06] text-examen-accent' : 'text-examen-ink hover:bg-white/[0.04]',
+                            )}
+                          >
+                            {item.label}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
               );
             })}
           </nav>
 
-          <div className='hidden shrink-0 items-center gap-2 lg:flex'>
+          <div className='flex shrink-0 items-center gap-2'>
+            <GlobalSearch />
+            <div className='hidden items-center gap-2 lg:flex'>
             {!isPremium ? (
               <Link
                 href={NAV_PREMIUM_HREF}
@@ -161,9 +195,9 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 </Link>
               </>
             )}
-          </div>
+            </div>
 
-          <div className='flex items-center gap-2 lg:hidden'>
+            <div className='flex items-center gap-2 lg:hidden'>
             {!isPremium ? (
               <Link
                 href={NAV_PREMIUM_HREF}
@@ -183,6 +217,7 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
             >
               <Menu className='h-6 w-6' />
             </button>
+            </div>
           </div>
         </div>
       </motion.header>
@@ -222,15 +257,27 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 </button>
               </div>
               <nav className='flex flex-1 flex-col overflow-y-auto px-2 py-4' aria-label='Navigation mobile'>
-                {NAV_PRIMARY_LINKS.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className='border-b border-white/[0.06] px-3 py-3 text-sm font-medium text-examen-ink hover:bg-white/[0.04]'
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
+                {NAV_GROUPS.map((group) => (
+                  <details key={group.id} className='group border-b border-white/[0.06] last:border-b-0'>
+                    <summary className='cursor-pointer list-none px-3 py-3 text-sm font-semibold text-white marker:content-none [&::-webkit-details-marker]:hidden'>
+                      <span className='flex items-center justify-between'>
+                        {group.label}
+                        <ChevronDown className='h-4 w-4 shrink-0 transition group-open:rotate-180' aria-hidden />
+                      </span>
+                    </summary>
+                    <div className='border-t border-white/[0.04] pb-2 pt-1'>
+                      {group.links.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className='block px-5 py-2.5 text-sm text-examen-inkMuted hover:bg-white/[0.04] hover:text-white'
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </details>
                 ))}
               </nav>
 

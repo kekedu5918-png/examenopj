@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { EnqueteHub } from '@/components/enquetes/EnqueteHub';
+import { EnquetesParOuCommencer } from '@/components/enquetes/EnquetesParOuCommencer';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -28,9 +29,11 @@ export default function EnquetesHubPage() {
           badge='CONCOURS'
           badgeClassName='bg-violet-500/20 text-violet-200'
           title='Enquêtes — cœur du parcours'
-          subtitle='Chaque fiche relie le scénario à l’épreuve 2 (articulation, PV, rapport). Filtrez par cadre procédural ; Alpha reste l’exemple complet gratuit.'
+          subtitle='Chaque fiche relie le scénario à l’épreuve 2 (articulation, PV, rapport). Filtrez d’abord par niveau, puis par cadre ; Alpha reste l’exemple complet gratuit.'
           className='mb-6'
         />
+
+        <EnquetesParOuCommencer enquetes={ENQUETES} />
 
         <GlassCard className='mb-10 space-y-4 p-6' padding=''>
           <p className='font-display text-sm font-bold text-white'>Pourquoi c’est le socle « n°1 »</p>

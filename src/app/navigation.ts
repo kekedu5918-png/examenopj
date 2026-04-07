@@ -1,4 +1,4 @@
-/** Navigation principale unifiée (ordre = hiérarchie des piliers). */
+/** @deprecated Préférer `NAV_GROUPS` — navigation groupée Réviser / S’entraîner / Épreuves. */
 export const NAV_PRIMARY_LINKS = [
   { href: '/cours/enquetes', label: 'Enquêtes' },
   { href: '/epreuves', label: 'Épreuves' },
@@ -6,6 +6,55 @@ export const NAV_PRIMARY_LINKS = [
   { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours', label: 'Cours' },
   { href: '/guide-revision-opj', label: 'Guide' },
+] as const;
+
+export type NavGroupLink = { readonly href: string; readonly label: string };
+
+export type NavGroup = {
+  readonly id: 'reviser' | 'entrainer' | 'epreuves';
+  readonly label: string;
+  readonly links: readonly NavGroupLink[];
+};
+
+/** Barre principale : 3 piliers (URLs inchangées). */
+export const NAV_GROUPS: readonly NavGroup[] = [
+  {
+    id: 'reviser',
+    label: 'Réviser',
+    links: [
+      { href: '/preparation', label: 'Ma préparation' },
+      { href: '/cours', label: 'Hub cours' },
+      { href: '/cours/modules', label: 'Modules F01–F15' },
+      { href: '/fondamentaux', label: 'Fondamentaux' },
+      { href: '/infractions', label: 'Infractions' },
+      { href: '/guide-revision-opj', label: 'Guide de révision' },
+    ],
+  },
+  {
+    id: 'entrainer',
+    label: 'S’entraîner',
+    links: [
+      { href: '/cours/enquetes', label: 'Enquêtes' },
+      { href: '/quiz', label: 'Quiz' },
+      { href: '/flashcards', label: 'Flashcards' },
+      { href: '/entrainement/articulation', label: 'Articulation' },
+      { href: '/cours/modeles-pv', label: 'Modèles de PV' },
+      { href: '/entrainement/redaction-pv', label: 'Rédaction PV' },
+      { href: '/entrainement/rapport-synthese', label: 'Rapport de synthèse' },
+      { href: '/entrainement', label: 'Hub entraînement' },
+    ],
+  },
+  {
+    id: 'epreuves',
+    label: 'Épreuves',
+    links: [
+      { href: '/epreuves', label: 'Vue d’ensemble' },
+      { href: '/epreuves/epreuve-1', label: 'Épreuve 1 — DPG / DPS' },
+      { href: '/epreuves/epreuve-2', label: 'Épreuve 2 — Procédure' },
+      { href: '/epreuves/epreuve-3', label: 'Épreuve 3 — Oral' },
+      { href: '/sujets-blancs', label: 'Sujets blancs' },
+    ],
+  },
 ] as const;
 
 export type NavMegaChild = {

@@ -1,15 +1,24 @@
 import Link from 'next/link';
 
+import { MaPreparationHub } from '@/components/preparation/MaPreparationHub';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { fasciculesList, getCourseModuleById } from '@/data/fascicules-list';
 import { getSession } from '@/features/account/controllers/get-session';
-import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/examenopj/controllers/get-dashboard-data';
+import {
+  getModules,
+  getQuizAttemptsCount,
+  getRecentQuizAttempts,
+  getRevisionStats,
+} from '@/features/examenopj/controllers/get-dashboard-data';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
     return `F${String(row.fascicule_num).padStart(2, '0')}`;
+  }
+  if (row.domain_key?.startsWith('quizctx:')) {
+    return `Filtres ${row.domain_key.slice('quizctx:'.length)}`;
   }
   if (row.mode === 'domain' && row.domain_key) return row.domain_key;
   if (row.mode === 'global') return 'Global';
@@ -23,9 +32,14 @@ function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number |
 
 export default async function DashboardPage() {
   const session = await getSession();
-  const [modules, revisionStats, recentAttempts] = session
-    ? await Promise.all([getModules(), getRevisionStats(session.user.id), getRecentQuizAttempts(session.user.id, 1)])
-    : await Promise.all([getModules(), Promise.resolve(null), Promise.resolve([])]);
+  const [modules, revisionStats, recentAttempts, quizAttemptsTotal] = session
+    ? await Promise.all([
+        getModules(),
+        getRevisionStats(session.user.id),
+        getRecentQuizAttempts(session.user.id, 1),
+        getQuizAttemptsCount(session.user.id),
+      ])
+    : await Promise.all([getModules(), Promise.resolve(null), Promise.resolve([]), Promise.resolve(0)]);
 
   const lastAttempt = recentAttempts[0] ?? null;
   const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
@@ -33,6 +47,49 @@ export default async function DashboardPage() {
 
   return (
     <section className='space-y-6 rounded-xl bg-slate-950 p-6'>
+      <MaPreparationHub variant='compact' className='mb-2' />
+      <p className='text-xs text-slate-500'>
+        Vue étendue :{' '}
+        <Link href='/preparation' className='text-violet-400 hover:underline'>
+          page Ma préparation
+        </Link>
+        .
+      </p>
+
+      {session && quizAttemptsTotal > 0 ? (
+        <Card className='border border-slate-700/80 bg-slate-900/50'>
+          <CardHeader className='pb-2'>
+            <CardTitle className='text-slate-100'>Jalons (activité récente)</CardTitle>
+            <CardDescription className='text-slate-400'>
+              Repères légers basés sur vos sessions enregistrées — pas une note, un cap à franchir.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className='space-y-2 text-sm text-slate-300'>
+            {quizAttemptsTotal >= 5 ? (
+              <p className='flex items-center gap-2'>
+                <span className='text-lg' aria-hidden>
+                  ✓
+                </span>
+                Au moins cinq séries de quiz enregistrées sur votre compte — continuez la régularité.
+              </p>
+            ) : (
+              <p className='text-slate-400'>
+                Encore {5 - quizAttemptsTotal} session{5 - quizAttemptsTotal > 1 ? 's' : ''} pour le jalon « 5 quiz
+                enregistrés ».
+              </p>
+            )}
+            {revisionStats && revisionStats.mastered >= 3 ? (
+              <p className='flex items-center gap-2'>
+                <span className='text-lg' aria-hidden>
+                  ✓
+                </span>
+                {revisionStats.mastered} thèmes marqués comme maîtrisés en révision.
+              </p>
+            ) : null}
+          </CardContent>
+        </Card>
+      ) : null}
+
       <header>
         <div className='flex flex-wrap items-center gap-2'>
           <h1 className='text-3xl font-bold text-slate-50'>Bienvenue sur ExamenOPJ</h1>

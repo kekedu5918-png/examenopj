@@ -10,6 +10,8 @@ import { cn } from '@/utils/cn';
 
 export type EnqueteCadreFiltre = 'tous' | 'flagrance' | 'preliminaire' | 'changement' | 'transversal';
 
+export type EnqueteNiveauFiltre = 'tous' | 'debutant' | 'intermediaire' | 'avance';
+
 function inferCadreFiltre(cadre: string): Exclude<EnqueteCadreFiltre, 'tous'> {
   const c = cadre.toLowerCase();
   if (c.includes('transversal')) return 'transversal';
@@ -53,6 +55,13 @@ function CadreBadge({ cadre }: { cadre: string }) {
   );
 }
 
+const FILTRES_NIVEAU: { id: EnqueteNiveauFiltre; label: string }[] = [
+  { id: 'tous', label: 'Tous niveaux' },
+  { id: 'debutant', label: 'Débutant' },
+  { id: 'intermediaire', label: 'Intermédiaire' },
+  { id: 'avance', label: 'Avancé' },
+];
+
 const FILTRES: { id: EnqueteCadreFiltre; label: string }[] = [
   { id: 'tous', label: 'Tous les cadres' },
   { id: 'flagrance', label: 'Flagrance' },
@@ -61,32 +70,66 @@ const FILTRES: { id: EnqueteCadreFiltre; label: string }[] = [
   { id: 'transversal', label: 'Transversal' },
 ];
 
+function ordreTri(e: EnqueteMeta): number {
+  return e.ordrePedagogique ?? 999;
+}
+
 export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
+  const [filtreNiveau, setFiltreNiveau] = useState<EnqueteNiveauFiltre>('tous');
   const [filtre, setFiltre] = useState<EnqueteCadreFiltre>('tous');
 
   const list = useMemo(() => {
-    if (filtre === 'tous') return enquetes;
-    return enquetes.filter((e) => inferCadreFiltre(e.cadre) === filtre);
-  }, [enquetes, filtre]);
+    let next = enquetes;
+    if (filtreNiveau !== 'tous') {
+      next = next.filter((e) => e.niveau === filtreNiveau);
+    }
+    if (filtre !== 'tous') {
+      next = next.filter((e) => inferCadreFiltre(e.cadre) === filtre);
+    }
+    return [...next].sort((a, b) => ordreTri(a) - ordreTri(b));
+  }, [enquetes, filtre, filtreNiveau]);
 
   return (
     <div className='space-y-8'>
-      <div className='flex flex-wrap gap-2'>
-        {FILTRES.map((f) => (
-          <button
-            key={f.id}
-            type='button'
-            onClick={() => setFiltre(f.id)}
-            className={cn(
-              'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
-              filtre === f.id
-                ? 'border-violet-500/50 bg-violet-500/15 text-violet-100'
-                : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
-            )}
-          >
-            {f.label}
-          </button>
-        ))}
+      <div>
+        <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500'>Niveau</p>
+        <div className='flex flex-wrap gap-2'>
+          {FILTRES_NIVEAU.map((f) => (
+            <button
+              key={f.id}
+              type='button'
+              onClick={() => setFiltreNiveau(f.id)}
+              className={cn(
+                'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
+                filtreNiveau === f.id
+                  ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-100'
+                  : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
+              )}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div>
+        <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500'>Cadre procédural</p>
+        <div className='flex flex-wrap gap-2'>
+          {FILTRES.map((f) => (
+            <button
+              key={f.id}
+              type='button'
+              onClick={() => setFiltre(f.id)}
+              className={cn(
+                'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
+                filtre === f.id
+                  ? 'border-violet-500/50 bg-violet-500/15 text-violet-100'
+                  : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
+              )}
+            >
+              {f.label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {list.length === 0 ? (
@@ -129,6 +172,11 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     </Link>
                   </h2>
                   <p className='mt-2 line-clamp-3 text-sm text-gray-400'>{e.resume}</p>
+                  {e.prerequis ? (
+                    <p className='mt-3 rounded-lg border border-white/10 bg-white/[0.02] px-3 py-2 text-xs leading-relaxed text-gray-400'>
+                      <span className='font-semibold text-gray-300'>Prérequis :</span> {e.prerequis}
+                    </p>
+                  ) : null}
                   {!isPedago ? (
                     <p className='mt-4 text-xs text-gray-500'>
                       {e.documents.length} document{e.documents.length > 1 ? 's' : ''} (PDF + fac-similé)

@@ -51,6 +51,12 @@ export type EnqueteMeta = {
   contenuMode?: EnqueteContenuMode;
   /** Sous-titre pédagogique (home / frise). */
   themeCourt?: string;
+  /** Parcours guidé : ordre suggéré (1 = commencer ici). */
+  ordrePedagogique?: number;
+  /** Niveau pour filtrage prioritaire sur la page hub. */
+  niveau?: 'debutant' | 'intermediaire' | 'avance';
+  /** Texte court : avoir lu X, notions Y. */
+  prerequis?: string;
   liensModules?: { href: string; label: string }[];
   /** Bullets « ce que l’épreuve 2 teste » sur les fiches pedago. */
   objectifsEpreuve2?: string[];
