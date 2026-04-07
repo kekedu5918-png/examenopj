@@ -13,6 +13,7 @@ import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
 import { getEnquetesLinkedToModule } from '@/data/enquetes-by-module';
 import { COURSE_MODULE_IDS, getCourseModuleById } from '@/data/fascicules-list';
 import { getFondamentauxLinksForCourseModule } from '@/data/fondamentaux-by-module';
+import { readFasciculeAuditTxt, stripAuditMarkdownFrontmatter } from '@/lib/fascicule-audit-text';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 type Props = { params: { id: string } };
@@ -48,6 +49,11 @@ export default function CoursModuleDetailPage({ params }: Props) {
   const nextMeta = nextId ? getCourseModuleById(nextId) : null;
   const fondamentauxLinks = getFondamentauxLinksForCourseModule(m.id);
   const enquetesLiees = getEnquetesLinkedToModule(m.id);
+
+  const verbatimFasciculeTxt =
+    m.id === 'f09' || m.id === 'f10'
+      ? stripAuditMarkdownFrontmatter(readFasciculeAuditTxt(m.id === 'f09' ? 'F09.txt' : 'F10.txt'))
+      : null;
 
   return (
     <div className='container pb-20 pt-10 md:pt-14'>
@@ -128,9 +134,26 @@ export default function CoursModuleDetailPage({ params }: Props) {
         ) : (
           <p className='mt-5 leading-relaxed text-gray-300'>{m.accroche}</p>
         )}
+        {verbatimFasciculeTxt ? (
+          <div className='not-prose mt-8 rounded-xl border border-emerald-500/25 bg-white/[0.03] p-4 md:p-6'>
+            <p className='text-sm font-semibold uppercase tracking-wide text-emerald-200/90'>
+              Texte intégral du fascicule (source : F{m.numero.toString().padStart(2, '0')}.txt)
+            </p>
+            <p className='mt-2 text-xs leading-relaxed text-gray-500'>
+              Reproduction mot pour mot du fichier d’audit fourni avec les fascicules SDCP (hors en-tête markdown du
+              dépôt). Référence : <code className='rounded bg-black/30 px-1'>reference/audit/fascicules/F
+              {m.numero.toString().padStart(2, '0')}.txt</code>
+            </p>
+            <pre className='mt-4 max-h-[min(70vh,720px)] overflow-auto whitespace-pre-wrap font-serif text-[13px] leading-relaxed text-gray-200 md:text-sm'>
+              {verbatimFasciculeTxt}
+            </pre>
+          </div>
+        ) : null}
+
         <p className='mt-8 text-sm leading-relaxed text-gray-500'>
-          Ce module ne reproduit aucun support édité par un tiers. Complétez cette fiche avec vos notes, le Code pénal,
-          le Code de procédure pénale et les textes en vigueur sur{' '}
+          {verbatimFasciculeTxt
+            ? 'La synthèse ci-dessus reste un outil pédagogique ; le texte officiel du fascicule figure dans l’encadré vert. Vérifiez les textes à jour sur '
+            : 'Ce module ne reproduit pas intégralement le fascicule papier. Complétez cette fiche avec vos notes, le Code pénal, le Code de procédure pénale et les textes en vigueur sur '}
           <a
             href='https://www.legifrance.gouv.fr'
             target='_blank'

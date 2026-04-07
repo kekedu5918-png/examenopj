@@ -1,6 +1,7 @@
 /**
- * Exporte reference/audit/infractions_officielles.json depuis le récapitulatif site
- * (src/data/recapitulatif-*.ts), aligné sur les fascicules F01–F07.
+ * @deprecated — Le référentiel officiel est généré par `scripts/extract-infractions-fascicules.ts`
+ * depuis les fichiers `reference/audit/fascicules/F01.txt` … `F07.txt`.
+ * Ce script peut servir de secours pour comparer l’ancien récap TypeScript au JSON actuel.
  *
  * Usage : npx tsx scripts/export-infractions-audit.ts
  */

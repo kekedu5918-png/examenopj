@@ -1,96 +1,139 @@
 'use client';
 
+import type { ReactNode } from 'react';
+
+import {
+  RAPPORT_F16_SOURCE_FILE,
+  RAPPORT_F16_SOURCE_LINES,
+  RAPPORT_FORMULES_ANNOTATIONS,
+  rapportF16SourceAvecPagination,
+  rapportPerpignanExemple,
+} from '@/data/rapport-synthese-f16-exemple-perpignan';
+
+function DocBlock({
+  children,
+  highlight,
+  formuleId,
+}: {
+  children: ReactNode;
+  highlight?: 'jaune';
+  formuleId?: keyof typeof RAPPORT_FORMULES_ANNOTATIONS;
+}) {
+  const cls =
+    highlight === 'jaune'
+      ? 'bg-yellow-200/90 text-gray-900 ring-1 ring-yellow-400/80'
+      : 'text-gray-900';
+
+  return (
+    <div
+      id={formuleId ? `formule-${formuleId}` : undefined}
+      className={`whitespace-pre-wrap rounded-sm px-1 py-0.5 text-[13px] leading-snug md:text-[14px] ${cls}`}
+    >
+      {children}
+    </div>
+  );
+}
+
 /**
- * Structure type rapport de synthèse OPJ — // TODO: caler mot pour mot sur B7_02_RAPP_SYNT_1024.pdf (affaire VERT/VILLA)
- * lorsque le PDF officiel est intégré au dépôt sous le nom attendu.
+ * Modèle officiel — lecture seule. Texte : F16.txt (exemple PERPIGNAN).
+ * Formules obligatoires surlignées en jaune ; légende à droite sur grand écran.
  */
 export function RapportModeleOfficielPanel() {
+  const a = rapportPerpignanExemple;
+
   return (
-    <div className='space-y-8 text-sm leading-relaxed text-examen-ink'>
-      <p className='text-xs text-examen-inkMuted'>
-        Lecture seule — annotations pédagogiques. Les formules marquées « obligatoire » doivent être recopiées à l’identique
-        le jour J.
-      </p>
-
-      <section className='rounded-xl border border-white/10 bg-examen-card p-4 font-mono text-[11px] text-slate-200 md:p-6 md:text-xs'>
-        <p className='mb-4 font-sans text-xs font-bold uppercase tracking-wide text-amber-200'>PAGE 1 — En-tête (cartouche type)</p>
-        <pre className='whitespace-pre-wrap break-words'>
-          {`MINISTÈRE DE L'INTÉRIEUR          RÉPUBLIQUE FRANÇAISE
-
-[Ville], le [date]
-DIRECTION GÉNÉRALE DE LA POLICE NATIONALE    [Service — ex. DIPN …]
-[DIPN du département]                        [Grade Prénom NOM]
-                                             En fonction à [Service]
-                                             …
-                                             Monsieur le procureur de la République
-                                             Près le tribunal judiciaire de [VILLE]
-                                             S/couvert de la voie hiérarchique
-
-OBJET : [QUALIFICATIONS EN MAJUSCULES] commis le [date] à [heure] [lieu] sur la personne de [NOM Prénom].
-
-AFFAIRE : C/ [NOM Prénom MEC], [qualité — ex. mineur 15 ans]
-
-RÉFÉRENCE : - Initiative du service.
-            - Vos instructions téléphoniques.
-
-P. JOINTES : Une procédure n°[XX/XXXX] comprenant [X] procès-verbaux et leurs annexes…`}
-        </pre>
-      </section>
-
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>Formule d’introduction (texte exact)</h3>
-        <blockquote className='mt-3 border-l-4 border-emerald-500/60 bg-emerald-500/10 px-4 py-3 text-examen-ink'>
-          J&apos;ai l&apos;honneur de vous rendre compte des résultats de l&apos;enquête diligentée en [cadre], conformément aux
-          instructions citées en référence, assisté des [qualité des agents] du service et pour laquelle vous avez été tenu
-          régulièrement informé.
-        </blockquote>
-      </section>
-
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>Section « Les faits »</h3>
-        <p className='mt-2 text-examen-inkMuted'>
-          Narration factuelle chronologique — date, heure, lieu ; victime (état civil) ; conditions de saisine.
+    <div className='flex flex-col gap-6 lg:flex-row lg:items-start'>
+      <div className='min-w-0 flex-1 space-y-4'>
+        <p className='text-xs text-examen-inkMuted'>
+          Lecture seule — source :{' '}
+          <code className='rounded bg-white/10 px-1 py-0.5 font-mono text-[11px]'>{RAPPORT_F16_SOURCE_FILE}</code>{' '}
+          (l. {RAPPORT_F16_SOURCE_LINES}). L’exemple du fascicule B7 affaire VERT/VILLA n’est pas dans le dépôt : voir
+          note en bas de page.
         </p>
-      </section>
 
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>Section « L’enquête »</h3>
-        <p className='mt-2 text-examen-inkMuted'>
-          Chronologie des investigations, témoins, GAV (dates, motifs, droits), perquisitions et scellés, confrontations,
-          changement de cadre si applicable.
+        <div className='overflow-x-auto rounded-lg border border-neutral-300 bg-white p-4 shadow-sm md:p-8'>
+          <article className='mx-auto max-w-3xl font-serif text-gray-900'>
+            <DocBlock>{a.entete}</DocBlock>
+
+            <div className='mt-6 space-y-4 border-t border-neutral-200 pt-4'>
+              <DocBlock>{a.objet}</DocBlock>
+              <DocBlock>{a.affaire}</DocBlock>
+              <DocBlock>{a.references}</DocBlock>
+              <DocBlock>{a.piecesJointes}</DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock highlight='jaune' formuleId='intro'>
+                {a.introduction}
+              </DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock>{a.lesFaits}</DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock>{a.lenquete}</DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock highlight='jaune' formuleId='conclusion'>
+                {a.conclusionTitreEtCorps}
+              </DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock highlight='jaune' formuleId='etatCivil'>
+                {a.etatCivil}
+              </DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock>{a.vuEtTransmis}</DocBlock>
+            </div>
+
+            <div className='mt-6 space-y-3 border-t border-neutral-200 pt-4'>
+              <DocBlock highlight='jaune' formuleId='destinataires'>
+                {a.destinataires}
+              </DocBlock>
+            </div>
+          </article>
+        </div>
+
+        <details className='rounded-lg border border-white/10 bg-examen-card p-4 text-xs text-examen-inkMuted'>
+          <summary className='cursor-pointer font-medium text-examen-ink'>Pagination du fascicule (extrait)</summary>
+          <p className='mt-2'>
+            Entre deux parties de « L’ENQUÊTE », le fascicule insère notamment :{' '}
+            <code className='font-mono text-[10px] text-amber-200/90'>{rapportF16SourceAvecPagination}</code> — omis
+            ci-dessus pour la lisibilité ; le texte narratif est identique à F16.txt.
+          </p>
+        </details>
+
+        <p className='text-xs text-amber-200/90'>
+          TODO (B7_02_RAPP_SYNT_1024.txt / PDF) : si le modèle VERT/VILLA / Clermont est fourni dans le dépôt, ajouter un
+          second onglet ou un sélecteur d’exemple — le présent écran reproduit uniquement l’exemple PERPIGNAN contenu dans{' '}
+          {RAPPORT_F16_SOURCE_FILE}.
         </p>
-      </section>
+      </div>
 
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>Section « Conclusion » — formule exacte</h3>
-        <blockquote className='mt-3 border-l-4 border-emerald-500/60 bg-emerald-500/10 px-4 py-3 text-examen-ink'>
-          Des éléments rassemblés au cours de cette enquête, il ressort que le nommé [NOM Prénom] pourrait faire l&apos;objet
-          de poursuites pour [QUALIFICATIONS COMPLÈTES AVEC TOUTES CIRCONSTANCES AGGRAVANTES], faits prévus par [articles
-          définissant] et réprimés par [articles réprimant] du code pénal.
-        </blockquote>
-      </section>
-
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>État civil du mis en cause — modèle</h3>
-        <p className='mt-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 font-mono text-[11px] text-slate-300'>
-          [NOM Prénom], né(e) le [date] à [ville] ([n° dépt.]), nationalité [X], fils/fille de [père] et de [mère],
-          [profession], demeurant [adresse complète].
-        </p>
-      </section>
-
-      <section>
-        <h3 className='font-display text-lg font-bold text-white'>Vu et transmis — destinataires</h3>
-        <ul className='mt-2 list-disc space-y-1 pl-5 text-examen-inkMuted'>
-          <li>Deux exemplaires au parquet de [ville]</li>
-          <li>Un exemplaire au DTPJ</li>
-          <li>Un exemplaire aux archives du service</li>
+      <aside className='w-full shrink-0 space-y-3 rounded-xl border border-white/10 bg-examen-card p-4 lg:sticky lg:top-4 lg:max-w-sm'>
+        <h3 className='font-display text-sm font-bold text-white'>Formules surlignées (jaune)</h3>
+        <ul className='space-y-3 text-xs text-examen-inkMuted'>
+          {(Object.keys(RAPPORT_FORMULES_ANNOTATIONS) as Array<keyof typeof RAPPORT_FORMULES_ANNOTATIONS>).map((id) => {
+            const meta = RAPPORT_FORMULES_ANNOTATIONS[id];
+            return (
+              <li key={id}>
+                <p className='font-semibold text-examen-ink'>{meta.titre}</p>
+                <p className='mt-1 leading-relaxed'>{meta.pourquoi}</p>
+              </li>
+            );
+          })}
         </ul>
-      </section>
-
-      <p className='text-xs text-amber-200/90'>
-        TODO (FASC B7_02_RAPP_SYNT_1024) : intégrer le modèle complet affaire VERT/VILLA dès que le PDF est référencé dans le
-        dépôt (actuellement : voir `reference/fascicules/rapport-de-synthese-officiel.pdf` si équivalent).
-      </p>
+        <p className='border-t border-white/10 pt-3 text-[11px] text-slate-500'>
+          « VU ET TRANSMIS » et la date figurent dans le document mais ne sont pas surlignés en jaune sur ce panneau ; ils
+          restent requis dans la copie d’examen selon votre correction type.
+        </p>
+      </aside>
     </div>
   );
 }

@@ -13,7 +13,8 @@
     "import:pdf": "env-cmd -f ./.env.local node scripts/import-pdf-corpus.mjs",
     "raster:enquetes": "node scripts/raster-enquetes.mjs",
     "og:image": "node scripts/generate-og-image.mjs",
-    "audit:infractions": "npx tsx scripts/export-infractions-audit.ts"
+    "audit:infractions": "npx tsx scripts/export-infractions-audit.ts",
+    "audit:extract-fascicules": "npx tsx scripts/extract-infractions-fascicules.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

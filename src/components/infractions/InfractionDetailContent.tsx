@@ -57,6 +57,12 @@ export function InfractionDetailContent({ item, className }: Props) {
           {item.fascicule}
           {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
         </p>
+        {item.accrocheFascicule ? (
+          <div className='mt-4 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm leading-relaxed text-slate-200'>
+            <p className='text-xs font-bold uppercase tracking-wide text-amber-200/90'>Accroche (fascicule)</p>
+            <p className='mt-2 whitespace-pre-wrap'>{item.accrocheFascicule}</p>
+          </div>
+        ) : null}
         <p className='mt-2 text-sm font-medium text-cyan-200/90'>Élément légal — {item.legal}</p>
       </div>
 
@@ -87,6 +93,53 @@ export function InfractionDetailContent({ item, className }: Props) {
         </p>
         <RecapBulletCell text={item.moral} />
       </div>
+
+      {item.circonstancesAggravantesComplet ? (
+        <div className='rounded-2xl border border-amber-500/25 bg-amber-500/[0.08] p-4'>
+          <h3 className='mb-2 text-xs font-bold uppercase tracking-wide text-amber-200'>
+            Circonstances aggravantes
+            {item.circonstancesAucune ? ' — AUCUNE' : ''}
+          </h3>
+          <pre className='whitespace-pre-wrap font-sans text-[13px] leading-relaxed text-amber-50/95'>
+            {item.circonstancesAggravantesComplet}
+          </pre>
+        </div>
+      ) : null}
+
+      {item.repressionTableau && item.repressionTableau.length > 0 ? (
+        <div className='rounded-2xl border border-violet-500/25 bg-violet-500/[0.08] p-4'>
+          <h3 className='mb-3 text-xs font-bold uppercase tracking-wide text-violet-200'>Répression</h3>
+          <div className='space-y-3 text-sm'>
+            {item.repressionTableau.map((row, i) => (
+              <div key={i} className='rounded-lg border border-white/10 bg-black/20 p-3'>
+                <p className='font-semibold text-violet-100'>{row.qualification}</p>
+                <p className='mt-1 text-slate-300'>Article : {row.article}</p>
+                {row.circonstances ? <p className='mt-1 text-slate-400'>{row.circonstances}</p> : null}
+                <pre className='mt-2 whitespace-pre-wrap text-[12px] leading-relaxed text-slate-200'>{row.peines}</pre>
+              </div>
+            ))}
+          </div>
+          {item.repressionImmunite ? (
+            <p className='mt-3 text-xs text-slate-400'>Immunité : {item.repressionImmunite}</p>
+          ) : null}
+          {item.repressionNota ? (
+            <p className='mt-2 text-xs text-slate-400'>Nota : {item.repressionNota}</p>
+          ) : null}
+        </div>
+      ) : null}
+
+      {item.piegeExamenOfficiel ? (
+        <p className='rounded-xl border border-rose-500/30 bg-rose-500/10 px-3 py-2 text-xs text-rose-100'>
+          <strong className='text-rose-200'>Piège examen :</strong> {item.piegeExamenOfficiel}
+        </p>
+      ) : null}
+
+      {item.maj2025 || item.badgeMaj ? (
+        <p className='text-xs font-semibold text-amber-200'>
+          {item.badgeMaj ?? 'MAJ 2025'}
+          {item.maj2025 ? ' — texte à jour loi 2025 (vérifier cahier MAJ).' : ''}
+        </p>
+      ) : null}
 
       <InfractionAudioCoach legal={item.legal} materiel={item.materiel} moral={item.moral} />
 

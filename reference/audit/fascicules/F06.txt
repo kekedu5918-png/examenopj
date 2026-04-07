@@ -1,0 +1,1967 @@
+# F06 — Atteintes aux mineurs et à la famille
+
+| | |
+|---|---|
+| **PDF** | `_07_f06_les_atteintes_aux_mineurs_et_la_famille.pdf` |
+| **Données site** | Section `f06-mineurs` dans `recapitulatif-f03-f07.ts` |
+| **Entrées JSON** | **20** |
+
+## Thèmes
+
+Pension, ordonnances de protection, non-représentation d’enfant, soustractions, provocations à stupéfiants / alcool / crime, atteintes sexuelles et images, etc.
+
+## Contrôle qualité
+
+Articulation fréquente avec **F01** (violences, agressions sexuelles) : vérifier les **qualifications spécialisées** et les **seuils d’âge** sur le fascicule.
+
+Fascicule n°6 EXAMEN JUIN 2026
+TABLE DES MATIÈRES
+INTRODUCTION.....................................................................................................P.1
+L’ABANDON DE FAMILLE
+L’ABANDON DE FAMILLE........................................................................................P.4
+LA VIOLATION DES ORDONNANCES PRISES PAR LE JUGE AUX
+AFFAIRES FAMILIALES EN CAS DE VIOLENCES
+LE NON-RESPECT DES OBLIGATIONS OU INTERDICTIONS IMPOSÉES PAR UNE
+ORDONNANCE DE PROTECTION..............................................................................P.8
+LE DÉFAUT DE NOTIFICATION DE CHANGEMENT DE DOMICILE AU CRÉANCIER...P.12
+LES ATTEINTES À L’EXERCICE DE L’AUTORITÉ PARENTALE
+LA NON-REPRÉSENTATION D’ENFANT MINEUR....................................................P.16
+LE DÉFAUT DE NOTIFICATION DE TRANSFERT DE DOMICILE...............................P.19
+LA SOUSTRACTION D’ENFANT MINEUR PAR ASCENDANT.....................................P.21
+LA SOUSTRACTION D’ENFANT MINEUR SANS FRAUDE NI VIOLENCE PAR UNE
+PERSONNE AUTRE QU’UN ASCENDANT.................................................................P.23
+LA MISE EN PÉRIL DES MINEURS
+LA PRIVATION D’ALIMENTS OU DE SOINS À MINEUR DE QUINZE ANS................P.26
+LA SOUSTRACTION D’UN PARENT À SES OBLIGATIONS LÉGALES........................P.29
+LA PROVOCATION D’UN MINEUR À L’USAGE OU AU TRAFIC DE STUPÉFIANTS.....P.32
+LA PROVOCATION DIRECTE D’UN MINEUR À LA CONSOMMATION DE BOISSONS
+ALCOOLIQUES......................................................................................................P.35
+LA PROVOCATION DIRECTE D’UN MINEUR À COMMETTRE UN CRIME OU UN DÉLIT
+.............................................................................................................................P.37
+LA CORRUPTION DE MINEUR................................................................................P.39
+PROPOSITIONS SEXUELLES À MINEUR DE QUINZE ANS PAR UN MOYEN DE
+COMMUNICATION ÉLECTRONIQUE.......................................................................P.42
+L’EXPLOITATION DE L’IMAGE OU DE LA REPRÉSENTATION À CARACTÈRE
+PORNOGRAPHIQUE D’UN MINEUR........................................................................P.44
+LA DIFFUSION D’UN MESSAGE À CARACTÈRE VIOLENT, INCITANT AU TERRORISME,
+PORNOGRAPHIQUE OU DANGEREUX SUSCEPTIBLE D’ÊTRE VU OU PERÇU PAR UN
+MINEUR................................................................................................................P.49
+LA PROVOCATION À LA PÉDOPORNOGRAPHIE.....................................................P.52
+LES ATTEINTES SEXUELLES PAR UN MAJEUR SUR UN MINEUR DE QUINZE ANS...P.54
+LES ATTEINTES SEXUELLES PAR UN MAJEUR SUR UN MINEUR DE PLUS DE QUINZE
+ANS......................................................................................................................P.57
+INTRODUCT ION
+Dans le chapitre VII du titre II du code pénal, les articles 227-1 à 227-28-3 regroupent
+plusieurs infractions de nature et de gravité fort différentes.
+Toutefois, dans le cadre des atteintes aux mineurs ne sont pas abordées les infractions
+pour lesquelles la minorité de la victime ne constitue qu'une circonstance aggravante, à
+l'instar des violences, des agressions sexuelles ou de la séquestration. De même, seules les
+infractions les plus fréquemment rencontrées par les services de police seront traitées dans
+ce fascicule.
+Le contenu du chapitre « DES ATTEINTES AUX MINEURS ET A LA FAMILLE » regroupe
+notamment les quatre sections développées infra :
+ L'abandon de famille ;
+ La violation des ordonnances prises par le juge aux affaires familiales en cas de
+violences ;
+ Les atteintes à l'exercice de l'autorité parentale ;
+ La mise en péril des mineurs.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 1
+L’ABANDON DE FAMILLE
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 3
+L ’ABANDON DE FAM ILLE
+Le fait, pour une personne, de ne pas exécuter une décision
+judiciaire ou l'un des titres mentionnés aux 2° à 6° du I de
+l'article 373-2-2 du code civil lui imposant de verser au profit
+d’un enfant mineur, d’un descendant, d’un ascendant ou du
+conjoint une pension, une contribution, des subsides ou des
+prestations de toute nature dues en raison de l’une des
+obligations familiales prévues par le code civil, en demeurant
+plus de deux mois sans s’acquitter intégralement de cette
+obligation, constitue une infraction. Lorsque l'intermédiation
+financière des pensions alimentaires est mise en œuvre, le fait
+pour le parent débiteur de demeurer plus de deux mois sans
+s'acquitter intégralement des sommes dues entre les mains de
+l'organisme débiteur des prestations familiales assurant
+l'intermédiation constitue la même infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-3 du C.P. définit et réprime le délit d’abandon de famille.
+I I - É L ÉM E N T M A T É R I E L
+ UN ACTE IMPOSANT LE VERSEMENT D’UNE SOMME D’ARGENT
+ Une obligation familiale
+L’article 227-3 du C.P. vise les pensions, contributions, subsides ou prestations
+de toute nature dues en raison de l’une des obligations familiales prévues par le
+code civil. Son champ d'incrimination vise toutes les obligations familiales au profit
+d'un enfant mineur, d'un ascendant ou du conjoint. Sont donc inclues les
+contributions des époux aux charges de mariage, les pensions alimentaires ou
+prestations compensatoires après divorce, etc.
+ Un acte exécutoire
+L’abandon de famille consiste dans le fait de « ne pas exécuter une décision
+judiciaire ou l'un des titres mentionnés aux 2° à 6° du I de l'article 373-2-2 du code
+civil ». L'obligation pénalement protégée doit être fondée, soit sur une décision
+judiciaire, soit sur un titre, et présenter un caractère exécutoire. Il peut s’agir d’une
+décision juridictionnelle, d’une convention judiciairement homologuée, d’une
+convention prévue à l’article 229-1 du code civil, d’un acte notarié, d’une convention
+à laquelle l’organisme débiteur des prestations familiales a donné force exécutoire,
+ou d’une transaction ou un acte constatant un accord issu d'une médiation, d'une
+conciliation ou d'une procédure participative ordonnant le versement d’une pension
+ou d’une prestation. Il faut que la décision soit exécutoire, ou à défaut, ait été
+volontairement exécutée et que la décision ait été notifiée légalement, ou exécutée
+volontairement, ou que le débiteur en ait eu légalement connaissance.
+L’obligation de payer la pension ou la prestation se poursuit pendant toute la
+période prévue par la décision exécutoire, et ce tant qu’une décision ultérieure n’est
+pas venue la supprimer.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 4
+ UN DÉFAUT DE PAIEMENT
+ Inexécution de l’intégralité du paiement
+Le débiteur doit s’acquitter intégralement de l’obligation de payer. L’infraction est
+constituée, que le non-paiement porte sur la totalité des sommes dues ou qu’il soit
+partiel. Le délit est également constitué lorsque l’agent refuse à prendre en compte
+une indexation (réévaluation du montant) (Cass. crim., 26 octobre 1987).
+Le débiteur ne peut être exonéré par des paiements partiels, des paiements en
+nature, des compensations.
+ Défaut de paiement pendant plus de deux mois
+Le débiteur doit être resté plus de deux mois sans s’acquitter du montant de
+l’obligation. Ce délai fixé par le texte de loi doit donc être dépassé, le débiteur
+devant être resté plus de deux mois et non deux mois seulement sans effectuer les
+versements (C.A. Paris, 16 mars 1994).
+Le point de départ prévu par le législateur est la date de la signification de la
+décision ordonnant le versement, ou le jour du dernier versement intégral en cas
+d’interruption des paiements.
+Le délit est constitué dès que les deux mois sont expirés, et aucune situation
+postérieure ne peut en effacer rétroactivement l’existence. A titre d’exemples,
+l’infraction subsistera même si la décision judiciaire servant de base aux poursuites
+fait l’objet d’une cassation ultérieurement (Cass. crim., 26 juillet 1977), si cette
+décision fait l’objet d’une ré-formation partielle (Cass. crim., 21 mai 1980), ou même
+si le paiement intervient tardivement (Cass. crim., 23 mars 1981).
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE NE PAS EXÉCUTER UN ACTE IMPOSANT LE
+VERSEMENT D’UNE SOMME D’ARGENT
+Le délit d’abandon de famille sanctionne l’inexécution volontaire de l’acte fixant le
+montant de la pension alimentaire, à condition toutefois que l’auteur ait reçu la
+notification de cette décision. La charge de la preuve appartient à la partie poursuivante.
+Le délit d’abandon de famille n’est pas constitué s’il résulte que le non-paiement de
+la pension est dû à une « situation de précarité persistante ne résultant pas de la volonté
+du débiteur ». Ces circonstances sont suffisantes pour établir le caractère involontaire du
+défaut de paiement (C.A. Aix en Provence, 01 juillet 1994).
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-3 du C.P. - 2 ans d’emprisonnement
+- 15 000 € d’amende
+ Personnes morales
+L’article 227-4-1 du C.P. prévoit la responsabilité des personnes morales. Elles
+encourent la peine d’amende suivant les modalités prévues par l’article 131-38 du
+C.P., ainsi que les peines prévues par les articles 131-39, 2° à 9°.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 5
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. .Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 6
+LA VIOLATION DES
+ORDONNANCES PRISES PAR LE
+JUGE AUX AFFAIRES FAMILIALES
+EN CAS DE VIOLENCES
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 7
+LE NON-RESPECT DES OBL IGAT IONS OU
+INTERD ICT IONS IMPOSÉES PAR UNE
+ORDONNANCE DE PROTECT ION
+Le fait, pour une personne faisant l'objet d'une ou plusieurs
+obligations ou interdictions imposées dans une ordonnance de
+protection rendue en application des articles 515-9 ou 515-13
+du code civil ou dans une ordonnance provisoire de protection
+immédiate rendue en application de l'article 515-13-1 du même
+code, de ne pas s’y conformer, constitue une infraction.
+Les mêmes peines sont applicables à la violation d'une mesure
+de protection en matière civile ordonnée dans un autre État
+membre de l'Union européenne reconnue et ayant force
+exécutoire en France en application du règlement (UE) n°
+606/2013 du Parlement européen et du Conseil du 12 juin 2013
+relatif à la reconnaissance mutuelle des mesures de protection
+en matière civile.
+I - É L ÉM E N T L É G A L
+L’article 227-4-2 du C.P. définit et réprime le non-respect des obligations ou interdictions
+imposées par une ordonnance de protection.
+I I - É L ÉM E N T M A T É R I E L
+Les mesures de protection des victimes de violences sont développées aux articles 515-9
+à 515-13 du code civil. Ces six articles ont pour objet de renforcer les pouvoirs du juge aux
+affaires familiales pour lui permettre d’éloigner du domicile conjugal non seulement un
+époux auteur de violence, mais tout partenaire même non uni par les liens du mariage.
+ UNE PERSONNE FAISANT L'OBJET D'UNE OU PLUSIEURS
+OBLIGATIONS OU INTERDICTIONS IMPOSÉES DANS UNE
+ORDONNANCE DE PROTECTION
+L'article 515-9 du code civil dispose que « lorsque les violences exercées au sein du
+couple, y compris lorsqu’il n’y a pas de cohabitation, ou par un ancien conjoint, un
+ancien partenaire lié par un pacte civil de solidarité ou un ancien concubin, y compris
+lorsqu’il n’y a jamais eu de cohabitation, mettent en danger la personne qui en est
+victime ou un ou plusieurs enfants, le juge aux affaires familiales peut délivrer en
+urgence à cette dernière une ordonnance de protection ».
+L'ordonnance de protection est délivrée, par le juge aux affaires familiales, dans un
+délai maximal de six jours à compter de la fixation de la date de l'audience, s'il estime,
+au vu des éléments produits devant lui et contradictoirement débattus, qu'il existe des
+raisons sérieuses de considérer comme vraisemblables, y compris lorsqu'il n'y a pas de
+cohabitation ou qu'il n'y a jamais eu de cohabitation, la commission des faits de violence
+allégués et le danger auquel la victime ou un ou plusieurs enfants sont exposés. La
+délivrance de cette ordonnance de protection n’est pas conditionnée à l’existence d’une
+plainte pénale.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 8
+Dans ce cadre, le juge aux affaires familiales peut prendre, pour une durée maximale
+de 12 mois (prolongeable sous certaines conditions) conformément aux dispositions de
+l'article 515-12 du même code, les mesures suivantes (article 515-11 du code civil):
+ 1° Interdire à la partie défenderesse de recevoir ou de rencontrer certaines
+personnes spécialement désignées par le juge aux affaires familiales, ainsi que
+d'entrer en relation avec elles, de quelque façon que ce soit ;
+ 1° bis Interdire à la partie défenderesse de se rendre dans certains lieux
+spécialement désignés par le juge aux affaires familiales dans lesquels se trouve
+de façon habituelle la partie demanderesse ;
+ 2° Interdire à la partie défenderesse de détenir ou de porter une arme ;
+ 2° bis Ordonner à la partie défenderesse de remettre au service de police ou de
+gendarmerie le plus proche du lieu de son domicile les armes dont elle est
+détentrice ;
+ 2° ter Proposer à la partie défenderesse une prise en charge sanitaire, sociale ou
+psychologique ou un stage de responsabilisation pour la prévention et la lutte
+contre les violences au sein du couple et sexistes. En cas de refus de la partie
+défenderesse, le juge aux affaires familiales en avise immédiatement le
+procureur de la République ;
+ 3° Statuer sur la résidence séparée des époux. La jouissance du logement
+conjugal est attribuée, sauf ordonnance spécialement motivée justifiée par des
+circonstances particulières, au conjoint qui n'est pas l'auteur des violences, et ce
+même s'il a bénéficié d'un hébergement d'urgence. Dans ce cas, la prise en
+charge des frais afférents peut être à la charge du partenaire ou du concubin
+violent ;
+ 3° bis Attribuer à la partie demanderesse la jouissance de l'animal de compagnie
+détenu au sein du foyer ;
+ 4° Se prononcer sur le logement commun de partenaires liés par un pacte civil
+de solidarité ou de concubins. La jouissance du logement commun est attribuée,
+sauf ordonnance spécialement motivée justifiée par des circonstances
+particulières, au partenaire lié par un pacte civil de solidarité ou au concubin qui
+n’est pas l’auteur des violences, et ce même s’il a bénéficié d’un hébergement
+d’urgence. Dans ce cas, la prise en charge des frais afférents peut être à la
+charge du partenaire ou du concubin violent ;
+ 5° Se prononcer sur les modalités d'exercice de l'autorité parentale et, sur les
+modalités du droit de visite et d’hébergement, ainsi que, le cas échéant, sur la
+contribution aux charges du mariage pour les couples mariés, sur l’aide
+matérielle au sens de l’article 515-4 pour les partenaires d’un pacte civil de
+solidarité et sur la contribution à l’entretien et à l’éducation des enfants ; ;
+ 6° Autoriser la partie demanderesse à dissimuler son domicile ou sa résidence et
+à élire domicile chez l'avocat qui l'assiste ou la représente ou auprès du
+procureur de la République près le tribunal judiciaire pour toutes les instances
+civiles dans lesquelles elle est également partie. Si, pour les besoins de
+l'exécution d'une décision de justice, le commissaire de justice chargé de cette
+exécution doit avoir connaissance de l'adresse de cette personne, celle-ci lui est
+communiquée, sans qu'il puisse la révéler à son mandant ;
+ 6° bis Autoriser la partie demanderesse à dissimuler son domicile ou sa résidence
+et à élire domicile pour les besoins de la vie courante chez une personne morale
+qualifiée ;
+ 7° Prononcer l'admission provisoire à l'aide juridictionnelle des deux parties ou
+de l’une d’elles en application du premier alinéa de l'article 20 de la loi n° 91-647
+du 10 juillet 1991 relative à l'aide juridique.
+Lorsque l’interdiction prévue au 1° de l’article 515-11 du code civil a été prononcée,
+le juge aux affaires familiales peut prononcer une interdiction de se rapprocher de la
+partie demanderesse à moins d'une certaine distance qu'il fixe et ordonner, le port par
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 9
+chacune des deux parties, d’un dispositif anti-rapprochement permettant à tout moment
+de signaler que la partie défenderesse ne respecte pas cette distance. (article 515-11-1
+du code civil).
+Pour l'application du dernier alinéa de l' article L. 37 du code électoral , lorsque les
+mesures mentionnées aux 6° et 6° bis du présent article sont prononcées, le maire et le
+représentant de l’État dans le département concerné sont, sous réserve de l'accord de la
+personne bénéficiaire de l'ordonnance de protection, informés par le procureur de la
+République de ces mesures afin que l'adresse de la personne ne puisse être
+communiquée à des tiers.
+L'article 515-13 précise que « I.- Une ordonnance de protection peut également être
+délivrée en urgence par le juge à la personne majeure menacée de mariage forcé, dans
+les conditions fixées à l'article 515-10. Le juge est compétent pour prendre les mesures
+mentionnées aux 1°, 2°, 2°bis, 6° et 7° de l'article 515-11. Il peut également ordonner,
+à sa demande, l'interdiction temporaire de sortie du territoire de la personne menacée.
+Cette interdiction de sortie du territoire est inscrite au fichier des personnes recherchées
+par le procureur de la République. L'article 515-12 est applicable aux mesures prises sur
+le fondement du présent article .
+« II.-Une ordonnance provisoire de protection immédiate peut également être
+délivrée en urgence par le juge à la personne majeure menacée de mariage forcé, dans
+les conditions fixées à l' article 515-13-1 .
+Le juge est compétent pour prendre les mesures mentionnées au troisième alinéa du
+même article 515-13-1. Il peut également ordonner l'interdiction temporaire de sortie du
+territoire de la personne menacée, à sa demande. Cette interdiction de sortie du
+territoire est inscrite au fichier des personnes recherchées par le procureur de la
+République.
+Ces mesures prennent fin à compter de la décision statuant sur la demande
+d'ordonnance de protection ou qui accueille une exception de procédure, une fin de nonrecevoir ou tout autre incident mettant fin à l'instance. »
+ UNE PERSONNE FAISANT L'OBJET D'UNE OU PLUSIEURS
+OBLIGATIONS OU INTERDICTIONS IMPOSÉES DANS UNE
+ ORDONNANCE P R OVISOIRE DE PROTECTION IMMÉDIATE
+L’article 515-13-1 du code civil dispose que : « lorsque le juge aux affaires familiales
+est saisi d'une demande d'ordonnance de protection dans les conditions prévues au
+premier alinéa de l'article 515-10, le ministère public peut, avec l'accord de la personne
+en danger, demander également une ordonnance provisoire de protection immédiate.
+L'ordonnance provisoire de protection immédiate est délivrée par le juge aux affaires
+familiales dans un délai de vingt-quatre heures à compter de sa saisine s'il estime, au vu
+des seuls éléments joints à la requête, qu'il existe des raisons sérieuses de considérer
+comme vraisemblables la commission des faits de violence allégués et le danger grave et
+immédiat auquel la victime ou un ou plusieurs enfants sont exposés.
+Le juge aux affaires familiales est compétent pour prononcer, à titre provisoire, les
+mesures mentionnées aux 1° à 2° bis de l'article 515-11, la suspension du droit de visite
+et d'hébergement mentionné au 5° du même article 515-11 et la dissimulation par la
+personne en danger de son domicile ou de sa résidence dans les conditions prévues aux
+6° et 6° bis dudit article 515-11.
+Ces mesures prennent fin à compter de la décision statuant sur la demande
+d'ordonnance de protection ou qui accueille une exception de procédure, une fin de nonrecevoir ou tout autre incident mettant fin à l'instance. »
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 10
+ LA PERSONNE DOIT SE CONFORMER À L’ORDONNANCE DE
+PROTECTION
+Le texte vise à donner sa pleine effectivité à l’ordonnance de protection en
+sanctionnant pénalement sa violation.
+L’ordonnance de protection a pour vocation de fournir un cadre protecteur aux
+victimes de violences. Pour rendre ce dispositif pleinement opérationnel, il est nécessaire
+de le rendre contraignant pour l’auteur des faits. À cette fin, le présent article sanctionne
+la violation des obligations découlant de l’ordonnance de protection.
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE NE PAS SE CONFORMER À UNE OU
+PLUSIEURS DES OBLIGATIONS OU INTERDICTIONS IMPOSÉES PAR
+L’ORDONNANCE DE PROTECTION
+Il s'agit d'une infraction intentionnelle. L'auteur agit donc en pleine connaissance de
+cause des obligations ou interdictions dont il fait l'objet. L'auteur doit donc avoir été
+informé des termes de l'ordonnance de protection délivrée par le juge aux affaires
+familiales.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-4-2 du
+C.P.
+- 3 ans d’emprisonnement
+- 45 000 € d’amende
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 11
+LE DÉFAUT DE NOT IF ICAT ION DE
+CHANGEMENT DE DOM IC ILE AU
+CRÉANC IER
+Le fait, pour une personne tenue de verser une contribution ou
+des subsides au titre de l'ordonnance de protection rendue en
+application de l'article 515-9 du code civil, de ne pas notifier son
+changement de domicile au créancier dans un délai d'un mois à
+compter de ce changement, constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-4-3 du C.P. définit et réprime le défaut de notification de changement de
+domicile au créancier.
+I I - É L ÉM E N T M A T É R I E L
+Le juge aux affaires familiales pouvant être amené à se prononcer, dans le cadre du
+référé protection, sur la contribution aux charges du ménage, il était nécessaire de prévoir,
+à des fins dissuasives, l’infraction du défaut de communication de changement d’adresse du
+débiteur.
+ UNE PERSONNE TENUE DE VERSER UNE CONTRIBUTION OU DES
+SUBSIDES
+Le juge aux affaires familiales peut donc, dans le cadre de l'article 515-9 du code
+civil et selon les modalités fixées par l'article 515-11 du même code :
+ Statuer sur la résidence séparée des époux en précisant lequel des deux
+continuera à résider dans le logement conjugal et sur les modalités de prise en
+charge des frais afférents à ce logement. Sauf circonstances particulières, la
+jouissance de ce logement est attribuée au conjoint qui n'est pas l'auteur des
+violences ;
+ Préciser lequel des partenaires liés par un pacte civil de solidarité ou des
+concubins continuera à résider dans le logement commun et statuer sur les
+modalités de prise en charge des frais afférents à ce logement. Sauf
+circonstances particulières, la jouissance de ce logement est attribuée au
+partenaire lié par un pacte civil de solidarité ou au concubin qui n'est pas l'auteur
+des violences ;
+ Se prononcer sur les modalités d'exercice de l'autorité parentale et, le cas
+échéant, sur la contribution aux charges du mariage pour les couples mariés, sur
+l'aide matérielle au sens de l'article 515-4 pour les partenaires d'un pacte civil de
+solidarité et sur la contribution à l'entretien et à l'éducation des enfants ;
+ UN DÉFAUT DE NOTIFICATION DE CHANGEMENT DE DOMICILE AU
+CRÉANCIER
+Le débiteur doit, dans un délai d'un mois, notifier au créancier son changement de
+domicile sans qu'aucune exigence ne soit formulée quant à la forme de celle-ci.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 12
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE NE PAS INFORMER LE CRÉANCIER DE SON
+CHANGEMENT DE DOMICILE
+Le défaut de notification de changement de domicile est une infraction intentionnelle.
+La simple négligence n'est pas punissable car la volonté coupable consiste à vouloir, par
+son silence, priver de l'exercice d'un droit le titulaire de ce droit.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-4-3 du C.P. - 6 mois d’emprisonnement
+- 7 500 € d’amende
+ Personnes morales
+En application des dispositions de l’article 54 de la loi n° 2004-204 du 9 mars 2004
+qui a entraîné une responsabilité généralisée des personnes morales, l’ article 121 - 2
+du C.P. est applicable en la matière depuis le 31 décembre 2005. L'article 227-4-1
+précise les conditions d'application.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 13
+LES ATTEINTES À L ’EXERCICE DE
+L’AUTORITÉ PARENTALE
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 15
+LA NON-REPRÉSENTAT ION D ’ENFANT
+M INEUR
+Le fait de refuser indûment de représenter un enfant mineur à
+la personne qui a le droit de le réclamer, constitue une
+infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-5 du C.P. définit et réprime la non-représentation d’enfant mineur.
+I I - É L ÉM E N T M A T É R I E L
+Le délit consiste à refuser indûment de représenter un enfant mineur à une personne qui
+a le droit de le réclamer. Les faits ont le plus souvent pour cadre la mésentente entre les
+parents lors de la dissolution du mariage. L’article 388 du code civil précise qu’est mineure
+toute personne âgée de moins de 18 ans.
+ LE DROIT DE RÉCLAMER LE MINEUR
+Ce droit a en général pour origine une décision judiciaire (décision de justice , une
+convention judiciairement homologuée ou une convention prévue à l’article 229-1 du
+code civil). Ce droit de garde, de visite ou d’hébergement peut être attribué à titre
+provisoire ou définitif. La jurisprudence exige que la décision soit exécutoire et qu’elle ait
+été portée dans les formes légales à la connaissance de celui qui refuse de représenter
+l’enfant.
+Ce droit est également reconnu par la loi à toute personne investie de l’autorité
+parentale. En règle générale, il s’agit des père, mère ou tuteur du mineur. Il est à noter
+qu’à défaut d’une décision délimitant les droits de chacun, le délit ne peut être constitué
+lorsque le conflit oppose deux personnes ayant des droits égaux concernant le mineur, ce
+qui est le cas notamment pour les parents séparés de fait.
+ LE REFUS DE REPRÉSENTER LE MINEUR
+Ce refus peut être le fait du parent qui a la garde de l’enfant et qui refuse de laisser
+l’autre parent exercer son droit de visite, mais également celui du parent bénéficiaire
+d’un droit d’hébergement du mineur qui ne remet pas celui-ci à l’issue de la période
+autorisée à l’autre parent titulaire du droit de garde.
+Le refus de représenter le mineur peut résulter d’un comportement actif direct (refus
+pur et simple de représenter l’enfant, dissimulation du mineur, absence du domicile
+lorsque celui qui est en droit d’exercer son droit de visite ou d’hébergement se présente
+pour rencontrer ou emmener l’enfant, etc.), ou d’un comportement actif indirect
+(manipulation du mineur pour l’inciter à refuser la visite ou l’hébergement, etc.).
+Ce refus peut résulter également d’un comportement passif. Tel est le cas
+notamment lorsque le parent titulaire du droit de garde de l’enfant s’abstient d’intervenir
+lorsque le mineur refuse spontanément de se soumettre au droit de visite ou
+d’hébergement de l’autre parent. La jurisprudence considère d’ailleurs que la résistance
+du mineur ne constitue pas une excuse légale ni un fait justificatif.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 16
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE FAIRE ÉCHEC AUX DROITS DE CELUI
+QUI RÉCLAME L’ENFANT
+La non-représentation d’enfant est une infraction intentionnelle. Le terme « refus »
+indique une attitude consciente et volontaire de l’auteur. L’emploi de l’adverbe
+« indûment » souligne pour sa part sa mauvaise foi. L’auteur doit avoir agi en pleine
+connaissance de cause des droits qu’il empêche de s’exercer, c’est pourquoi une
+éventuelle décision de justice préalable doit lui avoir été signifiée ou portée à sa
+connaissance. La Cour de cassation a précisé que l’élément intentionnel est « caractérisé
+par le refus délibéré ou indu (…) de remettre l’enfant à la personne qui a le droit de le
+réclamer, quel que soit le mobile et en l’absence de tout danger actuel ou imminent
+menaçant sa personne ou sa santé » (Cass. crim., 08 septembre 1999). Le mobile qui
+anime l’auteur du délit importe peu. La jurisprudence admet la justification de la nonreprésentation d’enfant lorsqu’est démontrée l’existence d’un danger actuel et imminent,
+donc le recours à tous les faits justificatifs.
+Jurisprudence :
+. Le déménagement d’une mère titulaire du droit de garde de sa fille à l’étranger, sans en avertir le père, ne
+suffit pas pour retenir le délit aggravé de non-représentation d’enfant (Cass. crim., du 19 novembre 2025,
+n°25-81.397).
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-9 du C.P.
+ Si l’enfant mineur est retenu au-delà de cinq jours sans que ceux qui ont
+droit de réclamer qu’il leur soit représenté sachent où il se trouve.
+ Si l’enfant mineur est retenu indûment hors du territoire de la République.
+ Article 227-10 du C.P.
+Si la personne coupable des faits a été déchue de l’autorité parentale ou a fait
+l’objet d’une décision de retrait de l’exercice de cette autorité.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-5 du C.P. - 1 an d’emprisonnement
+- 15 000 € d’amende
+AGGRAVÉE 227-9 du C.P. Une des circonstances prévues au présent
+article - 3 ans d’emprisonnement
+227-10 du C.P. Circonstance prévue au présent article - 45 000 € d’amende
+ Personnes morales
+En application des dispositions de l’article 54 de la loi n° 2004-204 du 9 mars
+2004 qui a entraîné une responsabilité généralisée des personnes morales, l’article
+121-2 du C.P. est applicable en la matière depuis le 31 décembre 2005.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 17
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Jurisprudence :
+. A été retenue la complicité du grand-père d'un enfant ayant encouragé son fils à ne pas rendre
+l'enfant à sa mère, qui s'était opposé avec lui à l'intervention d'un huissier et avait même financé un
+départ à l'étranger (Cass. crim., 19 févr. 1963).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 18
+LE DÉFAUT DE NOT IF ICAT ION DE
+TRANSFERT DE DOM IC ILE
+Le fait, pour une personne qui transfère son domicile en un
+autre lieu alors que ses enfants résident habituellement chez
+elle, de ne pas notifier son changement de domicile, dans un
+délai d’un mois à compter de ce changement, à ceux qui
+peuvent exercer à l’égard des enfants un droit de visite ou
+d’hébergement en vertu d’un jugement, d’une convention
+judiciairement homologuée ou d’une convention prévue à
+l’article 229-1 du code civil, constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-6 du C.P. définit et réprime le défaut de notification de transfert de domicile.
+I I - É L ÉM E N T M A T É R I E L
+ UN TRANSFERT DE DOMICILE
+Ce transfert de domicile concerne le parent à qui a été confiée la garde des mineurs.
+Dans cette situation les enfants vivent donc habituellement au domicile de ce parent.
+Sans précision de la part du texte, sont visés aussi bien les parents légitimes, naturels
+ou adoptifs.
+Il s’agit donc pour l’auteur des faits de changer de domicile et d’emmener le ou les
+enfants avec lui.
+ UNE ABSENCE DE NOTIFICATION DE CE TRANSFERT
+Une décision judiciaire, une convention judiciairement homologuée ou une
+convention prévue à l’article 229-1 du code civil doit avoir prévu un droit de visite ou
+d’hébergement à l’égard du mineur au profit de l’autre parent ou d’un tiers. Cette
+décision doit être exécutoire et avoir été notifiée à l’auteur des faits.
+Le parent titulaire du droit de garde et qui change de domicile doit ne pas avoir
+notifié ce changement au titulaire du droit de visite ou d’hébergement. Le texte prévoit
+que cette notification doit être faite dans un délai d’un mois. Aucune exigence n’est
+formulée quant à la forme de celle-ci. Ainsi, l’infraction n’a pas été retenue à l’encontre
+d’une mère qui avait informé son ex-beau-père de son changement d’adresse, ce qui
+avait été convenu avec son ex-mari (cass. crim., 20 février 1991).
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE NE PAS INFORMER LE TITULAIRE DU
+DROIT DE VISITE OU D’HÉBERGEMENT DE SON CHANGEMENT DE
+DOMICILE
+Le défaut de notification de changement de domicile est une infraction intentionnelle,
+qui suppose la volonté de faire échec au droit de visite ou d’hébergement. La simple
+négligence n’est pas punissable.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 19
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-6 du C.P. - 6 mois d’emprisonnement
+- 7 500 € d’amende
+ Personnes morales
+L’ article 121 - 2 du C.P. est applicable.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. .
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 20
+LA SOUSTRACT ION D ’ENFANT M INEUR
+PAR ASCENDANT
+Le fait, par tout ascendant, de soustraire un enfant mineur des
+mains de ceux qui exercent l’autorité parentale ou auxquels il a
+été confié ou chez qui il a sa résidence habituelle, constitue une
+infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-7 du C.P. définit et réprime la soustraction d’enfant mineur par un
+ascendant.
+I I - É L ÉM E N T M A T É R I E L
+ L’AUTEUR EST UN ASCENDANT DU MINEUR
+Tout ascendant du mineur peut être l’auteur de ce délit. Il doit exister un lien de
+filiation entre l’agent et le mineur. Il peut donc s’agir des père et mère, grands-parents
+ou arrière-grands-parents.
+En revanche le lien de filiation entre le mineur et la victime n’est pas un élément
+constitutif de ce délit. Le texte précise d’ailleurs « ceux qui exercent l’autorité
+parentale » sur le mineur ou bien ceux « auxquels il a été confié ou chez qui il a sa
+résidence habituelle ». Les personnes des mains desquelles le mineur a été soustrait
+peuvent tenir leurs prérogatives sur celui-ci d’une décision de justice, d’une convention
+judiciairement homologuée ou de la loi.
+ UN ACTE DE SOUSTRACTION
+La soustraction implique un acte positif consistant à déplacer ou à obtenir le
+déplacement du mineur du lieu dans lequel l’avait placé le titulaire de l’autorité parentale
+ou celui à qui l’enfant a été confié. L’essentiel est que cette soustraction se soit effectuée
+à l’initiative de l’auteur de l’infraction. On ne peut retenir l’infraction à l’encontre d’une
+personne à qui l’enfant a été confié volontairement.
+Cette soustraction peut consister dans un enlèvement, ou le fait d’accepter
+d’héberger l’enfant ayant fui de sa propre volonté l’endroit où il avait été placé par ceux
+exerçant l’autorité parentale. La jurisprudence considère que le déplacement de l’enfant
+doit s’inscrire dans le temps pour qu’il soit constitutif d’une soustraction, un déplacement
+de quelques heures ne saurait suffire (Cass. crim., 23 décembre 1968).
+Contrairement à ce qui est mentionné dans l’article 227-8 du C.P., l’article 227-7 du
+même code ne limite pas la soustraction d’un mineur par ascendant à la soustraction
+« sans fraude ni violence ». Dans l’hypothèse d’une soustraction commise par ascendant
+avec fraude ou violence, l’article 227-7 du C.P. pourrait s’appliquer, l’auteur n’encourant
+qu’une répression limitée. Cependant, cet article vise plutôt à réprimer un comportement
+portant atteinte à l’autorité parentale plutôt qu’un comportement portant atteinte à la
+liberté de l’enfant. La circulaire d’application du ministère de la justice en date du 14 mai
+1993 mentionne que dans l’hypothèse où l’ascendant userait de violence ou fraude, il
+faudrait appliquer les dispositions plus sévères, relatives à l’enlèvement et à la
+séquestration (articles 224-1 et suivants C.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 21
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE SOUSTRAIRE LE MINEUR A L’AUTORITÉ
+DE CEUX AUXQUELS IL A ETE SOUMIS OU CONFIE
+La soustraction d’enfant mineur par ascendant est une infraction intentionnelle. C’est
+en toute connaissance de cause, c’est-à-dire en la connaissance de son absence de droit,
+que l’auteur agit en procédant au déplacement du mineur de façon durable sinon
+définitive.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-9 du C.P.
+ Si l’enfant mineur est retenu au-delà de cinq jours sans que ceux qui ont droit de
+réclamer qu’il leur soit représenté sachent où il se trouve.
+ Si l’enfant mineur est retenu indûment hors du territoire de la République.
+ Article 227-10 du C.P.
+ Si la personne coupable des faits a été déchue de l’autorité parentale ou a fait
+l’objet d’une décision de retrait de l’exercice de cette autorité.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-7 du C.P. - 1 an d’emprisonnement
+- 15 000 € d’amende
+AGGRAVÉE
+227-9 du C.P. Une des circonstances prévues au
+présent article - 3 ans d’emprisonnement
+- 45 000 € d’amende 227-10 du C.P. Circonstance prévue au présent
+article
+ Personnes morales
+En application des dispositions de l’article 54 de la loi n° 2004-204 du 9 mars
+2004 qui a entraîné une responsabilité généralisée des personnes morales, l’article
+121-2 du C.P. est applicable en la matière depuis le 31 décembre 2005.
+ TENTATIVE : OUI
+La tentative de soustraction d’enfant mineur par un ascendant est expressément
+prévue par l’article 227-11 du C.P. .
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. .
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 22
+LA SOUSTRACT ION D ’ENFANT M INEUR
+SANS FRAUDE N I V IOLENCE PAR UNE
+PERSONNE AUTRE QU ’UN ASCENDANT
+Le fait, par une personne autre que celles mentionnées à
+l’article 227-7 de soustraire, sans fraude ni violence, un enfant
+mineur des mains de ceux qui exercent l’autorité parentale ou
+auxquels il a été confié ou chez qui il a sa résidence habituelle,
+constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-8 du C.P. définit et réprime la soustraction d’enfant mineur sans fraude ni
+violence par une personne autre qu’un ascendant.
+I I - É L ÉM E N T M A T É R I E L
+ L’AUTEUR N’EST PAS UN ASCENDANT DU MINEUR
+La soustraction du mineur visée par l’article 227-8 du C.P. doit être effectuée par une
+personne n’ayant pas la qualité d’ascendant de l’enfant. L’auteur peut aussi bien être un
+tiers qu’un membre de la famille à condition que celui-ci ne soit pas un ascendant (frère,
+sœur, tante ou oncle par exemple).
+Jurisprudence :
+. Le délit est constitué dès lors que le tiers qui a recueilli le mineur en fugue n'a pas pris la peine de
+prévenir les parents de l'enfant (Cass. crim., 3 sept. 2014).
+ UN ACTE DE SOUSTRACTION SANS FRAUDE NI VIOLENCE
+La soustraction implique un acte positif consistant à déplacer ou à obtenir le
+déplacement du mineur du lieu dans lequel l’avait placé le titulaire de l’autorité parentale
+ou celui à qui l’enfant a été confié. L’essentiel est que cette soustraction se soit effectuée
+à l’initiative de l’auteur de l’infraction. On ne peut retenir l’infraction à l’encontre d’une
+personne à qui l’enfant a été confié volontairement.
+Cette soustraction peut consister dans un enlèvement, le fait d’accepter d’héberger
+l’enfant ayant fui de sa propre volonté l’endroit où il avait été placé par ceux exerçant
+l’autorité parentale. La jurisprudence considère que le déplacement de l’enfant doit
+s’inscrire dans le temps pour qu’il soit constitutif d’une soustraction, un déplacement de
+quelques heures ne saurait suffire (Cass. crim., 23 décembre 1968).
+L’article 227-8 précise que cette soustraction doit être intervenue « sans fraude ni
+violence ». La loi présume que la fraude ou la violence indique la volonté de porter
+atteinte à l’intégrité physique du mineur ou à sa liberté, ce qui est constitutif des
+infractions de séquestration ou enlèvement plus sévèrement réprimées (articles 224-1 et
+suivants).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 23
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE SOUSTRAIRE LE MINEUR A L’AUTORITÉ
+DE CEUX AUXQUELS IL A ÉTÉ SOUMIS OU CONFIE
+La soustraction d’enfant mineur sans fraude ni violence par une personne autre qu’un
+ascendant est une infraction intentionnelle. C’est en toute connaissance de cause, c’està-dire en la connaissance de son absence de droit, que l’auteur agit en procédant au
+déplacement du mineur de façon durable sinon définitive.
+La jurisprudence admet qu’il n’y a pas de délit lorsque l’auteur des faits a pu
+raisonnablement se tromper sur l’âge de la personne détournée et croire qu’elle était
+majeure.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-8 du C.P. - 5 ans d’emprisonnement
+- 75 000 € d’amende
+ Personnes morales
+En application des dispositions de l’article 54 de la loi n° 2004-204 du
+9 mars 2004 qui a entraîné une responsabilité généralisée des personnes morales,
+l’article 121-2 du C.P. est applicable en la matière depuis le 31 décembre 2005.
+ TENTATIVE : OUI
+La tentative de soustraction d’enfant mineur sans fraude ni violence par une
+personne autre qu’un ascendant est prévue expressément par l’article 227-11 du C.P. .
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. .
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 24
+LA MISE EN PÉRIL DES MINEURS
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 25
+LA PR IVAT ION D ’AL IMENTS OU DE SO INS
+À M INEUR DE QU INZE ANS
+Le fait, par un ascendant ou toute autre personne exerçant à
+son égard l’autorité parentale ou ayant une autorité sur un
+mineur de quinze ans, de priver celui-ci d’aliments ou de soins
+au point de compromettre sa santé, constitue une infraction.
+Constitue notamment une privation de soins le fait de
+maintenir un enfant de moins de six ans sur la voie publique ou
+dans un espace affecté au transport collectif de voyageurs, dans
+le but de solliciter la générosité des passants.
+I - É L ÉM E N T L É G A L
+L’article 227-15 du C.P. définit et réprime la privation d’aliments ou de soins à mineur de
+quinze ans.
+I I - É L ÉM E N T M A T É R I E L
+ UNE VICTIME MINEURE
+La privation d’aliments et de soins ne constitue une infraction que si la victime des
+faits est un mineur de quinze ans, donc âgé de moins de quinze ans. La loi pénale étant
+d’interprétation stricte, les dispositions de l’article 227-15 du C.P. ne sauraient être
+appliquées à un mineur de plus de quinze ans victime d’une telle privation (dans cette
+hypothèse pourront être retenues, la privation accompagnant la séquestration - article
+224-1 et suivants -, ou la soustraction d’un parent à ses obligations légales - article 227-
+17 ).
+ LA QUALITÉ DE L’AUTEUR
+L’article 227-15 du C.P. vise trois types de personnes. En premier lieu, peuvent être
+reconnus comme auteurs les ascendants, ce qui regroupe les père, mère, grands-parents
+et arrières grands-parents.
+En second lieu, sont mentionnées les personnes exerçant l’autorité parentale. Sous
+cette appellation on peut inclure le tuteur lorsqu’il n’y a plus de père ni mère pour
+exercer l’autorité parentale, mais également les personnes ayant reçu délégation de
+cette autorité en vertu des articles 376 à 377-3 du code civil.
+Enfin, le texte vise aussi les personnes exerçant une autorité de fait comme les
+nouveaux époux ou concubins des père et mère, les personnes auxquelles le mineur a
+été confié par ses parents, les responsables et employés des services d’aide à l’enfance,
+etc.
+ UNE PRIVATION D’ALIMENTS OU DE SOINS
+La privation d’aliments n’amène pas de commentaire particulier puisqu’il s’agit de ne
+pas avoir fourni de nourriture en quantité ou qualité suffisante. La privation de soins est
+constituée par le fait de ne pas s’occuper matériellement de l’enfant au quotidien, de ne
+pas lui fournir les soins que sa prise en charge réclame (hygiène, soins médicaux).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 26
+Jurisprudence :
+. Infraction retenue à l’encontre d’une personne qui laissait seuls ses deux enfants à la maison, sans
+gaz, ni eau, ni électricité. Elle remplissait de temps en temps le réfrigérateur de victuailles qu’ils ne
+pouvaient faire cuire faute de gaz. Les enfants étaient laissés à la charge des voisins qui leur donnaient
+à manger (C.A. Douai, 15 février 2006).
+Une présomption de défaut de soins est prévu au deuxième alinéa de l’article 227-15
+du C.P. qui précise que la privation est notamment constituée par « le fait de maintenir
+un enfant de moins de six ans sur la voie publique ou dans un espace affecté au
+transport collectif de voyageurs, dans le but de solliciter la générosité des passants ».
+Par contre, le simple fait de mendier avec un enfant en bas âge n’est pas en soi
+constitutif du délit (Cass. crim., 12 octobre 2005).
+ LA COMPROMISSION DE LA SANTÉ DU MINEUR
+L’article 227-15 du C.P. prévoit que la privation d’aliments ou de soins à mineur de
+15 ans doit être « au point de compromettre sa santé ». Cette exigence a été confirmée
+par la jurisprudence (T.G.I. Paris, 13 janvier 2004). En revanche, le texte n’exige pas
+qu’il s’agisse d’une atteinte grave. Il n’est pas nécessaire que le résultat dommageable
+soit effectif, il suffit que les privations soient susceptibles d’altérer la santé du mineur.
+Les juges du fond apprécient au cas par cas l’impact des privations sur la santé du
+mineur pour retenir ou non l’infraction. Ainsi, la Cour de cassation a, dans son arrêt du
+12 octobre 2005, entériné la décision d’une cour d’appel qui avait relaxé une personne
+poursuivie sur la base de l’article 227-15 du C.P.. La cour avait estimé que, même si la
+prévenue avait maintenu son fils âgé de moins de six ans sur la voie publique afin de
+solliciter la générosité des passants, l’enfant était en bonne santé au vu des pièces
+produites aux débats. La privation de soins au sens du second alinéa du dit article n’a
+pas compromis la santé de l’enfant.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR QUE LES PRIVATIONS RISQUENT DE
+CAUSER UN DOMMAGE A L’ENFANT
+La privation d’aliments ou de soins est une infraction intentionnelle. Selon la Cour de
+cassation, cette infraction nécessite « la conscience, la connaissance ou la prévision qu’il
+en résulterait un mal pour l’enfant » (Cass. crim., 11 mars 1975). Pour autant, ni la
+volonté de nuire, ni celle de causer un dommage ne sont nécessaires.
+Les convictions religieuses comme le souci d’éducation ne sauraient justifier les
+privations dès lors que l’auteur a eu conscience que la santé du mineur risquait de s’en
+trouver altérée.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-15 alinéa 3 du C.P.
+ Lorsque la personne mentionnée au premier alinéa s'est rendue coupable sur
+le même mineur du délit prévu à l'article 433-18-1 C.P relatif à la non déclaration
+de la naissance d’un enfant à l’officier d’état civil.
+ Article 227-16 du C.P.
+ Lorsque la privation d’aliments ou de soins a entraîné la mort de la victime.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 27
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-15 du
+C.P.
+– 7 ans d’emprisonnement
+– 100 000 € d’amende
+AGGRAVÉE
+DÉLIT 227-15 al. 3
+du C.P Circonstance prévue au présent alinéa – 10 ans d’emprisonnement
+– 300 000 € d’amende
+CRIME 227-16 du
+C.P. Circonstance prévue au présent article - 30 ans de réclusion
+ Personnes morales
+L’article 227-17-2 du C.P. prévoit que les personnes morales peuvent être
+déclarées responsables de privation d’aliments ou de soins à mineur de quinze ans.
+Elles encourent les peines d’amende suivant les modalités de l’article 131-38 du
+C.P. , ainsi que celles prévues à l’article 131-39 du même code (dissolution,
+placement sous surveillance judiciaire, interdiction d’exercer une ou plusieurs
+activités professionnelles ou sociales, etc.).
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. .
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 28
+LA SOUSTRACT ION D ’UN PARENT À SES
+OBL IGAT IONS LÉGALES
+Le fait, par le père ou la mère, de se soustraire, sans motif
+légitime, à ses obligations légales au point de compromettre la
+santé, la sécurité, la moralité ou l’éducation de son enfant
+mineur, constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-17 du C.P. définit et réprime la soustraction d’un parent à ses obligations
+légales.
+I I - É L ÉM E N T M A T É R I E L
+ LES PERSONNES VISÉES PAR L’INFRACTION
+ Une victime mineure
+La victime de l’infraction doit être un mineur sans condition d’âge. Cela concerne
+donc toute personne âgée de moins de dix-huit ans.
+ L’auteur : le père ou la mère du mineur
+L’article 227-17 du C.P. vise les père et mère, à l’exclusion des autres
+ascendants. Le texte ne fait aucune référence à l’exercice de l’autorité parentale ou à
+la garde du mineur, ce qui permet de considérer que seul le lien de filiation (légitime,
+naturel ou adoptif) conditionne les poursuites. Ce que l’on veut réprimer ici c’est une
+défaillance parentale.
+ UNE SOUSTRACTION AUX OBLIGATIONS LÉGALES
+Le texte de loi incrimine le fait pour le père ou la mère de se soustraire à ses
+obligations légales. Cela regroupe l’ensemble des obligations qui découlent de la qualité
+de père et mère, et notamment les devoirs liés à l’autorité parentale. L’article 371-1 du
+code civil prévoit que l’autorité parentale «appartient aux parents jusqu'à la majorité ou
+l'émancipation de l'enfant pour le protéger dans sa sécurité, sa santé et sa moralité,
+pour assurer son éducation et permettre son développement, dans le respect dû à sa
+personne. L'autorité parentale s'exerce sans violences physiques ou psychologiques».
+Il n’est pas nécessaire pour que l’infraction soit réalisée que l’auteur ait quitté le
+domicile familial, car le comportement qui est ici réprimé est un abandon moral qui
+consiste à se soustraire à ses devoirs, ce qui peut être réalisé tout en étant
+physiquement présent. Sont considérés comme constitutifs de l’abandon moral ou
+matériel de l’enfant les mauvais traitements, l’inconduite notoire, le manque de direction
+nécessaire, le défaut de soins.
+ DES CONSÉQUENCES ÉVENTUELLES POUR LE MINEUR
+L’infraction ne peut être pénalement réprimée que si cette soustraction est
+susceptible de « compromettre la santé, la sécurité, la moralité ou l’éducation de
+l’enfant ». Dès que l'attitude ou le comportement du parent compromet le devenir de
+l'enfant, l'infraction est constituée.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 29
+Il appartient aux juges d’apprécier au cas par cas les conséquences pour le mineur. Il
+n’est pas requis que cette compromission soit irréversible. Le texte n’exige pas que le
+dommage se soit effectivement réalisé, il suffit qu’il soit susceptible de se réaliser.
+Néanmoins, la carence des parents doit, elle, être effective. (Cass. crim., 11 juillet 1994)
+Jurisprudences :
+. Père poursuivi pour avoir abandonné ses deux enfants âgés de 12 et 17 ans sur une aire d'autoroute
+où il s'était arrêté. Il les avait laissés seuls parce qu'il ne cessaient de se chamailler à l'arrière du
+véhicule. Le prévenu a précisé ne pas avoir eu l'intention de retourner les chercher (C.A. Douai, 17
+novembre 2004)
+. Père ayant psychologiquement conditionné ses enfants à ne pas vouloir vivre au domicile de leur
+mère, celui-ci ne les scolarisant pas , ne les faisant pas suivre médicalement, aucune vaccination
+n'ayant été pratiquée, les enfants étaient maintenus hors circuit scolaire (C.A. Paris, 30 juin 2006)
+ UNE ABSENCE DE MOTIF LÉGITIME
+Les faits ne sont punissables qu’autant que le parent fautif s’est soustrait sans motif
+légitime à ses obligations. C’est au prévenu d’apporter la preuve que son comportement
+est justifié par un motif grave. L’appréciation de la légitimité du motif invoqué appartient
+au juge.
+Les tribunaux ont tendance à apprécier de manière restrictive ce motif légitime en ne
+le retenant que pour des motifs graves. Ainsi l’introduction d’une demande en divorce ne
+fait pas partie des motifs graves justifiant l’abandon du foyer (Cass. crim., 30 mai 1967).
+Par contre est reconnu comme motif légitime l’incarcération du parent présumé fautif,
+dès lors qu’il n’a jamais cessé d’habiter au domicile conjugal avant et après son
+incarcération (Cass. crim., 26 mars 1957).
+Les convictions religieuses ne sauraient excuser le comportement des parents (Cass.
+crim., 11 juillet 1994).
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE SE SOUSTRAIRE A SES OBLIGATIONS
+LÉGALES
+Il s’agit d’une infraction intentionnelle. L’auteur se soustrait volontairement à ses
+devoirs parentaux avec la conscience que cette carence pourrait avoir des conséquences
+dommageables pour son enfant.
+Jurisprudence :
+. C'est sur la conscience du danger moral encouru par le mineur que repose l'intention (Cass. crim., 21
+octobre 1998)
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-17 alinéa 2 du C.P.
+ Lorsque cette soustraction a directement conduit à la commission, par
+le mineur, d’au moins un crime ou de plusieurs délits ayant donné lieu à une
+condamnation définitive.
+ Article 227-17 alinéa 3 du C.P.
+ Lorsque la personne mentionnée au premier alinéa s'est rendue coupable sur
+le même mineur ou au détriment de ce dernier des délits prévus aux articles
+227-3, 227-4, 227-4-3, 227-5 à 227-7, 227-17-1 et 433-18-1 (non déclaration
+d’une naissance auprès de l’officier d’état civil)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 30
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-17 du C.P. – 2 ans d’emprisonnement
+– 30 000 € d’amende
+AGGRAVE
+227-17 al. 2 du
+C.P.
+Circonstance prévue au présent
+alinéa – 3 ans d’emprisonnement
+227-17 al. 3 du – 45 000 € d’amende
+C.P.
+Circonstance prévue au présent
+alinéa
+ Personnes morales
+L’article 227-17-2 du C.P. prévoit que les personnes morales peuvent être
+déclarées responsables de soustraction d’un parent à ses obligations légales. Elles
+encourent les peines d’amende suivant les modalités de l’article 131-38 du C.P., ainsi
+que celles prévues à l’article 131-39 du même code (dissolution, placement sous
+surveillance judiciaire, interdiction d’exercer une ou plusieurs activités
+professionnelles ou sociales, etc.).
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P..
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 31
+LA PROVOCAT ION D ’UN M INEUR À
+L ’USAGE OU AU TRAF IC DE STUPÉF IANTS
+Constituent des infractions :
+ Le fait de provoquer directement un mineur à faire un
+usage illicite de stupéfiants ;
+ Le fait de provoquer directement un mineur à transporter,
+détenir, offrir ou céder des stupéfiants ou à se rendre
+complice de tels actes.
+I - É L ÉM E N T L É G A L
+L’article 227-18 al. 1 du C.P. définit et réprime la provocation d’un mineur à l’usage de
+stupéfiants.
+L’article 227-18-1 al. 1 du C.P. définit et réprime la provocation d’un mineur au
+transport, à la détention, à l'offre et à la cession ou à se rendre complice de tels actes.
+Les faits de production, de fabrication, d'importation, d'exportation et d’acquisition
+mentionnés dans le code de santé publique ne sont pas cités.
+I I - É L ÉM E N T M A T É R I E L
+ UN ACTE DE PROVOCATION DIRECTE
+Il s’agit d’agissements directs encourageant ou incitant la commission d’infractions
+en matière d’usage et de trafic de stupéfiants. Il est nécessaire qu'il existe entre la
+provocation et les faits « une relation précise et incontestable ainsi qu'un lien étroit ».
+La provocation directe implique que l’auteur des faits doit s’adresser, par exemple,
+par la parole à un mineur identifié (téléphone, SMS, message électronique…).
+La force de persuasion déployée par la personne doit être de nature à inciter le
+mineur à commettre l'un des actes illicites. Une simple suggestion ou conseil donné par
+une personne n'ayant aucun ascendant sur le mineur ne peut être considéré comme une
+provocation. Celle-ci s'oppose ainsi à l'apologie, la propagande ou encore la simple
+publicité qui peuvent présenter la commission des faits prohibés sous un jour favorable
+sans pour autant inciter à les commettre. Dans cette hypothèse, les faits seraient
+réprimés par l'article L. 3421-4 du C.S.P.
+ À COMMETTRE OU À SE RENDRE COMPLICE D’ UNE INFRACTION EN
+MATIÈRE DE STUPÉFIANTS
+Les infractions visées sont celles d’usage (article 227-18 du C.P.) ou de trafic : de
+transport, détention, offre, ou cession illicites de stupéfiants, (article 227-18-1 du C.P.).
+Il s’agit essentiellement de l’utilisation de mineurs dans la revente de rue.
+La provocation à la complicité de trafic vise les comportements qui n’incitent pas
+directement à la commission des infractions, mais à la commission d’un des faits
+constitutifs de complicité prévus par la loi (aide et assistance, provocation ou
+instructions données). Cette précision permet notamment de réprimer la provocation à
+devenir « guetteur » ou à en recruter.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 32
+Le législateur a créé ces infractions dans le but d’aggraver la répression lorsque la
+provocation s’adresse à des mineurs, car cette incrimination coexiste avec celle déjà
+prévue par l’article L. 3421-4 du code de la santé publique (provocation à l’usage ou au
+trafic de stupéfiants ou présentation de ces infractions sous un jour favorable).
+L’article 227-18 du C.P. exige une provocation directe à la différence de l’article
+L. 3421-4 du C.S.P.. C’est par ce dernier article que pourra être notamment réprimée
+l’apologie de l’usage de stupéfiants.
+Il convient de souligner que le fait d'offrir à un mineur des stupéfiants pour sa
+consommation personnelle, qui pourrait être considéré comme une provocation directe
+du mineur à l'usage de stupéfiants, est spécialement prévu par l'article 222-39 alinéa 2
+du C.P. qui aggrave la répression de l'acte (10 ans d'emprisonnement et 75 000 €
+d'amende).
+ ADRESSÉ À UN MINEUR
+L’acte de provocation doit s'adresser à un mineur quel que soit son âge. À noter
+cependant que lorsqu'elle est adressée à un mineur de 15 ans elle est constitutive d'une
+circonstance aggravante.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR D’INCITER UN MINEUR À L'USAGE OU AU
+TRAFIC DE STUPÉFIANTS
+Il s’agit de démontrer la volonté d'agir en connaissance de cause de l’auteur qui a
+conscience que ses agissements sont de nature à inciter un ou plusieurs mineurs à user
+ou à procéder à un trafic de stupéfiants.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Articles 227-18 al. 2 et 227-18-1 al. 2 du C.P.
+ Lorsqu'il s'agit d'un mineur de quinze ans.
+ Lorsque les faits sont commis dans les établissements d'enseignement ou
+d'éducation ou dans les locaux de l'administration, ainsi que, lors des entrées ou
+sorties des élèves ou du public ou dans un temps très voisin de celles-ci, aux
+abords de ces établissements ou locaux.
+V - L A R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-18 al. 1
+du C.P.
+- 5 ans d’emprisonnement
+- 100 000 € d’amende
+227-18-1 al. 1
+du C.P.
+- 7 ans d’emprisonnement
+- 150 000 € d’amende
+AGGRAVÉE
+227-18 al. 2
+du C.P. Circonstance prévue
+au présent article
+- 7 ans d’emprisonnement
+- 150 000 € d’amende
+227-18-1 al. 2
+du C.P.
+- 10 ans d’emprisonnement
+- 300 000 € d’amende
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 33
+ Personnes morales
+La responsabilité pénale des personnes morales est prévue à l'article 227-28-1
+du C.P. .
+ TENTATIVE : NON
+La tentative de cette infraction n’est pas prévue.
+ COMPLICITÉ : OUI
+La complicité est applicable conformément aux dispositions des articles 121-6 et
+121-7 du C.P. Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 34
+LA PROVOCAT ION D IRECTE D ’UN M INEUR
+À LA CONSOMMAT ION DE BO ISSONS
+ALCOOL IQUES
+Le fait de provoquer directement un mineur à la
+consommation excessive ou habituelle de boissons alcooliques,
+constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-19 du C.P. prévoit et réprime la provocation directe d’un mineur à la
+consommation de boissons alcooliques.
+I I - É L ÉM E N T M A T É R I E L
+ UNE PROVOCATION DIRECTE
+La provocation visée ici doit être distinguée de la provocation constitutive de la
+complicité (article 121-7 alinéa 2 C.P.), car l’acte de provocation, n’étant pas défini, peut
+prendre différentes formes dont celles prévues en matière de complicité.
+Cette provocation doit être directe pour être répréhensible, en ce sens elle doit
+tendre à la commission des faits précisément désignés par la loi. Il est donc nécessaire
+qu’il existe entre la provocation et ces faits « une relation précise et incontestable et un
+lien étroit ». Une simple suggestion, ou un simple conseil ne sauraient être considérés
+comme une provocation directe au sens du présent article.
+La provocation directe s’oppose ainsi à l’apologie, à la propagande ou encore à la
+simple publicité qui peuvent présenter la commission des faits prohibés sous un jour
+favorable sans pour autant inciter à les commettre.
+Il importe peu que cette provocation directe ait été suivie ou non d’effet. Elle n’a pas
+à s’adresser à une personne déterminée puisque l’article 227-28 du C.P. prévoit la
+provocation commise par voie de presse.
+La loi vise essentiellement à réprimer les comportements d’un adulte cherchant à
+influencer un mineur, cependant rien n’est spécifié quant à l’âge de l’agent provocateur.
+La provocation peut donc être le fait d’un majeur comme d’un mineur.
+ ADRESSÉE A UN MINEUR
+La provocation doit s’adresser à un mineur quel que soit son âge. A noter cependant
+que celle adressée à un mineur de 15 ans constitue une circonstance aggravante.
+ À LA CONSOMMATION HABITUELLE OU EXCESSIVE DE BOISSONS
+ALCOOLIQUES
+L’expression « boissons alcooliques » désigne des boissons qui comportent des traces
+d’alcool supérieures à 1,2 degré (article L. 3321-1 du code de la santé publique).
+La consommation d’alcool doit être habituelle ou excessive. :
+ La provocation directe à la consommation excessive d'alcool consiste à faire
+boire jusqu'à l'ivresse un mineur. Cette situation implique la présence constante
+et la participation directe, active et décisive, d'une autre personne (alinéa 1).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 35
+ La consommation habituelle d'alcool traduit le caractère répété de l'infraction
+ou manifeste l'intervention de l'entourage de la victime mineure, donc de la
+famille. L’objectif est d’éviter que peu à peu le mineur ne soit placé dans un état
+de dépendance à l’égard de l’alcool, et ne sombre dans l’alcoolisme (alinéa 2).
+L’article 227-19 du C.P. vient compléter d’autres dispositions notamment issues du
+code de la santé publique organisant la protection des mineurs contre l’alcoolisme. Il
+sera possible en cas de constatation de plusieurs infractions de cumuler les
+qualifications.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE PROVOQUER UN MINEUR A LA
+CONSOMMATION HABITUELLE OU EXCESSIVE DE BOISSONS
+ALCOOLIQUES
+C’est une infraction intentionnelle. L’auteur doit avoir conscience que ces
+agissements sont de nature à inciter un ou plusieurs mineurs à consommer de façon
+habituelle ou excessive des boissons alcooliques.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-19 alinéa 3 du C.P.
+ Lorsque la provocation est adressée à un mineur de quinze ans ;
+ Lorsque la provocation est commise dans des établissements d’enseignement
+ou d’éducation ou dans les locaux de l’administration ainsi que, lors des entrées
+ou sorties des élèves ou du public ou dans un temps très voisin de celles-ci, aux
+abords de ces établissements ou locaux.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-19 al.1
+du C.P.
+- 1 ans d’emprisonnement
+- 15 000 € d’amende
+227-19 al.2
+du C.P.
+- 2 ans d’emprisonnement
+- 45 000 € d’amende
+AGGRAVÉE 227-19 al.3
+du C.P.
+Une des circonstances prévues au
+présent article
+- doublement du maximum des
+peines encourues
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit expressément la responsabilité des personnes
+morales en la matière. Elles encourent les peines d’amende selon les modalités de
+l’article 131-38 du C.P., ainsi que les peines mentionnées aux 2° à 5°et 7° à 9° de
+l’article 131-39 du même code.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P..
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 36
+LA PROVOCAT ION D IRECTE D ’UN M INEUR
+À COMMETTRE UN CR IME OU UN DÉL IT
+Le fait de provoquer directement un mineur à commettre un
+crime ou un délit, constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-21 alinéa 1 du C.P. prévoit et réprime la provocation d’un mineur à
+commettre un crime ou un délit.
+I I - É L ÉM E N T M A T É R I E L
+ UNE PROVOCATION DIRECTE
+La provocation visée ici doit être distinguée de la provocation constitutive de la
+complicité (article 121-7 alinéa 2 C.P.), car l’acte de provocation, n’étant pas défini, peut
+prendre différentes formes dont celles prévues en matière de complicité.
+Cette provocation doit être directe pour être répréhensible, en ce sens elle doit
+tendre à la commission des faits précisément désignés par la loi. Il est donc nécessaire
+qu’il existe entre la provocation et ces faits « une relation précise et incontestable et un
+lien étroit ». Une simple suggestion, ou un simple conseil ne sauraient être considérés
+comme une provocation directe au sens du présent article.
+La provocation directe s’oppose ainsi à l’apologie, à la propagande ou encore à la
+simple publicité qui peuvent présenter la commission des faits prohibés sous un jour
+favorable sans pour autant inciter à les commettre.
+Il importe peu que cette provocation directe ait été suivie ou non d’effet. Elle n’a pas
+à s’adresser à une personne déterminée puisque l’article 227-28 du C.P. prévoit la
+provocation commise par voie de presse.
+La loi vise essentiellement à réprimer les comportements d’un adulte cherchant à
+influencer un mineur, cependant rien n’est spécifié quant à l’âge de l’agent provocateur.
+La provocation peut donc être le fait d’un majeur comme d’un mineur.
+ ADRESSÉE À UN MINEUR
+La provocation doit s’adresser à un mineur quel que soit son âge. A noter cependant
+que celle adressée à un mineur de 15 ans constitue une circonstance aggravante.
+ À LA COMMISSION D’UN CRIME OU D’UN DÉLIT
+Il était sans risque pour une personne majeure d’utiliser des mineurs pour
+commettre des crimes ou délits, ceux-ci étant moins exposés à la répression en raison
+de leur statut pénal protecteur, notamment jusqu’à l’âge de treize ans.
+Le législateur a souhaité endiguer cette forme de criminalité en renforçant la
+répression et en incriminant de manière distincte le fait de provoquer un mineur à la
+délinquance. L’objet de la provocation visée à l’article 227-21 du C.P. doit être la
+commission d’un crime ou d’un délit. N’est donc pas visée la provocation à commettre
+des faits de nature contraventionnelle.
+La nature du crime ou du délit importe peu. En revanche, il est nécessaire que la
+provocation ait bien porté sur une ou plusieurs infractions déterminées pouvant revêtir
+cette qualification. Une incitation générale à la délinquance ne saurait caractériser à elle
+seule l’infraction. La condition d’habitude n’est plus requise. La provocation à la
+commission d’un acte unique criminel ou délictuel suffit pour caractériser l’infraction.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 37
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE PROVOQUER UN MINEUR À LA
+COMMISSION D’UN CRIME OU D’UN DÉLIT
+Cette infraction est une infraction intentionnelle. L’auteur doit avoir conscience que
+ces agissements sont de nature à inciter un ou plusieurs mineurs à commettre des
+crimes ou délits.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-21 alinéa 2 du C.P.
+ Lorsque la provocation est adressée à un mineur de quinze ans ;
+ Lorsque le mineur est provoqué à commettre habituellement des crimes ou
+délits ;
+ Lorsque la provocation est commise dans des établissements d’enseignement
+ou d’éducation ou dans les locaux de l’administration ainsi que, lors des entrées
+ou sorties des élèves ou du public ou dans un temps très voisin de celles-ci, aux
+abords de ces établissements ou locaux.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-21 al.1
+du C.P.
+- 5 ans d’emprisonnement
+- 150 000 € d’amende
+AGGRAVÉE 227-21 al.2
+du C.P.
+Une des circonstances prévues au
+présent article
+- 7 ans d’emprisonnement
+- 150 000 € d’amende
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit expressément la responsabilité des personnes
+morales en la matière. Elles encourent les peines d’amende selon les modalités de
+l’article 131-38 du C.P., ainsi que les peines mentionnées aux 2° à 5° et 7°à 9° de
+l’article 131-39 du même code.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 38
+LA CORRUPT ION DE M INEUR
+Constituent des infractions :
+ le fait de favoriser ou de tenter de favoriser la corruption
+d’un mineur ;
+ le fait, commis par un majeur, d'organiser des réunions
+comportant des exhibitions ou des relations sexuelles
+auxquelles un mineur assiste ou participe ou d'assister en
+connaissance de cause à de telles réunions.
+I - É L ÉM E N T L É G A L
+L’article 227-22 alinéa 1 et 2 du C.P. prévoit et réprime la corruption de mineur.
+I I - É L ÉM E N T M A T É R I E L
+ UN AUTEUR DES FAITS
+Bien que l’alinéa 2 de l’article 227-22 du C.P. vise expressément un auteur majeur
+dans une circonstance qui n’est qu’une illustration du mode de commission du délit,
+l’alinéa 1 du même article, en posant d’une manière générale l’infraction, ne fait
+référence à aucune condition d’âge. En l’absence de toute précision, l’auteur peut être
+aussi bien un mineur qu’un majeur.
+ UNE VICTIME MINEURE
+La victime des faits doit être un mineur de 18 ans, de l’un ou l’autre sexe, quelle que
+soit sa moralité. Il importe peu qu’il soit consentant. La minorité de 15 ans constitue une
+circonstance aggravante.
+ UN ACTE DE CORRUPTION
+ Une corruption
+Il s’agit de tout acte visant à éveiller ou à exciter la dépravation sexuelle chez un
+mineur, ou à l’aider à se procurer les moyens de satisfaire ses pulsions dépravées.
+Les simples propos obscènes, ou les simples conseils sont considérés comme
+insuffisants pour caractériser l’infraction. Il est nécessaire que les conseils soient
+persistants et précis.
+Le texte mentionnant simplement « favoriser la corruption d’un mineur », l’acte
+incriminé est seulement défini par son but, mais reste indéfini quant à lui. La
+jurisprudence a fait entrer dans le champ d’application de la loi les actes les plus
+divers. Si le caractère obscène de l’acte matériel fait défaut, l’infraction n’est pas
+caractérisée.
+Jurisprudences :
+. Un photographe se masturbant devant une jeune fille censée poser pour lui (Cass. crim., 01
+février 1995).
+. Envoi de textes et dessins pornographiques à un mineur afin de provoquer sa libido (Cass. crim.,
+25 janvier 1983).
+Il n’est pas nécessaire d’établir que l’attitude de l’auteur a effectivement troublé
+le mineur, ni que celui-ci s’est livré à la suite à un acte sexuel ou à connotation
+sexuelle.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 39
+ L’article 227-22 alinéa 2 du C.P.
+Il prévoit expressément un cas de corruption. Entre dans le champ de
+l’incrimination le fait pour un majeur, soit :
+ d’organiser des réunions comportant des exhibitions ou des relations
+sexuelles auxquelles un mineur assiste ou participe ;
+ d'assister en connaissance de cause à de telles réunions.
+Il s’agit de « parties » d’un genre particulier, où sont souvent pratiquées une
+sexualité de groupe à partenaires multiples, ainsi que des spectacles, publics ou
+privés, pornographiques. Le caractère dépravant de ces activités ne fait aucun doute
+et est constant. Ils sont constitutifs de la corruption de mineur.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE L’OBSCÉNITÉ DE SON ACTE ET DE
+L’AGE DE LA VICTIME
+ VOLONTÉ DE L’AUTEUR DE PERPÉTRER L’ACTE POUR CORROMPRE SA
+VICTIME
+Il s’agit d’une infraction intentionnelle. L’auteur, en ayant conscience du caractère
+obscène de son acte et de l’âge de la victime, doit avoir eu la volonté de corrompre le
+mineur, de l’inciter à se dépraver. Cette volonté se déduit des faits.
+Si l’auteur avait pour but unique d’assouvir ses pulsions personnelles sans chercher à
+dépraver le mineur, l’infraction n’est pas constituée. D’autres qualifications pourront être
+retenues le cas échéant (viol, agressions sexuelles, atteinte sexuelle, etc.).
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-22 alinéa 1 du C.P.
+ Lorsque le mineur a été mis en contact avec l’auteur des faits grâce à
+l’utilisation, pour la diffusion de messages à destination d’un public non
+déterminé, d’un réseau de communications électroniques ;
+ Lorsque les faits sont commis dans des établissements d’enseignement ou
+d’éducation ou dans les locaux de l’administration, ainsi que, lors des entrées ou
+sorties des élèves ou du public ou dans un temps très voisin de celles-ci, aux
+abords de ces établissements ou locaux ;
+ Article 227-22 alinéa 3 du C.P.
+ Lorsque le mineur est âgé de moins de quinze ans ;
+ Lorsque les faits sont commis en bande organisée.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 40
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-22 al.1
+du C.P. - 5 ans d’emprisonnement
+227-22 al 2 - 75 000 € d’amende
+ du C.P
+AGGRAVÉE
+227-22 al.1
+du C.P.
+Une des circonstances prévues au
+présent alinéa
+- 7 ans d’emprisonnement
+- 100 000 € d’amende
+227-22 al.3
+du C.P.
+1re circonstance prévue au présent
+alinéa
+- 10 ans d’emprisonnement
+- 150 000 € d’amende
+2
+e
+ circonstance prévue au présent
+alinéa
+- 10 ans d’emprisonnement
+- 1 000 000 € d’amende
+Nota : L’article 227-27-1 du C.P. prévoit que lorsque cette infraction est commise à l’étranger par un Français
+ou une personne résidant habituellement sur le territoire français, la loi française s’applique sans qu’il y ait
+besoin d’une plainte de la victime ou d’une dénonciation officielle du pays où l’infraction a été commise.
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit expressément la responsabilité des personnes
+morales en la matière. Elles encourent les peines d’amende selon les modalités de
+l’article 131-38 du C.P., ainsi que les peines mentionnées aux 2° à 5° et 7° à 9° de
+l’article 131-39 du même code.
+ TENTATIVE : OUI
+La tentative du délit est punissable. Elle est prévue expressément à l’alinéa 1 de
+l’article 227-22 du C.P.
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P..
+Elle suppose un des faits constitutifs de complicité prévus par la loi, à savoir : aide et
+assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 41
+PROPOS IT IONS SEXUELLES À M INEUR DE
+QU INZE ANS PAR UN MOYEN DE
+COMMUN ICAT ION ÉLECTRON IQUE
+Le fait pour un majeur de faire des propositions sexuelles à un
+mineur de quinze ans ou à une personne se présentant comme
+telle en utilisant un moyen de communication électronique,
+constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-22-1 du C.P. prévoit et réprime les propositions sexuelles à un mineur de
+quinze ans par un moyen de communication électronique.
+I I - É L ÉM E N T M A T É R I E L
+ UN AUTEUR MAJEUR
+L’auteur des faits doit être une personne majeure.
+ DES PROPOSITIONS SEXUELLES PAR UN MOYEN DE COMMUNICATION
+ÉLECTRONIQUE
+Cette infraction permet d’incriminer des comportements pouvant conduire à une
+atteinte sexuelle. Ces comportements se traduisent par des propositions sexuelles
+explicites. Il s’agit donc de réprimer à titre autonome un acte préparatoire ou une
+tentative d’atteinte sexuelle.
+Ces propositions explicites doivent être effectuées par le biais d’un moyen de
+communication électronique. Le texte vise essentiellement les pédophiles qui recourent à
+Internet pour faire des rencontres.
+ UNE VICTIME MINEURE DE QUINZE ANS OU SE PRÉSENTANT COMME
+TELLE
+Les propositions doivent être adressées à un mineur de quinze ans ou à une
+personne se présentant comme telle. Il suffit donc que l’auteur ait cru être en présence
+d’un mineur de quinze ans.
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE FAIRE DES PROPOSITIONS SEXUELLES VIA
+UN MOYEN DE COMMUNICATION ÉLECTRONIQUE A UN MINEUR DE
+QUINZE ANS
+Il s’agit d’une infraction intentionnelle. L’élément moral est établi de par le fait de la
+volonté de l’auteur de faire des propositions sexuelles via un moyen de communication
+électronique à une personne qu’il sait ou suppose être un mineur de quinze ans.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 42
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-22-1 alinéa 2 du C.P.
+Lorsque les propositions ont été suivies d’une rencontre.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-22-1 al.1
+du C.P.
+- 2 ans d’emprisonnement
+- 30 000 € d’amende
+AGGRAVÉE 227-22-1 al.2
+du C.P.
+Circonstance prévue au présent
+alinéa
+- 5 ans d’emprisonnement
+- 75 000 € d’amende
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit la responsabilité des personnes morales.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 43
+L ’EXPLO ITAT ION DE L ’ IMAGE OU DE LA
+REPRÉSENTAT ION À CARACTÈRE
+PORNOGRAPH IQUE D ’UN M INEUR
+Constituent des infractions :
+ Le fait, en vue de sa diffusion, de fixer, d’enregistrer ou de
+transmettre l’image ou la représentation d’un mineur lorsque
+cette image ou cette représentation présente un caractère
+pornographique. Lorsque l'image ou la représentation concerne
+un mineur de quinze ans, ces faits sont punis même s'ils n'ont
+pas été commis en vue de la diffusion de cette image ou
+représentation.
+ Le fait d’offrir, de rendre disponible ou de diffuser une telle
+image ou représentation, par quelque moyen que ce soit, de
+l’importer ou de l’exporter, de la faire importer ou de la faire
+exporter.
+ Le fait de consulter habituellement ou en contrepartie d'un
+paiement un service de communication au public en ligne
+mettant à disposition une telle image ou représentation,
+d'acquérir ou de détenir une telle image ou représentation par
+quelque moyen que ce soit.
+I - É L ÉM E N T L É G A L
+L’article 227-23 alinéa 1 du C.P. prévoit et réprime le fait en vue de sa diffusion de fixer,
+d’enregistrer ou de transmettre l’image ou la représentation d’un mineur présentant un
+caractère pornographique. Lorsque l'image ou la représentation concerne un mineur de
+quinze ans, ces faits sont punis même s'ils n'ont pas été commis en vue de la diffusion de
+cette image ou représentation.
+L’article 227-23 alinéa 2 du C.P. prévoit et réprime le fait d’offrir, de rendre disponible ou
+de diffuser une telle image ou représentation par quelque moyen que ce soit, de l’importer
+ou de l’exporter, de la faire importer ou exporter.
+L’article 227-23 alinéa 4 du C.P. prévoit et réprime le fait de consulter habituellement ou
+en contrepartie d'un paiement un service de communication au public en ligne mettant à
+disposition une telle image ou représentation, d'acquérir ou de détenir une telle image ou
+représentation par quelque moyen que ce soit.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 44
+I I - É L ÉM E N T M A T É R I E L
+ UNE IMAGE OU UNE REPRÉSENTATION À CARACTÈRE
+PORNOGRAPHIQUE D’UN MINEUR
+ Une image ou une représentation
+Le but de cette incrimination est de lutter contre la pédophilie, celle-ci s’alimente
+aussi bien d’une image réelle que d’une représentation fictive. Dans l’esprit du
+législateur, le terme « image » correspond aux photographies ou films pris in vivo.
+Toutefois, ce terme peut également s’appliquer à un dessin ou à une sculpture. Pour
+renforcer cette idée, au terme « image » a été ajouté celui de « représentation ».
+L’image peut donc être non réelle représentant un mineur imaginaire (dessins,
+images résultant de la transformation d’une image réelle, photo montage,
+« morphing », etc.).
+Cette image ou représentation peut se trouver sur tout support : négatif de
+photographie, pellicule de film, affiche, catalogue, clip vidéo, film de montage, etc..
+Jurisprudences :
+. Infraction constituée pour un personnage de manga ayant les traits d’un jeune enfant représenté
+comme ayant des relations sexuelles avec des femmes adultes (Cass. crim., 12 septembre 2007).
+. Le délit est constitué dès lors que le personnage mis en scène, réel, virtuel ou imaginaire,
+présente les traits d’un mineur ou sa représentation, dans une situation pornographique (Cass.
+crim., 12 septembre 2007).
+ Le caractère pornographique de l’image ou de la représentation
+L’article 227-23 du C.P. n’incrimine que le caractère pornographique de l’image
+ou de la représentation du mineur. Sont donc visées les images ou représentations
+de mineurs illustrant des comportements en relation avec l’activité sexuelle. La
+simple nudité du mineur, en dehors de toute attitude particulière, seul ou avec
+d’autres personnes, n’entre pas dans le champ de l’incrimination.
+S’agissant d’œuvres artistiques, tels que tableaux ou gravures, il appartient au
+juge d’apprécier au cas par cas, et d’indiquer si ces œuvres relèvent de l’art ou de la
+pornographie.
+ UNE EXPLOITATION DE L’IMAGE OU DE LA REPRÉSENTATION
+ Fixer, enregistrer ou transmettre
+ En vue de la diffusion
+Les actions de fixer et enregistrer s’appliquent notamment aux activités liées
+à la photographie, au cinéma, à la vidéo, au dessin. La transmission peut se
+concevoir comme la livraison à un nombre déterminé de clients avec une
+publicité restreinte (exemple : transmettre des images à un diffuseur de presse
+qui en assurera une large distribution).
+ En l’absence de diffusion
+Lorsque l'image ou la représentation concerne un mineur de quinze ans, ces
+faits sont punis même s'ils n'ont pas été commis en vue de la diffusion de cette
+image ou représentation.
+Lorsque les mineurs âgés de 15 à 18 ans sont utilisés pour de tels travaux en
+dehors de toute diffusion, d’autres qualifications peuvent être retenues (corruption
+de mineurs, atteintes sexuelles, etc.)
+ Offrir, rendre disponible ou diffuser, importer, exporter, faire importer ou faire
+exporter
+Le second alinéa de l’article 227-23 du C.P. vise à réprimer la diffusion de l’image
+pornographique d’un mineur que l’auteur n’a pas lui-même fabriquée. La notion de
+diffusion doit être entendue au sens large. Elle comprend la vente, la mise en vente,
+l’offre, la location, le prêt, l’affichage et le transport du moment que le mis en cause
+avait connaissance de la nature des choses qu’il transportait.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 45
+Elle suppose plusieurs destinataires, et cela quel que soit l’habillage qui lui a été
+donné. A contrario, une lettre adressée à une seule personne, qui aurait le caractère
+d’une correspondance personnelle, ne peut être qualifiée de diffusion. Les supports
+utilisés sont divers (photos, revues, magazines, cassettes vidéo, etc.). Pour être
+incriminée la diffusion ne doit pas nécessairement recouvrir un caractère public
+(exemple : l’affichage de scènes pornographiques dans un salon privé est
+incriminable).
+L’offre s’entend au sens de la mise à disposition d’autrui, même à titre gratuit
+mais de façon consciente, d’une image ou d’une représentation pornographique d’un
+mineur. Cela permet d’incriminer des faits sans que les caractéristiques liées à la
+diffusion soient exigées. L’offre n’implique pas nécessairement une pluralité de
+destinataires.
+Le fait de rendre disponible une image ou une représentation pornographique
+d’un mineur, correspond à la situation d’une personne qui laisse des fichiers
+pédophiles sur son ordinateur accessibles par Internet, sans pour autant les diffuser
+lui-même à autrui.
+L’importation et l’exportation de tels documents sont incriminés spécifiquement
+et ce, même lorsqu’ils ne font que transiter sur le territoire national pour être
+ensuite réexpédiés dans des pays tiers.
+ Consulter de façon habituelle ou en contrepartie d’un paiement un site
+pédopornographique
+L’article 227-23 alinéa 4 incrimine le fait pour une personne de consulter de
+façon habituelle ou en contrepartie d’un paiement un service de communication en
+ligne mettant à disposition des images ou représentations pornographiques de
+mineurs.
+La consultation, même occasionnelle, est sanctionnée dès lors qu’elle a donné
+lieu à un paiement.
+La Cour de cassation estime que relève de la provocation interdite le fait de créer
+un site pornographique pour identifier ceux qui s’y connectent (Cass. crim., 11 mai
+2006 et Cass. crim., 07 février 2007).
+ Acquisition, détention d’images ou de représentations pornographiques avec des
+mineurs
+L’article 227-23 alinéa 4 incrimine également le fait de détenir, d’acquérir des
+images ou du matériel lié à la pédopornographie.
+L’infraction est caractérisée par la seule présence au domicile ou sur le matériel
+utilisé par l’agent d’images ou représentations pornographiques avec des mineurs
+dès lors qu’il ne peut établir qu’il en ignorait l’existence.
+Jurisprudence :
+. Infraction retenue à l’encontre d’une personne qui détenait ce genre de documents dans son
+système informatique, alors qu’il soutenait sans le prouver qu’ils avaient été introduits par un
+réparateur (C.A. Douai, 02 mai 2007).
+Le délit existe également dès que l’on peut prouver que de tels fichiers ont été
+détenus même s’ils ont été détruits ultérieurement, le repentir étant sans influence
+(C.A. Douai, 01 mars 2006). L'infraction est aussi constituée lorsque l'on est en
+présence d'images pornographiques d'une personne dont l'aspect physique est celui
+d'un mineur, sauf s'il est établi que cette personne était âgée de 18 ans au moment
+de la fixation ou de l'enregistrement de son image.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 46
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR QUE L’IMAGE OU LA REPRÉSENTATION
+EST CONTRAIRE AUX BONNES MŒURS
+Le délit d’exploitation de l’image ou de la représentation pornographique d’un mineur
+est une infraction intentionnelle. L’élément moral est établi directement à l’égard de tous
+ceux qui sont informés de la nature contraire aux bonnes mœurs des images fabriquées
+et diffusées.
+Le mobile qui a animé l’auteur importe peu (sadisme, prétendue vocation artistique,
+etc.).
+La connaissance par le prévenu de la minorité du sujet représenté est présumée.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-23 alinéa 3 du C.P.
+Lorsqu’il a été utilisé, pour la diffusion de l’image ou de la représentation du
+mineur à destination d’un public non déterminé, un réseau de communications
+électroniques.
+ Article 227-23 alinéa 5 du C.P.
+Lorsque la fabrication en vue de la diffusion, la diffusion, la consultation ou la
+détention prévues au même article ont été commises en bande organisée.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+FABRICATION
+SIMPLE
+DÉLIT
+227-23 al.1
+du C.P. - 5 ans d’emprisonnement
+DIFFUSION - 75 000 € d’amende
+SIMPLE
+227-23 al.2
+du C.P.
+CONSULTATION
+OU DÉTENTION
+SIMPLE
+227-23 al.4
+du C.P.
+- 5 ans d’emprisonnement
+- 75 000 € d’amende
+DIFFUSION
+AGGRAVÉE
+(1° DEGRÉ)
+227-23 al.3
+du C.P. Circonstance prévue au présent alinéa - 7 ans d’emprisonnement
+- 100 000 € d’amende
+FABRICATION,
+DIFFUSION
+(2° DEGRÉ)
+CONSULTATION
+OU DÉTENTION
+AGGRAVÉE
+227-23 al.5
+du C.P. Circonstance prévue au présent alinéa - 10 ans d’emprisonnement
+- 500 000 € d’amende
+Nota :
+. L’article 227-28 du C.P. dispose que lorsque le présent délit est commis par voie de presse écrite ou
+audiovisuelle, les dispositions particulières des lois qui régissent ces matières sont applicables en ce qui
+concerne la détermination des personnes responsables.
+. L’article 227-27-1 du C.P. dispose que lorsque l’infraction est commise à l’étranger par un Français ou par une
+personne résidant habituellement sur le territoire national, la loi française s’applique même en l’absence de
+plainte de la victime ou de dénonciation officielle du pays où l’infraction a été commise.
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit la responsabilité des personnes morales.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 47
+ TENTATIVE : OUI
+L’article 227-23 alinéa 6 du C.P. prévoit la tentative punissable pour toutes les
+infractions prévues par l’article 227-23 du même code.
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 48
+LA D IFFUS ION D ’UN MESSAGE À
+CARACTÈRE V IOLENT , INC ITANT AU
+TERROR ISME , PORNOGRAPH IQUE OU
+DANGEREUX SUSCEPT IBLE D ’ÊTRE VU OU
+PERÇU PAR UN M INEUR
+Le fait soit de fabriquer, de transporter, de diffuser par
+quelque moyen que ce soit et quel qu’en soit le support un
+message à caractère violent, incitant au terrorisme,
+pornographique, y compris des images pornographiques
+impliquant un ou plusieurs animaux, ou de nature à porter
+gravement atteinte à la dignité humaine ou à inciter des
+mineurs à se livrer à des jeux les mettant physiquement en
+danger, soit de faire commerce d’un tel message, lorsque ce
+message est susceptible d’être vu ou perçu par un mineur,
+constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-24 alinéa 1 du C.P. prévoit et réprime la diffusion de ce type de message,
+lorsqu’il est susceptible d’être vu ou perçu par un mineur.
+I I - É L ÉM E N T M A T É R I E L
+ UN MESSAGE À CARACTÈRE VIOLENT, INCITANT AU TERRORISME,
+PORNOGRAPHIQUE OU INCITANT À UN JEU DANGEREUX
+ Un message
+Le terme « message » doit être entendu au sens le plus large possible. Il
+regroupe aussi bien le message au sens premier du terme (lettre, communication
+téléphonique, etc.), que le message délivré par une œuvre de fiction, de peinture,
+etc..
+Le support est indifférent. L’article 227-24 al.1 du C.P. vise la diffusion « par
+quelque moyen que ce soit et quel qu’en soit le support ». Cela comprend donc tous
+les écrits (dessins, imprimés, affiches, livres, etc.), toutes les œuvres audiophoniques (disques, cassettes vidéo, émissions de radio, discours, chants et cris en
+direct, etc.), toutes les représentations matérielles (objets, emblèmes, films, etc.),
+et enfin toutes les productions télématiques (émissions en télécopie).
+ Le caractère du message
+Le texte précise que le message doit avoir un « caractère violent, incitant au
+terrorisme, pornographique, y compris des images pornographiques impliquant un
+ou plusieurs animaux, ou de nature à porter gravement atteinte à la dignité humaine
+ou à inciter des mineurs à se livrer à des jeux les mettant physiquement en
+danger ».
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 49
+Ces deux notions peuvent concerner des actes dégradants ou alimentés d’une
+grande violence susceptibles de provoquer des effets traumatisants pour la
+jeunesse.Le message doit « inciter des mineurs à se livrer à des jeux les mettant
+physiquement en danger. ».
+Sont ainsi visées les pratiques dangereuses comme le jeu du foulard par lequel
+des adolescents entrent en compétition pour résister le plus longtemps possible à
+une strangulation.
+ LES ACTES INCRIMINÉS
+L’article 227-24 al.1 du C.P. requiert un acte matériel de fabrication, de transport, de
+diffusion ou de commerce d’un tel message.
+Ces actes touchent tous ceux qui interviennent dans l’exploitation des messages
+interdits au stade de la fabrication, de la diffusion ou du profit. Le commerce en la
+matière comprend ceux en amont qui en auront financé la fabrication, et en aval ceux
+qui auront perçu les produits de l’exploitation même s’ils ne sont pas intervenus dans
+l’activité matérielle elle-même.
+ UN MINEUR DESTINATAIRE DU MESSAGE
+L’infraction est constituée lorsque le message est « susceptible d’être vu ou perçu par
+un mineur ». Il n’est donc pas nécessaire que le public, ni même le mineur, ait été
+atteint par le message. La diffusion faite sciemment est sanctionnée, mais aussi
+l’imprudence ou la négligence permettant à des mineurs d’avoir accès à des messages
+réservés aux majeurs (journal en vente dans un kiosque sans la mention « réservé aux
+adultes, films, etc.).
+L’infraction est constituée y compris si l'accès d'un mineur aux messages résulte
+d'une simple déclaration de celui-ci indiquant qu'il est âgé d'au moins dix-huit ans.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE LA POSSIBLE DIFFUSION À DES
+MINEURS
+L’infraction est constituée si le message est « susceptible d’être vu ou perçu par un
+mineur ». L’élément moral est réalisé lorsque la diffusion de tels messages est
+délibérément effectuée à des mineurs. Il l’est également lorsque la diffusion à des
+mineurs résulte d’un manque de précautions suffisantes pour leur en éviter l’accès.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 50
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-24 al.1
+du C.P.
+- 3 ans d’emprisonnement
+- 75 000 € d’amende
+Nota :
+. L’article 227-24 al.2 du C.P. dispose que lorsque le présent délit est commis par voie de presse écrite ou
+audiovisuelle ou de la communication au public en ligne, les dispositions particulières des lois qui régissent ces
+matières sont applicables en ce qui concerne la détermination des personnes responsables.
+. L’article 227-27-1 du C.P. dispose que lorsque l’infraction est commise à l’étranger par un Français ou par une
+personne résidant habituellement sur le territoire national, la loi française s’applique même en l’absence de
+plainte de la victime ou de dénonciation officielle du pays où l’infraction a été commise.
+ Personnes morales
+La responsabilité des personnes morales est prévue par l’ article 227-28-1 du C.P.
+ TENTATIVE : NON
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévus par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 51
+LA PROVOCAT ION À LA
+PÉDOPORNOGRAPH IE
+Le fait de faire à une personne des offres ou des promesses ou
+de lui proposer des dons, présents ou avantages quelconques
+afin qu’elle commette à l’encontre d’un mineur l’un des crimes
+ou délits visés aux articles 225-5 à 225-11, 227-22, 227-23 et
+227-25 à 227-28 du C.P. constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-28-3 du C.P. prévoit et réprime la provocation à la pédopornographie.
+I I - É L ÉM E N T M A T É R I E L
+ UN ACTE DE PROVOCATION
+L’article 227-28-3 du C.P. mentionne que la provocation consiste dans le fait de
+« faire à une personne des offres ou des promesses ou de lui proposer des dons,
+présents ou avantages quelconques ».
+Il s’agit d’agissements directs encourageant ou incitant autrui à commettre un crime
+ou un délit à l’encontre d’un mineur.
+ À COMMETTRE UN CRIME OU UN DÉLIT À L’ENCONTRE D’UN MINEUR
+ Les crimes ou délits visés par le texte
+Le texte de loi énumère les crimes ou délits pour lesquels l’infraction de
+provocation sera retenue. Il s’agit :
+ du proxénétisme (articles 225-5 à 225-11 C.P.) ;
+ de la corruption de mineur (article 227-22 C.P.) ;
+ de l’exploitation de l’image ou de la représentation à caractère
+pornographique d’un mineur (article 227-23 C.P.) ;
+ des atteintes sexuelles par un majeur (articles 227-25 à 227-28 C.P.).
+ Un mineur victime
+L’article 227-28-3 du C.P. mentionne que la victime de la provocation à
+commettre un des crimes ou délits visés supra doit être un mineur. En l’absence de
+toute précision, il s’agit de mineurs de 18 ans.
+ ABSENCE DE RÉALISATION DU CRIME OU DU DÉLIT
+L’infraction résidant dans la provocation, elle ne doit avoir été ni commise ni tentée,
+comme le précise d’ailleurs le texte. Dans l’hypothèse inverse, les faits recouvriraient
+alors une autre qualification pénale.
+I I I - É L ÉM E N T M O R A L
+ VOLONTÉ DE L’AUTEUR DE FAIRE COMMETTRE À UN TIERS UN CRIME
+OU UN DÉLIT À L’ENCONTRE D’UN MINEUR
+Il s’agit d’une infraction intentionnelle. La volonté de l’auteur de faire commettre à
+autrui une infraction se traduit par les moyens employés : offres, promesses,
+propositions de dons, etc..
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 52
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+PORTANT SUR
+UN DÉLIT DÉLIT 227-28-3 du
+C.P.
+- 3 ans d’emprisonnement
+- 45 000 € d’amende
+PORTANT SUR
+UN CRIME
+- 7 ans d’emprisonnement
+- 100 000 € d’amende
+ Personnes morales
+Les personnes morales peuvent être déclarées responsables pénalement dans les
+conditions prévues par l’article 121-2 du C.P. .
+ TENTATIVE : NON
+ COMPLICITÉ : NON
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 53
+LES ATTE INTES SEXUELLES
+PAR UN MA JEUR SUR UN M INEUR
+DE QU INZE ANS
+Hors les cas de viol ou d’agression sexuelle prévus à la section
+du code pénal intitulée «du viol, de l’inceste, et des autres
+agressions sexuelles (Art.222-22 à 222-33-1)», le fait, pour un
+majeur, d’exercer une atteinte sexuelle sur un mineur de quinze
+ans constitue une infraction.
+I - É L ÉM E N T L É G A L
+L’article 227-25 du C.P. prévoit et réprime les atteintes sexuelles, commises par un
+majeur sur la personne d’un mineur de quinze ans, autres que les viols ou agressions
+sexuelles prévus à la section du code pénal intitulée «du viol, de l’inceste, et des autres
+agressions sexuelles ».
+L'article 227-27-2-1 du C.P. qualifie d’incestueuses ces atteintes lorsqu’elles sont
+commises sur la personne d’un mineur par :
+1° Un ascendant ;
+2° Un frère, une sœur, un oncle, une tante, un grand-oncle, une grand-tante, un neveu
+ou une nièce ;
+3° Le conjoint, le concubin d’une des personnes mentionnées aux 1° et 2° ou le
+partenaire lié par un pacte civil de solidarité avec l'une des personnes mentionnées aux
+mêmes 1° et 2°, s'il a sur le mineur une autorité de droit ou de fait.
+I I - É L ÉM E N T M A T É R I E L
+ UNE ATTEINTE SEXUELLE
+L’atteinte sexuelle se définit comme tout agissement en rapport avec l’activité
+sexuelle. Elle suppose un contact physique entre l’agresseur et sa victime.
+L’atteinte sexuelle peut être le fait de l’auteur sur la victime, mais également celui
+effectué par la victime sur l’auteur.
+L’article 227-25 du C.P. exclut de son champ d’application les cas de viol ou
+d’agression sexuelle prévus à la section du code pénal intitulée «du viol, de l’inceste, et
+des autres agressions sexuelles (Art.222-22 à 222-33-1) ». Ces infractions sont traitées
+dans le fascicule n° 1 (Les crimes et délits contre les personnes).
+L’atteinte sexuelle prévue à l’article 227-25 du C.P. suppose donc un contact
+physique commis sans violence, contrainte, menace ni surprise. Dans l’hypothèse
+inverse, ces agissements pourraient être qualifiés de viol aggravé lorsque l’acte de
+pénétration sexuelle ou l’acte bucco-génital est réalisé (Art. 222-23 et 222-24 C.P.), ou
+d’agression sexuelle imposée à un mineur de 15 ans par violence, contrainte, menace ou
+surprise (art. 222-29-1 C.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 54
+ UN AUTEUR MAJEUR
+Le texte précise que l’infraction n’est imputable qu’à un majeur. Les actes accomplis
+entre mineurs sont donc exclus du champ d’application de l’infraction. En outre, si la
+différence d’âge entre l’auteur majeur et sa victime est d’au moins cinq ans, les faits
+sont exclus du champ d’application de l’article 227-25 du C.P. car ils seraient alors
+susceptibles de recevoir la qualification de viol ou d’agression sexuelle.
+Si l’auteur est une des personnes listées à l’article 227-27-2-1 (frères, sœurs, etc.),
+l’infraction d’atteinte sexuelle n’est constituée que dans l’hypothèse où la différence
+d’âge entre l’auteur majeur et sa victime est inférieure à 5 ans. La « surqualification »
+d’atteinte incestueuse prévue par l’article 227-27-2-1 du C.P., sans véritable
+conséquence juridique, sera alors susceptible de s’appliquer. Si les faits sont commis par
+un ascendant, ou si la différence d’âge est d’au moins cinq ans, ils pourraient alors
+constituer les faits de viol incestueux (Art. 222-22-3 et 222-23-2 C.P.) ou d’agression
+sexuelle incestueuse (Art. 222-22-3 et 222-29-3 C.P.)
+ UNE VICTIME MINEURE DE QUINZE ANS
+C’est l’âge qu’avait la victime au moment des faits qui doit être pris en compte (Cass.
+crim., 21 mars 1957).
+L’âge se calcule d’heure à heure (Cass. crim., 03 septembre 1985). À défaut d’acte
+ayant valeur probante, la preuve de l’âge du mineur peut se faire par tout moyen (Cass.
+crim., 17 juillet 1991).
+Le texte ne précise pas que la minorité de 15 ans doit être apparente ou connue de
+l’auteur de l’infraction, le mineur de quinze ans bénéficie ainsi d’une protection
+particulière.
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE L’ACTE ACCOMPLI
+L’élément moral réside dans la conscience de l’auteur de l’acte accompli. Cette
+conscience est nécessaire et suffisante. L’auteur est pleinement conscient d’exercer une
+atteinte sexuelle sur un mineur de quinze ans dont il n’ignore pas l’âge réel.
+L’erreur sur l’âge de la victime n’atténue pas la responsabilité pénale. Cependant,
+dans certaines hypothèses, les poursuites peuvent être impossibles s’il est acquis que
+l’auteur ignorait l’âge réel de la victime, dans la mesure où celle-ci avait le
+comportement et le développement physique d’un vrai adulte (Cass. crim.,
+04 janvier 1902). Il appartient à l’auteur de justifier qu’il a été trompé sur l’âge de la
+victime (Cass. crim., 07 février 1957).
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Article 227-26 du C.P.
+ Lorsqu’elle est commise par une personne majeure ayant sur la victime une
+autorité de droit ou de fait.
+ Lorsqu’elle est commise par une personne qui abuse de l’autorité que lui
+confèrent ses fonctions.
+Le texte vise une autorité « fonctionnelle » qui peut s’entendre aussi bien
+comme une autorité légale que comme une autorité de fait. Le coupable investi
+d’une puissance quelconque sur un mineur de quinze ans, en abuse pour
+commettre une atteinte sexuelle.
+ Lorsqu’elle est commise par plusieurs personnes agissant en qualité d’auteur
+ou de complice.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 55
+ Lorsque le mineur a été mis en contact avec l'auteur des faits grâce à
+l'utilisation, pour la diffusion de messages à destination d'un public non
+déterminé, d'un réseau de communication électronique.
+ Lorsqu’elle est commise par une personne agissant en état d’ivresse
+manifeste ou sous l’emprise manifeste de produits stupéfiants.
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE
+DÉLIT
+227-25 du C.P. – 7 ans d’emprisonnement
+– 100 000 € d’amende
+AGGRAVÉE 227-26 du C.P. Une des circonstances prévues au
+présent article
+– 10 ans d’emprisonnement
+– 150 000 € d’amende
+Nota : L’article 227-27-1 du C.P. prévoit que lorsque l’infraction a été commise à l’étranger par un Français ou
+par une personne résidant habituellement sur le territoire français, la loi française s’applique même en
+l’absence de plainte de la victime ou de dénonciation officielle du pays où l’infraction a été commise.
+ Personnes morales
+L’article 227-28-1 du C.P. prévoit la responsabilité des personnes morales.
+ TENTATIVE : OUI
+L’article 227-27-2 du C.P. prévoit la tentative punissable pour les délits d’atteintes
+sexuelles sur mineur.
+ COMPLICITÉ : OUI
+La complicité est retenue conformément au droit commun (articles 121-6 et 121-7
+du C.P.) à l’égard de tous ceux qui ont facilité les faits (organisation de rencontres,
+fournitures d’adresses ou de locaux, etc.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 56
+LES ATTE INTES SEXUELLES
+PAR UN MA JEUR SUR UN M INEUR
+DE PLUS DE QU INZE ANS
+Hors les cas de viol ou d'agression sexuelle prévus à la section
+du code pénal intitulée «du viol, de l’inceste, et des autres
+agressions sexuelles (Art. 222-22 à 222-33-1) », les atteintes
+sexuelles sur un mineur âgé de plus de quinze ans constituent
+une infraction :
+1° Lorsqu'elles sont commises par toute personne majeure
+ayant sur la victime une autorité de droit ou de fait ;
+2° Lorsqu'elles sont commises par une personne majeure qui
+abuse de l'autorité que lui confèrent ses fonctions.
+I - É L ÉM E N T L É G A L
+L’article 227-27 du C.P. prévoit et réprime les atteintes sexuelles, autres que les viols ou
+agressions sexuelles prévus à la section du code pénal intitulée «du viol, de l’inceste, et
+des autres agressions sexuelles », commises sur un mineur de plus de quinze ans même
+émancipé.
+I I - É L ÉM E N T M A T É R I E L
+ UNE ATTEINTE SEXUELLE
+L’atteinte sexuelle se définit comme tout agissement en rapport avec l’activité
+sexuelle. Elle suppose un contact physique entre l’agresseur et sa victime. L’atteinte
+sexuelle peut être le fait de l’auteur sur la victime, mais également celui effectué par la
+victime sur l’auteur.
+L’article 227-27 du C.P. exclut de son champ d’application les cas de viol ou
+d’agression sexuelle prévus à la section du code pénal intitulée «du viol, de l’inceste, et
+des autres agressions sexuelles (Art.222-22 à 222-33-1) ». Ces infractions sont traitées
+dans le fascicule n° 1 (Les crimes et délits contre les personnes).
+L’atteinte sexuelle prévue à l’article 227-27 du C.P. suppose donc un contact
+physique, commis sans violence, contrainte, menace ni surprise. Dans l’hypothèse
+inverse, ces agissements pourraient être qualifiés de viol lorsque l’acte de pénétration
+sexuelle ou l’acte bucco-génital est réalisé (Art. 222-23 C.P.), ou d’agression sexuelle
+(Art. 222-27 C.P.)
+ UN AUTEUR MAJEUR
+Le texte vise expressément les personnes pouvant être incriminées pour ce type de
+faits. L’infraction n’est imputable qu’à un majeur. Les actes accomplis entre mineurs sont
+donc exclus du champ d’application de l’infraction.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 57
+ Toute personne majeure ayant sur la victime une autorité de droit ou de fait
+Il s’agit des personnes ayant une autorité de droit (tuteur par exemple), ou ayant
+une autorité de fait permanente et discontinue établie par des circonstances
+particulières caractérisant cette autorité (chef scout par exemple).
+Nota : Si l’auteur est un ascendant du mineur ou un des membres de sa famille ayant autorité sur lui
+(listés à l’article 222-22-3 C.P.), les faits ne relèvent pas de l’atteinte sexuelle, mais peuvent constituer
+un viol incestueux (Art. 222-22-3 et 222-23-2 C.P.) ou une agression sexuelle incestueuse (Art. 222-
+22-3 et 222-29-3 C.P.)
+ Une personne majeure abusant de l’autorité que lui confèrent ses fonctions
+Le texte vise une autorité « fonctionnelle » qui peut s’entendre aussi bien comme
+une autorité légale que comme une autorité de fait. L’auteur investi d’une puissance
+quelconque sur un mineur de plus de quinze ans, en abuse pour commettre une
+atteinte sexuelle.
+ UNE VICTIME MINEURE DE PLUS DE QUINZE ANS
+Au jour des faits, la victime doit être âgée de plus de quinze ans et de moins de dixhuit ans, même émancipée par le mariage.
+L’erreur sur l’âge de la victime n’atténue pas la responsabilité pénale. Cependant,
+dans certaines hypothèses, les poursuites peuvent être impossibles s’il est acquis que
+l’auteur ignorait l’âge réel de la victime, dans la mesure où celle-ci avait le
+comportement et le développement physique d’un vrai adulte (Cass. crim.,
+04 janvier 1902). Il appartient à l’auteur de justifier qu’il a été trompé sur l’âge de la
+victime (Cass. crim., 07 février 1957).
+I I I - É L ÉM E N T M O R A L
+ CONSCIENCE DE L’AUTEUR DE L’ACTE ACCOMPLI
+L’auteur est pleinement conscient d’exercer une atteinte sexuelle sur un mineur âgé
+de plus de quinze ans.
+I V - C I R C O N S T A N C E S A G G R A V A N T E S
+ Aucune
+V - R É P R E S S I O N
+ PEINES ENCOURUES
+ Personnes physiques
+QUALIFICATION CLASSIFICATION ARTICLE CIRCONSTANCES AGGRAVANTES PEINES PRINCIPALES
+SIMPLE DÉLIT 227-27 du C.P. – 5 ans d’emprisonnement
+– 45 000 € d’amende
+Nota : L’article 227-27-1 du C.P. prévoit que lorsque l’infraction a été commise à l’étranger par un Français ou
+par une personne résidant habituellement sur le territoire français, la loi française s’applique même en
+l’absence de plainte de la victime ou de dénonciation officielle du pays où l’infraction a été commise.
+ Personnes morales
+Les personnes morales peuvent être reconnues responsables pénalement dans
+les conditions prévues par l’article 121-2 du C.P. .
+ TENTATIVE : OUI
+L’article 227-27-2 du C.P. prévoit la tentative punissable pour les délits d’atteintes
+sexuelles sur mineurs.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 58
+ COMPLICITÉ : OUI
+La complicité est applicable en la matière conformément aux dispositions de l’article
+121-7 du C.P. . Elle suppose un des faits constitutifs de complicité prévue par la loi, à
+savoir : aide et assistance, provocation ou instructions données.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 59

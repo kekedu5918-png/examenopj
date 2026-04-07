@@ -28,10 +28,9 @@ export function FondamentauxStructuredIntro() {
           Les fondamentaux de l’OPJ
         </h2>
         <p className='mt-3 text-slate-400'>
-          Le socle procédural et pénal à maîtriser en profondeur. Ces notions reviennent dans toutes les épreuves.{' '}
-          <span className='text-slate-500'>
-            [Sources : F09, F10, F11, F15 — TODO : valider chaque tableau contre le fascicule et la page indiquée.]
-          </span>
+          Le socle procédural et pénal à maîtriser en profondeur. Ces notions reviennent dans toutes les épreuves. La
+          rubrique 1 reprend le tableau des conséquences (F09.txt, p. 9 du fascicule) ; vérifiez les montants et délais
+          sur votre édition papier si besoin.
         </p>
 
         <Accordion type='single' collapsible className='mt-10 w-full space-y-3'>
@@ -39,65 +38,86 @@ export function FondamentauxStructuredIntro() {
           <AccordionItem value='f09-class' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
             <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
               1. La classification des infractions{' '}
-              <span className='ml-1 text-xs font-normal text-slate-500'>[F09 — tab. p. 8]</span>
+              <span className='ml-1 text-xs font-normal text-slate-500'>[F09 — tab. p. 8–9]</span>
             </AccordionTrigger>
             <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+              <p className='text-xs text-slate-500'>
+                Tableau « CONSÉQUENCES DE LA CLASSIFICATION DES INFRACTIONS » — colonnes dans l’ordre du fascicule : Crime,
+                Délit, Contravention (F09.txt).
+              </p>
               <TableWrap>
                 <table className='w-full min-w-[720px] border-collapse text-left'>
                   <thead>
                     <tr className='border-b border-white/10 text-[11px] uppercase text-slate-400'>
                       <th className='py-2 pr-2' />
-                      <th className='py-2 pr-2'>Contravention</th>
+                      <th className='py-2 pr-2'>Crime</th>
                       <th className='py-2 pr-2'>Délit</th>
-                      <th className='py-2'>Crime</th>
+                      <th className='py-2'>Contravention</th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-300'>
                     <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-white'>Juridiction</td>
-                      <td>Tribunal de police</td>
+                      <td className='py-2 font-medium text-white'>Juridictions compétentes</td>
+                      <td>Cour d&apos;assises ou cour criminelle départementale</td>
                       <td>Tribunal correctionnel</td>
-                      <td>Cour d’assises / CCD</td>
+                      <td>Tribunal de police</td>
                     </tr>
                     <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-white'>Flagrance</td>
+                      <td className='py-2 font-medium text-white'>L&apos;enquête de flagrant délit</td>
+                      <td>Possible pour crime</td>
+                      <td>Possible pour délit puni de peine d&apos;emprisonnement</td>
                       <td>Non applicable</td>
-                      <td>Possible si peine d’emprisonnement</td>
-                      <td>Possible</td>
                     </tr>
                     <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-white'>Prescription action publique</td>
+                      <td className='py-2 font-medium text-white'>L&apos;instruction</td>
+                      <td>Obligatoire</td>
+                      <td>Facultative</td>
+                      <td>Exceptionnelle, sur requête du procureur de la République</td>
+                    </tr>
+                    <tr className='border-b border-white/5'>
+                      <td className='py-2 font-medium text-white'>Délais prescription : action publique</td>
+                      <td>20 ans</td>
+                      <td>6 ans</td>
                       <td>1 an</td>
-                      <td>6 ans</td>
-                      <td>20 ans</td>
                     </tr>
                     <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-white'>Prescription peine</td>
+                      <td className='py-2 font-medium text-white'>Délais prescription : peine</td>
+                      <td>20 ans</td>
+                      <td>6 ans</td>
                       <td>3 ans</td>
-                      <td>6 ans</td>
-                      <td>20 ans</td>
                     </tr>
                     <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-white'>Tentative</td>
-                      <td>Non punissable</td>
-                      <td>Si texte le prévoit</td>
+                      <td className='py-2 font-medium text-white'>La tentative</td>
                       <td>Toujours punissable</td>
+                      <td>Punissable si un texte le prévoit</td>
+                      <td>Non punissable</td>
+                    </tr>
+                    <tr className='border-b border-white/5'>
+                      <td className='py-2 font-medium text-white'>La complicité</td>
+                      <td>Punissable</td>
+                      <td>Punissable</td>
+                      <td>Punissable uniquement quand un texte le prévoit expressément</td>
                     </tr>
                     <tr>
-                      <td className='py-2 font-medium text-white'>Complicité</td>
-                      <td>Si texte le prévoit expressément</td>
-                      <td>Punissable</td>
-                      <td>Punissable</td>
+                      <td className='py-2 font-medium text-white'>L&apos;extradition</td>
+                      <td>Possible</td>
+                      <td>Possible</td>
+                      <td>Non applicable</td>
                     </tr>
                   </tbody>
                 </table>
               </TableWrap>
               <div>
                 <p className='font-semibold text-white'>Éléments constitutifs de l’infraction</p>
-                <ul className='mt-2 list-inside list-disc space-y-1'>
+                <blockquote className='mt-3 border-l-4 border-emerald-500/50 pl-4 text-[13px] leading-relaxed text-slate-200'>
+                  L&apos;article 111-3 du C.P. pose le principe de légalité en disposant que &quot;nul ne peut être puni
+                  pour un crime ou pour un délit dont les éléments ne sont pas définis par la loi, ou pour les
+                  contraventions dont les éléments ne sont pas définis par le règlement&quot;.
+                </blockquote>
+                <ul className='mt-3 list-inside list-disc space-y-1'>
                   <li>
-                    Élément légal : <span className='text-emerald-200'>[art. 111-3 C.P.]</span> — Sans texte légal, pas
-                    d’infraction.
+                    Élément légal : sans texte légal, pas d&apos;infraction (même si l&apos;acte trouble l&apos;ordre
+                    public).
                   </li>
                   <li>Élément matériel : acte positif ou négatif (commission / omission).</li>
                   <li>

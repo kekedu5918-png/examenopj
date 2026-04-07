@@ -1,3 +1,4 @@
+import { getInfractionsCatalogFromOfficial } from '@/data/infractions-officielles-catalog';
 import { recapSectionF01P1 } from '@/data/recapitulatif-f01-p1';
 import { recapSectionsF03F07 } from '@/data/recapitulatif-f03-f07';
 
@@ -600,6 +601,16 @@ export type InfractionCatalogItem = {
   /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
   tentative?: string;
   complicite?: string;
+  /** Données étendues (fascicule officiel .txt / JSON d’audit) */
+  accrocheFascicule?: string;
+  circonstancesAggravantesComplet?: string;
+  circonstancesAucune?: boolean;
+  repressionTableau?: { qualification: string; article: string; circonstances: string; peines: string }[];
+  repressionImmunite?: string | null;
+  repressionNota?: string | null;
+  piegeExamenOfficiel?: string | null;
+  maj2025?: boolean;
+  badgeMaj?: string | null;
 };
 
 /** Lien « Voir le récap » depuis une ligne du référentiel. */
@@ -618,32 +629,8 @@ export function fasciculeToRecapFilter(f: RecapFasciculeId): Exclude<RecapFascic
   return (e?.[0] ?? 'f02') as Exclude<RecapFasciculeFilter, 'all'>;
 }
 
-/** Liste plate pour la page Infractions (hors placeholder « À compléter »). */
+/** Liste plate pour la page Infractions — source : fascicules officiels (JSON d’audit). */
 export function getInfractionsCatalog(): InfractionCatalogItem[] {
-  const out: InfractionCatalogItem[] = [];
-  for (const s of recapSections) {
-    s.rows.forEach((row, ri) => {
-      if (row.infraction.includes('À compléter')) return;
-      out.push({
-        id: `${s.id}-r${ri}`,
-        fascicule: s.fascicule,
-        fasciculePart: s.fasciculePart,
-        groupTitle: s.groupTitle,
-        infraction: row.infraction,
-        legal: row.legal,
-        materiel: row.materiel,
-        moral: row.moral,
-        priorite: row.priorite ?? 'secours',
-        noteExamen: row.noteExamen,
-        flashcardsCat:
-          s.fascicule === 'F01'
-            ? 'atteintes-aux-personnes'
-            : s.fascicule === 'F02'
-              ? 'atteintes-aux-biens'
-              : undefined,
-      });
-    });
-  }
-  return out;
+  return getInfractionsCatalogFromOfficial();
 }
 
