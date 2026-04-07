@@ -600,6 +600,8 @@ export type InfractionCatalogItem = {
   /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
   tentative?: string;
   complicite?: string;
+  /** Matériel / moral issus de l’audit fascicule (`infractions_officielles.json`) lorsque la ligne est validée. */
+  elementsSource?: 'site' | 'fascicule_audit';
 };
 
 /** Lien « Voir le récap » depuis une ligne du référentiel. */

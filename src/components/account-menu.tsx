@@ -2,11 +2,10 @@
 
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { IoPersonCircleOutline } from 'react-icons/io5';
+import { UserRound } from 'lucide-react';
 
 import {
   DropdownMenu,
-  DropdownMenuArrow,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
@@ -38,18 +37,25 @@ export function AccountMenu({ signOut }: { signOut: () => Promise<ActionResponse
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className='rounded-full'>
-        <IoPersonCircleOutline size={24} />
+      <DropdownMenuTrigger asChild>
+        <button
+          type='button'
+          aria-label='Menu compte'
+          className='inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-white/90 outline-none ring-offset-2 ring-offset-examen-canvas transition hover:bg-white/[0.08] hover:text-white focus-visible:ring-2 focus-visible:ring-examen-accent/50'
+        >
+          <UserRound className='h-6 w-6' strokeWidth={1.75} aria-hidden />
+        </button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='me-4'>
-        <DropdownMenuItem asChild>
+      <DropdownMenuContent align='end' sideOffset={8} className='min-w-[12rem] border-white/10 bg-examen-raised text-examen-ink'>
+        <DropdownMenuItem asChild className='focus:bg-white/10'>
           <Link href='/accueil'>Accueil — progression</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem asChild>
+        <DropdownMenuItem asChild className='focus:bg-white/10'>
           <Link href='/account'>Mon compte</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={handleLogoutClick}>Déconnexion</DropdownMenuItem>
-        <DropdownMenuArrow className='me-4 fill-white' />
+        <DropdownMenuItem className='focus:bg-white/10' onClick={handleLogoutClick}>
+          Déconnexion
+        </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

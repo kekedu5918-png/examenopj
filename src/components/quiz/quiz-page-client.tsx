@@ -287,12 +287,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     setBestAfterQuiz(null);
   }
 
-  const modeCardClass = (active: boolean, glow: string) =>
-    cn(
-      'cursor-pointer text-left transition-all duration-300',
-      active && `ring-2 ring-cyan-400/50 ${glow}`
-    );
-
   if (phase === 'quiz') {
     return (
       <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pt-8'>
@@ -387,118 +381,130 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           </p>
         </div>
 
-        <div className='grid gap-6 md:grid-cols-3'>
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease }}>
-            <div
-              role='button'
-              tabIndex={0}
-              className={modeCardClass(mode === 'module', 'shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]')}
-              onClick={() => setMode('module')}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setMode('module');
-                }
-              }}
-            >
-              <GlassCard hover padding='p-6' className='h-full'>
-              <BookOpen className='h-10 w-10 text-cyan-400' strokeWidth={1.25} />
-              <h3 className='mt-4 font-semibold text-white'>Par module thématique</h3>
-              <p className='mt-2 text-sm text-gray-500'>Choisissez un thème du programme</p>
-              {mode === 'module' ? (
-                <label className='mt-4 block text-left'>
-                  <span className='sr-only'>Module thématique</span>
-                  <select
-                    value={fascicule}
-                    onChange={(e) => setFascicule(Number(e.target.value))}
-                    onClick={(e) => e.stopPropagation()}
-                    className='mt-2 w-full rounded-xl border border-white/15 bg-navy-900/90 px-3 py-2.5 text-sm text-white focus:border-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30'
+        <div className='mx-auto max-w-3xl'>
+          <p className='mb-3 text-center text-sm font-medium text-gray-400'>Portée du quiz</p>
+          <div
+            role='tablist'
+            aria-label='Choisir la portée du quiz'
+            className='flex flex-col gap-2 rounded-2xl border border-white/[0.08] bg-navy-950/80 p-1.5 sm:flex-row sm:items-stretch'
+          >
+            {(
+              [
+                { id: 'module' as const, label: 'Module thématique', hint: 'Un fascicule F01–F18', Icon: BookOpen },
+                { id: 'domain' as const, label: 'Par domaine', hint: 'DPS · DPG · Procédure', Icon: Layers },
+                { id: 'global' as const, label: 'Quiz global', hint: 'Tout mélangé', Icon: Shuffle },
+              ] as const
+            ).map(({ id, label, hint, Icon }) => {
+              const active = mode === id;
+              return (
+                <button
+                  key={id}
+                  type='button'
+                  role='tab'
+                  aria-selected={active}
+                  onClick={() => setMode(id)}
+                  className={cn(
+                    'flex flex-1 items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors sm:min-h-[4.25rem]',
+                    active
+                      ? 'bg-cyan-500/15 text-white ring-1 ring-cyan-500/40'
+                      : 'text-gray-400 hover:bg-white/[0.04] hover:text-gray-200',
+                  )}
+                >
+                  <span
+                    className={cn(
+                      'inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border',
+                      active ? 'border-cyan-400/35 bg-cyan-500/10 text-cyan-300' : 'border-white/10 bg-white/[0.03]',
+                    )}
                   >
-                    {fasciculeOptions.map((f) => (
-                      <option key={f.numero} value={f.numero} className='bg-navy-900'>
-                        F{String(f.numero).padStart(2, '0')} — {f.titre}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-              ) : null}
-              </GlassCard>
-            </div>
-          </motion.div>
+                    <Icon className='h-5 w-5' strokeWidth={1.5} aria-hidden />
+                  </span>
+                  <span className='min-w-0'>
+                    <span className='block text-sm font-semibold leading-tight'>{label}</span>
+                    <span className='mt-0.5 block text-xs text-gray-500'>{hint}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.05, ease }}>
-            <div
-              role='button'
-              tabIndex={0}
-              className={modeCardClass(mode === 'domain', 'shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]')}
-              onClick={() => setMode('domain')}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setMode('domain');
-                }
-              }}
-            >
-              <GlassCard hover padding='p-6' className='h-full'>
-              <Layers className='h-10 w-10 text-cyan-400' strokeWidth={1.25} />
-              <h3 className='mt-4 font-semibold text-white'>Par domaine</h3>
-              <p className='mt-2 text-sm text-gray-500'>DPS, DPG ou Procédure</p>
-              {mode === 'domain' ? (
-                <fieldset className='mt-4 space-y-2 text-left' onClick={(e) => e.stopPropagation()}>
-                  <legend className='sr-only'>Domaine</legend>
-                  {(
-                    [
-                      { v: 'DPS' as const, label: 'DPS', cls: 'border-red-500/30 text-red-300' },
-                      { v: 'DPG' as const, label: 'DPG', cls: 'border-violet-500/30 text-violet-300' },
-                      {
-                        v: 'Procédure pénale' as const,
-                        label: 'Procédure',
-                        cls: 'border-blue-500/30 text-blue-300',
-                      },
-                    ] as const
-                  ).map(({ v, label, cls }) => (
-                    <label
-                      key={v}
-                      className={cn(
-                        'flex cursor-pointer items-center gap-2 rounded-lg border px-3 py-2 text-sm',
-                        domain === v ? cls + ' bg-white/[0.06]' : 'border-white/10 text-gray-400'
-                      )}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease }}
+            className='mt-6'
+          >
+            <GlassCard hover={false} padding='p-6' className='border border-white/[0.07]'>
+              {mode === 'module' ? (
+                <div>
+                  <h3 className='text-sm font-semibold text-white'>Fascicule</h3>
+                  <p className='mt-1 text-sm text-gray-500'>Sélectionnez le thème du programme (questions filtrées sur ce fascicule).</p>
+                  <label className='mt-4 block'>
+                    <span className='sr-only'>Fascicule thématique</span>
+                    <select
+                      value={fascicule}
+                      onChange={(e) => setFascicule(Number(e.target.value))}
+                      className='mt-2 w-full rounded-xl border border-white/15 bg-navy-900/90 px-3 py-3 text-sm text-white focus:border-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30'
                     >
-                      <input
-                        type='radio'
-                        name='quiz-domain'
-                        checked={domain === v}
-                        onChange={() => setDomain(v)}
-                        className='accent-cyan-500'
-                      />
-                      {label}
-                    </label>
-                  ))}
-                </fieldset>
+                      {fasciculeOptions.map((f) => (
+                        <option key={f.numero} value={f.numero} className='bg-navy-900'>
+                          F{String(f.numero).padStart(2, '0')} — {f.titre}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                </div>
               ) : null}
-              </GlassCard>
-            </div>
-          </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, delay: 0.1, ease }}>
-            <div
-              role='button'
-              tabIndex={0}
-              className={modeCardClass(mode === 'global', 'shadow-[0_0_40px_-8px_rgba(6,182,212,0.35)]')}
-              onClick={() => setMode('global')}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setMode('global');
-                }
-              }}
-            >
-              <GlassCard hover padding='p-6' className='h-full'>
-                <Shuffle className='h-10 w-10 text-cyan-400' strokeWidth={1.25} />
-                <h3 className='mt-4 font-semibold text-white'>Quiz global</h3>
-                <p className='mt-2 text-sm text-gray-500'>Toutes les questions mélangées</p>
-              </GlassCard>
-            </div>
+              {mode === 'domain' ? (
+                <div>
+                  <h3 className='text-sm font-semibold text-white'>Domaine</h3>
+                  <p className='mt-1 text-sm text-gray-500'>Regroupe les questions par grande famille (étiquettes du jeu de données).</p>
+                  <fieldset className='mt-4 space-y-2'>
+                    <legend className='sr-only'>Domaine</legend>
+                    {(
+                      [
+                        { v: 'DPS' as const, label: 'DPS', cls: 'border-red-500/30 text-red-300' },
+                        { v: 'DPG' as const, label: 'DPG', cls: 'border-violet-500/30 text-violet-300' },
+                        {
+                          v: 'Procédure pénale' as const,
+                          label: 'Procédure pénale',
+                          cls: 'border-blue-500/30 text-blue-300',
+                        },
+                      ] as const
+                    ).map(({ v, label, cls }) => (
+                      <label
+                        key={v}
+                        className={cn(
+                          'flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-3 text-sm transition-colors',
+                          domain === v ? cls + ' bg-white/[0.06]' : 'border-white/10 text-gray-400 hover:border-white/15',
+                        )}
+                      >
+                        <input
+                          type='radio'
+                          name='quiz-domain'
+                          checked={domain === v}
+                          onChange={() => setDomain(v)}
+                          className='accent-cyan-500'
+                        />
+                        {label}
+                      </label>
+                    ))}
+                  </fieldset>
+                </div>
+              ) : null}
+
+              {mode === 'global' ? (
+                <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+                  <div>
+                    <h3 className='text-sm font-semibold text-white'>Mélange complet</h3>
+                    <p className='mt-1 max-w-xl text-sm text-gray-500'>
+                      Toutes les questions disponibles sont mélangées (hors filtres exclus par le jeu de données).
+                    </p>
+                  </div>
+                  <Shuffle className='h-12 w-12 shrink-0 text-cyan-500/40' strokeWidth={1} aria-hidden />
+                </div>
+              ) : null}
+            </GlassCard>
           </motion.div>
         </div>
 

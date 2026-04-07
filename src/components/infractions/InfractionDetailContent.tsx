@@ -75,6 +75,16 @@ export function InfractionDetailContent({ item, className }: Props) {
         </div>
       )}
 
+      {item.elementsSource === 'fascicule_audit' ? (
+        <p className='rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-3 py-2 text-[11px] leading-relaxed text-cyan-100/95'>
+          <strong className='text-cyan-50'>Éléments matériel / moral :</strong> affichage issu de l’audit fascicule (
+          <code className='rounded bg-black/30 px-1 text-[10px]'>reference/audit/infractions_officielles.json</code>
+          ), calé sur les textes SDCP. En cas d’écart avec une autre page du site,{' '}
+          <strong>le fascicule et les fichiers TXT sous</strong>{' '}
+          <code className='rounded bg-black/30 px-1 text-[10px]'>reference/audit/fascicules</code> font foi.
+        </p>
+      ) : null}
+
       <div className='rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.06] p-4'>
         <h3 className='mb-2 text-xs font-bold uppercase tracking-wide text-emerald-300'>Élément matériel</h3>
         <RecapBulletCell text={item.materiel} />
