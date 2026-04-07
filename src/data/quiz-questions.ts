@@ -27,8 +27,6 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 9,
     domaine: 'DPG',
-    epreuveCible: 1,
-    fondamentalSlug: 'classification-infractions',
   },
   {
     id: 'f09-02',
@@ -273,8 +271,6 @@ const quizQuestionsRaw: QuizQuestion[] = [
     domaine: 'Procédure pénale',
     explication:
       'Prolongation exceptionnelle : crime ou délit puni d’au moins cinq ans et investigations non différables ; la chaîne flagrancielle suppose par ailleurs une continuité des opérations.',
-    epreuveCible: 2,
-    cadreEnquete: 'flagrance',
   },
   {
     id: 'f11-02',
@@ -288,8 +284,6 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 11,
     domaine: 'Procédure pénale',
-    epreuveCible: 2,
-    cadreEnquete: 'preliminaire',
   },
   {
     id: 'f11-03',
@@ -303,8 +297,6 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 11,
     domaine: 'Procédure pénale',
-    epreuveCible: 2,
-    enqueteCode: 'alpha',
   },
   {
     id: 'f13-01',

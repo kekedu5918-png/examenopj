@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
-import { RapportSyntheseWorkspace } from '@/components/rapport-synthese/RapportSyntheseWorkspace';
+import { RapportSyntheseAtelierClient } from '@/components/rapport-synthese/RapportSyntheseAtelierClient';
+import { RapportSyntheseModesSection } from '@/components/rapport-synthese/RapportSyntheseModesSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 import { cn } from '@/utils/cn';
@@ -23,9 +24,11 @@ export default async function RapportSynthesePage() {
         badge='Premium'
         badgeClassName='bg-examen-premium/25 text-violet-200'
         title='Atelier — rapport de synthèse'
-        subtitle='Modèle officiel, atelier avec dossier pièces + rédaction type parquet + correction IA, et emplacement pour l’exemple corrigé fascicule.'
+        subtitle='Dossier pièces + rédaction type parquet + correction IA. Le chrono tourne en continu pendant la session.'
         className='mb-8'
       />
+
+      <RapportSyntheseModesSection />
 
       {!ok ? (
         <div
@@ -43,7 +46,7 @@ export default async function RapportSynthesePage() {
           </Link>
         </div>
       ) : (
-        <RapportSyntheseWorkspace />
+        <RapportSyntheseAtelierClient />
       )}
     </div>
   );

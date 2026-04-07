@@ -61,20 +61,6 @@ export async function getRecentQuizAttempts(userId: string, limit = 8) {
   return data ?? [];
 }
 
-export async function getQuizAttemptsCount(userId: string): Promise<number> {
-  const supabase = await createSupabaseServerClient();
-  const { count, error } = await supabase
-    .from('quiz_attempts')
-    .select('id', { count: 'exact', head: true })
-    .eq('user_id', userId);
-
-  if (error) {
-    console.error(error);
-    return 0;
-  }
-  return count ?? 0;
-}
-
 export async function getModules() {
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase.from('modules').select('*').order('ordre', { ascending: true });

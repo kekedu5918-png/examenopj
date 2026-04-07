@@ -47,10 +47,6 @@ export interface Fiche {
   /** Lien vers la fiche synthétique du thème correspondant sur ExamenOPJ. */
   lienModule?: string;
   lienQuiz?: string;
-  /** Temps de lecture estimé (minutes) — sinon dérivé des repères. */
-  estimatedMinutes?: number;
-  /** Identifiant stable pour deep links quiz (`?fondamental=…`). */
-  quizTag?: string;
 }
 
 export const CATEGORIES: Record<Categorie, { label: string; couleur: string }> = {

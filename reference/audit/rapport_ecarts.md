@@ -1,35 +1,42 @@
-# Rapport d’écarts — référentiel infractions
+# Rapport d’audit — Infractions officielles vs site ExamenOPJ
 
-Date : 2026-04-07 (génération automatique + intégration site).
+**Date :** 2026-04-06  
+**Sources de vérité :** `reference/audit/fascicules/*.txt` (extractions alignées SDCP), PDFs dans `reference/fascicules/`, cahier MAJ 2025.
 
-## Source de vérité
+## Synthèse
 
-- Fichier : `reference/audit/infractions_officielles.json`
-- Générateur : `scripts/extract-infractions-fascicules.ts` (extraction I–V depuis `reference/audit/fascicules/F01.txt` … `F07.txt`).
+| Zone | Statut |
+|------|--------|
+| Fichier `infractions_officielles.json` | **Amorcé** : 1 infraction F03 entièrement structurée (F03-01), 3 entrées **MAJ 2025** en attente de relecture fascicule/cahier (champs `TODO` explicites). |
+| Référentiel site (`src/data/recapitulatif-*.ts`) | **55** lignes catalogue — formulations alignées sur la logique fascicules historique ; **pas encore** remplacées par import JSON automatique. |
+| Écarts | Voir section **MANQUANTES** / **À VALIDER** ci-dessous. |
 
-## Résumé
+## CORRECTES (échantillon)
 
-| Ancienne source site | Nouvelle source |
-|---------------------|-----------------|
-| `recapitulatif-*.ts` + `getInfractionsCatalog()` agrégé | JSON d’audit (153 entrées extraites des .txt) |
+- **F03-01 — Conduite sous l’empire d’un état alcoolique** : entrée JSON `verification: complete` calée sur `reference/audit/fascicules/F03.txt` (élément légal, moral, répression délits/contraventions, complicité, tentative, CA AUCUNE). Sous-points matériels détaillés « contrôle / preuve » : **TODO** dans le JSON pour reprise exhaustive p.1–3 sans paraphraser.
 
-## INFRACTIONS CORRECTES
+## MANQUANTES (dans le JSON)
 
-- Les titres, éléments I à V, TENTATIVE / COMPLICITÉ lorsque présents sous la forme `LA TENTATIVE : OUI|NON` / `LA COMPLICITÉ : OUI|NON` ou `TENTATIVE : OUI` dans la section répression sont alignés sur le fascicule extrait.
+- **Infractions F01 à F07** (hors F03-01) : non dupliquées dans `infractions_officielles.json` dans cette itération. **Action :** extraire fascicule par fascicule depuis les `.txt` d’audit, même schéma, sans invention.
+- **MAJ 2025** (homicide routier, blessures routières ITT) : entrées présentes avec **TODO** — obligatoire de recaler sur le **cahier juillet–décembre 2025** et le fascicule F03 à jour.
 
-## INFRACTIONS ERRONÉES (corrigées par remplacement du catalogue)
+## ERRONÉES / À RISQUE (site vs fascicule)
 
-- L’ancien récapitulatif TypeScript (formulations résumées, TODO) est **remplacé** par le texte intégral des blocs II et III (`contenu_complet`) issus des fichiers .txt.
+- Toute ligne du tableau `recapitulatif` qui n’a pas été **recollée** mot pour mot sur une extraction fascicule à jour est **à risque** jusqu’à validation croisée.
+- **Pièges d’examen** : le site expose surtout `noteExamen` ; le JSON prévoit `pieges_examen` — **migration** à prévoir sur la fiche détail infraction.
 
-## INFRACTIONS MANQUANTES
+## Fondamentaux (F09–F15)
 
-- Fascicules **F08 à F17** : pas de fiches au format « I — élément légal » homogène dans les exports texte (F08 = libertés publiques, F09–F15 = cours / procédure). Aucune entrée du même type que F01–F07 dans ces fichiers → non inclus dans le JSON infractions « qualification pénale ».
+- La page `/fondamentaux` intègre une **architecture 8 rubriques** (classification, cadres, CI, GAV, audition libre, nullités, perquisitions/saisies/réquisitions, récidive/concours). Les tableaux **doivent** être revus ligne par ligne avec **F09 p.8** (classification), **F11**, **F15**, **F10 p.26** (récidive) — les commentaires `TODO: vérifier F.. p...` dans le code marquent les zones non figées par PDF seul dans cet environnement.
 
-## INFRACTIONS MAJ 2025
+## Rapport de synthèse / Articulation / PV
 
-- Champ `maj_2025` / `badge_maj` : à renseigner après lecture du cahier `_00_cahier_de_mise_jour_de_juillet_2025_d_cembre_2025.pdf` et marquage des infractions concernées (ex. homicide routier, blessures routières — loi 2025-622).
+- **PDF officiel** : `public/docs/rapport-synthese-officiel.pdf` (copie depuis `reference/fascicules/rapport-de-synthese-officiel.pdf`).
+- **Modèles B7_02, B0_ARTICUL_08242, B0_ARTICUL_INCID_0723** : interfaces « 3 modes » amorcées ; contenu complet **à caler** sur les PDF nommés dans le cahier des charges (pas d’invention de formulaires).
 
-## Identifiants (`id`)
+## Prochaines étapes (ordre strict)
 
-- Format : `F01-001`, …, `F01-p2-001` (partie 2), `F02-001`, …, `F07-xxx`.
-- Les anciens identifiants `f01-p1-r0` ne sont plus utilisés ; mettre à jour les favoris / liens profonds éventuels.
+1. Compléter `infractions_officielles.json` pour **toutes** les infractions F01–F07 depuis les `.txt` / PDF.
+2. Valider les 3 infractions **MAJ 2025** avec le cahier officiel.
+3. Brancher la fiche infraction sur le JSON ou générer `recapitulatif` depuis le JSON.
+4. Relecture juridique complète avant toute publication « définitive ».

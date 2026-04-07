@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono } from 'next/font/google';
 
+import { FloatingQuickFlashcards } from '@/components/layout/FloatingQuickFlashcards';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { SiteJsonLd } from '@/components/seo/site-json-ld';
@@ -91,6 +92,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
           <main id='contenu-principal' className='relative flex-1 scroll-mt-28' tabIndex={-1}>
             {children}
           </main>
+          <FloatingQuickFlashcards />
           <Footer />
         </div>
         <Toaster />

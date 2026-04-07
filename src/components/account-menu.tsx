@@ -43,7 +43,7 @@ export function AccountMenu({ signOut }: { signOut: () => Promise<ActionResponse
       </DropdownMenuTrigger>
       <DropdownMenuContent className='me-4'>
         <DropdownMenuItem asChild>
-          <Link href='/dashboard'>Tableau de bord</Link>
+          <Link href='/accueil'>Accueil — progression</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild>
           <Link href='/account'>Mon compte</Link>

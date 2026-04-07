@@ -25,7 +25,7 @@ function loginQueryBanner(error: string | undefined): string | null {
 export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
   const session = await getSession();
   const premium = session ? await hasPremiumAccess() : false;
-  const nextPath = safeInternalPath(searchParams.next, '/dashboard');
+  const nextPath = safeInternalPath(searchParams.next, '/accueil');
 
   if (session && premium) {
     redirect('/account');

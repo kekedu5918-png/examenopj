@@ -1,8 +1,8 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { BookOpen, Keyboard, Layers, ListOrdered, Shuffle } from 'lucide-react';
 
@@ -26,18 +26,15 @@ import { QuizInterfaceHardcore } from './quiz-interface-hardcore';
 import { QuizResult } from './quiz-result';
 import {
   applyQuestionLimit,
-  applyTaxonomyFilter,
   filterQuestions,
   fisherYates,
   getQuizStorageKey,
   isThemeQuizMode,
   type QuizAnswerMode,
   type QuizMode,
-  type QuizTaxonomyFilter,
   readBestQuizPercent,
   recordModuleQuizBestPercent,
   recordQuizBestPercent,
-  serializeQuizFilterContext,
   shuffleQuizQuestionOptions,
 } from './quiz-utils';
 
@@ -49,9 +46,8 @@ type LaunchConfig = {
   mode: QuizMode;
   fascicule?: number;
   domain?: QuizQuestion['domaine'];
-  limit: 10 | 20 | 30 | 'all' | number;
+  limit: 10 | 20 | 30 | 'all';
   answerMode: QuizAnswerMode;
-  taxonomy?: Partial<QuizTaxonomyFilter>;
 };
 
 const headerContainer = {
@@ -68,32 +64,8 @@ type QuizPageClientProps = {
   initialAccess?: ContentAccessSnapshot;
 };
 
-function parseCadreParam(raw: string | null): QuizTaxonomyFilter['cadreEnquete'] | undefined {
-  if (raw === 'flagrance' || raw === 'preliminaire' || raw === 'cr' || raw === 'transversal') return raw;
-  return undefined;
-}
-
-function parseEnqueteParam(raw: string | null): QuizTaxonomyFilter['enqueteCode'] | undefined {
-  if (!raw) return undefined;
-  const allowed = new Set([
-    'alpha',
-    'bravo',
-    'charlie',
-    'delta',
-    'echo',
-    'foxtrot',
-    'golf',
-    'india',
-    'accident',
-    'patrimoniale',
-  ]);
-  return allowed.has(raw) ? (raw as QuizTaxonomyFilter['enqueteCode']) : undefined;
-}
-
 export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const searchParams = useSearchParams();
-  const pathname = usePathname();
-  const router = useRouter();
 
   const access: ContentAccessSnapshot = initialAccess ?? {
     tier: 'full',
@@ -119,8 +91,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const [mode, setMode] = useState<QuizMode>('global');
   const [fascicule, setFascicule] = useState<number>(fasciculeNums[0] ?? 3);
   const [domain, setDomain] = useState<QuizQuestion['domaine']>('DPS');
-  const [limit, setLimit] = useState<10 | 20 | 30 | 'all' | number>(10);
-  const [taxonomy, setTaxonomy] = useState<Partial<QuizTaxonomyFilter>>({});
+  const [limit, setLimit] = useState<10 | 20 | 30 | 'all'>(10);
   const [answerMode, setAnswerMode] = useState<QuizAnswerMode>('mcq');
   const [sessionQuestions, setSessionQuestions] = useState<QuizQuestion[]>([]);
   const [launchConfig, setLaunchConfig] = useState<LaunchConfig | null>(null);
@@ -218,54 +189,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     }
   }, [searchParams, fasciculeNums]);
 
-  /** Filtres métier + limite numérique depuis l’URL (`?epreuve=2&cadre=flagrance&enquete=alpha&fondamental=…&limit=5`). */
-  useEffect(() => {
-    const ep = searchParams.get('epreuve');
-    const cad = searchParams.get('cadre');
-    const enq = searchParams.get('enquete');
-    const fond = searchParams.get('fondamental');
-    const lim = searchParams.get('limit');
-
-    const next: Partial<QuizTaxonomyFilter> = {};
-    if (ep === '1' || ep === '2' || ep === '3') next.epreuve = Number(ep) as 1 | 2 | 3;
-    const cadP = parseCadreParam(cad);
-    if (cadP) next.cadreEnquete = cadP;
-    const enqP = parseEnqueteParam(enq);
-    if (enqP) next.enqueteCode = enqP;
-    if (fond && fond.trim().length > 0) next.fondamentalSlug = fond.trim();
-
-    setTaxonomy(next);
-
-    if (lim != null && lim !== '') {
-      const n = Number.parseInt(lim, 10);
-      if (Number.isFinite(n) && n >= 1 && n <= 100) {
-        setLimit(n);
-      }
-    }
-  }, [searchParams]);
-
-  const pushFiltersToUrl = useCallback(
-    (nextTax: Partial<QuizTaxonomyFilter>, nextLimit: typeof limit) => {
-      const p = new URLSearchParams(searchParams.toString());
-      const setOrDel = (key: string, val: string | undefined) => {
-        if (val == null || val === '') p.delete(key);
-        else p.set(key, val);
-      };
-      setOrDel('epreuve', nextTax.epreuve != null ? String(nextTax.epreuve) : undefined);
-      setOrDel('cadre', nextTax.cadreEnquete);
-      setOrDel('enquete', nextTax.enqueteCode != null ? String(nextTax.enqueteCode) : undefined);
-      setOrDel('fondamental', nextTax.fondamentalSlug);
-      if (nextLimit === 'all') {
-        p.delete('limit');
-      } else if (typeof nextLimit === 'number') {
-        if ([10, 20, 30].includes(nextLimit)) p.delete('limit');
-        else p.set('limit', String(nextLimit));
-      }
-      router.replace(`${pathname}?${p.toString()}`, { scroll: false });
-    },
-    [pathname, router, searchParams]
-  );
-
   function buildPool(cfg: LaunchConfig, dailyCap?: number | null): QuizQuestion[] {
     let pool = filterQuestions(
       quizQuestions,
@@ -273,7 +196,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
       isThemeQuizMode(cfg.mode) ? cfg.fascicule : undefined,
       cfg.mode === 'domain' ? cfg.domain : undefined
     );
-    pool = applyTaxonomyFilter(pool, cfg.taxonomy);
     pool = fisherYates(pool).map(shuffleQuizQuestionOptions);
     pool = applyQuestionLimit(pool, cfg.limit);
     if (dailyCap != null && Number.isFinite(dailyCap)) {
@@ -288,20 +210,18 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         mode,
         limit,
         answerMode,
-        taxonomy,
         ...(isThemeQuizMode(mode) ? { fascicule } : {}),
         ...(mode === 'domain' ? { domain } : {}),
       },
       quizRemainingToday
     );
-  }, [mode, fascicule, domain, limit, answerMode, quizRemainingToday, taxonomy]);
+  }, [mode, fascicule, domain, limit, answerMode, quizRemainingToday]);
 
   function handleLaunch() {
     const cfg: LaunchConfig = {
       mode,
       limit,
       answerMode,
-      taxonomy,
       ...(isThemeQuizMode(mode) ? { fascicule } : {}),
       ...(mode === 'domain' ? { domain } : {}),
     };
@@ -343,7 +263,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         mode: launchConfig.mode,
         fasciculeNum: isThemeQuizMode(launchConfig.mode) ? (launchConfig.fascicule ?? null) : null,
         domainKey: launchConfig.mode === 'domain' ? (launchConfig.domain ?? null) : null,
-        filterContext: serializeQuizFilterContext(launchConfig.taxonomy),
         score: correct,
         total,
         percent: pct,
@@ -467,158 +386,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
             Enchaînez : quelques séries QCM pour la couverture, puis les mêmes thèmes en hardcore.
           </p>
         </div>
-
-        <GlassCard hover padding='p-6' className='mx-auto mb-10 max-w-4xl border-white/10'>
-          <p className='font-display text-base font-semibold text-white'>Filtres métier</p>
-          <p className='mt-1 text-sm text-gray-500'>
-            Épreuve, cadre d’enquête, enquête type, fondamental — combinables. L’URL se met à jour pour partager une série (
-            <span className='font-mono text-gray-400'>?epreuve=2&cadre=flagrance</span>).
-          </p>
-          <div className='mt-5 space-y-4'>
-            <div>
-              <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500'>Épreuve</p>
-              <div className='flex flex-wrap gap-2'>
-                {(
-                  [
-                    { id: undefined as 1 | 2 | 3 | undefined, label: 'Tous' },
-                    { id: 1 as const, label: 'Épreuve 1' },
-                    { id: 2 as const, label: 'Épreuve 2' },
-                    { id: 3 as const, label: 'Épreuve 3' },
-                  ] as const
-                ).map(({ id, label }) => (
-                  <button
-                    key={String(id)}
-                    type='button'
-                    onClick={() => {
-                      const next = { ...taxonomy };
-                      if (id == null) delete next.epreuve;
-                      else next.epreuve = id;
-                      setTaxonomy(next);
-                      pushFiltersToUrl(next, limit);
-                    }}
-                    className={cn(
-                      'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
-                      taxonomy.epreuve === id
-                        ? 'border-violet-500/50 bg-violet-500/15 text-violet-100'
-                        : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
-                    )}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500'>Cadre</p>
-              <div className='flex flex-wrap gap-2'>
-                {(
-                  [
-                    { id: undefined as QuizTaxonomyFilter['cadreEnquete'] | undefined, label: 'Tous' },
-                    { id: 'flagrance' as const, label: 'Flagrance' },
-                    { id: 'preliminaire' as const, label: 'Préliminaire' },
-                    { id: 'cr' as const, label: 'CR' },
-                    { id: 'transversal' as const, label: 'Transversal' },
-                  ] as const
-                ).map(({ id, label }) => (
-                  <button
-                    key={String(id)}
-                    type='button'
-                    onClick={() => {
-                      const next = { ...taxonomy };
-                      if (id == null) delete next.cadreEnquete;
-                      else next.cadreEnquete = id;
-                      setTaxonomy(next);
-                      pushFiltersToUrl(next, limit);
-                    }}
-                    className={cn(
-                      'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
-                      taxonomy.cadreEnquete === id
-                        ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-100'
-                        : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
-                    )}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-gray-500'>Enquête</p>
-              <div className='flex flex-wrap gap-2'>
-                {(
-                  [
-                    { id: undefined as QuizTaxonomyFilter['enqueteCode'] | undefined, label: 'Toutes' },
-                    { id: 'alpha' as const, label: 'Alpha' },
-                    { id: 'bravo' as const, label: 'Bravo' },
-                    { id: 'charlie' as const, label: 'Charlie' },
-                  ] as const
-                ).map(({ id, label }) => (
-                  <button
-                    key={String(id)}
-                    type='button'
-                    onClick={() => {
-                      const next = { ...taxonomy };
-                      if (id == null) delete next.enqueteCode;
-                      else next.enqueteCode = id;
-                      setTaxonomy(next);
-                      pushFiltersToUrl(next, limit);
-                    }}
-                    className={cn(
-                      'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
-                      taxonomy.enqueteCode === id
-                        ? 'border-amber-500/50 bg-amber-500/15 text-amber-100'
-                        : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
-                    )}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <label htmlFor='quiz-fondamental' className='mb-2 block text-xs font-semibold uppercase tracking-wide text-gray-500'>
-                Fondamental (slug fiche)
-              </label>
-              <div className='flex flex-wrap gap-2'>
-                <input
-                  id='quiz-fondamental'
-                  type='text'
-                  value={taxonomy.fondamentalSlug ?? ''}
-                  onChange={(e) => setTaxonomy((t) => ({ ...t, fondamentalSlug: e.target.value || undefined }))}
-                  placeholder='ex. classification-infractions'
-                  className='min-w-[200px] flex-1 rounded-xl border border-white/15 bg-navy-900/90 px-3 py-2 text-sm text-white placeholder:text-gray-600'
-                  onBlur={(e) => {
-                    const v = e.target.value.trim();
-                    const next = { ...taxonomy, fondamentalSlug: v || undefined };
-                    setTaxonomy(next);
-                    pushFiltersToUrl(next, limit);
-                  }}
-                />
-                <button
-                  type='button'
-                  onClick={() => {
-                    const next = { ...taxonomy, fondamentalSlug: undefined };
-                    setTaxonomy(next);
-                    pushFiltersToUrl(next, limit);
-                  }}
-                  className='rounded-xl border border-white/15 px-3 py-2 text-xs text-gray-400 hover:bg-white/10'
-                >
-                  Effacer
-                </button>
-              </div>
-            </div>
-            <button
-              type='button'
-              onClick={() => {
-                setTaxonomy({});
-                pushFiltersToUrl({}, limit);
-              }}
-              className='text-sm text-gray-500 underline-offset-4 hover:text-gray-300 hover:underline'
-            >
-              Réinitialiser les filtres
-            </button>
-          </div>
-        </GlassCard>
 
         <div className='grid gap-6 md:grid-cols-3'>
           <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45, ease }}>
@@ -776,10 +543,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
                   key={String(n)}
                   type='button'
                   disabled={disabledFreemium}
-                  onClick={() => {
-                    setLimit(n);
-                    pushFiltersToUrl(taxonomy, n);
-                  }}
+                  onClick={() => setLimit(n)}
                   className={cn(
                     'rounded-xl px-5 py-2.5 text-sm font-medium transition-colors',
                     limit === n

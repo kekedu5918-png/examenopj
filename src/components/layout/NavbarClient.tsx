@@ -6,13 +6,24 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Menu, Sparkles, X } from 'lucide-react';
 
-import { NAV_GROUPS, NAV_PREMIUM_HREF } from '@/app/navigation';
+import {
+  NAV_ACCUEIL_HREF,
+  NAV_ENTRAINER_CHILDREN,
+  NAV_PREMIUM_HREF,
+  NAV_PREPARER_CHILDREN,
+  NAV_REFERENCES_CHILDREN,
+} from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import { UrgencyBanner } from '@/components/layout/UrgencyBanner';
-import { GlobalSearch } from '@/components/search/GlobalSearch';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
 import { useScrollPosition } from '@/hooks/use-scroll-position';
 import { ActionResponse } from '@/types/action-response';
 import { cn } from '@/utils/cn';
@@ -20,6 +31,13 @@ import { cn } from '@/utils/cn';
 function isActivePath(pathname: string, href: string): boolean {
   if (href === '/') return pathname === '/';
   return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+function isActiveGroup(
+  pathname: string,
+  items: readonly { href: string }[],
+): boolean {
+  return items.some((item) => isActivePath(pathname, item.href));
 }
 
 function ActiveDot() {
@@ -43,6 +61,12 @@ type NavbarClientProps = {
   trialReminder: TrialReminder | null;
   logoSize?: number;
 };
+
+const navTriggerClass = cn(
+  'relative inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3',
+);
+
+const dropTriggerClass = cn(navTriggerClass, 'border-0 bg-transparent');
 
 export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, logoSize = 40 }: NavbarClientProps) {
   const pathname = usePathname();
@@ -71,11 +95,13 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
       : 'border-transparent bg-transparent',
   );
 
-  const navLinkClass = (active: boolean) =>
-    cn(
-      'relative whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3',
-      active ? 'text-examen-accent' : 'text-examen-inkMuted hover:text-examen-ink',
-    );
+  const accueilActive = pathname === NAV_ACCUEIL_HREF || pathname === '/dashboard';
+  const prepActive = isActiveGroup(pathname, NAV_PREPARER_CHILDREN);
+  const refActive = isActiveGroup(pathname, NAV_REFERENCES_CHILDREN);
+  const trainActive = isActiveGroup(pathname, NAV_ENTRAINER_CHILDREN);
+
+  const navLinkInactive = 'text-examen-inkMuted hover:text-examen-ink';
+  const navLinkActive = 'text-examen-accent';
 
   return (
     <div className='sticky top-0 z-50'>
@@ -93,7 +119,7 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
           <Link
             href='/'
             className='group flex min-w-0 shrink items-center gap-2 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45'
-            aria-label='ExamenOPJ — accueil'
+            aria-label='ExamenOPJ — accueil site'
           >
             <span
               className='inline-flex shrink-0 rounded-xl bg-white/[0.08] p-1 ring-1 ring-white/15 shadow-[0_0_20px_rgba(79,110,247,0.15)] transition group-hover:bg-white/[0.12]'
@@ -111,52 +137,75 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
             </span>
           </Link>
 
-          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-1 overflow-x-auto lg:flex xl:gap-2'>
-            {NAV_GROUPS.map((group) => {
-              const groupActive = group.links.some((l) => isActivePath(pathname, l.href));
-              return (
-                <div key={group.id} className='group/navdrop relative'>
-                  <button
-                    type='button'
-                    className={cn(navLinkClass(groupActive), 'inline-flex items-center gap-1')}
-                    aria-expanded={false}
-                    aria-haspopup='menu'
-                  >
-                    {group.label}
-                    <ChevronDown className='h-3.5 w-3.5 opacity-70 transition group-hover/navdrop:rotate-180' aria-hidden />
-                    {groupActive ? <ActiveDot /> : null}
-                  </button>
-                  <div
-                    role='menu'
-                    className='invisible absolute left-0 top-full z-[60] min-w-[240px] pt-2 opacity-0 transition-[opacity,visibility] duration-150 group-hover/navdrop:visible group-hover/navdrop:opacity-100 group-focus-within/navdrop:visible group-focus-within/navdrop:opacity-100'
-                  >
-                    <div className='rounded-xl border border-white/[0.08] bg-examen-raised/95 py-2 shadow-xl shadow-black/40 backdrop-blur-md'>
-                      {group.links.map((item) => {
-                        const active = isActivePath(pathname, item.href);
-                        return (
-                          <Link
-                            key={item.href}
-                            href={item.href}
-                            role='menuitem'
-                            className={cn(
-                              'block px-4 py-2.5 text-sm transition-colors',
-                              active ? 'bg-white/[0.06] text-examen-accent' : 'text-examen-ink hover:bg-white/[0.04]',
-                            )}
-                          >
-                            {item.label}
-                          </Link>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+          <nav aria-label='Navigation principale' className='hidden flex-1 items-center justify-center gap-0.5 overflow-x-auto lg:flex xl:gap-1'>
+            <Link
+              href={NAV_ACCUEIL_HREF}
+              className={cn(navTriggerClass, 'relative', accueilActive ? navLinkActive : navLinkInactive)}
+            >
+              Accueil
+              {accueilActive ? <ActiveDot /> : null}
+            </Link>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={cn(dropTriggerClass, prepActive ? navLinkActive : navLinkInactive)}
+                aria-expanded={undefined}
+              >
+                Préparer
+                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
+                {prepActive ? <ActiveDot /> : null}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align='start' className='min-w-[200px] border-white/10 bg-examen-raised text-examen-ink'>
+                {NAV_PREPARER_CHILDREN.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                    <Link href={item.href}>{item.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem asChild className='focus:bg-white/10'>
+                  <Link href='/cours/enquetes' className='text-examen-inkMuted'>
+                    Enquêtes (épreuve 2)
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(dropTriggerClass, refActive ? navLinkActive : navLinkInactive)}>
+                Références
+                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
+                {refActive ? <ActiveDot /> : null}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align='start' className='min-w-[200px] border-white/10 bg-examen-raised text-examen-ink'>
+                {NAV_REFERENCES_CHILDREN.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                    <Link href={item.href}>{item.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(dropTriggerClass, trainActive ? navLinkActive : navLinkInactive)}>
+                S&apos;entraîner
+                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
+                {trainActive ? <ActiveDot /> : null}
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align='start' className='min-w-[200px] border-white/10 bg-examen-raised text-examen-ink'>
+                {NAV_ENTRAINER_CHILDREN.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                    <Link href={item.href}>{item.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+                <DropdownMenuItem asChild className='focus:bg-white/10'>
+                  <Link href='/entrainement' className='text-examen-inkMuted'>
+                    Hub entraînement
+                  </Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
-          <div className='flex shrink-0 items-center gap-2'>
-            <GlobalSearch />
-            <div className='hidden items-center gap-2 lg:flex'>
+          <div className='hidden shrink-0 items-center gap-2 lg:flex'>
             {!isPremium ? (
               <Link
                 href={NAV_PREMIUM_HREF}
@@ -180,7 +229,8 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 <Link
                   href='/login'
                   className={cn(
-                    navLinkClass(isActivePath(pathname, '/login')),
+                    navTriggerClass,
+                    isActivePath(pathname, '/login') ? navLinkActive : navLinkInactive,
                     'px-3 py-1.5',
                   )}
                 >
@@ -195,17 +245,22 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 </Link>
               </>
             )}
-            </div>
+          </div>
 
-            <div className='flex items-center gap-2 lg:hidden'>
+          <div className='flex items-center gap-1.5 lg:hidden'>
             {!isPremium ? (
               <Link
                 href={NAV_PREMIUM_HREF}
-                className='inline-flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-3 py-1 text-xs font-semibold text-white'
+                className='inline-flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-2.5 py-1 text-[11px] font-semibold text-white'
               >
                 <Sparkles className='h-3 w-3' aria-hidden />
-                Premium ✨
+                Premium
               </Link>
+            ) : null}
+            {isLoggedIn ? (
+              <div className='flex items-center'>
+                <AccountMenu signOut={signOut} />
+              </div>
             ) : null}
             <button
               type='button'
@@ -217,7 +272,6 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
             >
               <Menu className='h-6 w-6' />
             </button>
-            </div>
           </div>
         </div>
       </motion.header>
@@ -257,28 +311,60 @@ export function NavbarClient({ isLoggedIn, isPremium, signOut, trialReminder, lo
                 </button>
               </div>
               <nav className='flex flex-1 flex-col overflow-y-auto px-2 py-4' aria-label='Navigation mobile'>
-                {NAV_GROUPS.map((group) => (
-                  <details key={group.id} className='group border-b border-white/[0.06] last:border-b-0'>
-                    <summary className='cursor-pointer list-none px-3 py-3 text-sm font-semibold text-white marker:content-none [&::-webkit-details-marker]:hidden'>
-                      <span className='flex items-center justify-between'>
-                        {group.label}
-                        <ChevronDown className='h-4 w-4 shrink-0 transition group-open:rotate-180' aria-hidden />
-                      </span>
-                    </summary>
-                    <div className='border-t border-white/[0.04] pb-2 pt-1'>
-                      {group.links.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className='block px-5 py-2.5 text-sm text-examen-inkMuted hover:bg-white/[0.04] hover:text-white'
-                          onClick={() => setMobileOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </details>
+                <Link
+                  href={NAV_ACCUEIL_HREF}
+                  className='border-b border-white/[0.06] px-3 py-3 text-sm font-medium text-examen-ink hover:bg-white/[0.04]'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Accueil
+                </Link>
+                <p className='px-3 pt-3 text-[10px] font-bold uppercase tracking-widest text-examen-inkMuted'>Préparer</p>
+                {NAV_PREPARER_CHILDREN.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className='border-b border-white/[0.06] px-3 py-2.5 pl-5 text-sm text-examen-ink hover:bg-white/[0.04]'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
                 ))}
+                <Link
+                  href='/cours/enquetes'
+                  className='border-b border-white/[0.06] px-3 py-2.5 pl-5 text-sm text-examen-inkMuted hover:bg-white/[0.04]'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Enquêtes (épreuve 2)
+                </Link>
+                <p className='px-3 pt-3 text-[10px] font-bold uppercase tracking-widest text-examen-inkMuted'>Références</p>
+                {NAV_REFERENCES_CHILDREN.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className='border-b border-white/[0.06] px-3 py-2.5 pl-5 text-sm text-examen-ink hover:bg-white/[0.04]'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <p className='px-3 pt-3 text-[10px] font-bold uppercase tracking-widest text-examen-inkMuted'>S&apos;entraîner</p>
+                {NAV_ENTRAINER_CHILDREN.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className='border-b border-white/[0.06] px-3 py-2.5 pl-5 text-sm text-examen-ink hover:bg-white/[0.04]'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+                <Link
+                  href='/entrainement'
+                  className='border-b border-white/[0.06] px-3 py-2.5 pl-5 text-sm text-examen-inkMuted hover:bg-white/[0.04]'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Hub entraînement
+                </Link>
               </nav>
 
               {!isPremium ? (

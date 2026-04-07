@@ -65,9 +65,6 @@ export const ENQUETES: EnqueteMeta[] = [
       { id: 'alpha-rapport', type: 'rapport', label: 'Rapport de synthèse' },
     ],
     premium: false,
-    ordrePedagogique: 1,
-    niveau: 'debutant',
-    prerequis: 'Aucun — planche complète gratuite (sujet, articulation, PV, rapport).',
     liensModules: [
       { href: '/cours/modules/f02', label: 'F02 — Atteintes aux biens' },
       { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
@@ -102,9 +99,6 @@ export const ENQUETES: EnqueteMeta[] = [
       { id: 'bravo-rapport', type: 'rapport', label: 'Rapport de synthèse' },
     ],
     premium: true,
-    ordrePedagogique: 2,
-    niveau: 'intermediaire',
-    prerequis: 'Avoir lu F11 (cadres, GAV) et les bases F01 (qualifications). Comprendre la flagrance.',
     liensModules: [
       { href: '/cours/modules/f01', label: 'F01 — Atteintes aux personnes' },
       { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
@@ -120,9 +114,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Agression sexuelle (schéma pédagogique) — qualifications à affiner selon les faits',
     articles: 'Art. 222-22 à 222-27 C.P. ; CPP (auditions, CR, coopération)',
     premium: true,
-    ordrePedagogique: 3,
-    niveau: 'avance',
-    prerequis: 'Enquête préliminaire maîtrisée ; auditions et saisine magistrat (F12).',
     themeCourt: 'Infractions sexuelles et coopération',
     objectifsEpreuve2: [
       'Enchaîner saisine, auditions, réquisitions techniques et sollicitation parquet sans rupture de cadre.',
@@ -143,9 +134,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Outrage, rébellion, faux et infractions voisines (schéma type)',
     articles: 'Art. 433-5, 434-9, 433-11 C.P. ; 78-2 et s. CSI',
     premium: true,
-    ordrePedagogique: 4,
-    niveau: 'intermediaire',
-    prerequis: 'F11 (interpellation, GAV) ; notions F08 (contrôles, outrage, rébellion).',
     themeCourt: 'Atteintes aux autorités et ordre public',
     objectifsEpreuve2: [
       'Structurer les actes depuis le contrôle jusqu’aux suites (GAV ou autre) sans confusion des qualifications.',
@@ -166,9 +154,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Usage / détention / trafic (schéma à caler sur les faits du sujet)',
     articles: 'L. 3421-1 et s. CSP ; art. 222-37 et s. C.P.',
     premium: true,
-    ordrePedagogique: 5,
-    niveau: 'avance',
-    prerequis: 'F07 (stupéfiants) ; perquisitions et prolongations (F11).',
     themeCourt: 'Enquêtes spécialisées stupéfiants',
     objectifsEpreuve2: [
       'Rapport de synthèse : résumer opérations, quantités, personnes et demandes au parquet sans hors-sujet.',
@@ -188,9 +173,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Homicide / coups mortels aggravés / infractions voisines selon scenario-pédagogique',
     articles: 'Art. 221-1 et s. ; 222-7 et s. — procédure (CPP garde de scène, auditions)',
     premium: true,
-    ordrePedagogique: 6,
-    niveau: 'avance',
-    prerequis: 'Articulation riche : garde de scène, expertises (F01, F11).',
     themeCourt: 'Scène et investigations techniques',
     objectifsEpreuve2: [
       'Enchaîner constatations, expertises et transmissions sans anticiper des qualifications non posées par le sujet.',
@@ -210,9 +192,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Séquestration, enlèvement, violences ou dégradations (à décliner)',
     articles: 'Art. 224-1 et s. C.P. ; infractions connexes',
     premium: true,
-    ordrePedagogique: 7,
-    niveau: 'intermediaire',
-    prerequis: 'Qualifications F01 (séquestration, violences) ; plusieurs actes enchaînés.',
     themeCourt: 'Atteintes graves aux personnes',
     objectifsEpreuve2: [
       'Gérer plusieurs mis en cause et victimes : un fil PV clair par acte majeur.',
@@ -229,9 +208,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Infractions à caractère familial / mineurs (schéma pédagogique)',
     articles: 'Art. 227-5 et s. C.P. ; mesures CPP enfance',
     premium: true,
-    ordrePedagogique: 8,
-    niveau: 'avance',
-    prerequis: 'CPP mineurs, auditions adaptées (F01, F14).',
     themeCourt: 'Protection de l’enfance',
     objectifsEpreuve2: [
       'Mettre en évidence les actes spécifiques (audition adaptée, AEMO, etc.) dans l’articulation.',
@@ -251,9 +227,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Homicide ou blessures involontaires ; délit de fuite éventuel',
     articles: 'Art. 221-6, 222-19, 223-1, L.234-1 et s. (route)',
     premium: true,
-    ordrePedagogique: 9,
-    niveau: 'intermediaire',
-    prerequis: 'Constats, expertises, dépistages (F01 accidentologie).',
     themeCourt: 'Accidentologie routière',
     objectifsEpreuve2: [
       'Hiérarchiser constatations techniques et auditions dans des PV courts.',
@@ -270,9 +243,6 @@ export const ENQUETES: EnqueteMeta[] = [
     qualification: 'Vol — escroquerie — abus de confiance (rassise en pratique)',
     articles: 'Livre III CP (biens) — rappel des seuils et qualifs',
     premium: true,
-    ordrePedagogique: 10,
-    niveau: 'avance',
-    prerequis: 'Révision transversale — idéalement après Alpha et modules F02–F03.',
     themeCourt: 'Approche transversale patrimoine',
     objectifsEpreuve2: [
       'Comparer votre articulation aux fiches Alpha (vol) et aux modules F02 sur les biens.',

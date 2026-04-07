@@ -8,8 +8,8 @@ describe('safeInternalPath', () => {
   });
 
   it('refuse les URLs absolues ouvertes', () => {
-    expect(safeInternalPath('//evil.com')).toBe('/dashboard');
-    expect(safeInternalPath('https://evil.com')).toBe('/dashboard');
+    expect(safeInternalPath('//evil.com')).toBe('/accueil');
+    expect(safeInternalPath('https://evil.com')).toBe('/accueil');
   });
 
   it('utilise le fallback si vide', () => {
@@ -18,6 +18,6 @@ describe('safeInternalPath', () => {
   });
 
   it('retire les espaces en trop', () => {
-    expect(safeInternalPath('  /quiz  ', '/dashboard')).toBe('/quiz');
+    expect(safeInternalPath('  /quiz  ', '/accueil')).toBe('/quiz');
   });
 });

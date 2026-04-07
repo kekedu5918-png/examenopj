@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { ArticulationWorkspace } from '@/components/entrainement/ArticulationWorkspace';
+import { ArticulationModesShell } from '@/components/entrainement/ArticulationModesShell';
 import { getEnqueteById } from '@/data/enquetes-data';
 
 export const metadata: Metadata = {
@@ -21,5 +21,5 @@ function suggestedTitreFromRef(ref: string | undefined): string | undefined {
 export default function EntrainementArticulationPage({ searchParams }: Props) {
   const ref = searchParams?.ref?.toLowerCase();
   const suggestedTitre = suggestedTitreFromRef(ref);
-  return <ArticulationWorkspace referenceEnqueteId={ref} suggestedTitre={suggestedTitre} />;
+  return <ArticulationModesShell referenceEnqueteId={ref} suggestedTitre={suggestedTitre} />;
 }

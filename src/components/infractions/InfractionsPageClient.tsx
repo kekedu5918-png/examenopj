@@ -17,8 +17,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import {
-  fasciculeToFamily,
-  groupInfractionsByFamilyForList,
   INFRACTION_FAMILY_OPTIONS,
   type InfractionFamily,
   matchesInfractionFamily,
@@ -29,6 +27,8 @@ import {
   infractionToRecapFilter,
   PRIORITE_EXAMEN_BADGE,
   PRIORITE_ORDER,
+  type RecapFasciculeFilter,
+  type RecapFasciculeId,
   type RecapPriorite,
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
@@ -41,8 +41,73 @@ function stripForSearch(s: string): string {
     .toLowerCase();
 }
 
-function familyAccordionValue(item: InfractionCatalogItem): string {
-  return `fam:${fasciculeToFamily(item.fascicule)}`;
+const FASCICULE_FILTER_MAP: Record<Exclude<RecapFasciculeFilter, 'all' | 'f01p1' | 'f01p2'>, RecapFasciculeId> = {
+  f02: 'F02',
+  f03: 'F03',
+  f04: 'F04',
+  f05: 'F05',
+  f06: 'F06',
+  f07: 'F07',
+};
+
+function flashcardsHrefForRecapFilter(f: RecapFasciculeFilter): string {
+  if (f === 'all') return '/flashcards';
+  if (f === 'f01p1' || f === 'f01p2') return '/flashcards?f=1';
+  const n = { f02: 2, f03: 3, f04: 4, f05: 5, f06: 6, f07: 7 }[f] as number | undefined;
+  if (typeof n === 'number') return `/flashcards?f=${n}`;
+  return '/flashcards';
+}
+
+function flashcardsFilterLabel(f: RecapFasciculeFilter): string {
+  if (f === 'all') return 'tout le programme';
+  if (f === 'f01p1') return 'F01 · P1';
+  if (f === 'f01p2') return 'F01 · P2';
+  return f.toUpperCase();
+}
+
+function matchesInfractionFascicleFilter(item: InfractionCatalogItem, filter: RecapFasciculeFilter): boolean {
+  if (filter === 'all') return true;
+  if (filter === 'f01p1') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 1';
+  if (filter === 'f01p2') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 2';
+  return item.fascicule === FASCICULE_FILTER_MAP[filter];
+}
+
+/** Séparateur de clé groupe (peu probable dans les titres catalogue). */
+const LIST_GROUP_SEP = '\u{001e}';
+
+function listGroupValue(item: InfractionCatalogItem): string {
+  return [item.fascicule, item.fasciculePart ?? '', item.groupTitle].join(LIST_GROUP_SEP);
+}
+
+/** Regroupe par thème et trie comme le référentiel (ordre fascicule / section), pas par priorité examen. */
+function groupFilteredForListAccordion(
+  items: InfractionCatalogItem[],
+  catalogOrder: Map<string, number>,
+) {
+  const map = new Map<string, InfractionCatalogItem[]>();
+  for (const item of items) {
+    const v = listGroupValue(item);
+    const arr = map.get(v) ?? [];
+    arr.push(item);
+    map.set(v, arr);
+  }
+  const entries = [...map.entries()].sort(([, groupA], [, groupB]) => {
+    const idxA = Math.min(...groupA.map((i) => catalogOrder.get(i.id) ?? 99999));
+    const idxB = Math.min(...groupB.map((i) => catalogOrder.get(i.id) ?? 99999));
+    return idxA - idxB;
+  });
+  return entries.map(([value, groupItems]) => {
+    const sortedItems = [...groupItems].sort(
+      (a, b) => (catalogOrder.get(a.id) ?? 0) - (catalogOrder.get(b.id) ?? 0),
+    );
+    const [fa, pa, theme] = value.split(LIST_GROUP_SEP);
+    const partLabel = pa ? ` · ${pa}` : '';
+    return {
+      value,
+      items: sortedItems,
+      triggerTitle: `${fa}${partLabel} — ${theme}`,
+    };
+  });
 }
 
 type InfractionsPageClientProps = {
@@ -55,6 +120,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const searchParams = useSearchParams();
 
   const [query, setQuery] = useState(initialQuery);
+  const [fascFilter, setFascFilter] = useState<RecapFasciculeFilter>('all');
   const [familyFilter, setFamilyFilter] = useState<InfractionFamily>('all');
   const [prioriteTier, setPrioriteTier] = useState<RecapPriorite | 'all'>('all');
   const [selected, setSelected] = useState<InfractionCatalogItem | null>(null);
@@ -62,7 +128,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
   const vue = useMemo(() => parseInfractionsVue(searchParams.get('vue')) ?? 'liste', [searchParams]);
   const focusId = searchParams.get('focus');
-  const listByFamily = searchParams.get('group') === 'famille';
 
   useEffect(() => {
     setQuery(initialQuery);
@@ -83,6 +148,12 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   }, [query]);
 
   const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
+
+  const catalogIndex = useMemo(() => {
+    const m = new Map<string, number>();
+    catalog.forEach((item, i) => m.set(item.id, i));
+    return m;
+  }, [catalog]);
 
   useEffect(() => {
     if (typeof window === 'undefined' || catalog.length === 0) return;
@@ -105,45 +176,31 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     }
   }, [selected, deepLinkReady]);
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-      if (e.key !== 'g' && e.key !== 'G') return;
-      e.preventDefault();
-      const u = new URL(window.location.href);
-      if (u.searchParams.get('group') === 'famille') u.searchParams.delete('group');
-      else u.searchParams.set('group', 'famille');
-      router.replace(`${u.pathname}${u.search}${u.hash}`, { scroll: false });
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [router]);
+  const flashSessionHref = useMemo(() => flashcardsHrefForRecapFilter(fascFilter), [fascFilter]);
+  const flashLabel = useMemo(() => flashcardsFilterLabel(fascFilter), [fascFilter]);
 
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
     const list = catalog.filter((item) => {
       if (!matchesInfractionFamily(item, familyFilter)) return false;
+      if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
       if (prioriteTier !== 'all' && (item.priorite ?? 'secours') !== prioriteTier) return false;
       if (!q) return true;
       const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
       return hay.includes(q);
     });
+    const byCatalogOrder = (a: InfractionCatalogItem, b: InfractionCatalogItem) =>
+      (catalogIndex.get(a.id) ?? 0) - (catalogIndex.get(b.id) ?? 0);
+    if (prioriteTier === 'all') {
+      return list.sort(byCatalogOrder);
+    }
     return list.sort((a, b) => {
       const pa = PRIORITE_ORDER[(a.priorite ?? 'secours') as RecapPriorite];
       const pb = PRIORITE_ORDER[(b.priorite ?? 'secours') as RecapPriorite];
       if (pa !== pb) return pa - pb;
-      const g = a.groupTitle.localeCompare(b.groupTitle, 'fr');
-      if (g !== 0) return g;
-      return stripForSearch(a.infraction).localeCompare(stripForSearch(b.infraction), 'fr');
+      return byCatalogOrder(a, b);
     });
-  }, [catalog, query, familyFilter, prioriteTier]);
-
-  const toggleListGrouping = () => {
-    const p = new URLSearchParams(searchParams.toString());
-    if (listByFamily) p.delete('group');
-    else p.set('group', 'famille');
-    router.replace(`${pathname}?${p.toString()}`, { scroll: false });
-  };
+  }, [catalog, catalogIndex, query, fascFilter, familyFilter, prioriteTier]);
 
   const openInListe = (id: string) => {
     const p = new URLSearchParams(searchParams.toString());
@@ -161,7 +218,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         badge='RÉFÉRENTIEL'
         badgeClassName='bg-slate-500/20 text-slate-300'
         title='Infractions'
-        subtitle='Pour chaque infraction : élément légal (référence Code pénal), élément matériel et élément moral essentiels — à croiser avec Légifrance. Liste plate par défaut ; touche G ou bouton ci‑dessous pour regrouper par famille (personnes, biens, route…). Filtre famille et probabilité à l’examen : le plus attendu d’abord.'
+        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Utilise le filtre par fascicule et la recherche pour cibler tes révisions. Familles (personnes, biens…) et probabilité à l’examen : le plus attendu d’abord.'
         className='mb-6'
       />
 
@@ -194,7 +251,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
               onChange={(e) => setPrioriteTier(e.target.value as RecapPriorite | 'all')}
               className='w-full rounded-xl border border-white/10 bg-navy-900/90 px-3 py-3 text-sm text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
             >
-              <option value='all'>Toutes (tri du + au − probable)</option>
+              <option value='all'>Toutes (ordre référentiel F01–F07)</option>
               <option value='core'>Uniquement prioritaires</option>
               <option value='freq'>Uniquement très probables</option>
               <option value='secours'>Uniquement à sécuriser</option>
@@ -202,8 +259,8 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
           </div>
         </div>
         <div>
-          <p className='mb-2 text-xs font-medium text-gray-500'>Famille d’infractions (filtre)</p>
-          <p className='mb-2 text-[11px] text-gray-600'>Réduit la liste aux catégories ci‑dessous (indépendant du regroupement d’affichage).</p>
+          <p className='mb-2 text-xs font-medium text-gray-500'>Famille d’infractions</p>
+          <p className='mb-2 text-[11px] text-gray-600'>Regroupement lisible : personnes, biens, route, etc. (croise avec le fascicule ci‑dessous si besoin.)</p>
           <div className='flex flex-wrap gap-2'>
             {INFRACTION_FAMILY_OPTIONS.map((opt) => (
               <button
@@ -222,23 +279,36 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             ))}
           </div>
         </div>
-        <div className='flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between'>
-          <p className='text-sm text-gray-400'>
-            Affichage :{' '}
-            <strong className='text-gray-200'>{listByFamily ? 'regroupé par famille' : 'liste plate'}</strong>
-            {' · '}
-            <kbd className='rounded border border-white/15 bg-white/5 px-1.5 py-0.5 font-mono text-[11px] text-gray-300'>
-              G
-            </kbd>{' '}
-            pour basculer
-          </p>
-          <button
-            type='button'
-            onClick={toggleListGrouping}
-            className='shrink-0 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2 text-sm font-medium text-gray-200 transition hover:bg-white/[0.08]'
-          >
-            {listByFamily ? 'Liste plate' : 'Regrouper par famille'}
-          </button>
+        <div>
+          <p className='mb-2 text-xs font-medium text-gray-500'>Affiner par fascicule (programme officiel)</p>
+          <div className='flex flex-wrap gap-2'>
+            {(
+              [
+                ['all', 'Tous'],
+                ['f01p1', 'F01 P1'],
+                ['f01p2', 'F01 P2'],
+                ['f02', 'F02'],
+                ['f03', 'F03'],
+                ['f04', 'F04'],
+                ['f05', 'F05'],
+                ['f06', 'F06'],
+                ['f07', 'F07'],
+              ] as const
+            ).map(([v, label]) => (
+              <button
+                key={v}
+                type='button'
+                onClick={() => setFascFilter(v)}
+                className={`rounded-xl border px-3 py-2 text-sm font-medium transition ${
+                  fascFilter === v
+                    ? 'border-amber-500/50 bg-amber-500/15 text-amber-100'
+                    : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
         </div>
         <div className='flex flex-col gap-3 rounded-xl border border-emerald-500/25 bg-emerald-950/35 p-4 sm:flex-row sm:items-center sm:justify-between'>
           <p className='text-sm text-gray-300'>
@@ -247,10 +317,10 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
           </p>
           <div className='flex flex-shrink-0 flex-wrap gap-2'>
             <Link
-              href='/flashcards'
+              href={flashSessionHref}
               className='inline-flex items-center justify-center rounded-xl bg-emerald-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-emerald-500'
             >
-              Session flashcards (tout le programme)
+              Session flashcards ({flashLabel})
             </Link>
             <Link
               href='/cours/enquetes'
@@ -265,8 +335,8 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
           <span>
             {filtered.length} infraction{filtered.length > 1 ? 's' : ''}
             {prioriteTier === 'all'
-              ? ' — ordre : probabilité examen (prioritaire → à sécuriser), puis thème'
-              : ' — filtre strate actif'}
+              ? ' — ordre : référentiel officiel (fascicule / thème), comme dans le programme'
+              : ' — filtre strate actif ; sous-ordre : référentiel officiel'}
           </span>
         </p>
       </GlassCard>
@@ -274,12 +344,12 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       <InfractionsViewBody
         vue={vue}
         filtered={filtered}
+        catalogIndex={catalogIndex}
         focusId={focusId}
         listRef={listRef}
         openInListe={openInListe}
         selected={selected}
         setSelected={setSelected}
-        listByFamily={listByFamily}
       />
 
       {filtered.length === 0 ? (
@@ -291,33 +361,32 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
 function InfractionsListView({
   filtered,
+  catalogIndex,
   focusId,
   listRef,
   selected,
   setSelected,
-  listByFamily,
 }: {
   filtered: InfractionCatalogItem[];
+  catalogIndex: Map<string, number>;
   focusId: string | null;
   listRef: RefObject<HTMLDivElement>;
   selected: InfractionCatalogItem | null;
   setSelected: (v: InfractionCatalogItem | null) => void;
-  listByFamily: boolean;
 }) {
-  const groups = useMemo(() => groupInfractionsByFamilyForList(filtered), [filtered]);
+  const groups = useMemo(
+    () => groupFilteredForListAccordion(filtered, catalogIndex),
+    [filtered, catalogIndex],
+  );
   const [openValues, setOpenValues] = useState<string[]>([]);
 
   useEffect(() => {
-    if (listByFamily) setOpenValues(groups.map((g) => g.value));
-  }, [listByFamily, groups]);
-
-  useEffect(() => {
-    if (!focusId || !listByFamily) return;
+    if (!focusId) return;
     const item = filtered.find((i) => i.id === focusId);
     if (!item) return;
-    const v = familyAccordionValue(item);
+    const v = listGroupValue(item);
     setOpenValues((prev) => (prev.includes(v) ? prev : [...prev, v]));
-  }, [focusId, filtered, listByFamily]);
+  }, [focusId, filtered]);
 
   useEffect(() => {
     if (!focusId) return;
@@ -326,97 +395,7 @@ function InfractionsListView({
     scroll();
     const t = window.setTimeout(scroll, 220);
     return () => clearTimeout(t);
-  }, [focusId, openValues, filtered, listByFamily]);
-
-  const renderCard = (item: InfractionCatalogItem, index: number) => {
-    const pTier = (item.priorite ?? 'secours') as RecapPriorite;
-    const badge = PRIORITE_EXAMEN_BADGE[pTier];
-    const isFocused = focusId === item.id;
-    return (
-      <motion.div
-        id={`infraction-row-${item.id}`}
-        key={item.id}
-        initial={MOTION_INITIAL_FOR_SEO}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.28,
-          delay: Math.min(index * 0.02, 0.35),
-          ease: [0.25, 0.46, 0.45, 0.94],
-        }}
-      >
-        <article
-          className={cn(
-            'rounded-2xl border bg-gradient-to-br from-navy-950/90 via-navy-950/70 to-navy-950/50 shadow-lg',
-            'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-950/20',
-            isFocused
-              ? 'border-[#4F6EF7] ring-2 ring-[#4F6EF7]/50 hover:border-[#4F6EF7]'
-              : 'border-white/10 hover:border-amber-500/25',
-          )}
-        >
-          <div className='flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between'>
-            <div className='min-w-0 flex-1'>
-              <button
-                type='button'
-                onClick={() => setSelected(item)}
-                className='group w-full rounded-xl text-left transition-colors hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50'
-              >
-                <div className='flex gap-3'>
-                  <span
-                    className='mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-300 transition group-hover:border-amber-400/50 group-hover:bg-amber-500/20'
-                    aria-hidden
-                  >
-                    <MessageCircle className='h-4 w-4' />
-                  </span>
-                  <div className='min-w-0 flex-1 space-y-2 pb-1'>
-                    <p className='text-xs font-medium uppercase tracking-wide text-gray-500'>{item.groupTitle}</p>
-                    <div className='flex flex-wrap items-center gap-2'>
-                      <h2 className='font-display text-lg font-bold text-white md:text-xl'>
-                        <FlashcardRichText text={item.infraction} inline />
-                      </h2>
-                      <span
-                        className={cn(
-                          'rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
-                          badge.className,
-                        )}
-                      >
-                        {badge.label}
-                      </span>
-                    </div>
-                    <p className='text-sm text-gray-400'>
-                      <span className='text-gray-500'>Élément légal : </span>
-                      {item.legal}
-                    </p>
-                    <p className='text-xs font-medium text-amber-400/90'>Fiche → matériel, moral, Légifrance</p>
-                  </div>
-                </div>
-              </button>
-            </div>
-
-            <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
-              {item.flashcardsCat ? (
-                <Link
-                  href={`/flashcards?cat=${item.flashcardsCat}`}
-                  onClick={(e) => e.stopPropagation()}
-                  className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
-                >
-                  Réviser en flashcards
-                </Link>
-              ) : (
-                <span className='max-w-[11rem] text-right text-xs text-gray-500'>Voir la page Flashcards.</span>
-              )}
-              <Link
-                href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
-                onClick={(e) => e.stopPropagation()}
-                className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
-              >
-                Voir le tableau récapitulatif
-              </Link>
-            </div>
-          </div>
-        </article>
-      </motion.div>
-    );
-  };
+  }, [focusId, openValues, filtered]);
 
   return (
     <>
@@ -429,18 +408,15 @@ function InfractionsListView({
       />
 
       <div ref={listRef} className='space-y-4'>
-        {!listByFamily ? (
-          <div className='space-y-3'>{filtered.map((item, index) => renderCard(item, index))}</div>
-        ) : (
-          <Accordion type='multiple' value={openValues} onValueChange={setOpenValues} className='space-y-3'>
-            {groups.map((g, groupIndex) => (
-              <AccordionItem
-                key={g.value}
-                value={g.value}
-                className='overflow-hidden rounded-2xl border border-white/10 border-b-0 bg-navy-950/40'
-              >
-                <AccordionTrigger className='px-4 py-3 text-left text-base hover:no-underline'>
-                  <span className='font-display font-semibold text-white'>{g.label}</span>
+        <Accordion type='multiple' value={openValues} onValueChange={setOpenValues} className='space-y-3'>
+          {groups.map((g, groupIndex) => (
+            <AccordionItem
+              key={g.value}
+              value={g.value}
+              className='overflow-hidden rounded-2xl border border-white/10 border-b-0 bg-navy-950/40'
+            >
+              <AccordionTrigger className='px-4 py-3 text-left text-base hover:no-underline'>
+                <span className='font-display font-semibold text-white'>{g.triggerTitle}</span>
                 <span className='ml-2 shrink-0 text-xs font-normal text-gray-500'>({g.items.length})</span>
               </AccordionTrigger>
               <AccordionContent className='px-3 pb-4 pt-0'>
@@ -448,14 +424,106 @@ function InfractionsListView({
                   {g.items.map((item, itemIndex) => {
                     const index =
                       groups.slice(0, groupIndex).reduce((s, x) => s + x.items.length, 0) + itemIndex;
-                    return renderCard(item, index);
+                    const pTier = (item.priorite ?? 'secours') as RecapPriorite;
+                    const badge = PRIORITE_EXAMEN_BADGE[pTier];
+                    const isFocused = focusId === item.id;
+                    return (
+                      <motion.div
+                        id={`infraction-row-${item.id}`}
+                        key={item.id}
+                        initial={MOTION_INITIAL_FOR_SEO}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{
+                          duration: 0.28,
+                          delay: Math.min(index * 0.02, 0.35),
+                          ease: [0.25, 0.46, 0.45, 0.94],
+                        }}
+                      >
+                        <article
+                          className={cn(
+                            'rounded-2xl border bg-gradient-to-br from-navy-950/90 via-navy-950/70 to-navy-950/50 shadow-lg',
+                            'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-950/20',
+                            isFocused
+                              ? 'border-[#4F6EF7] ring-2 ring-[#4F6EF7]/50 hover:border-[#4F6EF7]'
+                              : 'border-white/10 hover:border-amber-500/25',
+                          )}
+                        >
+                          <div className='flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between'>
+                            <div className='min-w-0 flex-1'>
+                              <button
+                                type='button'
+                                onClick={() => setSelected(item)}
+                                className='group w-full rounded-xl text-left transition-colors hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50'
+                              >
+                                <div className='flex gap-3'>
+                                  <span
+                                    className='mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-300 transition group-hover:border-amber-400/50 group-hover:bg-amber-500/20'
+                                    aria-hidden
+                                  >
+                                    <MessageCircle className='h-4 w-4' />
+                                  </span>
+                                  <div className='min-w-0 flex-1 space-y-2 pb-1'>
+                                    <p className='text-xs font-medium uppercase tracking-wide text-gray-500'>
+                                      {item.fascicule}
+                                      {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
+                                    </p>
+                                    <div className='flex flex-wrap items-center gap-2'>
+                                      <h2 className='font-display text-lg font-bold text-white md:text-xl'>
+                                        <FlashcardRichText text={item.infraction} inline />
+                                      </h2>
+                                      <span
+                                        className={cn(
+                                          'rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+                                          badge.className,
+                                        )}
+                                      >
+                                        {badge.label}
+                                      </span>
+                                    </div>
+                                    <p className='text-sm text-gray-400'>
+                                      <span className='text-gray-500'>Élément légal : </span>
+                                      {item.legal}
+                                    </p>
+                                    <p className='text-xs font-medium text-amber-400/90'>
+                                      Ouvrir la fiche en bulle → matériel, moral, Légifrance
+                                    </p>
+                                  </div>
+                                </div>
+                              </button>
+                            </div>
+
+                            <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
+                              {item.flashcardsCat ? (
+                                <Link
+                                  href={`/flashcards?cat=${item.flashcardsCat}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
+                                >
+                                  Réviser en flashcards
+                                </Link>
+                              ) : (
+                                <span className='max-w-[11rem] text-right text-xs text-gray-500'>
+                                  Fiches sur la page Flashcards (filtre par module F).
+                                </span>
+                              )}
+                              <Link
+                                href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
+                                onClick={(e) => e.stopPropagation()}
+                                className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
+                              >
+                                Voir le tableau récapitulatif
+                              </Link>
+                            </div>
+                          </div>
+                        </article>
+                      </motion.div>
+                    );
                   })}
                 </div>
               </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
-        )}
       </div>
     </>
   );
@@ -464,21 +532,21 @@ function InfractionsListView({
 function InfractionsViewBody({
   vue,
   filtered,
+  catalogIndex,
   focusId,
   listRef,
   openInListe,
   selected,
   setSelected,
-  listByFamily,
 }: {
   vue: InfractionsViewMode;
   filtered: InfractionCatalogItem[];
+  catalogIndex: Map<string, number>;
   focusId: string | null;
   listRef: RefObject<HTMLDivElement>;
   openInListe: (id: string) => void;
   selected: InfractionCatalogItem | null;
   setSelected: (v: InfractionCatalogItem | null) => void;
-  listByFamily: boolean;
 }) {
   return (
     <>
@@ -487,11 +555,11 @@ function InfractionsViewBody({
       {vue === 'liste' ? (
         <InfractionsListView
           filtered={filtered}
+          catalogIndex={catalogIndex}
           focusId={focusId}
           listRef={listRef}
           selected={selected}
           setSelected={setSelected}
-          listByFamily={listByFamily}
         />
       ) : null}
 

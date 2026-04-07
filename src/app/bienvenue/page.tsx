@@ -93,8 +93,8 @@ export default async function BienvenuePage() {
       </div>
 
       <p className='mt-8 text-center text-sm text-slate-500'>
-        <Link href='/dashboard' className='text-examen-accent hover:underline'>
-          Aller au tableau de bord →
+        <Link href='/accueil' className='text-examen-accent hover:underline'>
+          Aller à l&apos;accueil →
         </Link>
       </p>
     </main>

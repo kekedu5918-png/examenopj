@@ -19,13 +19,19 @@ export default async function PostLoginPage({ searchParams = {} }: PostLoginPage
   }
 
   const premium = await hasPremiumAccess();
-  const nextPath = safeInternalPath(searchParams.next, '/dashboard');
+  const nextPath = safeInternalPath(searchParams.next, '/accueil');
 
   if (!premium) {
     redirect(nextPath);
   }
 
-  if (nextPath.startsWith('/dashboard') || nextPath.startsWith('/account') || nextPath.startsWith('/manage-subscription')) {
+  if (
+    nextPath.startsWith('/accueil') ||
+    nextPath.startsWith('/bienvenue') ||
+    nextPath.startsWith('/dashboard') ||
+    nextPath.startsWith('/account') ||
+    nextPath.startsWith('/manage-subscription')
+  ) {
     redirect(nextPath);
   }
 
