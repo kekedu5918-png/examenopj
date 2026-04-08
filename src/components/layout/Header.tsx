@@ -1,8 +1,9 @@
 'use client';
 
+import { useState } from 'react';
+
 import Link from 'next/link';
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion';
-import { useState } from 'react';
 
 /** Barre de navigation globale sticky. */
 export function Header() {

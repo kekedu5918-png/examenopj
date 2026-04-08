@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, HelpCircle } from 'lucide-react';
@@ -7,7 +9,6 @@ import { ArrowRight, HelpCircle } from 'lucide-react';
 import { AnimatedStat } from '@/components/home/AnimatedStat';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { cn } from '@/utils/cn';
-import { useState } from 'react';
 
 export function HeroSection() {
   const shouldReduce = useReducedMotion();
