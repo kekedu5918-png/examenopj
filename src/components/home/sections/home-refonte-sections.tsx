@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import type { Variants } from 'framer-motion';
 import { motion, useReducedMotion } from 'framer-motion';
 import {
   ArrowRight,
@@ -113,16 +114,16 @@ export function StartHereSection() {
 export function HomeEnquetesPillarSection() {
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
-  const parentVariants = shouldReduce
-    ? {}
+  const parentVariants: Variants | undefined = shouldReduce
+    ? undefined
     : {
         hidden: {},
         visible: {
           transition: { staggerChildren: 0.07 },
         },
       };
-  const cardVariants = shouldReduce
-    ? {}
+  const cardVariants: Variants | undefined = shouldReduce
+    ? undefined
     : {
         hidden: { opacity: 0, y: 20 },
         visible: {
