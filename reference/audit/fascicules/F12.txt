@@ -1,0 +1,2640 @@
+# F12 — Instruction préparatoire, mandats, contrôle judiciaire, détention provisoire
+
+| | |
+|---|---|
+| **PDF** | `_13_f12_l_instruction_pr_paratoire_les_mandats_de_justice_le_contr_le_judiciaire_la_d_tention_provisoire.pdf` |
+| **Référentiel infractions JSON** | **0** |
+
+## Rôle pour l’examen OPJ
+
+- Cadre **instruction** / **CR** ; articulation avec les actes OPJ **sur instruction** du JI.
+
+## TODO
+
+Synthèse structurée à ajouter si besoin dans **Fondamentaux** ou **modules cours** — extraire du PDF les **articles** et **délais** sans paraphrase abusive.
+
+Fascicule n°12 EXAMEN JUIN 2026
+TABLE DES MATIÈRES
+L'INSTRUCTION PRÉPARATOIRE
+CHAPITRE 1 : CARACTÈRES DE LA PROCÉDURE D'INSTRUCTION.............P. 1
+1.1 - CARACTÈRE ÉCRIT DE LA PROCÉDURE..........................................................P. 1
+1.2 - CARACTÈRE SECRET DE L'INSTRUCTION.......................................................P. 1
+1.3 - CARACTÈRE NON CONTRADICTOIRE DE L'INSTRUCTION..............................P. 2
+CHAPITRE 2 : L'OUVERTURE D'UNE INFORMATION..................................P. 2
+2.1 - CAS DANS LESQUELS UNE INFORMATION EST OUVERTE...............................P. 2
+2.2 - LA SAISINE DU JUGE D'INSTRUCTION..........................................................P. 3
+2.2.1 - Par le ministère public............................................................................p. 3
+2.2.2 - Par la victime........................................................................................p. 3
+2.3 - LES CONSÉQUENCES DE LA SAISINE DU JUGE D'INSTRUCTION....................P. 3
+CHAPITRE 3 : LES POUVOIRS DU JUGE D'INSTRUCTION..........................P. 4
+3.1 - CARACTÈRES GÉNÉRAUX...............................................................................P. 4
+3.2 - LES CONSTATATIONS MATÉRIELLES.............................................................P. 4
+3.2.1 - Les constatations effectuées par le juge...................................................p. 4
+3.2.2 - L'expertise...........................................................................................p. 5
+3.3 - LES AUDITIONS............................................................................................P. 6
+3.3.1 - Les auditions de témoins (art.101 à 113-8 du C.P.P.)..................................p. 6
+3.3.2 - Les auditions de témoins assistés............................................................p. 7
+3.3.3 - Les interrogatoires de la personne mise en examen...................................p. 9
+3.3.4 - Les auditions de parties civiles..............................................................p. 10
+CHAPITRE 4 : LA CLÔTURE DE L'INSTRUCTION......................................P. 12
+4.1 - LE MOMENT DE LA CLÔTURE........................................................................P. 12
+4.2 - LES ORDONNANCES DE RÈGLEMENT............................................................P. 12
+4.2.1 - L'ordonnance de renvoi........................................................................p. 12
+4.2.2 - L'ordonnance de mise en accusation (art. 181 C.P.P.)................................p. 12
+4.2.3 - L'ordonnance de non-lieu (art. 177 C.P.P.)...............................................p. 13
+CHAPITRE 5 : RÔLE DE LA CHAMBRE DE L'INSTRUCTION (ART. 191 À 221-3
+C.P.P.)....................................................................................................P. 13
+5.1 - COMPOSITION ET RÔLE..............................................................................P. 13
+5.2 - LE POUVOIR DE RÉVISION..........................................................................P. 14
+5.3 - LE DROIT D’ÉVOCATION..............................................................................P. 14
+5.4 - AUTRES CONSÉQUENCES POSSIBLES D'UNE INFIRMATION OU D'UNE
+ANNULATION......................................................................................................P. 14
+5.5 - AUDIENCE DE CONTRÔLE............................................................................P. 15
+CHAPITRE 6 : LE JUGE DES LIBERTÉS ET DE LA DÉTENTION (J.L.D.)......P. 15
+6.1 - STATUT DU JUGE DES LIBERTÉS ET DE LA DÉTENTION...............................P. 15
+6.2 - LE J.L.D. ET L'INSTRUCTION PRÉPARATOIRE..............................................P. 15
+6.2.1 - La détention provisoire.........................................................................p. 15
+6.2.2 - Le contrôle judiciaire............................................................................p. 16
+6.2.3 - L'assignation à résidence avec surveillance électronique............................p. 16
+6.3 - INTERVENTION DU J.L.D. DURANT L’ENQUÊTE DE POLICE..........................P. 16
+6.3.1 - Les écoutes téléphoniques....................................................................p. 16
+6.3.2 - Les perquisitions, visites domiciliaires et saisies.......................................p. 16
+6.3.3 - La garde à vue....................................................................................p. 17
+6.3.4 - Les réquisitions...................................................................................p. 18
+6.3.5 - La protection des témoins.....................................................................p. 18
+6.3.6 - Les techniques spéciales d’enquête (art. 706-95-11 et suivants du C.P.P.). . .p. 18
+6.3.7 - Les saisies du patrimoine (art. 706-148 du C.P.P.)....................................p. 18
+6.3.8 - Les saisies conservatoires.....................................................................p. 19
+6.4 - AUTRES INTERVENTIONS DU J.L.D. AU COURS D'UNE PROCÉDURE JUDICIAIRE
+............................................................................................................................P. 19
+6.4.1 - Détention provisoire et contrôle judiciaire...............................................p. 19
+6.4.2 - Application des peines..........................................................................p. 20
+6.5 - AUTRE DOMAINE D’INTERVENTION : SÉCURITÉ INTÉRIEURE ET LUTTE CONTRE
+LE TERRORISME..................................................................................................P. 20
+LES MANDATS DE JUSTICE (ART. 122 À 136 DU C.P.P.)
+CHAPITRE 1 : LES PRINCIPES GÉNÉRAUX QUI RÉGISSENT LES MANDATS....
+..............................................................................................................P. 21
+CHAPITRE 2 : LES DIFFÉRENTS MANDATS.............................................P. 22
+2.1 - LE MANDAT DE RECHERCHE........................................................................P. 22
+2.1.1 - Définition et délivrance.........................................................................p. 22
+2.1.2 - Notification et exécution du mandat de recherche....................................p. 22
+2.2 - LE MANDAT DE COMPARUTION...................................................................P. 23
+2.2.1 - Définition et délivrance.........................................................................p. 23
+2.2.2 - Notification et exécution du mandat de comparution................................p. 23
+2.3 - LE MANDAT D'AMENER................................................................................P. 24
+2.3.1 - Définition et délivrance.........................................................................p. 24
+2.3.2 - Notification et exécution du mandat d'amener.........................................p. 25
+2.4 - LE MANDAT D’ARRÊT...................................................................................P. 27
+2.4.1 - Définition et délivrance.........................................................................p. 27
+2.4.2 - Notification et exécution du mandat d'arrêt.............................................p. 28
+2.5 - LE MANDAT DE DÉPÔT.................................................................................P. 30
+2.5.1 - Définition et délivrance.........................................................................p. 30
+2.5.2 - Notification et exécution du mandat de dépôt..........................................p. 31
+CHAPITRE 3 : SANCTIONS DES IRRÉGULARITÉS DES MANDATS............P. 31
+3.1 - SANCTIONS CONTRE LES PERSONNES........................................................P. 31
+3.2 - SANCTIONS CONCERNANT LES ACTES.........................................................P. 31
+LE CONTRÔLE JUDICIAIRE
+CHAPITRE 1 : LE CONTRÔLE JUDICIAIRE : CONDITIONS DE MISE EN
+ŒUVRE...................................................................................................P. 33
+1.1 - DÉFINITION................................................................................................P. 33
+1.1.1 - Conditions de mise en œuvre................................................................p. 33
+1.1.2 - À qui s'applique-t-il ?...........................................................................p. 33
+1.2 - CONDITIONS DU PLACEMENT SOUS CONTRÔLE JUDICIAIRE......................P. 33
+1.2.1 - Décision du juge d'instruction................................................................p. 33
+1.2.2 - Décision du juge des libertés et de la détention.......................................p. 34
+1.2.3 - Placement par la chambre de l'instruction...............................................p. 34
+1.2.4 - Placement par les juridictions de jugement.............................................p. 34
+1.3 - LES OBLIGATIONS DU CONTRÔLE JUDICIAIRE APPLICABLES AUX PERSONNES
+PHYSIQUES.........................................................................................................P. 34
+1.4 - LES OBLIGATIONS DU CONTRÔLE JUDICIAIRE APPLICABLES AUX PERSONNES
+MORALES.............................................................................................................P. 34
+1.5 - L'ORGANISATION DU CONTRÔLE JUDICIAIRE............................................P. 34
+CHAPITRE 2 : DÉROULEMENT ET FIN DU CONTRÔLE JUDICIAIRE..........P. 35
+2.1 - LA MODIFICATION DU CONTRÔLE JUDICIAIRE...........................................P. 35
+2.2 - LA DEMANDE DE MAINLEVÉE DU CONTRÔLE JUDICIAIRE...........................P. 35
+2.2.1 - Rôle du juge d'instruction.....................................................................p. 35
+2.2.2 - Saisine de la chambre de l'instruction.....................................................p. 35
+2.2.3 - Rôle des juridictions de jugement..........................................................p. 35
+2.3 - LA FIN DU CONTRÔLE JUDICIAIRE..............................................................P. 36
+2.3.1 - La durée normale du contrôle judiciaire..................................................p. 36
+2.3.2 - Transformation du contrôle judiciaire en placement en détention................p. 36
+TABLEAU : CONTRÔLE JUDICIAIRE.........................................................P. 38
+L'ASSIGNATION À RÉSIDENCE AVEC SURVEILLANCE
+ÉLECTRONIQUE (ARSE)
+CHAPITRE 1 : CONDITIONS DE MISE EN ŒUVRE DE L'ASSIGNATION À
+RÉSIDENCE.............................................................................................P. 39
+1.1 - DÉFINITION................................................................................................P. 39
+1.1.1 - Conditions de mise en œuvre................................................................p. 39
+1.1.2 - Prononcé de la mesure.........................................................................p. 39
+1.2 - OBJET DE LA MESURE..................................................................................P. 39
+1.3 - VÉRIFICATION DE LA FAISABILITÉ DE LA MESURE.....................................P. 39
+CHAPITRE 2 : MODALITÉS DU PLACEMENT SOUS SURVEILLANCE
+ÉLECTRONIQUE......................................................................................P. 40
+CHAPITRE 3 : DÉROULEMENT DE LA MESURE.........................................P. 40
+LA DÉTENTION PROVISOIRE
+CHAPITRE 1 : LE PLACEMENT EN DÉTENTION PROVISOIRE...................P. 41
+1.1 - CONDITIONS DU PLACEMENT......................................................................P. 41
+1.1.1 - Conditions tenant à la personne............................................................p. 41
+1.1.2 - Conditions tenant à la nature de l'infraction............................................p. 41
+1.1.3 - Situations dans lesquelles la détention provisoire est envisageable.............p. 41
+1.2 - PLACEMENT EN DÉTENTION PROVISOIRE PAR LE JUGE DES LIBERTÉS ET DE LA
+DÉTENTION.........................................................................................................P. 42
+1.2.1 - Le juge des libertés et de la détention (Cf. supra)....................................p. 42
+1.2.2 - Modalités du placement en détention provisoire.......................................p. 42
+1.2.3 - L'ordonnance de placement en détention provisoire..................................p. 43
+1.3 - PLACEMENT EN DÉTENTION PROVISOIRE PAR LA CHAMBRE DE
+L'INSTRUCTION...................................................................................................P. 43
+CHAPITRE 2 : DÉROULEMENT DE LA DÉTENTION PROVISOIRE..............P. 43
+2.1 - DURÉE DE LA DÉTENTION PROVISOIRE......................................................P. 43
+2.2 - PROCÉDURE DE « MISE EN ÉTAT ».............................................................P. 43
+2.3 - PROLONGATION DE LA DÉTENTION PROVISOIRE.......................................P. 44
+CHAPITRE 3 : FIN DE LA DÉTENTION PROVISOIRE................................P. 44
+3.1 - LE RÈGLEMENT DE LA PROCÉDURE..............................................................P. 44
+3.1.1 - En cas de renvoi devant le tribunal correctionnel (art. 179 C.P.P.)...............p. 44
+3.1.2 - En cas de renvoi devant la cour d'assises (art. 181 C.P.P.).........................p. 44
+3.2 - LA DEMANDE DE MISE EN LIBERTÉ.............................................................P. 44
+3.2.1 - Procédure devant le juge d'instruction....................................................p. 44
+3.2.2 - Saisine de la chambre de l'instruction.....................................................p. 45
+3.2.3 - Saisine de la juridiction de jugement......................................................p. 45
+3.3 - LA MISE EN LIBERTÉ DE PLEIN DROIT........................................................P. 45
+3.3.1 - À la fin de la durée de la détention provisoire..........................................p. 45
+3.3.2 - Inobservation des délais.......................................................................p. 45
+3.4 - LA MISE EN LIBERTÉ D'OFFICE...................................................................P. 45
+3.4.1 - Décision du juge d'instruction................................................................p. 45
+3.4.2 - Décision de la chambre de l'instruction...................................................p. 45
+3.5 - LA MISE EN LIBERTÉ SUR RÉQUISITIONS DU PARQUET..............................P. 45
+3.6 - LA MISE EN LIBERTÉ POUR RAISON DE SANTÉ...........................................P. 46
+CHAPITRE 4 : RÉPARATION D'UNE DÉTENTION PROVISOIRE INJUSTIFIÉE
+(ART. 149 ET SUIVANTS C.P.P.)..............................................................P. 46
+TABLEAU : DÉTENTION PROVISOIRE DES MAJEURS EN MATIÈRE DE DÉLITS
+..............................................................................................................P. 47
+TABLEAU : DÉTENTION PROVISOIRE DES MAJEURS EN MATIÈRE DE CRIMES
+..............................................................................................................P. 48
+DISPOSITIONS APPLICABLES AUX MINEURS
+CHAPITRE 1 : PRINCIPES GÉNÉRAUX DE LA JUSTICE PÉNALE DES MINEURS
+..............................................................................................................P. 49
+1.1 - PRÉSOMPTION DE DISCERNEMENT (ART. L. 11-1 DU C.J.P.M.)...................P. 49
+1.2 - LES GRANDS PRINCIPES.............................................................................P. 50
+1.2.1 - Primauté de l’éducatif et atténuation de la responsabilité pénale (art. L. 11-2,
+L. 11-3, L. 11-4 et L. 11-5 du C.J.P.M.).............................................................p. 50
+1.2.2 - La spécialisation des acteurs (art. L. 12-1 et suivants du C.J.P.M.)..............p. 50
+1.2.3 - Les droits spécifiques des mineurs (art. L. 12-4 et L. 12-5 du C.J.P.M.).......p. 50
+CHAPITRE 2 : INSTRUCTION PRÉPARATOIRE........................................P. 51
+2.1 - LE JUGE D’INSTRUCTION............................................................................P. 51
+2.2 - DÉROULEMENT DE L’INSTRUCTION.............................................................P. 51
+2.2.1 - L’ouverture d’information......................................................................p. 51
+2.2.2 - Le contrôle judiciaire............................................................................p. 52
+2.2.3 - L’assignation à résidence sous surveillance électronique (A.R.S.E. - art. L. 333-1
+et L. 333-2 du C.J.P.M.)..................................................................................p. 53
+2.2.4 - La détention provisoire (art. L. 334-1 à L. 334-6 du C.J.P.M.)....................p. 53
+2.2.5 - La clôture de l’instruction......................................................................p. 53
+CHAPITRE 3 : RÉTENTION DANS LE CADRE DES MANDATS....................P. 54
+3.1 - DILIGENCES SPÉCIFIQUES..........................................................................P. 54
+3.1.1 - Avis obligatoire aux représentants légaux...............................................p. 54
+3.1.2 - Examen médical (art. L. 413-4 et L. 413-8 du C.J.P.M.)............................p. 54
+3.1.3 - Assistance avocat (art. L. 413-5 et L. 413-9 du C.J.P.M.)..........................p. 55
+3.1.4 - Enregistrement audiovisuel des auditions................................................p. 55
+3.2 - DROIT À L’INFORMATION ET À L’ACCOMPAGNEMENT.................................P. 55
+3.2.1 - Information du mineur.........................................................................p. 55
+3.2.2 - Information des responsables légaux.....................................................p. 56
+3.2.3 - Accompagnement du mineur (art. L. 311-1 du C.J.P.M.)............................p. 56
+L ' IN ST RU CT ION P RÉ P A R ATO I RE
+L'instruction préparatoire (ou information judiciaire), permet à
+un organe juridictionnel (juge d'instruction ou chambre de
+l'instruction) de rechercher les preuves afin d'établir les charges
+suffisantes contre une personne pour ordonner sa mise en
+jugement.
+L'instruction préparatoire est à deux degrés : devant le juge
+d'instruction au premier degré, devant la chambre de
+l'instruction au deuxième degré.
+Avant d’examiner les différentes phases de l'instruction, il
+convient de dégager les éléments qui la caractérisent.
+CHAPITRE 1 :
+CARACTÈRES DE LA PROCÉDURE D'INSTRUCTION
+L'instruction préparatoire s'inspire largement de la procédure inquisitoire, c'est-à-dire qu'elle
+est écrite, secrète et non contradictoire. Ces caractères ont été atténués par plusieurs
+réformes de la procédure pénale qui permettent aux parties d'intervenir dans le
+déroulement de l'information.
+1.1 - CARACTÈRE ÉCRIT DE LA PROCÉDURE
+Comme l'indique l'art. 81 al. 2 et 3 du C.P.P., tous les actes de l'instruction et toutes les
+décisions auxquelles elle donne lieu, sont réunis dans un dossier établi en autant
+d'exemplaires qu'il est nécessaire à l’administration de la justice, sans pour autant ralentir le
+travail du magistrat instructeur. Pour ce faire, c'est-à-dire lorsque la transmission du dossier
+est nécessaire, des copies ou photocopies sont autorisées.
+Ce caractère écrit est moins marqué en ce qui concerne l'audience de la chambre de
+l'instruction, juridiction du second degré. Le procureur général et les avocats des parties
+sont entendus (art. 199 alinéa 3 C.P.P.).
+1.2 - CARACTÈRE SECRET DE L'INSTRUCTION
+L'art. 11 du C.P.P. affirme le caractère secret de l'instruction. Mais ce principe est atténué et
+même parfois écarté par d'autres dispositions du même code.
+Par exemple, l'al. 3 de ce même art. 11 permet au procureur de la République, directement
+ou par l’intermédiaire d’un O.P.J. agissant avec son accord et sous son contrôle, de rendre
+publics certains éléments de la procédure afin d'éviter la propagation d'informations
+parcellaires ou inexactes ou pour mettre fin à un trouble de l'ordre public ou lorsque tout
+autre impératif d’intérêt public l’exige ; de même, certaines audiences, tenues normalement
+en chambre du conseil ou en audience de cabinet, peuvent être publiques si l'intéressé le
+demande (art. 199 C.P.P.).
+Enfin, d'une manière générale, les avocats des parties ont accès à tout moment à l'ensemble
+du dossier (art. 114 C.P.P.), donc aux dépositions des uns et des autres et aux actes
+accomplis par le juge.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 1
+L'article 11-1 du C.P.P. prévoit que, sur autorisation du procureur de la République ou du
+juge d'instruction, peuvent être communiqués à des autorités ou organismes habilités des
+éléments des procédures judiciaires en cours pouvant permettre de réaliser des recherches
+ou enquêtes scientifiques ou techniques ayant pour objectif de prévenir la commission
+d'accidents ou de faciliter l'indemnisation des victimes. Les agents de ces autorités ou
+organismes sont tenus au secret professionnel.
+Par contre, hors les cas prévus par la loi, l'instruction doit rester secrète à l'égard du public.
+Comme le rappelle l'art. 11 du C.P.P., "toute personne qui concourt à cette procédure est
+tenue au secret professionnel".
+En ce qui concerne les journalistes, qui ne concourent pas à la procédure, il leur est interdit
+de publier les actes de procédure criminelle ou correctionnelle avant qu'ils aient été lus en
+audience publique (art. 38 loi du 29.07.1881). Par ailleurs, l'art. 9-1 du code civil prévoit
+une action en réparation des dommages subis par toute personne qui est présentée
+publiquement comme étant coupable de faits faisant l'objet d'une instruction.
+1.3 - CARACTÈRE NON CONTRADICTOIRE DE L'INSTRUCTION
+Le principe de procédure non contradictoire, c'est-à-dire où tous les intéressés ne disposent
+pas "d'armes égales", est lui aussi largement atténué. La présence de la défense aux
+auditions et interrogatoires ainsi que l'accès de cette dernière à tout moment au dossier de
+la procédure sont des droits affirmés par le code de procédure pénale. Les parties peuvent
+aussi demander au juge de procéder à certains actes, interjeter appel de ses décisions,
+former des requêtes en annulation ou demander la clôture de la procédure en ce qui les
+concerne. Elles jouent donc désormais un rôle de plus en plus actif dans le déroulement de
+l'instruction.
+L'évolution de la législation montre bien qu'il est difficile de concilier l'efficacité de la
+recherche de la vérité et le respect des libertés individuelles. Cette double exigence se
+retrouve dans les différentes phases de la procédure d'instruction au cours desquelles des
+formalités doivent être respectées de façon stricte sous peine d'entraîner des nullités.
+Ce formalisme se confirme, dans un premier temps, au niveau de l'ouverture de
+l'information.
+CHAPITRE 2 :
+L'OUVERTURE D'UNE INFORMATION
+2.1 - CAS DANS LESQUELS UNE INFORMATION EST OUVERTE
+Comme le précise l'art. 79 du C.P.P., l'information est obligatoire en matière criminelle, en
+raison de la gravité des infractions dont il est nécessaire de réunir le plus possible
+d'éléments non seulement sur les faits mais également sur la personnalité de l'auteur.
+En matière délictuelle, l'information est facultative sauf dispositions spéciales. Elle sera mise
+en œuvre, entre autres, lorsque les faits sont complexes ou lorsque l'auteur est inconnu ou
+en fuite.
+Une plainte avec constitution de partie civile peut également provoquer l'ouverture d'une
+information en cas de crime ou de délit.
+Pour ce qui concerne les contraventions, aux termes de l'art. 79 du C.P.P. l'information n'est
+ouverte que sur réquisition du procureur de la République.
+Le juge d'instruction ne peut se saisir lui-même. Il est saisi par un acte émanant soit du
+ministère public soit de la victime.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 2
+2.2 - LA SAISINE DU JUGE D'INSTRUCTION
+Le juge d’instruction est un magistrat du siège nommé sur proposition du ministre de la
+Justice par décret du président de la République pris après avis du Conseil supérieur de la
+magistrature.
+2.2.1 - Par le ministère public
+Lorsque le procureur de la République utilise le procédé de l'information, il rédige un
+réquisitoire à fin d'informer (ou réquisitoire introductif d'instance). Cet acte est écrit, daté et
+mentionne les faits qui paraissent avoir été commis.
+Les pôles d’instruction sont seuls compétents pour connaître les affaires criminelles ou
+faisant l'objet d'une cosaisine (art. 83-1 C.P.P. : affaires d'une certaine gravité ou complexité
+justifiant d'être confiées à un collège de magistrats). L’art. D. 15-4-4 du C.P.P. fixe la liste
+des tribunaux judiciaires dans lesquels existe un pôle de l’instruction. Leur compétence
+territoriale peut recouvrir le ressort de plusieurs tribunaux. Ces juges sont seuls compétents
+pour connaître des informations qui soit portent sur des crimes, soit font l’objet d’une
+cosaisine. Lorsqu’il apparaît au procureur de la République du tribunal judiciaire au sein
+duquel il n’y a pas de pôle que les faits et procédures portés à sa connaissance sont
+susceptibles de relever du pôle de l’instruction, il avise le procureur de la République près le
+tribunal au sein duquel se trouve ce pôle (art. D 15-4-1 C.P.P.). Les magistrats se
+concerteront afin de déterminer qui dirigera et contrôlera le déroulement de l’enquête.
+2.2.2 - Par la victime
+Le juge d’instruction peut être saisi par une la victime, pour un crime ou un délit, par une
+plainte avec constitution de partie civile (art. 85 C.P.P.).
+Elle déclenche automatiquement la poursuite si elle est régulière et recevable.
+La plainte doit exposer les faits de façon détaillée et doit être accompagnée de toute pièce
+justificative étayant les accusations portées. Elle est transmise au procureur de la
+République aux fins de réquisitions.
+2.3 - LES CONSÉQUENCES DE LA SAISINE DU JUGE D'INSTRUCTION
+Une fois saisi régulièrement le juge ne doit instruire que sur les faits visés dans le
+réquisitoire ou la plainte. Il ne peut pas étendre son information à d'autres faits.
+On dit qu'il est saisi "in rem". Par contre s'il découvre des faits nouveaux au cours de
+l'information, le juge doit les dénoncer au procureur de la République (art. 80 C.P.P.).
+Ce dernier aura, en fonction de la nature des faits et des circonstances, le choix entre
+diverses solutions :
+√ rédiger un réquisitoire supplétif qui permettra au juge d’élargir le champ de ses
+investigations ;
+√ requérir l'ouverture d'une information distincte ;
+√ décider d’un classement sans suite ;
+√ saisir la juridiction de jugement ;
+√ ordonner une enquête ;
+√ envisager une mesure alternative aux poursuites ou une composition pénale ;
+√ transmettre les plaintes ou les procès-verbaux au procureur de la République
+territorialement compétent.
+En ce qui concerne les personnes suspectées, le juge d'instruction n'est pas lié par les
+réquisitions du Parquet. Par contre, il doit tenir compte de la force des indices réunis à
+l'encontre de chaque intéressé pour déterminer le statut qu'il lui attribuera : mis en examen,
+témoin assisté ou simple témoin.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 3
+À peine de nullité, le juge d'instruction ne peut mettre en examen que les personnes contre
+lesquelles existent des indices graves ou concordants rendant vraisemblable leur
+participation à la commission de l'infraction (art. 80-1 C.P.P.).
+Il convient de préciser qu'en fonction de la progression et des nécessités de l'instruction, le
+statut des personnes peut évoluer dans le temps.
+Dès que l'instruction est ouverte, le juge d'instruction procède à tous les actes d'information
+qu'il juge utiles à la manifestation de la vérité. Cette formule, énoncée par l'art. 81 du C.P.P.
+est suffisamment large pour laisser au juge une grande liberté quant à l'objet de sa mission.
+CHAPITRE 3 :
+LES POUVOIRS DU JUGE D'INSTRUCTION
+3.1 - CARACTÈRES GÉNÉRAUX
+Le juge doit dans un premier temps rechercher les circonstances exactes dans lesquelles
+l'infraction a été commise et les conditions dans lesquelles les diverses personnes
+concernées y ont participé.
+L'instruction doit également porter sur la personnalité du délinquant qui sera prise en
+compte dans la répression. Elle peut aussi porter sur la personnalité de la victime (art. 81-1
+C.P.P.).
+Cette recherche de la vérité, dans le cadre qui vient d'être indiqué, doit être la plus
+objective possible. Pour y parvenir, le juge instruit à charge et à décharge : c'est ainsi qu'il
+doit rechercher et examiner avec soin, tout élément qui peut soit confirmer la culpabilité de
+la personne visée ou au contraire la décharger (art. 81 al. 1 C.P.P.).
+Pour mener à bien cette mission délicate, le juge procède à des mesures très diverses dont
+certaines font l'objet d'une étude spécifique et ne seront donc pas traitées dans le présent
+chapitre. Il s'agit des mandats de justice, du contrôle judiciaire et de la détention provisoire.
+En ce qui concerne les commissions rogatoires, que le juge utilise lorsqu'il ne peut accomplir
+seul les actes nécessaires à son information, elles sont également développées dans un
+chapitre distinct.
+Nous ne traiterons donc ici que deux aspects des pouvoirs du juge d'instruction : les
+constatations matérielles et l'audition de certaines personnes.
+3.2 - LES CONSTATATIONS MATÉRIELLES
+3.2.1 - Les constatations effectuées par le juge
+Le juge d'instruction peut procéder lui-même à un certain nombre de constatations
+matérielles qui compléteront celles que les services de police ont pu déjà faire ou les
+confirmeront.
+Dans ce cadre, l'art. 92 du C.P.P. autorise le juge à se transporter sur les lieux "pour y
+effectuer toutes constatations utiles ou procéder à des perquisitions". Toutefois il doit en
+donner avis au procureur de la République qui peut l'accompagner.
+Pendant son transport, le juge d'instruction est assisté de son greffier chargé de rédiger
+sous la dictée le procès-verbal des constatations. Cet acte de procédure est signé par le juge
+et par le greffier.
+Le juge d'instruction peut se transporter, sans être assisté de son greffier et sans obligation
+d'en dresser procès-verbal, pour diriger et contrôler l'exécution de la commission rogatoire.
+Il ne doit pas procéder lui-même à des actes d'instruction.
+Il peut, dans ce cadre, ordonner la prolongation des gardes à vue prononcées pour
+l'exécution de la commission rogatoire (art. 152 al. 3 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 4
+Certaines constatations peuvent également être faites au cabinet du juge où ce dernier
+examine les pièces qui ont fait l'objet de saisies et qui sont susceptibles de fournir des
+éléments utiles à l'instruction. Lorsque le juge se heurte à des difficultés techniques, il peut
+faire appel à des experts.
+3.2.2 - L'expertise
+L'expertise est réglementée par les articles 156 à 169-1 du C.P.P. La mission des experts a
+pour objet l’examen de questions d’ordre technique qui suppose non de simples
+constatations objectives mais une interprétation. Elle peut intervenir dans des domaines très
+variés : en matière de police scientifique pour l'analyse des traces, la détection des faux
+documents, la balistique,...
+Elle est également fréquente en matière médicale (médecine légale et psychiatrie), en
+matière biologique, chimique, toxicologique et en matière comptable.
+3.2.2.1 - La nomination des experts
+3.2.2.1.1 - L'initiative d'une expertise
+Selon l'art. 156 du C.P.P. elle appartient soit au ministère public, soit au juge d'instruction
+qui l'ordonne d'office, soit à l'une des parties ou du témoin assisté.
+Lorsque le juge désire ne pas donner suite à une demande d'expertise, il doit rendre une
+ordonnance motivée dans le délai d'un mois à compter de la réception de la demande.
+3.2.2.1.2 - Le choix de l'expert
+Les experts sont choisis parmi les personnes physiques ou morales sur une liste nationale
+dressée par la Cour de cassation ou sur une des listes dressées par les cours d'appels (art.
+157 C.P.P.). L'expertise peut également être demandée à des services ou organismes de
+police technique et scientifique de la police nationale et de la gendarmerie nationale (art.
+157-2 du C.P.P.)
+Exceptionnellement, lorsque la question à examiner demande une technicité particulière, le
+juge peut faire appel à un expert qui ne figure pas sur l'une de ces listes sous réserve de
+préciser les raisons de ce choix dans une décision motivée.
+3.2.2.2 - Le déroulement de l'expertise
+3.2.2.2.1 - Le serment des experts
+Au moment de leur inscription sur une des listes, les experts doivent prêter serment
+"d'apporter leur concours à la justice en leur honneur et en leur conscience". Le serment est
+prononcé devant la cour d'appel du ressort de leur domicile.
+Les experts qui ne figurent sur aucune de ces listes prêtent serment devant le juge
+d'instruction ou le magistrat désigné par la juridiction chaque fois qu'ils sont commis (art.
+160 C.P.P.).
+3.2.2.2.2 - La conduite de l'expertise
+Les experts procèdent à leur mission sous le contrôle du juge d'instruction (art. 156 al. 3
+C.P.P.). Le magistrat doit être tenu au courant du développement des opérations afin d'être
+en mesure de prendre à tout moment les mesures utiles (art. 161 al. 3 C.P.P.).
+Les pièces à conviction placées sous scellés peuvent, après inventaire, être mises à
+disposition des experts (art. 163 C.P.P).
+Les experts, pour l'accomplissement de leur mission, peuvent ouvrir les scellés, les
+conditionner autrement et dans ce cas en faire l'inventaire. Ils peuvent également recevoir à
+titre de renseignement les déclarations de diverses personnes hormis la personne mise en
+examen, le témoin assisté et la partie civile.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 5
+3.2.2.3 - Le rapport d'expertise
+Dès la fin de leur mission, les experts rédigent un rapport qui décrit les opérations qu'ils ont
+effectuées et qui expose leurs conclusions. Il doit être signé par les experts et doit
+mentionner les noms et qualités des personnes qui les ont assistés. Le rapport est remis au
+greffier qui rédige un procès-verbal de dépôt (art. 166 C.P.P.).
+Avec l'accord du juge d'instruction les experts peuvent, directement et par tout moyen,
+communiquer les conclusions de leur rapport aux officiers de police judiciaire chargés de
+l'exécution de la commission rogatoire, au procureur de la République ou aux parties.
+3.3 - LES AUDITIONS
+Le juge d'instruction peut entendre toute personne susceptible d'apporter des indications
+intéressantes. Toutefois, les formalités ne sont pas les mêmes selon qu'il s'agit d'un témoin,
+d'un témoin assisté, de la personne mise en examen ou de la partie civile.
+3.3.1 - Les auditions de témoins (art.101 à 113-8 du C.P.P.)
+3.3.1.1 - Les personnes concernées
+En vertu de l'art. 101 du C.P.P., le juge d'instruction peut faire citer devant lui, par huissier
+ou par agent de la force publique, toutes les personnes dont la déposition lui paraît utile. Le
+témoin doit être avisé que, s'il ne comparaît pas ou refuse de comparaître, il pourra y être
+contraint par la force publique. La personne peut aussi comparaître volontairement.
+Toutefois, sous peine de faire échec aux droits de la défense, le juge d'instruction ne peut
+pas entendre en qualité de témoins les personnes à l'encontre desquelles il existe des
+indices graves et concordants d'avoir participé à la commission de l'infraction (art. 105
+C.P.P.). Dans d'autres cas, il est tenu d'entendre la personne en qualité de témoin assisté
+(voir infra).
+3.3.1.2 - Les formalités attachées à l'audition
+√ Les témoins doivent être entendus soit séparément et hors la présence des parties, soit
+lors de confrontations réalisées entre eux ou avec l'une ou l'autre des parties. Il est dressé
+procès-verbal de leurs déclarations (art. 102 C.P.P.).
+√ Le juge fait préciser au témoin son identité (la déposition d'un témoin anonyme serait
+frappée de nullité) ; le témoin doit également indiquer s'il est parent ou allié des parties et à
+quel degré ou s'il est à leur service (art. 103 C.P.P.). Il prête serment de dire toute la vérité,
+rien que la vérité.
+3.3.1.3 - Les obligations du témoin
+Elles sont énoncées par l'art. 109 du C.P.P. :
+√ Le témoin doit comparaître.
+S'il ne comparaît pas ou refuse de comparaître, le juge d’instruction peut d’office ou sur les
+réquisitions du procureur de la République l’y contraindre par la force publique.
+√ Le témoin doit prêter serment.
+Les témoins prêtent serment de dire "toute la vérité, rien que la vérité" (art. 103 C.P.P.).
+L’art. 108 du C.P.P. prévoit que sont dispensés de cette obligation :
+– les mineurs de 16 ans
+– les personnes présentant avec la personne mise en examen ou avec le témoin assisté
+une des relations prévues aux 1° à 5° de l'art.335 du C.P.P.. Il s’agit :
+• du père, de la mère ou de tout autre ascendant de l'accusé, ou de l'un des accusés
+présents et soumis au même débat,
+• du fils, de la fille, ou de tout autre descendant,
+• des frères et sœurs,
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 6
+• des alliés aux mêmes degrés,
+• du mari ou de la femme, du partenaire lié à l’accusé par un pacte civil de solidarité ou
+de son concubin, au sens de l'article 515-8 du code civil, y compris après le divorce,
+la dissolution du PACS, ou la cessation du concubinage.
+Sont également dispensées de prêter serment les personnes sous le coup d'une
+condamnation à l'interdiction de déposer en justice autrement que pour y apporter de
+simples renseignements en vertu de l'art. 131-26 du code pénal.
+√ Le témoin doit déposer. Il ne peut être libéré de cette obligation qu'en raison d'une
+astreinte au secret professionnel. Quant aux journalistes professionnels, ils sont autorisés
+par l'art. 109 du C.P.P. à taire l'origine des informations recueillies dans l'exercice de leur
+fonction.
+√ Sanction du non-respect de ces obligations : l'art. 434-15-1 du code pénal punit d'une
+amende de 3 750 € le témoin cité par le juge d'instruction qui ne comparaît pas devant le
+juge d'instruction ou devant un O.P.J. agissant sur commission rogatoire (sans excuse ou
+justification) ou qui refuse de prêter serment ou de déposer.
+√ En application des articles 152 et 153 du C.P.P., dans le cadre de l'exécution d'une
+commission rogatoire, l'O.P.J. peut procéder à l'audition des témoins (se reporter aux
+développements traitant des commissions rogatoires).
+3.3.2 - Les auditions de témoins assistés
+3.3.2.1 - Les personnes concernées
+Le témoin assisté occupe une position intermédiaire entre le simple témoin et le mis en
+examen. Ce statut n'en est pas pour autant un préalable obligatoire à la mise en examen.
+Il concerne des personnes contre lesquelles pèsent des soupçons plus ou moins lourds mais
+à l'égard desquelles le juge d'instruction estime que la mise en examen n'est pas encore
+envisageable ou n'est pas utile.
+C'est d'ailleurs un statut qui semble devoir être préféré à la mise en examen puisque l'art.
+80-1 dernier al. du C.P.P. dispose que la mise en examen ne peut intervenir que si le juge
+d'instruction estime qu'il n'est pas possible de recourir à la procédure du témoin assisté.
+À défaut de mise en examen, ce statut est obligatoire dans certains cas et dans d'autres,
+son attribution ne constitue qu'une faculté laissée à la libre appréciation du magistrat
+instructeur.
+√ À défaut de mise en examen, sont obligatoirement témoins assistés :
+– les personnes nommément visées par un réquisitoire introductif du procureur de la
+République ou par un réquisitoire supplétif (art. 113-1 C.P.P.) ;
+– les personnes contre lesquelles existent des indices graves et concordants (combinaison
+des art. 105, 113-2 al. 2 et 113-6 al. 2 C.P.P.) ;
+– les personnes nommément visées par une plainte ou mises en cause par la victime et
+qui demandent ce statut (art. 113-2 al. 1 C.P.P.) ;
+La personne nommément visée par une plainte avec constitution de partie civile et n’ayant
+pas la qualité de témoin assisté peut être entendue par un O.P.J. dans le cadre d’une
+commission rogatoire.
+Elle doit cependant y avoir consenti après avoir été avisée de son droit d’être entendue
+comme témoin assisté par le juge d’instruction (cass. crim 6 août 2008). Cette décision ne
+précise pas si l’intéressé doit obligatoirement comparaître devant le juge d’instruction ou si
+l’O.P.J. peut lui-même faire cet avis.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 7
+– Sont aussi obligatoirement entendues comme témoins assistés les personnes que le
+juge ne met finalement pas en examen à l'issue de leur interrogatoire de première
+comparution (art. 116 C.P.P.), celles dont la mise en examen a été annulée par la
+chambre de l'instruction (art. 174-1 C.P.P.) et, pour le reste de la procédure où elles
+étaient impliquées, les personnes qui ont perdu la qualité de mis en examen à la suite
+de leur renvoi devant une juridiction de jugement par renvoi partiel ou disjonction (art.
+182 C.P.P.).
+√ Peuvent être témoins assistés, à la seule appréciation du juge d'instruction :
+– les personnes mises en cause par un témoin ou contre lesquelles il existe des indices
+rendant vraisemblable qu’elles aient pu participer à la commission des infractions (art.
+113-2 al. 2 C.P.P.) ;
+– les personnes nommément visées par une plainte ou mises en cause par la victime
+lorsqu'à la fois, d'une part, il pèse contre elles seulement de simples indices ou des
+indices graves ou concordants et que d'autre part, elles n'ont pas demandé ellesmêmes à bénéficier de ce statut (art. 113-2 C.P.P.) ;
+– les personnes nommément visées par une plainte avec constitution de partie civile
+n'ayant pas demandé à bénéficier de statut (art. 113-2 C.P.P.).
+On notera que ce statut est applicable dans tous les cas de figure : simples indices, indices
+graves ou concordants, indices graves et concordants.
+Ce statut peut n'être que temporaire car la mise en examen d'un témoin assisté peut
+intervenir en cours d'instruction. Elle devra d'ailleurs être décidée chaque fois que le juge
+entendra renvoyer, à la fin de l'instruction, la personne devant une juridiction de jugement.
+3.3.2.2 - Les droits du témoin assisté
+Le C.P.P. reconnaît au témoin assisté certains droits en matière de défense, notamment :
+√ l'assistance d'un avocat, au besoin désigné d'office, qui a accès au dossier de la procédure
+et qui est avisé préalablement des auditions de la personne (art. 113-3 al. 1 C.P.P.)
+√ Le droit à l’interprétation et à la traduction des pièces essentielles du dossier (art. 113-3
+al. 2 C.P.P.)
+√ le droit de demander à être confronté avec la ou les personnes qui le mettent en cause ou
+formuler des requêtes en annulation conformément à l'article 173 du C.P.P. (art. 113-3 C.P.P.
+al. 3)
+√ le droit de faire des déclarations, de répondre aux questions qui lui sont posées ou de se
+taire (art. 113-4 C.P.P.).
+√ le droit de demander son renvoi devant une juridiction de jugement ou la clôture de la
+procédure en ce qui le concerne à l'issue d'un délai qui lui est notifié par le juge d'instruction
+ou lorsque aucun acte d'instruction n'a été effectué depuis 4 mois (art. 175-1 C.P.P.).
+En outre, le témoin assisté :
+√ est avisé de la fin de l'information. Il peut formuler des observations ou présenter des
+requêtes en nullité. Il a connaissance de l'ordonnance de règlement (art. 175 et 183 C.P.P.).
+√ ne peut pas être placé sous contrôle judiciaire, sous assignation à résidence avec
+surveillance électronique ou être soumis à la détention provisoire ni faire l'objet d'une
+décision de renvoi devant une juridiction de jugement (art. 113-5 C.P.P.).
+√ peut demander à tout moment sa mise en examen au juge d'instruction. La mise en
+examen est alors de droit et la personne est considérée comme mise en examen dès sa
+demande (art. 113-6 C.P.P.).
+3.3.2.3 - Les auditions du témoin assisté
+√ L'art. 113-4 du C.P.P. attache un formalisme particulier à la première audition du témoin
+assisté par le juge d'instruction car c'est à cette occasion que la personne va acquérir
+officiellement le statut.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 8
+√ L'art. 113-7 du C.P.P. dispose que le témoin assisté ne prête pas serment.
+√ L'avocat est convoqué et a accès au dossier de la procédure avant chaque audition. Lors
+de l'audition, il peut intervenir pour poser des questions ou formuler de brèves observations.
+√ Lorsqu'il est convoqué par le juge d'instruction, le témoin assisté doit être avisé, tout
+comme le simple témoin, que s'il ne comparaît pas ou refuse de comparaître, il pourra y être
+contraint par la force publique. En effet, dans ce cas précis, la mesure de contrainte prévue
+par l'art. 109 du C.P.P. lui est applicable et il est passible de la sanction prévue par l'art.
+434-15-1 du code pénal (3 750 € d'amende).
+Par contre, la contrainte n'est pas envisageable pour une carence devant un O.P.J. puisque
+l'audition par un O.P.J. d'un témoin assisté suppose une demande de ce dernier (art. 152
+C.P.P.).
+3.3.2.4 - La mise en examen du témoin assisté
+La mise en examen du témoin assisté peut intervenir sur sa propre demande, mais elle peut
+aussi être décidée d'office par le juge d'instruction si ce dernier l'estime nécessaire et à
+condition que les indices réunis contre la personne soient au moins graves ou concordants.
+3.3.2.5 - Témoin assisté à l'encontre duquel il existe des indices graves et concordants
+L'art. 113-6 al. 2 du C.P.P. écarte l'application au témoin assisté des dispositions de l'art.
+105 du même code ; ces dernières prohibent l'audition comme témoin d'une personne à
+l'encontre de laquelle il existe des indices graves et concordants. Ainsi, devant de tels
+indices, si le magistrat estime la mise en examen inutile, il peut maintenir la personne sous
+statut de témoin assisté.
+Par contre, si les nécessités de l'information supposent une détention provisoire ou un
+placement sous contrôle judiciaire ou si le juge veut renvoyer la personne devant une
+juridiction de jugement, la mise en examen devra intervenir.
+3.3.3 - Les interrogatoires de la personne mise en examen
+Dans le langage judiciaire, le terme "interrogatoire" se rapporte le plus souvent à la
+déposition d'une personne mise en examen ; pour les autres personnes, c'est le terme
+"audition" qui est employé.
+3.3.3.1 - Les personnes concernées
+À peine de nullité, en application de l'article 80-1 du C.P.P., l'existence d'indices graves ou
+concordants à l'encontre de la personne concernée et rendant vraisemblable sa participation
+à la commission de l'infraction est une condition préalable et indispensable à sa mise en
+examen.
+De plus, ce même article dispose que la mise en examen ne peut intervenir que si le juge de
+l'instruction estime ne pas pouvoir recourir à la procédure du témoin assisté. Devant de tels
+indices, la mise en examen ne constitue qu'une faculté laissée à l'appréciation du juge de
+l'instruction. Il devra toutefois y recourir si la détention provisoire ou le placement sous
+contrôle judiciaire se révèlent indispensables.
+La mise en examen s'impose également lorsque le juge d'instruction décide de renvoyer la
+personne devant une juridiction de jugement car le simple témoin ou le témoin assisté ne
+peuvent pas faire l'objet d'une telle décision. Enfin tout témoin assisté est de droit mis en
+examen s'il le demande (art. 113-6 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 9
+3.3.3.2 - L'interrogatoire de première comparution d’une personne qui n'est pas témoin
+assisté avant sa mise en examen.
+Le juge d'instruction envisageant de mettre en examen une personne qui n'a pas déjà été
+entendue comme témoin assisté peut requérir par commission rogatoire tout juge
+d'instruction de procéder à la mise en examen de cette personne, conformément aux
+dispositions de l'article 116 du C.P.P. (art. 154-2 C.P.P.). S'il estime, au vu des observations
+de la personne ou de son avocat qu'il n'existe pas contre elle d'indices graves ou
+concordants rendant vraisemblable sa culpabilité, il l'informe qu'elle bénéficie des droits du
+témoin assisté.
+L'interrogatoire de première comparution ne concerne que les personnes n'ayant pas le
+statut de témoin assisté et dont la mise en examen est envisagée. L'article 116 du C.P.P.
+impose un formalisme rigoureux. En matière criminelle, l’interrogatoire fait l'objet d'un
+enregistrement audiovisuel (art.116-1 C.P.P.)
+L'article 80-2 du C.P.P. autorise le juge d'instruction à convoquer par lettre recommandée
+une personne pour un interrogatoire de première comparution dans un délai compris entre
+dix jours et deux mois.
+Le juge peut également faire notifier cette convocation par un O.P.J. ; la notification
+comprend alors les mêmes informations. Elle est constatée par procès-verbal signé de la
+personne qui en reçoit copie.
+3.3.3.3 - Particularités
+√ La personne mise en examen ne prête pas serment.
+√ La personne mise en examen peut demander à être entendue par le juge d'instruction
+(art. 82-1 C.P.P.).
+√ Le procureur et les avocats peuvent intervenir en cours d'interrogatoire pour poser des
+questions ou présenter des observations. Néanmoins, c'est le juge d'instruction qui dirige les
+débats (art. 120 C.P.P.).
+√ L'art. 152 du C.P.P. interdit formellement à l'O.P.J., lors de l'exécution d'une commission
+rogatoire, de procéder à tout interrogatoire ou confrontation d'une personne mise en
+examen dans l'information pour laquelle cette commission rogatoire a été délivrée.
+3.3.4 - Les auditions de parties civiles
+3.3.4.1 - Personnes concernées
+L'article 85 du C.P.P. dispose que toute personne qui se prétend lésée par un crime ou un
+délit peut se constituer partie civile devant le juge d'instruction en déposant plainte.
+Cependant la personne ne peut déposer plainte avec constitution de partie civile que si elle
+justifie soit d’un classement sans suite intervenu pour la ou les infractions qu’elle a
+dénoncées, soit de l’écoulement d’un délai de 3 mois depuis qu’elle a saisi le procureur de la
+République d’une plainte.
+Cette condition de recevabilité n’est pas requise lorsqu’il s’agit d’un crime ou délit prévu par
+la loi du 29 juillet 1881 sur la presse ou bien de certains délits prévus par le code électoral.
+La victime qui a exercé son action devant une juridiction civile pendant le délai prévu au
+deuxième alinéa de l’article 85 peut se constituer partie civile devant le juge d'instruction
+après s'être désistée de l'instance civile.
+Lorsque la plainte avec constitution de partie civile est formée par une personne morale à
+but lucratif, elle n'est recevable qu'à condition que la personne morale justifie de ses
+ressources en joignant son bilan et son compte de résultat. (article 85 al.4 du C.P.P.)
+L'article 87 du même code ajoute que la constitution de partie civile est possible à tout
+moment de la procédure. L'article 80-3 du C.P.P. astreint le juge d'instruction à aviser dès le
+début de l'information la victime (ou ses représentants légaux si elle est mineure) de son
+droit de se constituer partie civile et des modalités d'exercice de ce droit.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 10
+3.3.4.2 - Les voies et formes de constitution de partie civile
+La constitution de partie civile peut intervenir alors que l'action publique n'a pas été mise en
+mouvement par le ministère public, elle est alors appelée "constitution initiale" car c'est la
+plainte déposée devant le juge qui va initier la mise en mouvement de l'action publique.
+Cette voie n'est ouverte que pour les crimes et délits.
+Dans ce cas, à peine de non-validité de la constitution, la partie civile doit verser une
+consignation dont le montant est fixé par le juge d'instruction (il peut l'en dispenser) et si
+une décision de non-lieu intervient, elle peut se voir condamnée à paiement d'une amende
+et de dommages-intérêts.
+Si la constitution de partie civile intervient après mise en mouvement de l'action publique
+(par le ministère public ou une autre partie civile), il s'agit d'une constitution par voie
+d'intervention. La partie civile n'a alors pas à verser de consignation et n'est pas concernée,
+en cas de non-lieu, par l'amende et les dommages-intérêts. La constitution par voie
+d'intervention est possible pour les crimes, délits, et lorsque l'action publique a été mise en
+mouvement par le ministère public, les contraventions.
+Pour les deux voies, le C.P.P. ne fixe aucune règle de forme : la constitution de partie civile
+peut se faire aussi bien par déclaration écrite ou orale devant le juge. La constitution de
+partie civile ne suppose pas non plus que soient réclamés des dommages-intérêts.
+3.3.4.3 - Les effets de la constitution de partie civile pour la victime
+En se constituant partie civile, la victime devient partie à la procédure et acquiert des droits
+qui vont lui permettre d'intervenir dans le déroulement de l'information.
+En effet, elle peut obtenir l'aide juridictionnelle et a droit à l'assistance d'un avocat qui a
+accès au dossier et peut en demander des copies. Elle peut demander la réalisation ou
+l'annulation d'actes, faire appel de certaines décisions.
+Le juge d'instruction doit la tenir régulièrement informée de l'avancement de l'information
+dont elle peut demander la clôture à l'issue d'un délai ou lorsqu'aucun acte n'a été accompli
+depuis 4 mois. La victime qui ne se constitue pas partie civile ne dispose d'aucune de ces
+facultés.
+3.3.4.4 - Particularités
+√ Lors de sa première audition, la partie civile est avisée par le magistrat instructeur de son
+droit de formuler des demandes d'actes et des requêtes en annulation ainsi que des délais
+dans lesquels elle peut le faire et de son droit de demander la clôture de la procédure (art.
+89-1 et 175-1 C.P.P.)
+√ La partie civile peut demander à être entendue par le juge d'instruction (art. 82-1 C.P.P.).
+√ La partie civile ne peut être entendue, à moins qu'elle n'y renonce expressément, qu'en
+présence de son avocat.
+√ La partie civile ne prête pas serment.
+√ Le procureur et les avocats peuvent intervenir en cours d'audition pour poser des
+questions ou présenter des observations. Néanmoins, c'est le juge d'instruction qui dirige les
+débats (art. 120 C.P.P.).
+√ En vertu de l'art. 152 du C.P.P., au cours de l'exécution d'une commission rogatoire, un
+O.P.J. ne peut procéder à l'audition d'une partie civile que sur la demande de cette dernière.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 11
+CHAPITRE 4 :
+LA CLÔTURE DE L'INSTRUCTION
+4.1 - LE MOMENT DE LA CLÔTURE
+Dès que l'information lui paraît terminée, le juge de l'instruction communique le dossier au
+procureur de la République et en avise les avocats des parties, ou les parties (si elles ne
+sont pas assistées par un avocat). Il peut le faire soit verbalement, soit par lettre
+recommandée.
+L'avis peut également être notifié par le chef de l'établissement pénitentiaire lorsque la
+personne est détenue (art. 175 C.P.P.).
+L'art. 175-1 du C.P.P. permet à la personne mise en examen, au témoin assisté et à la partie
+civile de demander au juge de l'instruction de clore son instruction, éventuellement par voie
+de disjonction, pour prononcer le renvoi devant une juridiction de jugement ou une décision
+de non-lieu. La demande de clôture peut aussi être formée lorsque aucun acte d'instruction
+n'a été accompli pendant 4 mois. Le juge doit répondre à la demande par ordonnance
+motivée dans le mois qui suit.
+4.2 - LES ORDONNANCES DE RÈGLEMENT
+Lorsque tous les actes d'information sont accomplis, le juge d'instruction doit se prononcer
+sur les suites à donner à l'affaire. Il rend alors une ordonnance de règlement que l'on
+appelle également ordonnance de clôture de l'information. Cette ordonnance dessaisit le
+juge. Il peut s'agir d'une ordonnance de renvoi, d'une ordonnance de mise en accusation ou
+d'une ordonnance de non-lieu.
+4.2.1 - L'ordonnance de renvoi
+Si le juge de l'instruction estime que les faits constituent une infraction il prononce par
+ordonnance le renvoi de l'affaire devant le tribunal compétent. Lorsqu’elle est devenue
+définitive, l’ordonnance couvre, s’il en existe, les vices de la procédure, hors le cas où les
+parties n’auraient pu les connaître.
+4.2.1.1 - Renvoi devant le tribunal de police en cas de contravention ( art. 178 C.P.P. )
+Lorsque le juge de l'instruction estime que les faits constituent une contravention il rend une
+ordonnance de renvoi devant le tribunal de police.
+4.2.1.2 - Renvoi devant le tribunal correctionnel en cas de délit ( art. 179 C.P.P. )
+Si le juge de l'instruction estime que les faits constituent un délit, il rend une ordonnance de
+renvoi devant le tribunal correctionnel. Cette ordonnance met, en principe, fin à l'assignation
+à résidence avec surveillance électronique, au contrôle judiciaire et à la détention provisoire.
+Si un mandat d'arrêt a été décerné, il conserve sa force exécutoire, les mandats d'amener
+ou de recherche cessant quant à eux de pouvoir être exécutés. Le juge d'instruction peut
+décerner un mandat d'arrêt.
+4.2.2 - L'ordonnance de mise en accusation ( art. 181 C.P.P. )
+Si le juge de l'instruction estime que les faits retenus à la charge des personnes mises en
+examen constituent une infraction qualifiée crime, il rend une ordonnance de mise en
+accusation devant la cour d'assises. L'ordonnance précise si l'accusé bénéficie des
+dispositions applicables au "repenti". Lorsqu’elle est devenue définitive, elle couvre, s'il en
+existe, les vices de la procédure, sous réserve de l’article 269-1 (si l’accusé n’a pas été
+régulièrement informé) et hors le cas où les parties n’auraient pu les connaître.
+Le juge d’instruction transmet le dossier accompagné de son ordonnance au procureur de la
+République. Ce dernier doit l'envoyer sans retard au greffe de la cour d'assises. Les pièces à
+conviction sont transmises à ce même greffe.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 12
+4.2.3 - L'ordonnance de non-lieu ( art. 177 C.P.P. )
+4.2.3.1 - Le fondement de l'ordonnance de non-lieu
+Lorsque le juge de l'instruction estime que les faits ne constituent pas une infraction il rend
+une ordonnance de non-lieu. Il peut également prendre cette décision si l'auteur de
+l'infraction reste inconnu ou s'il n'existe pas de charges suffisantes contre la personne mise
+en examen.
+Si l'ordonnance de non lieu est motivée par l'existence d'une cause d'irresponsabilité pénale
+(contrainte, erreur de droit, légitime défense….) ou par le décès de la personne mise en
+examen, elle précise s'il existe des charges suffisantes établissant que l'intéressé a commis
+les faits qui lui sont reprochés (art. 177 al. 2 C.P.P). Le juge de l'instruction doit se
+prononcer sur la culpabilité.
+Lorsqu'une ordonnance de non lieu a été rendue, la personne ne peut plus être recherchée à
+l'occasion du même fait, à moins que surviennent de nouvelles charges (art. 188 C.P.P.).
+Aux termes de l'article 189 du C.P.P., sont considérées comme charges nouvelles "les
+déclarations des témoins, pièces et procès-verbaux qui, n'ayant pu être soumis à l'examen
+du juge d'instruction, sont cependant de nature soit à fortifier les charges qui auraient été
+trouvées trop faibles, soit à donner aux faits de nouveaux développements utiles à la
+manifestation de la vérité".
+La décision de rouvrir une information sur charges nouvelles appartient au procureur de la
+République (art. 190 C.P.P.).
+4.2.3.2 - Les effets de l'ordonnance de non-lieu
+L'ordonnance de non-lieu arrête l'action publique. Elle s'oppose à ce qu'une nouvelle action
+soit exercée en dehors bien entendu de la réouverture de l'information sur charges
+nouvelles.
+Le bénéficiaire d'un non-lieu qui a subi une détention provisoire doit être avisé de son droit
+d'obtenir de l’État réparation du préjudice matériel et moral causé par la détention (art. 149
+C.P.P.).
+L'octroi de cette réparation ouvre à l’État un recours contre le dénonciateur de mauvaise foi
+ou le faux témoin ayant provoqué la détention ou sa prolongation (art. 150 C.P.P.).
+Le bénéficiaire d'un non-lieu dans une information ouverte sur constitution de partie civile
+peut demander au plaignant des dommages-intérêts (art. 91 C.P.P.).
+Enfin, le non-lieu concluant une information ouverte sur constitution de partie civile autorise
+le juge d'instruction à condamner la partie civile à une amende civile d'un maximum de 15
+000 € s'il considère que la constitution de partie civile était abusive ou dilatoire (art. 177-2
+C.P.P.).
+CHAPITRE 5 :
+RÔLE DE LA CHAMBRE DE L'INSTRUCTION
+(ART. 191 À 221-3 C.P.P.)
+5.1 - COMPOSITION ET RÔLE
+Il y a au moins une chambre de l'instruction par cour d'appel. Juridiction d'instruction du
+second degré composée d'un président et de deux conseillers, elle rend ses décisions par
+arrêts susceptibles seulement de cassation. Les fonctions du ministère public y sont
+assurées par le procureur général.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 13
+C'est à elle que sont notamment soumis, par voie de requête directe ou d'appel :
+√ l'appel des ordonnances du juge d'instruction ou du juge des libertés et de la détention ;
+√ le contentieux des nullités ;
+√ le contentieux de la détention provisoire et du contrôle judiciaire.
+La chambre de l'instruction peut confirmer, infirmer ou annuler l'acte litigieux. D'ailleurs,
+chaque fois qu'elle est saisie, cette juridiction doit examiner la régularité de la procédure
+soumise et annuler les actes entachés et, s'il y échet, tout ou partie de la procédure
+ultérieure (art. 206 C.P.P.). Seule la chambre de l'instruction peut procéder à une
+annulation ; le juge d'instruction ne peut pas annuler lui-même l'un de ses propres actes,
+même s'il y découvrait une irrégularité.
+Elle peut également prononcer une condamnation des parties civiles abusives sur
+réquisitions du procureur général et par décision motivée si elle considère que la constitution
+de partie civile a été abusive ou dilatoire. Elle prononce une amende civile dont le montant
+ne peut excéder 15 000 € . Lorsque la partie civile est une personne morale, l'amende civile
+peut être prononcée contre son représentant légal, si la mauvaise foi de ce dernier est
+établie.
+De plus, certains recours autorisent la chambre de l'instruction à exercer son pouvoir de
+révision ou son droit d'évocation. Ces derniers lui permettent d'intervenir dans l'information
+au-delà du point contesté.
+5.2 - LE POUVOIR DE RÉVISION
+Le pouvoir de révision ne trouve à s'exercer que lorsque le juge d'instruction n'est plus en
+charge de l'affaire (ex. : appel d'une ordonnance de règlement). Il permet à la chambre de
+l'instruction de refaire totalement l'instruction et se traduit essentiellement par un
+supplément d'information qui obéit aux règles relatives à l'instruction préparatoire (art. 205
+C.P.P.). Le magistrat désigné exerce tous les pouvoirs d'investigation du juge d'instruction et
+peut délivrer commission rogatoire.
+5.3 - LE DROIT D’ÉVOCATION
+Le droit d'évocation, quant à lui, s'applique alors que l'information est encore en cours chez
+le juge d'instruction. Il permet à la chambre de l'instruction de dessaisir ce magistrat et de
+prendre en charge l'ensemble de la procédure.
+La chambre de l'instruction peut également procéder à une évocation partielle du dossier en
+ne procédant qu'à certains actes avant de renvoyer le dossier au juge d'instruction (art. 207
+C.P.P).
+Il ne peut s'exercer que dans trois situations : soit lorsque la chambre est saisie d'une
+requête directe, soit lorsqu'elle annule un acte, soit lorsqu'elle infirme une ordonnance dans
+un domaine autre que la détention. L'évocation est également possible en cas de durée
+exagérée de l'instruction constatée par le président de la chambre de l'instruction.
+Lorsque la chambre use de son droit d'évocation, elle accède au pouvoir de révision qui
+s'exerce dans les conditions décrites plus haut.
+5.4 - AUTRES CONSÉQUENCES POSSIBLES D'UNE INFIRMATION OU
+D'UNE ANNULATION
+Les situations permettant l'usage du droit d'évocation offrent à la chambre de l'instruction
+deux autres choix pour la suite de la procédure. Ainsi, si elle n'évoque pas, elle peut soit
+laisser le juge initialement saisi poursuivre son information, soit confier l'affaire à un autre
+juge d'instruction. Néanmoins, ces deux dernières solutions ne lui permettent pas de donner
+des directives au magistrat instructeur.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 14
+5.5 - AUDIENCE DE CONTRÔLE
+L’article 221-3 du C.P.P. prévoit une audience publique de contrôle de l’ensemble de la
+procédure d’instruction devant la chambre de l’instruction. Elle peut intervenir en cas de
+détention provisoire datant de 3 mois, suite à décision du président de la chambre de
+l’instruction statuant à la demande de la personne détenue ou du ministère public, ou
+d’office.
+Lorsque l’instruction a déjà donné lieu à une audience de contrôle, une nouvelle saisine est
+possible 6 mois après que l’arrêt est devenu définitif et si une détention provisoire est
+toujours en cours.
+Les alinéas 7 à 14 de l’article 221-3 énumèrent les décisions pouvant être prises par la
+chambre de l’instruction (mise en liberté, nullité d’un ou plusieurs actes, évocation du
+dossier, co-saisine…).
+CHAPITRE 6 :
+LE JUGE DES LIBERTÉS ET DE LA DÉTENTION (J.L.D.)
+La loi du 15 juin 2000 a renforcé la protection de la présomption d’innocence et les droits
+des victimes, et a réformé notre justice pénale en modifiant en profondeur les différentes
+phases de la procédure pour une justice au service des libertés. Ce texte a harmonisé notre
+législation avec les normes européennes. Il a créé le juge des libertés et de la détention qui
+au départ intervenait dans le cadre de la détention provisoire. Le législateur lui a ensuite
+conféré d’autres attributions dans des domaines concernant les libertés individuelles. Depuis
+le 1er septembre 2017, la fonction de juge des libertés et de la détention est une fonction
+statutaire. Il devient un juge « spécialisé », tout comme les juges d’instruction, les juges
+des enfants et les juges de l’application des peines.
+6.1 - STATUT DU JUGE DES LIBERTÉS ET DE LA DÉTENTION
+Le juge des libertés et de la détention (J.L.D.) est nommé par décret en Conseil d’État après
+avis conforme du Conseil supérieur de la magistrature (article 3 de l’ordonnance n°58-1270
+du 22 décembre 1958). Il est un magistrat du siège.
+Le juge des libertés et de la détention peut être suppléé en cas de vacance d'emploi,
+d'absence ou d'empêchement, par un magistrat du siège du premier grade ou hors
+hiérarchie désigné par le président du tribunal judiciaire.
+En cas d'empêchement de ces magistrats, le président du tribunal judiciaire peut désigner
+un magistrat du second grade (article 137-1-1 du C.P.P.).
+6.2 - LE J.L.D. ET L'INSTRUCTION PRÉPARATOIRE
+6.2.1 - La détention provisoire
+Le J.L.D. est compétent pour statuer sur les demandes de placement en détention
+provisoire, sur les prolongations de celles-ci, ainsi que pour les demandes de mise en
+liberté. Lorsque la qualification criminelle ne peut être retenue et que les faits sont
+correctionnalisés, il est également saisi pour le maintien en détention provisoire de
+l’intéressé (art. 137-1 et 137-3 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 15
+6.2.2 - Le contrôle judiciaire
+Le contrôle judiciaire est ordonné par le juge de l'instruction. Mais, lorsqu’il est saisi, le
+J.L.D. peut également ordonner un contrôle judiciaire (art. 137-2 et 138 C.P.P.) et donc
+décider des obligations auxquelles la personne sera soumise. Il peut révoquer un contrôle
+judiciaire pour inobservation de ses obligations par l’intéressé mais aussi décider d’un
+placement en détention provisoire, dans ce cadre, après avoir été saisi par le juge
+d’instruction par ordonnance motivée et accompagnée des réquisitions du procureur de la
+République. Il peut alors décerner un mandat de dépôt à l’encontre de l’intéressé.
+6.2.3 - L'assignation à résidence avec surveillance électronique
+L'assignation à résidence peut être ordonnée par le juge d'instruction ou le juge de la liberté
+et de la détention par ordonnance motivée (art. 142-5 C.P.P.).
+6.3 - INTERVENTION DU J.L.D. DURANT L’ENQUÊTE DE POLICE
+6.3.1 - Les écoutes téléphoniques
+Procédure de recherche d’une personne en fuite : si les nécessités de l'enquête l'exigent, le
+J.L.D. peut, à la requête du procureur de la République, autoriser l'interception,
+l'enregistrement et la transcription de correspondances émises par la voie des
+télécommunications selon les modalités prévues par les articles 100, 100-1 et 100-3 à 100-
+7. Ces opérations sont faites sous l'autorité et le contrôle du juge des libertés et de la
+détention. Ce dernier est informé sans délai des actes accomplis (art. 74-2 C.P.P.).
+Les écoutes téléphoniques sur une ligne dépendant du cabinet d’un avocat ou de son
+domicile : la décision est prise par ordonnance motivée du J.L.D. saisi par le juge
+d’instruction, après avis du procureur de la République (art. 100 du C.P.P.).
+Les écoutes téléphoniques judiciaires : sur requête du procureur de la République, et si les
+nécessités de l’enquête de flagrance ou de l’enquête préliminaire l’exigent, le J.L.D. peut
+autoriser l’interception, l’enregistrement et la transcription de correspondances émises par
+la voie des communications électroniques pour recueillir des indices relatifs à une ou
+plusieurs des infractions entrant dans le champ d’application de la criminalité organisée (art.
+706-95 du C.P.P.).
+6.3.2 - Les perquisitions, visites domiciliaires et saisies
+Dans le cadre d’une enquête préliminaire : les perquisitions sont normalement soumises à
+autorisation de la personne chez laquelle elles sont effectuées.
+Toutefois, pour les nécessités de l'enquête relative à un crime ou à un délit puni d'une peine
+d'emprisonnement d'une durée égale ou supérieure à trois ans, ou si la recherche de biens
+dont la confiscation est prévue à l'article 131-21 du code pénal le justifie, une perquisition
+sans assentiment est possible. Elle est autorisée par une décision écrite et motivée du J.L.D.
+suite à requête du procureur de la République. Le juge des libertés et de la détention
+contrôle la mesure au besoin par le biais d’un déplacement sur les lieux (art. 76 C.P.P.).
+Les perquisitions dans le cabinet d'un avocat ou à son domicile ne peuvent être effectuées
+que par un magistrat et en présence du bâtonnier ou de son délégué, à la suite d'une
+décision écrite et motivée prise par le juge des libertés et de la détention saisi par ce
+magistrat, qui indique la nature de l'infraction ou des infractions sur lesquelles portent les
+investigations, les raisons justifiant la perquisition, l'objet de celle-ci et sa proportionnalité
+au regard de la nature et de la gravité des faits (art. 56-1 C.P.P.).
+Le bâtonnier ou son délégué peut s’opposer à la saisie d’un document s’il l’estime
+irrégulière. Le document est placé sous scellé et la contestation du bâtonnier fait l’objet d’un
+procès-verbal. Ces pièces sont transmises au J.L.D. qui, dans les cinq jours de leur
+réception, statue sur la contestation par ordonnance motivée.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 16
+Dans le cadre de la délinquance et de la criminalité organisées : sur requête du procureur de
+la République fondée sur les nécessités de l’enquête, le J.L.D. peut autoriser l’O.P.J. à
+procéder à des opérations de perquisition, visites domiciliaires et saisies de pièces à
+conviction en dehors des heures légales. Il prend une ordonnance motivée et les opérations
+sont placées sous son contrôle (art. 706-89, 706-90 et 706-92 C.P.P.).
+Dans le cadre de l’enquête de flagrance portant sur un crime contre les personnes, autres
+que ceux relevant de la criminalité et délinquance organisées, le J.L.D. peut autoriser l’O.P.J.
+à procéder à des perquisitions, des visites domiciliaires et des saisies de pièces à conviction
+en dehors des heures légales (art. 59-1 du C.P.P.). Il rend une ordonnance écrite et
+spécialement motivée, et les opérations sont placées sous son contrôle (art. 706-92 du
+C.P.P.).
+Dans le cadre de l’enquête préliminaire, le J.L.D. peut autoriser l’O.P.J. à opérer une
+perquisition sans la présence et sans l’assentiment de la personne chez qui elle a lieu
+lorsque le transport de la personne placée en garde à vue présente des risques graves de
+trouble à l’ordre public ou d’évasion, soit de disparition de preuves pendant le temps
+nécessaire au transport (art.706-94 C.P.P.).
+Des perquisitions peuvent avoir pour objet la recherche, en vue de leur saisie, des biens
+dont la confiscation est prévue à l'article 131-21 du C.P. Le J.L.D. est alors saisi par le
+procureur de la République aux fins d'autorisation de la saisie des biens qui seront
+découverts dans le cadre de la perquisition.
+Dans le cas des perquisitions effectuées par un magistrat dans les locaux d'une juridiction
+ou au domicile d'une personne exerçant des fonctions juridictionnelles et qui tendent à la
+saisie de documents susceptibles d'être couverts par le secret du délibéré, le J.L.D. qui
+statue en cas d'opposition sur le bien fondé de la saisie de ces documents (article 56-5 du
+C.P.P.).
+Le J.L.D. intervient également dans le cadre des visites domiciliaires et saisies effectuées
+par les agents des douanes (art. 64 code des douanes), les agents de l’administration des
+impôts (art. L.16B Livre des procédures fiscales), et les agents de la direction générale de la
+concurrence, de la consommation et de la répression des fraudes (art. L.450-4 code de
+commerce). Il donne son autorisation par le biais d’une ordonnance motivée.
+6.3.3 - La garde à vue
+6.3.3.1 - Prolongation de garde à vue
+Dans le cadre d’une enquête de flagrance ou d’une enquête préliminaire relative à l'une des
+infractions entrant dans le champ d'application de l'article 706-73 du C.P.P. (à l’exception de
+ceux visés au 21°), la garde à vue d'une personne peut, à titre exceptionnel, faire l'objet de
+deux prolongations supplémentaires de vingt-quatre heures chacune.
+Ces prolongations sont autorisées, par décision écrite et motivée, à la requête du procureur
+de la République, par le juge des libertés et de la détention.
+Par dérogation aux dispositions précédentes, si la durée prévisible des investigations restant
+à réaliser à l'issue des premières quarante-huit heures de garde à vue le justifie, le J.L.D.
+peut décider que la garde à vue fera l'objet d'une seule prolongation supplémentaire de
+quarante-huit heures (art. 706-88 C.P.P).
+S'il ressort des premiers éléments de l'enquête ou de la garde à vue elle-même qu'il existe
+un risque sérieux de l'imminence d'une action terroriste en France ou à l'étranger ou que les
+nécessités de la coopération internationale le requièrent impérativement, le J.L.D. peut, à
+titre exceptionnel et selon les modalités prévues au premier alinéa de l’article 706-88-1 du
+C.P.P., décider que la garde à vue en cours d'une personne, se fondant sur l'une des
+infractions visées au 11° de l'article 706-73 du C.P.P. (actes de terrorisme), fera l'objet
+d'une prolongation supplémentaire de vingt-quatre heures, renouvelable une fois.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 17
+6.3.3.2 - Report de l'intervention de l'avocat
+En droit commun, l’autorisation de prolongation de report de l'intervention de l'avocat audelà de la douzième heure et jusqu'à la vingt-quatrième heure, est délivrée par le J.L.D. sur
+requête du procureur de la République ou du juge d'instruction. Ce report n'est applicable
+qu'en cas de crime ou délit puni d'une peine d'emprisonnement supérieure ou égale à cinq
+ans (art. 63-4-2 C.P.P.).
+Dans le cadre de la criminalité organisée et lorsque le gardé à vue est majeur, le procureur
+de la République ou le juge d'instruction peut d'office, ou à la demande de l'O.P.J. décider du
+report de la présence de l'avocat jusqu'à la 24ème heure.
+Le procureur de la République peut saisir le J.L.D. afin que la présence de l'avocat soit
+reportée jusqu'à la 48ème heure. Pour les infractions mentionnées aux 3° ou 11° de l'article
+706-73 du C.P.P. (trafic de stupéfiants ou terrorisme), l'intervention de l'avocat peut être
+différée pour une durée maximale de 72 heures. La décision du J.L.D. précise alors la durée
+pour laquelle l'intervention de l'avocat est différée. Pour les infractions listées à l'article 706-
+73 du C.P.P., le juge d'instruction est seul compétent pour autoriser ce report.
+6.3.4 - Les réquisitions
+Dans le cadre des procédures de flagrant délit ou d’enquête préliminaire : Sur réquisition du
+procureur de la République, autorisé par ordonnance du juge des libertés et de la détention,
+l’O.P.J., ou, sous le contrôle de ce dernier, l'A.P.J., peut obtenir des opérateurs de
+télécommunications de prendre sans délai toutes mesures propres à assurer la préservation,
+pour une durée d’un an maximum, du contenu des informations consultées par les
+personnes utilisatrices des services fournis par les opérateurs (art. 60-2 al. 2 et art. 77-1-2
+C.P.P.).
+6.3.5 - La protection des témoins
+En cas de procédure portant sur un crime ou sur un délit puni d'au moins trois ans
+d'emprisonnement, lorsque l'audition d'une personne visée à l'article 706-57 du C.P.P. est
+susceptible de mettre gravement en danger la vie ou l'intégrité physique de cette personne,
+des membres de sa famille ou de ses proches, le J.L.D., saisi par requête motivée du
+procureur de la République ou du juge d'instruction, peut, par décision motivée, autoriser
+que les déclarations de cette personne soient recueillies sans que son identité apparaisse
+dans le dossier de la procédure. Le J.L.D. peut décider de procéder lui-même à l'audition du
+témoin (art. 706-58, R 53-29 et R 53-32 C.P.P.).
+6.3.6 - Les techniques spéciales d’enquête (art. 706-95-11 et suivants du
+C.P.P.)
+Au cours de l'enquête de flagrance ou de l’enquête préliminaire, les techniques spéciales
+d'enquête sont autorisées par le J.L.D. à la requête du procureur de la République (Art. 706-
+95-12 C.P.P.). Sont concernées :
+√ le recueil de données techniques de connexion et des interceptions de correspondances
+émises par la voie des communications électroniques ;
+√ les sonorisations et des fixations d’images de certains lieux ou véhicules ;
+√ la captation de données informatiques.
+6.3.7 - Les saisies du patrimoine (art. 706-148 du C.P.P.)
+√ Dans le cadre de l'enquête préliminaire ou de flagrance portant sur une infraction punie
+d'au moins cinq ans d'emprisonnement, le J.L.D. peut ordonner, sur requête du procureur de
+la République, la saisie de tout ou partie du patrimoine de la personne mise en cause :
+– lorsque l'origine de ces biens ne peut être établie
+– ou lorsque la loi qui réprime le crime ou le délit prévoit la confiscation de tout ou partie
+des biens du condamné.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 18
+√ L’officier de police judiciaire peut être autorisé par tout moyen par le procureur de la
+République ou par le juge d’instruction à la saisie des biens mentionnés supra, lorsqu'il
+existe des raisons plausibles de soupçonner que la disparition d'un bien est imminente.
+Dans ce cas, le juge des libertés et de la détention saisi par le procureur de la République ou
+le juge d’instruction se prononce par ordonnance motivée sur le maintien ou la mainlevée de
+la saisie dans un délai de dix jours à compter de sa réalisation, y compris si la juridiction de
+jugement est saisie.
+6.3.8 - Les saisies conservatoires
+L’objectif est d’appréhender le patrimoine des délinquants afin de garantir le paiement des
+amendes encourues et le cas échéant, l'indemnisation des victimes. Pour faciliter la mise en
+œuvre de cette disposition, l’art. 706-103 du C.P.P. dispose qu’en cas d’infraction entrant
+dans le champ des articles 706-73, 706-73-1 et 706-74 du C.P.P., le J.L.D. sur requête du
+procureur de la République, peut ordonner des mesures conservatoires sur les biens de la
+personne mise en examen.
+6.4 - AUTRES INTERVENTIONS DU J.L.D. AU COURS D'UNE PROCÉDURE
+JUDICIAIRE
+6.4.1 - Détention provisoire et contrôle judiciaire
+6.4.1.1 - En cas de convocation par procès-verbal
+En matière correctionnelle, en cas de convocation par procès-verbal, si le procureur de la
+République estime nécessaire de soumettre le prévenu à une ou plusieurs obligations du
+contrôle judiciaire jusqu’à sa comparution devant le tribunal ou de le placer sous assignation
+à résidence avec surveillance électronique, il le traduit sur-le-champ devant le J.L.D. qui
+statue en chambre du conseil avec l’assistance d’un greffier selon les modalités prévues par
+l’article 394 du C.P.P.
+6.4.1.2 - Comparution immédiate ou différée
+En cas de comparution immédiate (art. 395 C.P.P.), si la réunion du tribunal est impossible
+le jour même et si les éléments de l’espèce lui paraissent exiger une mesure de détention
+provisoire, le procureur de la République peut traduire le prévenu devant le J.L.D., qui
+statue en chambre du conseil avec l’assistance d’un greffier (art. 396 C.P.P.).
+Dans le cadre d'une procédure de comparution à délai différé (art. 397-1-1 C.P.P.), le J.L.D.
+statue dans les mêmes conditions sur les réquisitions du ministère public aux fins de
+contrôle judiciaire, d'assignation à résidence avec surveillance électronique ou de détention
+provisoire
+6.4.1.3 - Comparution sur reconnaissance préalable de culpabilité
+La personne à laquelle est proposée une C.R.P.C. peut demander un délai de réflexion de 10
+jours, délai pendant lequel elle peut être placée sous contrôle judiciaire, assignée à
+résidence avec surveillance électronique, ou placée en détention provisoire par décision du
+J.L.D. (art. 495-11 C.P.P.).
+6.4.1.4 - Renvoi devant le tribunal correctionnel
+Si la personne renvoyée devant la juridiction de jugement est placée ou maintenue sous
+contrôle judiciaire, le juge des libertés et de la détention peut décider à tout moment, sur
+réquisitions du ministère public ou à la demande du prévenu, d’imposer à ce dernier une ou
+plusieurs obligations ou interdictions nouvelles, de supprimer tout ou partie des obligations
+comprises dans le contrôle judiciaire, d’en modifier une ou plusieurs, ou d’accorder une
+dispense occasionnelle ou temporaire d’observer certaines d’entre elles (art. 141-1 du
+C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 19
+6.4.1.5 - Arrestation après clôture de l’information
+Si la personne faisant l’objet d’un mandat d’arrêt est découverte après le règlement de
+l’information, elle est conduite devant le procureur de la République selon les modalités de
+l’article 135-2 du C.P.P. Après avoir vérifié l’identité de la personne et lui avoir notifié le
+mandat, le procureur de la république la présente devant le J.L.D.
+Ce dernier peut, sur réquisitions du parquet, soit placer la personne sous contrôle judiciaire,
+soit ordonner son placement en détention provisoire jusqu’à sa comparution devant la
+juridiction de jugement. Il rend une ordonnance motivée à l’issue d’un débat contradictoire.
+Il est prévu qu'en cas d'arrestation de la personne à plus de 200 kilomètres du siège de la
+juridiction de jugement et s'il n'est pas possible de la présenter dans un délai de 24 heures
+devant le procureur de la République du ressort de la juridiction saisie des faits, la personne
+est conduite devant le J.L.D. du lieu d'arrestation.
+6.4.2 - Application des peines
+Le juge de l'application des peines peut délivrer un mandat d'amener contre un condamné
+placé sous son contrôle judiciaire en cas d'inobservation par ce dernier des obligations qui
+lui incombent.
+Si la personne est découverte et sa présentation immédiate devant le juge de l'application
+des peines n'est pas possible, la personne est présentée devant le juge des libertés et de la
+détention.
+Ce juge peut, sur les réquisitions du procureur de la République, ordonner l'incarcération du
+condamné jusqu'à sa comparution devant le juge de l'application des peines, qui doit
+intervenir dans les huit jours ou dans le mois qui suit, selon qu'il s'agit d'une procédure
+correctionnelle ou d'une procédure criminelle. (art. 122 et 712-17 du C.P.P.)
+6.5 - AUTRE DOMAINE D ’I NTERVENTION : SÉCURITÉ INTÉRIEURE ET
+LUTTE CONTRE LE TERRORISME
+La loi n° 2017-1510 du 30 octobre 2017 renforçant la sécurité intérieure et la lutte contre le
+terrorisme a confié au J.L.D. de Paris de nouvelles prérogatives.
+Ces développements peuvent être consultés dans le fascicule 8 consacré aux libertés
+publiques.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 20
+LE S M AND AT S DE JU ST I CE
+( A RT . 1 2 2 À 1 3 6 DU C . P . P . )
+Les mandats de justice sont des actes judiciaires écrits
+ordonnant soit le placement en garde à vue, soit la comparution,
+soit l'arrestation, soit encore la détention d'une personne.
+Ils ne peuvent être délivrés que par des magistrats.
+Principalement utilisés par le juge d'instruction, les textes qui
+définissent les mandats et fixent leurs règles de forme et de
+fond, se trouvent dans la section VI du chapitre du code de
+procédure pénale consacré au juge d'instruction.
+L'article 122 alinéa 1 du code de procédure pénale énumère cinq
+types de mandats qui sont : les mandats de recherche, de
+comparution, d'amener, de dépôt ou d'arrêt.
+CHAPITRE 1 :
+LES PRINCIPES GÉNÉRAUX QUI RÉGISSENT LES MANDATS
+√ Les mandats de justice sont des actes incommunicables, c'est-à-dire non délégables.
+Ainsi, par exemple, le juge d'instruction ne peut pas déléguer son pouvoir de décerner tel ou
+tel type de mandat à un officier de police judiciaire chargé de l'exécution d'une commission
+rogatoire.
+√ L'article 123 alinéa 1 du C.P.P. dispose que "tout mandat précise l'identité de la personne
+à l'encontre de laquelle il est décerné ; il est daté et signé par le magistrat qui l'a décerné et
+est revêtu de son sceau". En outre, les mandats d'amener, de dépôt, d'arrêt et de recherche
+mentionnent la nature des faits imputés à la personne, leur qualification juridique et les
+articles de loi applicables (art. 123 al. 2 C.P.P.).
+√ Les mandats sont des actes individuels écrits.
+√ En cas d'urgence, les mandats d'amener, d'arrêt et de recherche peuvent être diffusés par
+tous moyens (art. 123 al. 6 C.P.P.), tels que télégramme, télécopie ou courriel.
+√ L'article 123 al. 7 du C.P.P. ajoute : "Dans ce cas les mentions essentielles de l'original et
+spécialement l'identité de la personne à l'encontre de laquelle il est décerné, la nature des
+faits qui lui sont imputés et leur qualification juridique, le nom et la qualité du magistrat
+mandant doivent être précisés. L'original ou la copie du mandat est transmis à l'agent
+chargé d'en assurer l'exécution dans les délais les plus brefs".
+√ Enfin, "les mandats sont exécutoires dans toute l'étendue du territoire de la République"
+(art. 124 C.P.P).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 21
+CHAPITRE 2 :
+LES DIFFÉRENTS MANDATS
+2.1 - LE MANDAT DE RECHERCHE
+2.1.1 - Définition et délivrance
+Le mandat de recherche est "l'ordre donné à la force publique de rechercher la personne à
+l'encontre de laquelle il est décerné et de la placer en garde à vue." (article 122 al. 2 C.P.P.).
+Il peut être décerné à l'encontre d'une personne contre laquelle il existe une ou plusieurs
+raisons plausibles de soupçonner qu'elle a commis ou tenté de commettre une infraction.
+Il ne peut être délivré contre :
+√ le mis en examen ;
+√ le témoin assisté ;
+√ la personne visée nommément dans un réquisitoire nominatif.
+REMARQUES :
+√ L'article 70 du C.P.P. prévoit que lorsqu'une enquête portant sur un crime ou un délit
+flagrant puni d'au moins trois ans d'emprisonnement l'exige, le procureur de la République
+peut décerner mandat de recherche contre toute personne à l'encontre de laquelle il existe
+une ou plusieurs raisons plausibles de soupçonner qu'elle a commis ou tenté de commettre
+une infraction.
+√ L'article 77-4 du C.P.P. prévoit le même dispositif dans le cadre d'une enquête
+préliminaire.
+√ Le président de la chambre de l'instruction ou le conseiller désigné par lui peut, en cas
+d'urgence, décerner mandat d'amener, d'arrêt ou de recherche (art. 201 C.P.P.).
+2.1.2 - Notification et exécution du mandat de recherche
+2.1.2.1 - Agents habilités
+"Le mandat de recherche est notifié et exécuté par un officier ou agent de police judiciaire
+ou un agent de la force publique, lequel en fait exhibition à la personne et lui en délivre
+copie". (art. 123 al. 4 C.P.P.).
+Si la personne est déjà détenue pour une autre cause, la notification du mandat lui est faite
+comme indiqué ci-dessus ou, sur instructions du procureur de la République par le chef de
+l'établissement pénitentiaire qui en délivre également copie (art. 123 al. 5 C.P.P.).
+2.1.2.2 - Règles générales d'exécution
+Elles sont fixées par l'article 134 du C.P.P. et sont les mêmes que le mandat d'arrêt et
+d'amener.
+Ainsi l'agent chargé de l'exécution du mandat de recherche ne peut s'introduire dans le
+domicile d'un citoyen avant 6 heures ni après 21 heures. Il peut se faire accompagner
+"d'une force suffisante" pour que la personne ne puisse se soustraire à la loi. Ces renforts
+sont pris dans le lieu le plus proche de celui où le mandat doit s'exécuter et sont tenus de
+déférer aux réquisitions contenues dans le mandat.
+Le dernier alinéa de l'article 134 du C.P.P. fait obligation à l'agent chargé de l'exécution du
+mandat, dès lors que la personne ne peut être trouvée, d'adresser au magistrat mandant un
+procès-verbal de perquisition et de recherches infructueuses.
+En pratique, la perquisition s'effectue au dernier domicile connu, ou à défaut à la dernière
+résidence de la personne recherchée.
+La "perquisition" de l'article 134 du C.P.P. a pour but exclusif de rechercher la personne
+faisant l'objet d'un mandat de recherche.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 22
+Si elle autorise l'introduction coercitive dans un lieu privé durant les heures légales, et une
+fouille tendant à la découverte de la personne recherchée, elle ne permet en aucun cas une
+fouille et des saisies éventuelles susceptibles de révéler le lieu de séjour de l'intéressé ou
+intéressant plus généralement les investigations en cours. De ce fait, elle peut être réalisée
+par des agents n'ayant pas nécessairement la qualité d'officier de police judiciaire.
+Enfin, la « perquisition » effectuée en vertu de l’article 134 du C.P.P. ne renvoie pas aux
+dispositions de l’article 57 du C.P.P. nécessitant que les opérations prescrites soient faites en
+présence de la personne au domicile de laquelle la perquisition a lieu, ou en cas
+d'impossibilité, d'un représentant de son choix, ou à défaut, de deux témoins requis par
+l’OPJ.
+2.1.2.3 - Effets du mandat de recherche
+√ Pour les mandats délivrés par le juge d’instruction :
+Voir fascicule 11, la commission rogatoire.
+Si la personne n’a pu être découverte au cours de l’instruction, elle est alors considérée
+comme mise en examen.
+√ Pour les mandats délivrés par le procureur de la République :
+Voir fascicule 11, l’enquête de police sur infraction flagrante.
+Lorsque le mandat de recherche a été délivré par le procureur de la République et que la
+personne n’est pas découverte au cours de l’enquête, le procureur peut requérir l’ouverture
+d’une information contre personne non dénommée. Le mandat de recherche demeure alors
+valable pour le déroulement de l’information (art. 70 al. 3 C.P.P.).
+2.2 - LE MANDAT DE COMPARUTION
+2.2.1 - Définition et délivrance
+"Le mandat de comparution a pour objet de mettre en demeure la personne à l'encontre de
+laquelle il est décerné de se présenter devant le juge à la date et à l'heure indiquées par ce
+mandat" (art. 122 al. 4 C.P.P.).
+Il est utilisé à l'égard de personnes qui sont domiciliées et dont on suppose qu'elles ne
+prendront pas la fuite pour se soustraire aux poursuites.
+Il ne peut être utilisé pour convoquer un témoin. Sa délivrance vise les personnes que le
+juge d'instruction souhaite mettre en examen. Il peut être décerné à l'égard d'une personne
+contre laquelle il existe des indices graves ou concordants rendant vraisemblable qu'elle ait
+pu participer, comme auteur ou complice à la commission d'une infraction, y compris si cette
+personne est témoin assisté ou mise en examen.
+En pratique, les juges préfèrent avoir recours, soit à la citation à comparaître (art. 101
+C.P.P.), soit à l'ordre de conduite (art. 109 C.P.P.), plutôt qu’à la délivrance du mandat de
+comparution.
+2.2.2 - Notification et exécution du mandat de comparution
+Le mandat de comparution ne fait jamais l'objet d'une diffusion générale mais doit être
+signifié ou notifié à la personne concernée.
+La signification est faite par un huissier à la personne concernée ; la notification est faite par
+un O.P.J. ou un A.P.J., voire par un agent de la force publique, qui remet copie du mandat à
+l'intéressé (art. 123 al. 3 C.P.P.).
+L'article 125 al. 1 du C.P.P. mentionne que "le juge d'instruction interroge immédiatement la
+personne qui fait l'objet d'un mandat de comparution".
+Le mandat de comparution est une simple assignation à comparaître. Aucune coercition ne
+peut être mise en œuvre pour son exécution.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 23
+Si la personne ne se présente pas, le juge dresse un procès-verbal de non-comparution et
+apprécie s'il convient de délivrer un mandat d'amener, ou de faire une nouvelle tentative de
+comparution, voire de renoncer à entendre la personne en cause et de la renvoyer
+directement devant le tribunal correctionnel.
+2.3 - LE MANDAT D'AMENER
+2.3.1 - Définition et délivrance
+"Le mandat d'amener est l'ordre donné par le juge à la force publique de conduire
+immédiatement la personne à l'encontre de laquelle il est décerné devant lui" (art. 122 al. 5
+C.P.P.).
+Le mandat d'amener n'est pas un titre de détention : l'arrestation d'une personne en vertu
+d'un mandat d'amener est une mesure précaire ayant pour but de mettre cette dernière,
+mise en examen ou prévenue, à la disposition de la justice
+Il est délivré à l'encontre de personnes domiciliées qui n'ont pas déféré à un mandat de
+comparution ou dont on craint qu'elles ne défèrent pas à ce mandat.
+Ce mandat peut être décerné à l'égard d'une personne à l'encontre de laquelle il existe des
+indices graves ou concordants rendant vraisemblable qu'elle ait pu participer, comme auteur
+ou complice, à la commission de l'infraction.
+Il peut être délivré également à l'encontre d'une personne mise en examen ou ayant le
+statut de témoin assisté (art. 122 al. 3 C.P.P.).
+Le mandat d'amener peut s'appliquer à toute infraction pouvant donner lieu à l'ouverture
+d'une information judiciaire.
+Un mandat d'amener n'a pas normalement vocation à être diffusé, même si l'article 23, I, 1°
+de la loi n° 2003-239 du 18 mars 2003 pour la sécurité intérieure, a prévu que tout mandat
+peut être inscrit au fichier des personnes recherchées. L'instruction générale du 27 février
+1959 préconisait, si une diffusion s'avérait nécessaire, de transformer le mandat d'amener
+en mandat d'arrêt lorsque les conditions de délivrance étaient réunies.
+NOTA : Le terme diffusion de l'art. 123 al. 6 du C.P.P doit être entendu au sens de transmission (télégraphique,
+par exemple) d'un mandat urgent.
+REMARQUE : En dehors du juge d'instruction:
+√ Le tribunal correctionnel peut décerner un mandat d'amener contre un prévenu défaillant
+encourant une peine d'emprisonnement égale ou supérieure à deux ans (art. 410-1 C.P.P.).
+Si le prévenu est arrêté suite au mandat, les dispositions de l'article 135-2 du C.P.P.
+s'appliquent.
+√ Le président de la cour d'assises, en vertu de son pouvoir discrétionnaire, "peut au cours
+des débats appeler, au besoin par mandat d'amener, et entendre toutes personnes ou se
+faire apporter toutes nouvelles pièces qui lui paraissent, d'après les développements donnés
+à l'audience, utiles à la manifestation de la vérité" (art. 310 C.P.P.). Il s'agit de témoins qui
+ne prêteront pas serment et dont les déclarations ne seront considérées que comme
+renseignements.
+√ Le juge de l'application des peines peut délivrer un mandat d'amener contre le condamné
+à un suivi socio-judiciaire ou soumis à une injonction de soins qui ne respecte pas ses
+obligations (art. 763-5 C.P.P.).
+Il peut aussi délivrer un mandat d'amener contre un condamné placé sous son contrôle en
+cas d'inobservation par ce dernier des obligations qui lui incombent (art. 712-17 C.P.P.).
+En cas d’urgence et d’empêchement du J.A.P., le mandat d’amener peut être délivré par le
+procureur de la République.
+√ Le président de la chambre de l'instruction ou le conseiller désigné par lui peut, en cas
+d'urgence, décerner mandat d'amener, d'arrêt ou de recherche (art. 201 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 24
+2.3.2 - Notification et exécution du mandat d'amener
+2.3.2.1 - Agents habilités
+"Le mandat d'amener est notifié et exécuté par un officier ou agent de police judiciaire ou
+par un agent de la force publique, lequel en fait exhibition à la personne et lui en délivre
+copie" (art. 123 al. 4 C.P.P.).
+Toutefois, aux termes de l'article R 188 du C.P.P. "l'exécution des mandats d'amener, de
+dépôt et d'arrêt,... est confiée aux militaires de la gendarmerie autres que les officiers et
+aux fonctionnaires de police autres que les commissaires et commissaires adjoints, ainsi
+qu'aux gardes champêtres". Dans l'hypothèse où la personne recherchée est déjà détenue
+pour une autre cause, la notification du mandat lui en est faite comme indiqué à l'art. 123
+al. 4 du C.P.P., ou bien "sur instructions du procureur de la République, par le chef de
+l'établissement pénitentiaire qui en délivre également une copie" (art. 123 al. 5 C.P.P.). La
+personne faisant l'objet d'un mandat d'amener est appréhendée si besoin est, avec la force
+strictement nécessaire ; elle peut faire l'objet d'une palpation de sécurité.
+2.3.2.2 - Règles générales d'exécution
+Elles sont fixées par l'art. 134 du C.P.P. et sont les mêmes que pour le mandat d'arrêt et de
+recherche.
+L'article 134 du C.P.P. dispose :
+"L'agent chargé de l'exécution d'un mandat d'amener, d'arrêt et de recherche ne peut
+s'introduire dans le domicile d'un citoyen avant 6 heures ni après 21 heures.
+Il peut se faire accompagner d'une force suffisante pour que la personne ne puisse se
+soustraire à la loi. La force est prise dans le lieu le plus proche de celui où le mandat doit
+s'exécuter et elle est tenue de déférer aux réquisitions contenues dans ce mandat".
+Le dernier alinéa de l'art. 134 du C.P.P. fait obligation à l'agent chargé de l'exécution du
+mandat (d'amener, d'arrêt ou de recherche), dès lors que la personne ne peut être trouvée,
+d'adresser au magistrat mandant un procès-verbal de perquisition et de recherches
+infructueuses.
+En pratique, la perquisition s'effectue au dernier domicile connu, ou à défaut, à la dernière
+résidence de la personne recherchée. La "perquisition" de l'art. 134 du C.P.P. a pour but
+exclusif de rechercher la personne faisant l'objet d'un mandat d'amener ou d'arrêt. Si elle
+autorise l'introduction coercitive dans un lieu privé, durant les heures légales, et une fouille
+tendant à la découverte de la personne recherchée, elle ne permet en aucun cas une fouille
+et des saisies éventuelles susceptibles de révéler le lieu de séjour de l'intéressé ou
+intéressant plus généralement les investigations en cours. De ce fait, elle peut être réalisée
+par des agents n'ayant pas nécessairement la qualité d'officier de police judiciaire.
+Si une personne visée par un mandat d'amener est en fuite et n'a pu être saisie, elle est
+considérée comme mise en examen à la fin de l'information et peut être renvoyée devant la
+juridiction de jugement.
+Dès lors le mandat d'amener est caduc. Toutefois les deux conditions suivantes doivent être
+réunies :
+√ rédaction d'un procès verbal de perquisition et de recherches infructueuses adressé au
+magistrat qui a délivré le mandat ;
+√ existence de charges constitutives d'infraction.
+2.3.2.3 - Formalités en cas d'appréhension de la personne recherchée
+OBSERVATION : Contrairement aux "règles générales d'exécution" développées ci-avant, les
+formalités à respecter en cas d'appréhension d'un individu faisant l'objet d'un mandat
+d'amener ne sont pas les mêmes qu'en cas d'arrestation d'une personne sous le coup d'un
+mandat d'arrêt. Lorsque la personne recherchée est découverte, le mandat lui est d'abord
+notifié. La notification effectuée, les modalités d'exécution du mandat d'amener diffèrent
+selon le lieu d'appréhension de la personne concernée.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 25
+2.3.2.3.1 - Exécution à 200 KM au plus (art. 125 C.P.P.)
+NOTA : Le calcul de la distance des 200 km doit s'opérer en fonction des voies routières, le point de départ étant
+le lieu d'appréhension.
+Si la personne est appréhendée à 200 km au plus du siège du juge d'instruction ayant
+délivré le mandat, elle est immédiatement conduite devant ce magistrat afin que celui-ci
+procède à son interrogatoire. Dans l'hypothèse où ce juge est absent ou indisponible et que
+l'interrogatoire ne puisse être immédiat, la personne peut être retenue par les services de
+police ou de gendarmerie pendant une durée maximum de 24 heures à compter de son
+arrestation. À l'expiration de ce délai elle est conduite devant le juge d'instruction ou à
+défaut le président du tribunal judiciaire ou un juge désigné par lui qui procède
+immédiatement à son interrogatoire ; à défaut de quoi la personne est mise en liberté
+En application de l'article 133-1 du C.P.P., en cas de retenue de la personne faisant l'objet du
+mandat, le procureur de la République du lieu d'arrestation est informé dès le début de cette
+mesure de rétention.
+L’article 133-1 du C.P.P. prévoit également que la personne retenue bénéficie de certains des
+droits relatifs à la garde à vue, dont la notification fait l'objet d'un procès-verbal :
+– le droit de faire prévenir de la mesure dans les conditions prévues par l'article 63-2 du
+C.P.P.,
+– le droit d’être examinée par un médecin dans les conditions prévues par l'article 63-3
+du C.P.P.,
+– le droit d’être assistée d'un avocat dans les conditions prévues aux articles 63-3-1 à 63-
+4-4 du C.P.P.
+2.3.2.3.2 - Exécution à plus de 200 KM (art. 127 et suivants C.P.P.)
+Si la personne est appréhendée à plus de 200 km du siège du magistrat ayant délivré le
+mandat, elle est conduite dans les 24 heures (sauf circonstances insurmontables) :
+√ Soit devant le juge d'instruction mandant, qui doit l'interroger immédiatement ou au plus
+tard dans les 24 heures.
+√ Soit devant le juge des libertés et de la détention du lieu de l'arrestation lorsqu'il n'est pas
+possible de la conduire dans les 24 heures devant le juge mandant.
+Toute personne arrêtée en vertu d’un mandat d’amener, retenue pendant plus de 24 heures
+sans avoir été interrogée est considérée comme arbitrairement détenue.
+La personne bénéficie des droits énoncés aux articles 133-1, 63-2 et 63-3 du C.P.P.
+Aux termes des dispositions de l'art. 128 du C.P.P., le juge des libertés et de la détention
+interroge la personne sur son identité. Il reçoit ensuite ses déclarations après l'avoir avertie
+qu'elle est libre de ne pas en faire. Il demande en outre à la personne concernée si elle
+consent à être transférée ou si elle préfère prolonger les effets du mandat d'amener en
+attendant au lieu où elle se trouve la décision du juge d'instruction.
+√ Si la personne accepte d'être transférée, elle est conduite (sauf circonstances
+insurmontables), devant le juge d'instruction qui a délivré le mandat, dans les quatre jours
+de la notification du mandat, ou six jours en cas de transfèrement d'un département
+d'outre-mer vers un autre département ou de la France métropolitaine vers un département
+d'outre-mer (art. 130 C.P.P.).
+√ Si la personne refuse d'être transférée, "elle est conduite dans la maison d'arrêt et avis en
+est donné au juge d'instruction compétent. L'original ou la copie du procès-verbal de la
+comparution contenant un signalement complet est transmis sans délai à ce magistrat, avec
+toutes les indications propres à faciliter la reconnaissance d'identité".
+Ce procès-verbal doit mentionner que la personne a reçu avis qu'elle est libre de ne pas
+faire de déclaration (art. 128 C.P.P.).
+L'article 129 du C.P.P. ajoute : "Le juge d'instruction saisi de l'affaire décide, aussitôt après
+la réception de ces pièces, s'il y a lieu d'ordonner le transfèrement".
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 26
+En cas de transfèrement ordonné par le juge d'instruction, celui-ci devra être réalisé (sauf
+circonstances insurmontables) dans les 4 jours de la notification du mandat, ou 6 jours, en
+cas de transfèrement d'un département d'outre-mer vers un autre département ou de la
+France métropolitaine vers un département d'outre-mer.
+NOTA : Le juge d'instruction doit vérifier que les délais prévus par les art. 127 et 130 du C.P.P. ont été
+respectés. A défaut, il ordonne la mise en liberté de la personne, à moins que sa conduite ait été retardée par
+des circonstances insurmontables (art. 130-1 C.P.P.) Ces circonstances peuvent résulter de l'état de santé de la
+personne (maladie, blessures...) ou d'événements imprévisibles (cataclysmes...).
+2.4 - LE MANDAT D’ARRÊT
+2.4.1 - Définition et délivrance
+"Le mandat d'arrêt est l'ordre donné à la force publique de rechercher la personne à
+l'encontre de laquelle il est décerné et de la conduire devant le juge d'instruction après
+l'avoir, le cas échéant, conduite à la maison d'arrêt indiquée sur le mandat où elle sera reçue
+et détenue." (art. 122 alinéa 6 C.P.P.). C'est d'abord un ordre de recherche avec force
+coercitive ; c'est aussi un titre de détention.
+Le mandat d'arrêt est délivré à l'encontre d'une personne en fuite ou résidant hors du
+territoire de la République. Il est décerné par le juge d'instruction, après avis du procureur
+de la République si le fait motivant l'information comporte une peine d'emprisonnement
+correctionnelle ou une peine plus grave (art. 131 C.P.P.).
+Il peut être délivré à tout moment de l'information.
+Si la personne se soustrait aux obligations du contrôle judiciaire alors qu'elle fait l'objet
+d'une décision de renvoi devant la juridiction de jugement, le procureur de la République
+peut saisir le juge des libertés et de la détention pour que celui-ci décerne un mandat
+d'arrêt à l'encontre de l'intéressé.
+Le mandat d'arrêt fait l'objet d'une inscription au fichier informatisé des personnes
+recherchées à la demande du juge d'instruction ou du procureur de la République ; il peut
+dans certains cas donner lieu à diffusion générale.
+REMARQUES :
+√ Le tribunal correctionnel peut décerner un mandat d’arrêt contre un prévenu défaillant
+encourant une peine d’emprisonnement égale ou supérieure à deux ans (art. 410-1 C.P.P.).
+Si le prévenu est arrêté suite au mandat, les dispositions de l’article 135-2 du C.P.P.
+s’appliquent.
+√ La chambre de l’instruction, aux termes des dispositions de l'article 207 du C.P.P. a le
+pouvoir de décerner mandat de dépôt ou d'arrêt lorsqu'elle est saisie de l'appel d'une
+ordonnance du juge des libertés et de la détention relative à la détention provisoire.
+√ Sur réquisition du procureur général, le président de la chambre de l'instruction peut
+décerner mandat de dépôt ou d'arrêt en attendant la réunion de la chambre de l'instruction
+lorsque la procédure est reprise après un arrêt de non-lieu, en cas de survenance de
+charges nouvelles (art. 196 C.P.P.).
+√ Le président de la chambre de l'instruction ou le conseiller désigné par lui peut, en cas
+d'urgence, décerner mandat d'amener, d'arrêt ou de recherche (art. 201 C.P.P.).
+√ Si le tribunal correctionnel prononce une peine d'au moins une année d'emprisonnement
+sans sursis et s'il s'agit d'un délit de droit commun, il peut par décision spéciale et motivée,
+décerner mandat de dépôt ou d'arrêt contre le prévenu (art. 465 C.P.P.). Si la personne est
+arrêtée à la suite du mandat d'arrêt et qu'il s'agit d'un jugement par défaut, il est fait
+application des dispositions de l'article 135-2 du C.P.P..
+√ Le tribunal correctionnel ou la cour d'appel qui se déclarent incompétents en raison de la
+nature criminelle des faits poursuivis peut, le ministère public entendu, décerner mandat de
+dépôt ou d'arrêt contre le prévenu (art. 469 et 519 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 27
+Il en est de même si le tribunal correctionnel estime, au résultat des débats, que le fait qui
+lui était déféré sous la qualification de l'un des délits visés à l'art. 398-1 du C.P.P. est de
+nature à entraîner une peine prévue pour un délit non visé par cet article (art. 469 C.P.P.).
+√ Le juge de l'application des peines peut décerner un mandat d'arrêt à l'encontre d'une
+personne condamnée à un suivi socio-judiciaire qui ne respecte pas ses obligations (art.
+763-5 C.P.P.). Il peut également délivrer un mandat d'arrêt lorsque le condamné placé sous
+contrôle n'a pas respecté ses obligations et qu'il est en fuite ou réside à l'étranger (art. 712-
+17 C.P.P.).
+2.4.2 - Notification et exécution du mandat d'arrêt
+2.4.2.1 - Agents habilités
+Ce sont les mêmes que ceux qui sont autorisés à notifier et à exécuter un mandat d'amener
+(art. 123 al. 4 et 5 et R. 188 C.P.P.). Comme pour le mandat d'amener, la personne faisant
+l'objet d'un mandat d'arrêt est appréhendée si besoin avec la force strictement nécessaire ;
+elle peut faire l'objet d'une palpation de sécurité et/ou d'une fouille-sécurité.
+2.4.2.2 - Règles générales d'exécution
+Prévues par l'article 134 du C.P.P., elles concernent à la fois le mandat d'amener, le mandat
+de recherche et le mandat d'arrêt (cf. supra le mandat d'amener).
+2.4.2.3 - Formalités en cas d'arrestation
+L'article 133 du C.P.P. définit les formalités applicables suite à l'arrestation de la personne
+visée par le mandat. Les formalités varient selon que l'arrestation a lieu à plus de 200
+kilomètres ou non du siège du juge d'instruction.
+2.4.2.3.1 - Exécution à 200 KM au plus (art. 133 C.P.P.)
+Si la personne est arrêtée à 200 Km au plus du siège du juge d'instruction mandant, elle est
+présentée dans les 24 heures suivant son arrestation devant ce juge d'instruction ou à
+défaut devant le président du tribunal judiciaire ou le juge désigné par lui, afin qu'il soit
+procédé à son interrogatoire, et le cas échéant statué sur son placement en détention
+provisoire. A défaut, la personne est remise en liberté.
+Lorsque la personne arrêtée est retenue par les services de police ou de gendarmerie en
+attendant sa présentation au magistrat, le procureur de la République du lieu d'arrestation
+est informé dès le début de cette rétention.
+En application de l'article 133-1 du C.P.P., la personne retenue bénéficie de certains des
+droits relatifs à la garde à vue, dont la notification fait l'objet d'un procès-verbal :
+– le droit de faire prévenir de la mesure dans les conditions prévues par l'article 63-2 du
+C.P.P.,
+– le droit d’être examinée par un médecin dans les conditions prévues par l'article 63-3
+du C.P.P.,
+– le droit d’être assistée d'un avocat dans les conditions prévues aux articles 63-3-1 à 63-
+4-4 du C.P.P.
+2.4.2.3.2 - Exécution à plus de 200 km (art. 133 C.P.P.)
+Si la personne est arrêtée à plus de 200 km du siège du juge d'instruction mandant, et qu'il
+n'est pas possible de la conduire dans un délai de 24 heures devant ce magistrat, elle est
+conduite dans les 24 heures suivant son arrestation devant le juge des libertés et de la
+détention du lieu d'arrestation.
+Les dispositions relatives à la retenue de la personne par les services de police ou de
+gendarmerie sont également applicables.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 28
+Après avoir entendu la personne, le J.L.D. informe le juge d'instruction mandant et requiert
+le transfèrement de celle-ci à la maison d'arrêt indiquée sur le mandat. L'accord de la
+personne n'est pas nécessaire (art. 133 al. 3 C.P.P.). Si ce transfèrement ne peut être fait
+immédiatement, le J.L.D. en réfère au juge mandant et fait écrouer l'intéressé à la maison
+d'arrêt du lieu d'arrestation.
+Dès que le transfèrement est possible, la personne est conduite à la maison d'arrêt
+mentionnée sur le mandat dans un délai (sauf circonstances insurmontables) de quatre
+jours à compter de la notification du mandat ou de six jours en cas de transfèrement d'un
+département d'outre-mer vers un autre département ou de la France métropolitaine vers un
+département d'outre-mer (art. 133 al. 4 C.P.P.).
+NOTA : Le juge d'instruction doit vérifier que les délais de transfèrement ont été respectés. À défaut, à moins
+que la conduite de la personne n'ait été retardée par des circonstances insurmontables, il doit ordonner sa mise
+en liberté.
+2.4.2.4 - Exécution du mandat d'arrêt après le règlement de l'information
+Les dispositions sont prévues aux articles 135-2 et 135-3 du C.P.P.
+L’article 179 alinéa 2 du C.P.P. dispose que s’il a été décerné, le mandat d’arrêt conserve sa
+force exécutoire.
+2.4.2.4.1 - Interpellation à moins de 200 KM
+La personne faisant l'objet d'un mandat d'arrêt est trouvée après le règlement de
+l'information. Les services de police ou de gendarmerie où l'intéressé est retenu doivent
+aviser le procureur de la République du lieu d'arrestation dès le début de la retenue. La
+rétention a une durée limitée à 24 heures.
+En application de l'article 133-1 du C.P.P., la personne retenue bénéficie de certains des
+droits relatifs à la garde à vue, dont la notification fait l'objet d'un procès-verbal :
+– le droit de faire prévenir de la mesure dans les conditions prévues par l'article 63-2 du
+C.P.P.,
+– le droit d’être examinée par un médecin dans les conditions prévues par l'article 63-3
+du C.P.P.,
+le droit d’être assistée d'un avocat dans les conditions prévues aux articles 63-3-1 à 63-4-4
+du C.P.P.
+La personne est conduite dans les meilleurs délais, et au plus tard dans les 24 heures de son
+arrestation devant le procureur de la République du tribunal judiciaire dans le ressort duquel
+siège la juridiction de jugement saisie des faits ayant motivé le mandat. Le procureur de la
+République vérifie l'identité de la personne et lui notifie le mandat. Il la présente ensuite
+devant le juge des libertés et de la détention. Ce dernier, sur réquisitions du procureur de la
+République et après la tenue d'un débat contradictoire, peut soit placer la personne sous
+contrôle judiciaire, soit ordonner son placement en détention provisoire jusqu’à sa
+comparution devant la juridiction de jugement. Les délais d’audiencement devant le tribunal
+correctionnel ou la cour d’assises prévus aux articles 179 (2 mois, renouvelables 2 fois) et
+181 (1 an renouvelable) sont applicables et courent à compter de l'ordonnance de
+placement en détention provisoire.
+Si la personne ne comparaît pas dans ces délais, elle doit être remise en liberté. La décision
+du juge des libertés et de la détention peut, dans les 10 jours de sa notification être frappée
+d'appel devant la chambre des appels correctionnels, ou la chambre de l'instruction (en cas
+de renvoi devant la cour d'assises).
+2.4.2.4.2 - Interpellation à plus de 200 KM
+Lorsque la personne a été interpellée à plus de 200 kilomètres du siège de la juridiction de
+jugement et qu'il n'est pas possible de la conduire dans les 24 heures devant le procureur
+de la République du tribunal judiciaire où la juridiction à son siège, elle est conduite devant
+le J.L.D. du lieu d'arrestation conformément à l'article 135-2 du C.P.P.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 29
+L’article 135-2 du C.P.P. précise que le recours à la visio-conférence est possible sauf si la
+personne le refuse. Par ailleurs il est prévu que la personne ne peut pas refuser le recours à
+la visio-conférence si son transport paraît devoir être évité en raison de risques graves de
+trouble à l’ordre public ou d’évasion.
+Enfin, les modalités selon lesquelles une personne peut soit donner son accord au recours à
+la visio-conférence, soit faire part de son refus, sont précisées à l’article 706-71-1 du C.P.P.
+Dans le cas d'une présentation physique, le J.L.D. vérifie l'identité de la personne, lui notifie
+le mandat et recueille éventuellement ses déclarations après l'avoir avertie qu'elle est libre
+de ne pas en faire.
+Il la fait conduire à la maison d'arrêt et en avise le procureur de la République du lieu du
+jugement. Celui-ci ordonne le transfèrement de la personne qui doit comparaître devant lui
+dans un délai de 4 jours qui peut être porté à 6 jours lorsque le transfert a lieu entre un
+département d'outre-mer et la France métropolitaine ou entre départements d'outre-mer.
+2.4.2.5 - Recherche des personnes en fuite faisant l'objet d'un mandat d'arrêt
+L'article 74-2 du C.P.P. prévoit un dispositif permettant d'effectuer des recherches de
+personnes faisant l'objet d'un mandat d'arrêt (Voir fiche « La recherche des personnes en
+fuite (art. 74-2 C.P.P.) ».
+Le mandat d'arrêt peut émaner du juge d'instruction, du juge des libertés et de la détention,
+de la chambre de l’instruction ou de son président, du président de la cour d'assises, d'une
+juridiction de jugement ou encore du juge de l'application des peines.
+Le procureur de la République donne des instructions de recherches aux officiers de police
+judiciaire assistés le cas échéant d'agents de police judiciaire. L'autorité ayant délivré le
+mandat devra donc solliciter l'intervention du procureur de la République.
+Les officiers de police judiciaire mandatés peuvent procéder aux actes prévus aux articles 56
+à 62 du C.P.P. Si les nécessités de l'enquête l'exigent, le juge des libertés et de la détention
+du tribunal judiciaire peut, à la requête du procureur de la République, autoriser
+l'interception de correspondances émises par la voie des télécommunications.
+Les officiers de police judiciaire peuvent également, sous conditions, mettre en œuvre
+certaines des techniques spéciales d’enquête applicables à la criminalité et à la délinquance
+organisées et aux crimes .
+2.5 - LE MANDAT DE DÉPÔT
+2.5.1 - Définition et délivrance
+"Le mandat de dépôt est l'ordre donné par le juge des libertés et de la détention au chef de
+l'établissement pénitentiaire de recevoir et de détenir la personne mise en examen et ayant
+fait l'objet d'une ordonnance de placement en détention provisoire" (art. 122 alinéa 8
+C.P.P.).
+Il est à noter que le mandat de dépôt, lorsqu'il a été précédemment notifié, permet de
+rechercher la personne mise en examen, ce qui suppose l'évasion de cette dernière. Dans
+cette hypothèse, le mandat de dépôt pourra donner lieu à diffusion.
+Par ailleurs, le mandat de dépôt peut être aussi utilisé pour transférer la personne d'une
+maison d'arrêt à une autre.
+Aux termes de l'article 135 du C.P.P. "En matière criminelle et en matière correctionnelle, les
+mandats de dépôt ne peuvent être décernés qu'en exécution de l'ordonnance prévue à
+l'article 145".
+RAPPEL :
+Dans certaines hypothèses, la chambre de l’instruction, le président de la chambre de
+l'instruction, le tribunal correctionnel ou la cour d'appel peuvent décerner mandats de dépôt
+ou d'arrêt.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 30
+REMARQUE : En plus des situations précédentes :
+√ Le tribunal correctionnel, saisi, notamment en cas de flagrant délit par le procureur de la
+République (procédure de comparution immédiate), peut décerner contre le prévenu un
+mandat de dépôt (art. 395 et suivants C.P.P.) ;
+√ Le président du tribunal correctionnel peut, en cas de trouble à l'audience, placer sous
+mandat de dépôt le perturbateur qui résiste à un ordre d'expulsion ou cause du tumulte
+(art. 404 C.P.P.).
+2.5.2 - Notification et exécution du mandat de dépôt
+La notification verbale de l'ordonnance de placement en détention provisoire (art. 145
+C.P.P.) en exécution de laquelle est décerné le mandat de dépôt, vaut notification dudit
+mandat.
+L'agent de la force publique qui exécute un mandat de dépôt effectue une mission purement
+matérielle : il conduit la personne mise en examen du cabinet du magistrat à la maison
+d'arrêt indiquée sur le mandat. Il utilise si besoin est, la force strictement nécessaire à cette
+opération.
+En vertu de l'art. 135 al. 2 du C.P.P. "L'agent chargé de l'exécution du mandat de dépôt
+remet l'intéressé au chef de l'établissement pénitentiaire, lequel lui délivre une
+reconnaissance de cette remise".
+Une copie du mandat de dépôt est laissée au chef d'établissement par le chef d'escorte.
+CHAPITRE 3 :
+SANCTIONS DES IRRÉGULARITÉS DES MANDATS
+3.1 - SANCTIONS CONTRE LES PERSONNES
+√ Le greffier est considéré comme responsable de la régularité formelle des mandats. Il doit
+s'assurer que les mandats sont régulièrement signés, datés, revêtus du sceau du magistrat
+ou de la juridiction, qu'ils mentionnent l'identité de la personne et, pour ceux qui l'exigent,
+qu'ils mentionnent également la nature des faits imputés et leur qualification juridique ainsi
+que les textes applicables.
+√ Les éventuelles sanctions disciplinaires pouvant être prononcées contre le juge
+d'instruction, le juge des libertés et de la détention ou le procureur de la République, ne
+peuvent l'être que conformément aux règles du statut de la magistrature.
+√ Par ailleurs, l'art. 126 du C.P.P. mentionne que les sanctions pénales des art. 432-4 à 432-
+6 du code pénal sont applicables aux magistrats ou fonctionnaires (procureur de la
+République, juge d'instruction ou chef de l'établissement pénitentiaire) qui ont ordonné ou
+sciemment toléré la détention arbitraire résultant de l'inobservation du délai de 24 heures
+fixé pour l'interrogatoire par le juge d'instruction après arrestation de la personne en vertu
+d'un mandat d'amener. Les dispositions de l'art. 126 du C.P.P. sont également applicables au
+mandat d'arrêt (art. 133 al. 1 du C.P.P.).
+3.2 - SANCTIONS CONCERNANT LES ACTES
+Des irrégularités peuvent être commises lors de la délivrance des actes (actes ne
+remplissant pas les conditions de forme ou de fond) ou bien encore, lors de la notification ou
+de l'exécution des mandats. Seules les premières pourront entraîner la nullité des mandats
+eux-mêmes, les irrégularités issues de la notification ou de l'exécution pouvant entraîner
+seulement nullité de l'exécution ou caducité des mandats. La jurisprudence considère que
+les irrégularités commises ne doivent entraîner de nullité que si celles-ci sont substantielles
+et de nature à porter atteinte aux droits de la défense. L'indemnisation est allouée par le
+premier président de la cour d'appel. L’État dispose d'un recours contre le dénonciateur de
+mauvaise foi ou le faux témoin ayant provoqué la détention.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 31
+LE CONT RÔ LE JUD I C I A I RE
+Les nombreuses critiques apportées au système de la détention
+provisoire ont conduit le législateur, par la loi du 17 juillet 1970,
+à créer le contrôle judiciaire. Ainsi le but initial du contrôle
+judiciaire était d'éviter le recours à la détention provisoire
+chaque fois qu'elle n'était pas absolument nécessaire.
+La loi n° 2000-516 du 15 juin 2000 renforçant la protection de la
+présomption d'innocence et les droits des victimes aménage
+quelques dispositions du contrôle judiciaire.
+CHAPITRE 1 :
+LE CONTRÔLE JUDICIAIRE : CONDITIONS DE MISE EN ŒUVRE
+1.1 - DÉFINITION
+Le contrôle judiciaire est prévu à l'article 137 du C.P.P. Il restreint l'exercice de la liberté de
+la personne contre laquelle il est prononcé. Cette restriction se traduit par diverses
+obligations imposées à la personne, et par un contrôle exercé sur elle.
+C'est une mesure très souple qui peut s'adapter aux situations les plus diverses.
+1.1.1 - Conditions de mise en œuvre
+L'article 138 al. 1 du C.P.P. prévoit que le contrôle judiciaire n'est possible que si la personne
+est punissable d'une peine d'emprisonnement correctionnel au minimum. Il est donc exclu
+pour une contravention et un délit puni d'une peine d'amende.
+Le contrôle judiciaire peut être prononcé à l'encontre d'une personne laissée en liberté ou à
+l'occasion de la libération d'une personne provisoirement détenue.
+1.1.2 - À qui s'applique-t-il ?
+Le contrôle judiciaire peut s'appliquer à toute personne mise en examen, personne physique
+ou personne morale, et également au mineur.
+1.2 - CONDITIONS DU PLACEMENT SOUS CONTRÔLE JUDICIAIRE
+Le contrôle judiciaire peut être ordonné soit :
+√ par le juge d’instruction ;
+√ par le juge des libertés et de la détention ;
+√ par la chambre de l'instruction ;
+√ par la juridiction de jugement compétente.
+1.2.1 - Décision du juge d'instruction
+Le juge d'instruction ne peut prononcer le contrôle judiciaire qu'en raison des nécessités de
+l'instruction ou à titre de mesure de sûreté (art. 137 al. 2 du C.P.P.). Il rend une ordonnance
+de placement sous contrôle judiciaire (art. 139 du C.P.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 33
+1.2.2 - Décision du juge des libertés et de la détention
+Le juge des libertés et de la détention, lorsqu'il est saisi par le juge d'instruction en vue de
+la mise en détention provisoire d'une personne mise en examen peut, par ordonnance
+motivée, refuser une telle mesure et décider un placement sous contrôle judiciaire (art. 145
+du C.P.P.).
+Il peut également le décider dans le cadre de la procédure de comparution sur
+reconnaissance préalable de culpabilité (art. 495-10 C.P.P.).
+1.2.3 - Placement par la chambre de l'instruction
+La chambre de l'instruction peut ordonner le placement sous contrôle judiciaire dans
+diverses situations :
+√ en cas d'appel ou de saisine directe par le procureur de la République ;
+√ lorsqu'elle décide de la mise en liberté de la personne mise en examen ou quand elle
+statue sur l'appel d'une ordonnance de placement ou d'une ordonnance refusant la mise en
+liberté ;
+√ quand elle dessaisit le juge d'instruction en évoquant l'affaire devant elle.
+1.2.4 - Placement par les juridictions de jugement
+elles peuvent ordonner le placement sous contrôle judiciaire depuis leur saisine par
+l'ordonnance de renvoi jusqu'à la décision de jugement.
+1.3 - LES OBLIGATIONS DU CONTRÔLE JUDICIAIRE APPLICABLES AUX
+PERSONNES PHYSIQUES
+L'article 138 du C.P.P. énumère des obligations parmi lesquelles les autorités habilitées à
+prononcer un contrôle judiciaire peuvent choisir celles qui leur paraissent le mieux adaptées
+à la personne mise en examen.
+Certaines mesures ont pour objet d'assurer une surveillance de la personne, d'autres
+d'assister la personne mise en examen, et les dernières de garantir les droits de la victime.
+1.4 - LES OBLIGATIONS DU CONTRÔLE JUDICIAIRE APPLICABLES AUX
+PERSONNES MORALES
+L'article 706-45 du C.P.P. dispose que le juge de l'instruction peut placer la personne morale
+sous contrôle judiciaire et peut prononcer à son encontre une ou plusieurs des obligations
+énumérées aux alinéas 2 à 6.
+1.5 - L'ORGANISATION DU CONTRÔLE JUDICIAIRE
+Le juge d'instruction doit veiller personnellement à l'application des mesures qu'il a
+ordonnées. Il désigne des personnes physiques ou morales (service de police, de
+gendarmerie, service judiciaire, contrôleur judiciaire...) qui s'assurent que la personne mise
+en examen se soumet aux obligations qui lui sont imposées. Elles rendent compte au juge
+du comportement de l'intéressé et l'avisent sans délai s'il se soustrait aux obligations.
+Si la personne mise en examen se soustrait volontairement aux obligations du contrôle
+judiciaire, le juge d'instruction peut décerner à son encontre mandat d'arrêt ou d'amener.
+S'il l'estime nécessaire, il peut également saisir le juge des libertés et de la détention aux
+fins de placement en détention provisoire. Ce dernier pourra décerner à l'encontre du mis en
+cause un mandat de dépôt (art. 141-2 du C.P.P.)
+Ces mêmes droits appartiennent aux juridictions compétentes lorsqu'elles sont saisies.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 34
+CHAPITRE 2 :
+DÉROULEMENT ET FIN DU CONTRÔLE JUDICIAIRE
+2.1 - LA MODIFICATION DU CONTRÔLE JUDICIAIRE
+La décision du placement sous contrôle judiciaire est prise en considération de situations
+existantes à un moment précis. Si ces dernières changent au cours de l'information, le juge
+d'instruction devra aménager les mesures.
+La modification du contrôle judiciaire consiste à :
+√ imposer une ou plusieurs obligations nouvelles ;
+√ supprimer tout ou partie des obligations ;
+√ modifier une ou plusieurs de ces obligations ;
+√ accorder une dispense temporaire à l'observation de certaines obligations.
+Outre le juge d’instruction, peuvent également modifier le contrôle judiciaire la chambre de
+l’instruction, le juge des libertés et de la détention ainsi que les juridictions de jugement.
+2.2 - LA DEMANDE DE MAINLEVÉE DU CONTRÔLE JUDICIAIRE
+2.2.1 - Rôle du juge d'instruction
+L'article 140 al. 1 du C.P.P. dispose que la mainlevée du contrôle judiciaire peut intervenir à
+tout moment au cours de l'instruction. La mainlevée peut :
+√ être ordonnée d'office par le juge d'instruction s'il estime que les mesures ne sont plus
+nécessaires,
+√ intervenir suite à des réquisitions du procureur de la République,
+√ faire suite à la demande de l'intéressé après avis du ministère public.
+2.2.2 - Saisine de la chambre de l'instruction
+2.2.2.1 - En cas de carence du juge d'instruction (art. 140 al. 3 du C.P.P.)
+√ Quand le juge d'instruction n'a pas donné sa réponse dans les 5 jours, la chambre de
+l'instruction est saisie et doit statuer dans les 20 jours. Si elle ne statue pas dans ce délai, la
+mainlevée est de plein droit.
+√ Le procureur de la République qui, suite à ses réquisitions adressées au juge d'instruction
+n'a pas eu de réponse dans les 5 jours, peut saisir directement la chambre de l'instruction.
+2.2.2.2 - Autres cas de saisine :
+√ en cas de dessaisissement du juge d'instruction par une ordonnance de règlement ou
+suite à l'évocation par la chambre de l'instruction,
+√ lorsque la chambre de l'instruction s'est réservée le contentieux du contrôle judiciaire.
+2.2.3 - Rôle des juridictions de jugement
+Lorsqu'elles sont saisies de la procédure, elles jouissent des mêmes pouvoirs que le juge
+d'instruction et peuvent donc statuer sur les demandes de mainlevée du contrôle judiciaire.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 35
+2.3 - LA FIN DU CONTRÔLE JUDICIAIRE
+2.3.1 - La durée normale du contrôle judiciaire
+Le contrôle judiciaire court normalement jusqu'à la fin de l'information.
+√ En matière correctionnelle, l’ordonnance de renvoi devant le tribunal correctionnel met en
+principe fin au contrôle judiciaire.
+√ En matière criminelle, l'ordonnance de mise en accusation ne met pas fin au contrôle
+judiciaire qui poursuit ses effets jusqu'au jugement.
+2.3.2 - Transformation du contrôle judiciaire en placement en détention
+2.3.2.1 - En cas d'insuffisance du contrôle judiciaire
+L′article 137 du C.P.P. dispose que si le contrôle judiciaire ne suffit pas à assurer le bon
+déroulement de l'instruction, la détention provisoire peut être prononcée. Le juge de
+l'instruction devra saisir le juge des libertés et de la détention à cette fin.
+La chambre de l'instruction peut, elle aussi, substituer la détention provisoire au contrôle
+judiciaire quand elle est saisie de l'information.
+2.3.2.2 - Les manquements aux obligations du contrôle judiciaire
+L′article 141-4 du C.P.P. prévoit que « les services de police et les unités de gendarmerie
+peuvent, d'office ou sur instructions du juge d'instruction appréhender toute personne
+placée sous contrôle judiciaire à l'encontre de laquelle il existe une ou plusieurs raisons
+plausibles de soupçonner qu'elle a manqué aux obligations qui lui incombent au titre des 1°,
+2°, 3°, 8°, 9°, 14°, 17° et 17° bis de l'article 138.
+2.3.2.3 - La révocation du contrôle judiciaire
+L′article 141-2 du C.P.P. dispose que si la personne se soustrait volontairement aux
+obligations du contrôle, le juge d'instruction peut, quelle que soit la peine d'emprisonnement
+encourue, décerner contre elle un mandat d'arrêt ou d'amener. Il peut aussi saisir le juge
+des libertés et de la détention en vue de sa détention provisoire. La détention provisoire est
+alors possible quelle que soit la peine d'emprisonnement encourue.
+La chambre de l'instruction peut, elle aussi, révoquer le contrôle judiciaire quand elle statue
+sur un appel relatif à ce contrôle ou lorsqu'elle est saisie de l'ensemble du dossier
+d'information, ou encore lorsqu'elle s'est réservée le contentieux du contrôle judiciaire.
+Si la personne se soustrait aux obligations du contrôle judiciaire alors qu'elle est renvoyée
+devant la juridiction de jugement, le procureur de la République peut saisir le juge des
+libertés et de la détention pour que ce dernier délivre un mandat d'arrêt ou d'amener. Il
+peut également ordonner le placement en détention provisoire de l'intéressé (art. 141-2 al.2
+C.P.P.).
+Cette personne peut alors, sur décision d'un O.P.J. être retenue 24 heures au plus dans un
+local de police ou de gendarmerie afin que soit vérifiée sa situation et qu'elle soit entendue
+sur la violation de ses obligations (art. 141-4 du C.P.P.)
+Dès le début de la mesure, l'O.P.J. informe le juge d'instruction.
+La personne retenue est immédiatement informée par l'officier de police judiciaire ou, sous
+le contrôle de celui-ci, par un agent de police judiciaire, dans une langue qu'elle comprend,
+de la durée maximale de la mesure, de la nature des obligations qu'elle est soupçonnée
+d'avoir violées et du fait qu'elle bénéficie :
+√ 1°) Du droit de faire prévenir un proche et son employeur ainsi que, si elle est de
+nationalité étrangère, les autorités consulaires de l’État dont elle est ressortissante,
+conformément à l'article 63-2 ;
+Nota : Par ce renvoi à l’article 63-2 du C.P.P., la personne retenue peut demander à faire prévenir, par
+téléphone, une personne avec laquelle elle vit habituellement OU l'un de ses parents en ligne directe OU l'un de
+ses frères et sœurs OU toute autre personne qu'elle désigne, ET son employeur, ET le cas échéant les autorités
+consulaires de son pays.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 36
+√ 2°) Du droit d'être examinée par un médecin, conformément à l'article 63-3 ;
+√ 3°) Du droit d'être assistée par un avocat, conformément aux articles 63-3-1 à 63-4-3 ;
+√ 4°) S'il y a lieu, du droit d'être assistée par un interprète ;
+√ 5°) Du droit, lors des auditions, après avoir décliné son identité, de faire des déclarations,
+de répondre aux questions qui lui sont posées ou de se taire.
+Les pouvoirs conférés au procureur de la République par les articles 63-2 et 63-3 sont
+exercés par le juge d'instruction.
+La retenue s'exécute dans des conditions assurant le respect de la dignité de la personne.
+Seules peuvent être imposées à la personne retenue les mesures de sécurité strictement
+nécessaires.
+La personne retenue ne peut faire l'objet d'investigations corporelles internes au cours de sa
+rétention par le service de police ou par l'unité de gendarmerie.
+L'article 64 (procès-verbal récapitulatif) est applicable à la mesure de retenue.
+À l'issue de la mesure, le juge d'instruction peut ordonner que la personne soit conduite
+devant lui, le cas échéant pour qu'il saisisse le juge des libertés et de la détention aux fins
+de révocation du contrôle judiciaire.
+Le juge d'instruction peut également demander à un officier ou un agent de police judiciaire
+d'aviser la personne qu'elle est convoquée devant lui à une date ultérieure.
+Nota : cette procédure est également applicable lorsque la personne se soustrait aux obligations du contrôle
+judiciaire alors qu'elle est renvoyée devant la juridiction de jugement (art. 141-2 al. 2 C.P.P.) ou qu'elle est
+invitée à comparaître devant le tribunal par le procureur de la République (art. 394 al. 3 C.P.P.). Les attributions
+confiées au juge d'instruction par l'article 141-4 du C.P.P. sont alors exercées par le procureur de la République.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 37
+TABLEAU : CONTRÔLE JUDICIAIRE
+PAR LE
+JUGE D’INSTRUCTION
+PAR LE JUGE DES
+LIBERTÉS ET DE LA
+DÉTENTION
+PAR LA CHAMBRE DE
+L'INSTRUCTION
+PAR LES JURIDICTIONS
+DE JUGEMENT
+PLACEMENT
+en raison des
+nécessités de
+l'instruction ou à
+titre de mesure de
+sûreté
+À tout moment de
+l'instruction
+Lorsqu'il est saisi par le juge
+d'instruction
+√ en cas d'appel ou de saisine
+directe par le procureur de la
+République ;
+√ quand elle décide de la
+mise en liberté de la personne
+mise en examen ;
+√ quand elle statue sur l'appel
+d'une ordonnance de
+placement ou de refus la mise
+en liberté ;
+√ suite à évocation de
+l'affaire.
+√ lorsqu'elles sont saisies par
+l'ordonnance de renvoi
+jusqu'au jugement
+MODIFICATION À tout moment de
+l'instruction
+Sur réquisitions du ministère
+public ou à la demande du
+prévenu, lorsque la personne
+est renvoyée devant la
+juridiction de jugement alors
+qu’elle est placée ou
+maintenue sous contrôle
+judiciaire (1)
+√ quand elle statue sur l'appel
+d'une ordonnance de
+placement sous contrôle
+judiciaire ou de refus de
+mainlevée ;
+√ suite au règlement de la
+procédure ;
+√ suite à évocation de l'affaire
+√ À l’audience, sur
+réquisition du ministère
+public ou à la demande du
+prévenu (1)
+(1) Nota :Conformément au III de l'article 60 de la loi n° 2023-1059 du 20 novembre 2023, ces dispositions s'appliquent aux procédures audiencées devant le tribunal
+correctionnel à compter du 30 septembre 2024.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 38
+L ' A S S IGN AT ION À RÉ S IDEN CE A VE C
+SU R VE I L L AN CE É LE CT RON IQUE ( A R SE )
+La loi n°2009-1436 du 24 novembre 2009 a instauré
+l'assignation à résidence avec surveillance électronique devant
+être prononcée à l'encontre d'une personne mise en examen si
+les obligations du contrôle judiciaire se révèlent insuffisantes.
+CHAPITRE 1 :
+CONDITIONS DE MISE EN ŒUVRE
+DE L'ASSIGNATION À RÉSIDENCE
+1.1 - DÉFINITION
+Elle est prévue à l'article 137 du C.P.P.
+1.1.1 - Conditions de mise en œuvre
+L'article 142-5 al.1 du C.P.P. prévoit que l'assignation à résidence n'est possible que si la
+personne encourt une peine d'emprisonnement correctionnel d’au moins deux ans ou une
+peine plus grave.
+1.1.2 - Prononcé de la mesure
+L'assignation à résidence peut-être ordonnée :
+√ par le juge d'instruction,
+√ par le juge des libertés et de la détention,
+√ par toute autre juridiction pouvant prononcer cette mesure (même en l’absence de
+demande de la personne, et sans recueil préalable de son accord).
+La personne placée sous ARSE, doit être avisée que l’installation du dispositif de surveillance
+ne peut être effectuée sans son consentement, mais que le fait de refuser cette installation
+pourra donner lieu à son placement en détention provisoire.
+1.2 - OBJET DE LA MESURE
+Elle consiste essentiellement à obliger la personne à demeurer à son domicile ou dans une
+résidence fixée d'où elle ne peut s'absenter qu'aux conditions et pour les motifs que le juge
+a fixés.
+Elle peut également comprendre le prononcé éventuel d'une ou plusieurs obligations et
+interdictions énoncées aux articles 138 et 138-3 du C.P.P.
+1.3 - VÉRIFICATION DE LA FAISABILITÉ DE LA MESURE
+Le juge statue après avoir fait vérifier la faisabilité technique de la mesure par le service
+pénitentiaire d’insertion et de probation (SPIP).
+Lorsque la peine encourue est égale ou supérieure à 3 ans, et en l’absence de cette
+vérification ou si elle n’est pas achevée, le juge des libertés et de la détention peut ordonner
+un placement conditionnel de la personne mise en examen sous ARSE en décidant de son
+incarcération provisoire pour une période de 15 jours au plus (jusqu’à ce que l’assignation
+puisse être mise en œuvre) et saisit immédiatement le service pénitentiaire et de probation
+d’une demande de rapport sur la faisabilité de la mesure (art. 142-6-1 et D 32-4-1 du
+C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 39
+CHAPITRE 2 :
+MODALITÉS DU PLACEMENT
+SOUS SURVEILLANCE ÉLECTRONIQUE
+La surveillance électronique s'exerce conformément aux dispositions de l'article 723-8 du
+C.P.P. qui prévoit la mise en place d'un procédé permettant de détecter à distance la
+présence ou l'absence de la personne.
+L'assignation à résidence avec mise sous surveillance électronique mobile peut être mise en
+œuvre :
+√ Si l'infraction ayant motivé la mise en examen est punie de plus de 7 ans
+d'emprisonnement et si le suivi socio-judiciaire est encouru, il sera fait recours au procédé
+de surveillance mobile prévu à l'article 763-12 du C.P.P.. Le juge d'instruction exerce alors
+les prérogatives habituellement dévolues au juge d'application des peines ;
+√ Lorsque la personne est mise en examen pour des violences ou menaces punies d'au
+moins 5 ans d'emprisonnement commises contre son conjoint, son concubin, ou son
+partenaire lié par un pacte civil de solidarité ou contre ses enfants ou ceux de son conjoint,
+concubin ou partenaire (art. 142-12-1 du C.P.P.) ;
+√ Lorsqu'une personne fait l'objet d'une demande d'extradition (art. 696-11 C.P.P.), d'un
+mandat d'arrêt européen (art. 695-28 C.P.P.), d'une demande d'arrestation provisoire aux
+fins de remise à la Cour pénale internationale (art. 627-5 C.P.P.), d'une demande
+d'arrestation provisoire (art. 696-23 C.P.P.).
+CHAPITRE 3 :
+DÉROULEMENT DE LA MESURE
+La mesure est ordonnée pour une durée choisie par le juge dans la limite maximale de 6
+mois. Elle est renouvelable par tranche de six mois après débat contradictoire. Sa durée
+maximum est de 2 ans (art. 142-7 C.P.P.).
+Si l'intéressé ne respecte pas cette assignation à résidence, un mandat d'arrêt ou d'amener
+peut être délivré et la personne placée en détention provisoire. Dans ce cas, le juge des
+libertés et de la détention, s'il estime que la détention provisoire n'est pas justifiée, peut
+modifier les obligations de l'assignation à résidence avec surveillance électronique (art. 142-
+8 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 40
+L A DÉTENT ION P RO V I SO I RE
+C'est une mesure d'incarcération dans une maison d'arrêt, prise
+à l'égard d'une personne mise en examen avant tout jugement.
+Elle répond à certaines nécessités de l'instruction. Mais elle est
+difficilement compatible avec le principe de la présomption
+d'innocence car elle cause un préjudice grave à la personne
+détenue qui doit supporter le choc de l'incarcération, et qui
+encourt la réprobation de l'opinion publique pour qui détention
+provisoire est synonyme de culpabilité. De ce fait, l'article 137
+du C.P.P. dispose que la détention provisoire doit être
+exceptionnelle.
+La détention provisoire est régie par les articles 137 à
+137-4 et 143-1 à 150 du C.P.P.
+CHAPITRE 1 :
+LE PLACEMENT EN DÉTENTION PROVISOIRE
+1.1 - CONDITIONS DU PLACEMENT
+1.1.1 - Conditions tenant à la personne
+Seule la personne mise en examen peut être soumise à la détention provisoire (le témoin
+assisté ne peut pas faire l'objet de cette mesure). Toute personne qui a été mise en examen
+peut normalement faire l'objet d'un placement en détention.
+1.1.2 - Conditions tenant à la nature de l'infraction
+La détention provisoire peut être décidée seulement en cas de :
+√ crime ;
+√ délit puni d'au moins 3 ans d'emprisonnement
+La détention provisoire peut, en outre, être décidée en cas de soustraction volontaire aux
+obligations du contrôle judiciaire ou d'une assignation à résidence avec surveillance
+électronique.
+On notera que, dans ce cas, la détention peut s'appliquer aux délits punis de peines
+d'emprisonnement inférieures aux seuils cités ci-dessus puisque le contrôle judiciaire
+concerne tous les délits punis d'emprisonnement.
+1.1.3 - Situations dans lesquelles la détention provisoire est envisageable
+Ces circonstances sont prévues par les art. 137 et 144 du C.P.P.
+Cette mesure peut être justifiée par les nécessités de l'instruction ou constituer une mesure
+de sûreté mais elle doit toujours se fonder sur l'insuffisance des obligations d'un contrôle
+judiciaire ou d’une assignation à résidence avec surveillance électronique .
+La nécessité de la détention se mesure au regard des éléments précis et circonstanciés
+résultant de la procédure.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 41
+La détention ne peut donc être ordonnée ou prolongée que si elle constitue l’unique moyen
+de :
+√ conserver les preuves ou les indices matériels nécessaires à la manifestation de la vérité
+(art. 144 1° C.P.P.),
+√ empêcher une pression sur les témoins ou les victimes ainsi que sur leur famille (art. 144
+2° C.P.P.),
+√ empêcher une concertation frauduleuse entre le mis en examen et ses coauteurs ou
+complices (art. 144 3° C.P.P.).
+Elle peut constituer une mesure de sûreté en vue de :
+√ protéger le mis en examen (art. 144 4° C.P.P.) : en cas de crime odieux, il peut être
+nécessaire de soustraire la personne à des mouvements populaires dangereux.
+√ garantir le maintien de la personne à la disposition de la justice (art. 144 5° C.P.P.) : cette
+mesure concerne les personnes qui n'ont pas de domicile, ou celles dont on peut craindre
+qu'elles s'enfuient
+√ mettre fin à une infraction ou éviter son renouvellement (art.
+144 6° C.P.P.).
+√ mettre fin à un trouble à l'ordre public (art. 144 7° C.P.P.) : le trouble apporté à l'ordre
+public ne peut justifier une détention provisoire que s'il présente un caractère exceptionnel
+et persistant. Ce trouble devra résulter soit de la gravité de l'infraction, soit des
+circonstances de sa commission, soit encore de l'importance du préjudice qu'elle a causé. Ce
+trouble ne peut résulter du seul retentissement médiatique de l’affaire. Cette finalité ne peut
+fonder une détention provisoire qu’en matière criminelle.
+1.2 - PLACEMENT EN DÉTENTION PROVISOIRE PAR LE JUGE DES
+LIBERTÉS ET DE LA DÉTENTION
+1.2.1 - Le juge des libertés et de la détention (Cf. supra)
+Cette décision est confiée au juge des libertés et de la détention (art. 137-1 C.P.P.).
+Le J.L.D. ne dispose néanmoins d'aucune possibilité de se saisir d'office pour prendre une
+décision en matière de détention provisoire ; il doit toujours être saisi par le juge
+d'instruction ou par le procureur de la République. Il intervient lors du placement en
+détention puis lors de la prolongation de cette mesure ou lorsque le juge d'instruction refuse
+de donner une suite favorable à une demande ou une réquisition de mise en liberté.
+À peine de nullité, il ne peut participer au jugement des affaires dont il a connu.
+1.2.2 - Modalités du placement en détention provisoire
+1.2.2.1 - Saisine du J.L.D. (art. 137-1 C.P.P.)
+√ Le juge de l'instruction saisit le J.L.D. par ordonnance motivée et lui transmet le dossier
+accompagné des réquisitions du procureur de la République.
+√ En matière criminelle ou pour les délits punis de 10 ans d'emprisonnement, le procureur
+de la République peut, malgré le refus de transmission du juge d'instruction saisir
+directement le J.L.D. Il doit dans ce cas déférer sans délai la personne devant le J.L.D. (art.
+137-4 al.2 C.P.P.).
+1.2.2.2 - Procédure devant le J.L.D. (art. 145 C.P.P.)
+Saisi par le juge de l'instruction, le J.L.D. fait comparaître devant lui la personne concernée,
+assistée de son avocat s'il a déjà été désigné. Le magistrat, au vu des éléments du dossier
+et après avoir recueilli les observations de la personne, lui fait connaître s'il envisage de la
+placer en détention.
+S'il n'envisage pas la détention, le juge peut placer la personne sous contrôle judiciaire.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 42
+1.2.3 - L'ordonnance de placement en détention provisoire
+L'article 137-3 du C.P.P. dispose que le placement en détention doit être prescrit par une
+ordonnance motivée du J.L.D. comportant l'énonciation des conditions de droit et de fait
+justifiant cette détention et indiquant le caractère insuffisant des obligations du contrôle
+judiciaire ou de l’assignation à résidence avec surveillance électronique.
+1.3 - PLACEMENT EN DÉTENTION PROVISOIRE PAR LA CHAMBRE DE
+L'INSTRUCTION
+L'article 201 du C.P.P. dispose que la chambre de l'instruction peut ordonner tout acte
+d'information qu'elle juge utile, ou prononcer d'office la mise en liberté de la personne mise
+en examen. Elle peut ordonner le placement en détention provisoire ou sous contrôle
+judiciaire de la personne mise en examen.
+CHAPITRE 2 :
+DÉROULEMENT DE LA DÉTENTION PROVISOIRE
+2.1 - DURÉE DE LA DÉTENTION PROVISOIRE
+L'article 144-1 du C.P.P. dispose que "la détention provisoire ne peut excéder une durée
+raisonnable, au regard de la gravité des faits reprochés à la personne mise en examen et de
+la complexité des investigations nécessaires à la manifestation de la vérité". Le magistrat
+doit ordonner la mise en liberté immédiate de la personne placée en détention provisoire,
+dès que ces conditions et celles prévues à l'article 144 ne sont plus remplies.
+En matière correctionnelle, la détention ne peut excéder 4 mois ( art. 145-1 du C.P.P.)
+Pour l’instruction des délits commis en bande organisée punis de dix ans d’emprisonnement
+et pour celle des délits de trafic de stupéfiants (art. 222-37 du C.P.), de proxénétisme (art.
+225-5 du C.P.), d’extorsion (art. 312-1 du C.P.), et d’association de malfaiteurs (art. 450-1
+du C.P.), la durée de la détention ne peut excéder 6 mois. (art .145-1-1 du C.P.P.)
+En matière criminelle, elle ne peut excéder un an (art. 145-2 du C.P.P.).
+Toutefois, à titre exceptionnel et sous certaines conditions, ces durées peuvent être
+prolongées (jusqu’à deux ans et quatre mois en matière correctionnelle, et jusqu’à quatre
+ans et huit mois en matière criminelle).
+2.2 - PROCÉDURE DE « MISE EN ÉTAT »
+L’article 221-3 du C.P.P. donne des prérogatives au président de la chambre de l’instruction.
+Ainsi lorsqu’un délai de 3 mois s’est écoulé depuis le placement en détention provisoire de la
+personne mise en examen, que cette détention est toujours en cours et que l’avis de fin
+d’information prévu par l’article 175 C.P.P. n’a pas été délivré, le président de la chambre de
+l’instruction peut d’office, ou à la demande du ministère public ou de la personne mise en
+examen, décider de saisir la chambre de l’instruction. Celle-ci examine alors l’ensemble de
+la procédure.
+La chambre de l’instruction peut décider :
+√ d’ordonner la mise en liberté assortie ou non du contrôle judiciaire,
+√ de prononcer la nullité d’un ou plusieurs actes,
+√ d’évoquer et procéder dans les conditions prévues par les articles 201, 202,204 et 205 du
+C.P.P.,
+√ de procéder à une évocation partielle du dossier,
+√ de renvoyer le dossier au juge d’instruction afin de poursuivre l’information en lui
+prescrivant de procéder à certains actes,
+√ de désigner un ou plusieurs autres juges d’instruction,
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 43
+√ de procéder au dessaisissement du juge d’instruction lorsque cette décision est
+indispensable à la manifestation de la vérité,
+√ d’ordonner le règlement, y compris partiel de la procédure, notamment en prononçant un
+ou plusieurs non-lieux.
+2.3 - PROLONGATION DE LA DÉTENTION PROVISOIRE
+La décision de prolonger une détention provisoire relève du juge des libertés et de la
+détention saisi à cette fin par ordonnance motivée du juge d'instruction qui lui transmet le
+dossier accompagné des réquisitions du procureur de la République.
+Les modalités des prolongations sont abordées dans le tableau.
+CHAPITRE 3 :
+FIN DE LA DÉTENTION PROVISOIRE
+3.1 - LE RÈGLEMENT DE LA PROCÉDURE
+La détention provisoire prend fin en cas de non-lieu et lorsque les faits sont requalifiés en
+contravention ou en délit n'entrant pas dans les prévisions de l'article 144 du C.P.P. Il est
+également prévu que le juge d'instruction ou, s'il est saisi, le juge des libertés et de la
+détention doit ordonner la mise en liberté immédiate de la personne placée en détention
+provisoire dès que les conditions prévues à l'article 144 ne sont plus remplies (art. 144-1
+C.P.P.).
+3.1.1 - En cas de renvoi devant le tribunal correctionnel (art. 179 C .P.P. )
+L'ordonnance de renvoi met fin à la détention provisoire, mais le juge de l'instruction peut
+maintenir l'intéressé en détention jusqu'à sa comparution devant le tribunal par ordonnance
+distincte spécialement motivée.
+3.1.2 - En cas de renvoi devant la cour d'assises (art. 181 C .P.P .)
+Lorsque le juge de l'instruction ou la chambre de l’instruction estime que les faits retenus à
+la charge des personnes mises en examen constituent un crime, ils ordonnent leur mise en
+accusation devant la cour d’assises.
+3.2 - LA DEMANDE DE MISE EN LIBERTÉ
+Article 148 du C.P.P. : la mise en liberté peut être demandée à tout moment au juge
+d'instruction par la personne ou son avocat.
+Article 148-1 du C.P.P. : la mise en liberté peut être demandée par tout prévenu ou accusé.
+3.2.1 - Procédure devant le juge d'instruction
+Le juge d'instruction communique immédiatement la demande au procureur de la
+République aux fins de réquisitions.
+Le magistrat instructeur :
+√ s'il accepte de faire droit à la demande, peut rendre lui-même une décision de mise en
+liberté, assortie éventuellement d'un contrôle judiciaire.
+√ s'il n'entend pas donner une suite favorable à la demande, ne peut pas rendre lui-même
+une décision de rejet. Dans ce cas, il doit transmettre la demande avec son avis motivé au
+juge des libertés et de la détention dans les dix jours suivant la communication au procureur
+de la République.
+Le juge des libertés et de la détention peut :
+√ faire droit à la demande et libérer la personne ;
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 44
+√ accorder la liberté en l'assortissant d'un contrôle judiciaire ;
+√ rejeter la demande.
+3.2.2 - Saisine de la chambre de l'instruction
+√ En cas de carence du juge des libertés et de la détention : par l'intéressé quand le
+magistrat n'a pas statué dans les cinq jours ouvrables sur une demande de mise en liberté.
+√ En cas de carence du juge d'instruction saisi de l'information : par l'intéressé ou son
+avocat à l'expiration d'un délai de six mois depuis la dernière comparution. (art.148-4 du
+C.P.P.)
+√ Quand la chambre de l'instruction s'est réservée le contentieux de la détention.
+La chambre de l’instruction dispose de 30 jours à compter de la réception de la demande de
+mise en liberté pour rendre sa décision.
+3.2.3 - Saisine de la juridiction de jugement
+Après le renvoi devant une juridiction de jugement, l'intéressé peut demander sa mise en
+liberté à tout moment de la procédure.
+3.3 - LA MISE EN LIBERTÉ DE PLEIN DROIT
+3.3.1 - À la fin de la durée de la détention provisoire
+Après l'expiration de la durée légale de la détention provisoire, prolongations éventuelles
+comprises, la mise en liberté est automatique.
+3.3.2 - Inobservation des délais
+L'inobservation des délais pour statuer sur les demandes de mise en liberté entraîne la mise
+en liberté de plein droit.
+3.4 - LA MISE EN LIBERTÉ D'OFFICE
+C'est une décision prise sans que la mise en liberté ait été demandée par la personne ou
+requise par le ministère public. Elle doit être ordonnée lorsque la mise en liberté est de
+droit, mais aussi quand la juridiction saisie estime que la détention n'est plus utile à la
+bonne marche de l'instruction.
+3.4.1 - Décision du juge d'instruction
+Il doit préalablement demander l'avis du procureur de la République. Il prend sa décision
+sans avoir recours à un débat contradictoire. La personne mise en examen doit prendre
+l'engagement de se représenter à tous les actes de la procédure et de tenir informé le juge
+de tous ses déplacements.
+3.4.2 - Décision de la chambre de l'instruction
+Elle peut décider de la mise en liberté d'office quel que soit son mode de saisine.
+3.5 - LA MISE EN LIBERTÉ SUR RÉQUISITIONS DU PARQUET
+Le procureur de la République peut requérir à tout moment auprès du juge d'instruction la
+mise en liberté d'une personne placée en détention provisoire (art. 147 al.2 C.P.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 45
+3.6 - LA MISE EN LIBERTÉ POUR RAISON DE SANTÉ
+Sauf s’il existe un risque grave de renouvellement de l’infraction, la mise en liberté d’une
+personne placée en détention provisoire peut être ordonnée, d’office ou à la demande de
+l’intéressé, lorsqu’une expertise médicale établit que cette personne est atteinte d’une
+pathologie engageant le pronostic vital ou que son état de santé physique ou mentale est
+incompatible avec le maintien en détention. (art. 147-1 du C.P.P.).
+CHAPITRE 4 :
+RÉPARATION D'UNE DÉTENTION PROVISOIRE INJUSTIFIÉE
+(ART. 149 ET SUIVANTS C.P.P.)
+La personne qui a bénéficié d'un non-lieu, d'une relaxe ou d'un acquittement définitif a droit
+d'obtenir réparation de l'État à raison du préjudice matériel et moral provoqué par sa
+détention provisoire.
+Elle est informée de ce droit lorsque le non-lieu, la relaxe ou l'acquittement lui sont notifiés.
+Quelques cas sont exclus de l'indemnisation.
+L'indemnisation est allouée par le premier président de la cour d'appel. L’État dispose d'un
+recours contre le dénonciateur de mauvaise foi ou le faux témoin ayant provoqué la
+détention.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 46
+TABLEAU :
+DÉTENTION PROVISOIRE DES MAJEURS EN MATIÈRE DE DÉLITS
+Tout placement en détention et toute prolongation de cette mesure suppose la tenue d'un débat contradictoire.
+Emprisonnement encouru Durée initiale Prolongations Durée maximum
+Pas d'emprisonnement
+La détention provisoire n'est pas possible
+Moins de 3 ans
+Égal ou supérieur à 3 ans et inférieur ou
+égal à 5 ans 4 mois
+Et la personne n'a pas déjà été condamnée pour
+infraction de droit commun à une peine criminelle
+ou à un emprisonnement ferme > 1an 4 mois
+Pas de prolongation possible
+Égal ou supérieur à 3 ans et inférieur ou
+égal à 5 ans 4 mois
+Et la personne a déjà été condamnée à une peine
+criminelle ou à un emprisonnement ferme > 1 an
+pour infraction de droit commun 1 an
+2 x 4 mois
+Supérieur à 5 ans et inférieur à 10 ans 4 mois 2 x 4 mois
+Égal à 10 ans
+et
+√ un fait constitutif commis hors du
+territoire national
+ou
+4 mois
+5 x 4 mois
++ 4 mois – investigations du juge d'instruction
+doivent se poursuivre et mise en liberté causerait
+pour la sécurité des personnes et des biens un
+risque d'une particulière gravité
+√ poursuites pour : 2 ans et 4 mois
+– trafic de stupéfiants,
+– association de malfaiteurs,
+– proxénétisme,
+– extorsion de fonds,
+– infraction commise en B.O.,
+– terrorisme (1)
+6 mois
+3 x 6 mois
++ 4 mois – investigations du juge d'instruction
+doivent se poursuivre et mise en liberté causerait
+pour la sécurité des personnes et des biens un
+risque d'une particulière gravité
+(1) NOTA : l'article 706-24-3 du C.P.P. prévoit que la durée de la détention provisoire pour le délit d'associations de malfaiteurs est de 3 ans en matière de terrorisme. La
+révocation du contrôle judiciaire qui suit une mesure initiale de détention provisoire permet le placement en détention de l'individu pour une durée supplémentaire de 4
+mois au-delà des durées maximales indiquées ci-dessus.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 47
+TABLEAU :
+DÉTENTION PROVISOIRE DES MAJEURS EN MATIÈRE DE CRIMES
+Tout placement en détention et toute prolongation de cette mesure suppose la tenue d'un débat contradictoire
+Peine encourue Durée initiale Prolongations Durée maximum
+Moins de 20 ans de détention ou de réclusion criminelles
+1 an
+2 x 6 mois 2 ans
+Si un des faits constitutifs a été commis hors du territoire national 4 x 6 mois 3 ans
+20 ans ou plus de détention ou de réclusion criminelles 4 x 6 mois 3 ans
+Si un des faits constitutifs a été commis hors du territoire national 6 x 6 mois 4 ans
+Si la personne est poursuivie pour plusieurs crimes mentionnés
+aux livres II (crimes contre les personnes) et IV (crimes contre la
+nation, l'état et la paix publique) du C.P.
+6 x 6 mois 4 ans
+Si la personne est poursuivie pour :
+√ trafic de stupéfiants,
+√ terrorisme,
+√ proxénétisme,
+√ extorsion de fonds,
+√ crime commis en bande organisée
+Lorsque le juge d'instruction doit poursuivre ses investigations et
+si la mise en liberté de la personne causerait pour la sécurité des
+personnes et des biens un risque d'une particulière gravité.
+4 mois x 2 4 ans et 8 mois
+NOTA : La révocation du contrôle judiciaire qui suit une mesure initiale de détention provisoire permet le placement en détention de l'individu pour une durée
+supplémentaire de 4 mois au-delà des durées maximales indiquées ci-dessus.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 48
+D I S PO S IT ION S A P P L I C A B LE S
+AU X M INEU R S
+CHAPITRE 1 :
+PRINCIPES GÉNÉRAUX DE LA JUSTICE PÉNALE DES MINEURS
+Le code de la justice pénale des mineurs (C.J.P.M.) fixe trois principes fondamentaux :
+√ l’atténuation de la responsabilité pénale du mineur,
+√ la primauté de la réponse éducative sur la réponse répressive,
+√ le jugement par une juridiction spécialisée.
+Le C.J.P.M. ajoute en liminaire que l’intérêt supérieur de l’enfant doit être pris en compte.
+Cette notion, consacrée à l’art. 3 de la Convention internationale des droits de l’enfant par
+les Nations unies le 20 novembre 1989, est ainsi érigée en principe directeur de l’ensemble
+de la procédure pénale applicable aux mineurs.
+1.1 - PRÉSOMPTION DE DISCERNEMENT (ART. L. 11-1 DU C.J.P.M.)
+Le C.J.P.M. reprend le principe énoncé à l’art. 122-8 du code pénal. Les mineurs capables de
+discernement sont pénalement responsables des faits (crimes, délits, contraventions) dont
+ils sont reconnus coupables, subordonnant ainsi leur responsabilité pénale à leur capacité de
+discernement.
+Le seuil de capacité de discernement et par voie de conséquence de responsabilité pénale
+est fixé à l’âge de 13 ans.
+Ainsi sont établies deux présomptions :
+√ de non discernement pour les mineurs âgés de moins de treize ans,
+√ de discernement pour les mineurs de plus de treize ans.
+Ces présomptions peuvent être renversées. La capacité de discernement ou l’absence de
+discernement du mineur peut être établie par les éléments issus de la procédure (art. R 11-
+1 du C.J.P.M.) :
+√ déclarations du mineur, de son entourage familial et scolaire,
+√ éléments de l’enquête,
+√ circonstances dans lesquelles les faits ont été commis,
+√ antécédents éventuels du mineur,
+√ expertise ou examen psychiatrique ou psychologique.
+Cette capacité de discernement se définit comme étant le fait pour le mineur :
+√ de comprendre et vouloir l’acte
+√ et d’être apte à comprendre le sens de la procédure pénale dont il fait l’objet.
+Elle relève de l’appréciation souveraine du magistrat.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 49
+1.2 - LES GRANDS PRINCIPES
+1.2.1 - Primauté de l’éducatif et atténuation de la responsabilité pénale
+(art. L. 11-2, L. 11-3, L. 11-4 et L. 11-5 du C.J.P.M.)
+1.2.1.1 - Mineur de moins de 13 ans
+Les seuils de capacité de discernement et de responsabilité pénale étant fixés à l’âge de 13
+ans, aucune peine ne peut être encourue en dessous de cet âge. Des mesures éducatives
+pourront être prononcées uniquement s’il est établi que le mineur était capable de
+discernement au moment des faits.
+1.2.1.2 - Mineur âgé d’au moins 13 ans
+Des mesures éducatives et/ou des peines peuvent être prononcées à son encontre.
+1.2.2 - La spécialisation des acteurs (art. L. 12-1 et suivants du C.J.P.M.)
+Les crimes, délits et contraventions de la cinquième classe reprochés à un mineur sont
+instruits et jugés par des juridictions et chambres spécialisées :
+√ le juge des enfants ;
+√ le tribunal pour enfants ;
+√ le juge d’instruction chargé spécialement des affaires concernant les mineurs ;
+√ le juge des libertés et de la détention chargé spécialement des affaires concernant les
+mineurs ;
+√ la cour d’assises des mineurs (les assesseurs sont juges des enfants)
+√ la chambre spéciale des mineurs ;
+√ la chambre de l’instruction spécialement composée.
+Les fonctions du ministère public, en matière de crime, délit et contravention de cinquième
+classe, sont remplies par le procureur général ou un magistrat du ministère public
+spécialement chargé des affaires concernant les mineurs (art. L. 12-2 du C.J.P.M.).
+Cependant, en cas d’urgence ou d’empêchement, tout magistrat du parquet peut exercer
+ces fonctions (art. L. 211-1 du C.J.P.M.).
+La mise en œuvre des décisions prises en application du C.J.P.M. est confiée aux services et
+établissements de la protection judiciaire de la jeunesse (PJJ) et dans les cas expressément
+visés, au secteur associatif habilité (art. L. 241-1 du C.J.P.M.).
+1.2.3 - Les droits spécifiques des mineurs (art. L. 12-4 et L. 12-5 du
+C.J.P.M.)
+Aux différentes phases de la procédure, certaines mesures ou certains droits trouvent à
+s’appliquer de façon constante et sont érigés en principes généraux.
+1.2.3.1 - Assistance du mineur par un avocat (art. L. 12-4 du C.J.P.M.) :
+Le mineur est assisté d’un avocat. Le même avocat doit, dans la mesure du possible,
+poursuivre son intervention à chaque étape de la procédure, notamment lorsqu’il est
+désigné d’office.
+1.2.3.2 - Notification des droits au mineur (art. D. 12-1 et D. 12-2 du C.J.P.M.) :
+Le mineur doit recevoir notification de ses droits dans des termes simples et accessibles
+(art. D. 12-2 du C.J.P.M.). Lorsqu’une décision prise à l’égard du mineur est susceptible de
+recours, il doit en être informé ainsi que ses représentants légaux (art. D. 12-1 du C.J.P.M.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 50
+1.2.3.3 - Information des représentants légaux et accompagnement du mineur (art. L. 12-5
+ du C.J.P.M.) :
+Les représentants légaux (ou à défaut, un adulte approprié) reçoivent les mêmes
+informations que celles communiquées au mineur. Le mineur a le droit d’être accompagné
+par ses représentants légaux (ou à défaut, par un adulte approprié).
+1.2.3.4 - Publicité restreinte (art. L. 13-3 du C.J.P.M.) :
+L’identité ou l’image d’un mineur mis en cause ne peut être, en aucune circonstance,
+directement ou indirectement rendue publique.
+CHAPITRE 2 :
+INSTRUCTION PRÉPARATOIRE
+2.1 - LE JUGE D’INSTRUCTION
+Les crimes et délits reprochés à un mineur sont instruits par un juge spécialisé : le juge
+d’instruction chargé spécialement des affaires concernant les mineurs (art. L. 12-1 3°
+C.J.P.M.).
+Ce juge est désigné, par le premier président de la cour d’appel compétente, dans chaque
+tribunal judiciaire doté d’un pôle de l’instruction et dans le ressort duquel siège un tribunal
+pour enfants (art. D. 221-1 C.J.P.M.).
+2.2 - DÉROULEMENT DE L’INSTRUCTION
+2.2.1 - L’ouverture d’information
+2.2.1.1 - Les cas
+En matière criminelle, l’information préalable est obligatoire (art. L. 423-3 du C.J.P.M.).
+Si l’infraction commise est un délit ou une contravention de cinquième classe, l’information
+est facultative (art. L. 423-2 du C.J.P.M.).
+2.2.1.2 - La compétence territoriale
+L’information est ouverte près du tribunal judiciaire, siège d’un tribunal pour enfants,
+compétent au regard du lieu de résidence du mineur (ou de ses représentants légaux), du
+lieu où le mineur est placé, du lieu de l’infraction, ou du lieu où le mineur a été trouvé (art.
+L. 231-1 du C.J.P.M.).
+2.2.1.3 - L’enquête de personnalité
+Lorsqu’il saisit le juge d’instruction, le procureur de la République ordonne une enquête de
+personnalité. Elle consiste en un recueil de renseignements socio-éducatifs de la
+compétence exclusive des services de la protection judiciaire de la jeunesse, destiné à
+procéder à une évaluation synthétique des éléments relatifs à la personnalité et à la
+situation du mineur (art. L. 322-3 du C.J.P.M.).
+2.2.1.4 - Les mesures prises par le juge d’instruction :
+Lorsqu’il est saisi, le juge d’instruction :
+√ Doit ordonner une mesure judiciaire d’investigation éducative (M.J.I.E.) (art. L. 432-1 du
+C.J.P.M.). Cette mesure consiste en une évaluation approfondie et interdisciplinaire de la
+personnalité et de la situation du mineur.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 51
+√ Peut ordonner une mesure éducative judiciaire provisoire (M.E.J.P.) (art. L. 432-2 du
+C.J.P.M.) après audition du mineur afin d’engager un suivi éducatif. Le contenu de la M.E.J.P.
+consiste en quatre modules (insertion, réparation, santé, placement) ainsi que les
+interdictions de paraître, d’entrer en contact, d’aller et venir et d’utiliser des comptes
+d’accès à des services de plateformes en ligne, et les obligations de remettre un objet
+détenu ou appartenant au mineur, de suivre un stage de formation civique (art. L. 112-2 1°
+à 9° bis du C.J.P.M.) qui peuvent être prononcées alternativement ou cumulativement.
+2.2.2 - Le contrôle judiciaire
+2.2.2.1 - Les conditions :
+√ Le mineur âgé de moins de 13 ans ne peut en aucun cas être placé sous contrôle
+judiciaire.
+√ Le mineur âgé de moins de 16 ans peut être placé sous contrôle judiciaire :
+– S’il encourt une peine criminelle ;
+– ou s’il encourt une peine d’emprisonnement ≥ à 7 ans ;
+– ou s’il encourt une peine d’emprisonnement ≥ à 5 ans et qu’il a déjà fait l’objet d’une
+mesure éducative, d’une mesure judiciaire d’investigation éducative, d’une mesure de
+sûreté, d’une déclaration de culpabilité ou d’une peine prononcée dans le cadre d’une
+autre procédure et ayant donné lieu à un rapport datant de moins d’un an ;
+– ou si la peine d’emprisonnement encourue est ≥ à 5 ans pour un délit de violences
+volontaires, d’agression sexuelle ou un délit commis avec la circonstance aggravante de
+violences.
+√ Le mineur âgé d’au moins 16 ans peut être placé sous contrôle judiciaire :
+– s’il encourt une peine criminelle ;
+– ou s’il encourt une peine d’emprisonnement.
+Le C.J.P.M. prévoit une transmission d’informations lorsque le mineur est poursuivi pour
+l’une des infractions de nature sexuelle mentionnée à l’art. 706-47 du code de procédure
+pénale. Une copie de l’ordonnance de placement sous contrôle judiciaire peut être transmise
+à la personne chez qui le mineur demeure ainsi qu’à l’autorité académique et le cas échéant
+à l’établissement scolaire où est scolarisé le mineur (art. L. 331-6 du C.J.P.M.).
+2.2.2.2 - Les obligations
+Les obligations et interdictions susceptibles d’être prononcées dans le cadre d’un contrôle
+judiciaire à l’égard des mineurs sont exhaustivement prévues par l’art. L. 331-2 du C.J.P.M.
+(ne pas sortir de limites territoriales déterminées, ne s’absenter de son domicile qu’à
+certaines conditions, suivre une scolarité ou une formation ou exercer une activité
+professionnelle, etc.)
+La durée n’est pas limitée par les textes. Le juge d’instruction est chargé du suivi de la
+mesure durant la procédure d’instruction.
+Lorsqu’il existe une ou plusieurs raisons plausibles de soupçonner qu’il n’a pas respecté
+certaines de ces obligations, le mineur peut être placé en rétention sur décision d’un OPJ
+(art. L. 331-7 du C.J.P.M.).
+Il bénéficie alors des droits prévus à l’art. L. 332-1 du C.J.P.M. (Voir ci-après : RÉTENTION
+DANS LE CADRE DES MANDATS).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 52
+2.2.2.3 - Déroulement et fin
+√ La révocation du contrôle judiciaire des mineurs âgés de 16 à 18 ans répond à des
+conditions strictes puisqu’elle n’est possible que si deux conditions sont réunies (art. L. 334-
+5 du C.J.P.M.) :
+– la violation des obligations du contrôle judiciaire est répétée ou d’une particulière
+gravité,
+– et le rappel ou l’aggravation de ces obligations ne peut suffire pour atteindre les
+objectifs prévus à l’art. 144 du C.P.P.
+√ Le juge des enfants ou le juge d’instruction peut ordonner la modification ou la mainlevée
+du contrôle judiciaire (art. L. 331-5 du C.J.P.M.) :
+– soit d’office,
+– soit à la demande du mineur, de ses représentants légaux ou de la personne qui en a la
+garde,
+– soit du procureur de la République.
+2.2.3 - L’assignation à résidence sous surveillance électronique (A.R.S.E. -
+art. L. 333-1 et L. 333-2 du C.J.P.M.)
+Cette mesure n’est applicable qu’au mineur âgé de plus de 16 ans encourant une peine
+d’emprisonnement égale supérieure à 3 ans. Elle est alors mise en place dans les conditions
+et selon les modalités prévues pour les majeurs (Art. 137 et 142-5 à 142-13 du C.P.P.)
+Dans ce cas, la vérification de la faisabilité technique de la mesure d’A.R.S.E. est confiée au
+service de la protection judiciaire de la jeunesse (art. D.333-3 du C.J.P.M.).°
+Le mineur peut également être astreint à respecter les obligations du contrôle judiciaire.
+2.2.4 - La détention provisoire (art. L. 334-1 à L. 334-6 du C.J.P.M.)
+Le mineur de moins de treize ans ne peut être placé en détention provisoire. Dans le cadre
+de l’instruction, seul le juge de la liberté et de la détention est compétent pour prononcer et
+prolonger la détention provisoire des mineurs.
+√ En matière criminelle, la détention provisoire peut être prononcée pour les mineurs âgés :
+– de moins de 16 ans, pour une durée de 6 mois renouvelable une fois ;
+– de 16 à 18 ans, pour une durée d’un an renouvelable deux fois 6 mois (jusqu’à 3 ans
+en matière de terrorisme).
+√ En matière correctionnelle, la détention provisoire peut être prononcée pour les mineurs
+âgés :
+– de moins de 16 ans, pour une durée de 15 jours renouvelable une fois si la peine
+encourue 10 ans d’emprisonnement, ou pour une durée d’un mois renouvelable une ˂
+fois si la peine encourue = 10 ans d’emprisonnement ;
+– de 16 à 18 ans, pour une durée d’un mois renouvelable une fois si la peine encourue ≤
+7 ans d’emprisonnement, ou pour une durée de quatre mois renouvelable deux fois si la
+peine encourue > 7 ans d’emprisonnement (jusqu’à deux ans en matière de
+terrorisme);
+2.2.5 - La clôture de l’instruction
+Lorsque que l’instruction est terminée, le juge peut rendre :
+√ une ordonnance de non-lieu,
+√ une ordonnance de renvoi devant le tribunal de police si le fait constitue une
+contravention des quatre premières classes,
+√ une ordonnance de renvoi devant le juge des enfants en cas de délit ou de contravention
+de la 5 ᵉ classe reprochés à un mineur âgé de moins de 13 ans,
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 53
+√ une ordonnance de renvoi devant le tribunal pour enfants
+– en cas de délit ou de contravention de la 5 ᵉ classe reprochés à un mineur âgé d’au
+moins 13 ans,
+– en cas de crime reproché à un mineur âgé de moins de 16 ans.
+√ Une ordonnance de mise en accusation devant la cour d’assises des mineurs
+– en cas de crime reproché à un mineur âgé d’au moins 16 ans,
+– en cas de connexité et d’indivisibilité avec un crime reproché à un mineur âgé d’au
+moins 16 ans, pour les crimes commis avant qu’il n’ait atteint l’âge de 16 ans,
+– en cas de connexité et d’indivisibilité avec un crime reproché à un mineur âgé d’au
+moins 16 ans, pour les crimes commis à compter de sa majorité.
+CHAPITRE 3 :
+RÉTENTION DANS LE CADRE DES MANDATS
+Un mineur peut être placé en rétention dans le cadre d’un mandat d’amener ou d’arrêt en
+application de l’art. 133-1 CPP, ou lorsqu’il est appréhendé en exécution d’un mandat d’arrêt
+européen en application des art. 695-26 et suivants du même code.
+3.1 - DILIGENCES SPÉCIFIQUES
+L’art. L. 332-1 du C.J.P.M. prévoit que les dispositions des art. L. 413-1 à L. 413-15 du
+C.J.P.M. (retenue et garde à vue) relatives à l’assistance par un avocat, à l’examen médical
+et à l’enregistrement audiovisuel des auditions sont applicables.
+3.1.1 - Avis obligatoire aux représentants légaux
+L’officier de police judiciaire doit, dès le début de la rétention, en informer les représentants
+légaux, la personne ou le service auquel le mineur est confié ou, dans les cas prévus, un
+autre adulte approprié.
+Nota : L’obligation d’informer les responsables légaux se cumule avec le droit de faire prévenir un tiers (et
+l’employeur et le cas échéant les autorités consulaires) prévu par l’article 63-2 du C.P.P.
+3.1.1.1 - Mineur de moins de 13 ans (art. L. 413-3 du C.J.P.M.)
+Les représentants légaux sont informés du fait que le mineur doit être assisté par un avocat
+et qu’ils peuvent en désigner un ou demander qu’il en soit commis un d’office.
+3.1.1.2 - Mineur de plus de 13 ans (art. L. 413-7 du C.J.P.M. et L. 413-9 du C.J.P.M.)
+Les représentants légaux sont également informés du droit du mineur à être assisté par un
+avocat. Lorsque le mineur n'a pas sollicité l'assistance, ses représentants légaux sont avisés
+de leur droit d’en faire la demande.
+3.1.2 - Examen médical (art. L. 413-4 et L. 413-8 du C.J.P.M.)
+3.1.2.1 - Mineur de moins de 16 ans
+Dès le début de la rétention, le procureur de la République ou le juge d’instruction désigne
+un médecin qui examine le mineur dans les conditions prévues à l’art. 63-3 CPP.
+3.1.2.2 - Mineur de plus de 16 ans
+Il doit être informé de son droit de demander à être examiné par un médecin au début de la
+mesure, conformément aux dispositions de l’art. 63-3 CPP.
+Les représentants légaux du mineur sont avisés de leur droit de demander un examen
+médical lorsqu’ils sont informés de la rétention.
+Le tiers éventuellement prévenu de la mesure, ainsi que l’avocat du mineur peuvent
+également demander que celui-ci fasse l’objet d’un examen médical.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 54
+3.1.3 - Assistance avocat (art. L. 413-5 et L. 413-9 du C.J.P.M.)
+Le mineur placé en rétention est assisté d’un avocat, dans les conditions prévues aux art.
+63-3-1 à 63-4-4 du C.P.P.
+Lorsque le mineur ou ses représentants légaux n’ont pas désigné d’avocat, le procureur de
+la République, le juge d’instruction ou l’officier de police judiciaire demande au bâtonnier par
+tout moyen, dès le début de la rétention, qu’il lui en soit commis un d’office.
+3.1.4 - Enregistrement audiovisuel des auditions
+L’art. L. 332-1 du C.J.P.M. renvoie aux dispositions relatives à l’enregistrement audiovisuel
+des auditions des mineurs placés en retenue ou en garde à vue (art. L. 413-12 à L. 431-15
+du C.J.P.M.), rendant ainsi obligatoire l’enregistrement des auditions des mineurs placés en
+rétention dans le cadre des mandats.
+3.2 - DROIT À L’INFORMATION ET À L’ACCOMPAGNEMENT
+3.2.1 - Information du mineur
+La notification de ses droits à un mineur doit être réalisée dans des termes simples et
+accessibles (art. D. 12-2 du C.J.P.M.).
+3.2.1.1 - Mandats d’amener et d’arrêt (art. R. 332-1 du C.J.P.M.)
+Outre les droits prévus à l’art. 133-1 CPP (droit de faire prévenir un tiers, d’être examiné
+par un médecin et d’être assisté d’un avocat), sont également notifiés au mineur les droits
+suivants :
+√ Droit à ce que les représentants légaux ou l’adulte approprié mentionné à l’art. L. 311-2
+du C.J.P.M. soient informés et le droit d’être accompagné par ceux-ci lors de ses auditions
+ou interrogatoires dans les conditions prévues par l’art. L. 311-1 du C.J.P.M., sauf
+circonstances particulières énoncées au deuxième alinéa de l’art. L. 413-3 et au deuxième
+alinéa de l’art. L. 413-7 (report de l’information des représentants légaux ordonné par le
+magistrat) ;
+√ Droit à la protection de sa vie privée garanti par l’interdiction de diffuser les
+enregistrements de ses auditions, par la tenue des audiences en publicité restreinte et par
+l’interdiction de publier le compte rendu des débats d’audience ou de tout élément
+permettant son identification ;
+√ Droit d’être détenu séparément des personnes majeurs détenues ;
+√ Droit à la préservation de sa santé, ainsi que le respect du droit à la liberté de religion ou
+de conviction.
+3.2.1.2 - Mandat d’arrêt européen (art. R. 332-2 du C.J.P.M.)
+Outre les droits prévus à l’art. 695-27 CPP (information sur l’existence et le contenu du
+mandat, droit d’être assisté d’un avocat, faculté de s’opposer ou consentir à sa remise à
+l’État d’émission, droit de recevoir copie d’une éventuelle décision de condamnation), sont
+également notifiés au mineur les droits suivants :
+√ Droit à ce que les représentants légaux ou l’adulte approprié mentionné à l’art. L. 311-2
+du C.J.P.M. soient informés et le droit d’être accompagné par ceux-ci lors de ses auditions
+ou interrogatoires dans les conditions prévues par l’art. L. 311-1 du C.J.P.M., sauf
+circonstances particulières énoncées au deuxième alinéa de l’art. L. 413-3 et au deuxième
+alinéa de l’art. L. 413-7 ;
+√ Droit à la protection de sa vie privée garanti par l’interdiction de diffuser les
+enregistrements de ses auditions, par la tenue des audiences en publicité restreinte et par
+l’interdiction de publier le compte rendu des débats d’audience ou de tout élément
+permettant son identification ;
+√ Droit d’assister aux audiences ;
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 55
+√ Droit d’être accompagné par les représentants légaux ou par l’adulte approprié mentionné
+à l’art. L. 311-2 au cours des audiences ;
+√ Droit à une évaluation éducative personnalisée ;
+√ Droit de bénéficier de l’aide juridictionnelle dans les conditions fixées par la loi n° 91-647
+du 10 juillet 1991 relative à l’aide juridique.
+3.2.2 - Information des responsables légaux
+Il s’agit de l’un des principes généraux de la procédure pénale applicable aux mineurs,
+énoncé à l’art. L. 12-5 du C.J.P.M. : « les responsables légaux reçoivent les mêmes
+informations que celles qui doivent être communiquées au mineur au cours de la procédure.
+Le mineur en est informé. »
+L’art. D. 311-1 du C.J.P.M. vient préciser, relativement au droit à l’information, que « chaque
+fois qu’une information est donnée au mineur, elle est également donnée par tout moyen et
+dans les meilleurs délais aux représentants légaux ou à l’adulte approprié. »
+Ainsi, en cas de rétention dans le cadre d’un mandat, les représentants légaux doivent être
+informés :
+√ de la mesure à laquelle le mineur est soumis,
+√ de l’ensemble des droits dont bénéficie le mineur dans le cadre de cette mesure,
+√ des droits qu’ils peuvent exercer, à savoir :
+– Droit de désigner un avocat ou demander qu’il en soit commis d’office,
+– droit de demander un examen médical, pour le mineur âgé d’au moins 16 ans gardé à
+vue (pour un mineur de moins de 16 ans, cet examen est obligatoire).
+Dans certains cas, les représentants légaux sont empêchés d’exercer leurs droits d’être
+informés et d’accompagnement du mineur, qui sont alors exercés par un adulte approprié
+(cf. ci-après " Accompagnement du mineur ").
+3.2.3 - Accompagnement du mineur (art. L. 311-1 du C.J.P.M.)
+3.2.3.1 - Principe
+Le mineur a le droit d’être accompagné par ses représentants légaux lors de ses auditions
+ou interrogatoires si l’autorité qui procède à cet acte estime qu’il est dans l’intérêt supérieur
+de l’enfant d’être accompagné et que la présence de ces personnes ne portera pas préjudice
+à la procédure.
+Les représentants légaux du mineur sont convoqués, si nécessaire, lors de ses auditions.
+L’audition peut débuter en leur absence à l’issue d’un délai de deux heures à compter du
+moment où elles ont été avisées.
+3.2.3.2 - Exceptions
+L’information n’est pas délivrée aux titulaires de l’autorité parentale et le mineur n’est pas
+accompagné par ceux-ci lorsque cela :
+√ serait contraire à l’intérêt supérieur du mineur (exemple : situation d’incarcération
+parentale familiale ou absence de contacts de longue durée) ;
+√ n’est pas possible, parce que, après que des efforts raisonnables ont été déployés, aucun
+des titulaires de l’autorité parentale ne peut être joint ou que leur identité est inconnue (les
+démarches devront être actées) ;
+√ pourrait sur la base d’éléments objectifs et factuels, compromettre de manière
+significative la procédure pénale (exemple : parents impliqués dans l’infraction reprochée au
+mineur).
+L’appréciation de l’existence de ces conditions n’exige pas de prendre une décision spéciale
+et motivée. Au cours de l’enquête, cette décision relève de la compétence de l’officier ou de
+l’agent de police judiciaire, sous réserve des éventuelles instructions du magistrat.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 56
+Les représentants légaux recouvrent leur droit d’être informés et d’assurer
+l’accompagnement du mineur, lorsque la ou les conditions ayant conduit à en empêcher
+l’exercice ne sont plus réunies (art. L. 311-4 du C.J.P.M.).
+3.2.3.3 - Désignation d’un adulte approprié
+Lorsque l’une ou plusieurs des conditions d’empêchement sont réunies, un adulte approprié
+doit être désigné pour recevoir les informations et assurer l’accompagnement du mineur à la
+place des représentants légaux.
+3.2.3.3.1 - Désignation par le mineur
+Le mineur peut désigner un adulte approprié, qui doit être accepté en tant que tel par
+l’autorité compétente, pour recevoir les informations identiques à celles communiquées au
+mineur et pour l’accompagner au cours de la procédure.
+Ainsi, lorsque cela apparaît nécessaire, il appartient à l’officier de police judiciaire de
+solliciter du mineur qu’il désigne cet adulte. Il peut choisir n’importe quelle personne
+majeure, qu’il s’agisse ou non d’un membre de sa famille.
+Cette personne doit toutefois être acceptée par l’enquêteur. Tout refus, même s’il n’a pas à
+être motivé, ne devrait être justifié que parce que l’intervention de cette personne semble
+contraire aux intérêts du mineur ou risque de compromettre le déroulement de la procédure.
+En cas de doute, l’officier de police judiciaire pourra en référer au magistrat compétent.
+3.2.3.3.2 - Désignation par le magistrat
+3.2.3.3.2.1 Parmi les proches du mineur :
+Lorsque le mineur n’a désigné aucun adulte ou que l’adulte désigné n’apparaît pas approprié
+pour l’autorité compétente, le procureur de la République, le juge des enfants ou le juge
+d’instruction désigne, en tenant compte de l’intérêt supérieur de l’enfant, une autre
+personne pour recevoir ces informations et accompagner le mineur. Dans un tel cas, même
+s’ils peuvent formuler des propositions, il n’appartient pas aux enquêteurs de désigner euxmêmes un adulte approprié. Cette désignation relève de la seule compétence du magistrat,
+qui choisira l’adulte approprié en priorité parmi les proches du mineur.
+3.2.3.3.2.2 L’administrateur ad hoc :
+Si aucun autre adulte ne peut être désigné, le procureur de la République, le juge des
+enfants ou le juge d’instruction choisit un administrateur ad hoc sur la liste prévue par les
+art. 706-51, R. 53 et R. 53-6 CPP (art. D. 311-2 du C.J.P.M.).
+3.2.3.3.3 - Rôle de l’adulte approprié (art. L. 311-3 du C.J.P.M.)
+L’adulte approprié, y compris s’il s’agit d’un administrateur ad hoc, ne dispose pas de
+l’ensemble des droits reconnus aux titulaires de l’autorité parentale.
+Il ne peut notamment pas demander que le mineur soit assisté par un avocat qu’il aurait
+choisi.
+Il sera en revanche informé des droits notifiés au mineur, et devra être convoqué aux
+auditions si cela apparaît nécessaire. En son absence, les auditions pourront se dérouler une
+fois écoulé le délai de carence de deux heures. S’il ne répond pas aux convocations, les
+auditions pourront valablement se dérouler en son absence, après mention en procédure.
+S’il assiste à des auditions, il ne peut intervenir pendant leur déroulement. Il est également
+prévu qu’il peut demander un examen médical du mineur placé en rétention (en pratique,
+seulement pour les mineurs de 16-18 ans).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 57

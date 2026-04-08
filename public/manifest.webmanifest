@@ -1,0 +1,12 @@
+{
+  "name": "ExamenOPJ",
+  "short_name": "ExamenOPJ",
+  "description": "Révisions pour l'examen d'Officier de Police Judiciaire",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "lang": "fr",
+  "orientation": "portrait-primary",
+  "categories": ["education", "books"]
+}

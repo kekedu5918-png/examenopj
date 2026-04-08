@@ -1,0 +1,2428 @@
+# F10 — La sanction
+
+| | |
+|---|---|
+| **PDF** | `_11_f10_la_sanction.pdf` |
+| **Référentiel infractions JSON** | **0** (fascicule **sanctions** : peines, récidive, concours, etc.) |
+
+## Déjà présent sur le site
+
+- `FondamentauxStructuredIntro` — rubrique **8. Récidive et concours d’infractions** (tableau indicatif — **TODO** relecture F10 p. 26).
+
+## TODO
+
+Compléter les **tableaux de récidive** et le **non bis in idem** depuis le fascicule ; ne pas inventer les délais et effets.
+
+Fascicule n°10 EXAMEN JUIN 2026
+TABLE DES MATIÈRES
+LA CLASSIFICATION DES PEINES ET MESURES DE SÛRETÉ
+LA CLASSIFICATION LÉGALE DES PEINES...........................................................P. 3
+LA CLASSIFICATION DES MESURES DE SÛRETÉ..................................................P. 7
+LES RÈGLES APPLICABLES EN CAS DE PLURALITÉ
+D’INFRACTIONS
+LE CONCOURS RÉEL D’INFRACTIONS................................................................P. 13
+LA RÉCIDIVE.....................................................................................................P. 19
+LA RÉITÉRATION D’INFRACTIONS....................................................................P. 29
+LES CAUSES D’AGGRAVATION DE LA SANCTION
+LES CIRCONSTANCES AGGRAVANTES................................................................P. 33
+LA BANDE ORGANISÉE......................................................................................P. 35
+LE GUET-APENS.................................................................................................P. 38
+LA PRÉMÉDITATION..........................................................................................P. 39
+L’EFFRACTION...................................................................................................P. 40
+L’ESCALADE.......................................................................................................P. 42
+LE PORT OU L’USAGE D’UNE ARME....................................................................P. 43
+LE CARACTÈRE RACISTE....................................................................................P. 46
+LE CARACTÈRE HOMOPHOBE.............................................................................P. 49
+L'UTILISATION D'UN MOYEN DE CRYPTOLOGIE................................................P. 51
+LA QUALITÉ DE CONJOINT, DE CONCUBIN OU DE PARTENAIRE LIÉ À LA
+VICTIME PAR UN P.A.C.S...................................................................................P. 53
+L’INCAPACITÉ TOTALE DE TRAVAIL..................................................................P. 55
+LA MUTILATION OU L’INFIRMITÉ PERMANENTE...............................................P. 57
+LA MORT........................................................................................................... P. 58
+LA MINORITÉ DE QUINZE ANS..........................................................................P. 59
+LA PARTICULIÈRE VULNÉRABILITÉ DE LA VICTIME..........................................P. 61
+QUALITÉ DE LA VICTIME QUI SE LIVRE À LA PROSTITUTION...........................P. 63
+QUALITÉ DE LA VICTIME DÉPOSITAIRE DE L’AUTORITÉ PUBLIQUE..................P. 64
+QUALITÉ DE VICTIME PARENTE D’UNE PERSONNE DÉPOSITAIRE DE
+L’AUTORITÉ PUBLIQUE.....................................................................................P. 66
+QUALITÉ DE LA VICTIME CHARGÉE D’UNE MISSION DE SERVICE PUBLIC.........P. 68
+QUALITÉ DE TÉMOIN, VICTIME, OU PARTIE CIVILE..........................................P. 70
+QUALITÉ DE LA VICTIME ASCENDANT DE L'AUTEUR.........................................P. 72
+QUALITÉ D'AUTEUR DÉPOSITAIRE DE L’AUTORITÉ PUBLIQUE OU CHARGÉ
+D’UNE MISSION DE SERVICE PUBLIC................................................................P. 73
+QUALITÉ D'AUTEUR ASCENDANT DE LA VICTIME OU AYANT AUTORITÉ
+SUR ELLE...........................................................................................................P. 75
+QUALITÉ D'AUTEUR ABUSANT DE SON AUTORITÉ.............................................P. 76
+AVEC UTILISATION D'UN RÉSEAU DE COMMUNICATION ÉLECTRONIQUE.........P. 77
+DANS UN ÉTABLISSEMENT D'ENSEIGNEMENT, D’ÉDUCATION OU DANS LES
+LOCAUX DE L'ADMINISTRATION.......................................................................P. 78
+AUTEUR IVRE OU SOUS L’EMPRISE DE STUPÉFIANTS.......................................P. 80
+LA CLASSIFICATION DES
+PEINES ET MESURES DE
+SÛRETÉ
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 1
+L A C L A S S I F I C AT ION LÉG A LE DE S PE INE S
+Le code pénal a établi une échelle des peines qui commande la
+classification tripartite des infractions en crimes, délits ou
+contraventions Elle figure aux articles 131-1 à 131-18 et 131-37
+à 131-44-1 du code pénal.
+CHAPITRE 1 :
+LES PEINES APPLICABLES AUX PERSONNES PHYSIQUES
+1.1 - LES PEINES CRIMINELLES
+1.1.1 - Les peines principales
+Les peines principales encourues en matière criminelle sont :
+√ la réclusion ou la détention criminelle à perpétuité ;
+√ la réclusion ou la détention criminelle de 30 ans au plus ;
+√ la réclusion ou la détention criminelle de 20 ans au plus ;
+√ la réclusion ou la détention criminelle de 15 ans au plus.
+La réclusion est applicable aux crimes de droit commun, la détention aux crimes politiques.
+Le juge peut prononcer une peine d’une durée inférieure à celles mentionnées à l’art. 131-1
+du C.P. mais la durée de la réclusion ou de la détention doit être de 10 ans au moins.
+Une peine d’amende peut également être appliquée, mais uniquement lorsque le texte
+réprimant le crime le prévoit expressément.
+1.1.2 - Les peines complémentaires
+Peuvent également être prononcées une ou plusieurs peines complémentaires prévues à
+l’article 131-10 du C.P. Les peines complémentaires peuvent s’ajouter aux peines principales
+et sont spécialement prévues par le texte qui réprime l’infraction.
+1.2 - LES PEINES CORRECTIONNELLES
+Les peines correctionnelles sont énumérées à l’article 131-3 du C.P.
+1.2.1 - Les peines principales
+Il s’agit de :
+√ l’emprisonnement avec une échelle comprenant 8 degrés (au plus 10 ans, au plus 7 ans,
+au plus 5 ans, au plus 3 ans, au plus 2 ans, au plus 1 an, au plus 6 mois et au plus 2 mois).
+Cet emprisonnement peut faire l'objet d'un sursis, d'un sursis probatoire ou d'un
+aménagement ;
+√ l’amende dont le montant minimum est de 3750 €.
+1.2.2 - Les peines alternatives
+√ la détention à domicile sous surveillance électronique pendant une durée comprise entre
+15 jours et 6 mois, sans excéder l’emprisonnement encouru (art. 131-4-1 du C.P.)
+√ la peine de jour-amende à la place de l’amende si le délit est puni d’une peine
+d’emprisonnement (art. 131-5 du C.P.) ;
+√ les peines privatives ou restrictives de droits prévues à l’art. 131-6 du C.P.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 3
+√ le travail d’intérêt général pour une durée de 20 à 400 heures à la place de la peine
+d’emprisonnement (art. 131-8 du C.P.) ;
+Les peines alternatives ne figurent pas dans le texte réprimant l’infraction, mais sont
+prévues par des dispositions générales. Le juge peut décider de les substituer à une ou
+plusieurs peines principales.
+1.2.3 - Les peines complémentaires
+Peuvent être prononcées une ou plusieurs peines complémentaires énoncées à l’article 131-
+10 du C.P. Elles peuvent être décidées en plus des peines principales ou à leur place.
+1.2.4 - Les peines de stage et la peine de sanction-réparation
+La peine de stage consiste dans l’obligation pour le condamné à accomplir, pour une durée
+ne pouvant excéder un mois, un stage dont la nature, les modalités et le contenu sont
+précisés par la juridiction (art. 131-5-1 C.P.).
+La peine sanction-réparation consiste dans l’obligation pour le condamné de procéder, dans
+le délai et selon les modalités fixées par la juridiction à l’indemnisation du préjudice de la
+victime (art. 131-8-1 C.P.).
+Ces peines peuvent être prononcées à titre de peine alternative à la place de
+l’emprisonnement (ou de l’amende pour la peine de sanction-réparation) ou de peine
+complémentaire s’ajoutant alors à la peine prononcée.
+1.3 - LES PEINES CONTRAVENTIONNELLES
+Les peines contraventionnelles sont prévues à l’article 131-12 du C.P..
+1.3.1 - Les peines principales
+L’article 131-13 du C.P. dispose que « constituent des contraventions les infractions que la
+loi punit d’une amende n’excédant pas 3 000 €. »
+Le montant de l’amende varie selon la classe de la contravention :
+√ 38 € au plus pour les contraventions de la 1ère classe ;
+√ 150 € au plus pour les contraventions de la 2ème classe ;
+√ 450 € au plus pour les contraventions de la 3ème classe ;
+√ 750 € au plus pour les contraventions de la 4ème classe ;
+√ 1500 € au plus pour les contraventions de la 5ème classe, montant pouvant être porté à
+3000 € en cas de récidive.
+1.3.2 - Les peines alternatives
+Elles ne sont prévues que pour les contraventions de 5ème classe et consistent en des
+peines privatives ou restrictives de droits prévues à l’article 131-14 du C.P..
+1.3.3 - Les peines complémentaires
+Lorsque le règlement réprimant la contravention le prévoit expressément des peines
+complémentaires peuvent être prononcées. Elles sont listées aux articles 131-16 et 131-17
+du C.P.. Le juge peut les prononcer soit en plus de l’amende, soit à titre principal à la place
+de l’amende.
+1.3.4 - La peine de sanction-réparation
+Elle est prévue uniquement pour les contraventions de la 5ème classe. Elle peut être
+prononcée à la place ou en même temps que l’amende ( art. 131 - 15-1 C.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 4
+CHAPITRE 2 :
+LES PEINES APPLICABLES AUX PERSONNES MORALES
+La répression applicable aux personnes morales figure aux articles 131-37 à 131-49 du C.P..
+2.1 - LES PEINES CRIMINELLES ET CORRECTIONNELLES
+Elles figurent à l’article 131-37 du C.P.
+Les peines criminelles et correctionnelles encourues par les personnes morales sont
+l’amende et, dans les cas prévus par la loi, les peines énumérées à l’article 131-39 et la
+peine prévue à l'article 131-39-2 du C.P. En matière correctionnelle, elles encourent
+également la peine de sanction-réparation prévue à l’article 131-39-1 du C.P.
+L’article 131-38 du C.P. fixe le taux maximum de l’amende qui est égal au quintuple de celui
+pour les personnes physiques pour l’infraction en question. Il convient donc de multiplier par
+cinq le montant maximum de l’amende encourue par les personnes physiques pour
+connaître celui encouru par les personnes morales. Lorsque l’on est en présence d’un crime
+pour lequel aucune peine d’amende n’est prévue à l’encontre des personnes physiques,
+l’amende encourue par la personne morale est alors de 1 000 000 €.
+2.2 - LES PEINES CONTRAVENTIONNELLES
+Les peines contraventionnelles encourues par les personnes morales sont énoncées à
+l’article 131-40 du C.P. Il s’agit de l’amende et pour les contraventions de la 5ème classe
+des peines privatives ou restrictives de droits prévues à l’article 131-42 du C.P., ainsi que la
+peine de sanction-réparation prévue à par l’ article 131-44-1 du C.P .
+Peuvent également être prononcées les peines complémentaires figurant à l’article 131-43
+du C.P., celles-ci pouvant être prises en complément d’une peine principale, mais également
+seules à titre de peine principale.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 5
+L A C L A S S I F I C AT ION DE S ME SU RE S
+DE SÛ RETÉ
+La mesure de sûreté a un but préventif en ce sens qu’elle cherche à
+éviter la survenance d’infractions en neutralisant, surveillant ou
+traitant les individus susceptibles d’être dangereux.
+Les mesures de sûreté ne font pas l’objet d’un titre du code
+pénal. Elles sont éparses, et il paraît difficile d’en faire un
+véritable inventaire.
+CHAPITRE 1 :
+LES MESURES DE SÛRETÉ CURATIVES
+Elles concernent essentiellement les alcooliques et toxicomanes
+1.1 - LE CONTRÔLE JUDICIAIRE
+Seul l’article 138 10° du C.P.P. prévoit dans le cadre du contrôle judiciaire l’obligation pour la
+personne de se soumettre à des mesures de traitement ou de soins, notamment aux fins de
+désintoxication.
+1.2 - LES MESURES THÉRAPEUTIQUES
+Le législateur a mis en place un système qui donne la priorité aux mesures thérapeutiques
+sur les sanctions pénales. Une injonction thérapeutique est prévue.
+CHAPITRE 2 :
+LES MESURES DE SURVEILLANCE
+2.1 - LE SUIVI SOCIO-JUDICIAIRE
+Le suivi socio-judiciaire (art. 131-36-1 à 131-36-8 C.P.) oblige le condamné, majeur ou
+mineur ayant commis des infractions de nature sexuelle ou des violences à se soumettre,
+sous le contrôle du juge de l’application des peines à des mesures de surveillance et
+d’assistance pendant une durée fixée par la juridiction de jugement. Il peut être assorti
+d’une injonction de soins si cela est bénéfique au condamné.
+Le suivi socio-judiciaire peut être assorti d’un placement sous surveillance électronique
+mobile décidé par la juridiction de jugement ou ultérieurement par le juge de l’application
+des peines.
+2.2 - LA SURVEILLANCE JUDICIAIRE DES PERSONNES DANGEREUSES
+Cette mesure prévue à l’article 723-29 du C.P.P. est uniquement envisageable aux fins de
+prévenir la récidive dont le risque paraît avéré. Elle peut être prononcée à l’encontre des
+auteurs de crime ou délit condamnés à une peine privative de liberté d’une durée égale ou
+supérieure à sept ans pour lequel le suivi socio-judiciaire était encouru mais n’a pas été
+prononcé ou d'une durée supérieure ou égale à cinq ans pour un crime ou un délit commis
+une nouvelle fois en état de récidive légale. Dans son contenu, la surveillance judiciaire
+ressemble au suivi socio-judiciaire.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 7
+CHAPITRE 3 :
+LES MESURES DE SÛRETÉ
+PORTANT ATTEINTE À LA LIBERTÉ
+3.1 - LES MESURES APPLICABLES AUX MINEURS
+Le code de la justice pénale des mineurs érige en principe fondamental la primauté de la
+réponse éducative sur la réponse répressive.
+3.1.1 - La mesure éducative judiciaire provisoire (M.E.J.P)
+Deux mesures éducatives peuvent être prononcées à l’égard d’un mineur : l’avertissement
+judiciaire et la mesure éducative judiciaire. La M.E.J.P. (art. L323-1 à L323-3 du C.J.P.M.)
+peut être prise à tout moment au cours de la procédure, avant le prononcé de la sanction,
+pour une durée d’un an renouvelable (art. L432-2 du C.J.P.M.). Elle est modulable en
+fonction des besoins et de l’évolution du mineur.
+3.1.2 - Les mesures d’investigation et de sûreté
+La M.E.J.P. peut s’accompagner d’une mesure judiciaire d’investigation éducative (M.J.I.E.),
+qui consiste en une évaluation approfondie et interdisciplinaire de la personnalité et de la
+situation du mineur, notamment ses conditions d’éducation, sa santé, sa scolarité, la
+situation matérielle et sociale de la famille.
+Le mineur peut également faire l’objet d’un placement sous contrôle judiciaire, prévoyant
+certaines obligations ou interdictions (interdiction de se rendre en certains lieux, d’entrer en
+contact avec certaines personnes...).
+Sous certaines conditions, les mineurs peuvent également faire l’objet, avant jugement,
+d’une assignation à résidence avec surveillance électronique ou d’un placement en détention
+provisoire.
+3.1.3 - La rétention et la surveillance de sûreté
+La loi du 25 février 2008 n’exclut pas les mineurs du dispositif de protection contre les
+criminels dangereux.
+3.2 - LES MESURES APPLICABLES AUX MAJEURS
+3.2.1 - L’interdiction de séjour
+Elle emporte défense de paraître dans certains lieux déterminés par la juridiction et
+s’accompagne de mesures de surveillance et d’assistance (art. 131-31 C.P.).
+3.2.2 - L'interdiction de manifester
+Elle emporte défense de manifester sur la voie publique dans certains lieux déterminés par
+la juridiction, pour une durée qui ne peut excéder trois ans (art. 131-32-1 C.P.)
+3.2.3 - Les mesures concernant les étrangers
+√ L’interdiction du territoire
+√ L’expulsion
+√ L’assignation à résidence
+√ L'assignation à résidence assortie de la surveillance électronique mobile
+√ L'obligation de quitter le territoire
+√ La rétention administrative
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 8
+3.2.4 - L’obligation d’accomplir un stage ( art. 131-5-1 du C.P. )
+Elle a pour but de prévenir la réitération des comportements dangereux ou inciviques.
+Les stages que peut prononcer la juridiction sont :
+√ Le stage de citoyenneté
+√ Le stage de sensibilisation à la sécurité routière
+√ Le stage de sensibilisation aux dangers de l'usage de produits stupéfiants
+√ Le stage de responsabilisation pour la prévention et la lutte contre les violences au sein
+du couple et sexistes
+√ Le stage de sensibilisation à la lutte contre l'achat d'actes sexuels
+√ Le stage de responsabilité parentale
+√ Le stage de lutte contre le sexisme et de sensibilisation à l'égalité entre les femmes et les
+hommes
+√ Le stage de sensibilisation à la prévention et à la lutte contre la maltraitance animale
+√ Le stage de sensibilisation au respect des personnes dans l'espace numérique et à la
+prévention des infractions commises en ligne, dont le cyberharcèlement.
+3.2.5 - Les interdictions et restrictions ( art. 131-6 du C.P. )
+√ Les interdictions professionnelles
+Il peut s’agir soit de l’interdiction d’exercer l’activité professionnelle ou sociale, soit de
+l’interdiction d’exercer des fonctions publiques.
+L’interdiction d’exercer des fonctions publiques s’applique avant tout aux fonctionnaires
+auteurs d’infractions.
+L’interdiction d’exercer une activité professionnelle ou sociale peut être prononcée en
+matière correctionnelle comme peine alternative si les facilités que procurait l’activité ont
+été sciemment utilisées par l’intéressé pour préparer ou commettre l’infraction. À titre de
+peine complémentaire l’interdiction peut porter soit sur l’activité dans l’exercice ou à
+l’occasion de l’exercice de laquelle l’infraction a été commise, soit sur toute activité
+professionnelle ou sociale définie par la loi.
+√ La suspension et l’annulation du permis de conduire
+√ L'interdiction de conduire certains véhicules
+√ La confiscation ou l’immobilisation de véhicules
+√ La confiscation ou l’interdiction de port/détention d’armes
+√ Le retrait du permis de chasser
+√ L’interdiction d’émettre des chèques ou d’utiliser des cartes de paiement
+√ La confiscation de la chose qui a servi ou était destinée à commettre l'infraction, ou qui en
+est le produit
+√ L’interdiction de paraître en certains lieux
+√ L’interdiction d’utiliser les comptes d’accès à des services de plateforme en ligne
+√ L’interdiction de fréquenter ou d’entrer en relation avec certaines personnes
+3.2.6 - L'hospitalisation complète pour cause de trouble mental
+√ Les juridictions judiciaires peuvent prononcer des mesures de sûreté applicables aux
+personnes ayant fait l'objet d'une décision d'irresponsabilité pénale pour cause de trouble
+mental à la suite d'une infraction. Ainsi peut être prononcée, par ordonnance motivée,
+l'admission en soins psychiatriques de la personne sous la forme d'une hospitalisation
+complète (art. 706-135 C.P.P.). D'autres mesures de sûreté peuvent être prononcées,
+comme l'interdiction de rencontrer la victime ou de porter une arme.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 9
+3.2.7 - La rétention et la surveillance de sûreté ( art. 706-53-13 à 706-53-22
+ du C.P.P. )
+La rétention consiste en un placement de l’intéressé dans un centre socio-médico-judiciaire
+de sûreté où des soins médicaux sont proposés.
+Elle ne s’applique que si trois conditions sont réunies :
+√ la peine prononcée doit être égale ou supérieure à 15 ans de réclusion criminelle ;
+√ la condamnation porte sur des crimes précis ;
+√ le condamné doit présenter une certaine dangerosité caractérisée par une probabilité très
+élevée de récidive.
+Le placement en rétention de sûreté nécessite une procédure particulière.
+À l'issue de cette mesure de rétention, la personne peut faire l'objet d'une surveillance de
+sûreté pendant une durée renouvelable de deux ans (injonction de soins, placement sous
+surveillance électronique, etc.)
+3.2.8 - Le placement sous surveillance électronique ( art. 763-10 à 763-14
+ du C.P.P. )
+Il a pour but de renforcer la prévention de la récidive des infractions les plus graves. Ce
+dispositif permet après la libération du condamné de le munir d’un bracelet GPS afin de
+connaître ses déplacements et sa localisation. Il constitue une nouvelle obligation du suivi
+socio-judiciaire mais peut également être prononcé dans le cadre de la libération
+conditionnelle ou comme obligation de la surveillance des personnes dangereuses.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 10
+LES RÈGLES APPLICABLES EN
+CAS DE PLURALITÉ
+D’INFRACTIONS
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 11
+LE CON COU R S RÉE L D ’ IN F R A CT ION S
+Le chapitre II du titre III du code pénal (Livre I) consacré au
+régime des peines, comporte une sous-section "des peines
+applicables en cas de concours d'infractions".
+L'article 132-2 du C.P. dispose : "Il y a concours d'infractions
+lorsqu'une infraction est commise par une personne avant que
+celle-ci ait été définitivement condamnée pour une autre
+infraction".
+CHAPITRE 1 :
+NOTIONS
+Le concours réel correspond à la situation dans laquelle se trouve un individu qui commet
+plusieurs infractions non séparées par une condamnation définitive.
+1.1 - LES HYPOTHÈSES DE CONCOURS RÉEL
+√ Un individu commet une infraction, par exemple un vol, pour laquelle il est poursuivi.
+Quelque temps après le jugement qui n'est pas encore définitif, il commet un nouveau vol.
+Les deux infractions sont alors en concours réel, puisque la première condamnation est
+encore susceptible de voies de recours.
+√ Une personne commet successivement plusieurs infractions. Celles-ci sont découvertes et
+poursuivies soit en même temps, soit séparément.
+Ex. : un individu est interpellé en flagrant délit de "vol à la roulotte" et reconnaît en avoir
+commis une dizaine au cours de la nuit écoulée.
+√ Une personne commet plusieurs infractions de façon quasi concomitante.
+Ex. : un individu outrage des gardiens de la paix, se rebelle contre eux, et leur fait subir des
+violences.
+1.2 - LA SOLUTION LÉGALE
+√ L'article 5 de l'ancien code pénal prescrivait comme principe la confusion des peines : "en
+cas de conviction de plusieurs crimes ou délits, la peine la plus forte est seule prononcée".
+√ Ce système faisant l'objet de nombreuses critiques, le législateur a disposé à l'article 132-
+3 du C.P. qu'en cas de concours de plusieurs infractions poursuivies à l'occasion d'une même
+procédure, "chacune des peines encourues peut être prononcée". Mais lorsque plusieurs
+peines de même nature sont encourues, une seule peine est prononcée dans la limite du
+maximum légal le plus élevé.
+√ L'article 132-4 du C.P. dispose quant à lui, qu'en cas de concours d'infractions poursuivies
+à l'occasion de procédures distinctes, "les peines prononcées s'exécutent cumulativement
+dans la limite du maximum légal le plus élevé. Toutefois, la confusion totale ou partielle des
+peines de même nature peut être ordonnée..."
+√ Le principe général est le non-cumul, mais il est atténué.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 13
+1.3 - LES CONFLITS DE QUALIFICATIONS
+1.3.1 - Définition
+Dans le cas de poursuites concomitantes, il peut y avoir conflit de qualifications lorsque les
+faits peuvent constituer des infractions distinctes, réprimées par des textes différents. On
+parle alors également de « concours idéal » d’infractions.
+Afin de déterminer si des infractions peuvent entrer en concours réel, et donc si chacune des
+peines encourues peut être prononcée, il convient en premier lieu de résoudre les conflits de
+qualifications.
+Au stade de l’enquête de police, et même si la qualification des faits revient in fine au
+procureur de la République, l’enjeu consiste à identifier tous les faits répréhensibles ainsi
+que les textes répressifs applicables, afin de retenir la ou les qualifications possibles.
+1.3.2 - Le principe : interdiction du cumul de qualifications pour des mêmes
+faits
+Ce principe s’applique uniquement aux cas où un fait ou des faits identiques sont en cause.
+Si les faits incriminés sont distincts, il importe peu qu’ils soient indissociables et que leur
+auteur ait poursuivi une seule intention coupable.
+Lorsque les faits sont identiques, le cumul de qualifications est interdit dans les hypothèses
+suivantes :
+1.3.2.1 - Les qualifications incompatibles
+Les faits incriminés ne peuvent recevoir plusieurs qualifications lorsqu’elles sont
+incompatibles, ou exclusives l’une de l’autre : la caractérisation des éléments constitutifs de
+l’une des infractions exclut la caractérisation des éléments constitutifs de l'autre.
+Il est impossible caractériser une infraction lorsque l’autre est constituée.
+Exemples :
+– La jurisprudence considère comme incompatibles le recel et l’infraction d’origine dont provient la chose
+recelée,
+– Le meurtre et l’homicide involontaire,
+– Le délit de fuite et les dégradations volontaires...
+1.3.2.2 - La règle du « non bis in idem »
+La résolution des autres conflits de qualifications est basée sur la règle du Non bis in
+idem (ou ne bis in idem), qui peut se traduire par « Pas deux fois pour la même chose ». La
+Cour de cassation l’énonce ainsi : un même fait autrement qualifié ne peut donner lieu à
+plusieurs déclarations de culpabilité.
+Ainsi, on ne peut pas retenir plusieurs qualifications des mêmes faits dans les cas suivants :
+√ Qualifications absorbantes :
+L'une des qualifications, telles qu'elles résultent des textes d'incrimination, correspond à un
+élément constitutif ou une circonstance aggravante de l'autre.
+Exemples :
+– Le crime de viol commis par violence, et le délit de violences volontaires,
+– Le délit de vol avec violence et le délit de violences volontaires.
+√ Qualifications générales et spéciales :
+L'une des qualifications retenues, dite spéciale, incrimine une modalité particulière de
+l'action répréhensible sanctionnée par l'autre infraction, dite générale.
+Exemple :
+– Les crimes d’assassinat et d’empoisonnement
+– L’usage illicite de produits stupéfiants, prévu par les dispositions spéciales de l'article L. 3421-1 du code de
+la santé publique, et la détention de tels produits prévue à l'article 222-37 du code pénal (si les substances
+sont exclusivement destinées à la consommation)
+– Le recel d’une chose provenant d’un délit ou d’un crime, et le trafic de fausse monnaie (transport, la mise
+en circulation, la détention en vue de la mise en circulation)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 14
+1.3.3 - Exemples de cumuls possibles :
+√ En matière d’atteintes involontaires à la vie à l’intégrité physique des personnes :
+Lorsqu’un seul et même accident a causé à plusieurs victimes des dommages de gravité
+différente, l’auteur peut-être poursuivi cumulativement des chefs de :
+– homicide involontaire par conducteur d’un véhicule terrestre à moteur ( art. 221-6-1 du
+C.P.) si l’une des victimes est décédée,
+– Atteintes involontaires à l’intégrité de la personne commises par le conducteur d’un
+véhicule terrestre à moteur ayant entraîné une I.T.T. ≤ 3 mois (art. 222-20-1 du C.P.) si
+une autre victime est grièvement blessée.
+En effet, cette situation ne correspond à aucune des hypothèses d’interdiction de cumul :
+ces qualifications ne sont pas incompatibles, et les éléments constitutifs de chacune des
+deux infractions sont distincts et ne constituent pas une circonstance aggravante de l’autre.
+√ En matière d’escroquerie et de faux
+En produisant de fausses attestations notariales ainsi qu'un faux certificat de dépôt fiduciaire
+établis par ses soins, visant à faire croire à la solvabilité de l’acquéreur, faits constitutifs de
+manœuvres frauduleuses, un individu a trompé les victimes pour les déterminer, à leur
+préjudice, à vendre leurs parts dans une société, sans s'acquitter de l'intégralité du prix de
+vente.
+L’auteur peut être cumulativement poursuivi des chefs de :
+– Faux, et usage de faux (art. 441-1 du C.P.)
+– Escroquerie (art. 313-1 du C.P.)
+Ces infractions ne sont pas incompatibles, et aucune d’elles n'est un élément constitutif ou
+une circonstance aggravante des autres. En effet, l'article 313-1, qui incrimine l'escroquerie,
+vise les manœuvres frauduleuses et non spécifiquement le faux ou l'usage de faux comme
+élément constitutif de ce délit.
+CHAPITRE 2 :
+DOMAINE D'APPLICATION
+2.1 - LE PRINCIPE EST D'APPLICATION GÉNÉRALE
+La règle du non-cumul des peines a vocation générale.
+2.2 - ATTÉNUATIONS DU PRINCIPE
+2.2.1 - Exclusion des contraventions
+L’article 132-7 du C.P. dispose que "les peines d'amende pour contravention se cumulent
+entre elles".
+2.2.2 - Exclusion des sanctions non pénales
+La jurisprudence exclut l'application de la règle du non-cumul lorsque sont en concours une
+peine et une sanction disciplinaire.
+Les amendes fiscales se cumulent avec les peines de droit commun.
+La contrainte judiciaire étant considérée comme une voie forcée d'exécution est prononcée
+cumulativement.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 15
+2.2.3 - Exclusion de certaines peines en raison de leur nature
+L'article 132-5 du C.P. indique que les peines privatives de liberté sont de même nature et
+ne peuvent donc se cumuler que dans la limite du maximum de la peine la plus forte.
+√ Exclusion de certaines peines principales
+Lorsque plusieurs peines de nature différente sont prévues pour chacune des infractions
+commises en concours, on ne pourra appliquer la règle du non-cumul. Une peine de chaque
+nature pourra être prononcée.
+Exemple :
+– emprisonnement et amende.
+√ Peines complémentaires
+Les peines complémentaires prévues pour chacune des infractions se trouvant en concours
+réel peuvent se cumuler.
+Exemple :
+– confiscations, interdiction de séjour, interdiction des droits civils, civiques et de famille.
+2.2.4 - Exclusions spéciales
+Certains textes consacrent des exceptions au principe.
+2.2.4.1 - L'évasion
+Article 434-31 du C.P. : les peines prononcées pour le délit d'évasion se cumulent avec
+celles que subissait l'évadé ou celles prononcées ultérieurement pour l'infraction à raison de
+laquelle il était détenu.
+2.2.4.2 - La rébellion de prisonniers
+Article 433-9 du C.P. : La peine prononcée pour le délit de rébellion se cumule avec celle que
+l'intéressé subissait.
+2.2.4.3 - L'usurpation d'identité
+Article 434-23 du C.P. : Les peines prononcées pour l'usurpation se cumulent avec celles
+réprimant l'infraction à l'occasion de laquelle l'usurpation a été commise.
+2.2.4.4 - L'organisation frauduleuse d'insolvabilité
+Article 314-8 al. 2 du C.P. : quand la condamnation patrimoniale à laquelle le débiteur a
+tenté de se soustraire a été prononcée par le juge pénal, le tribunal peut décider que la
+peine dont il décide ne se confondra pas avec celle précédemment prononcée.
+2.2.4.5 - Le refus d’obtempérer
+Article L 233-1/II du C.R. : les peines prononcées pour le délit de refus d’obtempérer se
+cumulent avec celles prononcées pour les autres infractions commises à l’occasion de la
+conduite du véhicule.
+2.2.4.6 - Le concours d’infractions liées à la C.D.O. commises en détention
+Article 132-6-1 du C.P. : lorsque l’auteur a commis une infraction mentionnée aux articles
+706-73 et 706-73-1 du C.P.P. alors qu’il était détenu, les peines prononcées pour cette
+infraction se cumulent, sans possibilité de confusion, avec celles prononcées pour l’infraction
+en raison de laquelle il était détenu.
+La dernière juridiction appelée à statuer sur l’une des infractions commises en concours
+peut, par une décision spécialement motivée, décider de ne pas faire application de ces
+dispositions.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 16
+CHAPITRE 3 :
+MISE EN ŒUVRE DE LA RÈGLE
+L'article 132-3 du C.P. précise que lorsque plusieurs infractions sont commises et se trouvent
+en concours, le juge peut prononcer toutes les peines encourues. Mais, en cas de poursuite
+unique il ne peut être prononcé qu'une seule peine de même nature dans la limite du
+maximum légal le plus élevé.
+Exemple :
+– lorsqu'un individu commet un vol et une escroquerie, il se verra appliquer une peine d'emprisonnement
+dans la limite de cinq ans.
+3.1 - EN CAS DE POURSUITE UNIQUE
+Toutes les infractions qui se trouvent en concours vont donner lieu à des poursuites. Ces
+dernières vont avoir lieu devant une juridiction unique.
+Chaque infraction va être examinée, et une décision sur la culpabilité de l'individu va être
+prise dans chaque cas.
+Le code pénal autorise le prononcé cumulatif des peines de nature différente (art. 132-3
+C.P.). Mais ce cumul n'a pas de caractère obligatoire et le juge peut ne prononcer que
+certaines des peines encourues.
+Lorsque les peines encourues sont de même nature, la juridiction va prononcer une peine
+principale unique qui ne peut dépasser le maximum légal prévu pour l'infraction la plus
+grave.
+Si plusieurs peines sont prévues pour chacune des infractions en concours (emprisonnement
+et amende), une peine de chaque nature peut être prononcée. Ainsi des peines prévues
+pour des infractions différentes peuvent s'appliquer cumulativement.
+Exemple :
+– Les infractions en concours sont des violences volontaires ayant entraîné une I.T.T.> 8 jours, sur mineur
+de 15 ans, et avec usage d’une arme (art. 222-12 du C.P.) et un abus de confiance (art. 314-1 du C.P.).
+Les peines encourues sont pour la première infraction 7 ans d'emprisonnement et 100 000 € d'amende,
+pour la seconde 5 ans d'emprisonnement et 375 000 € d'amende. Le juge va pouvoir prononcer 7 ans
+d'emprisonnement et 375 000 € d'amende.
+Comment est déterminée la peine la plus forte encourue ? La peine la plus forte est celle
+dont le maximum est le plus élevé, tout en tenant compte des causes de diminution de
+peine (minorité) et des causes d'aggravation (récidive).
+3.2 - EN CAS DE PLURALITÉ DE POURSUITES
+C’est le cas lorsque les infractions en concours relèvent de la compétence de tribunaux
+différents ou lorsqu'elles n'ont pas été découvertes en même temps.
+La règle du non-cumul s'applique tout en autorisant, dans certaines limites, la confusion des
+peines.
+3.2.1 - Principe de la confusion des peines
+3.2.1.1 - Lorsque les peines encourues sont de même nature
+Les peines prononcées se cumulent dans la limite du maximum légal le plus élevé. Lorsque
+le cumul des peines dépasse le maximum légal, la confusion est obligatoire. Lorsque le
+cumul aboutit à une peine au-dessous du maximum, la confusion est une possibilité laissée
+au juge, elle n'est pas obligatoire.
+La confusion peut être totale ou partielle. Elle peut s'appliquer aux peines complémentaires
+de même nature.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 17
+3.2.1.2 - Cas des peines perpétuelles
+Les peines perpétuelles se confondent entre elles.
+3.2.1.3 - Lorsque les peines encourues sont de nature différente.
+Les peines peuvent s'exécuter cumulativement. Sous l'ancien code pénal la confusion
+s'opérait de plein droit. Le code pénal ne se prononce pas, et il faudra attendre des décisions
+jurisprudentielles.
+3.2.2 - Effets de la confusion des peines
+La confusion n'enlève pas aux peines confondues leur existence propre et leurs
+conséquences légales : les condamnations subsistent.
+L'exécution de la peine la plus forte entraîne celle des peines les plus faibles, toutes étant
+censées s'exécuter en même temps.
+3.2.3 - Procédure de la confusion
+Articles 132-4 du C.P. et 710-1 du C.P.P.
+√ La juridiction saisie de la 2ème infraction, ayant connaissance du passé judiciaire du
+délinquant, peut prononcer la confusion des peines.
+√ Si la juridiction ne s'est pas prononcée sur la confusion, le condamné ou le surveillant
+chef de l'établissement où les peines s'exécutent, peut adresser une requête au procureur
+de la République. Le procureur de la République peut ordonner la confusion.
+La personne condamnée peut demander la confusion de peines prononcées contre elle après
+que les condamnations sont devenues définitives. Sa demande est portée devant le tribunal
+correctionnel dont la décision peut faire l’objet d’un appel devant la chambre des appels
+correctionnels.
+Sont compétents le ou les tribunaux correctionnels ayant prononcé les peines ou se trouvant
+au siège d’une des juridictions ayant prononcé les peines.
+La juridiction du lieu de détention est également compétente.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 18
+L A RÉ C ID I VE
+La récidive est la principale cause qui permet au juge de
+dépasser le maximum normal de la peine. Le délinquant après
+avoir été condamné pour une première infraction en commet une
+seconde.
+La récidive suppose une condamnation définitive passée en force
+de chose jugée qui va constituer le premier terme de la récidive.
+Elle nécessite également une seconde infraction qui va être le
+deuxième terme de la récidive.
+CHAPITRE 1 :
+LES TERMES DE LA RÉCIDIVE
+ARTICLES 132-8 ET SUIVANTS DU C. P.
+1.1 - LE PREMIER TERME DE LA RÉCIDIVE : UNE PREMIÈRE
+CONDAMNATION
+La première condamnation doit avoir le caractère d’une peine. Ainsi les sanctions
+administratives, les mesures de sûreté ne peuvent constituer le premier terme. Il en est de
+même d’un acquittement ou d’une mesure de rééducation prise à l’encontre d’un mineur.
+Sont prises en compte les peines encourues pour telle infraction et non les peines
+prononcées par le tribunal.
+La condamnation doit avoir été prononcée par une juridiction pénale française ou d’un État
+membre de l’Union européenne (art. 132-23-1 du C.P.). Lorsque la condamnation a été
+prononcée par une juridiction pénale d’un État membre de l’Union européenne, la
+qualification des faits est déterminée par rapport aux incriminations définies par la loi
+française et sont prises en compte les peines équivalentes (art. 132-23-2 du C.P.). Les
+autres condamnations étrangères ne sont pas prises en considération bien qu’elles soient
+susceptibles de révéler l’état dangereux de la personne.
+La condamnation doit être définitive. Elle doit être passée en force de chose jugée avant que
+la seconde infraction intervienne. Dans le cas contraire on se trouve en présence d’un
+concours réel d’infractions.
+Dans un avis du 26 janvier 2009, la Cour de cassation estime qu’une condamnation avec
+sursis, réputée non avenue (qui n’a pas été révoquée), peut constituer le premier terme
+d’une récidive.
+Il importe peu que la peine ait été exécutée ou non.
+Une condamnation par le tribunal de police ou le tribunal correctionnel ne devient définitive
+qu’à l’expiration du délai d’appel du Procureur général qui est de 20 jours à compter du
+prononcé de la décision (art. 505 C.P.P.).
+La condamnation doit encore être inscrite au casier judiciaire au moment de la commission
+de la seconde infraction. Si elle a été effacée par une amnistie, elle ne peut plus servir de
+premier terme. Par contre en cas de grâce la récidive peut être retenue, la grâce entraînant
+seulement une dispense d’exécuter la peine.
+1.2 - LE SECOND TERME DE LA RÉCIDIVE : UNE INFRACTION ULTÉRIEURE
+Le code pénal prévoit quatre cas de récidive : articles 132-8 à 132-11 du C.P.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 19
+1.2.1 - Récidive de crime ou de délit puni de 10 ans d’ emprisonnement, à
+crime
+Article 132-8 du C.P. : celui qui, condamné une première fois pour un crime ou un délit puni
+de 10 ans d’emprisonnement, commet ultérieurement un autre crime, est en état de
+récidive.
+Sont assimilés aux crimes les délits punis de 10 ans d’emprisonnement.
+Ex. : violences ayant entraîné une mutilation ou une infirmité permanente.
+Le second terme de la récidive doit être un crime.
+Cette récidive est générale : il n’est pas nécessaire que les deux infractions successives
+soient similaires.
+La récidive est perpétuelle : elle sera appliquée quel que soit le temps écoulé entre les deux
+infractions, et ce tant que la première infraction n’est pas effacée.
+1.2.2 - Récidive de crime ou délit puni de 10 ans d’ emprisonnement, à délit
+Article 132-9 du C.P. : celui qui, condamné une première fois pour un crime ou un délit puni
+de 10 ans d’emprisonnement, commet ultérieurement un nouveau délit, est en état de
+récidive.
+Le second terme est tout délit dont la peine encourue est supérieure à un an
+d’emprisonnement.
+√ La récidive est générale : les deux infractions ne doivent pas nécessairement être identiques.
+√ La récidive est temporaire : la seconde infraction doit avoir été commise dans un certain
+délai après expiration ou prescription de la précédente peine. Ces délais sont les suivants :
+– lorsque le second délit est puni de 10 ans d’emprisonnement, le délai est de 10 ans.
+– lorsque le second délit est puni d’une peine inférieure à 10 ans d’emprisonnement, le
+délai est de 5 ans.
+1.2.3 - La récidive correctionnelle
+Article 132-10 du C.P. : celui qui, déjà condamné définitivement pour un délit, commet,
+dans le délai de 5 ans à compter de l’expiration ou de la prescription de la précédente peine,
+le même délit ou un délit assimilé, est récidiviste.
+√ Le premier terme de la récidive correctionnelle est constitué d’un délit puni d’une peine
+inférieure à 10 ans d’emprisonnement. Peu importe la durée de la peine d’emprisonnement
+ou que la juridiction ait prononcé une peine d’amende ou même un travail d’intérêt général.
+√ Le second terme de la récidive doit être un délit, mais il n’est pas nécessaire que la peine
+encourue soit un emprisonnement.
+La récidive correctionnelle est temporaire et spéciale. La seconde infraction doit avoir été
+commise dans un délai de 5 ans après l’expiration de la première peine ou de sa
+prescription.
+Les deux termes de la récidive doivent être identiques ou assimilés.
+Le législateur a expressément assimilé certains délits pour l’application de la récidive.
+C’est le cas :
+– du vol, de l’extorsion, du chantage, de l’escroquerie et de l’abus de confiance (art. 132-
+16 C.P.) ;
+– de l’agression sexuelle et des atteintes sexuelles (art. 132-16-1 C.P.) ;
+– de certains délits routiers comme l’homicide involontaire, les atteintes involontaires à
+l’intégrité de la personne commis à l’occasion de la conduite d’un véhicule terrestre à
+moteur, l’homicide routier, les blessures routières etc (art. 132-16-2 C.P.) ;
+– du délit de traite des êtres humains et de proxénétisme (art. 132-16-3 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 20
+– des délits de violences volontaires et tout délit commis avec la circonstance aggravante
+de violences (art. 132-16-4 C.P.)
+– des délits relatifs au trafic d’armes (art. 132-16-4-1 du C.P.) ;
+– du recel et du délit qui a procuré les choses recelées (art.321-5 du C.P.)
+D’autres assimilations sont prévues dans le cadre de textes spéciaux. C’est le cas par
+exemple pour certains délits concernant des armes.
+1.2.4 - La récidive contraventionnelle
+Article 132-11 du C.P. : celui qui, déjà condamné définitivement pour une contravention de
+5
+e
+ classe, commet la même contravention, est récidiviste.
+La récidive contraventionnelle obéit à des règles particulières en raison de la faible gravité
+du trouble.
+Le règlement doit prévoir expressément la récidive : c’est le cas pour les violences
+volontaires, la provocation non publique à la discrimination, à la haine ou à la violence
+raciales, la vente forcée par correspondance, etc.
+√ La récidive contraventionnelle est spéciale. La seconde infraction doit être la même
+contravention que celle constituant le premier terme.
+√ La récidive contraventionnelle est temporaire. La seconde contravention doit avoir été
+commise dans les 12 mois qui suivent l’expiration ou de la prescription de la précédente
+peine.
+√ La récidive d’une contravention de 5e
+ classe peut devenir un délit :
+La loi du 12 juin 2003 renforçant la lutte contre la violence routière précise que dans les cas
+où la loi prévoit que la récidive d’une contravention de 5e
+ classe constitue un délit, la
+récidive est constituée si les faits sont commis dans le délai de 3 ans à compter de
+l’expiration ou de la prescription de la précédente peine (art. 132-11 al. 2 C.P.).
+1.2.5 - Les cas spéciaux de récidive
+Il existe des exceptions au droit commun de la récidive.
+Certains textes spéciaux cherchent à écarter toute possibilité d’aggravation de la peine. La
+loi du 29 juillet 1881 sur la presse exclut le mécanisme de la récidive sauf pour certaines
+infractions comme l’apologie des crimes de guerre.
+Certains textes touchent au délai de récidive.
+Ex. : en matière d’infractions de chasse, le délai est de 12 mois au lieu de 5 ans dans le
+régime commun pour les délits.
+CHAPITRE 2 :
+LA RÉCIDIVE APPLIQUÉE AUX PERSONNES MORALES
+Le code pénal a prévu la récidive pour les personnes morales.
+2.1 - RÉCIDIVE DE CRIME (OU DÉLIT ASSIMILÉ) À CRIME
+Art. 132-12 du C.P. : La personne morale déjà condamnée définitivement pour un crime ou
+un délit punissable de 100 000 € d’amende (somme prévue pour les personnes physiques),
+qui engage ultérieurement sa responsabilité pénale par un crime est récidiviste.
+La récidive est générale et perpétuelle.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 21
+2.2 - RÉCIDIVE DE CRIME (OU DÉLIT ASSIMILÉ) À DÉLIT
+Article 132-13 du C.P. : La personne morale déjà condamnée définitivement pour un crime
+ou un délit punissable de 100 000 € d’amende (pour les personnes physiques), qui engage
+ultérieurement sa responsabilité pénale par un délit est récidiviste.
+La récidive est générale et temporaire.
+√ La seconde infraction qui est aussi un délit puni de 100 000 € d’amende doit être
+commise dans les 10 ans suivant l’expiration ou la prescription du 1er terme.
+√ La seconde infraction qui est un délit puni d’une peine d’amende inférieure à 100 000 €
+mais supérieure à 15 000 € doit être commise dans les 5 ans.
+√ récidive de délit a délit
+Article 132-14 du C.P. : la personne morale déjà condamnée définitivement pour un délit,
+qui commet ultérieurement un délit identique ou assimilé, est récidiviste.
+La récidive est spéciale et temporaire.
+Le second délit doit être identique ou similaire au premier terme. Le vol, l’extorsion, le
+chantage, l’escroquerie et l’abus de confiance sont considérés comme une même infraction.
+Le second délit doit avoir été commis dans un délai de 5 ans après l’expiration ou la
+prescription de la peine.
+2.3 - RÉCIDIVE EN MATIÈRE DE CONTRAVENTION
+La récidive n’est prévue que pour les contraventions de 5e
+ classe, et à condition que le
+règlement l’ait expressément mentionnée (art. 132-15 C.P.).
+La récidive est spéciale et temporaire.
+Il s’agit de la réitération de la même contravention dans le délai d’un an à compter de
+l’expiration de la peine.
+CHAPITRE 3 :
+LA PREUVE DE LA RÉCIDIVE : LE CASIER JUDICIAIRE
+Ce sont les articles 768 et suivants du C.P.P. qui en prévoient l’organisation et le
+fonctionnement. Le casier judiciaire national automatisé, qui peut comporter un ou plusieurs
+centres de traitement, dépend de l’autorité du ministre de la justice.
+Le relevé des fiches est demandé au casier judiciaire national automatisé.
+3.1 - L’ ORGANISATION DU CASIER JUDICIAIRE : LES BULLETINS
+3.1.1 - Le bulletin numéro 1
+3.1.1.1 - Pour les personnes physiques
+Il consiste en un relevé intégral des fiches concernant une personne et contient toutes les
+condamnations. Il ne peut être délivré qu’aux autorités judiciaires : art. 774 du C.P.P.
+3.1.1.2 - Pour les personnes morales
+Il comprend le relevé intégral des fiches du casier judiciaire applicables à la personne morale
+(art. 774-1 C.P.P.).
+3.1.1.3 - Retrait des fiches :
+Les articles 769, 769-1 et 770 du C.P.P. précisent les modalités de modification et de
+suppression des mentions figurant au bulletin. Ainsi ne peuvent figurer au bulletin n° 1 les
+condamnations effacées par l’amnistie, qui ont donné lieu à réhabilitation.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 22
+3.1.2 - Le bulletin numéro 2
+C’est un relevé des fiches du casier, mais avec exclusion de certaines condamnations.
+3.1.2.1 - Pour les personnes physiques ( art. 775 C.P.P. )
+Il peut être délivré (art. 776 C.P.P.) :
+√ Aux préfets et administrateurs publics de l’État saisis de candidatures aux fonctions de
+juge d’un tribunal de commerce, de demandes d’emplois publics, de propositions relatives à
+des distinctions honorifiques ou de soumissions pour des adjudications de travaux ou de
+marchés publics ou en vue de poursuites disciplinaires ou de l’ouverture d’une école privée,
+ainsi que de demandes d’agrément destinées à permettre la constatation par procès-verbal
+d’infractions à la loi pénale.
+√ Aux autorités militaires et aux autorités publiques compétentes en cas de contestation sur
+l’exercice des droits électoraux ou sur l’incapacité d’exercer une fonction publique élective.
+√ Aux administrations et personnes morales dont la liste est fixée à l’article 779 du C.P.P.,
+ainsi qu’aux administrations ou organismes chargés par la loi ou le règlement du contrôle de
+l’exercice d’une activité professionnelle ou sociale lorsque cet exercice fait l’objet de
+restrictions expressément fondées sur l’existence de condamnations pénales ou de sanctions
+disciplinaires.
+√ Aux présidents des tribunaux de commerce et aux juges commis à la surveillance du
+registre du commerce.
+√ Aux présidents de conseils départementaux saisis d’une demande d’agrément en vue
+d’adoption.
+√ Aux autorités compétentes désignées par arrêté du ministre de la Justice lorsqu’elles
+reçoivent une demande de communication des sanctions pénales ou disciplinaires
+prononcées à l’encontre d’un professionnel de la part d’une autorité d’un autre État membre
+de la Communauté européenne ou partie à l’accord sur l’Espace économique européen
+chargée d’appliquer dans celui-ci des restrictions d’exercice concernant cette activité
+professionnelle.
+√ Aux autorités compétentes pour recevoir les déclarations de candidatures à une élection
+afin de vérifier si la peine prévue au 2° de l’article 131-26 et aux articles 131-26-1 et 131-
+26-2 du code pénal y est mentionnée.
+√ Les dirigeants de personnes morales de droit public ou privé exerçant auprès des mineurs
+une activité culturelle, éducative ou sociale pour les seules nécessités liées au recrutement
+d’une personne, lorsque ce bulletin ne porte la mention d’aucune condamnation. La liste de
+ces personnes doit être déterminée par décret.
+3.1.2.2 - Pour les personnes morales ( art. 775-1 A C.P.P. )
+Il peut être délivré (art. 776-1 C.P.P.) :
+√ Aux préfets, aux administrations de l’État et aux collectivités locales en cas de dossier
+d’adjudication de travaux ou de marchés publics.
+√ Aux administrations chargées de l’assainissement des professions agricoles,
+commerciales, industrielles ou artisanales.
+√ Aux présidents des tribunaux de commerce et juges commis à la surveillance du registre
+du commerce et des sociétés.
+√ A l’autorité des marchés financiers pour les personnes morales demandant l’admission de
+leurs titres financiers aux négociations sur un marché réglementé.
+√ Aux autorités compétentes désignées par arrêté recevant une demande de
+communication des sanctions pénales ou disciplinaires prononcées à l’encontre d’une
+personne morale de la part d’une autorité compétente d’un autre État membre de la
+communauté européenne ou partie à l’accord sur l’Espace économique européen chargé
+d’appliquer des restrictions d’exercice concernant une activité professionnelle.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 23
+√ À l’association pour le développement du service notarial, placée sous le contrôle du
+Conseil supérieur du notariat, en vue de mettre en œuvre l’article L. 551-1 du code de la
+construction et de l’habitation (pour application de la peine d’interdiction d’acheter un bien
+immobilier à usage d’habitation ou un fonds de commerce).
+Le tribunal qui prononce une condamnation peut décider d’exclure la mention de cette
+condamnation.
+Lorsque la mention d’une décision est exclue cela entraîne le relèvement de toutes les
+interdictions, déchéances ou incapacités résultant de la condamnation. Mais les peines
+complémentaires et notamment la suspension du permis de conduire ou l’interdiction de
+séjour demeurent.
+3.1.3 - Le bulletin numéro 3
+Il concerne exclusivement les personnes physiques. C’est un extrait expurgé qui n’est
+délivré qu’à la personne concernée ou son représentant légal s’il s’agit d’un mineur ou d’un
+majeur sous tutelle (art. R. 82 al. 1 C.P.P.).
+Les mentions y figurant sont listées à l’article 777 du C.P.P. .
+Le législateur a voulu privilégier le reclassement du condamné, et n’a donc fait figurer au
+bulletin numéro 3 que les infractions les plus graves.
+3.2 - LA COMMUNICATION DU BULLETIN
+La personne désirant obtenir communication du relevé intégral du casier judiciaire doit
+adresser sa demande au procureur de la République du lieu de résidence. Elle doit pour cela
+pouvoir justifier de son identité.
+La personne morale doit adresser sa demande, par le biais de son représentant légal, au
+procureur de la République du lieu de son siège.
+3.3 - UTILISATION DU CASIER JUDICIAIRE PAR LE JUGE
+Le juge se basera essentiellement sur le casier judiciaire pour apporter la preuve de la
+récidive. Les mentions du bulletin numéro 1 font preuve de la récidive. Toutefois, si
+l’intéressé conteste ces mentions, le ministère public doit demander aux greffes des
+tribunaux ayant prononcé les condamnations, copie des décisions.
+CHAPITRE 4 : LES EFFETS DE LA RÉCIDIVE
+4.1 - POUR LES PERSONNES PHYSIQUES
+4.1.1 - Crime ou délit puni de dix ans d’ emprisonnement suivi d’ un crime
+ ( art. 132-8 du C.P. )
+Lorsque la seconde infraction est punissable d’une peine de vingt ou trente ans de réclusion
+criminelle, le maximum de la peine est la perpétuité. Lorsque la seconde infraction entraîne
+une peine de quinze ans de réclusion ou détention criminelle, le maximum de la peine est de
+trente ans. Le code pénal n’a pas prévu d’aggravation des peines perpétuelles. Ainsi la
+période de sûreté (22 ans au maximum) n’est pas touchée par la récidive.
+4.1.2 - Crime ou délit puni de dix ans d’ emprisonnement suivi d’ un délit
+ ( art. 132-9 du C.P. )
+La récidive permet au juge de doubler la peine maximum prévue pour la seconde infraction.
+Le doublement peut non seulement s’appliquer à l’emprisonnement, mais également à la
+peine d’amende.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 24
+4.1.3 - La récidive correctionnelle ( art. 132-10 du C.P. )
+Le juge va pouvoir doubler les peines d’emprisonnement ou d’amende encourues pour le
+second délit.
+4.1.4 - La récidive contraventionnelle ( art. 132-11 du C.P. )
+La récidive contraventionnelle porte le maximum de la peine d’amende à 3000 euros, hors
+les cas où la loi prévoit que la récidive de la contravention constitue un délit.
+4.2 - POUR LES PERSONNES MORALES
+4.2.1 - La récidive de crime (ou de délit assimilé) à un crime ( art. 132-12 du
+ C.P. )
+La personne morale se verra appliquer une amende dont le taux est deux fois supérieur à
+celui prévu par la loi. Peuvent être également prononcées toutes les peines de l’article 131-
+39 du C.P.
+4.2.2 - Le crime (ou délit assimilé) suivi d’ un délit ( art. 132-13 du C.P. )
+La peine d’amende sera le double du taux prévu par le texte de loi réprimant l’infraction.
+4.2.3 - Le délit suivi d’ un délit ( art. 132-14 du C.P. )
+Le taux maximum de l’amende sera de deux fois supérieur à celui prévu par la loi.
+4.2.4 - La récidive en matière de contravention ( art. 132-15 du C.P. )
+Le taux de l’amende sera supérieur de dix fois à celui prévu par le texte de loi réprimant la
+contravention.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 25
+TABLEAU : LA RÉCIDIVE DES PERSONNES PHYSIQUES
+NATURE DE LA 1ERE
+INFRACTION
+NATURE DE LA 2e
+INFRACTION
+DÉLAI ENTRE LES DEUX
+INFRACTIONS
+PEINE ENCOURUE SUITE
+A RÉCIDIVE TEXTES
+Crime ou délit puni de 10
+ans d’emprisonnement
+Crime passible d’une peine
+maximum de 20 ou 30 ans
+fixée par la loi
+Pas de délai
+Réclusion criminelle à
+perpétuité
+Article 132-8 C.P.
+Crime passible d’une peine
+maximum de 15 ans de
+réclusion
+30 ans de réclusion
+criminelle
+Délit passible d’une peine de
+10 ans d’emprisonnement 10 ans
+Doublement de
+l’emprisonnement et de
+l’amende encourus
+Article 132-9 al. 1 C.P.
+Délit passible d’un
+emprisonnement inférieur à
+10 ans et supérieur à 1 an.
+5 ans Article 132-9 al. 2 C.P.
+Délit puni d’un
+emprisonnement inférieur à
+10 ans.
+Délit identique ou assimilé 5 ans
+Articles 132-10, 132-16,
+132-16-1 à 132-16-5,
+321-5 du C.P.
+Contravention de 5e
+ classe
+Si le règlement le prévoit,
+condamnation identique 1 an Amende portée à 3000 euros Article 132-11 al. 1 C.P.
+Loi prévoyant que la récidive
+d’une contravention de 5e
+classe constitue un délit
+3 ans Peines délictuelles Article 132-11 al. 2 C.P.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 26
+TABLEAU : LA RÉCIDIVE DES PERSONNES MORALES
+NATURE DE LA 1ERE
+INFRACTION
+NATURE DE LA 2e
+INFRACTION
+DÉLAI ENTRE LES DEUX
+INFRACTIONS
+PEINE ENCOURUE SUITE A
+RÉCIDIVE TEXTES
+Crime ou délit puni de
+100 000 euros
+d’amende
+Crime Pas de délai
+Amende encourue doublée +
+application possible des peines
+de l’art. 131-39 C.P.
+Article 132-12 C.P.
+Délit passible de 100 000 euros
+d’amende 10 ans
+Amende encourue doublée +
+application possible des peines
+de l’article 131-39 C.P.
+Article 132-13 al. 1 C.P.
+Délit puni d’une amende
+inférieure ou égale à
+100 000 euros
+Délit passible d’une peine
+d’amende supérieure ou égale à
+15 000 euros
+5 ans Article 132-13 al. 2 C.P.
+Délit Délit identique ou assimilé 5 ans
+Taux de l’amende de 2 fois
+supérieur à celui prévu par la
+loi.
+Articles 132-14, 132-
+16, 321-5 C.P.
+Contravention de la 5e
+ classe Contravention identique 1 an
+Taux de l’amende de 10 fois
+supérieur à celui prévu par la
+loi.
+Article 132-15 C.P.
+NOTA : Le délai de commission de la nouvelle infraction est calculé à compter de l’expiration ou de la prescription de la peine prononcée pour la 1
+ère infraction.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 27
+L A RÉ ITÉ R AT ION D ’ IN F R A CT ION S
+CHAPITRE 1 :
+CONDITIONS DE LA RÉITÉRATION D’INFRACTIONS
+La loi du 12 décembre 2005 a consacré une notion jusque-là jurisprudentielle et reconnue
+par la doctrine en définissant la réitération comme étant le fait pour une personne déjà
+condamnée définitivement pour un crime ou un délit de commettre une nouvelle infraction
+ne répondant pas aux conditions de la récidive légale (art. 132-16-7 al. 1 C.P.).
+La réitération suppose que l’infraction est commise après une condamnation définitive pour
+une infraction précédente et qu’elle ne répond pas aux conditions de la récidive légale (elle
+intervient après une infraction punie d’une peine inférieure à 10 ans, elle est différente ou
+non assimilable à l’infraction précédente ou elle est identique mais commise au-delà du délai
+de 5 ans après expiration ou prescription de la peine prononcée pour la 1ère infraction). Les
+infractions commises en réitération sont traitées comme des infractions uniques.
+CHAPITRE 2 :
+EFFETS DE LA RÉITÉRATION D’INFRACTIONS
+L’article 132-16-7 al. 2 du C.P. énonce que les peines prononcées pour l’infraction commise
+en réitération se cumulent sans limitation de quantum et sans qu’il soit possible d’ordonner
+leur confusion.
+Ainsi une personne déjà condamnée définitivement qui commet une nouvelle infraction voit
+s’additionner, sans possibilité de confusion, la peine prononcée pour la nouvelle infraction
+avec la première infraction. La situation du réitérant est donc moins favorable que celle du
+prévenu auteur de plusieurs infractions n’ayant pas fait l’objet de condamnations définitives
+et bénéficiant donc du cumul plafonné des peines, voire de la confusion des peines.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 29
+LES CAUSES D’AGGRAVATION
+DE LA SANCTION
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 31
+LE S C I R CON ST AN CE S AGG R A V ANTE S
+La peine encourue par l’auteur d’une infraction peut être
+aggravée lorsque celle-ci a été commise dans une circonstance
+considérée par la loi comme aggravant la criminalité de l’acte.
+"Si un même fait ne peut être retenu comme constitutif à la fois
+d'un crime et d'une circonstance aggravante accompagnant une
+autre infraction, rien ne s'oppose à ce qu'une même circonstance
+soit retenue comme aggravant des crimes distincts" (Cass. crim,
+7 février 2007).
+Une circonstance n’est aggravante que lorsque la loi le décide
+expressément. Elle les énumère de manière limitative et
+détermine pour chaque cas l’aggravation de la peine encourue.
+Une circonstance aggravante peut modifier la nature de la peine
+encourue par l’auteur de l’infraction et par conséquent la nature
+de l’infraction.
+Les circonstances aggravantes sont dites spéciales car elles ne
+s’appliquent qu’aux auteurs des infractions pour lesquelles la loi
+les prévoit. On peut distinguer celles qui tiennent aux
+conséquences dommageables de l’infraction, à la personne de la
+victime, à la personne de l’auteur, aux moyens employés pour
+commettre l’infraction, au lieu de l’infraction. Seules seront ici
+traitées les circonstances aggravantes citées par le code pénal
+aux articles 132-71 à 132-80 ainsi que celles communes à
+plusieurs infractions et d’une application fréquente.
+La jurisprudence les classe en deux catégories.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 33
+1 : LES CIRCONSTANCES AGGRAVANTES PERSONNELLES
+Il s’agit des circonstances aggravantes qui augmentent uniquement la culpabilité de celui qui
+agit car elles sont liées à sa personnalité. Tel est le cas de la récidive qui est « purement »
+personnelle et qui ne s’étend donc pas au coauteur ou au complice.
+Cependant, les circonstances aggravantes personnelles liées à la qualité ou à la fonction ne
+semblent pas être exclusives à l’auteur. Elles ne sont donc pas dites « purement
+personnelles » En effet, un arrêt de la chambre criminelle de la cour de cassation
+indique que : « Sont applicables au complice les circonstances aggravantes liées à la qualité
+de l'auteur principal » (Cass. crim. n°04-84.235 du 7 septembre 2005). Elle consacre ainsi
+le principe de l’emprunt de criminalité (étudié ultérieurement dans les principes généraux de
+la responsabilité pénale). Le complice encourt la responsabilité de toutes les circonstances
+qui qualifient l’acte poursuivi sans qu’il soit nécessaire que celles-ci aient été connues de lui
+(Cass. crim. n°95-84.252 du 21 mai 1996).
+2 : LES CIRCONSTANCES AGGRAVANTES RÉELLES
+Il s’agit des circonstances aggravantes qui s’attachent à la matérialité du fait poursuivi dont
+elles ne peuvent être séparées.
+Elles ne peuvent dont pas exister à l’égard de l’un des participants sans exister en même
+temps à l’égard de tous les autres, qu’ils soient auteurs, coauteurs ou complices.
+NOTA : La doctrine, quant à elle, ajoute une troisième catégorie : les circonstances aggravantes mixtes (tenant
+à la fois à la qualité de l’auteur et à la criminalité de l’acte) qui semblent donc être assimilées par la
+jurisprudence aux circonstances aggravantes réelles.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 34
+L A B ANDE O RG AN I SÉE
+« Constitue une bande organisée au sens de la loi tout
+groupement formé ou toute entente établie en vue de la
+préparation, caractérisée par un ou plusieurs faits matériels,
+d’une ou plusieurs infractions. »
+1 : DÉFINITION
+L’article 132-71 du C.P. définit la bande organisée. Il s’agit d’une circonstance aggravante
+réelle. Ses effets s’étendent à tous les auteurs, coauteurs et complices de l’infraction.
+La notion de bande organisée est proche de celle d’association de malfaiteurs définie par
+l’article 450-1 du code pénal. Elle diffère de l’association de malfaiteurs qui est une
+infraction autonome, caractérisée alors même que les opérations projetées sont restées au
+stade des actes préparatoires. La question de la bande organisée quant à elle se pose après
+commission ou tentative de commission de certaines infractions.
+Il s’agit d’une forme particulière de préméditation.
+2 : CONDITIONS
+« La bande organisée, suppose à la différence de la réunion, que les auteurs, coauteurs de
+l’infraction ont préparé, par des moyens matériels qui sous-entendent l’existence d’une
+certaine organisation, la commission du crime ou du délit. » (Cass. crim., 14 mai 1993)
+La réunion présente un caractère fortuit et occasionnel qui suppose une concertation simple
+sans préméditation.
+2.1 - UNE RÉSOLUTION D’AGIR EN COMMUN ANTÉRIEURE À L’ACTION
+Il faut, pour que cette condition soit réalisée, que plusieurs personnes se soient réunies et
+aient arrêté la résolution d’agir en commun.
+La bande organisée implique donc la préméditation : « Elle suppose un plan concerté »
+(Cass. crim., 30 novembre 2005).
+Doit être établie l’existence de contacts préliminaires, voire d’une convention passée avant
+l’action.
+Ainsi, dans le cadre d’un trafic de stupéfiants, la cour de cassation a relevé que l’existence
+d’une bande organisée est établie : par les contacts préliminaires pris par « B » avec les
+convoyeurs de drogue, les entretiens avec les protagonistes de ces transports et sa
+participation à l’organisation des voyages (Cass. crim., 1er octobre 1998).
+2.2 - LA NÉCESSITÉ D’UNE ORGANISATION
+La bande organisée suppose une certaine organisation comportant une direction, une
+hiérarchisation et une distribution des rôles entre les participants : « Organisation structurée
+et hiérarchisée » (Cass. crim., 11 janvier 2017, 4 novembre 2004).
+La bande organisée est une circonstance aggravante réelle qui ne nécessite pas de
+démontrer la participation continuelle à l’organisation de l’opération (Cass. crim. 15
+septembre 2004).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 35
+La jurisprudence ne se prononce pas sur le nombre de personnes nécessaire pour constituer
+une bande organisée. La notion de pluralité résulte des termes « bande », « groupement »
+ou « entente ».
+Pour constituer une bande organisée, il est nécessaire d’être plus de deux. La Convention
+des Nations Unies contre la criminalité transnationale organisée la définit dans les termes
+suivants : « groupe structuré de trois personnes ou plus existant depuis un certain temps et
+agissant de concert dans le but de commettre une ou plusieurs infractions graves ou des
+infractions établies conformément à la présente Convention, pour en tirer directement ou
+indirectement un avantage financier ou un autre avantage matériel ».
+Jurisprudence : la seule constitution d’une équipe de plusieurs malfaiteurs ne peut suffire à qualifier la
+bande organisée, dès lors que cette équipe ne répond pas au critère supplémentaire de structure existant depuis
+un certain temps (Cass. crim., 8 juillet 2015).
+2.3 - LE BUT POURSUIVI
+Les actes préparatoires peuvent être caractérisés par la conception d’un plan d’exécution de
+l’infraction, par l’acquisition de matériel, par le recrutement de personnel, etc.
+Cette préparation peut ne viser qu’une seule infraction qu’elle ait été commise ou tentée.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de commission en bande organisée est susceptible
+d’aggraver les infractions suivantes :
+ LE MEURTRE (ARTICLE 221-4 8° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-4 C.P.)
+ LE TRAFIC DE STUPÉFIANTS (ARTICLES 222-35 AL. 2 ET 222-36 AL. 2 C.P.)
+ LE TRAFIC D’ARMES (ARTICLE 222-57 AL. 2 C.P.)
+ L’ENLÈVEMENT ET LA SÉQUESTRATION (ARTICLE 224-5-2 C.P.)
+ LA TRAITE DES ÊTRES HUMAINS (ARTICLE 225-4-3 C.P.)
+ LE PROXÉNÉTISME (ARTICLE 225-8 C.P.)
+ L’EXPLOITATION DE LA MENDICITÉ (ARTICLE 225-12-7 C.P.)
+ EXPLOITATION DE LA VENTE À LA SAUVETTE (ARTICLE 225-12-10 C.P.)
+ INCITER UN MINEUR À COMMETTRE UN ACTE SEXUEL PAR VOIE ÉLECTRONIQUE
+(ARTICLE 227-22-2 AL. 2 C.P.)
+ FAVORISER LA CORRUPTION DE MINEUR (ARTICLE 227-22 AL. 3 C.P.)
+ LA REPRÉSENTATION PORNOGRAPHIQUE DE MINEURS (ARTICLE 227-23 AL. 5
+C.P.)
+ SOLLICITER AUPRÈS D’UN MINEUR LA DIFFUSION OU LA TRANSMISSION
+D’IMAGES PORNOGRAPHIQUES DE MINEURS (ARTICLE 227-23-1 AL. 2 C.P.)
+ LE VOL (ARTICLE 311-9 C.P.)
+ L’EXTORSION (ARTICLE 312-6 C.P.)
+ L’ESCROQUERIE (ARTICLE 313-2 AL. 7 C.P.)
+ L’ABUS DE CONFIANCE (ARTICLE 314-1-1 C.P.)
+ LE RECEL (ARTICLE 321-2 2° C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 36
+ LES DESTRUCTIONS, DÉGRADATIONS OU DÉTÉRIORATIONS DANGEREUSES
+POUR LES PERSONNES (ARTICLE 322-8 1° C.P.)
+ LE BLANCHIMENT (ARTICLE 324-2 2° C.P.)
+ L’ÉVASION (ARTICLE 434-30 AL. 2 C.P.)
+ LE TRANSPORT OU LA MISE EN CIRCULATION DE FAUSSE MONNAIE (ARTICLE
+442-2 AL. 2 C.P.)
+Cette liste, non exhaustive, pourrait utilement être complétée par certaines infractions
+prévues par des lois particulières telles que :
+ L’ENTRÉE ET LE SÉJOUR DES ÉTRANGERS (CESEDA)
+ LES ARMES ET MUNITIONS (CODE DE LA DÉFENSE)
+ LES CONTREFAÇONS (CODE DE LA PROPRIÉTÉ INTELLECTUELLE)
+ LE NON-RESPECT DES DISPOSITIONS RÉGLEMENTAIRES RELATIVES A LA
+PRODUCTION, FABRICATION, TRANSPORT, IMPORTATION, EXPORTATION,
+DÉTENTION, OFFRE, CESSION, ACQUISITION ET EMPLOI DE PLANTES, DE
+SUBSTANCES OU DE PRÉPARATIONS CLASSÉES COMME VÉNÉNEUSES (ARTICLE
+ L. 5432-1 CODE DE LA SANTÉ PUBLIQUE)
+ LA CONTREFAÇON, LA FALSIFICATION, L’USAGE, L'ACCEPTATION D’UN CHÈQUE
+CONTREFAISANT OU FALSIFIÉ OU D'UN AUTRE INSTRUMENT DE PAIEMENT AINSI
+QUE LA TENTATIVE DE CES DÉLITS (ARTICLE L. 163-4-2 CODE MONÉTAIRE ET
+FINANCIER)
+ ATTEINTES À LA LÉGISLATION SUR LES DÉCHETS (ARTICLE L. 541-46 CODE DE
+L’ENVIRONNEMENT)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 37
+LE GUET - A PEN S
+« Le guet-apens consiste dans le fait d’attendre un certain temps
+une ou plusieurs personnes dans un lieu déterminé pour
+commettre à leur encontre une ou plusieurs infractions. »
+1 : DÉFINITION
+L’article 132-71-1 du C.P. définit le guet-apens. Il s’agit d’une circonstance aggravante
+réelle. Ses effets s’étendent à tous les auteurs, coauteurs et complices de l’infraction.
+La notion de guet-apens est proche de celle d’embuscade définie par l’ article 222 - 15-1 du
+code pénal. Elle diffère de l’embuscade qui est une infraction autonome, caractérisée alors
+même que les opérations projetées sont restées au stade des actes préparatoires. La
+question du guet-apens se pose après commission ou tentative de commission de certaines
+infractions.
+Il s’agit d’une forme particulière de préméditation.
+2 : CONDITIONS
+2.1 - L’ATTENTE
+L’article 132-71-1 du C.P. ne définit dans son intitulé ni la durée minimum ni la nature du
+lieu de l’attente. C’est une notion très large que le législateur n’a pas précisée.
+2.2 - LA QUALITÉ DE LA VICTIME
+Il s’agit de toute personne quelle que soit sa qualité. Le texte n’apporte aucune précision, se
+bornant à indiquer qu’il peut s’agir d’une ou plusieurs personnes.
+2.3 - LE BUT POURSUIVI
+Ce sont les actes préparatoires en relation avec l’infraction poursuivie qui déterminent le
+caractère délibéré du « piège » tendu. Il s’agit une nouvelle fois d’une forme de
+préméditation.
+La nature de la ou des infractions commises ou tentées importe peu à la condition évidente
+que la loi l’ait visée expressément. Le législateur se donne ainsi la possibilité d’appliquer à
+l’avenir cette circonstance aggravante à d’autres infractions.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de guet-apens est susceptible d’aggraver les
+infractions suivantes :
+ LE MEURTRE (ARTICLE 221-3 AL. 1 C.P., LE MEURTRE EST ALORS QUALIFIÉ
+D’ASSASSINAT)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3 9° C.P.)
+ LES VIOLENCES (ARTICLES 222-8, 222-10, 222-12, 222-13, 9° ET 222-14-5 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 38
+L A P RÉMÉD IT AT ION
+« La préméditation est le dessein formé avant l’action de
+commettre un crime ou un délit déterminé. »
+1 : DÉFINITION
+L’article 132-72 du C.P. définit la préméditation. Elle se traduit par une résolution d’agir
+marquant la volonté mûre et réfléchie de l’auteur d’atteindre le but qu’il s’est fixé.
+La jurisprudence parfois contradictoire la qualifie tantôt de réelle, tantôt de personnelle.
+2 : CONDITIONS
+2.1 - UNE RÉSOLUTION D’AGIR
+La résolution d’agir s’inscrit dans un intervalle de temps plus ou moins long, qui n’est pas
+déterminé. L’antériorité à l’acte est nécessaire pour matérialiser la préméditation (Cass.
+crim., n° 89-85.889 du 9 janvier 1990).
+Cet intervalle de temps se situe entre la résolution de commettre l’acte et son exécution.
+2.2 - UNE VOLONTÉ MÛRE ET RÉFLÉCHIE
+L’acte prémédité est médité et préparé. Il n’est donc pas spontané et ne peut pas faire suite
+à une pulsion. Ces éléments traduisent une volonté persistante et résolue d’appliquer le plan
+tracé à l’avance.
+2.3 - LE BUT POURSUIVI
+Cette circonstance vise indifféremment une infraction commise ou tentée.
+La préméditation se matérialise par des faits ou des circonstances qui se situent dans
+l’intervalle de temps qui précède l’acte « Elle doit être recherchée dans les faits qui ont
+accompagné l’acte de l’auteur principal » (Cass. crim., 4 septembre 1976).
+À titre d’exemple, il peut s’agir d’actes préparatoires, de menaces, de confidences, de la
+nature complexe de l’acte traduisant sa nécessaire préparation, etc.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de commission avec préméditation est susceptible
+d’aggraver les infractions suivantes :
+ LE MEURTRE (ARTICLE 221-3 AL. 1 C.P., LE MEURTRE EST ALORS QUALIFIÉ
+D’ASSASSINAT)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3 9° C.P.)
+ LES VIOLENCES (ARTICLES 222-8, 222-10, 222-12, 222-13, 9° ET 222-14-5 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 39
+L ’E F F R A CT ION
+« L’effraction consiste dans le forcement, la dégradation ou la
+destruction de tout dispositif de fermeture ou de toute espèce de
+clôture.
+Est assimilé à l’effraction l’usage de fausses clefs, de clefs
+indûment obtenues ou de tout instrument pouvant être
+frauduleusement employé pour actionner un dispositif de
+fermeture sans le forcer ni le dégrader. »
+1 : DÉFINITION
+L’article 132-73 du C.P. définit l’effraction. Il s’agit d’une circonstance aggravante réelle. Ses
+effets s’étendent à tous les auteurs, coauteurs et complices de l’infraction.
+Elle consiste en l’utilisation d’un moyen illicite pour pénétrer dans un lieu clos. L’usage de
+fausses clefs ou de clefs indûment obtenues est assimilé à l’effraction.
+L’effraction peut également être constitutive d’un des éléments matériels de l’évasion (art.
+434-27 C.P.), des destructions, dégradations ou détériorations (art. R.635-1 et 322-1 C.P.),
+de la violation de domicile (art. 226-4 C.P.) ou de l’occupation frauduleuse d’un local à usage
+d’habitation ou à usage commercial, agricole ou professionnel (art. 315-1 C.P.).
+2 : CONDITIONS
+2.1 - UN ENDROIT CLOS
+Il s’agit d’un endroit quelconque dont l’accès est normalement interdit aux tiers par une
+clôture ou un dispositif quelconque de fermeture (la disposition à l’entrée d’une propriété
+d’un écriteau en interdisant l’accès ne constitue pas une clôture).
+La généralité des termes « dispositif de fermeture » et « toute espèce de clôture » n’exclut
+aucun lieu clos ou fermé. On peut citer les exemples jurisprudentiels suivants : terrain,
+maison, garage, parc, meuble, véhicule automobile, wagon, parcmètre, appareil récepteur
+de monnaie, etc.…
+2.2 - L’USAGE D’UN MOYEN
+Le moyen utilisé doit consister en une effraction, c’est-à-dire que l’auteur utilise en quelque
+sorte de « violence envers la chose ». Il se sert d’un moyen autre que celui employé
+normalement pour ouvrir, et qui entraîne la rupture ou le forcement de la clôture ou du
+dispositif de fermeture. Il peut s’agir de l’utilisation d’une pince-monseigneur, d’un levier,
+creuser un trou dans un mur, couper une haie, découper un grillage, briser une vitre, briser
+un dispositif magnétique, etc.….
+L’usage de fausse clefs (imitées, reproduites, contrefaisantes ou altérées) ou de clefs
+indûment obtenues (usage abusif de vraies clefs) est quant à lui assimilé à l’effraction. En
+effet, il s’agit d’utiliser le moyen normalement employé pour pénétrer ou ouvrir sans forcer
+ni dégrader la clôture ou le système de fermeture.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 40
+2.3 - LE BUT POURSUIVI
+La circonstance d’effraction ne peut être réalisée qu’à l’extérieur du lieu clos.
+L’effraction aggrave la peine encourue par son auteur lorsqu’elle accompagne une infraction
+commise ou tentée pour laquelle la loi qui la réprime le prévoit.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de commission par effraction est susceptible
+d’aggraver les infractions suivantes :
+ LE VOL (ARTICLE 311-5 3° C.P. )
+ LES DESTRUCTIONS, DÉGRADATIONS, DÉTÉRIORATIONS (ARTICLE 322-3 5°
+C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 41
+L ’E S C A L ADE
+« L’escalade est le fait de s’introduire dans un lieu quelconque,
+soit par-dessus un élément de clôture, soit par toute ouverture
+non destinée à servir d’entrée. »
+1 : DÉFINITION
+L’article 132-74 du C.P. définit l’escalade. Il s’agit d’une circonstance aggravante réelle. Ses
+effets s’étendent à tous les auteurs, coauteurs et complices de l’infraction.
+Comme l’effraction, c’est le fait d’utiliser un moyen illicite pour pénétrer dans un lieu clos. La
+nature du moyen diffère de celui utilisé pour l’effraction. Il s’agit ici du franchissement d’une
+clôture ou de l’entrée par une issue non prévue à cet effet.
+2 : CONDITIONS
+2.1 - UN ENDROIT CLOS
+Il s’agit d’un endroit quelconque dont l’accès est normalement interdit aux tiers par une
+clôture (haie, mur, porte, portail, toiture, etc.…).
+2.2 - L’USAGE D’UN MOYEN
+Le moyen utilisé importe peu. Il peut s’agir d’un moyen prévu et organisé par l’auteur,
+trouvé par hasard ou improvisé (une échelle, un échafaudage, une corde, un grappin, etc.
+Il en va de même pour toute intrusion par une issue n’étant pas de nature à servir d’entrée
+(fenêtre, soupirail, tunnel, etc.…).
+2.3 - LE BUT POURSUIVI
+La circonstance d’escalade ne peut être réalisée que de l’extérieur vers l’intérieur comme le
+précise le texte : « L’escalade est le fait de s’introduire… ».
+L’escalade aggrave la peine encourue par son auteur lorsqu’elle accompagne une infraction
+commise ou tentée pour laquelle la loi qui la réprime le prévoit.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de commission par escalade est susceptible
+d’aggraver les infractions suivantes :
+ LE VOL (ARTICLE 311-5 3° C.P. )
+ LES DESTRUCTIONS, DÉGRADATIONS, DÉTÉRIORATIONS (ARTICLE 322-3 5°
+C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 42
+LE PO RT OU L ’U S AGE D ’UNE A RME
+« Est une arme tout objet conçu pour tuer ou blesser.
+Tout autre objet susceptible de présenter un danger pour les
+personnes est assimilé à une arme dès lors qu’il est utilisé pour
+tuer, blesser ou menacer ou qu’il est destiné, par celui qui en est
+porteur, à tuer, blesser ou menacer.
+Est assimilé à une arme tout objet qui, présentant avec l’arme
+définie au premier alinéa une ressemblance de nature à créer
+une confusion, est utilisé pour menacer de tuer ou de blesser ou
+est destiné, par celui qui en est porteur, à menacer de tuer ou de
+blesser.
+L’utilisation d’un animal pour tuer, blesser ou menacer est
+assimilée à l’usage d’une arme. En cas de condamnation du
+propriétaire de l’animal ou si le propriétaire est inconnu, le
+tribunal peut décider de remettre l’animal à une œuvre de
+protection animale ou reconnue d’utilité publique ou déclarée,
+laquelle pourra librement en disposer. »
+1 : DÉFINITION
+L’article 132-75 du C.P. définit ce qu’est une arme. Le port ou l’usage d’une arme constitue
+une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs, coauteurs et
+complices de l’infraction.
+L’arme peut également être constitutive d’un des éléments matériels d’infractions
+autonomes tel que le port illégal d’arme.
+2 : CONDITIONS
+2.1 - UNE ARME
+Le premier alinéa de l’article 132-75 du C.P. concerne les armes par nature tandis que les
+trois autres concernent des cas assimilés : armes par destination, armes factices et animal.
+2.1.1 - Des armes par nature
+L’alinéa 1 précise qu’« est une arme tout objet conçu pour tuer ou blesser ». L’arme
+proprement dite est un objet qui n’a pas d’autre utilité que de donner la mort ou
+d’occasionner des blessures.
+Il s’agit :
+√ des armes à feu qu’elles soient de guerre, de défense, de chasse ou de collection ; les
+engins explosifs ou incendiaires et les gaz toxiques.
+En font partie les fusils de chasse, les fusils à canon scié, les fusils à pompe, les grenades,
+les bombes, les cocktails Molotov, les bombes aérosol contenant du gaz lacrymogène, etc.….
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 43
+√ des armes blanches qu’elles soient tranchantes, perçantes ou contondantes.
+Il s’agit des baïonnettes, des poignards, des matraques, des cannes à épée, des arbalètes,
+des coups de poing américains, des lances pierres de compétition, des couteaux à cran
+d’arrêt, des nerfs de bœuf, etc.… Il peut aussi s’agir d’un objet transformé pour en faire une
+arme : « Un couteau dont les deux côtés de la lame avaient été rendus tranchants par
+meulage » (Cass. crim. n° 68-91.697 du 29 janvier 1969).
+2.1.2 - Des cas assimilés
+Les alinéas 2 à 4 de l’article assimilent trois autres cas à l’arme :
+2.1.2.1 - Les armes par destination :
+Ce sont des objets susceptibles de présenter un danger pour les personnes. Il s’agit
+d’instruments, outils, appareils, engins, que l’on utilise dans la vie courante. Bien qu’ils ne
+soient pas conçus pour servir d’arme, ils peuvent être utilisés pour tuer, blesser ou menacer.
+Ce peut être un couteau de cuisine, un marteau, un véhicule automobile, une batte de baseball, une chaîne à vélo, une barre de fer, une bouteille, une seringue, un tabouret de bar,
+etc.
+2.1.2.2 - Les armes factices ou simulées :
+L’objet utilisé pour tromper une personne doit présenter une ressemblance suffisante avec
+l’arme qu’il imite. Par ailleurs, l’utilisation de cet objet aux fins de menacer de tuer ou de
+blesser traduit la volonté de l’auteur de faire croire que l’arme simulée est une arme réelle :
+« Une arme factice peut être considérée comme une arme apparente ou cachée » (Cass.
+crim. n° 92-82.717 du 05 août 1992).
+2.1.2.3 - Les animaux :
+L’utilisation d’un animal pour tuer, blesser ou menacer est assimilée à une arme. Ce dernier
+alinéa vise notamment l’utilisation des chiens comme arme.
+2.2 - SON UTILISATION
+L’arme peut constituer une circonstance aggravante d’une infraction lorsqu’elle a été utilisée
+ou portée.
+2.2.1 - L’usage et la menace d’une arme
+Il ne suffit pas que l’auteur ait été porteur d’une arme. Il faut qu’il l’ait utilisée pour tuer,
+blesser ou menacer.
+2.2.2 - Le port d’une arme
+Dans ce cas, il suffit que l’auteur ait été porteur d’une arme apparente ou cachée au
+moment des faits sans qu’il soit nécessaire qu’il en ait fait usage ou qu’il ait menacé
+quiconque.
+2.3 - LE BUT POURSUIVI
+L’arme peut, quand l’individu en a fait usage ou en a seulement été porteur, constituer une
+circonstance aggravante d’une infraction commise ou tentée pour laquelle la loi l’a prévu.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 44
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance d’usage ou menace d’une arme est susceptible
+d’aggraver les infractions suivantes :
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3 10° C.P.)
+ LE VIOL (ARTICLE 222-24 7° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28 5° C.P.)
+ LES AGRESSIONS SEXUELLES SUR MINEUR DE 15 ANS OU SUR PERSONNE
+PARTICULIÈREMENT VULNÉRABLE (ARTICLE 222-30 AL. 6 C.P.)
+ LES VIOLENCES (ARTICLES 222-8, 222-10, 222-12, 222-13 10° ET 222-14-5
+C.P.)
+ L’ÉVASION (ARTICLE 434-30 AL. 1 C.P.)
+ LE CONCOURS À UNE ÉVASION (ARTICLE 434-32 AL. 3 C.P.)
+Le code pénal prévoit que la circonstance de port d’arme est susceptible d’aggraver les
+infractions suivantes :
+ LE PROXÉNÉTISME (ARTICLE 225-7 AL. 8 C.P.)
+ LA PARTICIPATION À UN ATTROUPEMENT (ARTICLE 431-5 AL. 1 C.P.)
+ LA PARTICIPATION À UNE MANIFESTATION OU À UNE RÉUNION PUBLIQUE
+(ARTICLE 431-10 C.P.)
+ LA RÉBELLION (ARTICLE 433-8 C.P.)
+Le code pénal prévoit enfin que la circonstance d’usage, menace ou port d’une arme est
+susceptible d’aggraver les infractions suivantes :
+ LE VOL (ARTICLE 311-8 C.P.)
+ L’EXTORSION (ARTICLE 312-5 C.P.)
+ L’EXTORSION EN BANDE ORGANISÉE (ARTICLE 312-6 AL. 3 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 45
+LE C A R A CTÈ RE R A C I STE
+« Lorsqu'un crime ou un délit est précédé, accompagné ou suivi
+de propos, écrits, images, objets ou actes de toute nature qui
+soit portent atteinte à l'honneur ou à la considération de la
+victime ou d'un groupe de personnes dont fait partie la victime à
+raison de son appartenance ou de sa non-appartenance, vraie ou
+supposée, à une prétendue race, une ethnie, une nation ou une
+religion déterminée, soit établissent que les faits, ont été
+commis contre la victime pour l'une de ces raisons ».
+1 : DÉFINITION
+L’article 132-76 du C.P. définit le caractère raciste d’une infraction. Il prévoit une
+aggravation systématique des peines.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+Un crime ou un délit est aggravé dès lors qu'il est précédé, accompagné ou suivi de propos,
+écrits, images, objets ou actes de toute nature qui :
+√ soit portent atteinte à l'honneur ou à la considération de la victime à raison de son
+appartenance ou de sa non-appartenance, vraie ou supposée, à une prétendue race, à une
+ethnie, une nation ou une religion déterminée ;
+L’aggravation résulte de circonstances objectives, que la personne ait agi ou non pour des
+motifs discriminatoires.
+√ soit établissent que les faits ont été commis contre la victime pour l'une de ces raisons.
+L’aggravation est possible même si ces éléments de fait ne portent pas atteinte à l’honneur
+ou à la considération de la victime, dès lors que ces éléments démontrent l’intention
+discriminatoire de leur auteur. Par exemple, l’aggravation s’applique si l’auteur du vol, bien
+que n’ayant tenu aucun propos injurieux ou diffamatoire à caractère raciste, antisémite, ou
+homophobe, a indiqué à des tiers avant de commettre les faits qu’il avait choisi ses victimes
+en raison de leur race, leur religion, leur origine ou leur orientation sexuelle parce que, selon
+lui, ces critères impliquaient nécessairement qu’elles étaient riches (circulaire
+JUSD1712060C du 20 avril 2017).
+2.1 - L’APPARTENANCE DE LA VICTIME À UNE CATÉGORIE
+L’article 132-76 vise quatre catégories :
+2.1.1 - L’ethnie
+Définition LAROUSSE : « Groupement humain qui possède une structure familiale,
+économique et sociale homogène, et dont l'unité repose sur une communauté de langue, de
+culture et de conscience de groupe. »
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 46
+2.1.2 - La nation
+Définition LAROUSSE : « Ensemble des êtres humains vivant dans un même territoire, ayant
+une communauté d'origine, d'histoire, de culture, de traditions, parfois de langue, et
+constituant une communauté politique. »
+2.1.3 - La prétendue race
+Définition LAROUSSE : « Catégorie de classement de l’espèce humaine selon des critères
+morphologiques ou culturels, sans aucune base scientifique et dont l'emploi est au
+fondement des divers racismes et de leurs pratiques. »
+2.1.4 - La religion
+Définition LAROUSSE : « Ensemble déterminé de croyances et de dogmes définissant le
+rapport de l'homme avec le sacré. »
+« Une secte ne constitue pas une religion » (C.A. PARIS, 25 mars 1996)
+2.2 - LA MATÉRIALISATION DU MOBILE DE L’AUTEUR
+Ce sont les éléments objectifs tirés de la procédure qui permettront la mise en évidence et
+la constatation de cette circonstance aggravante.
+Le mobile raciste, xénophobe ou antisémite de l’auteur peut se matérialiser par des actes
+portant atteinte à l’honneur ou à la considération de la victime :
+√ Des propos (conversations, cris, injures, etc.…)
+√ Des écrits (lettres, graffitis, inscriptions, etc.… )
+√ Des images (dessins, croquis, affiches, etc.… )
+√ Des objets
+√ Des actes de toute nature
+√ Un groupe de personnes dont fait partie la victime
+Il s’agit de permettre de prendre en compte des comportements et actes racistes,
+xénophobes ou antisémites de l’auteur.
+Ces agissements ne visent pas spécifiquement la victime mais conditionnent la commission
+de l’infraction principale.
+2.3 - LE BUT POURSUIVI
+L’auteur peut agir pour différentes raisons :
+2.3.1 - L’appartenance ou la non-appartenance
+L’auteur agit soit parce que la victime fait partie d’une des catégories précitées, soit parce
+qu’elle n’appartient pas à l’une de ces catégories.
+2.3.2 - L’appartenance vraie ou supposée
+Peu importe que l’auteur de l’infraction ait agi à tort, croyant que la victime appartenait ou
+n’appartenait pas à l’une des catégories.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 47
+3 : CHAMP D'APPLICATION
+L’article 132-76 du C.P. généralise la circonstance aggravante de racisme. Afin de respecter
+le principe constitutionnel de légalité des délits et des peines, cette circonstance aggravante
+générale n’est pas applicable :
+√ aux délits de discriminations prévus par le code pénal ;
+√ aux délits de provocations, diffamations et injures discriminatoires prévus par la loi du 29
+juillet 1881 ;
+√ aux violences volontaires prévues à l’article 222-13 du C.P.
+En effet, le caractère discriminatoire ne peut être à la fois un élément constitutif de
+l’infraction et une circonstance aggravante.
+Le maximum de la peine privative de liberté encourue est relevé ainsi qu'il suit :
+√ 1° Il est porté à la réclusion criminelle à perpétuité lorsque l'infraction est punie de trente
+ans de réclusion criminelle ;
+√ 2° Il est porté à trente ans de réclusion criminelle lorsque l'infraction est punie de vingt
+ans de réclusion criminelle ;
+√ 3° Il est porté à vingt ans de réclusion criminelle lorsque l'infraction est punie de quinze
+ans de réclusion criminelle ;
+√ 4° Il est porté à quinze ans de réclusion criminelle lorsque l'infraction est punie de dix ans
+d'emprisonnement ;
+√ 5° Il est porté à dix ans d'emprisonnement lorsque l'infraction est punie de sept ans
+d'emprisonnement ;
+√ 6° Il est porté à sept ans d'emprisonnement lorsque l'infraction est punie de cinq ans
+d'emprisonnement ;
+√ 7° Il est porté au double lorsque l'infraction est punie de trois ans d'emprisonnement au
+plus.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 48
+LE C A R A CTÈ RE HOMO PHO BE
+« Lorsqu'un crime ou un délit est précédé, accompagné ou suivi
+de propos, écrits, images, objets ou actes de toute nature qui
+soit portent atteinte à l'honneur ou à la considération de la
+victime ou d'un groupe de personnes dont fait partie la victime à
+raison de son sexe, son orientation sexuelle ou identité de genre
+vraie ou supposée, soit établissent que les faits ont été commis
+contre la victime pour l'une de ces raisons. »
+1 : DÉFINITION
+L’article 132-77 du C.P. définit le caractère homophobe ou sexiste d'une infraction.
+Il prévoit une aggravation des sanctions prononcées en répression des infractions commises
+pour des motifs d’homophobie ou de sexisme.
+Cette circonstance aggravante est réelle. Ses effets s’étendent à tous les auteurs, coauteurs
+et complices de l’infraction.
+2 : CONDITIONS
+Un crime ou un délit est aggravé dès lors qu’il est précédé, accompagné ou suivi de propos,
+écrits, images, objets ou actes de toute nature qui :
+√ soit portent atteinte à l'honneur ou à la considération de la victime ou d'un groupe de
+personnes dont fait partie la victime à raison de son sexe, son orientation sexuelle ou
+identité de genre vraie ou supposée,
+√ soit établissent que les faits ont été commis contre la victime pour l'une de ces raisons.
+2.1 - LE SEXE OU L’ORIENTATION SEXUELLE OU L’IDENTITÉ DE GENRE
+Cette circonstance aggravante vise non seulement les personnes homosexuelles, mais
+également les personnes transsexuelles ou transgenres ou travesties.
+2.2 - LA MATÉRIALISATION DU MOBILE DE L’AUTEUR
+Il s’agit exactement des mêmes éléments que ceux cités par l’article 132-76 du C.P. :
+propos, écrits, images, objets ou actes de toute nature ou un groupe de personnes dont fait
+partie la victime. Ces éléments permettront de caractériser le mobile homophobe de l’auteur
+ou son rejet des personnes transgenres ou transsexuelles.
+2.3 - LE BUT POURSUIVI
+L’auteur agit en raison du sexe ou de l’orientation sexuelle ou de l’identité de genre vraie ou
+supposée de la victime. La circonstance est constituée dès lors que l’auteur de l’infraction
+croyait que la victime était homosexuelle, transsexuelle ou transgenre bien qu’elle ne l’ait
+pas été.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 49
+3 : CHAMP D'APPLICATION
+L’article 132-77 du C.P. généralise la circonstance aggravante d’homophobie, de sexisme et
+de transphobie. Afin de respecter le principe constitutionnel de légalité des délits et des
+peines, cette circonstance aggravante générale n’est pas applicable :
+√ aux violences volontaires prévues à l’article 222-13 du C.P. ;
+√ au délit de harcèlement sexuel (art. 222-33 du C.P.) ;
+√ aux délits de discriminations prévus par le code pénal (art. 225-1 du C.P.) ;
+√ aux délits visant à modifier l’orientation sexuelle ou l’identité de genre (art. 225-4-13 du
+C.P.) ;
+√ aux délits de provocations, diffamations et injures discriminatoires prévus par la loi du 29
+juillet 1881 ;
+√ aux infractions déjà aggravées parce qu’elles sont commises par le conjoint, le concubin
+de la victime ou le partenaire lié à celle-ci par un pacte civil de solidarité : il s’agit du
+meurtre, des tortures et actes de barbarie, des violences ayant entraîné la mort sans
+intention de la donner, des violences ayant entraîné une mutilation ou une infirmité
+permanente, des violences ayant entraîné une I.T.T. de plus de 8 jours, des violences sans
+incapacité totale de travail ou avec incapacité inférieure ou égale à 8 jours, les violences
+habituelles, les menaces de mort, d’un autre crime ou de délit contre les personnes, du viol,
+des agressions sexuelles et du harcèlement moral.
+√ aux infractions déjà aggravées parce qu’elles sont commises contre une personne afin de
+la contraindre à contracter un mariage ou à conclure une union ou en raison de son refus de
+contracter ce mariage ou cette union : il s’agit du meurtre, des tortures et actes de
+barbarie, des violences ayant entraîné une incapacité totale de travail de plus de 8 jours et
+des violences sans incapacité totale de travail ou avec incapacité inférieure ou égale à huit
+jours.
+Le caractère discriminatoire ne peut être à la fois un élément constitutif de l’infraction et une
+circonstance aggravante.
+Le maximum de la peine privative de liberté encourue est relevé ainsi qu'il suit :
+√ 1° Il est porté à la réclusion criminelle à perpétuité lorsque l'infraction est punie de trente
+ans de réclusion criminelle ;
+√ 2° Il est porté à trente ans de réclusion criminelle lorsque l'infraction est punie de vingt
+ans de réclusion criminelle ;
+√ 3° Il est porté à vingt ans de réclusion criminelle lorsque l'infraction est punie de quinze
+ans de réclusion criminelle ;
+√ 4° Il est porté à quinze ans de réclusion criminelle lorsque l'infraction est punie de dix ans
+d'emprisonnement ;
+√ 5° Il est porté à dix ans d'emprisonnement lorsque l'infraction est punie de sept ans
+d'emprisonnement ;
+√ 6° Il est porté à sept ans d'emprisonnement lorsque l'infraction est punie de cinq ans
+d'emprisonnement ;
+√ 7° Il est porté au double lorsque l'infraction est punie de trois ans d'emprisonnement au
+plus.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 50
+L 'UT I L I S AT ION D 'UN MO YEN
+DE C R Y PTO LOG IE
+« Lorsqu’un moyen de cryptologie au sens de l’article 29 de la loi
+n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie
+numérique a été utilisé pour préparer ou commettre un crime ou
+un délit, ou pour en faciliter la préparation ou la commission, le
+maximum de la peine privative de liberté est relevé.
+Les dispositions du présent article ne sont toutefois pas
+applicables à l’auteur ou au complice de l’infraction qui, à la
+demande des autorités judiciaires ou administratives, leur a
+remis la version en clair des messages chiffrés ainsi que les
+conventions secrètes nécessaires au déchiffrement. »
+1 : DÉFINITION
+L’article 132-79 du C.P. définit l’utilisation d’un moyen de cryptologie. Il s’agit d’une
+circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs, coauteurs et
+complices de l’infraction.
+Cette circonstance a pour but de réprimer plus sévèrement les auteurs d’infractions qui ont
+utilisé un moyen permettant d’assurer la confidentialité des communications pour préparer,
+faciliter ou commettre les faits.
+2 : CONDITIONS
+2.1 - L’UTILISATION D’UN MOYEN DE CRYPTOLOGIE
+Il s’agit d’un moyen permettant d’assurer la confidentialité des communications.
+L’article 29 de la loi n°2004-575 du 21 juin 2004 précise : « On entend par moyen de
+cryptologie, tout matériel ou logiciel conçu ou modifié pour transformer des données, qu’il
+s’agisse d’informations ou de signaux, à l’aide de conventions secrètes ou pour réaliser
+l’opération inverse avec ou sans convention secrète. Ces moyens de cryptologie ont
+principalement pour objet de garantir la sécurité du stockage ou de la transmission des
+données, en permettant d’assurer leur confidentialité, leur authentification ou le contrôle de
+leur intégrité. »
+2.2 - LE BUT POURSUIVI
+Il s’agit de réprimer les infractions pour lesquelles un procédé technique a été utilisé.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 51
+3 : CHAMP D'APPLICATION
+L’article 132-79 du code pénal est de portée générale. Ses dispositions s’appliquent à tous
+les crimes et délits qu’ils aient été commis ou tentés.
+Cependant, cette circonstance ne sera pas applicable à l’auteur ou au complice de
+l’infraction qui : « à la demande des autorités judiciaires ou administratives, leur a remis la
+version en clair des messages chiffrés ainsi que les conventions secrètes nécessaires au
+déchiffrement. »
+Jurisprudence : le code de déverrouillage d’un téléphone mobile peut constituer une clé de déchiffrement, si
+ce téléphone est équipé d’un moyen de cryptologie (Cass. crim. , n° 19-85.984 du 11 octobre 2020, ).
+L’utilisation d’un tel téléphone dans les conditions prévues par l’article 132-79 pourrait donc constituer la
+circonstance aggravante.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 52
+L A QU A L ITÉ DE CON JO INT , DE CON CU B IN OU DE
+P A RTEN A I RE L IÉ À L A V I CT IME P A R UN P . A . C . S .
+« Dans les cas respectivement prévus par la loi ou le règlement,
+les peines encourues pour un crime, un délit ou une
+contravention sont aggravées lorsque l’infraction est commise
+par le conjoint, le concubin ou le partenaire lié à la victime par
+un pacte civil de solidarité, y compris lorsqu’ils ne cohabitent
+pas.
+La circonstance aggravante prévue au premier alinéa est
+également constituée lorsque les faits sont commis par l’ancien
+conjoint, l’ancien concubin ou l’ancien partenaire lié à la victime
+par un pacte civil de solidarité. Les dispositions du présent alinéa
+sont applicables dès lors que l’infraction est commise en raison
+des relations ayant existé entre l’auteur des faits et la victime. »
+1 : DÉFINITION
+L’article 132-80 du C.P. définit la qualité de conjoint, de concubin et de partenaire lié à la
+victime par un pacte civil de solidarité. Il s’agit d’une circonstance aggravante personnelle.
+Ses effets ne s’étendent pas aux coauteurs de l’infraction.
+Cette circonstance a pour but de réprimer plus sévèrement les infractions commises au sein
+du couple, donc les auteurs d’infractions dites « conjugales ».
+2 : CONDITIONS
+2.1 - UNE « UNION » ENTRE L’AUTEUR ET LA VICTIME
+L’article 132-80 vise trois types d’union entre l’auteur et la victime et ce, quel que soit le
+sexe de l’un et de l’autre, et même s’ils ne cohabitent pas.
+2.1.1 - Le mariage
+La circonstance aggravante est constituée dès lors que l’auteur de l’infraction est uni à la
+victime par les liens du mariage, même s’il n’existe pas de communauté de vie entre époux
+(cas de la victime en instance de divorce avec résidence séparée).
+2.1.2 - Le concubinage
+Il s’agit, selon l’article 515-8 du code civil : « d’une union de fait, caractérisée par une vie
+commune présentant un caractère de stabilité et de continuité, entre deux personnes, de
+sexe différent ou de même sexe, qui vivent en couple ».
+L’existence d’un état de concubinage est établie dès lors qu’il est prouvé qu’il y a
+communauté de vie.
+2.1.3 - Le pacte civil de solidarité
+D’après l’article 515-1 du code civil : « Est un contrat conclu par deux personnes physiques
+majeures, de sexe différent ou de même sexe, pour organiser leur vie commune ».
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 53
+La circonstance peut être retenue dès lors que le pacte civil de solidarité a uni l’auteur à la
+victime et ce, jusqu’à ce qu’il soit rompu.
+2.1.4 - Le cas du lien rompu
+Lorsque le lien qui unissait l’auteur à la victime a été rompu, la circonstance peut être
+cependant retenue, à condition que l’infraction soit commise selon des dispositions du
+second alinéa de l’article 132-80.
+C’est-à-dire que l’ancien conjoint, l’ancien concubin ou l’ancien partenaire lié à la victime par
+un pacte civil de solidarité doit avoir agi en raison des relations ayant existé entre lui et la
+victime. C'est donc le mobile de l'infraction qui permet de retenir la circonstance
+aggravante.
+Il est alors nécessaire de prouver que la commission de l’infraction est en rapport avec le
+lien qui les unissait avant qu’ils ne soient séparés.
+2.2 - BUT POURSUIVI
+Cette circonstance permet de reconnaître la particulière gravité de certaines infractions
+commises ou tentées par le conjoint, le concubin ou le partenaire de la victime, pour
+laquelle la loi l’a prévu.
+3 : CHAMP D'APPLICATION
+Le code pénal prévoit que la circonstance de commission par le conjoint, le concubin ou le
+partenaire lié par un PACS est susceptible d’aggraver les infractions suivantes :
+ LE MEURTRE (ARTICLE 221-4, 9° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 6° C.P.)
+ LES VIOLENCES AYANT ENTRAÎNÉ LA MORT SANS INTENTION DE LA DONNER
+(ARTICLE 222-8, 6° C.P.)
+ LES VIOLENCES AYANT ENTRAÎNÉ UNE MUTILATION OU UNE INFIRMITÉ
+PERMANENTE (ARTICLE 222-10, 6° C.P.)
+ LES VIOLENCES AYANT ENTRAÎNÉ UNE INCAPACITÉ TOTALE DE TRAVAIL
+PENDANT PLUS DE 8 JOURS (ARTICLE 222-12, 6° C.P.)
+ LES VIOLENCES AYANT ENTRAÎNÉ UNE INCAPACITÉ TOTALE DE TRAVAIL
+INFÉRIEURE OU ÉGALE À 8 JOURS OU N’AYANT PAS ENTRAÎNÉ UNE INCAPACITÉ
+DE TRAVAIL (ARTICLE 222-13, 6° C.P.)
+ LES APPELS TÉLÉPHONIQUES ET LES ENVOIS DE MESSAGES MALVEILLANTS, OU
+AGRESSIONS SONORES (ARTICLE 222-16 AL. 2 C.P.)
+ LES MENACES PRÉVUES AUX ARTICLES 222-17 ET 222-18 DU C.P. (ARTICLE 222-
+18-3 C.P.)
+ LE VIOL (ARTICLE 222-24, 11° C.P.)
+ LES AUTRES AGRESSIONS SEXUELLES (ARTICLE 222-28, 7° C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 54
+L ’ IN C A P A C ITÉ TOT A LE DE T R A V A I L
+« Ayant entraîné une incapacité totale de travail ».
+1 : DÉFINITION
+L’incapacité totale de travail mesure la gravité des atteintes corporelles ou psychiques subies
+par la victime de l’infraction. L’I.T.T. ne doit pas être confondue avec l’arrêt de travail propre
+au droit social.
+Une victime n’exerçant aucune activité professionnelle (enfant, retraité,…) peut donc se voir
+prescrire une I.T.T.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LE CARACTÈRE TOTAL
+L’I.T.T. doit, pour constituer la circonstance, être totale. Elle n’implique pas nécessairement
+l’impossibilité pour la victime de se livrer à un effort physique afin d’accomplir elle-même
+certaines tâches ménagères ( Cass. crim. , n° 81-92.856 du 22 novembre 1982).
+L’I.T.T. ne s’applique pas seulement à l’activité professionnelle mais s’étend à toute l’activité
+courante et aux efforts physiques de toutes sortes nécessaires à la vie de chaque jour
+(Cass. crim., 7 mars 1967).
+2.2 - LA DURÉE
+La durée est prise en compte par paliers selon l’infraction que l'I.T.T. aggrave :
+√ inférieure ou égale à 8 jours,
+√ supérieure à 8 jours,
+√ inférieure ou égale à trois mois,
+√ supérieure à trois mois.
+2.3 - LA PREUVE
+Le juge a un pouvoir d’appréciation en vue de rechercher dans quelle mesure la victime s’est
+trouvée hors d’état d’effectuer un travail corporel.
+La preuve doit être rapportée par la partie poursuivante. Il peut s’agir de certificats
+médicaux, mais le juge peut également se baser sur des rapports d’experts.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 55
+3 : CHAMP D’APPLICATION
+ LES VIOLENCES (ARTICLES 222-11 À 222-14-1, 222-14-5 ET R.625-1 C.P.)
+ LES ATTEINTES INVOLONTAIRES À L'INTÉGRITÉ DE LA PERSONNE (ARTICLES
+222-19 À 222-21 ET R. 625-2 C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES (ARTICLE 222-15 C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 1° C.P.)
+ LE VOL (ARTICLES 311-5 1° ET 311-6 C.P.)
+ L’EXTORSION (ARTICLES 312-2 ET 312-3 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLES 322-5 AL.
+5, 322-7 ET 322-8 2° C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 56
+L A MUT I L AT ION OU L ’ IN F I RM ITÉ PE RM ANENTE
+« Ayant entraîné une mutilation ou une infirmité permanente ».
+1 : DÉFINITION
+La mutilation se définit comme : « la perte accidentelle ou l’ablation d’un membre, d’une
+partie externe du corps, qui cause une atteinte irréversible à l’intégrité physique » définition
+ROBERT.
+L’infirmité permanente se définit comme « une atteinte majeure et irréversible d'un membre
+ou d'une fonction organique » (Cass. crim., n° 21-85.347 du 24 novembre 2021). L’infirmité
+peut donc être physique, mais elle peut également affecter les facultés mentales ou
+intellectuelles de la victime.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+Cette circonstance aggravante peut être retenue lorsque le fait punissable a entraîné une
+mutilation ou une infirmité permanente.
+2.1 - LE CARACTÈRE PERMANENT
+Ce point ne posant pas de problème pour la mutilation, il s’agit de préciser le caractère
+permanent de l’infirmité. L’infirmité doit donc être « irréversible » (Cass. crim., n° 05-
+87.683 du 21 mars 2006) ou « définitive » (Cass. crim., n° 84-90.706 du 6 octobre 1985).
+2.2 - LA PREUVE
+Il appartient à la partie poursuivante de la rapporter par tout moyen (certificats médicaux
+ou expertises médicales) (Cass. crim., n° 64-91.935 du 4 février 1965).
+3 : CHAMP D'APPLICATION
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-5 C.P.)
+ LES VIOLENCES (ARTICLES 222-9, 222-14 AL. 3 ET 222-14-1 AL. 3 C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES (ARTICLE 222-15 C.P.)
+ LE VIOL (ARTICLE 222-24 AL. 2 C.P.)
+ LE DÉLAISSEMENT D’UNE PERSONNE HORS D’ÉTAT DE SE PROTÉGER (ARTICLE
+223-4 AL. 1 C.P.)
+ L’ENLÈVEMENT ET LA SÉQUESTRATION (ARTICLE 224-2 AL. 1 C.P.)
+ LE DÉLAISSEMENT D’UN MINEUR DE QUINZE ANS ( ARTICLE 227 - 2 C.P.)
+ LE VOL COMMIS AVEC VIOLENCES (ARTICLE 311-7 C.P.)
+ L’EXTORSION COMMISE AVEC VIOLENCES (ARTICLES 312-4 ET 312-6 AL. 2 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLE 322-9
+C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 57
+L A MO RT
+« Ayant entraîné la mort sans intention de la donner ».
+1 : DÉFINITION
+Cette circonstance aggravante peut être retenue lorsque l’infraction commise a entraîné la
+mort. L’auteur n’a jamais voulu donner volontairement la mort à autrui.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA NÉCESSITÉ D’UNE RELATION DE CAUSE À EFFET
+Il est nécessaire qu’il existe entre l’acte délictueux et le décès de la victime une relation de
+cause à effet (Cass. crim., 17 janvier 1991).
+2.2 - L’INDIFFÉRENCE DE L’ÉTAT PRÉEXISTANT DE LA VICTIME
+La circonstance peut être retenue quel que soit l’état de santé de la personne avant qu’elle
+ne soit victime de l’infraction même s’il a concouru au décès de la victime alors que tel
+n’aurait pas été le cas pour une personne en bonne santé.
+3 : CHAMP D'APPLICATION
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-6 C.P.)
+ LES VIOLENCES (ARTICLES 222-7, 222-14 AL. 2 ET 222-14-1 AL. 2 C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222 - 15 C.P.)
+ LE VIOL (ARTICLE 222-25 C.P.)
+ LE DÉLAISSEMENT D’UNE PERSONNE HORS D’ÉTAT DE SE PROTÉGER (ARTICLE
+223-4 AL. 2 C.P.)
+ L’ENLÈVEMENT ET LA SÉQUESTRATION (ARTICLE 224-2 AL. 2 C.P.)
+ LE DÉLAISSEMENT D’UN MINEUR DE QUINZE ANS ( ARTICLE 227 - 2 AL. 2 C.P.)
+ LA MISE EN PÉRIL DES MINEURS (ARTICLE 227-16 C.P.)
+ LE VOL COMMIS AVEC VIOLENCES (ARTICLE 311-10 C.P.)
+ L’EXTORSION COMMISE AVEC VIOLENCES (ARTICLE 312-7 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLES 322-5 AL.
+6 ET 322-10 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 58
+L A M INO R ITÉ DE QU INZE AN S
+« Sur un mineur de 15 ans ».
+1 : DÉFINITION
+C'est l'âge de 15 ans accompli qui a été choisi pour déterminer la limite en dessous de
+laquelle la circonstance aggravante est caractérisée (quel que soit l'âge en dessous de 15
+ans).
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA DÉTERMINATION DE L’ÂGE
+C’est l’âge qu’avait la victime au moment des faits qui doit être pris en considération (Cass.
+crim., 21 mars 1957).
+Il se calcule d’heure à heure (Cass. crim., n° 85-93.591 du 3 septembre 1985).
+À défaut d’acte ayant valeur probante, la preuve de l’âge du mineur peut se faire par tout
+moyen (Cass. crim., n° 91-82.771 du 17 juillet 1991).
+2.2 - L’INDIFFÉRENCE DE L’ÂGE APPARENT
+Contrairement à d’autres circonstances aggravantes, le législateur n’exige pas que la
+minorité de quinze ans soit apparente ou connue de l’auteur de l’infraction. Le mineur de
+quinze ans bénéficie donc d’une protection particulière.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4 1° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3 1° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12, ET 222-13,1°
+C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ LE VIOL (ARTICLE 222-24 2° DU C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-29-1 C.P.)
+ L’ADMINISTRATION D’UNE SUBSTANCE AFIN DE COMMETTRE UN VIOL OU UNE
+AGRESSION SEXUELLE (ARTICLE 222-30-1 AL. 2 DU C.P.)
+ L’EXHIBITION SEXUELLE (ARTICLE 222-32 AL. 3 DU C.P.)
+ LE HARCÈLEMENT SEXUEL (ARTICLE 222-33, III, 2° C.P.)
+ LA NON-ASSISTANCE À PERSONNE EN PÉRIL (ARTICLE 223-6 AL. 3 C.P.)
+ LA PROVOCATION AU SUICIDE (ARTICLE 223-13 AL. 2 C.P.)
+ L’ENLÈVEMENT ET LA SÉQUESTRATION (ARTICLE 224-5 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 59
+ LE PROXÉNÉTISME (ARTICLE 225-7-1 C.P.)
+ LE RECOURS À LA PROSTITUTION DE MINEUR (ARTICLE 225-12-2 AL. 6 C.P. )
+ LA MISE EN PÉRIL DE MINEURS (ARTICLES 227-18 AL. 2, 227-18-1 AL. 2, 227-19
+AL. 3, 227-21 AL. 2, 227-22 AL. 3 C.P., 227-22-2 AL. 2, 227-23-1 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 60
+L A P A RT I CU L IÈ RE VU LNÉ R A B I L ITÉ DE L A
+V I CT IME
+« Sur une personne dont la particulière vulnérabilité due à son
+âge, à une maladie, à une infirmité, à une déficience physique ou
+psychique ou à un état de grossesse ou résultant de la précarité
+de sa situation économique ou sociale est apparente ou connue
+de son auteur. »
+1 : DÉFINITION
+Cette circonstance aggravante vise à protéger les victimes hors d’état de le faire vu leur état
+de faiblesse. Les causes de cette faiblesse sont limitatives et doivent résulter d’un état
+préexistant aux faits constitutifs de l’infraction et non être de la conséquence de ces faits
+eux-mêmes (Cass. crim., n° 83-94.450 du 17 octobre 1984).
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+Ces causes de vulnérabilité sont limitées au nombre de sept. Pour être retenue, cette
+faiblesse particulière doit être apparente ou connue de l’auteur de l’infraction.
+2.1 - LES CAUSES DE VULNÉRABILITÉ
+2.1.1 - L’âge
+Il n’est pas déterminé précisément. La minorité de 15 ans ne rentre pas dans le champ de
+cette circonstance aggravante puisqu’elle fait l’objet d’une aggravation spécifique.
+L’aggravation pourra toutefois être retenue lorsque la victime est un mineur de plus de
+quinze ans.
+Cette notion ne se suffit pas à elle-même car l’état de faiblesse ne peut résulter du seul âge
+de la victime (TGI Montpellier, 7 décembre 2000). Il doit s’y ajouter la preuve d’une
+vulnérabilité particulière (Cass. crim., n° 96-80.068 du 30 avril 1996). L’âge plus ou moins
+avancé de la victime ne suffit pas, à défaut d’autres constatations, à caractériser sa
+particulière vulnérabilité (Cass. crim., n° 98-84.158 du 23 juin 1999).
+2.1.2 - La maladie, l’infirmité, la déficience physique ou psychique
+La jurisprudence semble assimiler ces notions vu leur proximité. Il s’agit de
+dysfonctionnements corporels, physiques ou mentaux, innés ou acquis, naturels ou
+provoqués, organiques ou fonctionnels.
+De plus, elles servent parfois à prouver la particulière vulnérabilité due au grand âge.
+2.1.3 - L’état de grossesse
+Cet état est susceptible d’entraîner une vulnérabilité particulière pendant la grossesse mais
+aussi après l’accouchement. En effet, les observations des autorités médicales mettent en
+exergue l’état dépressif qu’une grossesse ou qu’un accouchement peut provoquer.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 61
+2.1.4 - La précarité économique ou sociale.
+Elle peut se définir comme « l'absence d’une ou plusieurs des sécurités, notamment celle de
+l'emploi, permettant aux personnes et familles d'assumer leurs obligations professionnelles,
+familiales et sociales, et de jouir de leurs droits fondamentaux. »
+Il s’agit de personnes vulnérables aux atteintes résultant de l’exploitation de la misère. Leur
+statut social, marqué par la précarité économique, est susceptible de les placer dans une
+situation de dépendance.
+2.2 - L’ÉTAT APPARENT OU CONNU DE L’AUTEUR
+La cause de vulnérabilité doit être soit visible, soit révélée. L’auteur agit donc en raison de la
+particulière vulnérabilité de la victime. La partie poursuivante doit établir que cette condition
+était apparente ou connue de l’auteur.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 3° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 2° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12, ET 222-13, 2°
+C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ LE VIOL (ARTICLE 222-24, 3° ET 3° BIS C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-29 C.P.)
+ LE HARCÈLEMENT SEXUEL (ARTICLE 222-33, III, 3° ET 4° C.P.)
+ LE HARCÈLEMENT MORAL (ARTICLE 222-33-2-2, 3° C.P.)
+ LA TRAITE DES ÊTRES HUMAINS (ARTICLE 225-4-1, I C.P.)
+ LE PROXÉNÉTISME (ARTICLE 225-7, 2° C.P.)
+ LE RECOURS À LA PROSTITUTION (ARTICLE 225-12-1 AL. 2 C.P.)
+ LE VOL (ARTICLE 311-5, 2° C.P.)
+ L’EXTORSION (ARTICLE 312-2, 2°)
+ L’ESCROQUERIE (ARTICLE 313-2 4° C.P.)
+ L’ABUS DE CONFIANCE (ARTICLE 314-2 6° C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLE 322-3, 2°
+C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 62
+QU A L ITÉ DE L A V I CT IME QU I SE L I V RE À L A
+P RO ST ITUT ION
+« Sur une personne qui se livre à la prostitution, y compris de
+façon occasionnelle, si les faits sont commis dans l'exercice de
+cette activité ».
+1 : DÉFINITION
+Cette circonstance aggravante a été créée par la loi n° 2016-444 du 13 avril 2016 visant à
+renforcer la lutte contre le système prostitutionnel et à accompagner les personnes
+prostituées.
+Cette circonstance aggravante est réelle. Ses effets s'étendent à tous les auteurs, coauteurs
+et complices de l'infraction.
+2 : CONDITIONS
+2.1 - UNE PERSONNE QUI SE LIVRE À LA PROSTITUTION
+La personne doit se livrer à la prostitution ce qui implique l'existence d'un ou des rapports
+sexuels contre rémunération.
+2.2 - Y COMPRIS DE FAÇON OCCASIONNELLE
+Dès lors, un acte unique de prostitution peut donc suffire.
+2.3 - DANS L'EXERCICE DE SON ACTIVITÉ
+La personne doit avoir été victime des faits répréhensibles alors qu'elle se livrait à la
+prostitution. Sont donc exclus les actes perpétrés contre une personne prostituée au cours
+d'un contentieux sans lien avec son activité prostitutionnelle.
+3 : CHAMP D'APPLICATION
+ LES TORTURES ET ACTES DE BARBARIE (ARTICLE 222-3, 5° QUATER C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12 ET 222-13, 5°
+QUATER C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES (ARTICLE 222-15 C.P.)
+ LA CONTRAINTE EXERCÉE EN VUE DE SUBIR UNE ATTEINTE SEXUELLE DE LA
+PART D'UN TIERS (ARTICLE 222-22-2 AL. 2 C.P.)
+ LE VIOL (ARTICLE 222-24, 13° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 9°C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 63
+QU A L ITÉ DE L A V I CT IME
+DÉ PO S IT A I RE DE L ’ AUTO R ITÉ PU B L IQUE
+« Sur un magistrat, un juré, un avocat, un officier public ou
+ministériel, un membre ou un agent de la Cour pénale
+internationale, un militaire de la gendarmerie nationale, un
+fonctionnaire de la police nationale, des douanes, de
+l’administration pénitentiaire ou toute autre personne
+dépositaire de l’autorité publique, un sapeur-pompier ou un
+marin-pompier, un gardien assermenté d’immeubles ou de
+groupes d’immeubles ou un agent exerçant pour le compte d’un
+bailleur des fonctions de gardiennage ou de surveillance des
+immeubles à usage d’habitation en application de l’article L. 271-
+1 du Code de la sécurité intérieure, dans l’exercice ou du fait de
+ses fonctions, lorsque la qualité de la victime est apparente ou
+connue de l’auteur. »
+1 : DÉFINITION
+Cette circonstance aggravante accroît la protection due aux personnes particulièrement
+exposées à diverses infractions en raison des fonctions qu'elles exercent. Non seulement la
+personne est protégée mais aussi, à travers elle, sa fonction.
+L’infraction doit être en rapport direct avec la fonction pour que la circonstance aggravante
+puisse être retenue.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA QUALITÉ DE DÉPOSITAIRE DE L’AUTORITÉ PUBLIQUE
+Est dépositaire de l'autorité publique celui qui a « un pouvoir de décision fondé sur la
+parcelle de l'autorité publique que lui confèrent ses fonctions, qu’il soit fonctionnaire au sens
+strict, militaire, magistrat, officier public ou ministériel ».
+2.1.1 - Les personnes énumérées par le C.P.
+Les magistrats, les jurés, les avocats, les officiers publics ou ministériels, les membres ou
+agents de la Cour pénale internationale, les militaires de la gendarmerie nationale, les
+fonctionnaires de la police nationale, des douanes, de l’administration pénitentiaire.
+2.1.2 - Les autres personnes dépositaires de l’autorité publique
+Toutes les personnes entrant dans le champ d’application des textes prévus. Il s’agit par
+exemple du président de la République, des ministres, des secrétaires d’État, des maires et
+adjoints, des notaires, des huissiers, des commissaires-priseurs, des inspecteurs des
+finances publiques, des agents assermentés de la S.N.C.F., des gardes chasse,…
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 64
+2.1.3 - Les personnes assimilées n’exerçant pas des fonctions d’autorité
+Il s’agit des sapeurs-pompiers ou marins-pompiers, des gardiens d’immeubles ou de
+groupes d’immeubles ou des agents exerçant pour le compte d’un bailleur des fonctions de
+gardiennage ou de surveillance des immeubles à usage d’habitation en application de
+l’article L. 271-1 du code de la sécurité intérieure (dispositions tendant à limiter les atteintes
+aux biens et à prévenir les troubles de voisinage en imposant à certains bailleurs le
+gardiennage et la surveillance de leurs bâtiments).
+2.2 - L’EXERCICE OU LE FAIT DES FONCTIONS
+La personne doit avoir été victime des faits répréhensibles alors qu’elle était en service ou
+qu’elle procédait à un des actes entrant dans ses attributions (dans l’exercice de ses
+fonctions) ou en raison des fonctions exercées ou d’un acte antérieurement accompli (du fait
+de ses fonctions, expression remplaçant « à l’occasion de ses fonctions »).
+2.3 - LA QUALITÉ APPARENTE OU CONNUE DE L’AUTEUR
+Il s’agit de la même condition que celle liée à la particulière vulnérabilité. Elle implique donc
+que l’auteur agit en raison de la qualité de la victime.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 4° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 4° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12* ET 222-13*, 4°
+C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLE 322-3, 3°
+C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS OU DÉTÉRIORATIONS DANGEREUSES
+POUR LES PERSONNES (ARTICLE 322-8, 3° C.P.)
+* Nota : les violences volontaires avec ITT ≤ et > à 8 jours à l’encontre des forces de sécurité intérieure ou des
+élus locaux sont érigées en infraction autonome (art. 222-14-5 du C.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 65
+QU A L ITÉ DE V I CT IME P A RENTE D ’UNE PE R SONNE
+DÉ PO S IT A I RE DE L ’ AUTO R ITÉ PU B L IQUE
+« Sur le conjoint, les ascendants ou les descendants en ligne
+directe ou toute autre personne vivant habituellement au
+domicile des personnes dépositaires de l’autorité publique, des
+enseignants ou personnels travaillant dans des établissements
+d'enseignement scolaire, des agents d'un exploitant de réseau
+de transport public de voyageurs, toute personne chargée d'une
+mission de service public et professionnel de santé, en raison
+des fonctions exercées par ces personnes. »
+1 : DÉFINITION
+Cette circonstance aggravante a été créée afin de protéger les proches des personnes
+dépositaires de l’autorité publique ainsi que des enseignants, professionnels de santé,
+agents des transports publics et personnes chargées d'une mission de service public.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA QUALITÉ DE DÉPOSITAIRE DE L’AUTORITÉ PUBLIQUE
+Il s’agit des personnes énumérées par le C.P., des autres personnes dépositaires de
+l’autorité publique ou des personnes assimilées n’exerçant pas des fonctions d’autorité (un
+magistrat, un juré, un avocat, un officier public ou ministériel, un militaire de la
+gendarmerie nationale, un fonctionnaire de la police nationale, des douanes, de
+l’administration pénitentiaire ou toute autre personne dépositaire de l’autorité publique, un
+sapeur-pompier professionnel ou volontaire, un gardien assermenté d’immeubles ou de
+groupes d’immeubles ou un agent exerçant pour le compte d’un bailleur des fonctions de
+gardiennage ou de surveillance des immeubles à usage d’habitation en application de
+l’article L. 271-1 du code de la sécurité intérieure)
+2.2 - AUTRE QUALITÉ
+La circonstance est également applicable pour protéger les proches des enseignants ou
+personnels travaillant dans des établissements d'enseignement scolaire, des agents d'un
+exploitant de transport public de voyageurs, des professionnels de santé ainsi que toute
+personne chargée d'une mission de service public.
+2.3 - LE LIEN DE PARENTÉ
+Il faut que la victime soit le conjoint (époux mais aussi partenaire lié par un P.A.C.S.,
+concubin) l’ascendant ou le descendant en digne directe (parents ou enfants), ou une
+personne vivant habituellement à son domicile (une personne hébergée quel que soit le lien
+de parenté).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 66
+2.4 - LA CONNAISSANCE DE LA QUALITÉ DU PROCHE
+L’infraction principale doit avoir été commise en raison des fonctions exercées par le proche
+de la victime. Cette condition implique que l’auteur connaissait la qualité de ce proche.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 4° TER C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 4° TER C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12, ET 222-13, 4°
+TER C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 67
+QU A L ITÉ DE L A V I CT IME CH A RGÉE D ’UNE
+M I S S ION DE SE R V I CE PU B L I C
+« Sur un enseignant ou tout membre des personnels travaillant
+dans les établissements d'enseignement scolaire, sur un agent
+d’un exploitant de réseau de transport public de voyageurs ou
+toute autre personne chargée d’une mission de service public
+ainsi que sur un professionnel de santé, dans l’exercice de ses
+fonctions, lorsque la qualité de la victime est apparente ou
+connue de l’auteur. »
+1 : DÉFINITION
+Cette circonstance aggravante accroît la protection due aux personnes particulièrement
+exposées à diverses infractions en raison des missions qu'elles exercent.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LES PERSONNES CHARGÉES D’UNE MISSION DE SERVICE PUBLIC
+La circulaire générale d’application du code pénal du 14 mai 1993 estime que cette
+expression désigne : « Les personnes privées ou publiques qui, sans être dépositaires d’une
+parcelle de l’autorité publique, accomplissent à titre temporaire ou permanent,
+volontairement ou sur réquisition des autorités, un service quelconque ». Cette qualité ne
+peut pas se déduire de la seule appartenance à un établissement public sans caractériser les
+actes accomplis en matière de service public.
+2.1.1 - Les enseignants et les membres des personnels travaillant dans les
+établissements d’enseignement scolaire
+Il n’existe pas de distinction concernant les établissements d’enseignement scolaire. Il peut
+s’agir d’établissements publics ou privés qui regroupent les écoles (maternelles et
+primaires), collèges, lycées, université ou écoles supérieures.
+Le législateur a souhaité protéger par cette circonstance aggravante l’ensemble du corps
+professoral mais également l’ensemble des personnels travaillant au sein de ces
+établissements. Il s’agit des enseignants (maître des écoles, professeurs, maître de
+conférence…), des personnels de direction, des agents administratifs, des personnels
+techniques (en charge de l’entretien et le fonctionnement de l’ensemble des infrastructures),
+etc.
+2.1.2 - Les agents d’un exploitant de réseau de transport public de
+voyageurs
+Cette expression vise des établissements tels que la RATP ou la SNCF mais également par
+exemple les compagnies chargées d'effectuer le ramassage scolaire. Le législateur a décidé
+d'étendre l'application de la qualité de personne chargée d’une mission de service public à
+tous les agents des exploitants et non seulement aux agents en contact avec le public.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 68
+2.1.3 - Les personnes chargées d’une mission de service public
+La jurisprudence alimente régulièrement cette catégorie de personne. Sans être exhaustif,
+on peut citer : un parlementaire, un garde-chasse particulier, un préposé à la distribution du
+courrier, une gérante d’agence postale d’une commune, un expert nommé par décision
+judiciaire, un greffier, un gardien de scellés, un médecin requis par un O.P.J., etc.
+2.1.4 - Les professionnels de santé
+Cette adjonction protège dorénavant médecin, infirmier, pharmacien, etc.
+2.1.5 - Les personnes assimilées
+La loi n° 2006-1294 du 23 octobre 2006 assimile les arbitres et juges sportifs à des
+personnes chargées d’une mission de service public.
+2.2 - L’EXERCICE DES FONCTIONS
+La personne chargée d’une mission de service public doit avoir été victime des faits
+répréhensibles alors qu’elle était en service ou qu’elle procédait à un des actes entrant dans
+ses attributions (dans l’exercice de ses fonctions).
+2.3 - LA QUALITÉ APPARENTE OU CONNUE DE L’AUTEUR
+Il s’agit de la même condition que celle liée à la particulière vulnérabilité. Elle implique donc
+que l’auteur agit en raison de la qualité de la victime.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 4°BIS C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 4°BIS C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12* ET 222-13*,
+4° BIS C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES (ARTICLE 222-15 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLE 322-3,
+3°C.P.)
+* Nota : les violences volontaires avec ITT ≤ et > à 8 jours à l’encontre des élus locaux sont érigées en
+infraction autonome (art. 222-14-5 du C.P.).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 69
+QU A L ITÉ DE TÉMO IN , V I CT IME ,
+OU P A RT IE C I V I LE
+« Sur un témoin, une victime ou une partie civile, soit pour
+l’empêcher de dénoncer les faits, de porter plainte ou de déposer
+en justice, soit en raison de sa dénonciation ou de sa plainte, soit
+à cause de sa déposition devant une juridiction nationale ou
+devant la Cour pénale internationale »
+1 : DÉFINITION
+Cette circonstance aggravante vise à préserver le bon fonctionnement de l’administration de
+la justice qui est menacée par les pressions exercées sur les parties et les témoins. Pour
+qu’elle puisse être constituée, une infraction doit être préalablement commise. Les auteurs
+et leurs complices veulent, en commettant une nouvelle infraction, éviter des suites
+judiciaires, se venger de ceux qu’ils tiennent pour responsables ou dissuader ceux qui
+voudraient en engager.
+Dépendant de l’intention de l’auteur de l’infraction et du but qu’il poursuit, cette
+circonstance aggravante est de nature personnelle.
+2 : CONDITIONS
+2.1 - LES TÉMOINS, VICTIMES OU PARTIES CIVILES
+Il ne s’agit pas de toute personne mais exclusivement des témoins, victimes ou parties
+civiles. Il faut qu’un certain temps se soit écoulé entre l’infraction susceptible d’être
+dénoncée et cette nouvelle infraction.
+2.2 - POUR L’EMPÊCHER DE DÉNONCER LES FAITS, DE PORTER PLAINTE
+OU DE DÉPOSER EN JUSTICE
+L’auteur agit avec une intention « préventive ». Il cherche par exemple à contraindre une
+personne à retirer sa plainte, à ne pas se constituer partie civile ou à influencer ses
+déclarations.
+2.3 - EN RAISON DE SA DÉNONCIATION, DE SA PLAINTE OU DE SA
+DÉPOSITION
+L’auteur agit avec une intention « répressive ». Il est animé par une volonté de vengeance.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 70
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 5° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 5° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12 ET 222-13, 5°
+C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ LES DESTRUCTIONS, DÉGRADATIONS ET DÉTÉRIORATIONS (ARTICLE 322-3, 4°
+C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 71
+QU A L ITÉ DE L A V I CT IME A S CEND ANT DE
+L ' AUTEU R
+« Sur un ascendant légitime ou naturel ou sur les père ou mère
+adoptifs. »
+1 : DÉFINITION
+Cette circonstance aggravante a été réintroduite dans le code pénal suite à la suppression
+de l’incrimination de parricide.
+Résultant de la filiation existant entre l’auteur de l’infraction et sa victime, cette circonstance
+aggravante est de nature personnelle.
+2 : CONDITIONS
+2.1 - UN ASCENDANT LÉGITIME
+Ce sont les père et mère légitimes de l’auteur de l’infraction et ses autres ascendants
+directs. La circonstance aggravante ne s’étend pas aux alliés aux mêmes degrés. Les
+auteurs sont donc des enfants nés de parents unis par le mariage.
+2.2 - UN ASCENDANT NATUREL
+Les auteurs sont des enfants nés hors mariage. La filiation naturelle doit cependant être
+légalement établie.
+2.3 - PÈRE OU MÈRE ADOPTIFS
+Les auteurs sont des enfants adoptés. Cependant, la circonstance aggravante pourra être
+caractérisée dans le cas où la victime serait le père ou la mère par le sang.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 2° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 3° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12 ET
+ 222 - 13 3° C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 72
+QU A L ITÉ D ' AUTEU R DÉ PO S IT A I RE DE L ’ AUTO R ITÉ
+PU B L IQUE OU CH A RGÉ D ’UNE M I S S ION DE
+SE R V I CE PU B L I C
+« Par une personne dépositaire de l’autorité publique ou chargée
+d’une mission de service public dans l’exercice ou à l’occasion de
+l’exercice de ses fonctions ou de sa mission. »
+1 : DÉFINITION
+Cette circonstance aggravante est la face inversée de celle liée à la qualité de la victime
+dépositaire de l’autorité publique ou chargée d’une mission de service public.
+Il s’agit d’une circonstance aggravante personnelle. Ses effets ne s’étendent pas aux
+coauteurs de l’infraction.
+2 : CONDITIONS
+Les conditions listées sont celles développées précédemment dans les circonstances liées à
+la qualité de la victime.
+2.1 - LA QUALITÉ DE DÉPOSITAIRE DE L’AUTORITÉ PUBLIQUE
+Est dépositaire de l'autorité publique celui qui a « un pouvoir de décision fondé sur la
+parcelle de l'autorité publique que lui confèrent ses fonctions, qu'il soit fonctionnaire au sens
+strict, militaire, magistrat, officier public ou ministériel ».
+Sont notamment concernés les policiers, les militaires de la gendarmerie, les douaniers, les
+huissiers de justice, les commissaires-priseurs et les fonctionnaires des eaux et forêts.
+2.2 - LES PERSONNES CHARGÉES D’UNE MISSION DE SERVICE PUBLIC
+La circulaire générale d’application du code pénal du 14 mai 1993 estime que cette
+expression désigne : « Les personnes privées ou publiques qui, sans être dépositaires d’une
+parcelle de l’autorité publique, accomplissent à titre temporaire ou permanent,
+volontairement ou sur réquisition des autorités, un service quelconque ».
+2.3 - DANS L’EXERCICE OU À L’OCCASION DE L’EXERCICE DE SES
+FONCTIONS OU DE SA MISSION
+Ces personnes doivent avoir agi alors qu’elles étaient en service ou qu’elles procédaient à un
+des actes entrant dans leurs attributions (dans l’exercice de ses fonctions) ou en raison des
+fonctions exercées ou d’un acte antérieurement accompli (à l’occasion de ses fonctions « du
+fait de ses fonctions »).
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 73
+3 : CHAMP D'APPLICATION
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3 7° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8, 222-10, 222-12 ET
+ 222 - 13, 7° C.P.)
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ LE VOL (ARTICLE 311-4, 2° C.P.)
+ L’ESCROQUERIE (ARTICLE 313-2, 1° C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 74
+QU A L ITÉ D ' AUTEU R A S CEND ANT DE L A
+V I CT IME OU A Y ANT AUTO R ITÉ SU R E L LE
+« Par un ascendant légitime, naturel ou adoptif, ou par toute
+autre personne ayant autorité sur la victime. »
+1 : DÉFINITION
+Cette circonstance aggrave le plus souvent des infractions à caractère sexuel. Elle vise les
+auteurs d’infractions ayant une autorité particulière sur leur victime en raison de leur
+situation personnelle.
+Il s’agit d’une circonstance aggravante personnelle. Ses effets ne s’étendent pas aux
+coauteurs de l’infraction.
+2 : CONDITIONS
+2.1 - L’ASCENDANT DE LA VICTIME
+Il peut s’agir des père, mère, aïeux et aïeules de la victime, qu’ils soient légitimes, naturels
+ou adoptifs. Les parents et alliés en ligne collatérale ne sont pas visés.
+Cependant, si les cousin, cousine, oncle et tante ont commis l’infraction en ayant une
+autorité de fait, la circonstance aggravante pourra être appliquée.
+2.2 - LA PERSONNE AYANT AUTORITÉ SUR LA VICTIME
+Il s’agit des personnes ayant une autorité de droit (ex : tuteur d’un mineur ou d’un majeur
+incapable) ou ayant une autorité de fait permanente ou discontinue établie par des
+circonstances particulières caractérisant cette autorité (concubin de la mère de la victime,
+second mari de la mère de la victime, cohabitation avec la victime, mari d’une nourrice, chef
+scout,…).
+3 : CHAMP D'APPLICATION
+ LE VIOL (ARTICLE 222-24, 4° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 2° C.P.)
+ LES AGRESSIONS SEXUELLES SUR MINEUR DE QUINZE ANS OU PERSONNE
+VULNÉRABLE (ARTICLE 222-30, 2° C.P.)
+ LE HARCÈLEMENT SEXUEL (ARTICLE 222-33 III 8° C.P.)
+ LA TRAITE DES ÊTRES HUMAINS (ARTICLE 225-4-2, 8° C.P.)
+ LE PROXÉNÉTISME (ARTICLE 225-7, 5° C.P.)
+ LES ATTEINTES SEXUELLES SANS VIOLENCE SUR MINEUR DE QUINZE ANS
+(ARTICLE 227-26, 1° C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, AVANT DERNIER
+ALINÉA C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 75
+QU A L ITÉ D ' AUTEU R A BU S ANT
+DE SON AUTO R ITÉ
+« Par une personne qui abuse de l’autorité que lui confèrent ses
+fonctions. »
+1 : DÉFINITION
+Cette circonstance aggrave les infractions commises par des personnes ayant une autorité
+générale due aux fonctions qu’elles exercent à l’égard d’un certain nombre de personnes.
+Il s’agit d’une circonstance aggravante personnelle. Ses effets ne s’étendent pas aux
+coauteurs de l’infraction.
+2 : CONDITIONS
+2.1 - LA PERSONNE AYANT AUTORITÉ SUR LA VICTIME
+Ces personnes ne rentrent pas dans le cadre des ascendants. Il s’agit des professeurs,
+médecins, prêtres, marabout,…
+2.2 - LES FONCTIONS EXERCÉES
+Les fonctions exercées peuvent être publiques ou privées.
+2.3 - L’ABUS DE L’AUTORITÉ
+L’aggravation est encourue lorsque l’auteur de l’infraction a abusé de cette autorité pour
+commettre des actes répréhensibles auxquels elle s’applique.
+3 : CHAMP D'APPLICATION
+ LE VIOL (ARTICLE 222-24, 5° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 3° C.P.)
+ LES AGRESSIONS SEXUELLES SUR MINEUR DE QUINZE ANS OU PERSONNE
+VULNÉRABLE (ARTICLE 222-30, 3° C.P.)
+ LE HARCÈLEMENT SEXUEL (ARTICLE 222-33 III 1° C.P.)
+ LA TRAITE DES ÊTRES HUMAINS (ARTICLE 225-4-2, 8° C.P.)
+ LE PROXÉNÉTISME (ARTICLE 225-7, 5° C.P.)
+ LE RECOURS À LA PROSTITUTION DE MINEUR (ARTICLE 225-12-2, 3° C.P.)
+ LES ATTEINTES SEXUELLES SANS VIOLENCE SUR MINEUR DE QUINZE ANS
+(ARTICLE 227-26, 2° C.P.) ET DE PLUS DE QUINZE ANS (ARTICLE 227-27, 2° C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, AL. 18 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 76
+A VE C UT I L I S AT ION D 'UN RÉ SE AU DE
+COMMUN I C AT ION É LE CT RON IQUE
+« Grâce à l’utilisation, pour la diffusion de messages à
+destination d’un public non déterminé, d’un réseau de
+communication électronique. »
+1 : DÉFINITION
+Le développement des techniques de communication électronique, notamment de l’Internet,
+a rendu certaines infractions à caractère sexuel à la fois plus faciles à commettre et plus
+difficiles à sanctionner. Elles permettent en effet d’entrer en contact avec un très grand
+nombre d’interlocuteurs alors que l’auteur du message n’est souvent pas aisément
+identifiable. Ces procédés induisent une internationalisation de délits.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA DIFFUSION DE MESSAGES À DESTINATION D’UN PUBLIC NONDÉTERMINÉ
+Cette circonstance aggravante vise les mineurs et les majeurs. Cette formule exclut l’envoi
+d’un courrier électronique identique à plusieurs personnes identifiées.
+2.2 - UN RÉSEAU DE COMMUNICATION ÉLECTRONIQUE
+Il s’agit du réseau Internet et du réseau téléphonique.
+3 : CHAMP D'APPLICATION
+ LE VIOL (ARTICLE 222-24, 8° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 6° C.P.)
+ LE HARCÈLEMENT SEXUEL (ARTICLE 222-33 III, 6° C.P.)
+ LA TRAITE DES ÊTRES HUMAINS (ARTICLE 225-4-2, 3° C.P.)
+ LE PROXÉNÉTISME (ARTICLE 225-7, 10° C.P.)
+ LE RECOURS À LA PROSTITUTION DE MINEUR (ARTICLE 225-12-2, 2° C.P.)
+ LES ATTEINTES SEXUELLES SANS VIOLENCE SUR MINEUR DE QUINZE ANS
+(ARTICLE 227-26, 5° C.P.)
+ LE HARCÈLEMENT MORAL (ARTICLE 222-33-2-2, 4° C.P.)
+ LA CORRUPTION DE MINEURS (ARTICLE 227-22 C.P.)
+ LA DIFFUSION ET LA FIXATION DE L’IMAGE À CARACTÈRE PORNOGRAPHIQUE
+D’UN MINEUR (ARTICLE 227-23 C.P.)
+ LA DIFFUSION DE PROCÉDÉS DE DESTRUCTION (ARTICLE 322-6-1 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 77
+D AN S UN ÉT A B L I S SEMENT D 'EN SE IGNEMENT ,
+D ’ÉDU C AT ION OU DANS LES LOCAUX DE
+L'ADMINISTRATION
+« Dans des établissements d’enseignement ou d’éducation ou
+dans les locaux de l’administration, ainsi que, lors des entrées et
+sorties des élèves ou du public ou dans un temps très voisin de
+celles-ci, aux abords de ces établissements ou locaux. »
+1 : DÉFINITION
+Cette circonstance aggravante vise à réprimer plus sévèrement certaines infractions
+commises en milieu scolaire notamment, mais aussi dans les locaux de l’administration.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - LA NATURE DU LIEU
+L’infraction principale doit avoir été commise « dans des établissements d’enseignement ou
+d’éducation ou dans les locaux de l’administration ».
+Cette formule vise les écoles, les collèges, les lycées, les centres éducatifs, les
+établissements universitaire, et les locaux administratifs dépendant de ces établissements
+d'enseignement.
+Un arrêt de la chambre criminelle de la Cour de cassation du 14 octobre 2020 est venu
+préciser que la notion de « locaux de l’administration » ne saurait être étendue à des locaux
+pouvant dépendre d'autres administrations.
+Les faits peuvent avoir été commis dans quelque partie que ce soit de l’établissement
+(bureau, salle, escalier, cour,…). Mais ils peuvent également être commis à l’extérieur à
+condition que ce soit aux abords, c’est-à-dire à une distance pas trop importante de l’entrée
+de l’établissement.
+2.2 - LE MOMENT DES FAITS
+Aucune précision n’est apportée quant au moment de commission des faits dans ces
+établissements.
+Concernant les abords, les faits devront avoir été commis au moment « des entrées et des
+sorties » ou « dans un temps très voisin de celles-ci ».
+Ceci suppose l’existence d’un lien entre les faits et la nature du lieu de commission.
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 78
+3 : CHAMP D'APPLICATION
+ LA PROVOCATION D’UN MINEUR À L’USAGE DES STUPÉFIANTS (ARTICLE 227-18
+AL. 2 C.P.)
+ LA PROVOCATION D’UN MINEUR À LA DÉTENTION OU AU COMMERCE DE
+STUPÉFIANTS (ARTICLE 227-18-1 AL. 2 C.P.)
+ LA PROVOCATION D’UN MINEUR À LA CONSOMMATION EXCESSIVE DE
+BOISSONS ALCOOLIQUES (ARTICLE 227-19 AL. 3 C.P.)
+ LA PROVOCATION D’UN MINEUR À COMMETTRE UN CRIME OU UN DÉLIT
+(ARTICLE 227-21 AL. 2 C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-12 ET 222-13, 11° C.P. )
+ L’ADMINISTRATION DE SUBSTANCES NUISIBLES ( ARTICLE 222-15 C.P.)
+ L’OUTRAGE À PERSONNE CHARGÉE D’UNE MISSION DE SERVICE PUBLIC
+(ARTICLE 433-5 AL. 3 C.P.)
+ LA CESSION OU L’OFFRE ILLICITES DE STUPÉFIANTS À UNE PERSONNE EN VUE
+DE SA CONSOMMATION PERSONNELLE (ARTICLE 222-39 AL. 2 C.P.)
+ LE VOL (ARTICLE 311-4, 11° C.P.)
+ L’EXTORSION (ARTICLE 312-2, 5° C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 79
+AUTEU R I V RE OU SOU S L ’EM P R I SE DE
+STU PÉ F I ANT S
+« Par une personne agissant en état d’ivresse manifeste ou sous
+l’emprise manifeste de produits stupéfiants. »
+1 : DÉFINITION
+Cette circonstance aggravante peut être retenue lorsque la personne boit en connaissance
+des effets de l'alcool et commet ensuite en état d'ivresse une infraction qu'elle n'a pas à
+proprement parler voulue avant de boire, et qu'elle n'aurait pas voulu en son état normal. La
+grande majorité des décisions jurisprudentielles se refusant à voir dans l'ivresse une cause
+légale d'exemption de la peine.
+Cette solution semble devoir être appliquée a fortiori à l'usage volontaire de produits
+stupéfiants, illicite en tant que tel, contrairement à la consommation d'alcool.
+Il s’agit d’une circonstance aggravante réelle. Ses effets s’étendent à tous les auteurs,
+coauteurs et complices de l’infraction.
+2 : CONDITIONS
+2.1 - L’ÉTAT D’IVRESSE MANIFESTE ET L’EMPRISE MANIFESTE DE
+PRODUITS STUPÉFIANTS
+Ces états sont ceux définis par le code de la santé publique, le code de la route et la
+jurisprudence s’y rapportant.
+Cependant, aucune précision n’a été rapportée par le législateur concernant les éléments
+permettant de les caractériser en tant que circonstance aggravante de certaines infractions
+pénales.
+On peut néanmoins retenir l’article L. 3354-1 du C.S.P. qui prévoit que : « Les officiers ou
+agents de la police judiciaire doivent, lors de la constatation d'un crime, d'un délit ou d'un
+accident de la circulation, faire procéder, sur la personne de l'auteur présumé, aux
+vérifications prévues au I de l'article L. 234-1 du code de la route et à l'article L. 4274-14 du
+code des transports destinées à établir la preuve de la présence d'alcool dans son organisme
+lorsqu'il semble que le crime, le délit ou l'accident a été commis ou causé sous l'empire d'un
+état alcoolique. Ces vérifications sont obligatoires dans tous les cas de crimes, délits ou
+accidents suivis de mort. Dans tous les cas où elles peuvent être utiles, elles sont également
+effectuées sur la victime. »
+Aucune disposition spéciale ne prévoit une telle procédure en matière de produits
+stupéfiants.
+2.2 - LA CONSTITUTION DE LA PREUVE DE CES ÉTATS
+La détermination de l’état manifeste d’ivresse ou d’emprise de stupéfiants pourrait s’avérer
+difficile à apprécier dans certains cas. La question de la preuve a été soulevée à plusieurs
+reprises lors du vote de la loi, mais elle est restée sans réponse.
+Comment faire la preuve de l’état d’ivresse manifeste de l’auteur d’une infraction lorsque la
+victime porte plainte quelques heures, voire quelques jours après les faits ?
+À l’inverse, comment déterminer la date de consommation de produits stupéfiants alors que
+leur présence demeure plusieurs jours dans l’organisme ?
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 80
+Quelle est l’influence du degré de dépendance à ces produits sur le comportement
+individuel ?
+Les représentants du Conseil national de l’ordre des médecins expliquent que la conjugaison
+de trois types de dépistage (analyses d’urine, de sang et des cheveux) permet de détecter
+précisément le niveau de consommation de produits stupéfiants (niveau faible, moyen ou
+important) et la date à laquelle ces produits ont été consommés.
+3 : CHAMP D'APPLICATION
+ LE MEURTRE (ARTICLE 221-4, 11° C.P.)
+ LES VIOLENCES VOLONTAIRES (ARTICLES 222-8 ET 222-10, 11° , 222-12 ET
+222-13, 14°, ET 222-14-5 AL. 4 C.P.)
+ LE VIOL (ARTICLE 222-24, 12° C.P.)
+ LES AGRESSIONS SEXUELLES (ARTICLE 222-28, 8° C.P.)
+ LES AGRESSIONS SEXUELLES SUR MINEUR DE QUINZE ANS OU PERSONNE
+VULNÉRABLE (ARTICLE 222-30, 7° C.P.)
+ LES ATTEINTES SEXUELLES SANS VIOLENCE SUR MINEUR DE QUINZE ANS
+(ARTICLE 227-26, 5° C.P.)
+ L’EMPOISONNEMENT (ARTICLE 221-5 AL. 3 C.P.)
+ LES TORTURES OU ACTES DE BARBARIE (ARTICLE 222-3, 11° C.P.)
+ ADMINISTRATION DE SUBSTANCES NUISIBLES (ARTICLE 222-15 C.P.)
+Version au 01/12/2025 © SDCP – Tous droits réservés Page 81
+JANVIER 2021 EXAMEN JANVIER 2024

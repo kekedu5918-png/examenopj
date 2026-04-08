@@ -1,0 +1,343 @@
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Cal Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://cdn.jsdelivr.net/gh/calcom/font@main/packages/web/fonts/CalSans-SemiBold.woff2')
+    format('woff2');
+}
+@layer base {
+  :root {
+    --background: 240 6% 10%;
+    --foreground: 60 0% 90%;
+
+    --muted: 240 6% 10%;
+    --muted-foreground: 240 5% 84%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+  ::selection {
+    @apply text-black;
+    @apply bg-cyan-400;
+  }
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-cyan-400/80;
+  }
+  * {
+    @apply border-border;
+    @apply min-w-0;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    text-rendering: optimizeLegibility;
+  }
+  html {
+    @apply h-full;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply h-full;
+  }
+  h1 {
+    @apply font-display font-bold tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .font-mono-label {
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  }
+
+  .will-change-transform {
+    will-change: transform;
+  }
+}
+
+@layer components {
+  .home-start-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .home-start-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    background: #1118271a;
+  }
+
+  .home-start-card:hover {
+    border-color: #6366f1;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.12);
+  }
+
+  .home-enquetes-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+  }
+
+  .home-enquete-card {
+    padding: 1rem;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      transform 0.15s ease,
+      box-shadow 0.15s ease;
+    background: #11182714;
+  }
+
+  .home-enquete-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .home-enquete-code {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #6366f1;
+    text-transform: uppercase;
+  }
+
+  .home-enquete-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #f3f4f6;
+    line-height: 1.3;
+  }
+
+  .home-enquete-badge {
+    font-size: 0.65rem;
+    background: #f3f4f6;
+    color: #6b7280;
+    padding: 0.2rem 0.5rem;
+    border-radius: 999px;
+    display: inline-block;
+  }
+
+  .home-program-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .navbar-main {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    height: 60px;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-logo {
+    font-weight: 700;
+    font-size: 1rem;
+    color: #111827;
+    text-decoration: none;
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .navbar-links a {
+    font-size: 0.875rem;
+    color: #4b5563;
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .navbar-links a:hover {
+    color: #111827;
+  }
+
+  .navbar-login {
+    font-size: 0.875rem;
+    color: #4b5563;
+    text-decoration: none;
+    margin-right: 1rem;
+  }
+
+  .navbar-cta {
+    background: #111827;
+    color: white;
+    padding: 0.5rem 1.1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .navbar-cta:hover {
+    background: #374151;
+  }
+
+  .module-progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 2rem;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    color: #6b7280;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  .progress-track {
+    flex: 1;
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6);
+    border-radius: 999px;
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @media (max-width: 1024px) {
+    .home-enquetes-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .home-start-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .home-program-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .navbar-links {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-enquetes-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+/* Impression sujet blanc / rapport : masquer chrome site */
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+  .print-sujet-sheet {
+    background: white !important;
+    color: black !important;
+  }
+  .print-sujet-sheet * {
+    color: black !important;
+    border-color: #ccc !important;
+    box-shadow: none !important;
+  }
+}
