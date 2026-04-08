@@ -18,6 +18,8 @@ interface Props {
   index: number;
   /** Fiche derrière le gate premium : pas de lien. */
   locked?: boolean;
+  /** Lu / non lu (localStorage, page liste). */
+  viewed?: boolean;
 }
 
 function fasciculeBadgeClass(d: FasciculeDomaineMeta | undefined) {
@@ -63,10 +65,13 @@ const cardClass = (c: (typeof COULEURS)['emerald'], locked: boolean | undefined)
     !locked && c.borderHover,
   );
 
-export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, locked = false }: Props) {
+export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, locked = false, viewed }: Props) {
   const c = COULEURS[couleurKey] ?? COULEURS.emerald;
   const alertCount = fiche.regles.filter((r) => r.alerte).length;
   const repères = countRepères(fiche);
+  const href = fiche.ficheCanoniqueId
+    ? `/fondamentaux/${fiche.ficheCanoniqueId}`
+    : `/fondamentaux/${fiche.id}`;
 
   const inner = (
     <>
@@ -86,10 +91,27 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
               F{fiche.fasciculeNumero.toString().padStart(2, '0')}
             </span>
           ) : null}
+          {fiche.ficheCanoniqueId ? (
+            <span className='rounded-md border border-sky-500/35 bg-sky-500/10 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-sky-200'>
+              Renvoi
+            </span>
+          ) : null}
           {fiche.indispensableExamen ? (
             <span className='inline-flex items-center gap-1 rounded-md border border-gold-500/40 bg-gold-500/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-gold-300'>
               <BookMarked className='h-3 w-3 shrink-0 opacity-90' aria-hidden />
               Oral / écrit
+            </span>
+          ) : null}
+          {viewed != null ? (
+            <span
+              className={cn(
+                'rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+                viewed
+                  ? 'border-emerald-500/40 bg-emerald-500/20 text-emerald-100'
+                  : 'border-white/10 bg-white/[0.04] text-slate-500',
+              )}
+            >
+              {viewed ? 'Lu' : 'Non lu'}
             </span>
           ) : null}
         </div>
@@ -137,7 +159,7 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
       </div>
       {!locked ? (
         <span className='mt-4 inline-flex text-xs font-medium text-emerald-400/90 group-hover:text-emerald-300'>
-          Lire la fiche complète →
+          {fiche.ficheCanoniqueId ? '→ Voir la fiche complète' : 'Lire la fiche complète →'}
         </span>
       ) : null}
     </>
@@ -154,7 +176,7 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
       {locked ? (
         <div className={cardClass(c, true)}>{inner}</div>
       ) : (
-        <Link href={`/fondamentaux/${fiche.id}`} className={cardClass(c, false)}>
+        <Link href={href} className={cardClass(c, false)}>
           {inner}
         </Link>
       )}

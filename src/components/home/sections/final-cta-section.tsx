@@ -34,7 +34,7 @@ export function FinalCtaSection() {
 
         <div className='mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center'>
           <Link
-            href='/signup'
+            href='/inscription'
             className={cn(
               'group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-examen-accent to-examen-premium px-10 py-4 text-base font-semibold text-white shadow-lg shadow-examen-accent/25 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-examen-accent/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-examen-accent/80 active:scale-[0.98]',
               !reduceMotion && 'hover:-translate-y-0.5',

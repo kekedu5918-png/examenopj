@@ -170,7 +170,7 @@ export function FreemiumPricingPlans({
             </button>
           ) : (
             <Link
-              href='/signup'
+              href='/inscription'
               className='mt-8 flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 py-3.5 text-sm font-bold text-white shadow-lg transition hover:opacity-95'
             >
               {premiumCtaLabel}

@@ -1,3 +1,13 @@
+/** Date affichée (contenu / déploiement) — mettre à jour lors des releases majeures. */
+export const SITE_LAST_UPDATED_ISO = '2026-04-08';
+export const SITE_LAST_UPDATED_LABEL = '8 avril 2026';
+
+/** Preuve sociale (valeurs éditoriales — à ajuster si stats réelles disponibles). */
+export const SITE_SOCIAL_PROOF = {
+  registeredCandidates: 147,
+  avgQuizScoreLabel: '14,2/20',
+} as const;
+
 /** Identité produit (unique source pour libellés UI / SEO / intégrations). */
 export const APP_NAME = 'ExamenOPJ';
 export const APP_TAGLINE = "Révisions pour l'examen OPJ";

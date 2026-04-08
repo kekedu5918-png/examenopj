@@ -1,7 +1,8 @@
 import { courseModulePath } from '@/data/fascicules-list';
+import { FONDAMENTAUX_FICHE_CANONIQUE_ID } from '@/data/fondamentaux-canonical-map';
 import { LECONS_INDISPENSABLES_EXAMEN, resolveFasciculeForLesson } from '@/data/fondamentaux-fascicule-bridge';
 import { quizHrefForFasciculeId } from '@/data/fondamentaux-fascicule-reperes';
-import type { Categorie, FasciculeDomaineMeta,Fiche, FicheBlocDetail } from '@/data/fondamentaux-types';
+import type { Categorie, FasciculeDomaineMeta, Fiche, FicheBlocDetail } from '@/data/fondamentaux-types';
 import { CHAPTERS } from '@/data/lecons-chapters';
 
 const CHAPTER_CATEGORIE: Record<string, Categorie> = {
@@ -36,6 +37,31 @@ function lessonToFiche(ch: ChapterRow, lesson: LessonRow): Fiche {
   const categorie = CHAPTER_CATEGORIE[ch.id] ?? 'procedure';
   const fasc = resolveFasciculeForLesson(ch.id, lesson.id);
   const domaine = fasc.domaine as FasciculeDomaineMeta;
+  const canoniqueId = FONDAMENTAUX_FICHE_CANONIQUE_ID[lesson.id];
+
+  if (canoniqueId) {
+    return {
+      id: lesson.id,
+      categorie,
+      titre: lesson.name,
+      accroche:
+        'Ce thème est traité dans une fiche de référence unique sur le site (pas de contenu dupliqué). → Voir la fiche complète.',
+      source: `Renvoi canonique · ${lesson.ref} · Ch. ${ch.num} — ${ch.title}`,
+      regles: [],
+      blocsDetail: undefined,
+      piegesExamen: undefined,
+      cles: undefined,
+      emojiAffiche: lesson.em,
+      lienModule: courseModulePath(fasc.id),
+      lienQuiz: quizHrefForFasciculeId(fasc.id),
+      fasciculeId: fasc.id,
+      fasciculeNumero: fasc.numero,
+      fasciculeDomaine: domaine,
+      indispensableExamen: LECONS_INDISPENSABLES_EXAMEN.has(lesson.id),
+      ficheCanoniqueId: canoniqueId,
+    };
+  }
+
   return {
     id: lesson.id,
     categorie,

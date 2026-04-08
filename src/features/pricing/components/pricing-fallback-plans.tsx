@@ -17,7 +17,7 @@ const PLANS_FALLBACK = [
       'Méthode des 3 épreuves',
     ],
     cta: 'Commencer gratuitement',
-    href: '/signup',
+    href: '/inscription',
     highlight: false,
   },
   {
@@ -35,7 +35,7 @@ const PLANS_FALLBACK = [
       'Mises à jour législatives prioritaires',
     ],
     cta: "S'abonner",
-    href: '/signup?plan=premium',
+    href: '/inscription?plan=premium',
     highlight: true,
   },
 ] as const;

@@ -58,6 +58,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      { source: '/signup', destination: '/inscription', permanent: true },
+      { source: '/enquetes', destination: '/cours/enquetes', permanent: true },
       { source: '/fascicules', destination: '/programme', permanent: true },
       { source: '/fascicules/:id', destination: '/cours/modules/:id', permanent: true },
       { source: '/entrainement/quiz', destination: '/quiz', permanent: false },

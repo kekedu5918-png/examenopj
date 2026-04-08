@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 
-/** Affiché quand l’utilisateur est déjà connecté : les liens depuis /pricing ne doivent pas reboucler sur /signup → /pricing. */
+/** Affiché quand l’utilisateur est déjà connecté : les liens depuis /pricing ne doivent pas reboucler sur /inscription → /pricing. */
 export function AlreadySignedInPanel() {
   return (
     <div className='space-y-4'>

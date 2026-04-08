@@ -1,6 +1,9 @@
 /**
  * Audit « rangement » des fiches fondamentaux : index génératif + suggestions de regroupement.
  * Maintenir ce fichier quand une fiche est fusionnée ou renommée.
+ *
+ * Renvois canoniques (leçon L… → id fiche « part ») : voir `fondamentaux-canonical-map.ts`
+ * (redirection HTTP + cartes « Renvoi » sur /fondamentaux).
  */
 
 import { FICHES } from '@/data/fondamentaux-data';
@@ -46,6 +49,13 @@ export type FondamentauxMergeSuggestion = {
  * pour éviter les contradictions entre `fondamentaux-fiches-part*` et `fondamentaux-from-chapters`.
  */
 export const FONDAMENTAUX_MERGE_SUGGESTIONS: FondamentauxMergeSuggestion[] = [
+  {
+    theme: 'Leçons corpus dupliquant des fiches « part » (GAV, 78-2)',
+    ficheIds: ['L301', 'L302', 'L303', 'L304', 'L305', 'L307', 'L1101'],
+    action: 'keep_cross_link',
+    rationale:
+      'Implémenté : `fondamentaux-canonical-map.ts` — redirection 308 vers `garde-a-vue` ou `controle-identite`, cartes « Renvoi » sur la liste.',
+  },
   {
     theme: 'Privation de liberté et auditions (mineurs / majeurs)',
     ficheIds: ['garde-a-vue', 'audition', 'controle-identite', 'repères-f06-mineurs-famille'],

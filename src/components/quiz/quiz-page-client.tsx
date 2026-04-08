@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { BookOpen, Keyboard, Layers, ListOrdered, Shuffle } from 'lucide-react';
+import { BookOpen, Flame, Keyboard, Layers, ListOrdered, Shuffle } from 'lucide-react';
 
 import {
   FreemiumDailyQuotaProgress,
@@ -17,6 +17,7 @@ import { fasciculesList } from '@/data/fascicules-list';
 import { quizQuestions } from '@/data/quiz-questions';
 import { type QuizQuestion } from '@/data/types';
 import { addDailyQuizQuestionCount, getDailyQuizQuestionCount } from '@/features/access/daily-quota-client';
+import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
 import { cn } from '@/utils/cn';
@@ -98,9 +99,14 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const [result, setResult] = useState({ correct: 0, total: 0 });
   const [bestAfterQuiz, setBestAfterQuiz] = useState<number | null>(null);
   const [quotaTick, setQuotaTick] = useState(0);
+  const [streakDays, setStreakDays] = useState(0);
 
   useEffect(() => {
     if (phase === 'setup') setQuotaTick((t) => t + 1);
+  }, [phase]);
+
+  useEffect(() => {
+    setStreakDays(getQuizStreak());
   }, [phase]);
 
   const maxDailyQuiz = access.maxQuizQuestionsPerDay;
@@ -268,6 +274,17 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         percent: pct,
       });
     }
+
+    const gamification = recordQuizCompleted();
+    setStreakDays(gamification.streak);
+    if (
+      pct === 100 &&
+      launchConfig &&
+      isThemeQuizMode(launchConfig.mode) &&
+      launchConfig.fascicule != null
+    ) {
+      recordThemePerfectScore(launchConfig.fascicule);
+    }
   }
 
   function handleRecommencer() {
@@ -358,15 +375,29 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           </motion.div>
         </motion.header>
 
-        <p className='mb-8 text-center text-sm text-gray-500'>
-          {localBest != null ? (
-            <>
-              Record sur ce mode : <span className='font-semibold text-cyan-400'>{localBest}%</span>
-            </>
-          ) : (
-            'Choisissez un mode et lancez une série.'
-          )}
-        </p>
+        <div className='mb-8 flex flex-col items-center gap-2 text-center text-sm text-gray-500'>
+          {streakDays > 0 ? (
+            <p
+              className='inline-flex items-center gap-2 rounded-md border border-amber-500/25 bg-amber-500/10 px-3 py-1.5 text-amber-100'
+              aria-live='polite'
+            >
+              <Flame className='h-4 w-4 shrink-0 text-amber-400' aria-hidden />
+              <span>
+                Série : <strong className='font-semibold text-white'>{streakDays}</strong> jour
+                {streakDays > 1 ? 's' : ''} consécutif{streakDays > 1 ? 's' : ''} avec au moins un quiz
+              </span>
+            </p>
+          ) : null}
+          <p>
+            {localBest != null ? (
+              <>
+                Record sur ce mode : <span className='font-semibold text-cyan-400'>{localBest}%</span>
+              </>
+            ) : (
+              'Choisissez un mode et lancez une série.'
+            )}
+          </p>
+        </div>
 
         {maxDailyQuiz != null && quizUsedToday < maxDailyQuiz ? (
           <FreemiumDailyQuotaProgress used={quizUsedToday} max={maxDailyQuiz} unit='quiz' />

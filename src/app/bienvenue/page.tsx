@@ -50,7 +50,7 @@ const STEPS = [
 export default async function BienvenuePage() {
   const session = await getSession();
   if (!session) {
-    redirect('/signup');
+    redirect('/inscription');
   }
 
   return (

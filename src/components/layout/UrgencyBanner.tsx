@@ -22,7 +22,7 @@ export function UrgencyBanner() {
           <span className='hidden sm:inline'> →</span>
         </p>
         <Link
-          href='/signup'
+          href='/inscription'
           className='text-sm font-semibold text-examen-accent underline-offset-4 transition hover:text-examen-accentHover hover:underline focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-examen-canvas'
         >
           Commencer les révisions

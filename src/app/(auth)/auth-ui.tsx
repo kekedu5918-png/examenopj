@@ -80,7 +80,7 @@ export function AuthUI({
           </Link>
           {' · '}
           Inscription :{' '}
-          <Link href='/signup' className='text-cyan-400 underline underline-offset-2'>
+          <Link href='/inscription' className='text-cyan-400 underline underline-offset-2'>
             Créer un compte
           </Link>
         </p>

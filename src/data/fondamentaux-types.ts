@@ -47,6 +47,11 @@ export interface Fiche {
   /** Lien vers la fiche synthétique du thème correspondant sur ExamenOPJ. */
   lienModule?: string;
   lienQuiz?: string;
+  /**
+   * Si défini, le contenu détaillé est celui de la fiche `id === ficheCanoniqueId`
+   * (redirection / lien — évite les doublons pédagogiques).
+   */
+  ficheCanoniqueId?: string;
 }
 
 export const CATEGORIES: Record<Categorie, { label: string; couleur: string }> = {

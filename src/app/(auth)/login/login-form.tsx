@@ -50,7 +50,7 @@ export function LoginForm({ nextPath }: LoginFormProps) {
       {errorText ? (
         <p className='rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200'>
           {errorText}{' '}
-          <Link href='/signup' className='underline underline-offset-2'>
+          <Link href='/inscription' className='underline underline-offset-2'>
             Créer un compte
           </Link>
           .

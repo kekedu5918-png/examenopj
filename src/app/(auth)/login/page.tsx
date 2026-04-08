@@ -46,7 +46,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
             {banner}{' '}
             {searchParams.error !== 'auth_callback' ? (
               <>
-                <Link href='/signup' className='underline underline-offset-2'>
+                <Link href='/inscription' className='underline underline-offset-2'>
                   Créer un compte
                 </Link>
                 .
@@ -57,7 +57,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
         <LoginForm nextPath={nextPath} />
         <p className='text-center text-sm text-slate-500'>
           Pas encore de compte ?{' '}
-          <Link href='/signup' className='text-gold-400 underline underline-offset-2'>
+          <Link href='/inscription' className='text-gold-400 underline underline-offset-2'>
             S&apos;inscrire gratuitement
           </Link>
         </p>

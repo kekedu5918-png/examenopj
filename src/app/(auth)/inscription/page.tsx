@@ -4,10 +4,10 @@ import { redirect } from 'next/navigation';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 
-import { AlreadySignedInPanel } from './already-signed-in';
-import { SignUpForm } from './signup-form';
+import { AlreadySignedInPanel } from '../signup/already-signed-in';
+import { SignUpForm } from '../signup/signup-form';
 
-export default async function SignUpPage() {
+export default async function InscriptionPage() {
   const session = await getSession();
   const premium = session ? await hasPremiumAccess() : false;
 

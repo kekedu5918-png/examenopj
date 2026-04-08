@@ -1,6 +1,6 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Inter, JetBrains_Mono } from 'next/font/google';
+import { DM_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
 
 import { FloatingQuickFlashcards } from '@/components/layout/FloatingQuickFlashcards';
 import { Footer } from '@/components/layout/Footer';
@@ -17,11 +17,18 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '@/styles/globals.css';
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800', '900'],
+  variable: '--font-dm-sans',
+  weight: ['400', '500', '600', '700'],
+});
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-instrument-serif',
+  weight: '400',
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -40,7 +47,7 @@ export const metadata: Metadata = {
     template: '%s | ExamenOPJ — Préparation OPJ 2026',
   },
   description:
-    "Préparez l'examen OPJ juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
+    "Préparez l'examen OPJ juin 2026 : 15 fascicules, 200+ questions de quiz, flashcards et procédure pénale.",
   openGraph: {
     type: 'website',
     locale: 'fr_FR',
@@ -48,14 +55,14 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: 'ExamenOPJ — Préparation OPJ 2026',
     description:
-      "Préparez l'examen OPJ juin 2026 : 15 modules, 400+ questions de quiz, flashcards et entraînement à la procédure pénale.",
+      "Préparez l'examen OPJ juin 2026 : 15 fascicules, 200+ questions de quiz, flashcards et procédure pénale.",
     images: [{ url: OG_IMAGE_PATH, width: 1200, height: 630, alt: 'ExamenOPJ — Préparation OPJ 2026' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'ExamenOPJ — Préparation OPJ 2026',
     description:
-      "Préparez l'examen OPJ juin 2026 : modules, quiz, flashcards et procédure pénale.",
+      "Préparez l'examen OPJ juin 2026 : fascicules, quiz, flashcards et procédure pénale.",
     images: [`${siteUrl}${OG_IMAGE_PATH}`],
   },
   robots: { index: true, follow: true },
@@ -66,13 +73,17 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [{ media: '(prefers-color-scheme: dark)', color: '#0A0A0F' }],
+  themeColor: [{ media: '(prefers-color-scheme: dark)', color: '#0C1B33' }],
   colorScheme: 'dark',
 };
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang='fr' className={cn('dark', inter.variable, jetbrainsMono.variable)} suppressHydrationWarning>
+    <html
+      lang='fr'
+      className={cn('dark', dmSans.variable, instrumentSerif.variable, jetbrainsMono.variable)}
+      suppressHydrationWarning
+    >
       <body
         className={cn('relative min-h-screen bg-examen-canvas font-sans text-examen-ink antialiased')}
         suppressHydrationWarning

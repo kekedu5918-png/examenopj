@@ -15,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
           '/account/',
           '/manage-subscription',
           '/login',
-          '/signup',
+          '/inscription',
           '/auth/callback',
           '/callback',
         ],

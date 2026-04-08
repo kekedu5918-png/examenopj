@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import Link from 'next/link';
 import type { Variants } from 'framer-motion';
 import { motion, useReducedMotion } from 'framer-motion';
@@ -7,6 +8,7 @@ import {
   ArrowRight,
   BookOpen,
   ClipboardList,
+  Crosshair,
   FileEdit,
   Gavel,
   Layers,
@@ -14,8 +16,8 @@ import {
   Mic,
   Scale,
   Shield,
+  Quote,
   Sparkles,
-  Zap,
 } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
@@ -24,6 +26,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { ENQUETES } from '@/data/enquetes-data';
+import { getDaysUntilExam } from '@/lib/exam-countdown';
 
 export type InfractionPreviewItem = {
   id: string;
@@ -37,24 +40,24 @@ export function StartHereSection() {
   const MotionLink = motion(Link);
   const cards = [
     {
-      emoji: '🗺️',
-      title: 'Je découvre l’examen',
-      text: 'Je ne connais pas encore les 3 épreuves, ni ce qu’on attend de moi.',
-      cta: 'Commencer ici',
+      Icon: Map,
+      title: 'Je découvre',
+      text: 'Comprendre les 3 épreuves, les coefficients et le déroulé du jour J.',
+      cta: 'Voir les épreuves',
       href: '/epreuves',
     },
     {
-      emoji: '📚',
+      Icon: BookOpen,
       title: 'Je révise le fond',
-      text: 'Je connais les épreuves. Je veux maîtriser infractions et procédure.',
-      cta: 'Aller aux infractions',
-      href: '/infractions',
+      text: 'Fiches fondamentaux, infractions et procédure alignées sur les fascicules.',
+      cta: 'Ouvrir les fondamentaux',
+      href: '/fondamentaux',
     },
     {
-      emoji: '⚡',
-      title: 'Je m’entraîne sur les exercices',
-      text: 'Je veux faire des enquêtes types, des PV et des articulations.',
-      cta: 'Voir les enquêtes',
+      Icon: Crosshair,
+      title: 'Je m’entraîne',
+      text: 'Enquêtes types, modèles de PV et articulation comme en formation.',
+      cta: 'Lancer une enquête',
       href: '/cours/enquetes',
     },
   ] as const;
@@ -90,11 +93,11 @@ export function StartHereSection() {
                 href={c.href}
                 className='home-start-card group flex h-full flex-col'
                 whileTap={{ scale: 0.96 }}
-                whileHover={shouldReduce ? {} : { scale: 1.02 }}
+                whileHover={shouldReduce ? {} : { y: -4 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
-                <span className='text-3xl' aria-hidden>
-                  {c.emoji}
+                <span className='flex h-11 w-11 items-center justify-center rounded-md border border-orde-blue500/25 bg-orde-blue500/10 text-orde-blue400'>
+                  <c.Icon className='h-5 w-5' strokeWidth={1.75} aria-hidden />
                 </span>
                 <h3 className='mt-4 font-display text-lg font-bold text-white'>{c.title}</h3>
                 <p className='mt-2 flex-1 text-sm leading-relaxed text-examen-inkMuted'>{c.text}</p>
@@ -159,24 +162,36 @@ export function HomeEnquetesPillarSection() {
             className='mx-auto mb-12 max-w-3xl text-center'
           />
         </motion.div>
-        <motion.div className='home-enquetes-grid' variants={parentVariants} initial='hidden' whileInView='visible' viewport={{ once: true, margin: '-50px' }}>
-          {ENQUETES.map((e) => (
+        <motion.div
+          className='mx-auto mt-6 max-w-4xl space-y-4'
+          variants={parentVariants}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, margin: '-50px' }}
+        >
+          {ENQUETES.slice(0, 4).map((e) => (
             <motion.div key={e.id} variants={cardVariants}>
               <Link
                 href={`/cours/enquetes/${e.id}`}
-                className='home-enquete-card'
+                className='home-enquete-card-horizontal group flex flex-col gap-3 rounded-lg border border-white/[0.08] bg-orde-navy800/60 p-4 transition duration-200 hover:-translate-y-1 hover:border-orde-blue500/25 hover:shadow-lg hover:shadow-black/20 sm:flex-row sm:items-center sm:justify-between sm:gap-6'
               >
-                <span className='home-enquete-code'>{e.code}</span>
-                <p className='home-enquete-title'>{e.titre}</p>
-                <div className='flex flex-wrap items-center gap-1.5'>
-                  <span className='home-enquete-badge'>
+                <div className='flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-6'>
+                  <span className='home-enquete-code-large font-display text-2xl text-white sm:w-36 sm:shrink-0'>
+                    {e.code}
+                  </span>
+                  <p className='min-w-0 flex-1 text-sm font-medium leading-snug text-slate-200'>{e.titre}</p>
+                </div>
+                <div className='flex flex-shrink-0 flex-wrap items-center gap-2 sm:justify-end'>
+                  <span className='rounded border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400'>
                     Épreuve 1
                   </span>
-                  <span className='home-enquete-badge'>
+                  <span className='rounded border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-slate-400'>
                     Épreuve 2
                   </span>
+                  <span className='text-xs font-semibold text-orde-blue400 transition group-hover:text-orde-blue400/90'>
+                    Ouvrir →
+                  </span>
                 </div>
-                <span className='mt-1 text-xs font-medium text-examen-accent'>Voir l’enquête →</span>
               </Link>
             </motion.div>
           ))}
@@ -184,12 +199,12 @@ export function HomeEnquetesPillarSection() {
         <div className='mt-10 flex flex-col items-center text-center'>
           <MotionLink
             href='/cours/enquetes'
-            className='inline-flex items-center gap-2 rounded-xl bg-examen-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-examen-accent/20 transition hover:bg-examen-accentHover'
+            className='inline-flex items-center gap-2 rounded-md bg-orde-blue500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-orde-blue400'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
           >
-            Accéder aux enquêtes complètes
+            Voir les 10 enquêtes
             <ArrowRight className='h-4 w-4' aria-hidden />
           </MotionLink>
         </div>
@@ -426,10 +441,71 @@ export function TerrainOriginSection() {
   );
 }
 
+/** Témoignages — preuve sociale (collègues de formation). */
+export function HomeTestimonialsSection() {
+  const shouldReduce = useReducedMotion();
+  const items = useMemo(
+    () =>
+      [
+        {
+          quote:
+            'Les fiches procédure collent au fascicule SDCP : je révise sans me perdre dans les PDF du centre.',
+          author: 'Brigadier, Paris · session 2026',
+        },
+        {
+          quote: 'Le quiz en mode libre m’a forcé à formuler comme à l’oral. Gros gain sur la DPG et la procédure.',
+          author: 'GAV, région Centre',
+        },
+        {
+          quote: 'Clair, carré, sans blabla. Ça ne remplace pas le cours mais c’est mon fil rouge jusqu’au jury.',
+          author: 'Major, formation OPJ',
+        },
+      ] as const,
+    []
+  );
+
+  return (
+    <motion.section
+      className='border-t border-slate-200/80 bg-orde-slate50 px-4 py-20 md:py-24'
+      aria-labelledby='home-testimonials-title'
+      initial={shouldReduce ? {} : { opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-60px' }}
+      transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+    >
+      <div className='mx-auto max-w-6xl'>
+        <h2
+          id='home-testimonials-title'
+          className='text-center font-display text-3xl font-normal tracking-tight text-orde-slate900 md:text-4xl'
+        >
+          Ils s&apos;entraînent avec ExamenOPJ
+        </h2>
+        <p className='mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600'>
+          Retours anonymisés de candidats en préparation OPJ — le même rythme, les mêmes enjeux.
+        </p>
+        <ul className='mt-12 grid list-none gap-8 md:grid-cols-3'>
+          {items.map((t) => (
+            <li
+              key={t.author}
+              className='flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-[var(--card-shadow)] transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)]'
+            >
+              <Quote className='mb-3 h-8 w-8 text-orde-blue500/40' aria-hidden />
+              <blockquote className='flex-1 text-sm leading-relaxed text-slate-700'>&ldquo;{t.quote}&rdquo;</blockquote>
+              <footer className='mt-4 text-xs font-medium text-slate-500'>{t.author}</footer>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </motion.section>
+  );
+}
+
 /** Section 8 — CTA final + pricing résumé. */
 export function HomeFinalPricingSection() {
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
+  const daysLeft = getDaysUntilExam();
+
   return (
     <motion.section
       className='border-t border-white/[0.06] bg-gradient-to-b from-examen-canvas to-navy-950 px-4 py-20 md:py-28'
@@ -444,37 +520,31 @@ export function HomeFinalPricingSection() {
           Accès gratuit pour démarrer. Premium pour aller au bout.
         </p>
         <div className='mt-12 grid gap-6 md:grid-cols-2'>
-          <div className='rounded-2xl border border-white/[0.1] bg-white/[0.03] p-8'>
-            <h3 className='font-display text-xl font-bold text-white'>Gratuit — Commencer maintenant</h3>
+          <div className='rounded-lg border border-white/[0.1] bg-white/[0.03] p-8'>
+            <h3 className='font-display text-xl font-bold text-white'>Gratuit</h3>
+            <p className='mt-1 text-sm text-examen-inkMuted'>Pour tester le rythme et la méthode.</p>
             <ul className='mt-4 space-y-2 text-sm text-examen-ink'>
               <li className='flex gap-2'>
-                <span className='text-emerald-400'>✓</span> 6 fiches · 5 quiz/jour · Parcours 7 étapes
+                <span className='text-emerald-400'>✓</span> 6 fiches · 5 quiz/jour · Parcours guidé
               </li>
             </ul>
             <MotionLink
-              href='/signup'
-              className='mt-6 inline-flex w-full items-center justify-center rounded-xl border border-white/15 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.06]'
-              whileTap={{ scale: 0.96 }}
+              href='/inscription'
+              className='mt-6 inline-flex w-full items-center justify-center rounded-md border border-white/15 py-3 text-sm font-semibold text-white transition hover:bg-white/[0.06]'
+              whileTap={shouldReduce ? {} : { scale: 0.98 }}
               whileHover={shouldReduce ? {} : { scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              aria-label='Créer un compte gratuit'
             >
               Créer mon accès gratuit
             </MotionLink>
           </div>
-          <div className='rounded-2xl border-2 border-examen-accent/40 bg-gradient-to-br from-examen-accent/20 to-examen-premium/10 p-8 shadow-lg shadow-examen-accent/10'>
-            <div
-              style={{
-                background: '#FEF3C7',
-                border: '1px solid #FCD34D',
-                borderRadius: '8px',
-                padding: '0.4rem 0.8rem',
-                fontSize: '0.75rem',
-                color: '#92400E',
-                textAlign: 'center',
-                marginBottom: '1rem',
-              }}
-            >
-              ⏰ 65 jours avant l&apos;examen du 11 juin 2026
+          <div className='relative rounded-lg border-2 border-examen-accent/40 bg-gradient-to-br from-examen-accent/20 to-examen-premium/10 p-8 shadow-[var(--card-shadow-hover)] md:-translate-y-1'>
+            <div className='absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-md bg-orde-gold500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-navy-950'>
+              Recommandé
+            </div>
+            <div className='mb-4 rounded-md border border-amber-200/80 bg-amber-50/95 px-3 py-2 text-center text-xs font-semibold text-amber-950'>
+              J-{daysLeft} avant l&apos;examen du 11 juin 2026
             </div>
             <div className='mb-2 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white'>
               <Sparkles className='h-3 w-3' aria-hidden />
@@ -488,16 +558,17 @@ export function HomeFinalPricingSection() {
             </ul>
             <MotionLink
               href='/pricing'
-              className='mt-6 inline-flex w-full items-center justify-center rounded-xl bg-examen-accent py-3 text-sm font-semibold text-white shadow-lg shadow-examen-accent/25 transition hover:bg-examen-accentHover'
-              whileTap={{ scale: 0.96 }}
+              className='mt-6 inline-flex w-full items-center justify-center rounded-md bg-examen-accent py-3 text-sm font-semibold text-white shadow-lg shadow-examen-accent/25 transition hover:bg-examen-accentHover'
+              whileTap={shouldReduce ? {} : { scale: 0.98 }}
               whileHover={shouldReduce ? {} : { scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+              aria-label='Voir les détails de l’offre Premium'
             >
-              Voir l’offre complète
+              Voir les détails
             </MotionLink>
           </div>
         </div>
-        <p style={{ textAlign: 'center', fontSize: '0.8rem', color: '#9CA3AF', marginTop: '2rem', marginBottom: '2rem' }}>
+        <p className='mt-10 text-center text-xs text-slate-500'>
           Rédigé par un gardien de la paix en formation OPJ présentielle · Paris · Session 2026
         </p>
       </div>
