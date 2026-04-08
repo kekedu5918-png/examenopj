@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, HelpCircle } from 'lucide-react';
