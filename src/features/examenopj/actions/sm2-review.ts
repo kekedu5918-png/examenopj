@@ -1,9 +1,8 @@
 'use server';
 
-import type { SupabaseClient } from '@supabase/supabase-js';
-
 import { applySM2Quality, DEFAULT_SM2_STATE } from '@/lib/sm2';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 function sb(client: Awaited<ReturnType<typeof createSupabaseServerClient>>) {
   return client as unknown as SupabaseClient<any>;

@@ -1,8 +1,7 @@
-import type { SupabaseClient } from '@supabase/supabase-js';
-
 import { fasciculesList } from '@/data/fascicules-list';
 import { flashcardsData } from '@/data/flashcards-data';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 // ─────────────────────────────────────────────
 // Types
