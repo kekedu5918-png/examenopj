@@ -98,6 +98,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const [launchConfig, setLaunchConfig] = useState<LaunchConfig | null>(null);
   const [result, setResult] = useState({ correct: 0, total: 0 });
   const [bestAfterQuiz, setBestAfterQuiz] = useState<number | null>(null);
+  const [lastAttemptId, setLastAttemptId] = useState<string | null>(null);
   const [quotaTick, setQuotaTick] = useState(0);
   const [streakDays, setStreakDays] = useState(0);
 
@@ -272,6 +273,8 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         score: correct,
         total,
         percent: pct,
+      }).then((res) => {
+        if (res.attemptId) setLastAttemptId(res.attemptId);
       });
     }
 
@@ -302,6 +305,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     setSessionQuestions([]);
     setLaunchConfig(null);
     setBestAfterQuiz(null);
+    setLastAttemptId(null);
   }
 
   if (phase === 'quiz') {
@@ -332,6 +336,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           correct={result.correct}
           total={result.total}
           bestPercent={bestAfterQuiz}
+          attemptId={lastAttemptId}
           onRecommencer={handleRecommencer}
           onChangerMode={handleChangerMode}
         />

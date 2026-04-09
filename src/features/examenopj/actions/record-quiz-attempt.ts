@@ -16,7 +16,9 @@ export type RecordQuizAttemptInput = {
 };
 
 /** Enregistre une session de quiz pour un utilisateur connecté (no-op si invité). */
-export async function recordQuizAttempt(input: RecordQuizAttemptInput): Promise<{ ok: boolean }> {
+export async function recordQuizAttempt(
+  input: RecordQuizAttemptInput,
+): Promise<{ ok: boolean; attemptId?: string }> {
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
@@ -39,12 +41,16 @@ export async function recordQuizAttempt(input: RecordQuizAttemptInput): Promise<
   };
 
   // Cast : le client typé `Database` résout parfois `.from('quiz_attempts')` en `never` (schéma partiel vs postgrest-js).
-  const { error } = await (supabase as unknown as SupabaseClient<any>).from('quiz_attempts').insert(row);
+  const { data, error } = await (supabase as unknown as SupabaseClient<any>)
+    .from('quiz_attempts')
+    .insert(row)
+    .select('id')
+    .single();
 
   if (error) {
     console.error('[recordQuizAttempt]', error);
     return { ok: false };
   }
 
-  return { ok: true };
+  return { ok: true, attemptId: (data as { id: string } | null)?.id };
 }

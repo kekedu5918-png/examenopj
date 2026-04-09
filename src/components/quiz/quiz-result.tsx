@@ -1,8 +1,9 @@
 'use client';
 
 import { useId } from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { BookOpen, Medal, Target, ThumbsUp } from 'lucide-react';
+import { BookOpen, ChevronRight, Medal, Target, ThumbsUp } from 'lucide-react';
 
 import { LANDING_EASE } from '@/components/home/motion';
 import { Button } from '@/components/ui/button';
@@ -13,11 +14,12 @@ type QuizResultProps = {
   correct: number;
   total: number;
   bestPercent: number | null;
+  attemptId?: string | null;
   onRecommencer: () => void;
   onChangerMode: () => void;
 };
 
-export function QuizResult({ correct, total, bestPercent, onRecommencer, onChangerMode }: QuizResultProps) {
+export function QuizResult({ correct, total, bestPercent, attemptId, onRecommencer, onChangerMode }: QuizResultProps) {
   const gradId = useId().replace(/:/g, '');
   const pct = total > 0 ? Math.round((correct / total) * 1000) / 10 : 0;
   const ResultIcon =
@@ -118,6 +120,22 @@ export function QuizResult({ correct, total, bestPercent, onRecommencer, onChang
           Changer de mode
         </Button>
       </div>
+
+      {attemptId && (
+        <div className='mt-4 flex justify-center'>
+          <Button
+            asChild
+            variant='ghost'
+            size='sm'
+            className='gap-1.5 text-slate-400 hover:text-slate-200'
+          >
+            <Link href={`/dashboard/session/${attemptId}`}>
+              Voir le rapport détaillé
+              <ChevronRight className='h-3.5 w-3.5' />
+            </Link>
+          </Button>
+        </div>
+      )}
     </motion.div>
   );
 }
