@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { ArticleTooltip } from '@/components/ui/ArticleTooltip';
-import type { ArticleRef } from '@/components/ui/ArticleTooltip';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import type { ArticleRef } from '@/components/ui/ArticleTooltip';
+import { ArticleTooltip } from '@/components/ui/ArticleTooltip';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { cn } from '@/utils/cn';
 

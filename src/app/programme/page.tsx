@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { ProgrammeClient } from '@/components/cours/ProgrammeClient';
 import type { ProgrammeModuleItem } from '@/components/cours/ProgrammeClient';
+import { ProgrammeClient } from '@/components/cours/ProgrammeClient';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { APP_NAME } from '@/constants/site';
 import { courseModuleSyntheses } from '@/data/course-module-syntheses';
