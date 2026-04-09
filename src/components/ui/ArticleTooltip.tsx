@@ -1,8 +1,8 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { useReducedMotion } from 'framer-motion';
 import { ExternalLink, X } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
 
 import { cn } from '@/utils/cn';
 
