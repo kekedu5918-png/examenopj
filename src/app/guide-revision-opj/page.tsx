@@ -170,7 +170,7 @@ export default function GuideRevisionOpjPage() {
                     <div className='mb-3 flex items-center gap-3'>
                       <span className='font-display text-4xl font-black text-white/20'>{phase.num}</span>
                       <div>
-                        <p className={`font-display text-base font-bold ${phase.titleColor}`}>{phase.title}</p>
+                        <p className={`font-sans text-base font-bold ${phase.titleColor}`}>{phase.title}</p>
                         <p className='text-xs text-gray-500'>{phase.weeks}</p>
                       </div>
                     </div>
@@ -223,7 +223,7 @@ export default function GuideRevisionOpjPage() {
                           {String(outil.num).padStart(2, '0')}
                         </span>
                       </div>
-                      <p className='mt-3 font-display text-base font-semibold text-white'>{outil.title}</p>
+                      <p className='mt-3 font-sans text-base font-semibold text-white'>{outil.title}</p>
                       <p className='mt-1.5 text-sm text-gray-400'>{outil.desc}</p>
                       <span className='mt-auto pt-3 text-xs font-medium text-cyan-400 opacity-0 transition group-hover:opacity-100'>
                         Ouvrir →
@@ -240,7 +240,7 @@ export default function GuideRevisionOpjPage() {
               <dl className='mt-6 space-y-8'>
                 {GUIDE_REVISION_FAQ.map((item) => (
                   <div key={item.question} className='border-b border-white/10 pb-8 last:border-0'>
-                    <dt className='font-display text-lg font-semibold text-white'>{item.question}</dt>
+                    <dt className='font-sans text-lg font-semibold text-white'>{item.question}</dt>
                     <dd className='mt-3 leading-relaxed text-gray-400'>{item.answer}</dd>
                   </div>
                 ))}

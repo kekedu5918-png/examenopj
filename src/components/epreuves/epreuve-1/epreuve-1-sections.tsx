@@ -623,14 +623,14 @@ export function Epreuve1Sections() {
             href='/epreuves/epreuve-2'
             className='group rounded-2xl border border-blue-500/25 bg-white/[0.02] p-6 transition-all hover:border-blue-500/40 hover:bg-white/[0.04]'
           >
-            <p className='font-display text-lg font-semibold text-blue-300'>Épreuve 2 — Procédure pénale</p>
+            <p className='font-sans text-lg font-semibold text-blue-300'>Épreuve 2 — Procédure pénale</p>
             <p className='mt-2 text-sm text-gray-500'>PV, articulation, synthèse</p>
           </Link>
           <Link
             href='/epreuves/epreuve-3'
             className='group rounded-2xl border border-emerald-500/25 bg-white/[0.02] p-6 transition-all hover:border-emerald-500/40 hover:bg-white/[0.04]'
           >
-            <p className='font-display text-lg font-semibold text-emerald-300'>Épreuve 3 — Oral (CR Parquet)</p>
+            <p className='font-sans text-lg font-semibold text-emerald-300'>Épreuve 3 — Oral (CR Parquet)</p>
             <p className='mt-2 text-sm text-gray-500'>Compte rendu téléphonique</p>
           </Link>
         </div>

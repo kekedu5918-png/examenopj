@@ -48,7 +48,7 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
 
       {tab === 'bravo' ? (
         <GlassCard padding='p-6' className='text-sm text-slate-300'>
-          <p className='font-display text-lg font-bold text-white'>Modèle officiel — enquête BRAVO (35 actes)</p>
+          <p className='font-sans text-lg font-bold text-white'>Modèle officiel — enquête BRAVO (35 actes)</p>
           <p className='mt-3 leading-relaxed text-examen-inkMuted'>
             {/* TODO: B0_ARTICUL_08242.pdf — afficher articulation complète avec annotations ; numérotation 01, 02… format JJ/MM/AA */}
             Contenu à importer depuis le fascicule officiel — reproduction conforme des intitulés en majuscules et des
@@ -59,7 +59,7 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
 
       {tab === 'incidente' ? (
         <GlassCard padding='p-6' className='text-sm text-slate-300'>
-          <p className='font-display text-lg font-bold text-white'>Enquête incidente</p>
+          <p className='font-sans text-lg font-bold text-white'>Enquête incidente</p>
           <p className='mt-3 leading-relaxed text-examen-inkMuted'>
             {/* TODO: B0_ARTICUL_INCID_0723.pdf — changement de cadre, numérotation */}
             Explication du changement de cadre et de la numérotation : à rédiger depuis le PDF officiel.

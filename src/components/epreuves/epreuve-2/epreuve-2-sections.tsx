@@ -245,7 +245,7 @@ export function Epreuve2Sections() {
       <motion.section id='navigation' className='scroll-mt-28 space-y-6' {...sectionMotion}>
         <div>
           <p className='text-xs font-semibold uppercase tracking-wide text-blue-400'>Suite</p>
-          <h2 className='font-display text-2xl font-bold text-white'>Continuer la préparation</h2>
+          <h2 className='font-sans text-2xl font-bold text-white'>Continuer la préparation</h2>
           <p className='mt-2 text-sm text-gray-500'>Autres épreuves de l’examen OPJ</p>
         </div>
         <div className='grid gap-4 sm:grid-cols-2'>
@@ -253,7 +253,7 @@ export function Epreuve2Sections() {
             href='/epreuves/epreuve-1'
             className='group rounded-2xl border-2 border-red-500/35 bg-white/[0.02] p-6 transition-colors hover:border-red-500/55 hover:bg-red-500/[0.06]'
           >
-            <p className='font-display text-lg font-semibold text-red-300 group-hover:text-red-200'>
+            <p className='font-sans text-lg font-semibold text-red-300 group-hover:text-red-200'>
               Épreuve 1 — DPG / DPS
             </p>
             <p className='mt-2 text-sm text-gray-500 group-hover:text-gray-400'>Droit pénal général et spécial</p>
@@ -262,7 +262,7 @@ export function Epreuve2Sections() {
             href='/epreuves/epreuve-3'
             className='group rounded-2xl border-2 border-emerald-500/35 bg-white/[0.02] p-6 transition-colors hover:border-emerald-500/55 hover:bg-emerald-500/[0.06]'
           >
-            <p className='font-display text-lg font-semibold text-emerald-300 group-hover:text-emerald-200'>
+            <p className='font-sans text-lg font-semibold text-emerald-300 group-hover:text-emerald-200'>
               Épreuve 3 — Oral (CR Parquet)
             </p>
             <p className='mt-2 text-sm text-gray-500 group-hover:text-gray-400'>Compte rendu téléphonique</p>

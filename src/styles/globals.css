@@ -139,15 +139,9 @@
   body {
     @apply h-full;
   }
-  /* Hiérarchie typographique unifiée — h1 reste serif (pages hero), h2/h3 sans-serif bold */
+  /* h1 : Instrument Serif pour les pages hero/marketing */
   h1 {
     @apply font-display font-bold tracking-tight text-white;
-  }
-  h2 {
-    @apply font-sans font-bold tracking-tight text-white;
-  }
-  h3 {
-    @apply font-sans font-semibold tracking-tight text-white;
   }
 }
 
@@ -240,6 +234,16 @@
       grid-template-columns: 1fr;
     }
   }
+}
+
+/* ─────────────────────────────────────────────────────────
+   Typographie globale — hors @layer (priorité maximale dans la cascade CSS)
+   Écrase font-display sur h2/h3 quelle que soit la classe Tailwind explicite.
+   h1 : reste Instrument Serif pour les pages hero/marketing.
+   ───────────────────────────────────────────────────────── */
+h2,
+h3 {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
 /* Impression sujet blanc / rapport : masquer chrome site */

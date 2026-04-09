@@ -564,14 +564,14 @@ export function Epreuve3Sections() {
             href='/epreuves/epreuve-1'
             className='group rounded-2xl border border-red-500/25 bg-white/[0.02] p-6 transition-all hover:border-red-500/40 hover:bg-white/[0.04]'
           >
-            <p className='font-display text-lg font-semibold text-red-300'>Épreuve 1 — DPG/DPS</p>
+            <p className='font-sans text-lg font-semibold text-red-300'>Épreuve 1 — DPG/DPS</p>
             <p className='mt-2 text-sm text-gray-500'>Méthodologie droit pénal</p>
           </Link>
           <Link
             href='/epreuves/epreuve-2'
             className='group rounded-2xl border border-blue-500/25 bg-white/[0.02] p-6 transition-all hover:border-blue-500/40 hover:bg-white/[0.04]'
           >
-            <p className='font-display text-lg font-semibold text-blue-300'>Épreuve 2 — Procédure pénale</p>
+            <p className='font-sans text-lg font-semibold text-blue-300'>Épreuve 2 — Procédure pénale</p>
             <p className='mt-2 text-sm text-gray-500'>PV, articulation, synthèse</p>
           </Link>
         </div>

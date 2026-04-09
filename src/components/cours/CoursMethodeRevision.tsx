@@ -129,7 +129,7 @@ export function CoursMethodeRevision() {
                 href={a.href}
                 className={`flex h-full flex-col rounded-xl border p-4 transition hover:-translate-y-0.5 hover:shadow-lg ${a.accent}`}
               >
-                <span className='font-display font-semibold text-white'>{a.label}</span>
+                <span className='font-sans font-semibold text-white'>{a.label}</span>
                 <span className='mt-1 text-xs text-white/75'>{a.desc}</span>
                 <span className='mt-3 inline-flex items-center text-xs font-semibold text-white/90'>
                   Ouvrir <ArrowRight className='ml-1 h-3 w-3' aria-hidden />

@@ -33,7 +33,7 @@ export default function EnquetesHubPage() {
         />
 
         <GlassCard className='mb-10 space-y-4 p-6' padding=''>
-          <p className='font-display text-sm font-bold text-white'>Pourquoi c’est le socle « n°1 »</p>
+          <p className='font-sans text-sm font-bold text-white'>Pourquoi c’est le socle « n°1 »</p>
           <p className='text-sm text-gray-400'>
             Les enquêtes fictives condensent ce que le présentiel fait sur plusieurs journées : <strong className='text-gray-200'>sujet</strong>,{' '}
             <strong className='text-gray-200'>enchaînement procédural</strong> et <strong className='text-gray-200'>restitution écrite</strong>. Vous

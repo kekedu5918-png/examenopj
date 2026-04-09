@@ -416,7 +416,7 @@ function InfractionsListView({
               className='overflow-hidden rounded-2xl border border-white/10 border-b-0 bg-navy-950/40'
             >
               <AccordionTrigger className='px-4 py-3 text-left text-base hover:no-underline'>
-                <span className='font-display font-semibold text-white'>{g.triggerTitle}</span>
+                <span className='font-sans font-semibold text-white'>{g.triggerTitle}</span>
                 <span className='ml-2 shrink-0 text-xs font-normal text-gray-500'>({g.items.length})</span>
               </AccordionTrigger>
               <AccordionContent className='px-3 pb-4 pt-0'>
