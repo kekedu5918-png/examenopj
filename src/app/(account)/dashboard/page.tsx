@@ -159,7 +159,10 @@ export default async function DashboardPage() {
               </Link>
             </Button>
             <Button asChild size='sm' variant='secondary'>
-              <Link href='/flashcards'>Réviser les flashcards</Link>
+              <Link href='/dashboard/revision'>Programme SM-2</Link>
+            </Button>
+            <Button asChild size='sm' variant='secondary'>
+              <Link href='/flashcards'>Flashcards</Link>
             </Button>
             <Button asChild size='sm' variant='outline' className='border-slate-700'>
               <Link href='/dashboard/progression'>Voir ma progression</Link>
