@@ -34,10 +34,10 @@ export function SectionTitle({ badge, badgeClassName, title, subtitle, className
       >
         {badge}
       </span>
-      <h2 id={titleId} className='font-display text-3xl font-bold tracking-tight text-gray-100 md:text-4xl'>
+      <h2 id={titleId} className='font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
         {title}
       </h2>
-      {subtitle ? <p className='text-lg text-gray-400'>{subtitle}</p> : null}
+      {subtitle ? <p className='text-base leading-relaxed text-gray-400 md:text-lg'>{subtitle}</p> : null}
     </motion.div>
   );
 }

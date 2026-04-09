@@ -121,33 +121,34 @@ function Piege() {
 // ─────────────────────────────────────────────────────────
 // Navigation sidebar — 8 rubriques
 // ─────────────────────────────────────────────────────────
+// 3 couleurs sémantiques : violet = droit pénal, cyan = procédure, rose = droits des personnes
 const SIDEBAR_ITEMS = [
-  { id: 'r1', num: 1, label: 'Classification des infractions', color: 'text-violet-300', dot: 'bg-violet-400' },
-  { id: 'r2', num: 2, label: 'Cadres d\'enquête', color: 'text-blue-300', dot: 'bg-blue-400' },
-  { id: 'r3', num: 3, label: 'Contrôle d\'identité', color: 'text-cyan-300', dot: 'bg-cyan-400' },
-  { id: 'r4', num: 4, label: 'Garde à vue', color: 'text-rose-300', dot: 'bg-rose-400' },
-  { id: 'r5', num: 5, label: 'Audition libre', color: 'text-amber-300', dot: 'bg-amber-400' },
-  { id: 'r6', num: 6, label: 'Nullités de procédure', color: 'text-orange-300', dot: 'bg-orange-400' },
-  { id: 'r7', num: 7, label: 'Perquisitions & saisies', color: 'text-teal-300', dot: 'bg-teal-400' },
-  { id: 'r8', num: 8, label: 'Récidive & concours', color: 'text-emerald-300', dot: 'bg-emerald-400' },
+  { id: 'r1', num: 1, label: 'Classification des infractions', color: 'text-violet-300', dot: 'bg-violet-500' },
+  { id: 'r2', num: 2, label: "Cadres d'enquête", color: 'text-cyan-300', dot: 'bg-cyan-500' },
+  { id: 'r3', num: 3, label: "Contrôle d'identité", color: 'text-cyan-300', dot: 'bg-cyan-500' },
+  { id: 'r4', num: 4, label: 'Garde à vue', color: 'text-rose-300', dot: 'bg-rose-500' },
+  { id: 'r5', num: 5, label: "L'audition libre", color: 'text-rose-300', dot: 'bg-rose-500' },
+  { id: 'r6', num: 6, label: 'Nullités de procédure', color: 'text-cyan-300', dot: 'bg-cyan-500' },
+  { id: 'r7', num: 7, label: 'Perquisitions & saisies', color: 'text-cyan-300', dot: 'bg-cyan-500' },
+  { id: 'r8', num: 8, label: "Récidive & concours d'infractions", color: 'text-violet-300', dot: 'bg-violet-500' },
 ];
 
 const SECTION_COLORS: Record<string, { border: string; header: string; badge: string }> = {
   r1: { border: 'border-l-violet-500', header: 'from-violet-500/10 to-transparent', badge: 'bg-violet-500/15 text-violet-200 border-violet-500/30' },
-  r2: { border: 'border-l-blue-500', header: 'from-blue-500/10 to-transparent', badge: 'bg-blue-500/15 text-blue-200 border-blue-500/30' },
+  r2: { border: 'border-l-cyan-500', header: 'from-cyan-500/10 to-transparent', badge: 'bg-cyan-500/15 text-cyan-200 border-cyan-500/30' },
   r3: { border: 'border-l-cyan-500', header: 'from-cyan-500/10 to-transparent', badge: 'bg-cyan-500/15 text-cyan-200 border-cyan-500/30' },
   r4: { border: 'border-l-rose-500', header: 'from-rose-500/10 to-transparent', badge: 'bg-rose-500/15 text-rose-200 border-rose-500/30' },
-  r5: { border: 'border-l-amber-500', header: 'from-amber-500/10 to-transparent', badge: 'bg-amber-500/15 text-amber-200 border-amber-500/30' },
-  r6: { border: 'border-l-orange-500', header: 'from-orange-500/10 to-transparent', badge: 'bg-orange-500/15 text-orange-200 border-orange-500/30' },
-  r7: { border: 'border-l-teal-500', header: 'from-teal-500/10 to-transparent', badge: 'bg-teal-500/15 text-teal-200 border-teal-500/30' },
-  r8: { border: 'border-l-emerald-500', header: 'from-emerald-500/10 to-transparent', badge: 'bg-emerald-500/15 text-emerald-200 border-emerald-500/30' },
+  r5: { border: 'border-l-rose-500', header: 'from-rose-500/10 to-transparent', badge: 'bg-rose-500/15 text-rose-200 border-rose-500/30' },
+  r6: { border: 'border-l-cyan-500', header: 'from-cyan-500/10 to-transparent', badge: 'bg-cyan-500/15 text-cyan-200 border-cyan-500/30' },
+  r7: { border: 'border-l-cyan-500', header: 'from-cyan-500/10 to-transparent', badge: 'bg-cyan-500/15 text-cyan-200 border-cyan-500/30' },
+  r8: { border: 'border-l-violet-500', header: 'from-violet-500/10 to-transparent', badge: 'bg-violet-500/15 text-violet-200 border-violet-500/30' },
 };
 
 function SidebarNav({ activeId }: { activeId: string }) {
   return (
     <nav aria-label='Navigation rubriques' className='space-y-1'>
       <p className='mb-3 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600'>
-        8 rubriques
+        Rubriques
       </p>
       {SIDEBAR_ITEMS.map((item) => {
         const active = activeId === item.id;
@@ -238,7 +239,7 @@ function RubriqueSection({
           <span className='flex h-7 w-7 items-center justify-center rounded-full bg-white/[0.08] text-xs font-black text-white'>
             {num}
           </span>
-          <h2 className='font-display text-base font-bold text-white md:text-lg'>{titre}</h2>
+          <h2 className='font-sans text-base font-bold text-white md:text-lg'>{titre}</h2>
           <span
             className={cn(
               'ml-auto rounded border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
@@ -264,7 +265,7 @@ export function FondamentauxEightRubrics() {
     <section className='border-b border-white/10 bg-navy-950 px-4 py-12 md:px-8' aria-labelledby='fond-structure-title'>
       <div className='mx-auto max-w-6xl'>
         <div className='mb-8'>
-          <h2 id='fond-structure-title' className='font-display text-2xl font-bold text-white md:text-3xl'>
+          <h2 id='fond-structure-title' className='font-sans text-2xl font-extrabold tracking-tight text-white md:text-3xl'>
             Les fondamentaux de l&apos;OPJ
           </h2>
           <p className='mt-3 max-w-3xl text-slate-400'>

@@ -3,12 +3,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { AnimatePresence } from 'framer-motion';
+import { Brain, Layers, Shuffle } from 'lucide-react';
 
 import {
   FreemiumDailyQuotaProgress,
   FreemiumFlashcardsDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
-import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
@@ -18,6 +18,7 @@ import {
 } from '@/features/access/daily-quota-client';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordFlashcardReview } from '@/features/examenopj/actions/record-flashcard-review';
+import { cn } from '@/utils/cn';
 
 import { FlashcardInterface } from './FlashcardInterface';
 import { FlashcardResult } from './FlashcardResult';
@@ -312,21 +313,6 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
     setIndex(0);
   };
 
-  const modeToggle = (mode: ContentStudyMode, label: string, activeClass: string, idleClass: string) => {
-    const active = contentMode === mode;
-    return (
-      <button
-        type='button'
-        onClick={() => setContentMode(mode)}
-        className={`rounded-xl border px-4 py-3 text-sm font-medium transition ${
-          active ? activeClass : idleClass
-        }`}
-      >
-        {label}
-      </button>
-    );
-  };
-
   const prepared = index < deck.length ? deck[index] : null;
   const fascMeta = prepared ? fasciculeMeta(prepared.card.fascicule) : null;
 
@@ -347,104 +333,140 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
       {flashSelectBlocked ? <FreemiumFlashcardsDailyLimitWall /> : null}
 
       {phase === 'select' && !flashSelectBlocked ? (
-        <GlassCard className='mx-auto max-w-xl space-y-8' padding='p-8'>
-          <div className='space-y-2'>
-            <label htmlFor='flash-categorie' className='text-sm font-medium text-gray-300'>
-              Catégorie
-            </label>
-            <select
-              id='flash-categorie'
-              value={categoryFilter}
-              onChange={(e) => {
-                const v = e.target.value as CategoryFilter;
-                setCategoryFilter(v);
-              }}
-              className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
-            >
-              <option value='all'>Toutes les catégories</option>
-              <option value='atteintes-aux-biens'>Atteintes aux biens</option>
-              <option value='atteintes-aux-personnes'>Atteintes aux personnes</option>
-            </select>
-            <p className='text-xs text-gray-500'>
-              Liens directs :{' '}
-              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-biens'>
-                biens
-              </a>
-              {' · '}
-              <a className='text-amber-300/90 underline' href='/flashcards?cat=atteintes-aux-personnes'>
-                personnes
-              </a>
-            </p>
-          </div>
+        <div className='mx-auto max-w-2xl space-y-10'>
 
-          <div className='space-y-2'>
-            <label htmlFor='flash-theme' className='text-sm font-medium text-gray-300'>
-              Module thématique (F)
-            </label>
-            <select
-              id='flash-theme'
-              disabled={categoryFilter !== 'all'}
-              value={fascicule === 'all' ? 'all' : String(fascicule)}
-              onChange={(e) => {
-                const v = e.target.value;
-                setFascicule(v === 'all' ? 'all' : Number(v));
-              }}
-              className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 disabled:cursor-not-allowed disabled:opacity-45'
-            >
-              <option value='all'>Tous les modules</option>
-              {fasciculesList.map((f) => (
-                <option key={f.numero} value={f.numero}>
-                  F{f.numero.toString().padStart(2, '0')} — {f.titre}
-                </option>
-              ))}
-            </select>
-            {categoryFilter !== 'all' ? (
-              <p className='text-xs text-gray-500'>Choisissez « Toutes les catégories » pour filtrer par thème F01–F15.</p>
-            ) : null}
-          </div>
-
+          {/* ── Catégorie ── */}
           <div className='space-y-3'>
-            <p className='text-sm font-medium text-gray-300'>Contenu à réviser</p>
+            <p className='text-[11px] font-bold uppercase tracking-[0.12em] text-gray-600'>Catégorie</p>
             <div className='flex flex-wrap gap-2'>
-              {modeToggle(
-                'materiel',
-                'Élément matériel',
-                'border-red-500/50 bg-red-500/20 text-red-200',
-                'border-white/10 bg-white/[0.03] text-gray-400 hover:border-red-500/30'
-              )}
-              {modeToggle(
-                'moral',
-                'Élément moral',
-                'border-orange-500/50 bg-orange-500/20 text-orange-200',
-                'border-white/10 bg-white/[0.03] text-gray-400 hover:border-orange-500/30'
-              )}
-              {modeToggle(
-                'mixed',
-                'Tout mélangé',
-                'border-gray-400/50 bg-gray-500/20 text-gray-200',
-                'border-white/10 bg-white/[0.03] text-gray-400 hover:border-gray-500/30'
-              )}
+              {(
+                [
+                  { value: 'all', label: 'Toutes' },
+                  { value: 'atteintes-aux-biens', label: 'Atteintes aux biens' },
+                  { value: 'atteintes-aux-personnes', label: 'Atteintes aux personnes' },
+                ] as const
+              ).map((cat) => (
+                <button
+                  key={cat.value}
+                  type='button'
+                  onClick={() => { setCategoryFilter(cat.value); if (cat.value !== 'all') setFascicule('all'); }}
+                  className={cn(
+                    'rounded-full border px-4 py-2 text-sm font-medium transition-all duration-150',
+                    categoryFilter === cat.value
+                      ? 'border-amber-500/60 bg-amber-500/20 text-amber-200 shadow-[0_0_0_1px_rgba(245,158,11,0.3)]'
+                      : 'border-white/[0.08] bg-white/[0.02] text-gray-400 hover:border-white/20 hover:text-gray-200',
+                  )}
+                >
+                  {cat.label}
+                </button>
+              ))}
             </div>
           </div>
 
+          {/* ── Module F01–F15 ── */}
+          {categoryFilter === 'all' ? (
+            <div className='space-y-3'>
+              <p className='text-[11px] font-bold uppercase tracking-[0.12em] text-gray-600'>Module thématique</p>
+              <div className='flex flex-wrap gap-1.5'>
+                <button
+                  type='button'
+                  onClick={() => setFascicule('all')}
+                  className={cn(
+                    'rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-150',
+                    fascicule === 'all'
+                      ? 'border-amber-500/60 bg-amber-500/20 text-amber-200'
+                      : 'border-white/[0.08] bg-white/[0.02] text-gray-500 hover:border-white/20 hover:text-gray-300',
+                  )}
+                >
+                  Tous
+                </button>
+                {fasciculesList.map((f) => (
+                  <button
+                    key={f.numero}
+                    type='button'
+                    onClick={() => setFascicule(f.numero)}
+                    title={f.titre}
+                    className={cn(
+                      'rounded-full border px-3 py-1.5 text-xs font-semibold transition-all duration-150',
+                      fascicule === f.numero
+                        ? 'border-amber-500/60 bg-amber-500/20 text-amber-200'
+                        : 'border-white/[0.08] bg-white/[0.02] text-gray-500 hover:border-white/20 hover:text-gray-300',
+                    )}
+                  >
+                    F{String(f.numero).padStart(2, '0')}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
+          {/* ── Contenu à réviser — 3 cartes visuelles ── */}
+          <div className='space-y-3'>
+            <p className='text-[11px] font-bold uppercase tracking-[0.12em] text-gray-600'>Contenu à réviser</p>
+            <div className='grid grid-cols-3 gap-3'>
+              {(
+                [
+                  { value: 'materiel' as const, label: 'Élément matériel', desc: 'Acte, résultat, lien causal', icon: Layers, active: 'border-red-500/50 bg-red-500/[0.1] text-red-200', idleDot: 'bg-red-500/40' },
+                  { value: 'moral' as const, label: 'Élément moral', desc: 'Intention ou imprudence', icon: Brain, active: 'border-orange-500/50 bg-orange-500/[0.1] text-orange-200', idleDot: 'bg-orange-500/40' },
+                  { value: 'mixed' as const, label: 'Tout mélangé', desc: 'Matériel + moral aléatoire', icon: Shuffle, active: 'border-amber-500/50 bg-amber-500/[0.1] text-amber-200', idleDot: 'bg-amber-500/40' },
+                ]
+              ).map((m) => {
+                const Icon = m.icon;
+                const isActive = contentMode === m.value;
+                return (
+                  <button
+                    key={m.value}
+                    type='button'
+                    onClick={() => setContentMode(m.value)}
+                    className={cn(
+                      'flex flex-col gap-2.5 rounded-2xl border p-4 text-left transition-all duration-150',
+                      isActive
+                        ? m.active
+                        : 'border-white/[0.07] bg-white/[0.02] text-gray-400 hover:border-white/[0.14] hover:bg-white/[0.04]',
+                    )}
+                  >
+                    <Icon className={cn('h-5 w-5 shrink-0', isActive ? '' : 'text-gray-600')} strokeWidth={1.75} />
+                    <span className='text-sm font-bold leading-tight'>{m.label}</span>
+                    <span className={cn('text-[11px] leading-snug', isActive ? 'opacity-70' : 'text-gray-600')}>{m.desc}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* ── Messages d'état ── */}
           {filteredSource.length === 0 ? (
-            <p className='text-sm text-amber-200/90'>Aucune flashcard pour ce module pour le moment.</p>
+            <p className='rounded-xl border border-amber-500/20 bg-amber-500/[0.07] px-4 py-3 text-sm text-amber-200/90'>
+              Aucune flashcard pour ce module pour le moment.
+            </p>
           ) : null}
           {filteredSource.length > 0 && playableForMode.length === 0 ? (
-            <p className='text-sm text-amber-200/90'>
-              Aucune carte pour ce mode de révision (essayez « Tout mélangé » ou un autre type de contenu).
+            <p className='rounded-xl border border-amber-500/20 bg-amber-500/[0.07] px-4 py-3 text-sm text-amber-200/90'>
+              Aucune carte pour ce mode — essayez &laquo;&nbsp;Tout mélangé&nbsp;&raquo;.
             </p>
           ) : null}
 
-          <button
-            type='button'
-            disabled={playableForMode.length === 0 || flashRemainingToday === 0}
-            onClick={handleStart}
-            className='w-full rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-4 text-center text-base font-semibold text-white shadow-lg transition hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-40'
-          >
-            Commencer →
-          </button>
-        </GlassCard>
+          {/* ── Stats + CTA ── */}
+          {playableForMode.length > 0 ? (
+            <div className='space-y-4'>
+              <div className='flex items-center gap-3 text-sm'>
+                <span className='font-bold text-amber-300 tabular-nums'>{playableForMode.length}</span>
+                <span className='text-gray-500'>cartes disponibles</span>
+                <span className='text-gray-700'>·</span>
+                <span className='text-gray-500'>~{Math.max(1, Math.ceil(playableForMode.length * 0.25))} min</span>
+              </div>
+              <button
+                type='button'
+                disabled={flashRemainingToday === 0}
+                onClick={handleStart}
+                className='w-full rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 px-8 py-5 text-center text-base font-bold text-white shadow-[0_8px_24px_rgba(245,158,11,0.22)] transition-all duration-200 hover:shadow-[0_12px_32px_rgba(245,158,11,0.35)] hover:opacity-95 disabled:cursor-not-allowed disabled:opacity-40'
+              >
+                Commencer la session →
+              </button>
+            </div>
+          ) : null}
+
+        </div>
       ) : null}
 
       {phase === 'play' && (
