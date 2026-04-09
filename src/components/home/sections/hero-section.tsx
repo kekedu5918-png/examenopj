@@ -7,8 +7,8 @@ import { ArrowRight, CheckCircle2, HelpCircle, XCircle } from 'lucide-react';
 
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
-import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
+import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { cn } from '@/utils/cn';
 
 export function HeroSection() {

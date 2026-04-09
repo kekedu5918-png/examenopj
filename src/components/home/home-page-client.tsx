@@ -1,7 +1,6 @@
 'use client';
 
 import { HeroSection } from '@/components/home/sections/hero-section';
-import { HomeStatsSection } from '@/components/home/sections/home-stats-section';
 import {
   HomeEnquetesPillarSection,
   HomeEpreuvesLandingSection,
@@ -11,6 +10,7 @@ import {
   type InfractionPreviewItem,
   StartHereSection,
 } from '@/components/home/sections/home-refonte-sections';
+import { HomeStatsSection } from '@/components/home/sections/home-stats-section';
 
 export type HomePageClientProps = {
   infractionPreview: InfractionPreviewItem[];

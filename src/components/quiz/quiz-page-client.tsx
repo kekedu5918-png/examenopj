@@ -17,9 +17,9 @@ import { fasciculesList } from '@/data/fascicules-list';
 import { quizQuestions } from '@/data/quiz-questions';
 import { type QuizQuestion } from '@/data/types';
 import { addDailyQuizQuestionCount, getDailyQuizQuestionCount } from '@/features/access/daily-quota-client';
-import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
+import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
 import { cn } from '@/utils/cn';
 
 import { QuizInterface } from './quiz-interface';
