@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/utils/cn';
 import type { StreakData } from '@/features/gamification/controllers/get-gamification-data';
+import { cn } from '@/utils/cn';
 
 function todayIsoDate(): string {
   return new Date().toISOString().slice(0, 10);

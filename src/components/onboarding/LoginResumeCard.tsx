@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { cn } from '@/utils/cn';
 import type { LoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
+import { cn } from '@/utils/cn';
 
 export function LoginResumeCard({ resume }: { resume: LoginResumeData }) {
   if (!resume.showResume) return null;
