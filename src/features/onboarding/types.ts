@@ -58,7 +58,7 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { id: 'd', text: 'Je ne sais pas' },
     ],
     correct: 'a',
-    explanation: 'Le vol est défini par trois éléments : la soustraction (action matérielle), le bien appartenant à autrui (objet), et l'intention frauduleuse (élément moral).',
+    explanation: "Le vol est défini par trois éléments : la soustraction (action matérielle), le bien appartenant à autrui (objet), et l'intention frauduleuse (élément moral).",
     category: 'infractions',
   },
   {
