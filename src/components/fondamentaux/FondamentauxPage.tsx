@@ -218,55 +218,102 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
         </p>
         <div key={`${filtre}-${vueOrganisation}-${searchQuery}`} className='space-y-12'>
           {vueOrganisation === 'programme' && programmeGroups.length > 0 ? (
-            <div className='space-y-6'>
-              <div className='-mx-1 flex gap-2 overflow-x-auto pb-2 pt-1 [-ms-overflow-style:none] [scrollbar-width:thin] sm:mx-0'>
-                {programmeGroups.map((group) => {
-                  const key = programmeGroupKey(group);
-                  const active = key === (activeProgrammeKey ?? programmeGroupKey(programmeGroups[0]));
-                  return (
-                    <button
-                      key={key}
-                      type='button'
-                      onClick={() => setActiveProgrammeKey(key)}
-                      className={cn(
-                        'shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition',
-                        active
-                          ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-100'
-                          : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-slate-200',
-                      )}
-                    >
-                      {programmeGroupTabLabel(group)}
-                    </button>
-                  );
-                })}
+            <div className='lg:grid lg:grid-cols-[192px_1fr] lg:items-start lg:gap-6'>
+              {/* Sidebar sticky — desktop seulement */}
+              <aside className='hidden lg:block'>
+                <nav
+                  aria-label='Fascicules F01–F15'
+                  className='sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-white/[0.07] bg-white/[0.02] p-3 [-ms-overflow-style:none] [scrollbar-width:thin]'
+                >
+                  <p className='mb-2 px-2 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600'>Programme</p>
+                  <div className='space-y-0.5'>
+                    {programmeGroups.map((group) => {
+                      const key = programmeGroupKey(group);
+                      const active = key === (activeProgrammeKey ?? programmeGroupKey(programmeGroups[0]));
+                      const viewed = group.fiches.filter((f) => viewedIds.has(f.id)).length;
+                      const pct = group.fiches.length > 0 ? Math.round((viewed / group.fiches.length) * 100) : 0;
+                      return (
+                        <button
+                          key={key}
+                          type='button'
+                          onClick={() => setActiveProgrammeKey(key)}
+                          className={cn(
+                            'flex w-full flex-col rounded-xl px-3 py-2 text-left text-xs font-medium transition',
+                            active
+                              ? 'bg-emerald-500/15 text-emerald-200'
+                              : 'text-slate-500 hover:bg-white/[0.04] hover:text-slate-300',
+                          )}
+                        >
+                          <span className='truncate'>{programmeGroupTabLabel(group)}</span>
+                          {pct > 0 && (
+                            <span className='mt-1 h-1 w-full overflow-hidden rounded-full bg-white/[0.08]'>
+                              <span
+                                className='block h-full rounded-full bg-emerald-500/60 transition-[width] duration-300'
+                                style={{ width: `${pct}%` }}
+                                aria-hidden
+                              />
+                            </span>
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </nav>
+              </aside>
+
+              {/* Contenu + onglets mobiles */}
+              <div className='min-w-0'>
+                {/* Onglets mobile : scroll horizontal */}
+                <div className='-mx-1 flex gap-2 overflow-x-auto pb-2 pt-1 [-ms-overflow-style:none] [scrollbar-width:thin] lg:hidden sm:mx-0'>
+                  {programmeGroups.map((group) => {
+                    const key = programmeGroupKey(group);
+                    const active = key === (activeProgrammeKey ?? programmeGroupKey(programmeGroups[0]));
+                    return (
+                      <button
+                        key={key}
+                        type='button'
+                        onClick={() => setActiveProgrammeKey(key)}
+                        className={cn(
+                          'shrink-0 rounded-full border px-4 py-2 text-sm font-semibold transition',
+                          active
+                            ? 'border-emerald-500/50 bg-emerald-500/15 text-emerald-100'
+                            : 'border-white/10 bg-white/[0.03] text-slate-400 hover:border-white/20 hover:text-slate-200',
+                        )}
+                      >
+                        {programmeGroupTabLabel(group)}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {activeProgrammeGroup ? (
+                  <section aria-labelledby='sec-prog-active'>
+                    <div className='mb-4 space-y-2'>
+                      <div className='flex flex-wrap items-end justify-between gap-2 border-b border-white/10 pb-3'>
+                        <h2 id='sec-prog-active' className='font-display text-lg font-semibold tracking-tight text-white sm:text-xl'>
+                          {activeProgrammeGroup.titre}
+                        </h2>
+                      </div>
+                      <div className='flex h-2 overflow-hidden rounded-full bg-white/[0.06]'>
+                        <div
+                          className='h-full rounded-full bg-emerald-500/80 transition-[width] duration-500'
+                          style={{
+                            width: `${activeProgrammeGroup.fiches.length ? (activeProgrammeGroup.fiches.filter((f) => viewedIds.has(f.id)).length / activeProgrammeGroup.fiches.length) * 100 : 0}%`,
+                          }}
+                          aria-hidden
+                        />
+                      </div>
+                      <p className='text-xs text-slate-500'>
+                        {activeProgrammeGroup.fiches.filter((f) => viewedIds.has(f.id)).length}/
+                        {activeProgrammeGroup.fiches.length} fiches consultées dans ce fascicule
+                      </p>
+                    </div>
+                    <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-3'>
+                      {activeProgrammeGroup.fiches.map((fi, index) => renderCard(fi, index))}
+                    </div>
+                  </section>
+                ) : null}
               </div>
-              {activeProgrammeGroup ? (
-                <section aria-labelledby='sec-prog-active'>
-                  <div className='mb-4 space-y-2'>
-                    <div className='flex flex-wrap items-end justify-between gap-2 border-b border-white/10 pb-3'>
-                      <h2 id='sec-prog-active' className='font-display text-lg font-semibold tracking-tight text-white sm:text-xl'>
-                        {activeProgrammeGroup.titre}
-                      </h2>
-                    </div>
-                    <div className='flex h-2 overflow-hidden rounded-full bg-white/[0.06]'>
-                      <div
-                        className='h-full rounded-full bg-emerald-500/80 transition-[width] duration-500'
-                        style={{
-                          width: `${activeProgrammeGroup.fiches.length ? (activeProgrammeGroup.fiches.filter((f) => viewedIds.has(f.id)).length / activeProgrammeGroup.fiches.length) * 100 : 0}%`,
-                        }}
-                        aria-hidden
-                      />
-                    </div>
-                    <p className='text-xs text-slate-500'>
-                      {activeProgrammeGroup.fiches.filter((f) => viewedIds.has(f.id)).length}/
-                      {activeProgrammeGroup.fiches.length} fiches consultées dans ce fascicule
-                    </p>
-                  </div>
-                  <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-3'>
-                    {activeProgrammeGroup.fiches.map((fi, index) => renderCard(fi, index))}
-                  </div>
-                </section>
-              ) : null}
             </div>
           ) : null}
           {vueOrganisation === 'theme'
