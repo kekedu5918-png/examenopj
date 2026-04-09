@@ -90,7 +90,7 @@ function Stage1Phase({ onNext }: { onNext: (phase: FormationPhase) => void }) {
   const [selected, setSelected] = useState<FormationPhase | null>(null);
 
   return (
-    <OnboardingStage step={1} total={4} title='📍 Où en êtes-vous?' subtitle='En 2 minutes, créons VOTRE plan d'études personnalisé.'>
+    <OnboardingStage step={1} total={4} title='📍 Où en êtes-vous ?' subtitle="En 2 minutes, créons VOTRE plan d'études personnalisé.">
       <div className='space-y-3'>
         {PHASES.map((p) => (
           <button
@@ -295,7 +295,7 @@ function Stage3Diagnostic({
       step={3}
       total={4}
       title={`⚡ Diagnostic éclair — Q${currentQ + 1}/5`}
-      subtitle='Pas de panique ! C\'est juste pour adapter votre plan.'
+      subtitle="Pas de panique ! C'est juste pour adapter votre plan."
     >
       <div className='mb-5'>
         <div className='mb-4 flex gap-1'>
