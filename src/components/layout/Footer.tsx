@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
+import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
 const colLink = 'text-sm text-examen-inkMuted transition hover:text-examen-ink';
 

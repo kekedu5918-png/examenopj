@@ -1,10 +1,10 @@
 'use client';
 
+import { motion, useReducedMotion } from 'framer-motion';
 import { BookOpen, Brain, Scale, ScrollText } from 'lucide-react';
 
 import { AnimatedStat } from '@/components/home/AnimatedStat';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
-import { motion, useReducedMotion } from 'framer-motion';
 
 const icons = [BookOpen, Scale, ScrollText, Brain] as const;
 

@@ -6,8 +6,8 @@ import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay
 import { FREEMIUM_UNLOCKED_IDS } from '@/components/fondamentaux/fondamentaux-theme';
 import { FondamentauxFicheDetail } from '@/components/fondamentaux/FondamentauxFicheDetail';
 import { FondamentauxViewTracker } from '@/components/fondamentaux/FondamentauxViewTracker';
-import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
+import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { getSiteUrl } from '@/utils/site-url';
 

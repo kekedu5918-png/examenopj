@@ -14,9 +14,9 @@ import {
   Layers,
   Map,
   Mic,
+  Quote,
   Scale,
   Shield,
-  Quote,
   Sparkles,
 } from 'lucide-react';
 

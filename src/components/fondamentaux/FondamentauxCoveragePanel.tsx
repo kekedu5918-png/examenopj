@@ -4,8 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { ChevronDown } from 'lucide-react';
 
-import { GlassCard } from '@/components/ui/GlassCard';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { getFondamentauxCoverageRows, getFondamentauxModulesSansFiche } from '@/data/fondamentaux-coverage';
 import { quizHrefForFasciculeId } from '@/data/fondamentaux-fascicule-reperes';
 import { cn } from '@/utils/cn';
