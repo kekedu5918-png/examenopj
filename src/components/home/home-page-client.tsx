@@ -9,6 +9,7 @@ import {
   HomeTestimonialsSection,
   type InfractionPreviewItem,
   StartHereSection,
+  TerrainOriginSection,
 } from '@/components/home/sections/home-refonte-sections';
 import { HomeStatsSection } from '@/components/home/sections/home-stats-section';
 
@@ -22,6 +23,7 @@ export function HomePageClient({ infractionPreview }: HomePageClientProps) {
       <HeroSection />
       <HomeStatsSection />
       <StartHereSection />
+      <TerrainOriginSection />
       <HomeEnquetesPillarSection />
       <HomeEpreuvesLandingSection />
       <HomeTestimonialsSection />

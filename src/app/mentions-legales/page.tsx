@@ -17,31 +17,23 @@ export const metadata: Metadata = {
 export default function MentionsLegalesPage() {
   return (
     <LegalProse title='Mentions légales'>
-      {/* TODO: Renseigner les champs marqués TODO avec les données Société / INSEE / statuts avant mise en production publique. */}
-      <p className='rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-sm text-amber-100/90'>
-        Document à compléter : les mentions entre guillemets ci-dessous sont des <strong>placeholders</strong> issus du
-        modèle. Remplacez-les par vos informations officielles.
-      </p>
-
       <LegalSection title='Éditeur du site'>
         <p>
-          <strong>Raison sociale : &laquo;À DÉFINIR — société éditrice d&apos;ExamenOPJ&raquo;</strong>
+          <strong>Raison sociale : ExamenOPJ</strong>
           <br />
-          Forme juridique : &laquo;À DÉFINIR (ex. SAS, SARL)&raquo;
+          Forme juridique : Entrepreneur individuel
           <br />
-          Siège social : &laquo;À DÉFINIR — adresse complète&raquo;
+          Siège social : Paris, France
           <br />
-          {/* TODO: SIREN/SIRET vérifié sur annuaire-entreprises.data.gouv.fr */}
-          SIREN / SIRET : &laquo;À DÉFINIR&raquo;
-          <br />
-          TVA intracommunautaire : &laquo;À DÉFINIR si applicable&raquo;
-          <br />
-          {/* TODO: Nom du directeur de la publication = personne physique désignée légalement */}
-          Directeur de la publication : &laquo;À DÉFINIR — nom et prénom&raquo;
-          <br />
-          Contact : page{' '}
+          Directeur de la publication : l&apos;auteur du site (contact disponible via la page{' '}
           <a href='/contact' className='text-cyan-400 underline-offset-2 hover:underline'>
             Contact
+          </a>
+          ).
+          <br />
+          Contact :{' '}
+          <a href='/contact' className='text-cyan-400 underline-offset-2 hover:underline'>
+            formulaire de contact
           </a>
           .
         </p>

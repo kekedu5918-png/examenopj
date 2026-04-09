@@ -7,41 +7,32 @@ export default async function Epreuve3Page() {
 
   return (
     <>
-      <section style={{ maxWidth: '800px', margin: '0 auto', padding: '2rem 1rem' }}>
-        <h1>Épreuve 3 — L&apos;oral de mise en situation</h1>
-
-        <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', margin: '1.5rem 0', fontSize: '0.9rem', color: '#6B7280' }}>
-          <span>⏱ 40 min de préparation</span>
-          <span>👥 Jury : magistrat + commissaire</span>
-          <span>📋 Dossier remis le jour J</span>
+            <section className='mx-auto max-w-3xl px-4 py-10 md:py-14'>
+        <h1 className='font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
+          Epreuve 3 &mdash; L&apos;oral de mise en situation
+        </h1>
+        <div className='mt-4 flex flex-wrap gap-4 text-sm text-gray-400'>
+          <span>&#9201; 40 min de preparation</span>
+          <span>&#128101; Jury : magistrat + commissaire</span>
+          <span>&#128203; Dossier remis le jour J</span>
         </div>
-
-        <h2>Ce que le jury évalue</h2>
-        <ul>
-          <li>La qualification juridique exacte des faits du dossier remis</li>
-          <li>La maîtrise du cadre d’enquête applicable (flagrance, préliminaire, CR)</li>
-          <li>La structuration orale : faits → qualification → actes réalisés → suites</li>
-          <li>La capacité à répondre aux questions sur les actes de procédure effectués</li>
-          <li>La posture professionnelle face à un magistrat et un commissaire</li>
+        <h2 className='mt-8 font-sans text-xl font-bold text-white'>Ce que le jury evalue</h2>
+        <ul className='mt-3 space-y-2 text-sm text-gray-300'>
+          <li className='flex gap-2'><span className='mt-0.5 text-emerald-400'>&#10003;</span>La qualification juridique exacte des faits du dossier remis</li>
+          <li className='flex gap-2'><span className='mt-0.5 text-emerald-400'>&#10003;</span>La maitrise du cadre d&apos;enquete applicable (flagrance, preliminaire, CR)</li>
+          <li className='flex gap-2'><span className='mt-0.5 text-emerald-400'>&#10003;</span>La structuration orale : faits &rarr; qualification &rarr; actes realises &rarr; suites</li>
+          <li className='flex gap-2'><span className='mt-0.5 text-emerald-400'>&#10003;</span>La capacite a repondre aux questions sur les actes de procedure effectues</li>
+          <li className='flex gap-2'><span className='mt-0.5 text-emerald-400'>&#10003;</span>La posture professionnelle face a un magistrat et un commissaire</li>
         </ul>
-
-        <h2>Les 3 erreurs les plus fréquentes à l’oral</h2>
-        <ul>
-          <li>
-            <strong>Réciter les faits sans qualifier</strong> — le jury attend une analyse juridique
-          </li>
-          <li>
-            <strong>Confondre les cadres d’enquête</strong> — citer un acte impossible dans le cadre donné
-          </li>
-          <li>
-            <strong>Ne pas anticiper les questions du jury</strong> — sur la GAV, la perquisition, les droits
-          </li>
+        <h2 className='mt-8 font-sans text-xl font-bold text-white'>Les 3 erreurs les plus frequentes a l&apos;oral</h2>
+        <ul className='mt-3 space-y-3 text-sm text-gray-300'>
+          <li className='flex gap-2'><span className='mt-0.5 text-rose-400'>&#10007;</span><span><strong className='text-white'>Reciter les faits sans qualifier</strong> &mdash; le jury attend une analyse juridique</span></li>
+          <li className='flex gap-2'><span className='mt-0.5 text-rose-400'>&#10007;</span><span><strong className='text-white'>Confondre les cadres d&apos;enquete</strong> &mdash; citer un acte impossible dans le cadre donne</span></li>
+          <li className='flex gap-2'><span className='mt-0.5 text-rose-400'>&#10007;</span><span><strong className='text-white'>Ne pas anticiper les questions du jury</strong> &mdash; sur la GAV, la perquisition, les droits</span></li>
         </ul>
-
-        <div style={{ background: '#F3F4F6', borderRadius: '12px', padding: '1.25rem 1.5rem', marginTop: '1.5rem' }}>
-          <p style={{ margin: 0, fontSize: '0.875rem', color: '#374151' }}>
-            💡 <strong>À savoir :</strong> L’épreuve 3 valorise exactement ce que les épreuves 1 et 2 ont construit. Un candidat
-            solide en qualification (E1) et en procédure (E2) est naturellement à l’aise face au jury.
+        <div className='mt-6 rounded-xl border border-blue-500/20 bg-blue-500/[0.07] px-5 py-4'>
+          <p className='text-sm text-gray-300'>
+            &#128161; <strong className='text-white'>A savoir :</strong> L&apos;epreuve 3 valorise exactement ce que les epreuves 1 et 2 ont construit. Un candidat solide en qualification (E1) et en procedure (E2) est naturellement a l&apos;aise face au jury.
           </p>
         </div>
       </section>

@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
 import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
+import { PricingFallbackPlans } from '@/features/pricing/components/pricing-fallback-plans';
 import { getProducts } from '@/features/pricing/controllers/get-products';
 import { pickFreemiumStripePrices } from '@/features/pricing/controllers/pick-freemium-stripe-prices';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -37,6 +38,18 @@ export default async function PricingPage() {
   }
 
   const { monthly, exam } = pickFreemiumStripePrices(products);
+
+  if (!monthly && !exam) {
+    return (
+      <div className='mx-auto max-w-4xl px-4 py-16 md:py-24'>
+        <h1 className='mb-2 text-center font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
+          Choisissez votre accès
+        </h1>
+        <p className='mb-12 text-center text-gray-400'>Gratuit pour démarrer. Premium pour réussir.</p>
+        <PricingFallbackPlans />
+      </div>
+    );
+  }
 
   return (
     <PricingThreeColumnPage

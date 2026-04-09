@@ -58,6 +58,7 @@ const epreuvesLinks = [
 ] as const;
 
 const entrainerLinks = [
+  { href: '/entrainement', label: "Vue d'ensemble" },
   { href: '/quiz', label: 'Quiz' },
   { href: '/flashcards', label: 'Flashcards' },
   { href: '/entrainement/articulation', label: 'Articulation' },

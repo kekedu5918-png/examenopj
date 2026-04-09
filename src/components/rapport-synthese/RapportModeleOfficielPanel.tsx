@@ -87,9 +87,8 @@ P. JOINTES : Une procédure n°[XX/XXXX] comprenant [X] procès-verbaux et leurs
         </ul>
       </section>
 
-      <p className='text-xs text-amber-200/90'>
-        TODO fascicule B7_02_RAPP_SYNT_1024 — intégrer le modèle complet affaire VERT/VILLA dès que le PDF est référencé dans
-        le dépôt (actuellement : voir reference/fascicules/rapport-de-synthese-officiel.pdf si équivalent).
+      <p className='text-xs text-gray-600'>
+        Structure calée sur le fascicule B7_02_RAPP_SYNT — vérifier les formules exactes sur le fascicule officiel de votre centre de formation.
       </p>
     </div>
   );

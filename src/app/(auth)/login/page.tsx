@@ -32,7 +32,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
   }
 
   if (session && !premium) {
-    redirect('/pricing');
+    redirect(nextPath);
   }
 
   const banner = loginQueryBanner(searchParams.error);
