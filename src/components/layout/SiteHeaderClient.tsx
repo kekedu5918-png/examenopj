@@ -136,10 +136,10 @@ export function SiteHeaderClient({
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
           <Link
             href='/'
-            className='flex min-w-0 shrink items-center gap-2 font-display text-sm font-black tracking-[0.12em] text-[#111827] no-underline'
+            className='flex min-w-0 shrink items-center gap-2 font-sans text-sm font-black tracking-[0.12em] text-white no-underline'
             aria-label='ExamenOPJ — accueil'
           >
-            <span className='inline-flex shrink-0 rounded-lg bg-white/[0.08] p-1 ring-1 ring-black/10'>
+            <span className='inline-flex shrink-0 rounded-lg bg-white/[0.08] p-1 ring-1 ring-white/[0.12]'>
               <ExamenOpjLogo size={32} className='block' />
             </span>
             <span className='hidden min-w-0 sm:inline'>EXAMENOPJ</span>
@@ -245,12 +245,12 @@ export function SiteHeaderClient({
               </>
             ) : (
               <>
-                <Link href='/connexion' className='text-sm font-medium text-[#4B5563] no-underline hover:text-[#111827]'>
+                <Link href='/connexion' className='text-sm font-medium text-examen-inkMuted no-underline transition-colors hover:text-white'>
                   Connexion
                 </Link>
                 <Link
                   href='/inscription'
-                  className='rounded-lg bg-[#111827] px-4 py-2 text-sm font-semibold text-white no-underline transition hover:bg-[#374151]'
+                  className='rounded-lg bg-gradient-to-r from-examen-accent to-blue-600 px-4 py-2 text-sm font-semibold text-white no-underline transition hover:opacity-90'
                 >
                   Commencer gratuitement →
                 </Link>
@@ -278,13 +278,13 @@ export function SiteHeaderClient({
             ) : null}
             <Link
               href='/inscription'
-              className='rounded-lg bg-[#111827] px-2.5 py-1.5 text-[11px] font-semibold text-white no-underline'
+              className='rounded-lg bg-gradient-to-r from-examen-accent to-blue-600 px-2.5 py-1.5 text-[11px] font-semibold text-white no-underline'
             >
               Commencer →
             </Link>
             <button
               type='button'
-              className='inline-flex rounded-lg p-2 text-[#111827] focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/50'
+              className='inline-flex rounded-lg p-2 text-examen-inkMuted hover:text-white focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/50'
               aria-expanded={mobileOpen}
               aria-controls={mobileMenuId}
               onClick={() => setMobileOpen(true)}

@@ -67,7 +67,10 @@ Il ne peut pas y avoir vol à s'approprier :
 **ÉLÉMENT MORAL :**
 
 ➤ **CONSCIENCE DE SOUSTRAIRE UNE CHOSE QUI NE LUI APPARTIENT PAS**
-➤ **VOLONTÉ DE SE COMPORTER, MÊME MOMENTANÉMENT, EN MAÎTRE DE LA CHOSE**`,
+➤ **VOLONTÉ DE SE COMPORTER, MÊME MOMENTANÉMENT, EN MAÎTRE DE LA CHOSE**
+
+---
+**T : OUI** · **C : OUI** · **IMM : OUI**`,
     versoFooter:
       "*L'article 311-1 du C.P.* définit le vol simple et *l'article 311-3 du C.P.* en prévoit la répression.",
   },

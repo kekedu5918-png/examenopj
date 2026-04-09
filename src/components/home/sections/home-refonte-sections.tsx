@@ -466,7 +466,7 @@ export function HomeTestimonialsSection() {
 
   return (
     <motion.section
-      className='border-t border-slate-200/80 bg-orde-slate50 px-4 py-20 md:py-24'
+      className='border-t border-white/[0.06] bg-white/[0.015] px-4 py-20 md:py-24'
       aria-labelledby='home-testimonials-title'
       initial={shouldReduce ? {} : { opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -476,22 +476,22 @@ export function HomeTestimonialsSection() {
       <div className='mx-auto max-w-6xl'>
         <h2
           id='home-testimonials-title'
-          className='text-center font-display text-3xl font-normal tracking-tight text-orde-slate900 md:text-4xl'
+          className='text-center font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'
         >
           Ils s&apos;entraînent avec ExamenOPJ
         </h2>
-        <p className='mx-auto mt-3 max-w-2xl text-center text-sm text-slate-600'>
+        <p className='mx-auto mt-3 max-w-2xl text-center text-sm text-gray-400'>
           Retours anonymisés de candidats en préparation OPJ — le même rythme, les mêmes enjeux.
         </p>
-        <ul className='mt-12 grid list-none gap-8 md:grid-cols-3'>
+        <ul className='mt-12 grid list-none gap-6 md:grid-cols-3'>
           {items.map((t) => (
             <li
               key={t.author}
-              className='flex flex-col rounded-lg border border-slate-200 bg-white p-6 shadow-[var(--card-shadow)] transition-[box-shadow,transform] duration-200 hover:-translate-y-1 hover:shadow-[var(--card-shadow-hover)]'
+              className='flex flex-col rounded-2xl border border-white/[0.08] bg-white/[0.03] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-white/[0.14] hover:bg-white/[0.05]'
             >
-              <Quote className='mb-3 h-8 w-8 text-orde-blue500/40' aria-hidden />
-              <blockquote className='flex-1 text-sm leading-relaxed text-slate-700'>&ldquo;{t.quote}&rdquo;</blockquote>
-              <footer className='mt-4 text-xs font-medium text-slate-500'>{t.author}</footer>
+              <Quote className='mb-3 h-7 w-7 text-blue-400/50' aria-hidden />
+              <blockquote className='flex-1 text-sm leading-relaxed text-gray-300'>&ldquo;{t.quote}&rdquo;</blockquote>
+              <footer className='mt-4 text-xs font-medium text-gray-500'>{t.author}</footer>
             </li>
           ))}
         </ul>

@@ -19,7 +19,7 @@ export function HomeStatsSection() {
 
   return (
     <section
-      className='border-y border-slate-200/80 bg-orde-slate50 py-16 md:py-20'
+      className='border-y border-white/[0.06] bg-white/[0.02] py-14 md:py-16'
       aria-labelledby='home-stats-title'
     >
       <div className='mx-auto max-w-6xl px-4'>
@@ -33,12 +33,12 @@ export function HomeStatsSection() {
           transition={{ duration: 0.45, ease: LANDING_EASE }}
           className='grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8'
         >
-          {stats.map((s, i) => (
+          {stats.map((s) => (
             <div
               key={s.label}
               className='flex flex-col items-center text-center md:flex-row md:items-start md:text-left'
             >
-              <span className='mb-3 flex h-11 w-11 items-center justify-center rounded-lg border border-slate-200 bg-white text-orde-blue500 shadow-sm md:mb-0 md:mr-4'>
+              <span className='mb-3 flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/[0.06] text-blue-400 md:mb-0 md:mr-4'>
                 <s.Icon className='h-5 w-5' strokeWidth={1.75} aria-hidden />
               </span>
               <div className='min-w-0'>
@@ -47,7 +47,6 @@ export function HomeStatsSection() {
                   suffix={s.suffix}
                   label={s.label}
                   animateOnMount
-                  variant='light'
                 />
               </div>
             </div>
