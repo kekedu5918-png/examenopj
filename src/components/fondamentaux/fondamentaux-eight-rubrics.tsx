@@ -1,7 +1,114 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+
+import { ArticleTooltip } from '@/components/ui/ArticleTooltip';
+import type { ArticleRef } from '@/components/ui/ArticleTooltip';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { cn } from '@/utils/cn';
+
+// ─────────────────────────────────────────────────────────
+// Références articles avec textes courts + Légifrance
+// ─────────────────────────────────────────────────────────
+const REFS: Record<string, ArticleRef> = {
+  'art. 111-1 CP': {
+    label: 'art. 111-1 CP',
+    text: 'Pas de crime ou de délit sans loi. Principe de légalité criminelle.',
+    code: 'CP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006417201',
+  },
+  'art. 53 CPP': {
+    label: 'art. 53 CPP',
+    text: 'Enquête de flagrance : crime ou délit flagrant. Durée 8 jours, prorogation possible.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006574822',
+  },
+  'art. 62-2 CPP': {
+    label: 'art. 62-2 CPP',
+    text: 'Six motifs légaux pour placer une personne en garde à vue.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000026268011',
+  },
+  'art. 63-1 CPP': {
+    label: 'art. 63-1 CPP',
+    text: 'Droits de la personne gardée à vue : notification de l\'infraction, droits à l\'avocat, au médecin, au silence.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000026268023',
+  },
+  'art. 78-2 al.1 CPP': {
+    label: 'art. 78-2 al.1 CPP',
+    text: 'Contrôle d\'identité judiciaire : raisons plausibles de soupçonner que la personne a commis ou tenté de commettre une infraction.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037290024',
+  },
+  'art. 78-2 al.2 CPP': {
+    label: 'art. 78-2 al.2 CPP',
+    text: 'Contrôle si raisons plausibles de soupçonner que la personne se prépare à commettre un crime ou délit.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037290024',
+  },
+  'art. 78-2 al.4 CPP': {
+    label: 'art. 78-2 al.4 CPP',
+    text: 'Contrôle administratif : maintien de l\'ordre public ou prévention des infractions.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037290024',
+  },
+  'art. 78-2 al.5 CPP': {
+    label: 'art. 78-2 al.5 CPP',
+    text: 'Contrôle frontalier : zones de 20 km à la frontière et ports/aéroports ouverts au trafic international.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000037290024',
+  },
+  'art. 78-3 CPP': {
+    label: 'art. 78-3 CPP',
+    text: 'Vérification d\'identité : retenue jusqu\'à 4 heures dans les locaux de police.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006574966',
+  },
+  'art. 61-1 CPP': {
+    label: 'art. 61-1 CPP',
+    text: 'Audition libre : droits de la personne soupçonnée entendue sans contrainte.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000026267756',
+  },
+  'art. 802 CPP': {
+    label: 'art. 802 CPP',
+    text: 'Nullité substantielle : la nullité n\'est prononcée que s\'il est établi que l\'irrégularité a causé un grief.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006575420',
+  },
+  'art. 385 al.1 CPP': {
+    label: 'art. 385 al.1 CPP',
+    text: 'Les nullités de procédure doivent être soulevées avant tout débat au fond.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006575049',
+  },
+  'art. 57 CPP': {
+    label: 'art. 57 CPP',
+    text: 'Perquisitions : présence obligatoire de la personne concernée ou de son représentant ; à défaut, deux témoins.',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006574868',
+  },
+  'art. 132-16 CP': {
+    label: 'art. 132-16 CP',
+    text: 'Infractions assimilées en matière de récidive : liste des délits considérés comme identiques.',
+    code: 'CP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000044390768',
+  },
+  'art. 706-73 CPP': {
+    label: 'art. 706-73 CPP',
+    text: 'Criminalité et délinquance organisée : liste des infractions et régimes procéduraux dérogatoires (GAV 96h).',
+    code: 'CPP',
+    legifranceUrl: 'https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000042192413',
+  },
+};
+
+function Ref({ id, children }: { id: keyof typeof REFS; children?: React.ReactNode }) {
+  const article = REFS[id];
+  if (!article) return <span className='text-cyan-400/90'>[{id}]</span>;
+  return <ArticleTooltip article={article}>{children ?? article.label}</ArticleTooltip>;
+}
 
 function Piege() {
   return (
@@ -11,171 +118,269 @@ function Piege() {
   );
 }
 
-function Ref({ children }: { children: React.ReactNode }) {
-  return <span className='text-cyan-400/90'>{children}</span>;
+// ─────────────────────────────────────────────────────────
+// Navigation sidebar — 8 rubriques
+// ─────────────────────────────────────────────────────────
+const SIDEBAR_ITEMS = [
+  { id: 'r1', num: 1, label: 'Classification des infractions', color: 'text-violet-300', dot: 'bg-violet-400' },
+  { id: 'r2', num: 2, label: 'Cadres d\'enquête', color: 'text-blue-300', dot: 'bg-blue-400' },
+  { id: 'r3', num: 3, label: 'Contrôle d\'identité', color: 'text-cyan-300', dot: 'bg-cyan-400' },
+  { id: 'r4', num: 4, label: 'Garde à vue', color: 'text-rose-300', dot: 'bg-rose-400' },
+  { id: 'r5', num: 5, label: 'Audition libre', color: 'text-amber-300', dot: 'bg-amber-400' },
+  { id: 'r6', num: 6, label: 'Nullités de procédure', color: 'text-orange-300', dot: 'bg-orange-400' },
+  { id: 'r7', num: 7, label: 'Perquisitions & saisies', color: 'text-teal-300', dot: 'bg-teal-400' },
+  { id: 'r8', num: 8, label: 'Récidive & concours', color: 'text-emerald-300', dot: 'bg-emerald-400' },
+];
+
+const SECTION_COLORS: Record<string, { border: string; header: string; badge: string }> = {
+  r1: { border: 'border-l-violet-500', header: 'from-violet-500/10 to-transparent', badge: 'bg-violet-500/15 text-violet-200 border-violet-500/30' },
+  r2: { border: 'border-l-blue-500', header: 'from-blue-500/10 to-transparent', badge: 'bg-blue-500/15 text-blue-200 border-blue-500/30' },
+  r3: { border: 'border-l-cyan-500', header: 'from-cyan-500/10 to-transparent', badge: 'bg-cyan-500/15 text-cyan-200 border-cyan-500/30' },
+  r4: { border: 'border-l-rose-500', header: 'from-rose-500/10 to-transparent', badge: 'bg-rose-500/15 text-rose-200 border-rose-500/30' },
+  r5: { border: 'border-l-amber-500', header: 'from-amber-500/10 to-transparent', badge: 'bg-amber-500/15 text-amber-200 border-amber-500/30' },
+  r6: { border: 'border-l-orange-500', header: 'from-orange-500/10 to-transparent', badge: 'bg-orange-500/15 text-orange-200 border-orange-500/30' },
+  r7: { border: 'border-l-teal-500', header: 'from-teal-500/10 to-transparent', badge: 'bg-teal-500/15 text-teal-200 border-teal-500/30' },
+  r8: { border: 'border-l-emerald-500', header: 'from-emerald-500/10 to-transparent', badge: 'bg-emerald-500/15 text-emerald-200 border-emerald-500/30' },
+};
+
+function SidebarNav({ activeId }: { activeId: string }) {
+  return (
+    <nav aria-label='Navigation rubriques' className='space-y-1'>
+      <p className='mb-3 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600'>
+        8 rubriques
+      </p>
+      {SIDEBAR_ITEMS.map((item) => {
+        const active = activeId === item.id;
+        return (
+          <a
+            key={item.id}
+            href={`#fond-rubrique-${item.id}`}
+            className={cn(
+              'flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium transition-all duration-150',
+              active
+                ? cn('bg-white/[0.06] text-white', item.color)
+                : 'text-slate-500 hover:bg-white/[0.04] hover:text-slate-300',
+            )}
+          >
+            <span
+              className={cn(
+                'flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[9px] font-black transition-all',
+                active ? cn(item.dot, 'text-white') : 'bg-white/[0.06] text-slate-500',
+              )}
+            >
+              {item.num}
+            </span>
+            <span className='leading-snug'>{item.label}</span>
+          </a>
+        );
+      })}
+    </nav>
+  );
 }
 
-/** Architecture 8 rubriques — sources F09, F10, F11, F15. // TODO: valider chaque cellule avec fascicule PDF (F09 p.8, F10 p.26, F11, F15). */
+// ─────────────────────────────────────────────────────────
+// Hook IntersectionObserver — section active
+// ─────────────────────────────────────────────────────────
+function useActiveSection(ids: string[]) {
+  const [activeId, setActiveId] = useState(ids[0] ?? '');
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current?.disconnect();
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id.replace('fond-rubrique-', ''));
+          }
+        }
+      },
+      { rootMargin: '-20% 0px -70% 0px' },
+    );
+    for (const id of ids) {
+      const el = document.getElementById(`fond-rubrique-${id}`);
+      if (el) observerRef.current.observe(el);
+    }
+    return () => observerRef.current?.disconnect();
+  }, [ids]);
+
+  return activeId;
+}
+
+// ─────────────────────────────────────────────────────────
+// Section wrapper
+// ─────────────────────────────────────────────────────────
+function RubriqueSection({
+  id,
+  num,
+  titre,
+  fascicule,
+  children,
+}: {
+  id: string;
+  num: number;
+  titre: string;
+  fascicule: string;
+  children: React.ReactNode;
+}) {
+  const colors = SECTION_COLORS[id] ?? SECTION_COLORS['r1']!;
+  return (
+    <section
+      id={`fond-rubrique-${id}`}
+      className={cn(
+        'scroll-mt-24 rounded-2xl border border-white/[0.08] border-l-4 bg-white/[0.015] overflow-hidden',
+        colors.border,
+      )}
+    >
+      {/* En-tête coloré */}
+      <div className={cn('bg-gradient-to-r px-5 py-4 md:px-6', colors.header)}>
+        <div className='flex flex-wrap items-center gap-3'>
+          <span className='flex h-7 w-7 items-center justify-center rounded-full bg-white/[0.08] text-xs font-black text-white'>
+            {num}
+          </span>
+          <h2 className='font-display text-base font-bold text-white md:text-lg'>{titre}</h2>
+          <span
+            className={cn(
+              'ml-auto rounded border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+              colors.badge,
+            )}
+          >
+            {fascicule}
+          </span>
+        </div>
+      </div>
+      {/* Contenu */}
+      <div className='px-5 py-5 text-sm text-slate-300 md:px-6'>{children}</div>
+    </section>
+  );
+}
+
+/** Architecture 8 rubriques — sources F09, F10, F11, F15. */
 export function FondamentauxEightRubrics() {
+  const sectionIds = SIDEBAR_ITEMS.map((s) => s.id);
+  const activeId = useActiveSection(sectionIds);
+
   return (
     <section className='border-b border-white/10 bg-navy-950 px-4 py-12 md:px-8' aria-labelledby='fond-structure-title'>
-      <div className='mx-auto max-w-4xl'>
-        <h2 id='fond-structure-title' className='font-display text-2xl font-bold text-white md:text-3xl'>
-          Les fondamentaux de l&apos;OPJ
-        </h2>
-        <p className='mt-3 text-slate-400'>
-          Synthèse procédurale et pénale — à recaler sur les fascicules SDCP (F09 à F15). Les tableaux ci-dessous
-          reprennent la structure imposée ; toute ligne doit être vérifiée sur le fascicule indiqué.
-        </p>
+      <div className='mx-auto max-w-6xl'>
+        <div className='mb-8'>
+          <h2 id='fond-structure-title' className='font-display text-2xl font-bold text-white md:text-3xl'>
+            Les fondamentaux de l&apos;OPJ
+          </h2>
+          <p className='mt-3 max-w-3xl text-slate-400'>
+            Synthèse procédurale et pénale — à recaler sur les fascicules SDCP (F09 à F15). Les tableaux reprennent la structure
+            imposée ; toute ligne doit être vérifiée sur le fascicule indiqué.
+            Les badges <span className='rounded border border-blue-500/40 bg-blue-500/15 px-1.5 py-0.5 text-[10px] font-bold text-blue-200'>CPP</span> et{' '}
+            <span className='rounded border border-violet-500/40 bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold text-violet-200'>CP</span>{' '}
+            sont cliquables — ouvre la définition courte et le lien Légifrance.
+          </p>
+        </div>
 
-        <Accordion type='multiple' className='mt-10 w-full space-y-3'>
-          {/* RUBRIQUE 1 */}
-          <AccordionItem value='r1' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              1. La classification des infractions <Ref>[F09]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
-              <p>
+        {/* Layout 2 colonnes sur desktop */}
+        <div className='flex gap-8 lg:items-start'>
+          {/* Sidebar sticky — desktop seulement */}
+          <aside className='hidden w-52 shrink-0 lg:block'>
+            <div className='sticky top-24 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-4'>
+              <SidebarNav activeId={activeId} />
+            </div>
+          </aside>
+
+          {/* Contenu principal — rubriques */}
+          <div className='min-w-0 flex-1 space-y-5'>
+
+            {/* RUBRIQUE 1 */}
+            <RubriqueSection id='r1' num={1} titre='La classification des infractions' fascicule='F09'>
+              <p className='mb-4'>
                 <strong className='text-white'>Éléments constitutifs</strong> — Élément légal :{' '}
-                <Ref>[art. 111-1 C.P. — pas de crime ou de délit sans loi — principe légal d&apos;une infraction]</Ref>. Élément matériel : acte positif
-                ou négatif (commission / omission). Élément moral : dol général (intentionnel) / faute non intentionnelle /
-                faute contraventionnelle.
+                <Ref id='art. 111-1 CP' /> principe légal d&apos;une infraction. Élément matériel : acte positif
+                ou négatif. Élément moral : dol général (intentionnel) / faute non intentionnelle / faute contraventionnelle.
               </p>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
-                <p className='mb-2 font-semibold text-white'>Tableau tripartite — // TODO: vérifier F09 p.8</p>
-                <table className='w-full min-w-[720px] border-collapse text-left'>
+                <p className='mb-2 font-semibold text-white'>Tableau tripartite des infractions</p>
+                <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2' />
-                      <th className='py-2 pr-2'>Contravention</th>
-                      <th className='py-2 pr-2'>Délit</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3' />
+                      <th className='py-2 pr-3'>Contravention</th>
+                      <th className='py-2 pr-3'>Délit</th>
                       <th className='py-2'>Crime</th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-400'>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Juridiction</td>
-                      <td>Tribunal de police</td>
-                      <td>Tribunal correctionnel</td>
-                      <td>Cour d&apos;assises / CCD</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Flagrance</td>
-                      <td>Non applicable</td>
-                      <td>Possible si peine d&apos;emprisonnement</td>
-                      <td>Possible</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Prescription action publique</td>
-                      <td>1 an</td>
-                      <td>6 ans</td>
-                      <td>20 ans</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Prescription peine</td>
-                      <td>3 ans</td>
-                      <td>6 ans</td>
-                      <td>20 ans</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Tentative</td>
-                      <td>Non punissable</td>
-                      <td>Si texte le prévoit</td>
-                      <td>Toujours punissable</td>
-                    </tr>
-                    <tr>
-                      <td className='py-2 font-medium text-slate-300'>Complicité</td>
-                      <td>Si texte le prévoit expressément</td>
-                      <td>Punissable</td>
-                      <td>Punissable</td>
-                    </tr>
+                    {[
+                      ['Juridiction', 'Tribunal de police', 'Tribunal correctionnel', 'Cour d\'assises / CCD'],
+                      ['Flagrance', 'Non applicable', 'Possible si peine d\'emprisonnement', 'Possible'],
+                      ['Prescription action publique', '1 an', '6 ans', '20 ans'],
+                      ['Prescription peine', '3 ans', '6 ans', '20 ans'],
+                      ['Tentative', 'Non punissable', 'Si texte le prévoit', 'Toujours punissable'],
+                      ['Complicité', 'Si texte expresst.', 'Punissable', 'Punissable'],
+                    ].map(([label, ...vals]) => (
+                      <tr key={label} className='border-b border-white/5 last:border-0'>
+                        <td className='py-2 font-medium text-slate-300'>{label}</td>
+                        {vals.map((v, i) => <td key={i} className='py-2 pr-3'>{v}</td>)}
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </GlassCard>
-              <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
-                <p className='mb-2 font-semibold text-white'>Éléments moraux (schéma)</p>
-                <table className='w-full min-w-[640px] border-collapse text-left'>
-                  <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2' />
-                      <th className='py-2 pr-2'>Intentionnel</th>
-                      <th className='py-2 pr-2'>Non intentionnel</th>
-                      <th className='py-2'>Contraventionnel</th>
-                    </tr>
-                  </thead>
-                  <tbody className='text-slate-400'>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Définition</td>
-                      <td>Volonté d&apos;accomplir l&apos;acte en sachant qu&apos;il est illicite</td>
-                      <td>Imprudence, négligence, maladresse</td>
-                      <td>Violation de la prescription légale</td>
-                    </tr>
-                    <tr>
-                      <td className='py-2 font-medium text-slate-300'>Dol spécial</td>
-                      <td>Volonté d&apos;atteindre un résultat précis</td>
-                      <td>N/A</td>
-                      <td>N/A</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </GlassCard>
-            </AccordionContent>
-          </AccordionItem>
+              <div className='mt-4 rounded-xl border border-amber-500/20 bg-amber-500/[0.06] p-4'>
+                <p className='text-xs font-semibold uppercase tracking-wide text-amber-300'>Éléments moraux — schéma</p>
+                <div className='mt-2 grid grid-cols-3 gap-2 text-xs text-slate-400'>
+                  <div className='rounded-lg bg-white/[0.03] p-3'>
+                    <p className='font-semibold text-white'>Intentionnel</p>
+                    <p className='mt-1'>Volonté d&apos;accomplir l&apos;acte en sachant qu&apos;il est illicite</p>
+                  </div>
+                  <div className='rounded-lg bg-white/[0.03] p-3'>
+                    <p className='font-semibold text-white'>Non intentionnel</p>
+                    <p className='mt-1'>Imprudence, négligence, maladresse</p>
+                  </div>
+                  <div className='rounded-lg bg-white/[0.03] p-3'>
+                    <p className='font-semibold text-white'>Contraventionnel</p>
+                    <p className='mt-1'>Violation de la prescription légale</p>
+                  </div>
+                </div>
+              </div>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 2 */}
-          <AccordionItem value='r2' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              2. Les cadres d&apos;enquête <Ref>[F11]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+            {/* RUBRIQUE 2 */}
+            <RubriqueSection id='r2' num={2} titre='Les cadres d'enquête' fascicule='F11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[800px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2' />
-                      <th className='py-2 pr-2'>Flagrance</th>
-                      <th className='py-2 pr-2'>Préliminaire</th>
-                      <th className='py-2 pr-2'>CR</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3' />
+                      <th className='py-2 pr-3'>Flagrance</th>
+                      <th className='py-2 pr-3'>Préliminaire</th>
+                      <th className='py-2 pr-3'>CR</th>
                       <th className='py-2'>Instruction</th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-400'>
                     <tr className='border-b border-white/5'>
                       <td className='py-2 font-medium text-slate-300'>Déclenchement</td>
-                      <td>Crime ou délit flagrant <Ref>[art. 53 CPP]</Ref></td>
+                      <td>Crime ou délit flagrant <Ref id='art. 53 CPP' /></td>
                       <td>Initiative OPJ ou plainte</td>
                       <td>Ordonnance JI</td>
                       <td>Réquisitoire introductif</td>
                     </tr>
                     <tr className='border-b border-white/5'>
                       <td className='py-2 font-medium text-slate-300'>Durée initiale</td>
-                      <td>8 jours sans discontinuer <Ref>[art. 53 CPP]</Ref></td>
+                      <td>8 jours <Ref id='art. 53 CPP' /></td>
                       <td>Pas de délai fixe</td>
                       <td>Durée de la CR</td>
                       <td>Pas de limite fixe</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Prolongation</td>
-                      <td>
-                        8 jours sup. si infraction ≥ 5 ans emprisonnement + investigations non différables{' '}
-                        <Ref>[art. 53 al. 2 CPP]</Ref>
-                      </td>
-                      <td colSpan={3}>
-                        {/* TODO: F11 — préciser régimes */}
-                        N/A / selon texte
-                      </td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='py-2 font-medium text-slate-300'>Perquisition</td>
-                      <td>De droit, nuit possible si crime ou délit flagrant</td>
-                      <td>Assentiment écrit ou JLD</td>
-                      <td colSpan={2}>Selon ordonnance JI</td>
                     </tr>
                     <tr className='border-b border-white/5'>
                       <td className='py-2 font-medium text-slate-300'>GAV</td>
                       <td>OPJ compétence exclusive</td>
                       <td>OPJ compétence exclusive</td>
                       <td colSpan={2}>OPJ sur instruction JI</td>
+                    </tr>
+                    <tr className='border-b border-white/5'>
+                      <td className='py-2 font-medium text-slate-300'>Perquisition</td>
+                      <td>De droit, nuit possible si flagrant</td>
+                      <td>Assentiment écrit ou JLD</td>
+                      <td colSpan={2}>Selon ordonnance JI</td>
                     </tr>
                     <tr>
                       <td className='py-2 font-medium text-slate-300'>Direction</td>
@@ -186,209 +391,165 @@ export function FondamentauxEightRubrics() {
                   </tbody>
                 </table>
               </GlassCard>
-              <p>
-                <strong className='text-white'>Validité de la flagrance</strong> — continuité des actes
-                d&apos;investigation ; « l&apos;interruption dans la rédaction des actes de procédure ne marque pas la
-                volonté d&apos;abandonner l&apos;enquête » <Piege /> <Ref>(Cass. crim. 20/12/1994)</Ref>.
-              </p>
-              <p className='text-xs text-slate-500'>
-                {/* TODO: F11 + Tableau_compétences_FD.pdf — tableau OPJ/APJ/APJA/AE et lieux protégés : reprise mot pour mot */}
-                Tableau des compétences OPJ / APJ / APJA / AE et lieux protégés : à compléter depuis F11 et documents
-                annexes officiels.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+              <div className='mt-4 rounded-xl border border-rose-500/20 bg-rose-500/[0.05] p-3'>
+                <p className='text-xs font-semibold text-rose-300'>
+                  Piège — validité de la flagrance <Piege />
+                </p>
+                <p className='mt-1 text-xs text-slate-400'>
+                  Continuité des actes ; une interruption dans la rédaction des actes ne marque pas l&apos;abandon de l&apos;enquête.
+                </p>
+              </div>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 3 */}
-          <AccordionItem value='r3' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              3. Le contrôle d&apos;identité <Ref>[art. 78-1 à 78-6 CPP — F11]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+            {/* RUBRIQUE 3 */}
+            <RubriqueSection id='r3' num={3} titre='Le contrôle d'identité' fascicule='F11 — art. 78-1 à 78-6 CPP'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2'>Régime</th>
-                      <th className='py-2 pr-2'>Base légale</th>
-                      <th className='py-2 pr-2'>Conditions</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3'>Régime</th>
+                      <th className='py-2 pr-3'>Base légale</th>
+                      <th className='py-2 pr-3'>Conditions</th>
                       <th className='py-2'>Durée max</th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-400'>
                     <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Judiciaire (crime ou délit)</td>
-                      <td>
-                        <Ref>[art. 78-2 al.1 CPP]</Ref>
-                      </td>
+                      <td className='font-medium text-slate-300'>Judiciaire (crime/délit)</td>
+                      <td><Ref id='art. 78-2 al.1 CPP' /></td>
                       <td>Raisons plausibles de soupçonner</td>
                       <td>4 h</td>
                     </tr>
                     <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Judiciaire (infraction commise)</td>
-                      <td>
-                        <Ref>[art. 78-2 al.2 CPP]</Ref>
-                      </td>
-                      <td>Participation possible à une infraction</td>
+                      <td className='font-medium text-slate-300'>Judiciaire (préparation)</td>
+                      <td><Ref id='art. 78-2 al.2 CPP' /></td>
+                      <td>Préparation à une infraction</td>
                       <td>4 h</td>
                     </tr>
                     <tr className='border-b border-white/5'>
                       <td className='font-medium text-slate-300'>Administratif</td>
-                      <td>
-                        <Ref>[art. 78-2 al.4 CPP]</Ref>
-                      </td>
-                      <td>Maintien ordre public / prévention infractions</td>
+                      <td><Ref id='art. 78-2 al.4 CPP' /></td>
+                      <td>Maintien ordre public</td>
                       <td>4 h</td>
                     </tr>
                     <tr>
                       <td className='font-medium text-slate-300'>Frontalier</td>
-                      <td>
-                        <Ref>[art. 78-2 al.5 CPP]</Ref>
-                      </td>
-                      <td>Zone de 20 km des frontières</td>
+                      <td><Ref id='art. 78-2 al.5 CPP' /></td>
+                      <td>Zone 20 km frontière</td>
                       <td>4 h</td>
                     </tr>
                   </tbody>
                 </table>
               </GlassCard>
-              <p>
-                Suites : vérification d&apos;identité <Ref>[art. 78-3 CPP]</Ref>, relevé d&apos;empreintes et
-                photographies <Ref>[art. 78-3 al.4]</Ref>, retenue pour vérification (max 4 h).{' '}
-                <span className='text-rose-300'>
-                  Piège : le contrôle administratif ne peut pas conduire à GAV. <Piege />
-                </span>
+              <p className='mt-4'>
+                Suites : vérification d&apos;identité <Ref id='art. 78-3 CPP' />, retenue pour vérification (max 4 h).
               </p>
-            </AccordionContent>
-          </AccordionItem>
+              <div className='mt-3 rounded-xl border border-rose-500/20 bg-rose-500/[0.05] p-3'>
+                <p className='text-xs font-semibold text-rose-300'>Piège ⚠️</p>
+                <p className='mt-1 text-xs text-slate-400'>Le contrôle administratif ne peut PAS conduire directement à une GAV.</p>
+              </div>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 4 */}
-          <AccordionItem value='r4' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              4. La garde à vue <Ref>[F11 — art. 62-2, 63-1 CPP]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-3 pb-6 text-sm text-slate-300'>
-              <p>
-                <strong className='text-white'>Six motifs (art. 62-2 CPP)</strong> : 1° investigations — 2° présentation
+            {/* RUBRIQUE 4 */}
+            <RubriqueSection id='r4' num={4} titre='La garde à vue' fascicule='F11'>
+              <p className='mb-4'>
+                <strong className='text-white'>Six motifs</strong> <Ref id='art. 62-2 CPP' /> : 1° investigations — 2° présentation
                 procureur — 3° preuves/indices — 4° témoins/victimes — 5° coauteurs/complices — 6° faire cesser le crime.
               </p>
-              <p>
-                <strong className='text-white'>Durées (schéma)</strong> — droit commun : 24 h + 24 h (PR) = 48 h max ; CDO{' '}
-                <Ref>[art. 706-73 CPP]</Ref> : jusqu&apos;à 96 h ; terrorisme : jusqu&apos;à 144 h —{' '}
-                {/* TODO: F11 p. — recaler seuils exacts */}
-                <span className='text-slate-500'>TODO — vérifier F11 : durées régimes spéciaux</span>
-              </p>
-              <p>
-                <strong className='text-white'>Droits notifiés (art. 63-1 CPP)</strong> : infraction reprochée ; durée max
-                et prolongation ; proche/employeur/consulat ; avocat (30 min, assistance auditions) ; médecin ; silence ;
-                interprète ; consultation certaines pièces ; observations au magistrat ; formulaire des droits.{' '}
-                <strong>Mineurs</strong> : avis représentant légal obligatoire, avocat de droit, droits supplémentaires
-                listés au fascicule.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+              <div className='grid gap-3 sm:grid-cols-3 text-xs'>
+                {[
+                  { label: 'Droit commun', val: '24h + 24h (PR)', color: 'border-cyan-500/25 bg-cyan-500/[0.06]' },
+                  { label: 'CDO (art. 706-73)', val: 'Jusqu\'à 96h', color: 'border-amber-500/25 bg-amber-500/[0.06]' },
+                  { label: 'Terrorisme', val: 'Jusqu\'à 144h', color: 'border-rose-500/25 bg-rose-500/[0.06]' },
+                ].map((row) => (
+                  <div key={row.label} className={cn('rounded-xl border p-3', row.color)}>
+                    <p className='font-semibold text-white'>{row.label}</p>
+                    <p className='mt-1 text-slate-400'>{row.val}</p>
+                  </div>
+                ))}
+              </div>
+              <div className='mt-4'>
+                <p className='mb-2 text-xs font-semibold uppercase tracking-wide text-slate-400'>
+                  Droits notifiés <Ref id='art. 63-1 CPP' />
+                </p>
+                <ul className='grid grid-cols-2 gap-1 text-xs text-slate-400 sm:grid-cols-3'>
+                  {[
+                    'Infraction reprochée', 'Durée max + prolongation', 'Avis proche / employeur',
+                    'Avocat (30 min)', 'Médecin', 'Droit au silence',
+                    'Interprète', 'Consultation pièces', 'Observations magistrat',
+                  ].map((d) => (
+                    <li key={d} className='flex items-center gap-1.5'>
+                      <span className='h-1.5 w-1.5 rounded-full bg-rose-400/60' aria-hidden />
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 5 */}
-          <AccordionItem value='r5' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              5. L&apos;audition libre <Ref>[art. 61-1 CPP — F11]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+            {/* RUBRIQUE 5 */}
+            <RubriqueSection id='r5' num={5} titre='L'audition libre' fascicule='F11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
-                <table className='w-full min-w-[640px] border-collapse text-left'>
+                <table className='w-full min-w-[500px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2' />
-                      <th className='py-2 pr-2'>GAV</th>
-                      <th className='py-2'>Audition libre</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3' />
+                      <th className='py-2 pr-3'>GAV</th>
+                      <th className='py-2'>Audition libre <Ref id='art. 61-1 CPP' /></th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-400'>
-                    <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Contrainte</td>
-                      <td>OUI</td>
-                      <td>NON (libre de partir)</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Conditions</td>
-                      <td>6 motifs art. 62-2</td>
-                      <td>Simple convocation</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Droits</td>
-                      <td>Notification complète</td>
-                      <td>
-                        <Ref>[art. 61-1 CPP]</Ref>
-                      </td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Avocat</td>
-                      <td>De droit (mineur)</td>
-                      <td>Si demande</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td className='font-medium text-slate-300'>Durée</td>
-                      <td>48 h / 96 h / 144 h selon régime</td>
-                      <td>Pas de durée légale fixe</td>
-                    </tr>
-                    <tr>
-                      <td className='font-medium text-slate-300'>Si la personne veut partir</td>
-                      <td>Peut être maintenue</td>
-                      <td>Doit être laissée partir</td>
-                    </tr>
+                    {[
+                      ['Contrainte', 'OUI — rétention possible', 'NON — libre de partir'],
+                      ['Conditions', '6 motifs art. 62-2', 'Simple convocation'],
+                      ['Droits', 'Notification complète', 'Droits allégés (art. 61-1)'],
+                      ['Avocat', 'De droit (mineur)', 'Si demande'],
+                    ].map(([label, gav, libre]) => (
+                      <tr key={label} className='border-b border-white/5 last:border-0'>
+                        <td className='py-2 font-medium text-slate-300'>{label}</td>
+                        <td className='py-2 pr-3'>{gav}</td>
+                        <td className='py-2'>{libre}</td>
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </GlassCard>
-              <p>
-                Droits notifiés en audition libre : qualification et date ; droit de quitter les locaux ; silence ; avocat
-                si demande.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 6 */}
-          <AccordionItem value='r6' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              6. Les nullités de procédure <Ref>[F15 + F11]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-3 pb-6 text-sm text-slate-300'>
-              <p>
-                <strong className='text-white'>Nullités textuelles</strong> : prévues expressément par un texte — ex.{' '}
-                <Ref>[art. 63-1 CPP]</Ref> non-notification des droits GAV — prouvées par le simple constat du
-                manquement.
+            {/* RUBRIQUE 6 */}
+            <RubriqueSection id='r6' num={6} titre='Les nullités de procédure' fascicule='F15 + F11'>
+              <div className='grid gap-3 sm:grid-cols-2 text-sm'>
+                <div className='rounded-xl border border-white/10 bg-white/[0.02] p-4'>
+                  <p className='font-semibold text-white'>Nullités textuelles</p>
+                  <p className='mt-2 text-xs text-slate-400'>
+                    Prévues expressément par un texte — ex. <Ref id='art. 63-1 CPP' /> non-notification des droits GAV.
+                    Prouvées par le simple constat du manquement.
+                  </p>
+                </div>
+                <div className='rounded-xl border border-white/10 bg-white/[0.02] p-4'>
+                  <p className='font-semibold text-white'>Nullités substantielles</p>
+                  <p className='mt-2 text-xs text-slate-400'>
+                    Violation d&apos;une formalité substantielle portant atteinte aux intérêts de la partie. <Ref id='art. 802 CPP' />
+                  </p>
+                </div>
+              </div>
+              <p className='mt-4 text-sm'>
+                Invocation : avant tout débat au fond <Ref id='art. 385 al.1 CPP' />. Purge si non soulevée à temps.
               </p>
-              <p>
-                <strong className='text-white'>Nullités substantielles</strong> : violation d&apos;une formalité
-                substantielle portant atteinte aux intérêts de la partie —{' '}
-                <Ref>
-                  [art. 802 CPP — la nullité ne peut être prononcée qu&apos;à charge de prouver le grief]
-                </Ref>
-                .
-              </p>
-              <p>
-                Invocation : avant tout débat au fond <Ref>[art. 385 al.1 CPP]</Ref> ; purge si non soulevée à temps ;
-                exceptions nullités d&apos;ordre public. Effet : annulation de l&apos;acte et actes dépendants ; preuves
-                écartées.
-              </p>
-              <p className='text-rose-200'>
-                Pièges : irrégularité de perquisition ≠ nullité automatique de la GAV ; purge ; régularisation possible.{' '}
-                <Piege />
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+              <div className='mt-3 rounded-xl border border-rose-500/20 bg-rose-500/[0.05] p-3 text-xs text-rose-200'>
+                <Piege /> Irrégularité de perquisition ≠ nullité automatique de la GAV — purge possible.
+              </div>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 7 */}
-          <AccordionItem value='r7' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              7. Perquisitions, saisies, réquisitions <Ref>[F11]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+            {/* RUBRIQUE 7 */}
+            <RubriqueSection id='r7' num={7} titre='Perquisitions, saisies, réquisitions' fascicule='F11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
-                <table className='w-full min-w-[720px] border-collapse text-left'>
+                <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2'>Cadre</th>
-                      <th className='py-2 pr-2'>Heure légale</th>
-                      <th className='py-2 pr-2'>Assentiment</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3'>Cadre</th>
+                      <th className='py-2 pr-3'>Heure légale</th>
+                      <th className='py-2 pr-3'>Assentiment</th>
                       <th className='py-2'>Magistrat</th>
                     </tr>
                   </thead>
@@ -402,85 +563,64 @@ export function FondamentauxEightRubrics() {
                     <tr className='border-b border-white/5'>
                       <td className='font-medium text-slate-300'>Préliminaire</td>
                       <td>6h–21h sauf dérogation</td>
-                      <td>Écrit manuscrit OBLIGATOIRE ou JLD</td>
+                      <td className='font-medium text-amber-200'>Écrit manuscrit OBLIGATOIRE ou JLD</td>
                       <td>PR ou JLD</td>
                     </tr>
                     <tr>
                       <td className='font-medium text-slate-300'>CR / Instruction</td>
-                      <td>6h–21h sauf dérogation ordonnance</td>
+                      <td>6h–21h sauf ordonnance</td>
                       <td>Selon ordonnance</td>
                       <td>JI</td>
                     </tr>
                   </tbody>
                 </table>
               </GlassCard>
-              <p>
-                Présence <Ref>[art. 57 CPP]</Ref> — personne concernée ou représentant ou témoin ; si absence : deux
-                témoins. Saisies : description, scellés numérotés, inventaire contradictoire. Réquisitions : écrit,
-                mission précise, délai.
+              <p className='mt-4'>
+                Présence <Ref id='art. 57 CPP' /> — personne concernée ou représentant ou deux témoins. Scellés numérotés, inventaire contradictoire.
               </p>
-            </AccordionContent>
-          </AccordionItem>
+            </RubriqueSection>
 
-          {/* RUBRIQUE 8 */}
-          <AccordionItem value='r8' className='rounded-xl border border-white/10 bg-white/[0.02] px-4'>
-            <AccordionTrigger className='text-left font-display text-lg font-semibold text-white hover:no-underline'>
-              8. La récidive et le concours d&apos;infractions <Ref>[F10]</Ref>
-            </AccordionTrigger>
-            <AccordionContent className='space-y-4 pb-6 text-sm text-slate-300'>
+            {/* RUBRIQUE 8 */}
+            <RubriqueSection id='r8' num={8} titre='La récidive et le concours d'infractions' fascicule='F10'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
-                <p className='mb-2 font-semibold text-white'>Récidive — // TODO: vérifier F10 p.26</p>
-                <table className='w-full min-w-[800px] border-collapse text-left'>
+                <p className='mb-2 font-semibold text-white'>Récidive — tableau des effets</p>
+                <table className='w-full min-w-[720px] border-collapse text-left'>
                   <thead>
-                    <tr className='border-b border-white/10'>
-                      <th className='py-2 pr-2'>1ère infraction</th>
-                      <th className='py-2 pr-2'>2e infraction</th>
-                      <th className='py-2 pr-2'>Délai</th>
+                    <tr className='border-b border-white/10 text-slate-400'>
+                      <th className='py-2 pr-3'>1ère infraction</th>
+                      <th className='py-2 pr-3'>2e infraction</th>
+                      <th className='py-2 pr-3'>Délai</th>
                       <th className='py-2'>Effet</th>
                     </tr>
                   </thead>
                   <tbody className='text-slate-400'>
-                    <tr className='border-b border-white/5'>
-                      <td>Crime ou délit puni 10 ans</td>
-                      <td>Crime</td>
-                      <td>Perpétuel</td>
-                      <td>Réclusion perpétuité ou +10 ans</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td>Crime ou délit puni 10 ans</td>
-                      <td>Délit puni 10 ans</td>
-                      <td>10 ans</td>
-                      <td>Doublement</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td>Crime ou délit puni 10 ans</td>
-                      <td>Délit &lt; 10 ans &gt; 1 an</td>
-                      <td>5 ans</td>
-                      <td>Doublement</td>
-                    </tr>
-                    <tr className='border-b border-white/5'>
-                      <td>Délit &lt; 10 ans</td>
-                      <td>Délit identique ou assimilé</td>
-                      <td>5 ans</td>
-                      <td>Doublement</td>
-                    </tr>
-                    <tr>
-                      <td>Contravention 5e cl.</td>
-                      <td>Même contravention</td>
-                      <td>1 an</td>
-                      <td>Amende portée à 3 000 €</td>
-                    </tr>
+                    {[
+                      ['Crime ou délit puni 10 ans', 'Crime', 'Perpétuel', 'Réclusion perpétuité ou +10 ans'],
+                      ['Crime ou délit puni 10 ans', 'Délit puni 10 ans', '10 ans', 'Doublement'],
+                      ['Crime ou délit puni 10 ans', 'Délit < 10 ans > 1 an', '5 ans', 'Doublement'],
+                      ['Délit < 10 ans', 'Délit identique ou assimilé', '5 ans', 'Doublement'],
+                      ['Contravention 5e cl.', 'Même contravention', '1 an', 'Amende → 3 000 €'],
+                    ].map((row) => (
+                      <tr key={row[0] + row[1]} className='border-b border-white/5 last:border-0'>
+                        {row.map((cell, i) => (
+                          <td key={i} className={cn('py-2 pr-3', i === 0 && 'font-medium text-slate-300')}>
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
                   </tbody>
                 </table>
               </GlassCard>
-              <p>
-                Infractions assimilées <Ref>[art. 132-16 à 132-16-5 C.P.]</Ref> — liste au fascicule F10.{' '}
-                <strong className='text-white'>Non bis in idem</strong> : un même fait ne reçoit pas deux qualifications
-                sauf distinctions (faits distincts, qualifications incompatibles ou absorbantes).
+              <p className='mt-4'>
+                Infractions assimilées <Ref id='art. 132-16 CP' /> — liste au fascicule F10.{' '}
+                <strong className='text-white'>Non bis in idem</strong> : un même fait ne reçoit pas deux qualifications sauf
+                distinctions (faits distincts, qualifications incompatibles ou absorbantes).
               </p>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
+            </RubriqueSection>
+
+          </div>
+        </div>
       </div>
     </section>
   );
