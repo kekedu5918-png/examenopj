@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { AlertTriangle, BookOpen, ListChecks, Target } from 'lucide-react';
+import { AlertTriangle, BookOpen, Clock, ListChecks, Target } from 'lucide-react';
 
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
 import { getReperesSommaireForModuleId, quizHrefForFasciculeId } from '@/data/fondamentaux-fascicule-reperes';
@@ -99,6 +99,84 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       >
         {fiche.accroche}
       </blockquote>
+
+      {/* ── Learning objectives ── */}
+      {fiche.regles.length > 0 && (
+        <section
+          className='mb-10 rounded-xl border border-cyan-500/15 bg-cyan-500/[0.03] p-5'
+          aria-label='Objectifs de cette fiche'
+        >
+          <div className='mb-3 flex flex-wrap items-center gap-2'>
+            <span
+              className='flex h-7 w-7 items-center justify-center rounded-lg border border-cyan-500/30 bg-cyan-500/10 text-cyan-300'
+              aria-hidden
+            >
+              <Target className='h-3.5 w-3.5' strokeWidth={1.75} />
+            </span>
+            <h2 className='text-xs font-bold uppercase tracking-[0.22em] text-cyan-400/90'>
+              Objectifs de cette fiche
+            </h2>
+          </div>
+          <p className='mb-3 text-sm text-slate-500'>À la fin de cette fiche, vous saurez :</p>
+          <ul className='mb-4 space-y-2'>
+            {fiche.regles.slice(0, 4).map((r, i) => {
+              const bloomVerbs = ['Définir', 'Distinguer', 'Identifier', 'Appliquer'] as const;
+              const verb = bloomVerbs[i] ?? 'Comprendre';
+              return (
+                <li key={i} className='flex items-start gap-2.5 text-sm'>
+                  <span
+                    className='mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-500/15 text-[10px] font-bold text-cyan-400'
+                    aria-hidden
+                  >
+                    ✓
+                  </span>
+                  <span className='text-slate-200'>
+                    <span className='font-semibold text-cyan-300'>{verb}</span> {r.label}
+                  </span>
+                </li>
+              );
+            })}
+            {fiche.piegesExamen?.length ? (
+              <li className='flex items-start gap-2.5 text-sm'>
+                <span
+                  className='mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-[10px] font-bold text-amber-400'
+                  aria-hidden
+                >
+                  ✓
+                </span>
+                <span className='text-slate-200'>
+                  <span className='font-semibold text-amber-300'>Identifier</span>{' '}
+                  {fiche.piegesExamen.length} piège{fiche.piegesExamen.length > 1 ? 's' : ''} fréquent{fiche.piegesExamen.length > 1 ? 's' : ''} à l&apos;examen
+                </span>
+              </li>
+            ) : null}
+          </ul>
+          <div className='flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-white/[0.06] pt-3 text-xs text-slate-600'>
+            {(() => {
+              const readMins = Math.max(5, fiche.regles.length * 2 + (fiche.blocsDetail?.length ?? 0) * 3);
+              const quizMins = quizHref ? 5 : 0;
+              return (
+                <>
+                  <span className='flex items-center gap-1'>
+                    <Clock className='h-3 w-3' aria-hidden />
+                    Lecture ~{readMins} min
+                  </span>
+                  {quizMins > 0 && <span>Quiz ~{quizMins} min</span>}
+                  <span>Total ~{readMins + quizMins} min</span>
+                </>
+              );
+            })()}
+            {quizHref && (
+              <Link
+                href={quizHref}
+                className='ml-auto text-xs text-cyan-600 transition-colors hover:text-cyan-500'
+              >
+                Quiz thème →
+              </Link>
+            )}
+          </div>
+        </section>
+      )}
 
       {fiche.indispensableExamen ? (
         <div className='mb-10 rounded-2xl border border-gold-500/35 bg-gradient-to-br from-gold-500/[0.12] to-amber-600/[0.06] px-5 py-4 sm:px-6'>

@@ -2,12 +2,13 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
-import { Check, Keyboard, X } from 'lucide-react';
+import { Check, Keyboard } from 'lucide-react';
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { type QuizQuestion } from '@/data/types';
 import { cn } from '@/utils/cn';
 
+import { QuestionFeedback } from './question-feedback';
 import { isHardcoreAnswerCorrect } from './quiz-hardcore-match';
 
 const domainBadge: Record<QuizQuestion['domaine'], string> = {
@@ -30,6 +31,7 @@ export function QuizInterfaceHardcore({ questions, onComplete }: Props) {
   const [lastCorrect, setLastCorrect] = useState<boolean | null>(null);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const answeringRef = useRef(false);
+  const scoreRef = useRef(0);
   const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const total = questions.length;
@@ -53,24 +55,17 @@ export function QuizInterfaceHardcore({ questions, onComplete }: Props) {
 
   const progressPct = total > 0 ? ((index + (locked ? 1 : 0)) / total) * 100 : 0;
 
-  function advance(ok: boolean) {
-    setScore((prev) => {
-      const newScore = prev + (ok ? 1 : 0);
-      clearAdvance();
-      advanceRef.current = setTimeout(() => {
-        advanceRef.current = null;
-        answeringRef.current = false;
-        if (isLast) {
-          onComplete(newScore, total);
-        } else {
-          setIndex((i) => i + 1);
-          setInput('');
-          setLocked(false);
-          setLastCorrect(null);
-        }
-      }, 2600);
-      return newScore;
-    });
+  function doAdvance() {
+    clearAdvance();
+    answeringRef.current = false;
+    if (isLast) {
+      onComplete(scoreRef.current, total);
+    } else {
+      setIndex((i) => i + 1);
+      setInput('');
+      setLocked(false);
+      setLastCorrect(null);
+    }
   }
 
   function handleSubmit() {
@@ -81,7 +76,16 @@ export function QuizInterfaceHardcore({ questions, onComplete }: Props) {
     setLocked(true);
     const ok = isHardcoreAnswerCorrect(trimmed, q);
     setLastCorrect(ok);
-    advance(ok);
+    if (ok) {
+      scoreRef.current += 1;
+      setScore(scoreRef.current);
+    }
+    clearAdvance();
+    advanceRef.current = setTimeout(doAdvance, ok ? 8000 : 14000);
+  }
+
+  function handleContinue() {
+    doAdvance();
   }
 
   if (!q || total === 0) {
@@ -91,8 +95,6 @@ export function QuizInterfaceHardcore({ questions, onComplete }: Props) {
       </GlassCard>
     );
   }
-
-  const expected = q.options[q.correctIndex];
 
   return (
     <div className='mx-auto w-full max-w-2xl px-4 pb-16 pt-4'>
@@ -168,62 +170,35 @@ export function QuizInterfaceHardcore({ questions, onComplete }: Props) {
                 autoComplete='off'
                 spellCheck={false}
               />
-              <div className='mt-3 flex flex-wrap items-center gap-3'>
-                <motion.button
-                  type='button'
-                  disabled={locked || !input.trim()}
-                  onClick={handleSubmit}
-                  whileTap={{ scale: 0.96 }}
-                  whileHover={shouldReduce ? {} : { scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                  className={cn(
-                    'rounded-xl px-5 py-2.5 text-sm font-semibold transition-opacity',
-                    'bg-amber-500/90 text-navy-950 hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-35'
-                  )}
-                >
-                  Valider
-                </motion.button>
-                <span className='text-xs text-slate-500'>Astuce : Ctrl+Entrée pour valider rapidement.</span>
-              </div>
+              {!locked && (
+                <div className='mt-3 flex flex-wrap items-center gap-3'>
+                  <motion.button
+                    type='button'
+                    disabled={!input.trim()}
+                    onClick={handleSubmit}
+                    whileTap={{ scale: 0.96 }}
+                    whileHover={shouldReduce ? {} : { scale: 1.02 }}
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                    className={cn(
+                      'rounded-xl px-5 py-2.5 text-sm font-semibold transition-opacity',
+                      'bg-amber-500/90 text-navy-950 hover:bg-amber-400 disabled:cursor-not-allowed disabled:opacity-35'
+                    )}
+                  >
+                    Valider
+                  </motion.button>
+                  <span className='text-xs text-slate-500'>Astuce : Ctrl+Entrée pour valider rapidement.</span>
+                </div>
+              )}
             </div>
 
-            {locked && lastCorrect !== null ? (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className={cn(
-                  'mt-6 rounded-xl border p-4',
-                  lastCorrect
-                    ? 'border-emerald-500/35 bg-emerald-500/10'
-                    : 'border-red-500/35 bg-red-500/10'
-                )}
-                role='status'
-                aria-live='polite'
-              >
-                <div className='flex items-start gap-2'>
-                  {lastCorrect ? (
-                    <Check className='mt-0.5 h-5 w-5 shrink-0 text-emerald-400' strokeWidth={2.5} />
-                  ) : (
-                    <X className='mt-0.5 h-5 w-5 shrink-0 text-red-400' strokeWidth={2.5} />
-                  )}
-                  <div className='min-w-0'>
-                    <p className={cn('font-semibold', lastCorrect ? 'text-emerald-200' : 'text-red-200')}>
-                      {lastCorrect ? 'Bonne réponse' : 'Réponse incorrecte'}
-                    </p>
-                    {!lastCorrect ? (
-                      <p className='mt-2 text-sm leading-relaxed text-slate-300'>
-                        Réponse attendue : <span className='font-medium text-white'>{expected}</span>
-                      </p>
-                    ) : null}
-                  </div>
-                </div>
-                {q.explication ? (
-                  <p className='mt-4 border-t border-white/10 pt-4 text-sm leading-relaxed text-slate-400'>
-                    {q.explication}
-                  </p>
-                ) : null}
-              </motion.div>
-            ) : null}
+            {locked && lastCorrect !== null && (
+              <QuestionFeedback
+                question={q}
+                isCorrect={lastCorrect}
+                pickedAnswer={input}
+                onContinue={handleContinue}
+              />
+            )}
           </GlassCard>
         </motion.div>
       </AnimatePresence>

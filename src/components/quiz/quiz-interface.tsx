@@ -9,6 +9,8 @@ import { GlassCard } from '@/components/ui/GlassCard';
 import { type QuizQuestion } from '@/data/types';
 import { cn } from '@/utils/cn';
 
+import { QuestionFeedback } from './question-feedback';
+
 const ease = [...LANDING_EASE] as [number, number, number, number];
 
 const domainBadge: Record<QuizQuestion['domaine'], string> = {
@@ -32,6 +34,7 @@ export function QuizInterface({ questions, onComplete }: QuizInterfaceProps) {
   const [locked, setLocked] = useState(false);
   const advanceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const answeringRef = useRef(false);
+  const scoreRef = useRef(0);
 
   const total = questions.length;
   const q = questions[index];
@@ -48,28 +51,35 @@ export function QuizInterface({ questions, onComplete }: QuizInterfaceProps) {
 
   const progressPct = total > 0 ? ((index + (locked ? 1 : 0)) / total) * 100 : 0;
 
+  function doAdvance() {
+    clearAdvance();
+    answeringRef.current = false;
+    if (isLast) {
+      onComplete(scoreRef.current, total);
+    } else {
+      setIndex((i) => i + 1);
+      setPicked(null);
+      setLocked(false);
+    }
+  }
+
   function handlePick(optionIdx: number) {
     if (locked || !q || answeringRef.current) return;
     answeringRef.current = true;
     setPicked(optionIdx);
     setLocked(true);
     const ok = optionIdx === q.correctIndex;
+    if (ok) {
+      scoreRef.current += 1;
+      setScore(scoreRef.current);
+    }
+    // Fallback auto-advance: longer delay so user can read feedback
+    clearAdvance();
+    advanceRef.current = setTimeout(doAdvance, ok ? 8000 : 14000);
+  }
 
-    setScore((prev) => {
-      const newScore = prev + (ok ? 1 : 0);
-      clearAdvance();
-      advanceRef.current = setTimeout(() => {
-        advanceRef.current = null;
-        answeringRef.current = false;
-        if (isLast) onComplete(newScore, total);
-        else {
-          setIndex((i) => i + 1);
-          setPicked(null);
-          setLocked(false);
-        }
-      }, 2000);
-      return newScore;
-    });
+  function handleContinue() {
+    doAdvance();
   }
 
   if (!q || total === 0) {
@@ -79,6 +89,8 @@ export function QuizInterface({ questions, onComplete }: QuizInterfaceProps) {
       </GlassCard>
     );
   }
+
+  const pickedAnswer = picked !== null ? (q.options[picked] ?? '') : '';
 
   return (
     <div className='mx-auto w-full max-w-2xl px-4 pb-16 pt-4'>
@@ -161,21 +173,22 @@ export function QuizInterface({ questions, onComplete }: QuizInterfaceProps) {
                     {state === 'correct' ? (
                       <Check className='mt-1 h-5 w-5 shrink-0 text-emerald-400' strokeWidth={2.5} />
                     ) : null}
-                    {state === 'wrong' ? <X className='mt-1 h-5 w-5 shrink-0 text-red-400' strokeWidth={2.5} /> : null}
+                    {state === 'wrong' ? (
+                      <X className='mt-1 h-5 w-5 shrink-0 text-red-400' strokeWidth={2.5} />
+                    ) : null}
                   </motion.button>
                 );
               })}
             </div>
 
-            {picked !== null && q.explication ? (
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                className='mt-6 rounded-xl border border-blue-500/20 bg-blue-500/[0.05] p-4 text-sm leading-relaxed text-gray-400'
-              >
-                {q.explication}
-              </motion.div>
-            ) : null}
+            {picked !== null && (
+              <QuestionFeedback
+                question={q}
+                isCorrect={picked === q.correctIndex}
+                pickedAnswer={pickedAnswer}
+                onContinue={handleContinue}
+              />
+            )}
           </GlassCard>
         </motion.div>
       </AnimatePresence>
