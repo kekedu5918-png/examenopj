@@ -1,5 +1,8 @@
 import { redirect } from 'next/navigation';
 
+import { BadgesPanel } from '@/components/gamification/BadgesPanel';
+import { CategoryProgress } from '@/components/gamification/CategoryProgress';
+import { StreakCard } from '@/components/gamification/StreakCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { getSession } from '@/features/account/controllers/get-session';
 import {
@@ -8,9 +11,6 @@ import {
   getRevisionStats,
 } from '@/features/examenopj/controllers/get-dashboard-data';
 import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
-import { StreakCard } from '@/components/gamification/StreakCard';
-import { BadgesPanel } from '@/components/gamification/BadgesPanel';
-import { CategoryProgress } from '@/components/gamification/CategoryProgress';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {

@@ -1,9 +1,9 @@
-import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
+import { OnboardingFlow } from '@/components/onboarding/OnboardingFlow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { checkOnboardingCompleted } from '@/features/onboarding/actions/onboarding-actions';
-import { OnboardingFlow } from '@/components/onboarding/OnboardingFlow';
 
 export const metadata: Metadata = {
   title: 'Bienvenue — ExamenOPJ',

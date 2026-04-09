@@ -1,6 +1,6 @@
+import { fasciculesList } from '@/data/fascicules-list';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { fasciculesList } from '@/data/fascicules-list';
 
 export type LoginResumeData = {
   userName: string | null;

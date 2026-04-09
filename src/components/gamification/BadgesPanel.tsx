@@ -1,6 +1,6 @@
-import type { BadgeData } from '@/features/gamification/controllers/get-gamification-data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/utils/cn';
+import type { BadgeData } from '@/features/gamification/controllers/get-gamification-data';
 
 function BadgeItem({ badge }: { badge: BadgeData }) {
   return (

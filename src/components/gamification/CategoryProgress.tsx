@@ -1,8 +1,9 @@
-import type { CategoryProgressData } from '@/features/gamification/controllers/get-gamification-data';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/utils/cn';
+import type { CategoryProgressData } from '@/features/gamification/controllers/get-gamification-data';
 
 const URGENCY_STYLES = {
   critical: {

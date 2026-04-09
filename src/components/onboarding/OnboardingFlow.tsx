@@ -1,7 +1,10 @@
 'use client';
 
-import { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
+import { useState, useTransition } from 'react';
+
+import { Button } from '@/components/ui/button';
+import { Progress } from '@/components/ui/progress';
 import { completeDiagnostic, saveOnboardingStage } from '@/features/onboarding/actions/onboarding-actions';
 import {
   DIAGNOSTIC_QUESTIONS,
@@ -9,8 +12,6 @@ import {
   type DiagnosticResult,
   type FormationPhase,
 } from '@/features/onboarding/types';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { cn } from '@/utils/cn';
 
 // ─────────────────────────────────────────────────────────
@@ -404,7 +405,7 @@ function Stage4Results({ result }: { result: DiagnosticResult }) {
           <h1 className='text-2xl font-bold text-slate-50'>
             Diagnostic complété !
           </h1>
-          <p className='mt-1 text-sm text-slate-400'>Voici votre profil et votre plan d'études personnalisé.</p>
+          <p className='mt-1 text-sm text-slate-400'>Voici votre profil et votre plan d&apos;études personnalisé.</p>
 
           <div className='mt-4 flex items-center gap-4'>
             <div>
@@ -447,7 +448,7 @@ function Stage4Results({ result }: { result: DiagnosticResult }) {
         <div className='rounded-2xl border border-blue-500/30 bg-slate-900 p-6 shadow-xl'>
           <h2 className='mb-1 text-lg font-bold text-slate-50'>📋 Votre plan personnalisé</h2>
           <p className='mb-4 text-sm text-slate-400'>
-            {result.plan.total_weeks} semaines jusqu'au {new Date(result.plan.exam_date).toLocaleDateString('fr-FR')}
+            {result.plan.total_weeks} semaines jusqu&apos;au {new Date(result.plan.exam_date).toLocaleDateString('fr-FR')}
           </p>
 
           <div className='space-y-3'>
@@ -525,7 +526,7 @@ function Stage0Welcome({ onStart }: { onStart: () => void }) {
           Excellente décision ! Vous êtes au bon endroit pour préparer votre examen OPJ.
         </p>
         <p className='mb-8 text-sm text-slate-400'>
-          En 2 minutes, créons <span className='font-semibold text-cyan-400'>VOTRE</span> plan d'études personnalisé.
+          En 2 minutes, créons <span className='font-semibold text-cyan-400'>VOTRE</span> plan d&apos;études personnalisé.
         </p>
 
         <div className='mx-auto mb-8 max-w-xs space-y-3'>
@@ -547,7 +548,7 @@ function Stage0Welcome({ onStart }: { onStart: () => void }) {
           className='w-full max-w-xs bg-cyan-600 text-base font-semibold hover:bg-cyan-700'
           onClick={onStart}
         >
-          C'est parti ! →
+          C&apos;est parti ! →
         </Button>
         <p className='mt-3 text-xs text-slate-500'>⏱ Durée estimée : 2 minutes</p>
       </div>

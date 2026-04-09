@@ -1,5 +1,6 @@
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import type { SupabaseClient } from '@supabase/supabase-js';
+
 import { BADGE_DEFINITIONS, type BadgeId } from '../actions/update-streak';
 
 export type StreakData = {

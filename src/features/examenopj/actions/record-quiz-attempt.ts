@@ -1,9 +1,9 @@
 'use server';
 
+import { updateStreakAfterSession } from '@/features/gamification/actions/update-streak';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import type { Database } from '@/libs/supabase/types';
 import type { SupabaseClient } from '@supabase/supabase-js';
-import { updateStreakAfterSession } from '@/features/gamification/actions/update-streak';
 
 type QuizAttemptInsert = Database['public']['Tables']['quiz_attempts']['Insert'];
 

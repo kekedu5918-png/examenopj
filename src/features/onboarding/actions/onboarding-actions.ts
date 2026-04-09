@@ -1,6 +1,7 @@
 'use server';
 
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+
 import type { DiagnosticAnswer, DiagnosticLevel, DiagnosticResult, FormationPhase, PersonalizedPlan } from '../types';
 
 const EXAM_DATE = new Date('2026-06-11');

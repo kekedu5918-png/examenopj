@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 import { Button } from '@/components/ui/button';
-import type { LoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/utils/cn';
+import type { LoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
 
 export function LoginResumeCard({ resume }: { resume: LoginResumeData }) {
   if (!resume.showResume) return null;
@@ -15,7 +16,7 @@ export function LoginResumeCard({ resume }: { resume: LoginResumeData }) {
         </CardTitle>
         {resume.progress.lastSession && resume.progress.lastSession.daysAgo > 0 && (
           <p className='text-sm text-slate-400'>
-            Vous n'aviez pas étudié depuis {resume.progress.lastSession.daysAgo} jour
+            Vous n&apos;aviez pas étudié depuis {resume.progress.lastSession.daysAgo} jour
             {resume.progress.lastSession.daysAgo > 1 ? 's' : ''}.
             Continuons où vous aviez laissé.
           </p>
@@ -53,7 +54,7 @@ export function LoginResumeCard({ resume }: { resume: LoginResumeData }) {
               🔥 Vous aviez {resume.streak.current} jour{resume.streak.current > 1 ? 's' : ''} de streak !
             </p>
             <p className='mt-0.5 text-xs text-orange-200/80'>
-              Une session aujourd'hui sauvegarde votre chaîne.
+              Une session aujourd&apos;hui sauvegarde votre chaîne.
             </p>
           </div>
         )}
@@ -61,7 +62,7 @@ export function LoginResumeCard({ resume }: { resume: LoginResumeData }) {
         {/* Recommandations */}
         <div>
           <p className='mb-2 text-xs font-semibold uppercase tracking-wider text-slate-400'>
-            Aujourd'hui, on recommande
+            Aujourd&apos;hui, on recommande
           </p>
           <div className='space-y-2'>
             {resume.recommendations.map((rec) => (

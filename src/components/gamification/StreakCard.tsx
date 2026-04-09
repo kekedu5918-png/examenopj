@@ -1,6 +1,6 @@
-import type { StreakData } from '@/features/gamification/controllers/get-gamification-data';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { cn } from '@/utils/cn';
+import type { StreakData } from '@/features/gamification/controllers/get-gamification-data';
 
 function todayIsoDate(): string {
   return new Date().toISOString().slice(0, 10);
@@ -19,7 +19,7 @@ export function StreakCard({ streak }: { streak: StreakData }) {
           🔥 Streak quotidien
           {hasStudiedToday && (
             <span className='rounded-full bg-emerald-700/40 px-2 py-0.5 text-xs font-normal text-emerald-300'>
-              ✓ Étudié aujourd'hui
+              ✓ Étudié aujourd&apos;hui
             </span>
           )}
         </CardTitle>
