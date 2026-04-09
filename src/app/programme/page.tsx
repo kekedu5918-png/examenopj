@@ -45,7 +45,7 @@ export default function ProgrammePage() {
         badge='PROGRAMME'
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title='Sommaire du programme'
-        subtitle='15 modules — DPS, DPG, Procédure pénale. Filtrez par domaine, cliquez un module pour voir les axes et les pièges à l'examen.'
+        subtitle="15 modules — DPS, DPG, Procédure pénale. Filtrez par domaine, cliquez un module pour voir les axes et les pièges à l'examen."
         className='mb-6'
       />
 

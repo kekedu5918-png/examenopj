@@ -343,7 +343,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 2 */}
-            <RubriqueSection id='r2' num={2} titre='Les cadres d'enquête' fascicule='F11'>
+            <RubriqueSection id='r2' num={2} titre="Les cadres d'enquête" fascicule='F11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[800px] border-collapse text-left'>
                   <thead>
@@ -402,7 +402,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 3 */}
-            <RubriqueSection id='r3' num={3} titre='Le contrôle d'identité' fascicule='F11 — art. 78-1 à 78-6 CPP'>
+            <RubriqueSection id='r3' num={3} titre="Le contrôle d'identité" fascicule='F11 — art. 78-1 à 78-6 CPP'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
@@ -488,7 +488,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 5 */}
-            <RubriqueSection id='r5' num={5} titre='L'audition libre' fascicule='F11'>
+            <RubriqueSection id='r5' num={5} titre="L'audition libre" fascicule='F11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[500px] border-collapse text-left'>
                   <thead>
@@ -581,7 +581,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 8 */}
-            <RubriqueSection id='r8' num={8} titre='La récidive et le concours d'infractions' fascicule='F10'>
+            <RubriqueSection id='r8' num={8} titre="La récidive et le concours d'infractions" fascicule='F10'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <p className='mb-2 font-semibold text-white'>Récidive — tableau des effets</p>
                 <table className='w-full min-w-[720px] border-collapse text-left'>

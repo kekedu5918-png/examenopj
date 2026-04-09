@@ -212,11 +212,11 @@ export function CoursModulesExplorer({ modules, defaultView = 'programme' }: Pro
           const id = tier === 'p0' ? 'cours-priorite-p0' : 'cours-priorite-p1';
           const title =
             tier === 'p0'
-              ? '⭐ À traiter en priorité (P0 — décisifs à l'examen)'
+              ? "⭐ À traiter en priorité (P0 — décisifs à l'examen)"
               : '📌 À solidifier ensuite (P1)';
           const desc =
             tier === 'p0'
-              ? 'Thèmes où le jury attend une maîtrise nette à l'écrit et à l'oral.'
+              ? "Thèmes où le jury attend une maîtrise nette à l'écrit et à l'oral."
               : 'À aborder une fois le socle P0 solide, ou selon vos lacunes.';
           return (
             <section key={tier} id={id} className='scroll-mt-28'>

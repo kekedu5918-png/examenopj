@@ -7,7 +7,6 @@ import {
   ClipboardList,
   FileText,
   LayoutList,
-  Mic,
   Timer,
 } from 'lucide-react';
 
@@ -22,7 +21,7 @@ import { GuideIntroLead } from './guide-intro-lead';
 
 const guideSeoTitle = 'Guide de révision OPJ 2026';
 const guideSeoDescription =
-  'Guide de révision OPJ 2026 : programme officiel, méthode par épreuve, planning 6 mois et erreurs à éviter pour les écrits et l'oral.';
+  "Guide de révision OPJ 2026 : programme officiel, méthode par épreuve, planning 6 mois et erreurs à éviter pour les écrits et l'oral.";
 
 export const metadata: Metadata = {
   title: guideSeoTitle,
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
 };
 
 const TOC_ITEMS = [
-  { id: 'chiffres', label: 'L'examen en chiffres' },
+  { id: 'chiffres', label: "L'examen en chiffres" },
   { id: 'epreuves', label: 'Les 3 épreuves' },
   { id: 'plan', label: 'Plan en 3 phases' },
   { id: 'erreurs', label: 'Erreurs fréquentes' },
@@ -55,7 +54,7 @@ const PHASE_DATA = [
     color: 'border-cyan-500/40 bg-cyan-500/[0.06]',
     titleColor: 'text-cyan-300',
     points: [
-      'Lire F09 et F10 en premier (éléments constitutifs + CA) : socle de l'épreuve 1',
+      "Lire F09 et F10 en premier (éléments constitutifs + CA) : socle de l'épreuve 1",
       'Puis F01, F02, F03 : infractions les plus fréquentes',
       'Quiz court (10 questions) après chaque module thématique',
       'Ne pas chercher à tout retenir : repérer les zones opaques',
@@ -90,21 +89,21 @@ const PHASE_DATA = [
 ];
 
 const ERREURS = [
-  'Réviser le DPS sans jamais s'entraîner sur des thèmes complets',
-  'Négliger la procédure pénale (F11-F15) — c'est 2 épreuves sur 3',
+  "Réviser le DPS sans jamais s'entraîner sur des thèmes complets",
+  "Négliger la procédure pénale (F11-F15) — c'est 2 épreuves sur 3",
   'Ignorer les mises à jour législatives de 2025',
   'Ne pas connaître les phrases types par cœur → perte de temps en examen',
   'Confondre auteur / coauteur / complice dans la copie',
-  'Oublier la formule PRQC pour l'élément légal',
+  "Oublier la formule PRQC pour l'élément légal",
 ];
 
 const OUTILS = [
   { num: 1, href: '/fondamentaux', title: 'Fondamentaux', desc: 'Synthèses courtes sur les notions clés procédure et pénal.', icon: BookOpenCheck, color: 'border-violet-500/30 hover:border-violet-500/50 hover:bg-violet-500/[0.05]', numColor: 'text-violet-400' },
-  { num: 2, href: '/epreuves/epreuve-1', title: 'Épreuves', desc: 'Méthode + phrases types pour l'écrit et l'oral.', icon: FileText, color: 'border-cyan-500/30 hover:border-cyan-500/50 hover:bg-cyan-500/[0.05]', numColor: 'text-cyan-400' },
+  { num: 2, href: '/epreuves/epreuve-1', title: 'Épreuves', desc: "Méthode + phrases types pour l'écrit et l'oral.", icon: FileText, color: 'border-cyan-500/30 hover:border-cyan-500/50 hover:bg-cyan-500/[0.05]', numColor: 'text-cyan-400' },
   { num: 3, href: '/cours/modules', title: 'Modules de cours', desc: 'Fiches synthétiques F01–F15 à compléter avec les codes.', icon: LayoutList, color: 'border-blue-500/30 hover:border-blue-500/50 hover:bg-blue-500/[0.05]', numColor: 'text-blue-400' },
   { num: 4, href: '/quiz', title: 'Quiz', desc: 'Auto-évaluation immédiate après chaque lecture de fiche.', icon: Brain, color: 'border-amber-500/30 hover:border-amber-500/50 hover:bg-amber-500/[0.05]', numColor: 'text-amber-400' },
   { num: 5, href: '/flashcards', title: 'Flashcards', desc: 'Mémorisation quotidienne (15 min) sur les éléments constitutifs.', icon: Timer, color: 'border-gold-500/30 hover:border-gold-500/50 hover:bg-gold-500/[0.05]', numColor: 'text-gold-400' },
-  { num: 6, href: '/cours/pv', title: 'Procès-verbaux ME1', desc: 'Modèles, mentions et textes à trous pour l'épreuve 2.', icon: ClipboardList, color: 'border-emerald-500/30 hover:border-emerald-500/50 hover:bg-emerald-500/[0.05]', numColor: 'text-emerald-400' },
+  { num: 6, href: '/cours/pv', title: 'Procès-verbaux ME1', desc: "Modèles, mentions et textes à trous pour l'épreuve 2.", icon: ClipboardList, color: 'border-emerald-500/30 hover:border-emerald-500/50 hover:bg-emerald-500/[0.05]', numColor: 'text-emerald-400' },
 ];
 
 export default function GuideRevisionOpjPage() {
@@ -116,13 +115,11 @@ export default function GuideRevisionOpjPage() {
       {/* Layout 2 colonnes : StickyToc + article */}
       <div className='mx-auto flex max-w-5xl gap-8 px-4 py-12 pb-24 md:py-16'>
 
-        {/* StickyToc sidebar — visible sur desktop via le composant */}
+        {/* StickyToc sidebar */}
         <StickyToc items={TOC_ITEMS} title='Sommaire' className='w-48 shrink-0' />
 
         {/* Contenu principal */}
         <article className='min-w-0 flex-1'>
-          {/* Mobile TOC est rendu par StickyToc directement (barre horizontale) */}
-
           <header className='mb-10 border-b border-white/10 pb-8'>
             <p className='text-sm font-medium uppercase tracking-wider text-gold-400'>OPJ 2026</p>
             <h1 className='mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl'>
@@ -137,18 +134,21 @@ export default function GuideRevisionOpjPage() {
             <section id='chiffres' className='scroll-mt-24'>
               <h2 className='font-display text-2xl font-bold text-white'>L&apos;examen en chiffres</h2>
               <div className='mt-6 grid gap-3 sm:grid-cols-2'>
-                {STAT_ITEMS.map((s) => (
-                  <div
-                    key={s.label}
-                    className={`rounded-2xl border bg-gradient-to-br to-transparent p-5 ${s.color}`}
-                  >
-                    <p className={`font-display text-3xl font-black ${s.color.split(' ').find((c) => c.startsWith('text-'))}`}>
-                      {s.value}
-                    </p>
-                    <p className='mt-1 font-semibold text-white'>{s.label}</p>
-                    <p className='mt-1 text-sm text-gray-400'>{s.sub}</p>
-                  </div>
-                ))}
+                {STAT_ITEMS.map((s) => {
+                  const textColorClass = s.color.split(' ').find((c) => c.startsWith('text-')) ?? 'text-white';
+                  return (
+                    <div
+                      key={s.label}
+                      className={`rounded-2xl border bg-gradient-to-br to-transparent p-5 ${s.color}`}
+                    >
+                      <p className={`font-display text-3xl font-black ${textColorClass}`}>
+                        {s.value}
+                      </p>
+                      <p className='mt-1 font-semibold text-white'>{s.label}</p>
+                      <p className='mt-1 text-sm text-gray-400'>{s.sub}</p>
+                    </div>
+                  );
+                })}
               </div>
             </section>
 
@@ -161,15 +161,12 @@ export default function GuideRevisionOpjPage() {
               </div>
             </section>
 
-            {/* ─── Plan 3 phases — timeline horizontale ─── */}
+            {/* ─── Plan 3 phases ─── */}
             <section id='plan' className='scroll-mt-24'>
               <h2 className='font-display text-2xl font-bold text-white'>Le plan en 3 phases</h2>
               <div className='mt-8 grid gap-4 md:grid-cols-3'>
                 {PHASE_DATA.map((phase) => (
-                  <div
-                    key={phase.num}
-                    className={`flex flex-col rounded-2xl border p-5 ${phase.color}`}
-                  >
+                  <div key={phase.num} className={`flex flex-col rounded-2xl border p-5 ${phase.color}`}>
                     <div className='mb-3 flex items-center gap-3'>
                       <span className='font-display text-4xl font-black text-white/20'>{phase.num}</span>
                       <div>
@@ -222,9 +219,11 @@ export default function GuideRevisionOpjPage() {
                         <div className='flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.06] transition group-hover:scale-105'>
                           <Icon className={`h-5 w-5 ${outil.numColor}`} strokeWidth={1.75} />
                         </div>
-                        <span className={`text-xs font-bold ${outil.numColor}`}>{String(outil.num).padStart(2, '0')}</span>
+                        <span className={`text-xs font-bold ${outil.numColor}`}>
+                          {String(outil.num).padStart(2, '0')}
+                        </span>
                       </div>
-                      <p className='mt-3 font-display text-base font-semibold text-white group-hover:text-current'>{outil.title}</p>
+                      <p className='mt-3 font-display text-base font-semibold text-white'>{outil.title}</p>
                       <p className='mt-1.5 text-sm text-gray-400'>{outil.desc}</p>
                       <span className='mt-auto pt-3 text-xs font-medium text-cyan-400 opacity-0 transition group-hover:opacity-100'>
                         Ouvrir →
