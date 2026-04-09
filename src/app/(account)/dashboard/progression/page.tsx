@@ -7,6 +7,10 @@ import {
   getRecentQuizAttempts,
   getRevisionStats,
 } from '@/features/examenopj/controllers/get-dashboard-data';
+import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
+import { StreakCard } from '@/components/gamification/StreakCard';
+import { BadgesPanel } from '@/components/gamification/BadgesPanel';
+import { CategoryProgress } from '@/components/gamification/CategoryProgress';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
@@ -23,16 +27,25 @@ export default async function ProgressionPage() {
   const session = await getSession();
   if (!session) redirect('/login');
 
-  const [stats, quizAttempts, flashSummary] = await Promise.all([
+  const [stats, quizAttempts, flashSummary, gamification] = await Promise.all([
     getRevisionStats(session.user.id),
     getRecentQuizAttempts(session.user.id, 10),
     getFlashcardReviewSummary(session.user.id),
+    getGamificationData(session.user.id),
   ]);
 
   return (
     <section className='space-y-4 rounded-xl bg-slate-950 p-6'>
       <h1 className='text-2xl font-bold text-slate-50'>Statistiques et progression</h1>
-      <p className='text-slate-300'>Suivi global de ton avancement et des révisions prioritaires.</p>
+      <p className='text-slate-300'>Suivi global de ton avancement, streaks, badges et révisions prioritaires.</p>
+
+      {/* Gamification */}
+      <div className='grid gap-4 md:grid-cols-2'>
+        <StreakCard streak={gamification.streak} />
+        <BadgesPanel badges={gamification.badges} />
+      </div>
+
+      <CategoryProgress categories={gamification.categoryProgress} totalAttempts={gamification.totalQuizAttempts} />
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         <StatCard title='Questions disponibles' value={`${stats.totalQuestions}`} />

@@ -46,5 +46,19 @@ export async function GET(request: NextRequest) {
     return NextResponse.redirect(new URL('/pricing', siteUrl));
   }
 
+  // Rediriger vers l'onboarding si pas encore complété (nouveaux inscrits)
+  const { data: onboarding } = await (supabase as any)
+    .from('onboarding_progress')
+    .select('completed')
+    .eq('user_id', user.id)
+    .maybeSingle();
+
+  const isNewUser = !onboarding;
+  const onboardingPending = isNewUser || onboarding?.completed === false;
+
+  if (onboardingPending && nextPath === '/accueil') {
+    return NextResponse.redirect(new URL('/onboarding', siteUrl));
+  }
+
   return NextResponse.redirect(new URL(nextPath, siteUrl));
 }

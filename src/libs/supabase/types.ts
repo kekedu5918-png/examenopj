@@ -522,6 +522,120 @@ export interface Database {
           }
         ];
       };
+      onboarding_progress: {
+        Row: {
+          id: string;
+          user_id: string;
+          stage: number;
+          completed: boolean;
+          formation_phase: 'early' | 'mid' | 'late' | null;
+          strengths: string[] | null;
+          weaknesses: string[] | null;
+          diagnostic_answers: Array<{ question_id: string; answer: string; correct: boolean }> | null;
+          diagnostic_level: 'Novice' | 'Débutant' | 'Intermédiaire' | 'Expert' | null;
+          diagnostic_score: number | null;
+          generated_plan: Record<string, unknown> | null;
+          created_at: string;
+          completed_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          stage?: number;
+          completed?: boolean;
+          formation_phase?: 'early' | 'mid' | 'late' | null;
+          strengths?: string[] | null;
+          weaknesses?: string[] | null;
+          diagnostic_answers?: Array<{ question_id: string; answer: string; correct: boolean }> | null;
+          diagnostic_level?: 'Novice' | 'Débutant' | 'Intermédiaire' | 'Expert' | null;
+          diagnostic_score?: number | null;
+          generated_plan?: Record<string, unknown> | null;
+          created_at?: string;
+          completed_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          stage?: number;
+          completed?: boolean;
+          formation_phase?: 'early' | 'mid' | 'late' | null;
+          strengths?: string[] | null;
+          weaknesses?: string[] | null;
+          diagnostic_answers?: Array<{ question_id: string; answer: string; correct: boolean }> | null;
+          diagnostic_level?: 'Novice' | 'Débutant' | 'Intermédiaire' | 'Expert' | null;
+          diagnostic_score?: number | null;
+          generated_plan?: Record<string, unknown> | null;
+          created_at?: string;
+          completed_at?: string | null;
+        };
+        Relationships: [];
+      };
+      user_streaks: {
+        Row: {
+          id: string;
+          user_id: string;
+          current_streak: number;
+          longest_streak: number;
+          last_session_date: string | null;
+          streak_start_date: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          current_streak?: number;
+          longest_streak?: number;
+          last_session_date?: string | null;
+          streak_start_date?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          current_streak?: number;
+          longest_streak?: number;
+          last_session_date?: string | null;
+          streak_start_date?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      user_badges: {
+        Row: {
+          id: string;
+          user_id: string;
+          badge_id: string;
+          earned: boolean;
+          earned_at: string | null;
+          current_progress: number;
+          target_progress: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          badge_id: string;
+          earned?: boolean;
+          earned_at?: string | null;
+          current_progress?: number;
+          target_progress?: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          badge_id?: string;
+          earned?: boolean;
+          earned_at?: string | null;
+          current_progress?: number;
+          target_progress?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {
       [_ in never]: never;

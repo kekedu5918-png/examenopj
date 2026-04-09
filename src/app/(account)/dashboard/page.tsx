@@ -6,6 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { fasciculesList, getCourseModuleById } from '@/data/fascicules-list';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/examenopj/controllers/get-dashboard-data';
+import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
+import { getLoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
+import { getOnboardingPlan } from '@/features/onboarding/actions/onboarding-actions';
+import { StreakCard } from '@/components/gamification/StreakCard';
+import { LoginResumeCard } from '@/components/onboarding/LoginResumeCard';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
@@ -23,9 +28,23 @@ function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number |
 
 export default async function DashboardPage() {
   const session = await getSession();
-  const [modules, revisionStats, recentAttempts] = session
-    ? await Promise.all([getModules(), getRevisionStats(session.user.id), getRecentQuizAttempts(session.user.id, 1)])
-    : await Promise.all([getModules(), Promise.resolve(null), Promise.resolve([])]);
+  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan] = session
+    ? await Promise.all([
+        getModules(),
+        getRevisionStats(session.user.id),
+        getRecentQuizAttempts(session.user.id, 1),
+        getGamificationData(session.user.id),
+        getLoginResumeData(session.user.id),
+        getOnboardingPlan(),
+      ])
+    : await Promise.all([
+        getModules(),
+        Promise.resolve(null),
+        Promise.resolve([]),
+        Promise.resolve(null),
+        Promise.resolve(null),
+        Promise.resolve(null),
+      ]);
 
   const lastAttempt = recentAttempts[0] ?? null;
   const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
@@ -46,6 +65,13 @@ export default async function DashboardPage() {
         </p>
       </header>
 
+      {/* Streak widget */}
+      {gamification && gamification.streak.currentStreak > 0 && (
+        <div className='md:w-80'>
+          <StreakCard streak={gamification.streak} />
+        </div>
+      )}
+
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         {[
           { titre: 'Hub Cours (par où commencer)', href: '/cours' },
@@ -62,81 +88,115 @@ export default async function DashboardPage() {
         ))}
       </div>
 
-      <Card className='border border-cyan-500/30 bg-slate-900/70'>
-        <CardHeader>
-          <CardTitle className='text-slate-100'>Reprendre la session</CardTitle>
-          <CardDescription className='text-slate-300'>
-            Recommandation basée sur votre activité enregistrée sur le compte.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className='space-y-3 text-sm text-slate-200'>
-          {lastAttempt ? (
-            <>
-              <p>
-                Dernier quiz : <span className='font-semibold text-cyan-300'>{formatQuizMode(lastAttempt)}</span> -
-                {` ${lastAttempt.score}/${lastAttempt.total} `}
-                ({Number(lastAttempt.percent).toFixed(0)} %)
-              </p>
-              <p className='text-slate-400'>
-                Dernière activité : {lastAttempt.created_at ? new Date(lastAttempt.created_at).toLocaleString('fr-FR') : 'n/a'}
-              </p>
-              <div className='flex flex-wrap gap-2'>
-                {lastModuleMeta ? (
-                  <>
+      {/* Reprise de session (Login Resume) */}
+      {loginResume && <LoginResumeCard resume={loginResume} />}
+
+      {/* Session classique si pas de resume actif */}
+      {loginResume && !loginResume.showResume && (
+        <Card className='border border-cyan-500/30 bg-slate-900/70'>
+          <CardHeader>
+            <CardTitle className='text-slate-100'>Reprendre la session</CardTitle>
+            <CardDescription className='text-slate-300'>
+              Recommandation basée sur votre activité enregistrée sur le compte.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className='space-y-3 text-sm text-slate-200'>
+            {lastAttempt ? (
+              <>
+                <p>
+                  Dernier quiz : <span className='font-semibold text-cyan-300'>{formatQuizMode(lastAttempt)}</span> -
+                  {` ${lastAttempt.score}/${lastAttempt.total} `}
+                  ({Number(lastAttempt.percent).toFixed(0)} %)
+                </p>
+                <div className='flex flex-wrap gap-2'>
+                  {lastModuleMeta ? (
+                    <>
+                      <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
+                        <Link href={`/cours/modules/${lastModuleMeta.id}`}>
+                          Revoir la fiche {formatQuizMode(lastAttempt)}
+                        </Link>
+                      </Button>
+                      <Button asChild variant='secondary'>
+                        <Link href={`/quiz?mode=module&f=${lastModuleMeta.id}`}>Quiz sur ce thème</Link>
+                      </Button>
+                    </>
+                  ) : (
                     <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
-                      <Link href={`/cours/modules/${lastModuleMeta.id}`}>
-                        Revoir la fiche {formatQuizMode(lastAttempt)}
-                      </Link>
+                      <Link href='/quiz'>Continuer les quiz</Link>
                     </Button>
-                    <Button asChild variant='secondary'>
-                      <Link href={`/quiz?mode=module&f=${lastModuleMeta.id}`}>Quiz sur ce thème</Link>
-                    </Button>
-                  </>
-                ) : (
-                  <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
-                    <Link href='/quiz'>Continuer les quiz</Link>
-                  </Button>
-                )}
-                <Button asChild variant='outline' className='border-slate-600'>
-                  <Link href='/sujets-blancs'>Passer en sujet blanc</Link>
+                  )}
+                </div>
+              </>
+            ) : (
+              <>
+                <p>Aucune session enregistrée pour le moment. Commencez un premier entraînement ciblé.</p>
+                <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
+                  <Link href='/dashboard/infractions'>Démarrer mon premier quiz</Link>
                 </Button>
-                <Button asChild variant='secondary'>
-                  <Link href='/dashboard/progression'>Ma progression</Link>
-                </Button>
+              </>
+            )}
+
+            {revisionStats ? (
+              <div className='flex flex-wrap gap-2 pt-1'>
+                <Badge variant='outline'>Révisions dues: {revisionStats.revisionDue}</Badge>
+                <Badge variant='outline'>Maîtrisées: {revisionStats.mastered}</Badge>
+                <Badge variant='outline'>Score moyen: {revisionStats.averageScore.toFixed(2)} / 5</Badge>
               </div>
-            </>
-          ) : (
-            <>
-              <p>Aucune session enregistrée pour le moment. Commencez un premier entraînement ciblé.</p>
-              <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
-                <Link href='/dashboard/infractions'>Démarrer mon premier quiz</Link>
-              </Button>
-            </>
-          )}
+            ) : null}
+          </CardContent>
+        </Card>
+      )}
 
-          {revisionStats ? (
-            <div className='flex flex-wrap gap-2 pt-1'>
-              <Badge variant='outline'>Révisions dues: {revisionStats.revisionDue}</Badge>
-              <Badge variant='outline'>Maîtrisées: {revisionStats.mastered}</Badge>
-              <Badge variant='outline'>Score moyen: {revisionStats.averageScore.toFixed(2)} / 5</Badge>
-            </div>
-          ) : null}
-        </CardContent>
-      </Card>
-
-      <Card className='border border-blue-500/30 bg-slate-900/70'>
-        <CardHeader>
-          <CardTitle className='text-slate-100'>Plan de départ recommandé</CardTitle>
-          <CardDescription className='text-slate-300'>
-            Une trajectoire simple pour les premières sessions de révision.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className='space-y-2 text-sm text-slate-200'>
-          <p>1. Parcourez le hub Cours : fil en 7 leçons ou parcours candidat selon votre niveau.</p>
-          <p>2. Pour chaque fiche F : lire le bloc « Examen OPJ » puis quiz / flashcards sur le même thème.</p>
-          <p>3. À mi-parcours : articulation ou enquête type ; en fin : sujet blanc sur les trois épreuves.</p>
-        </CardContent>
-      </Card>
+      {/* Plan personnalisé (si onboarding complété) OU plan statique */}
+      {onboardingPlan ? (
+        <Card className='border border-blue-500/30 bg-slate-900/70'>
+          <CardHeader>
+            <CardTitle className='text-slate-100'>📋 Votre plan personnalisé</CardTitle>
+            <CardDescription className='text-slate-300'>
+              Basé sur votre diagnostic — Niveau : {onboardingPlan.level} ({onboardingPlan.score}/5) — {onboardingPlan.plan.total_weeks} semaines
+            </CardDescription>
+          </CardHeader>
+          <CardContent className='space-y-3'>
+            {onboardingPlan.plan.phases.map((phase) => (
+              <div key={phase.phase_number} className='rounded-lg border border-slate-700 bg-slate-800/40 p-3'>
+                <div className='mb-1.5 flex items-center gap-2'>
+                  <span className='flex h-5 w-5 items-center justify-center rounded-full bg-cyan-800 text-[10px] font-bold text-cyan-200'>
+                    {phase.phase_number}
+                  </span>
+                  <p className='text-sm font-semibold text-slate-100'>{phase.name}</p>
+                  <span className='ml-auto text-xs text-slate-500'>{phase.duration_weeks} sem. — {phase.daily_time_minutes} min/j</span>
+                </div>
+                <ul className='space-y-0.5'>
+                  {phase.topics.map((t) => (
+                    <li key={t.id} className='flex items-start gap-1.5 text-xs text-slate-300'>
+                      <span className='text-cyan-500'>•</span>
+                      <span>
+                        {t.name}
+                        {t.items_per_week ? ` (${t.items_per_week}/semaine)` : ''}
+                        {t.frequency ? ` — ${t.frequency}` : ''}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      ) : (
+        <Card className='border border-blue-500/30 bg-slate-900/70'>
+          <CardHeader>
+            <CardTitle className='text-slate-100'>Plan de départ recommandé</CardTitle>
+            <CardDescription className='text-slate-300'>
+              Une trajectoire simple pour les premières sessions de révision.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className='space-y-2 text-sm text-slate-200'>
+            <p>1. Parcourez le hub Cours : fil en 7 leçons ou parcours candidat selon votre niveau.</p>
+            <p>2. Pour chaque fiche F : lire le bloc « Examen OPJ » puis quiz / flashcards sur le même thème.</p>
+            <p>3. À mi-parcours : articulation ou enquête type ; en fin : sujet blanc sur les trois épreuves.</p>
+          </CardContent>
+        </Card>
+      )}
 
       <div className='flex flex-wrap items-center justify-between gap-3'>
         <h2 className='text-xl font-semibold text-slate-100'>Aperçu des fascicules</h2>
