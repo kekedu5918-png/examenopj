@@ -95,9 +95,13 @@ const config: Config = {
       },
       boxShadow: {
         'ex-card': '0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)',
-        'ex-card-hover':
-          '0 8px 32px rgba(79,110,247,0.15), 0 0 0 1px rgba(79,110,247,0.3)',
+        'ex-card-hover': '0 8px 32px rgba(79,110,247,0.15), 0 0 0 1px rgba(79,110,247,0.3)',
         'ex-premium-glow': '0 0 40px rgba(124,58,237,0.2)',
+        'ex-blue-glow': '0 0 24px rgba(37,99,235,0.35)',
+        'ex-blue-glow-lg': '0 0 48px rgba(37,99,235,0.25), 0 0 96px rgba(37,99,235,0.1)',
+        'ex-glass': '0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)',
+        'ex-glass-hover': '0 8px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.09)',
+        'ex-inset-top': 'inset 0 1px 0 rgba(255,255,255,0.08)',
       },
       borderRadius: {
         lg: `var(--radius)`,
@@ -157,6 +161,18 @@ const config: Config = {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.65', transform: 'scale(1.15)' },
         },
+        'ex-glow-pulse': {
+          '0%, 100%': { boxShadow: '0 0 16px rgba(37,99,235,0.25)' },
+          '50%': { boxShadow: '0 0 32px rgba(37,99,235,0.45)' },
+        },
+        'ex-fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(12px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'ex-slide-in': {
+          '0%': { opacity: '0', transform: 'translateX(-12px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -169,6 +185,9 @@ const config: Config = {
         'ex-float': 'ex-float 3s ease-in-out infinite',
         'ex-shimmer': 'ex-shimmer 2.2s linear infinite',
         'ex-pulse-dot': 'ex-pulse-dot 2s ease-in-out infinite',
+        'ex-glow-pulse': 'ex-glow-pulse 2.5s ease-in-out infinite',
+        'ex-fade-up': 'ex-fade-up 0.5s ease-out forwards',
+        'ex-slide-in': 'ex-slide-in 0.4s ease-out forwards',
       },
     },
   },

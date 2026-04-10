@@ -9,15 +9,16 @@ type SectionTitleProps = {
   badge: string;
   badgeClassName?: string;
   title: string;
+  /** Si true, applique un dégradé bleu→cyan sur le titre */
+  titleGradient?: boolean;
   subtitle?: string;
   className?: string;
-  /** Id du `<h2>` pour `aria-labelledby` sur la section parente. */
   titleId?: string;
 };
 
 const easeOut = [0.21, 0.47, 0.32, 0.98] as const;
 
-export function SectionTitle({ badge, badgeClassName, title, subtitle, className, titleId }: SectionTitleProps) {
+export function SectionTitle({ badge, badgeClassName, title, titleGradient, subtitle, className, titleId }: SectionTitleProps) {
   return (
     <motion.div
       className={cn('space-y-3', className)}
@@ -28,16 +29,29 @@ export function SectionTitle({ badge, badgeClassName, title, subtitle, className
     >
       <span
         className={cn(
-          'inline-block rounded-full border border-white/[0.08] px-3 py-1 text-xs font-semibold uppercase tracking-wider shadow-sm shadow-black/20',
-          badgeClassName ?? 'bg-red-500/20 text-red-300'
+          'inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.1em] shadow-sm shadow-black/20',
+          badgeClassName ?? 'bg-white/[0.05] text-slate-300',
         )}
       >
+        <span className='h-1.5 w-1.5 rounded-full bg-current opacity-70' aria-hidden />
         {badge}
       </span>
-      <h2 id={titleId} className='font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
+
+      <h2
+        id={titleId}
+        className={cn(
+          'font-sans text-3xl font-extrabold tracking-tight md:text-4xl',
+          titleGradient
+            ? 'bg-gradient-to-r from-white via-slate-100 to-blue-300 bg-clip-text text-transparent'
+            : 'text-white',
+        )}
+      >
         {title}
       </h2>
-      {subtitle ? <p className='text-base leading-relaxed text-gray-400 md:text-lg'>{subtitle}</p> : null}
+
+      {subtitle ? (
+        <p className='text-base leading-relaxed text-gray-400 md:text-lg'>{subtitle}</p>
+      ) : null}
     </motion.div>
   );
 }

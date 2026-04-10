@@ -39,8 +39,8 @@ function isActiveGroup(pathname: string, prefixes: string[]): boolean {
 
 const navBtn =
   'relative inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3';
-const navInactive = 'text-examen-inkMuted hover:text-examen-ink';
-const navActive = 'text-examen-accent after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-examen-accent';
+const navInactive = 'text-slate-400 hover:text-white';
+const navActive = 'text-white after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-blue-400';
 const dropTriggerClass = cn(navBtn, 'border-0 bg-transparent');
 
 const coursLinks = [
@@ -119,8 +119,10 @@ export function SiteHeaderClient({
   const enquetesActive = isActivePath(pathname, '/cours/enquetes');
 
   const headerStyle = {
-    background: scrolled ? 'rgba(255, 255, 255, 0.88)' : 'rgba(255, 255, 255, 0)',
-    borderBottomColor: scrolled ? 'rgba(0, 0, 0, 0.06)' : 'transparent',
+    background: scrolled
+      ? 'rgba(8, 15, 30, 0.92)'
+      : 'rgba(8, 15, 30, 0)',
+    borderBottomColor: scrolled ? 'rgba(255, 255, 255, 0.07)' : 'transparent',
     transition: 'background 0.3s ease, border-color 0.3s ease',
   } as const;
 
@@ -214,11 +216,11 @@ export function SiteHeaderClient({
           <div className='hidden shrink-0 items-center gap-3 lg:flex'>
             {quizStreak > 0 ? (
               <span
-                className='inline-flex items-center gap-1 rounded-md border border-amber-200/90 bg-amber-50 px-2 py-1 text-[11px] font-semibold text-amber-950'
+                className='inline-flex items-center gap-1 rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-1 text-[11px] font-semibold text-amber-300'
                 title={`Série de ${quizStreak} jour${quizStreak > 1 ? 's' : ''} avec au moins un quiz complété`}
                 aria-label={`Série de quiz : ${quizStreak} jour${quizStreak > 1 ? 's' : ''} consécutifs`}
               >
-                <Flame className='h-3.5 w-3.5 text-amber-600' aria-hidden />
+                <Flame className='h-3.5 w-3.5 text-amber-400' aria-hidden />
                 {quizStreak}j
               </span>
             ) : null}
@@ -262,10 +264,10 @@ export function SiteHeaderClient({
           <div className='flex items-center gap-2 lg:hidden'>
             {quizStreak > 0 ? (
               <span
-                className='inline-flex items-center gap-0.5 rounded-md border border-amber-200/90 bg-amber-50 px-1.5 py-0.5 text-[10px] font-semibold text-amber-950'
+                className='inline-flex items-center gap-0.5 rounded-md border border-amber-500/30 bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-amber-300'
                 aria-label={`Série de quiz : ${quizStreak} jour${quizStreak > 1 ? 's' : ''} consécutifs`}
               >
-                <Flame className='h-3 w-3 text-amber-600' aria-hidden />
+                <Flame className='h-3 w-3 text-amber-400' aria-hidden />
                 {quizStreak}j
               </span>
             ) : null}
