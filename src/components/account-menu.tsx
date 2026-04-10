@@ -48,7 +48,10 @@ export function AccountMenu({ signOut }: { signOut: () => Promise<ActionResponse
       </DropdownMenuTrigger>
       <DropdownMenuContent align='end' sideOffset={8} className='min-w-[12rem] border-white/10 bg-examen-raised text-examen-ink'>
         <DropdownMenuItem asChild className='focus:bg-white/10'>
-          <Link href='/accueil'>Accueil — progression</Link>
+          <Link href='/accueil'>Mon espace</Link>
+        </DropdownMenuItem>
+        <DropdownMenuItem asChild className='focus:bg-white/10'>
+          <Link href='/dashboard/progression'>Statistiques</Link>
         </DropdownMenuItem>
         <DropdownMenuItem asChild className='focus:bg-white/10'>
           <Link href='/account'>Mon compte</Link>

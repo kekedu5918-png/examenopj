@@ -246,7 +246,7 @@ export function SiteHeaderClient({
               </>
             ) : (
               <>
-                <Link href='/connexion' className='text-sm font-medium text-examen-inkMuted no-underline transition-colors hover:text-white'>
+                <Link href='/login' className='text-sm font-medium text-examen-inkMuted no-underline transition-colors hover:text-white'>
                   Connexion
                 </Link>
                 <Link
@@ -398,7 +398,7 @@ export function SiteHeaderClient({
                 ) : (
                   <div className='flex flex-col gap-2'>
                     <Link
-                      href='/connexion'
+                      href='/login'
                       className='rounded-lg border border-white/[0.1] py-2.5 text-center text-sm text-white'
                       onClick={() => setMobileOpen(false)}
                     >
