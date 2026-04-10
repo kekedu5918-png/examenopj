@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { EXAM_SHORT_LABEL, type ExamNumber } from '@/data/exam-competency-map';
@@ -195,7 +196,7 @@ function CardGrid({ items }: { items: HubCard[] }) {
             href={c.href}
             className='group block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50'
           >
-            <GlassCard padding='p-6' className='h-full transition hover:border-cyan-500/25'>
+            <GlassCard padding='p-6' radius='3xl' topGlow className='h-full transition hover:border-cyan-500/25'>
               <div className='flex items-start justify-between gap-3'>
                 <Icon className={iconClass} strokeWidth={stroke} aria-hidden />
                 <div className='flex shrink-0 flex-wrap items-center justify-end gap-1'>
@@ -205,9 +206,9 @@ function CardGrid({ items }: { items: HubCard[] }) {
                   ) : null}
                 </div>
               </div>
-              <h3 className='mt-4 font-display text-xl font-bold text-white'>{c.title}</h3>
-              <p className='mt-2 text-sm leading-relaxed text-gray-400'>{c.desc}</p>
-              <p className='mt-4 text-sm font-medium text-cyan-400'>Ouvrir</p>
+              <h3 className='mt-4 font-sans text-xl font-extrabold tracking-tight text-white'>{c.title}</h3>
+              <p className='mt-2 text-sm leading-relaxed text-slate-400'>{c.desc}</p>
+              <p className='mt-4 text-sm font-semibold text-cyan-400'>Ouvrir →</p>
             </GlassCard>
           </Link>
         );
@@ -231,11 +232,11 @@ function SectionBlock({
     <section className='scroll-mt-24' aria-labelledby={`ent-${examNum}`}>
       <div className='mb-6 flex flex-wrap items-baseline gap-3'>
         <ExamTag n={examNum} />
-        <h2 id={`ent-${examNum}`} className='font-display text-xl font-bold text-white md:text-2xl'>
+        <h2 id={`ent-${examNum}`} className='font-sans text-xl font-extrabold tracking-tight text-white md:text-2xl'>
           {title}
         </h2>
       </div>
-      <p className='mb-6 max-w-3xl text-sm text-gray-400'>{subtitle}</p>
+      <p className='mb-6 max-w-3xl text-sm text-slate-400'>{subtitle}</p>
       {children}
     </section>
   );
@@ -243,11 +244,13 @@ function SectionBlock({
 
 export default function EntrainementHubPage() {
   return (
-    <div className='container pb-20 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
       <SectionTitle
         badge='RÉVISION'
-        badgeClassName='bg-cyan-500/20 text-cyan-200'
+        badgeClassName='text-cyan-200'
         title='Entraînement'
+        titleGradient
+        size='display'
         subtitle='Chaque outil est étiqueté E1 / E2 / E3 selon l’épreuve qu’il sert le plus. Enchaînez d’abord les fiches cours, puis le mode d’entraînement correspondant.'
         className='mb-12'
       />
@@ -277,26 +280,26 @@ export default function EntrainementHubPage() {
           <CardGrid items={cardsE3} />
         </SectionBlock>
 
-        <section className='border-t border-white/10 pt-12' aria-labelledby='ent-transversal'>
-          <h2 id='ent-transversal' className='font-display text-xl font-bold text-white md:text-2xl'>
+        <section className='border-t border-white/[0.08] pt-12' aria-labelledby='ent-transversal'>
+          <h2 id='ent-transversal' className='font-sans text-xl font-extrabold tracking-tight text-white md:text-2xl'>
             Transversal
           </h2>
-          <p className='mt-2 mb-6 max-w-3xl text-sm text-gray-400'>
+          <p className='mt-2 mb-6 max-w-3xl text-sm text-slate-400'>
             Parcours complet, simulations trois épreuves et guide : à combiner avec les sections ci-dessus.
           </p>
           <CardGrid items={cardsTransversal} />
         </section>
 
-        <p className='text-center text-sm text-gray-500'>
-          <Link href='/cours' className='text-cyan-400 underline-offset-2 hover:underline'>
+        <p className='text-center text-sm text-slate-500'>
+          <Link href='/cours' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>
             Retour aux cours (fiches F01–F15)
           </Link>
           {' · '}
-          <Link href='/epreuves' className='text-cyan-400 underline-offset-2 hover:underline'>
+          <Link href='/epreuves' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>
             Détail des trois épreuves
           </Link>
         </p>
       </div>
-    </div>
+    </InteriorPageShell>
   );
 }

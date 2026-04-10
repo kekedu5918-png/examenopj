@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { CourseModuleJsonLd } from '@/components/cours/CourseModuleJsonLd';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { ModuleEnquetesLinks } from '@/components/cours/ModuleEnquetesLinks';
 import { ModuleExamBridge } from '@/components/cours/ModuleExamBridge';
 import { ModuleProgressHeader } from '@/components/cours/ModuleProgressHeader';
@@ -55,7 +56,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
   const enquetesLiees = getEnquetesLinkedToModule(m.id);
 
   return (
-    <div className='container pb-20 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
       <CourseModuleJsonLd module={m} />
       <ModuleVisitRecorder moduleId={m.id} />
       <nav className='mb-6 text-sm text-gray-500'>
@@ -76,6 +77,9 @@ export default function CoursModuleDetailPage({ params }: Props) {
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title={m.titre}
         subtitle={m.domaineLabel}
+        size='display'
+        titleGradient
+        titleAs='h1'
         className='mb-8'
       />
 
@@ -215,6 +219,6 @@ export default function CoursModuleDetailPage({ params }: Props) {
           )}
         </nav>
       </article>
-    </div>
+    </InteriorPageShell>
   );
 }

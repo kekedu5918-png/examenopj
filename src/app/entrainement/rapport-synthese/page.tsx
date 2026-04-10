@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { RapportSyntheseAtelierClient } from '@/components/rapport-synthese/RapportSyntheseAtelierClient';
 import { RapportSyntheseModesSection } from '@/components/rapport-synthese/RapportSyntheseModesSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -19,12 +20,15 @@ export default async function RapportSynthesePage() {
   const ok = await hasPremiumAccess();
 
   return (
-    <div className='container max-w-7xl pb-24 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='7xl' glow='violet' pad='default'>
       <SectionTitle
         badge='Premium'
         badgeClassName='bg-examen-premium/25 text-violet-200'
         title='Atelier — rapport de synthèse'
         subtitle='Dossier pièces + rédaction type parquet + correction IA. Le chrono tourne en continu pendant la session.'
+        size='display'
+        titleGradient
+        titleAs='h1'
         className='mb-8'
       />
 
@@ -48,6 +52,6 @@ export default async function RapportSynthesePage() {
       ) : (
         <RapportSyntheseAtelierClient />
       )}
-    </div>
+    </InteriorPageShell>
   );
 }

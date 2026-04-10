@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import type { ProgrammeModuleItem } from '@/components/cours/ProgrammeClient';
 import { ProgrammeClient } from '@/components/cours/ProgrammeClient';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { APP_NAME } from '@/constants/site';
 import { courseModuleSyntheses } from '@/data/course-module-syntheses';
@@ -40,12 +41,15 @@ export default function ProgrammePage() {
     }));
 
   return (
-    <div className='container pb-24 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
       <SectionTitle
         badge='PROGRAMME'
         badgeClassName='bg-cyan-500/20 text-cyan-200'
         title='Sommaire du programme'
         subtitle="15 modules — DPS, DPG, Procédure pénale. Filtrez par domaine, cliquez un module pour voir les axes et les pièges à l'examen."
+        size='display'
+        titleGradient
+        titleAs='h1'
         className='mb-6'
       />
 
@@ -55,6 +59,6 @@ export default function ProgrammePage() {
       </p>
 
       <ProgrammeClient modules={modules} />
-    </div>
+    </InteriorPageShell>
   );
 }

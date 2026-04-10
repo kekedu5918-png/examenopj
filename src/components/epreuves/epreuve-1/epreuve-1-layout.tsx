@@ -2,14 +2,13 @@
 
 import { Epreuve1Header } from '@/components/epreuves/epreuve-1/epreuve-1-header';
 import { Epreuve1Sections } from '@/components/epreuves/epreuve-1/epreuve-1-sections';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 
 export function Epreuve1Layout() {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#100a0c] to-navy-950'>
-      <div className='mx-auto w-full max-w-7xl px-6'>
-        <Epreuve1Header />
-        <Epreuve1Sections />
-      </div>
-    </div>
+    <InteriorPageShell maxWidth='7xl' glow='rose' pad='none'>
+      <Epreuve1Header />
+      <Epreuve1Sections />
+    </InteriorPageShell>
   );
 }

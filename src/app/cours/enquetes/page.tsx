@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 import { EnqueteHub } from '@/components/enquetes/EnqueteHub';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -15,8 +16,7 @@ export const metadata: Metadata = {
 
 export default function EnquetesHubPage() {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950'>
-      <div className='container pb-20 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='6xl' glow='violet' pad='default'>
         <nav className='mb-6 text-sm text-gray-500'>
           <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
             Cours
@@ -29,6 +29,9 @@ export default function EnquetesHubPage() {
           badgeClassName='bg-violet-500/20 text-violet-200'
           title='Enquêtes — cœur du parcours'
           subtitle='Chaque fiche relie le scénario à l’épreuve 2 (articulation, PV, rapport). Filtrez par cadre procédural ; Alpha reste l’exemple complet gratuit.'
+          size='display'
+          titleGradient
+          titleAs='h1'
           className='mb-6'
         />
 
@@ -78,7 +81,6 @@ export default function EnquetesHubPage() {
         </GlassCard>
 
         <EnqueteHub enquetes={ENQUETES} />
-      </div>
-    </div>
+    </InteriorPageShell>
   );
 }

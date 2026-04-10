@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
+import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
 const colLink =
@@ -21,9 +21,8 @@ export function Footer() {
         {/* Top section */}
         <div className='mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end'>
           <div>
-            <div className='mb-3 flex items-center gap-2.5'>
-              <ExamenOpjLogo size={28} />
-              <span className='font-sans text-sm font-black tracking-[0.12em] text-white'>EXAMENOPJ</span>
+            <div className='mb-3'>
+              <BrandWordmark href='/' size='footer' />
             </div>
             <p className='max-w-xs text-sm leading-relaxed text-slate-500'>
               Préparation complète à l&apos;examen OPJ session 2026.

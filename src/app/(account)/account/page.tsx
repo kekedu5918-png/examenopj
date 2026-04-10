@@ -2,6 +2,7 @@ import { PropsWithChildren, ReactNode } from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Button } from '@/components/ui/button';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSubscription } from '@/features/account/controllers/get-subscription';
@@ -34,7 +35,8 @@ export default async function AccountPage() {
   }
 
   return (
-    <section className='rounded-lg bg-black px-4 py-16'>
+    <InteriorPageShell maxWidth='4xl' glow='cyan' pad='default'>
+    <section className='rounded-lg bg-black/40 px-4 py-12 ring-1 ring-white/10'>
       <h1 className='mb-8 text-center'>Account</h1>
 
       <div className='flex flex-col gap-4'>
@@ -60,6 +62,7 @@ export default async function AccountPage() {
         </Card>
       </div>
     </section>
+    </InteriorPageShell>
   );
 }
 

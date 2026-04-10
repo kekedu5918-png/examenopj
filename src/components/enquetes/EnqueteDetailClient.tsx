@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
 import { EnqueteArticulation } from '@/components/enquetes/EnqueteArticulation';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { EnquetePedagoPanel } from '@/components/enquetes/EnquetePedagoPanel';
 import { EnquetePV } from '@/components/enquetes/EnquetePV';
 import { EnqueteRapport } from '@/components/enquetes/EnqueteRapport';
@@ -77,8 +78,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
 
   if (isPedago) {
     return (
-      <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pb-24 pt-10 md:pt-14'>
-        <div className='mx-auto max-w-5xl px-4 md:px-6'>
+      <InteriorPageShell maxWidth='5xl' glow='violet' pad='default'>
           <nav className='mb-8 text-sm text-gray-500'>
             <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
               Cours
@@ -112,14 +112,12 @@ export function EnqueteDetailClient({ enquete }: Props) {
           </header>
 
           <EnquetePedagoPanel enquete={enquete} />
-        </div>
-      </div>
+      </InteriorPageShell>
     );
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pb-24 pt-10 md:pt-14'>
-      <div className='mx-auto max-w-5xl px-4 md:px-6'>
+    <InteriorPageShell maxWidth='5xl' glow='violet' pad='default'>
         <nav className='mb-8 text-sm text-gray-500'>
           <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
             Cours
@@ -208,7 +206,6 @@ export function EnqueteDetailClient({ enquete }: Props) {
             </TabsContent>
           ))}
         </Tabs>
-      </div>
-    </div>
+    </InteriorPageShell>
   );
 }

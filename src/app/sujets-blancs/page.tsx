@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { BookOpen, Lock, Sparkles } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SUJETS_BLANCS } from '@/data/sujets-blancs';
 import { cn } from '@/utils/cn';
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function SujetsBlancsIndexPage() {
   return (
-    <div className='container max-w-6xl pb-20 pt-10 md:pt-16'>
+    <InteriorPageShell maxWidth='6xl' glow='blue' pad='default' innerClassName='md:pt-16'>
       <header className='mx-auto max-w-3xl text-center'>
         <p className='text-xs font-bold uppercase tracking-widest text-examen-accent'>Simulation complète</p>
         <h1 className='mt-3 font-display text-3xl font-bold text-white md:text-4xl'>
@@ -71,6 +72,6 @@ export default function SujetsBlancsIndexPage() {
           </Link>
         ))}
       </div>
-    </div>
+    </InteriorPageShell>
   );
 }

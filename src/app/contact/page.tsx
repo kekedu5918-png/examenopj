@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'contact@examenopj.fr';
@@ -18,7 +19,8 @@ export default function ContactPage() {
   const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent('Contact ExamenOPJ')}`;
 
   return (
-    <article className='mx-auto max-w-2xl px-4 py-16 text-slate-300'>
+    <InteriorPageShell maxWidth='4xl' glow='cyan' pad='default'>
+    <article className='mx-auto max-w-2xl text-slate-300'>
       <h1 className='mb-4 font-display text-3xl font-bold text-white'>Contact</h1>
       <p className='mb-8 text-sm leading-relaxed text-slate-400'>
         Pour toute question sur l&apos;abonnement, un problème technique ou une demande liée aux données personnelles,
@@ -35,5 +37,6 @@ export default function ContactPage() {
         <code className='rounded bg-slate-800 px-1.5 py-0.5 text-slate-300'>NEXT_PUBLIC_CONTACT_EMAIL</code>.
       </p>
     </article>
+    </InteriorPageShell>
   );
 }

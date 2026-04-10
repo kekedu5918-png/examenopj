@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { RedactionPVAtelierClient } from '@/components/redaction-pv/RedactionPVAtelierClient';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { SUJETS_REDACTION_PV } from '@/data/sujets-redaction-pv';
@@ -31,12 +32,15 @@ export default async function RedactionPVPage({ searchParams }: Props) {
   const initialSujetId = bySujet ?? byModele;
 
   return (
-    <div className='container max-w-7xl pb-24 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='7xl' glow='violet' pad='default'>
       <SectionTitle
         badge='Premium'
         badgeClassName='bg-examen-premium/25 text-violet-200'
         title='Atelier — rédaction de procès-verbal'
         subtitle='Mise en situation, rédaction libre, correction IA avec note sur 20 et relevé des éléments obligatoires. Chronomètre au démarrage de la session.'
+        size='display'
+        titleGradient
+        titleAs='h1'
         className='mb-8'
       />
 
@@ -62,6 +66,6 @@ export default async function RedactionPVPage({ searchParams }: Props) {
           <RedactionPVAtelierClient key={initialSujetId ?? 'default'} initialSujetId={initialSujetId} />
         </Suspense>
       )}
-    </div>
+    </InteriorPageShell>
   );
 }

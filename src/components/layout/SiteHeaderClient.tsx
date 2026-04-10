@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Flame, Menu, X } from 'lucide-react';
 
 import { AccountMenu } from '@/components/account-menu';
-import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
+import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import {
   DropdownMenu,
@@ -22,6 +22,8 @@ import { cn } from '@/utils/cn';
 type TrialReminder = { daysLeft: number; endsAtIso: string };
 
 type SiteHeaderClientProps = {
+  /** Accueil marketing (/) ou espace connecté (/accueil) */
+  homeHref: string;
   isLoggedIn: boolean;
   isPremium: boolean;
   signOut: () => Promise<ActionResponse>;
@@ -66,6 +68,7 @@ const entrainerLinks = [
 ] as const;
 
 export function SiteHeaderClient({
+  homeHref,
   isLoggedIn,
   isPremium,
   signOut,
@@ -137,16 +140,7 @@ export function SiteHeaderClient({
         aria-label='Navigation principale'
       >
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
-          <Link
-            href='/'
-            className='flex min-w-0 shrink items-center gap-2 font-sans text-sm font-black tracking-[0.12em] text-white no-underline'
-            aria-label='ExamenOPJ — accueil'
-          >
-            <span className='inline-flex shrink-0 rounded-lg bg-white/[0.08] p-1 ring-1 ring-white/[0.12]'>
-              <ExamenOpjLogo size={32} className='block' />
-            </span>
-            <span className='hidden min-w-0 sm:inline'>EXAMENOPJ</span>
-          </Link>
+          <BrandWordmark href={homeHref} className='min-w-0 shrink' />
 
           <nav className='hidden flex-1 items-center justify-center gap-1 lg:flex' aria-label='Menu'>
             <DropdownMenu>

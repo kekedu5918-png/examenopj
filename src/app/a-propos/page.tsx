@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { LegalProse } from '@/components/legal/legal-prose';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
 
 export default function AProposPage() {
   return (
-    <LegalProse title={title}>
+    <InteriorPageShell maxWidth='4xl' glow='blue' pad='default'>
+    <LegalProse title={title} className='px-0 py-0'>
       <section className='not-prose space-y-4'>
         <h2 className='font-display text-xl font-bold text-white'>Qui crée ce contenu ?</h2>
         <div className='space-y-4 text-base leading-relaxed text-slate-300'>
@@ -63,5 +65,6 @@ export default function AProposPage() {
         Site indépendant · Non affilié à l&apos;administration
       </p>
     </LegalProse>
+    </InteriorPageShell>
   );
 }

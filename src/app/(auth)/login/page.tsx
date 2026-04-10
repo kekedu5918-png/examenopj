@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 import { safeInternalPath } from '@/utils/safe-internal-path';
@@ -38,8 +39,9 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
   const banner = loginQueryBanner(searchParams.error);
 
   return (
-    <main className='mx-auto flex min-h-[70vh] w-full max-w-md items-center px-4'>
-      <div className='w-full space-y-4 rounded-xl border border-slate-800 bg-slate-950 p-6'>
+    <InteriorPageShell maxWidth='4xl' glow='violet' pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
+    <main className='w-full max-w-md'>
+      <div className='w-full space-y-4 rounded-3xl border border-slate-800/90 bg-slate-950/95 p-6 shadow-xl shadow-black/25 backdrop-blur-sm'>
         <h1 className='text-2xl font-bold text-slate-100'>Connexion</h1>
         {banner ? (
           <p className='rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200'>
@@ -63,5 +65,6 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
         </p>
       </div>
     </main>
+    </InteriorPageShell>
   );
 }

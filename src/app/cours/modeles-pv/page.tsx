@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { ModelesPVIndexClient } from '@/components/modeles-pv/ModelesPVIndexClient';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { MODELES_PV } from '@/data/modeles-pv';
@@ -22,19 +23,22 @@ function ModelesPVFallback() {
 
 export default function ModelesPVIndexPage() {
   return (
-    <div className='min-h-screen'>
-      <div className='container max-w-6xl border-b border-white/[0.06] px-4 pb-6 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='6xl' glow='emerald' pad='default'>
+      <div className='border-b border-white/[0.06] pb-6'>
         <SectionTitle
           badge='Cours'
           badgeClassName='bg-emerald-500/20 text-emerald-200'
           title='Modèles de procès-verbaux — Fascicule officiel SDCP'
           subtitle='Mise en forme officielle, formules légales et cartouches — reproduits mot pour mot depuis le fascicule La procédure pénale policière (version 01/12/2025). Vérifiez toujours votre édition et Légifrance.'
+          size='display'
+          titleGradient
+          titleAs='h1'
           className='mb-0'
         />
       </div>
       <Suspense fallback={<ModelesPVFallback />}>
         <ModelesPVIndexClient modeles={MODELES_PV} />
       </Suspense>
-    </div>
+    </InteriorPageShell>
   );
 }

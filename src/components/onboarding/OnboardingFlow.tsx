@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useTransition } from 'react';
+import { useState, useTransition, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { completeDiagnostic, saveOnboardingStage } from '@/features/onboarding/actions/onboarding-actions';
@@ -24,6 +25,24 @@ const STAGES = [
   'Votre plan',
 ] as const;
 
+const ONBOARDING_SHELL_INNER =
+  'flex min-h-screen flex-col items-center justify-center px-4 py-10';
+
+function OnboardingScreenShell({ children }: { children: ReactNode }) {
+  return (
+    <InteriorPageShell
+      fullBleed
+      bleedBgClassName='bg-slate-950'
+      maxWidth='full'
+      glow='violet'
+      pad='none'
+      innerClassName={ONBOARDING_SHELL_INNER}
+    >
+      {children}
+    </InteriorPageShell>
+  );
+}
+
 // ─────────────────────────────────────────────────────────
 // Wrapper commun d'un écran
 // ─────────────────────────────────────────────────────────
@@ -41,7 +60,7 @@ function OnboardingStage({
   children: React.ReactNode;
 }) {
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 py-10'>
+    <OnboardingScreenShell>
       <div className='w-full max-w-lg'>
         {/* Breadcrumb */}
         <div className='mb-2 flex items-center gap-2'>
@@ -74,7 +93,7 @@ function OnboardingStage({
           {children}
         </div>
       </div>
-    </div>
+    </OnboardingScreenShell>
   );
 }
 
@@ -397,7 +416,7 @@ function Stage4Results({ result }: { result: DiagnosticResult }) {
   const meta = LEVEL_META[result.level] ?? LEVEL_META['Débutant'];
 
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 py-10'>
+    <OnboardingScreenShell>
       <div className='w-full max-w-lg space-y-5'>
         {/* Résultat */}
         <div className='rounded-2xl border border-cyan-500/30 bg-slate-900 p-6 shadow-2xl'>
@@ -507,7 +526,7 @@ function Stage4Results({ result }: { result: DiagnosticResult }) {
           </Button>
         </div>
       </div>
-    </div>
+    </OnboardingScreenShell>
   );
 }
 
@@ -516,7 +535,7 @@ function Stage4Results({ result }: { result: DiagnosticResult }) {
 // ─────────────────────────────────────────────────────────
 function Stage0Welcome({ onStart }: { onStart: () => void }) {
   return (
-    <div className='flex min-h-screen flex-col items-center justify-center bg-slate-950 px-4 py-10'>
+    <OnboardingScreenShell>
       <div className='w-full max-w-lg text-center'>
         <div className='mb-6 text-6xl'>🎓</div>
         <h1 className='mb-3 text-3xl font-bold text-slate-50'>
@@ -552,7 +571,7 @@ function Stage0Welcome({ onStart }: { onStart: () => void }) {
         </Button>
         <p className='mt-3 text-xs text-slate-500'>⏱ Durée estimée : 2 minutes</p>
       </div>
-    </div>
+    </OnboardingScreenShell>
   );
 }
 
@@ -598,13 +617,13 @@ export function OnboardingFlow() {
 
   if (isPending && stage === 3) {
     return (
-      <div className='flex min-h-screen flex-col items-center justify-center bg-slate-950'>
+      <OnboardingScreenShell>
         <div className='text-center'>
           <div className='mb-4 text-4xl'>⚙️</div>
           <p className='text-xl font-bold text-slate-50'>Génération de votre plan…</p>
           <p className='mt-2 text-sm text-slate-400'>Analyse de vos réponses en cours</p>
         </div>
-      </div>
+      </OnboardingScreenShell>
     );
   }
 

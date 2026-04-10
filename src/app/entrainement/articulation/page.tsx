@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { ArticulationModesShell } from '@/components/entrainement/ArticulationModesShell';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { getEnqueteById } from '@/data/enquetes-data';
 
 export const metadata: Metadata = {
@@ -21,5 +22,9 @@ function suggestedTitreFromRef(ref: string | undefined): string | undefined {
 export default function EntrainementArticulationPage({ searchParams }: Props) {
   const ref = searchParams?.ref?.toLowerCase();
   const suggestedTitre = suggestedTitreFromRef(ref);
-  return <ArticulationModesShell referenceEnqueteId={ref} suggestedTitre={suggestedTitre} />;
+  return (
+    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+      <ArticulationModesShell referenceEnqueteId={ref} suggestedTitre={suggestedTitre} />
+    </InteriorPageShell>
+  );
 }

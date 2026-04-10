@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { LegalProse, LegalSection } from '@/components/legal/legal-prose';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <LegalProse title='Mentions légales'>
+    <InteriorPageShell maxWidth='4xl' glow='none' pad='default'>
+    <LegalProse title='Mentions légales' className='px-0 py-0'>
       <LegalSection title='Éditeur du site'>
         <p>
           <strong>Raison sociale : ExamenOPJ</strong>
@@ -82,5 +84,6 @@ export default function MentionsLegalesPage() {
 
       <p className='text-xs text-slate-500'>Dernière mise à jour : avril 2026.</p>
     </LegalProse>
+    </InteriorPageShell>
   );
 }

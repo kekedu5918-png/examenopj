@@ -112,20 +112,22 @@ export function HeroSection() {
             <span className='text-xs text-slate-400'>Mis à jour : {SITE_LAST_UPDATED_LABEL}</span>
           </motion.div>
 
-          {/* Titre principal */}
+          {/* Titre principal — dégradé doux type premium (pas de cyan flashy) */}
           <div className='space-y-2'>
             <motion.h1
-              className='font-display text-5xl font-normal leading-[1.08] tracking-tight text-white sm:text-6xl md:text-[4rem] lg:text-[3.5rem] xl:text-[4.25rem]'
+              className='font-display text-5xl font-normal leading-[1.06] tracking-tight sm:text-6xl md:text-[4rem] lg:text-[3.5rem] xl:text-[4.25rem]'
               initial={MOTION_INITIAL_FOR_SEO}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.06 }}
             >
-              Réussissez{' '}
-              <span
-                className='inline-block bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-500 bg-clip-text text-transparent'
-                style={{ backgroundSize: '200% auto' }}
-              >
-                l&apos;examen OPJ.
+              <span className='block text-white'>Réussissez</span>
+              <span className='mt-1 block'>
+                <span
+                  className='relative inline-block bg-gradient-to-br from-[#f8fafc] via-[#e0e7ff] to-[#a5b4fc] bg-clip-text text-transparent drop-shadow-[0_2px_32px_rgba(129,140,248,0.22)]'
+                >
+                  l&apos;examen OPJ
+                </span>
+                <span className='text-white'>.</span>
               </span>
             </motion.h1>
 

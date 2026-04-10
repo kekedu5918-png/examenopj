@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { QuizPageClient } from '@/components/quiz/quiz-page-client';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -18,7 +19,12 @@ export default async function QuizPage() {
 
   return (
     <Suspense
-      fallback={<div className='min-h-[50vh] bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950' aria-hidden />}
+      fallback={
+        <InteriorPageShell maxWidth='6xl' glow='blue' pad='default' innerClassName='flex min-h-[50vh] items-center justify-center'>
+          <p className='sr-only'>Chargement du quiz…</p>
+          <div className='h-10 w-10 animate-pulse rounded-full bg-white/10' aria-hidden />
+        </InteriorPageShell>
+      }
     >
       <QuizPageClient initialAccess={access} />
     </Suspense>

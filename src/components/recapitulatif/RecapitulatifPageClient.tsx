@@ -3,6 +3,7 @@
 import { Fragment, useEffect, useMemo, useState } from 'react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -71,19 +72,24 @@ export function RecapitulatifPageClient({
   const compact = vueConcours;
 
   return (
-    <div
+    <InteriorPageShell
       id='recap-print-root'
-      className='container pb-20 pt-10 print:bg-white print:text-black print:[&_.text-gray-200]:!text-black print:[&_.text-gray-300]:!text-neutral-800 print:[&_.text-gray-400]:!text-neutral-700'
+      maxWidth='7xl'
+      glow='emerald'
+      pad='default'
+      className='print:bg-white print:text-black print:[&_.text-gray-200]:!text-black print:[&_.text-gray-300]:!text-neutral-800 print:[&_.text-gray-400]:!text-neutral-700'
     >
       <SectionTitle
         badge='SYNTHÈSE'
-        badgeClassName='bg-emerald-500/20 text-emerald-200 print:border print:border-neutral-300'
+        badgeClassName='text-emerald-200 print:border print:border-neutral-300'
         title='Récapitulatif'
+        titleGradient
+        size='display'
         subtitle="Vue d'ensemble des éléments constitutifs (légal, matériel, moral) — titres condensés"
         className='mb-8 print:text-black'
       />
 
-      <GlassCard className='mb-8 space-y-4 p-6 print:hidden' padding=''>
+      <GlassCard radius='3xl' topGlow className='mb-8 space-y-4 p-6 print:hidden' padding=''>
         <p className='text-sm text-gray-400'>
           Filtre par fascicule. La colonne « Élément légal » est calée sur les rubriques{' '}
           <strong className='text-gray-200'>« I – Élément légal »</strong> des fascicules SDCP (réf. juin 2026, version au{' '}
@@ -256,6 +262,6 @@ export function RecapitulatifPageClient({
           </tbody>
         </table>
       </div>
-    </div>
+    </InteriorPageShell>
   );
 }

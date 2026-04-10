@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { BookOpen, Check, Circle, ClipboardList, FlaskConical, RotateCcw, Trophy } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { ProgressRing } from '@/components/ui/ProgressRing';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { cn } from '@/utils/cn';
@@ -196,14 +197,7 @@ export function ParcoursCandidatClient() {
   const days = mounted ? daysUntilExam() : null;
 
   return (
-    <div className='relative pb-24 pt-8 md:pt-12'>
-      <div
-        className='pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(100%,900px)] -translate-x-1/2 opacity-30'
-        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -10%, #3b82f6, transparent)' }}
-        aria-hidden
-      />
-
-      <div className='relative mx-auto max-w-6xl px-4'>
+    <InteriorPageShell maxWidth='6xl' glow='blue' pad='default' innerClassName='pt-8 md:pt-12'>
         <nav className='mb-8 flex flex-wrap items-center gap-2 text-sm' aria-label="Fil d'Ariane">
           <Link
             href='/entrainement'
@@ -428,7 +422,6 @@ export function ParcoursCandidatClient() {
           })}
         </ul>
         </div>
-      </div>
-    </div>
+    </InteriorPageShell>
   );
 }

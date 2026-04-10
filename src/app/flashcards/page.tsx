@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
@@ -23,9 +24,9 @@ export default async function FlashcardsPage() {
   return (
     <Suspense
       fallback={
-        <div className='container flex min-h-[40vh] items-center justify-center pb-16 pt-10 text-gray-400'>
+        <InteriorPageShell maxWidth='6xl' glow='amber' pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
           Chargement des flashcards…
-        </div>
+        </InteriorPageShell>
       }
     >
       <FlashcardsPageClient initialAccess={access} />

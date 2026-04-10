@@ -2,14 +2,28 @@
 
 import { Epreuve3Header } from '@/components/epreuves/epreuve-3/epreuve-3-header';
 import { Epreuve3Sections } from '@/components/epreuves/epreuve-3/epreuve-3-sections';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 
-export function Epreuve3Layout() {
+type Epreuve3LayoutProps = {
+  /** Quand false, le contenu est rendu sans enveloppe (ex. page parente fournit déjà le shell). */
+  wrapWithShell?: boolean;
+};
+
+export function Epreuve3Layout({ wrapWithShell = true }: Epreuve3LayoutProps) {
+  const inner = (
+    <>
+      <Epreuve3Header />
+      <Epreuve3Sections />
+    </>
+  );
+
+  if (!wrapWithShell) {
+    return inner;
+  }
+
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950'>
-      <div className='mx-auto w-full max-w-7xl px-6'>
-        <Epreuve3Header />
-        <Epreuve3Sections />
-      </div>
-    </div>
+    <InteriorPageShell maxWidth='7xl' glow='violet' pad='none'>
+      {inner}
+    </InteriorPageShell>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandidat';
 import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
@@ -55,8 +56,8 @@ const hubLinks = [
 
 export default function CoursHubPage() {
   return (
-    <div className='container pb-24 pt-10 md:pt-14'>
-      <div className='relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-navy-900/80 via-navy-950 to-navy-950 p-8 md:p-12'>
+    <InteriorPageShell maxWidth='6xl' glow='violet' pad='default'>
+      <div className='relative overflow-hidden rounded-3xl border border-white/[0.1] bg-gradient-to-br from-navy-900/80 via-navy-950 to-navy-950 p-8 shadow-xl shadow-black/30 ring-1 ring-white/[0.05] md:p-12'>
         <div
           className='pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl'
           aria-hidden
@@ -67,8 +68,10 @@ export default function CoursHubPage() {
         />
         <SectionTitle
           badge='PARCOURS'
-          badgeClassName='bg-violet-500/25 text-violet-200'
+          badgeClassName='text-violet-200'
           title='Cours'
+          titleGradient
+          size='display'
           subtitle='Pas besoin de suivre l’ordre F01–F15 pour bien réviser. Commencez par ce qui structure votre métier (fondamentaux + qualifications), enchaînez avec les thèmes que l’examen OPJ cible souvent (P0), puis le fil en 7 leçons ou le parcours candidat selon votre niveau.'
           className='relative mb-0 text-left md:max-w-3xl'
         />
@@ -116,7 +119,7 @@ export default function CoursHubPage() {
       </div>
 
       <div className='mt-16'>
-        <h2 className='mb-2 font-display text-xl font-bold text-white'>Autres accès</h2>
+        <h2 className='mb-2 font-sans text-xl font-extrabold tracking-tight text-white'>Autres accès</h2>
         <p className='mb-6 text-sm text-gray-500'>Outils complémentaires (hors ordre F01–F15).</p>
         <ul className='grid gap-5 md:grid-cols-2'>
           {hubLinks.map((l) => (
@@ -124,10 +127,12 @@ export default function CoursHubPage() {
               <Link href={l.href} className='block focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500/50'>
                 <GlassCard
                   hover
+                  radius='3xl'
+                  topGlow
                   padding='p-6'
                   className={cn('h-full border-white/10 bg-gradient-to-br transition hover:border-cyan-500/25', l.accent)}
                 >
-                  <h3 className='font-display text-lg font-bold text-white'>{l.title}</h3>
+                  <h3 className='font-sans text-lg font-extrabold text-white'>{l.title}</h3>
                   <p className='mt-2 text-sm text-gray-400'>{l.desc}</p>
                   <p className='mt-4 text-sm font-medium text-cyan-300'>Ouvrir →</p>
                 </GlassCard>
@@ -143,6 +148,6 @@ export default function CoursHubPage() {
           (titres F01–F15) ? Un seul lien : croisement avec votre documentation papier.
         </p>
       </div>
-    </div>
+    </InteriorPageShell>
   );
 }

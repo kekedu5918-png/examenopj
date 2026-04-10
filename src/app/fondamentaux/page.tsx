@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { FondamentauxPage } from '@/components/fondamentaux/FondamentauxPage';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -21,7 +22,13 @@ export default async function FondamentauxRoutePage() {
   const access = await getContentAccess();
 
   return (
-    <Suspense fallback={<div className='min-h-[40vh] bg-navy-950' />}>
+    <Suspense
+      fallback={
+        <InteriorPageShell maxWidth='full' glow='emerald' pad='none' className='min-h-[40vh]' innerClassName='min-h-[40vh]'>
+          <p className='sr-only'>Chargement des fondamentaux…</p>
+        </InteriorPageShell>
+      }
+    >
       <FondamentauxPage fiches={FICHES} categories={CATEGORIES} contentLocked={access.tier === 'freemium'} />
     </Suspense>
   );

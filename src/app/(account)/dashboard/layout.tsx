@@ -2,6 +2,7 @@ import { PropsWithChildren } from 'react';
 import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 
@@ -21,5 +22,9 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
     redirect('/pricing');
   }
 
-  return <div className='min-h-[60vh]'>{children}</div>;
+  return (
+    <InteriorPageShell maxWidth='7xl' glow='blue' pad='default' className='min-h-[60vh]'>
+      {children}
+    </InteriorPageShell>
+  );
 }

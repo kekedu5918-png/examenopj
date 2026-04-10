@@ -9,6 +9,7 @@ import {
   FreemiumDailyQuotaProgress,
   FreemiumFlashcardsDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
@@ -317,12 +318,14 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
   const fascMeta = prepared ? fasciculeMeta(prepared.card.fascicule) : null;
 
   return (
-    <div className='container pb-16 pt-10'>
+    <InteriorPageShell maxWidth='6xl' glow='amber' pad='compact'>
       <SectionTitle
         badge='MÉMORISATION'
-        badgeClassName='bg-amber-500/20 text-amber-300'
+        badgeClassName='text-amber-200'
         title='Flashcards'
-        subtitle='Révisez en retournant les cartes'
+        titleGradient
+        size='display'
+        subtitle='Révisez en retournant les cartes — même référentiel que le récap et les quiz.'
         className='mb-10'
       />
 
@@ -516,6 +519,6 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
           onChangeFascicule={handleChangeFascicule}
         />
       )}
-    </div>
+    </InteriorPageShell>
   );
 }

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import { GuideBreadcrumbJsonLd } from '@/components/guide/GuideBreadcrumbJsonLd';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { GuideEpreuvesAccordion } from '@/components/guide/GuideEpreuvesAccordion';
 import { GuideFaqJsonLd } from '@/components/guide/GuideFaqJsonLd';
 import { StickyToc } from '@/components/ui/StickyToc';
@@ -112,10 +113,12 @@ export default function GuideRevisionOpjPage() {
       <GuideBreadcrumbJsonLd />
       <GuideFaqJsonLd />
 
-      {/* Layout 2 colonnes : StickyToc + article */}
-      <div className='mx-auto flex max-w-5xl gap-8 px-4 py-12 pb-24 md:py-16'>
-
-        {/* StickyToc sidebar */}
+      <InteriorPageShell
+        maxWidth='5xl'
+        glow='blue'
+        pad='default'
+        innerClassName='flex flex-col gap-8 md:flex-row md:items-start'
+      >
         <StickyToc items={TOC_ITEMS} title='Sommaire' className='w-48 shrink-0' />
 
         {/* Contenu principal */}
@@ -261,7 +264,7 @@ export default function GuideRevisionOpjPage() {
             </Link>
           </footer>
         </article>
-      </div>
+      </InteriorPageShell>
     </>
   );
 }

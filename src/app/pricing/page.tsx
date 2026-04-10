@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
 import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
@@ -41,12 +42,7 @@ export default async function PricingPage() {
 
   if (!monthly && !exam) {
     return (
-      <div className='relative mx-auto max-w-4xl px-4 py-16 md:py-24'>
-        <div
-          className='pointer-events-none absolute left-1/2 top-0 h-[320px] w-full max-w-[700px] -translate-x-1/2 opacity-20'
-          style={{ background: 'radial-gradient(ellipse 80% 50% at 50% -10%, #6366f1, transparent)' }}
-          aria-hidden
-        />
+      <InteriorPageShell maxWidth='4xl' glow='violet' pad='default' innerClassName='py-16 md:py-24'>
         <header className='relative mb-12 text-center'>
           <h1 className='bg-gradient-to-br from-white via-slate-100 to-violet-200/90 bg-clip-text font-sans text-3xl font-extrabold tracking-tight text-transparent md:text-4xl'>
             Choisissez votre accès
@@ -56,7 +52,7 @@ export default async function PricingPage() {
           </p>
         </header>
         <PricingFallbackPlans />
-      </div>
+      </InteriorPageShell>
     );
   }
 

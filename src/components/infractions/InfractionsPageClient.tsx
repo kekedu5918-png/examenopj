@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import { BookOpen, MessageCircle } from 'lucide-react';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { InfractionDetailBubble } from '@/components/infractions/InfractionDetailBubble';
@@ -212,12 +213,14 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const listRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className='container pb-20 pt-10'>
+    <InteriorPageShell maxWidth='6xl' glow='rose' pad='default'>
       <h1 className='sr-only'>Référentiel des infractions</h1>
       <SectionTitle
         badge='RÉFÉRENTIEL'
-        badgeClassName='bg-slate-500/20 text-slate-300'
+        badgeClassName='text-rose-200'
         title='Infractions'
+        titleGradient
+        size='display'
         subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Utilise le filtre par fascicule et la recherche pour cibler tes révisions. Familles (personnes, biens…) et probabilité à l’examen : le plus attendu d’abord.'
         className='mb-6'
       />
@@ -226,7 +229,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
       <ContentReviewStrip className='mb-8' />
 
-      <GlassCard className='mb-8 space-y-4 p-6' padding=''>
+      <GlassCard radius='3xl' topGlow className='mb-8 space-y-4 p-6' padding=''>
         <div className='flex flex-col gap-4 lg:flex-row lg:items-end'>
           <div className='min-w-0 flex-1 space-y-2'>
             <label htmlFor='inf-search' className='text-sm font-medium text-gray-300'>
@@ -355,7 +358,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       {filtered.length === 0 ? (
         <p className='py-12 text-center text-gray-500'>Aucune infraction ne correspond à ta recherche.</p>
       ) : null}
-    </div>
+    </InteriorPageShell>
   );
 }
 

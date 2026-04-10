@@ -2,14 +2,15 @@ import Link from 'next/link';
 
 import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
 import { Epreuve2Layout } from '@/components/epreuves/epreuve-2/epreuve-2-layout';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { getContentAccess } from '@/features/access/get-content-access';
 
 export default async function Epreuve2Page() {
   const access = await getContentAccess();
   if (access.tier === 'freemium') {
     return (
-      <div className='min-h-screen bg-navy-950'>
-        <div className='mx-auto max-w-3xl px-4 py-4 text-center'>
+      <InteriorPageShell maxWidth='6xl' glow='blue' pad='compact'>
+        <div className='mx-auto max-w-3xl py-2 text-center'>
           <Link
             href='/cours/enquetes'
             className='text-sm font-medium text-violet-300 underline-offset-4 hover:text-violet-200 hover:underline'
@@ -23,7 +24,7 @@ export default async function Epreuve2Page() {
         >
           <div className='min-h-[80vh] bg-navy-950' />
         </ContentPremiumOverlay>
-      </div>
+      </InteriorPageShell>
     );
   }
   return <Epreuve2Layout />;

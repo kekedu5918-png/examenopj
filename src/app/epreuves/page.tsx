@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, ClipboardCheck, Mic, Scale } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -65,8 +66,7 @@ const epreuves = [
 
 export default function EpreuvesHubPage() {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950'>
-      <div className='mx-auto max-w-7xl px-6 pb-20 pt-10 md:pt-16'>
+    <InteriorPageShell maxWidth='7xl' glow='amber' pad='default' innerClassName='md:pt-16'>
         <nav className='mb-8 text-sm text-gray-500'>
           <Link href='/' className='text-violet-400 hover:text-violet-300'>
             Accueil
@@ -82,6 +82,9 @@ export default function EpreuvesHubPage() {
           badgeClassName='bg-gold-500/20 text-gold-200'
           title='Les trois épreuves'
           subtitle='Ce que les correcteurs attendent — méthode commune et liens vers chaque épreuve détaillée'
+          size='display'
+          titleGradient
+          titleAs='h1'
           className='mb-10 max-w-3xl'
         />
 
@@ -169,7 +172,6 @@ export default function EpreuvesHubPage() {
             Récap infractions
           </Link>
         </div>
-      </div>
-    </div>
+    </InteriorPageShell>
   );
 }

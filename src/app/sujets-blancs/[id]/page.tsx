@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { PrepareSujetBlancPrerequis } from '@/components/sujets-blancs/PrepareSujetBlancPrerequis';
 import { SujetBlancDetailClient } from '@/components/sujets-blancs/SujetBlancDetailClient';
 import { getSujetBlancById, getSujetsBlancsIds } from '@/data/sujets-blancs';
@@ -29,7 +30,7 @@ export default async function SujetBlancDetailPage({ params }: Props) {
   const userHasPremium = await hasPremiumAccess();
 
   return (
-    <div className='container max-w-4xl pb-24 pt-10 md:pt-14'>
+    <InteriorPageShell maxWidth='4xl' glow='blue' pad='default'>
       <nav className='mb-6 text-sm text-examen-inkMuted'>
         <Link href='/sujets-blancs' className='text-examen-accent hover:underline'>
           Sujets blancs
@@ -47,6 +48,6 @@ export default async function SujetBlancDetailPage({ params }: Props) {
       <PrepareSujetBlancPrerequis sujet={sujet} />
 
       <SujetBlancDetailClient sujet={sujet} userHasPremium={userHasPremium} />
-    </div>
+    </InteriorPageShell>
   );
 }

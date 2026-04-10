@@ -5,6 +5,7 @@ import { isRedirectError } from 'next/dist/client/components/redirect';
 import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import type { Price } from '@/features/pricing/types';
 import { cn } from '@/utils/cn';
@@ -91,13 +92,7 @@ export function PricingThreeColumnPage({
   }
 
   return (
-    <div className='relative mx-auto max-w-5xl px-4 py-14 md:py-20'>
-      <div
-        className='pointer-events-none absolute left-1/2 top-0 h-[360px] w-[min(100%,800px)] -translate-x-1/2 opacity-25'
-        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% -15%, #6366f1, transparent)' }}
-        aria-hidden
-      />
-
+    <InteriorPageShell maxWidth='5xl' glow='violet' pad='default' innerClassName='py-14 md:py-20'>
       <header className='relative mb-12 text-center'>
         <SectionTitle
           badge='TARIFS'
@@ -242,6 +237,6 @@ export function PricingThreeColumnPage({
           Site indépendant · Non affilié à l’administration
         </p>
       </div>
-    </div>
+    </InteriorPageShell>
   );
 }

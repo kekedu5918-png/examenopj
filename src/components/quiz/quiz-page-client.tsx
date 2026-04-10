@@ -10,6 +10,7 @@ import {
   FreemiumDailyQuotaProgress,
   FreemiumQuizDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { LANDING_EASE } from '@/components/home/motion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -306,7 +307,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'quiz') {
     return (
-      <div className='min-h-screen bg-[#080F1E] pt-8'>
+      <InteriorPageShell fullBleed maxWidth='full' glow='cyan' pad='none' innerClassName='pt-8'>
         <div className='mx-auto mb-4 max-w-2xl px-4 text-center'>
           <button
             type='button'
@@ -321,13 +322,13 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         ) : (
           <QuizInterface questions={sessionQuestions} onComplete={handleQuizComplete} />
         )}
-      </div>
+      </InteriorPageShell>
     );
   }
 
   if (phase === 'result') {
     return (
-      <div className='min-h-screen bg-[#080F1E]'>
+      <InteriorPageShell fullBleed maxWidth='6xl' glow='violet' pad='default'>
         <QuizResult
           correct={result.correct}
           total={result.total}
@@ -335,42 +336,41 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           onRecommencer={handleRecommencer}
           onChangerMode={handleChangerMode}
         />
-      </div>
+      </InteriorPageShell>
     );
   }
 
   if (phase === 'setup' && maxDailyQuiz != null && quizUsedToday >= maxDailyQuiz) {
     return (
-      <div className='relative min-h-screen overflow-hidden bg-[#080F1E] px-4 pb-24 pt-12 md:px-6 md:pt-16'>
-        <div className='mx-auto max-w-5xl'>
-          <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-10'>
-            <motion.div variants={headerItem}>
-              <SectionTitle
-                badge='ENTRAÎNEMENT'
-                badgeClassName='bg-cyan-500/20 text-cyan-300'
-                title='Quiz OPJ'
-                subtitle='QCM ou mode hardcore : réponses libres, comme à l’oral ou au papier'
-                className='[&_h2]:font-display [&_h2]:text-4xl [&_h2]:font-bold [&_h2]:text-white md:[&_h2]:text-5xl'
-              />
-            </motion.div>
-          </motion.header>
-          <FreemiumQuizDailyLimitWall />
-        </div>
-      </div>
+      <InteriorPageShell fullBleed maxWidth='5xl' glow='blue' pad='default'>
+        <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-10'>
+          <motion.div variants={headerItem}>
+            <SectionTitle
+              badge='ENTRAÎNEMENT'
+              badgeClassName='text-cyan-300'
+              title='Quiz OPJ'
+              titleGradient
+              size='display'
+              subtitle='QCM ou mode hardcore : réponses libres, comme à l’oral ou au papier'
+            />
+          </motion.div>
+        </motion.header>
+        <FreemiumQuizDailyLimitWall />
+      </InteriorPageShell>
     );
   }
 
   return (
-    <div className='relative min-h-screen overflow-hidden bg-[#080F1E] px-4 pb-24 pt-12 md:px-6 md:pt-16'>
-      <div className='mx-auto max-w-5xl'>
+    <InteriorPageShell fullBleed maxWidth='5xl' glow='blue' pad='default'>
         <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-12'>
           <motion.div variants={headerItem}>
             <SectionTitle
               badge='ENTRAÎNEMENT'
-              badgeClassName='bg-blue-500/15 text-blue-300 border-blue-500/20'
+              badgeClassName='text-blue-300'
               title='Quiz OPJ'
+              titleGradient
+              size='display'
               subtitle='QCM ou mode hardcore : réponses libres, comme à l’oral ou au papier'
-              className='[&_h2]:text-4xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-white md:[&_h2]:text-5xl'
             />
           </motion.div>
         </motion.header>
@@ -618,11 +618,10 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           >
             Lancer le quiz →
           </button>
-          <Link href='/' className='text-sm text-gray-500 hover:text-gray-300'>
+          <Link href='/' className='text-sm text-slate-500 hover:text-slate-300'>
             ← Retour à l&apos;accueil
           </Link>
         </div>
-      </div>
-    </div>
+    </InteriorPageShell>
   );
 }

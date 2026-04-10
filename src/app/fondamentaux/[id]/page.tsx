@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 
 import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { FREEMIUM_UNLOCKED_IDS } from '@/components/fondamentaux/fondamentaux-theme';
 import { FondamentauxFicheDetail } from '@/components/fondamentaux/FondamentauxFicheDetail';
 import { FondamentauxViewTracker } from '@/components/fondamentaux/FondamentauxViewTracker';
@@ -52,22 +53,20 @@ export default async function FondamentauxFichePage({ params }: Props) {
   const locked = access.tier === 'freemium' && !FREEMIUM_UNLOCKED_IDS.has(fiche.id);
 
   const inner = (
-    <div className='min-h-[calc(100vh-4rem)] bg-navy-950'>
+    <InteriorPageShell maxWidth='4xl' glow='emerald' pad='default' className='min-h-[calc(100vh-4rem)]'>
       <FondamentauxViewTracker ficheId={fiche.id} />
-      <div className='mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8 lg:py-10'>
-        <p className='mb-4 text-xs text-slate-500' suppressHydrationWarning>
-          Dernière mise à jour du site : {SITE_LAST_UPDATED_LABEL}
-        </p>
-        <nav className='mb-8 text-sm text-gray-500'>
-          <Link href='/fondamentaux' className='text-emerald-400 transition hover:text-emerald-300'>
-            Fondamentaux
-          </Link>
-          <span className='mx-2'>/</span>
-          <span className='text-gray-400'>{fiche.titre}</span>
-        </nav>
-        <FondamentauxFicheDetail fiche={fiche} categories={CATEGORIES} />
-      </div>
-    </div>
+      <p className='mb-4 text-xs text-slate-500' suppressHydrationWarning>
+        Dernière mise à jour du site : {SITE_LAST_UPDATED_LABEL}
+      </p>
+      <nav className='mb-8 text-sm text-gray-500'>
+        <Link href='/fondamentaux' className='text-emerald-400 transition hover:text-emerald-300'>
+          Fondamentaux
+        </Link>
+        <span className='mx-2'>/</span>
+        <span className='text-gray-400'>{fiche.titre}</span>
+      </nav>
+      <FondamentauxFicheDetail fiche={fiche} categories={CATEGORIES} />
+    </InteriorPageShell>
   );
 
   if (locked) {

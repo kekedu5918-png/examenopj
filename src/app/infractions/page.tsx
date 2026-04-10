@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { InfractionsPageClient } from '@/components/infractions/InfractionsPageClient';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { APP_NAME } from '@/constants/site';
 import { getInfractionsCatalog } from '@/data/recapitulatif-data';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -28,13 +29,16 @@ export default function InfractionsPage({ searchParams }: Props) {
   return (
     <Suspense
       fallback={
-        <div
-          className='container flex min-h-[50vh] items-center justify-center text-gray-500'
-          aria-busy
-          aria-label='Chargement du référentiel infractions'
+        <InteriorPageShell
+          maxWidth='6xl'
+          glow='rose'
+          pad='default'
+          innerClassName='flex min-h-[50vh] items-center justify-center text-gray-500'
         >
-          Chargement…
-        </div>
+          <p role='status' aria-busy='true' aria-label='Chargement du référentiel infractions'>
+            Chargement…
+          </p>
+        </InteriorPageShell>
       }
     >
       <InfractionsPageClient initialQuery={initialQuery} />
