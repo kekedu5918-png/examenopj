@@ -3,7 +3,7 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, CheckCircle2, HelpCircle, XCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, HelpCircle, RotateCcw, Trophy, XCircle } from 'lucide-react';
 
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
@@ -16,6 +16,8 @@ export function HeroSection() {
   const MotionLink = motion(Link);
   const [qIndex, setQIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
+  const [score, setScore] = useState(0);
+  const [completed, setCompleted] = useState(false);
 
   const question: HeroQuizQuestion = HERO_QUIZ_QUESTIONS[qIndex] ?? HERO_QUIZ_QUESTIONS[0];
   const totalQ = HERO_QUIZ_QUESTIONS.length;
@@ -24,8 +26,28 @@ export function HeroSection() {
   const isCorrect = selectedOpt?.correct === true;
   const countdownLabel = useMemo(() => formatExamCountdownBadge(), []);
 
-  const handlePick = (id: string) => { if (!answered) setPicked(id); };
-  const handleNext = () => { if (qIndex < totalQ - 1) { setQIndex((i) => i + 1); setPicked(null); } };
+  const handlePick = (id: string) => {
+    if (answered) return;
+    setPicked(id);
+    const opt = question.options.find((o) => o.id === id);
+    if (opt?.correct) setScore((s) => s + 1);
+  };
+
+  const handleNext = () => {
+    if (qIndex < totalQ - 1) {
+      setQIndex((i) => i + 1);
+      setPicked(null);
+    } else {
+      setCompleted(true);
+    }
+  };
+
+  const handleRestart = () => {
+    setQIndex(0);
+    setPicked(null);
+    setScore(0);
+    setCompleted(false);
+  };
 
   return (
     <section className='relative min-h-[92vh] overflow-hidden' aria-label='Présentation ExamenOPJ'>
@@ -245,117 +267,168 @@ export function HeroSection() {
             {/* Bord supérieur lumineux */}
             <div className='absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent' aria-hidden />
 
-            {/* Header quiz */}
-            <div className='bg-gradient-to-b from-blue-600/[0.12] to-transparent px-5 pt-5 pb-4'>
-              <div className='flex items-center justify-between'>
-                <div className='flex items-center gap-3'>
-                  <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400'>
-                    <HelpCircle className='h-4.5 w-4.5' aria-hidden />
-                  </div>
-                  <div>
-                    <p className='text-[10px] font-bold uppercase tracking-widest text-slate-500'>Quiz express</p>
-                    <p className='text-sm font-semibold text-white'>Question {qIndex + 1} / {totalQ}</p>
-                  </div>
-                </div>
-                {/* Progress dots */}
-                <div className='flex gap-1.5' role='img' aria-label={`Progression ${qIndex + 1} sur ${totalQ}`}>
+            {/* ── Écran de complétion ── */}
+            {completed ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.35, type: 'spring', stiffness: 300, damping: 28 }}
+                className='flex flex-col items-center px-6 py-10 text-center'
+              >
+                <span className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-400/20 text-3xl ring-2 ring-blue-400/30'>
+                  <Trophy className='h-8 w-8 text-amber-400' aria-hidden />
+                </span>
+                <h3 className='mt-4 font-sans text-xl font-extrabold text-white'>
+                  {score === totalQ ? 'Parfait !' : score >= totalQ / 2 ? 'Bien joué !' : 'À retravailler'}
+                </h3>
+                <p className='mt-1 text-sm text-slate-400'>
+                  {score} / {totalQ} bonnes réponses
+                </p>
+
+                {/* Score visuel */}
+                <div className='mt-4 flex gap-1.5'>
                   {Array.from({ length: totalQ }).map((_, i) => (
                     <span
                       key={i}
                       className={cn(
-                        'h-1.5 rounded-full transition-all duration-300',
-                        i < qIndex ? 'w-4 bg-emerald-500' : i === qIndex ? 'w-4 bg-blue-400' : 'w-1.5 bg-white/15',
+                        'h-2 w-8 rounded-full',
+                        i < score ? 'bg-emerald-500' : 'bg-white/10',
                       )}
                     />
                   ))}
                 </div>
-              </div>
-            </div>
 
-            {/* Corps quiz */}
-            <div className='px-5 pb-5'>
-              <p className='mt-1 text-sm leading-relaxed text-slate-200'>{question.prompt}</p>
+                <p className='mt-4 text-xs text-slate-500'>
+                  {score === totalQ
+                    ? 'Excellent niveau sur les bases OPJ !'
+                    : 'Le quiz complet vous attend pour aller plus loin.'}
+                </p>
 
-              <ul className='mt-4 space-y-2' aria-label='Propositions de réponse'>
-                {question.options.map((row) => {
-                  const showFeedback = answered && picked === row.id;
-                  return (
-                    <motion.li
-                      key={row.id}
-                      layout
-                      onClick={() => handlePick(row.id)}
-                      animate={
-                        shouldReduce || !showFeedback ? {} :
-                          row.correct
-                            ? { backgroundColor: ['rgba(34,197,94,0.0)', 'rgba(34,197,94,0.15)', 'rgba(34,197,94,0.1)'] }
-                            : { x: [0, -8, 8, -5, 5, 0] }
-                      }
-                      transition={shouldReduce || !showFeedback ? undefined : { duration: row.correct ? 0.4 : 0.3 }}
-                      className={cn(
-                        'group flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left text-sm transition-all',
-                        answered && picked === row.id && row.correct
-                          ? 'border-emerald-500/40 bg-emerald-500/10 text-slate-100'
-                          : answered && picked === row.id && !row.correct
-                            ? 'border-red-500/35 bg-red-500/10 text-slate-200'
-                            : 'border-white/[0.06] bg-white/[0.02] text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/[0.05] hover:text-white',
-                      )}
-                    >
-                      <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/[0.06] font-mono text-[11px] font-bold text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300'>
-                        {row.id}
-                      </span>
-                      <span className='min-w-0 flex-1 leading-relaxed'>{row.text}</span>
-                      {showFeedback ? (
-                        row.correct
-                          ? <CheckCircle2 className='mt-0.5 h-4 w-4 shrink-0 text-emerald-400' aria-hidden />
-                          : <XCircle className='mt-0.5 h-4 w-4 shrink-0 text-red-400' aria-hidden />
-                      ) : null}
-                    </motion.li>
-                  );
-                })}
-              </ul>
-
-              {/* Feedback */}
-              {answered ? (
-                <motion.div
-                  initial={{ opacity: 0, y: 6 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.25 }}
-                  className={cn(
-                    'mt-4 rounded-xl border px-4 py-3 text-sm',
-                    isCorrect
-                      ? 'border-emerald-500/25 bg-emerald-500/[0.08] text-emerald-50'
-                      : 'border-amber-500/25 bg-amber-500/[0.08] text-amber-50',
-                  )}
-                  role='status'
-                >
-                  <p className='font-semibold'>{isCorrect ? '✓ Bonne réponse.' : '✗ À retenir.'}</p>
-                  <p className='mt-1 text-slate-300'>{isCorrect ? question.explain : question.wrongHint}</p>
-                </motion.div>
-              ) : null}
-
-              {/* Actions */}
-              {answered ? (
-                <div className='mt-4 flex items-center justify-between gap-2'>
-                  {qIndex < totalQ - 1 ? (
-                    <button
-                      type='button'
-                      onClick={handleNext}
-                      className='inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500'
-                    >
-                      Suivant <ArrowRight className='h-3.5 w-3.5' aria-hidden />
-                    </button>
-                  ) : (
-                    <Link
-                      href='/quiz'
-                      className='inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500'
-                    >
-                      Voir le quiz complet <ArrowRight className='h-3.5 w-3.5' aria-hidden />
-                    </Link>
-                  )}
-                  <span className='text-xs text-slate-500'>Session 2026</span>
+                <div className='mt-6 flex flex-col gap-2.5 w-full'>
+                  <Link
+                    href='/quiz'
+                    className='inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90'
+                  >
+                    Continuer le quiz complet
+                    <ArrowRight className='h-3.5 w-3.5' aria-hidden />
+                  </Link>
+                  <button
+                    type='button'
+                    onClick={handleRestart}
+                    className='inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-slate-400 transition hover:border-white/20 hover:text-white'
+                  >
+                    <RotateCcw className='h-3.5 w-3.5' aria-hidden />
+                    Recommencer le diagnostic
+                  </button>
                 </div>
-              ) : null}
-            </div>
+              </motion.div>
+            ) : (
+              <>
+                {/* Header quiz */}
+                <div className='bg-gradient-to-b from-blue-600/[0.12] to-transparent px-5 pt-5 pb-4'>
+                  <div className='flex items-center justify-between'>
+                    <div className='flex items-center gap-3'>
+                      <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400'>
+                        <HelpCircle className='h-4.5 w-4.5' aria-hidden />
+                      </div>
+                      <div>
+                        <p className='text-[10px] font-bold uppercase tracking-widest text-slate-500'>Diagnostic rapide</p>
+                        <p className='text-sm font-semibold text-white'>Question {qIndex + 1} / {totalQ}</p>
+                      </div>
+                    </div>
+                    {/* Progress dots */}
+                    <div className='flex gap-1.5' role='img' aria-label={`Progression ${qIndex + 1} sur ${totalQ}`}>
+                      {Array.from({ length: totalQ }).map((_, i) => (
+                        <span
+                          key={i}
+                          className={cn(
+                            'h-1.5 rounded-full transition-all duration-300',
+                            i < qIndex ? 'w-4 bg-emerald-500' : i === qIndex ? 'w-4 bg-blue-400' : 'w-1.5 bg-white/15',
+                          )}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Corps quiz */}
+                <div className='px-5 pb-5'>
+                  <p className='mt-1 text-sm leading-relaxed text-slate-200'>{question.prompt}</p>
+
+                  <ul className='mt-4 space-y-2' aria-label='Propositions de réponse'>
+                    {question.options.map((row) => {
+                      const showFeedback = answered && picked === row.id;
+                      return (
+                        <motion.li
+                          key={row.id}
+                          layout
+                          onClick={() => handlePick(row.id)}
+                          animate={
+                            shouldReduce || !showFeedback ? {} :
+                              row.correct
+                                ? { backgroundColor: ['rgba(34,197,94,0.0)', 'rgba(34,197,94,0.15)', 'rgba(34,197,94,0.1)'] }
+                                : { x: [0, -8, 8, -5, 5, 0] }
+                          }
+                          transition={shouldReduce || !showFeedback ? undefined : { duration: row.correct ? 0.4 : 0.3 }}
+                          className={cn(
+                            'group flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left text-sm transition-all',
+                            answered && picked === row.id && row.correct
+                              ? 'border-emerald-500/40 bg-emerald-500/10 text-slate-100'
+                              : answered && picked === row.id && !row.correct
+                                ? 'border-red-500/35 bg-red-500/10 text-slate-200'
+                                : 'border-white/[0.06] bg-white/[0.02] text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/[0.05] hover:text-white',
+                          )}
+                        >
+                          <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/[0.06] font-mono text-[11px] font-bold text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300'>
+                            {row.id}
+                          </span>
+                          <span className='min-w-0 flex-1 leading-relaxed'>{row.text}</span>
+                          {showFeedback ? (
+                            row.correct
+                              ? <CheckCircle2 className='mt-0.5 h-4 w-4 shrink-0 text-emerald-400' aria-hidden />
+                              : <XCircle className='mt-0.5 h-4 w-4 shrink-0 text-red-400' aria-hidden />
+                          ) : null}
+                        </motion.li>
+                      );
+                    })}
+                  </ul>
+
+                  {/* Feedback */}
+                  {answered ? (
+                    <motion.div
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.25 }}
+                      className={cn(
+                        'mt-4 rounded-xl border px-4 py-3 text-sm',
+                        isCorrect
+                          ? 'border-emerald-500/25 bg-emerald-500/[0.08] text-emerald-50'
+                          : 'border-amber-500/25 bg-amber-500/[0.08] text-amber-50',
+                      )}
+                      role='status'
+                    >
+                      <p className='font-semibold'>{isCorrect ? '✓ Bonne réponse.' : '✗ À retenir.'}</p>
+                      <p className='mt-1 text-slate-300'>{isCorrect ? question.explain : question.wrongHint}</p>
+                    </motion.div>
+                  ) : null}
+
+                  {/* Actions */}
+                  {answered ? (
+                    <div className='mt-4 flex items-center justify-between gap-2'>
+                      <button
+                        type='button'
+                        onClick={handleNext}
+                        className='inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500'
+                      >
+                        {qIndex < totalQ - 1 ? 'Question suivante' : 'Voir mes résultats'}
+                        <ArrowRight className='h-3.5 w-3.5' aria-hidden />
+                      </button>
+                      <span className='text-xs text-slate-500'>{score} ✓ sur {qIndex + 1}</span>
+                    </div>
+                  ) : null}
+                </div>
+              </>
+            )}
           </div>
 
           {/* Floating badges */}
