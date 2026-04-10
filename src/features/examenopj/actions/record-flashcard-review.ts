@@ -72,7 +72,8 @@ export async function recordFlashcardReview(input: RecordFlashcardReviewInput): 
     .eq('scope', input.scope)
     .maybeSingle();
 
-  const currentRow = existing as Pick<FlashcardReviewRow, 'ease_factor' | 'interval_days'> | null;
+  type SM2Row = { ease_factor: number; interval_days: number };
+  const currentRow = existing as SM2Row | null;
   const currentEF = currentRow?.ease_factor ?? 2.5;
   const currentInterval = currentRow?.interval_days ?? 0;
 
