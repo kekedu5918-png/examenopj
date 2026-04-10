@@ -65,7 +65,7 @@ export function HomeStatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.45, ease: LANDING_EASE }}
-          className='grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6'
+          className='grid grid-cols-2 gap-4 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm md:grid-cols-4 md:gap-5 md:p-6'
         >
           {stats.map((s, i) => (
             <motion.div

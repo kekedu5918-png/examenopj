@@ -87,10 +87,12 @@ export function StartHereSection() {
         <SectionTitle
           titleId='start-here-title'
           badge='PARCOURS'
-          badgeClassName='bg-cyan-500/15 text-cyan-300 border-cyan-500/20'
+          badgeClassName='text-cyan-200'
           title='Par où commencer ?'
-          subtitle='Selon où tu en es, voici le chemin.'
-          className='mx-auto mb-14 max-w-2xl text-center'
+          titleGradient
+          size='display'
+          subtitle='Trois gestes qui structurent ta préparation — du cadre officiel à la mise en situation.'
+          className='mx-auto mb-14 max-w-3xl text-center'
         />
         <div className='grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
           {cards.map((c, i) => {
@@ -106,11 +108,11 @@ export function StartHereSection() {
                 <MotionLink
                   href={c.href}
                   className={[
-                    'group relative flex h-full flex-col overflow-hidden rounded-2xl',
-                    'border border-white/[0.07] bg-white/[0.025] p-6',
+                    'group relative flex h-full flex-col overflow-hidden rounded-3xl',
+                    'border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-6 md:p-7',
                     'transition-all duration-300',
                     colors.card,
-                    'shadow-[0_4px_20px_rgba(0,0,0,0.2)]',
+                    'shadow-[0_8px_40px_rgba(0,0,0,0.35)] ring-1 ring-white/[0.04]',
                   ].join(' ')}
                   whileTap={{ scale: 0.97 }}
                   whileHover={shouldReduce ? {} : { y: -3 }}
@@ -185,8 +187,10 @@ export function HomeEnquetesPillarSection() {
           <SectionTitle
             titleId='enquetes-pilier-title'
             badge='PILIER N°1 · Exclusif'
-            badgeClassName='bg-violet-500/20 text-violet-200'
+            badgeClassName='text-violet-200'
             title='Les enquêtes — la trame de la formation'
+            titleGradient
+            size='display'
             subtitle='Chaque enquête suit exactement le cadre travaillé en formation présentielle.'
             className='mx-auto mb-12 max-w-3xl text-center'
           />
@@ -202,7 +206,7 @@ export function HomeEnquetesPillarSection() {
             <motion.div key={e.id} variants={cardVariants}>
               <Link
                 href={`/cours/enquetes/${e.id}`}
-                className='home-enquete-card-horizontal group flex flex-col gap-3 rounded-lg border border-white/[0.08] bg-orde-navy800/60 p-4 transition duration-200 hover:-translate-y-1 hover:border-orde-blue500/25 hover:shadow-lg hover:shadow-black/20 sm:flex-row sm:items-center sm:justify-between sm:gap-6'
+                className='home-enquete-card-horizontal group flex flex-col gap-3 rounded-2xl border border-white/[0.09] bg-gradient-to-r from-orde-navy800/80 to-white/[0.03] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-orde-blue500/35 hover:shadow-xl hover:shadow-black/30 sm:flex-row sm:items-center sm:justify-between sm:gap-6'
               >
                 <div className='flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-6'>
                   <span className='home-enquete-code-large font-display text-2xl text-white sm:w-36 sm:shrink-0'>
@@ -259,15 +263,17 @@ export function HomeEpreuvesLandingSection() {
         <SectionTitle
           titleId='home-epreuves-title'
           badge='ÉPREUVES'
-          badgeClassName='bg-rose-500/20 text-rose-200'
+          badgeClassName='text-rose-200'
           title='3 épreuves. Une méthode pour chacune.'
+          titleGradient
+          size='display'
           subtitle="Beaucoup de candidats arrivent sans savoir exactement ce qui les attend. Voici ce que l'examen demande."
-          className='mx-auto mb-12 max-w-2xl text-center'
+          className='mx-auto mb-12 max-w-3xl text-center'
         />
         <div className='grid gap-6 md:grid-cols-3'>
           <MotionLink
             href='/epreuves/epreuve-1'
-            className='group rounded-2xl border border-white/[0.08] bg-examen-canvas/80 p-6 transition hover:border-rose-500/30'
+            className='group rounded-3xl border border-white/[0.09] bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-7 shadow-lg shadow-black/20 ring-1 ring-white/[0.04] transition hover:border-rose-500/35'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
@@ -283,7 +289,7 @@ export function HomeEpreuvesLandingSection() {
 
           <MotionLink
             href='/epreuves/epreuve-2'
-            className='group relative rounded-2xl border-2 border-examen-accent/50 bg-gradient-to-br from-examen-accent/15 to-transparent p-6 shadow-[0_0_40px_rgba(79,110,247,0.12)] transition hover:border-examen-accent'
+            className='group relative rounded-3xl border-2 border-examen-accent/55 bg-gradient-to-br from-examen-accent/20 via-white/[0.04] to-transparent p-7 shadow-[0_0_48px_rgba(37,99,235,0.18)] ring-1 ring-examen-accent/20 transition hover:border-examen-accent hover:shadow-[0_0_56px_rgba(37,99,235,0.22)]'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
@@ -312,7 +318,7 @@ export function HomeEpreuvesLandingSection() {
 
           <MotionLink
             href='/epreuves/epreuve-3'
-            className='group rounded-2xl border border-white/[0.08] bg-examen-canvas/80 p-6 transition hover:border-emerald-500/30'
+            className='group rounded-3xl border border-white/[0.09] bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-7 shadow-lg shadow-black/20 ring-1 ring-white/[0.04] transition hover:border-emerald-500/35'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}

@@ -1,6 +1,7 @@
 'use client';
 
 import { HeroSection } from '@/components/home/sections/hero-section';
+import { HomeJourneyStrip } from '@/components/home/sections/home-journey-strip';
 import {
   HomeEnquetesPillarSection,
   HomeEpreuvesLandingSection,
@@ -21,6 +22,7 @@ export function HomePageClient({ infractionPreview }: HomePageClientProps) {
   return (
     <>
       <HeroSection />
+      <HomeJourneyStrip />
       <HomeStatsSection />
       <StartHereSection />
       <TerrainOriginSection />

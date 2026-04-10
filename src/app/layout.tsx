@@ -85,35 +85,54 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       suppressHydrationWarning
     >
       <body
-        className={cn('relative min-h-screen bg-examen-canvas font-sans text-examen-ink antialiased')}
+        className={cn('relative min-h-screen bg-[#050a14] font-sans text-examen-ink antialiased')}
         suppressHydrationWarning
       >
-        <div
-          className='pointer-events-none fixed inset-0 -z-10 bg-examen-canvas'
-          aria-hidden
-        >
+        <div className='pointer-events-none fixed inset-0 -z-10 bg-[#050a14]' aria-hidden>
+          {/* Base wash — profondeur type produit Apple */}
+          <div
+            className='absolute inset-0'
+            style={{
+              background:
+                'radial-gradient(ellipse 140% 100% at 50% 120%, rgba(12, 27, 51, 0.95) 0%, #050a14 45%, #030508 100%)',
+            }}
+          />
           {/* Top center blue glow */}
           <div
-            className='absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.15]'
-            style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -10%, #3b82f6, transparent)' }}
+            className='absolute left-1/2 top-0 h-[520px] w-[920px] -translate-x-1/2 opacity-[0.16]'
+            style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -8%, #3b82f6, transparent)' }}
           />
-          {/* Top-right violet glow */}
+          {/* Top-right violet */}
           <div
-            className='absolute right-0 top-0 h-[400px] w-[500px] opacity-[0.08]'
+            className='absolute right-0 top-0 h-[420px] w-[520px] opacity-[0.09]'
             style={{ background: 'radial-gradient(ellipse 70% 60% at 100% 0%, #7c3aed, transparent)' }}
           />
-          {/* Bottom-left accent */}
+          {/* Bottom-left cyan */}
           <div
-            className='absolute bottom-0 left-0 h-[300px] w-[400px] opacity-[0.06]'
+            className='absolute bottom-0 left-0 h-[320px] w-[420px] opacity-[0.07]'
             style={{ background: 'radial-gradient(ellipse 60% 60% at 0% 100%, #0ea5e9, transparent)' }}
           />
-          {/* Subtle grid overlay */}
+          {/* Vignette lisibilité */}
           <div
-            className='absolute inset-0 opacity-[0.018]'
+            className='absolute inset-0'
+            style={{
+              background: 'radial-gradient(ellipse 90% 70% at 50% 40%, transparent 0%, rgba(0,0,0,0.25) 100%)',
+            }}
+          />
+          {/* Grille subtile */}
+          <div
+            className='absolute inset-0 opacity-[0.02]'
             style={{
               backgroundImage:
-                'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
-              backgroundSize: '60px 60px',
+                'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+              backgroundSize: '64px 64px',
+            }}
+          />
+          {/* Grain film — cohérent avec le hero */}
+          <div
+            className='absolute inset-0 opacity-[0.035] mix-blend-overlay'
+            style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
             }}
           />
         </div>

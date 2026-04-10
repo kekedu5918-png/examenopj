@@ -8,13 +8,23 @@ type GlassCardProps = PropsWithChildren<{
   padding?: string;
   /** Affiche un bord supérieur lumineux (accent top-highlight) */
   topGlow?: boolean;
+  /** Rayon des coins — 3xl = style plus « produit » */
+  radius?: '2xl' | '3xl';
 }>;
 
-export function GlassCard({ children, className, hover = false, padding = 'p-6', topGlow = false }: GlassCardProps) {
+export function GlassCard({
+  children,
+  className,
+  hover = false,
+  padding = 'p-6',
+  topGlow = false,
+  radius = '2xl',
+}: GlassCardProps) {
   return (
     <div
       className={cn(
-        'relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025]',
+        'relative overflow-hidden border border-white/[0.08] bg-white/[0.025]',
+        radius === '3xl' ? 'rounded-3xl' : 'rounded-2xl',
         'shadow-[0_4px_24px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]',
         'backdrop-blur-md',
         hover && [
