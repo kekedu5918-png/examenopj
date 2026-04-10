@@ -101,7 +101,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         </a>
         <div className='flex min-h-screen flex-col'>
           <Header />
-          <PageTransition>{children}</PageTransition>
+          <main id='contenu-principal' className='flex-1'>
+            <PageTransition>{children}</PageTransition>
+          </main>
           <FloatingQuickFlashcards />
           <Footer />
         </div>

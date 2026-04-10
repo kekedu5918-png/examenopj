@@ -17,6 +17,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProgressBar } from '@/components/ui/progress-bar';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSessionReport } from '@/features/examenopj/controllers/get-dashboard-stats';
 
@@ -58,22 +59,6 @@ function ScoreCircle({ pct }: { pct: number }) {
   );
 }
 
-function ProgressBar({ pct, color = 'cyan' }: { pct: number; color?: 'cyan' | 'emerald' | 'amber' | 'red' }) {
-  const gradient: Record<string, string> = {
-    cyan: 'from-cyan-500 to-blue-500',
-    emerald: 'from-emerald-500 to-green-400',
-    amber: 'from-amber-500 to-yellow-400',
-    red: 'from-red-500 to-rose-400',
-  };
-  return (
-    <div className='h-2 w-full overflow-hidden rounded-full bg-white/10'>
-      <div
-        className={`h-full rounded-full bg-gradient-to-r transition-all ${gradient[color]}`}
-        style={{ width: `${Math.min(100, Math.max(0, pct))}%` }}
-      />
-    </div>
-  );
-}
 
 function formatMode(mode: string, fasciculeNum: number | null, domainKey: string | null): string {
   if ((mode === 'fascicule' || mode === 'module') && fasciculeNum != null) {

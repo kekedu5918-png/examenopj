@@ -432,6 +432,192 @@ export interface Database {
           }
         ];
       };
+      user_badges: {
+        Row: {
+          id: string;
+          user_id: string;
+          badge_id: string;
+          earned_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          badge_id: string;
+          earned_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          badge_id?: string;
+          earned_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'user_badges_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      user_review_schedule: {
+        Row: {
+          id: string;
+          user_id: string;
+          content_id: string;
+          content_type: string;
+          easiness_factor: number;
+          interval_days: number;
+          repetitions: number;
+          last_reviewed_at: string | null;
+          next_review_date: string | null;
+          quality_last_review: number | null;
+          total_attempts: number;
+          correct_attempts: number;
+          success_rate: number;
+          status: string;
+          created_at: string | null;
+          updated_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          content_id: string;
+          content_type?: string;
+          easiness_factor?: number;
+          interval_days?: number;
+          repetitions?: number;
+          last_reviewed_at?: string | null;
+          next_review_date?: string | null;
+          quality_last_review?: number | null;
+          total_attempts?: number;
+          correct_attempts?: number;
+          success_rate?: number;
+          status?: string;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          content_id?: string;
+          content_type?: string;
+          easiness_factor?: number;
+          interval_days?: number;
+          repetitions?: number;
+          last_reviewed_at?: string | null;
+          next_review_date?: string | null;
+          quality_last_review?: number | null;
+          total_attempts?: number;
+          correct_attempts?: number;
+          success_rate?: number;
+          status?: string;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'user_review_schedule_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      review_history: {
+        Row: {
+          id: string;
+          schedule_id: string;
+          user_id: string;
+          quality: number;
+          time_spent_seconds: number | null;
+          correct: boolean;
+          response_text: string | null;
+          reviewed_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          schedule_id: string;
+          user_id: string;
+          quality: number;
+          time_spent_seconds?: number | null;
+          correct: boolean;
+          response_text?: string | null;
+          reviewed_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          schedule_id?: string;
+          user_id?: string;
+          quality?: number;
+          time_spent_seconds?: number | null;
+          correct?: boolean;
+          response_text?: string | null;
+          reviewed_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'review_history_schedule_id_fkey';
+            columns: ['schedule_id'];
+            isOneToOne: false;
+            referencedRelation: 'user_review_schedule';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'review_history_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      user_streaks: {
+        Row: {
+          id: string;
+          user_id: string;
+          current_streak: number;
+          longest_streak: number;
+          last_activity_date: string | null;
+          streak_start_date: string | null;
+          total_sessions: number;
+          created_at: string | null;
+          updated_at: string | null;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          current_streak?: number;
+          longest_streak?: number;
+          last_activity_date?: string | null;
+          streak_start_date?: string | null;
+          total_sessions?: number;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          current_streak?: number;
+          longest_streak?: number;
+          last_activity_date?: string | null;
+          streak_start_date?: string | null;
+          total_sessions?: number;
+          created_at?: string | null;
+          updated_at?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'user_streaks_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: true;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       users: {
         Row: {
           avatar_url: string | null;

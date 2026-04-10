@@ -149,7 +149,6 @@ export function SiteHeaderClient({
             <DropdownMenu>
               <DropdownMenuTrigger
                 className={cn(navBtn, dropTriggerClass, coursActive ? navActive : navInactive)}
-                aria-expanded={undefined}
               >
                 Cours
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
@@ -381,6 +380,16 @@ export function SiteHeaderClient({
                 >
                   Guide
                 </Link>
+                {isLoggedIn && (
+                  <Link
+                    href='/dashboard/gamification'
+                    className='flex items-center gap-2 border-b border-white/[0.06] py-3 text-sm font-medium text-amber-300'
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <Flame className='h-4 w-4 text-amber-400' aria-hidden />
+                    Badges &amp; Séries
+                  </Link>
+                )}
               </nav>
               <div className='border-t border-white/[0.06] p-4'>
                 {isLoggedIn ? (

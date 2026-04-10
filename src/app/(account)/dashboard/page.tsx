@@ -7,14 +7,17 @@ import {
   Calendar,
   CheckCircle2,
   ChevronRight,
+  Flame,
   Lightbulb,
   Target,
   TrendingUp,
+  Trophy,
 } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ProgressBar } from '@/components/ui/progress-bar';
 import { fasciculesList } from '@/data/fascicules-list';
 import { getSession } from '@/features/account/controllers/get-session';
 import {
@@ -24,6 +27,7 @@ import {
   getProgressionChart,
   getWeeklyCalendar,
 } from '@/features/examenopj/controllers/get-dashboard-stats';
+import { getGamification } from '@/features/examenopj/controllers/get-gamification';
 
 import { ProgressionChart } from './progression-chart';
 
@@ -31,16 +35,6 @@ import { ProgressionChart } from './progression-chart';
 // Helpers
 // ─────────────────────────────────────────────
 
-function ProgressBar({ pct, className = '' }: { pct: number; className?: string }) {
-  return (
-    <div className={`h-2.5 w-full overflow-hidden rounded-full bg-white/10 ${className}`}>
-      <div
-        className='h-full rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 transition-all'
-        style={{ width: `${Math.min(100, Math.max(0, pct))}%` }}
-      />
-    </div>
-  );
-}
 
 function DeltaBadge({ delta }: { delta: number }) {
   if (delta === 0) return null;
@@ -69,12 +63,13 @@ export default async function DashboardPage() {
 
   const uid = session.user.id;
 
-  const [hero, toReview, calendar, catStats, chartPoints] = await Promise.all([
+  const [hero, toReview, calendar, catStats, chartPoints, gamification] = await Promise.all([
     getHeroStats(uid),
     getFlashcardsToReview(uid, 6),
     getWeeklyCalendar(uid),
     getCategoryStats(uid),
     getProgressionChart(uid),
+    getGamification(uid),
   ]);
 
   // Suggestions logic
@@ -167,11 +162,58 @@ export default async function DashboardPage() {
             <Button asChild size='sm' variant='outline' className='border-slate-700'>
               <Link href='/dashboard/progression'>Voir ma progression</Link>
             </Button>
+            <Button asChild size='sm' variant='outline' className='border-amber-500/40 text-amber-300 hover:bg-amber-500/10'>
+              <Link href='/dashboard/gamification'>
+                <Trophy className='mr-1.5 h-3.5 w-3.5' />
+                Badges & Séries
+              </Link>
+            </Button>
           </div>
         </CardContent>
       </Card>
 
-      {/* ── 2. À REVOIR AUJOURD'HUI ── */}
+      {/* ── 2. SÉRIE & BADGES ── */}
+      <div className='grid grid-cols-2 gap-3 sm:grid-cols-4'>
+        <Link
+          href='/dashboard/gamification'
+          className='col-span-2 flex items-center gap-4 rounded-xl border border-amber-500/20 bg-amber-950/20 p-4 transition-colors hover:bg-amber-950/30 sm:col-span-2'
+        >
+          <div className='flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-500/30 bg-amber-500/10'>
+            <Flame className='h-6 w-6 text-amber-400' aria-hidden />
+          </div>
+          <div className='min-w-0'>
+            <p className='text-2xl font-bold tabular-nums text-amber-300'>{gamification.currentStreak}</p>
+            <p className='text-xs text-slate-500'>
+              jour{gamification.currentStreak !== 1 ? 's' : ''} de série
+              {gamification.longestStreak > 0 && (
+                <span className='ml-2 text-slate-600'>record : {gamification.longestStreak}j</span>
+              )}
+            </p>
+          </div>
+        </Link>
+        <Link
+          href='/dashboard/gamification'
+          className='flex items-center gap-3 rounded-xl border border-purple-500/20 bg-purple-950/20 p-4 transition-colors hover:bg-purple-950/30'
+        >
+          <Trophy className='h-6 w-6 shrink-0 text-purple-400' aria-hidden />
+          <div className='min-w-0'>
+            <p className='text-2xl font-bold tabular-nums text-purple-300'>{gamification.earnedBadges.length}</p>
+            <p className='text-xs text-slate-500'>badges</p>
+          </div>
+        </Link>
+        <Link
+          href='/dashboard/gamification'
+          className='flex items-center gap-3 rounded-xl border border-white/[0.07] bg-white/[0.02] p-4 transition-colors hover:bg-white/[0.04]'
+        >
+          <Trophy className='h-6 w-6 shrink-0 text-yellow-400' aria-hidden />
+          <div className='min-w-0'>
+            <p className='text-2xl font-bold tabular-nums text-slate-100'>{gamification.totalSessions}</p>
+            <p className='text-xs text-slate-500'>sessions</p>
+          </div>
+        </Link>
+      </div>
+
+      {/* ── 3. À REVOIR AUJOURD'HUI ── */}
       {hasReviewItems && (
         <Card className='border border-amber-500/20 bg-slate-900/80'>
           <CardHeader className='pb-3'>
@@ -301,7 +343,7 @@ export default async function DashboardPage() {
                 </div>
                 <ProgressBar
                   pct={cat.pct}
-                  className={cat.pct < 40 ? '[&>div]:from-red-500 [&>div]:to-rose-400' : cat.pct >= 80 ? '[&>div]:from-emerald-500 [&>div]:to-green-400' : ''}
+                  color={cat.pct < 40 ? 'red' : cat.pct >= 80 ? 'emerald' : 'cyan'}
                 />
               </div>
             ))}

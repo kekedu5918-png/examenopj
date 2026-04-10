@@ -69,20 +69,6 @@ export function recordThemePerfectScore(fasciculeNum: number): void {
   }
 }
 
-export function getQuizBadges(): string[] {
-  if (typeof window === 'undefined') return [];
-  try {
-    return JSON.parse(localStorage.getItem(BADGES_KEY) ?? '[]') as string[];
-  } catch {
-    return [];
-  }
-}
-
-/** @deprecated alias */
-export function recordQuizCompletedToday(): ReturnType<typeof recordQuizCompleted> {
-  return recordQuizCompleted();
-}
-
 export function getQuizStreak(): number {
   if (typeof window === 'undefined') return 0;
   try {
@@ -92,11 +78,3 @@ export function getQuizStreak(): number {
   }
 }
 
-export function getTotalQuizzesCompleted(): number {
-  if (typeof window === 'undefined') return 0;
-  try {
-    return Number.parseInt(localStorage.getItem(TOTAL_KEY) ?? '0', 10) || 0;
-  } catch {
-    return 0;
-  }
-}

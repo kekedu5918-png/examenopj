@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { IoCheckmark } from 'react-icons/io5';
+import { Check } from 'lucide-react';
 
 import { cn } from '@/utils/cn';
 
@@ -67,7 +67,7 @@ export function PricingFallbackPlans() {
           <ul className='mt-6 flex flex-1 flex-col gap-2.5'>
             {plan.features.map((f) => (
               <li key={f} className='flex gap-2 text-sm text-gray-300'>
-                <IoCheckmark className='mt-0.5 h-4 w-4 shrink-0 text-emerald-500/90' />
+                <Check className='mt-0.5 h-4 w-4 shrink-0 text-emerald-500/90' />
                 <span>{f}</span>
               </li>
             ))}

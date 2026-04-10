@@ -2,14 +2,11 @@
 
 import { BADGE_DEFINITIONS } from '@/lib/gamification-definitions';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import { todayIso } from '@/utils/date';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 function sb(client: Awaited<ReturnType<typeof createSupabaseServerClient>>) {
   return client as unknown as SupabaseClient<any>;
-}
-
-function todayIso(): string {
-  return new Date().toISOString().slice(0, 10);
 }
 
 export type UpdateStreakResult = {
