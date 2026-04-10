@@ -36,7 +36,7 @@ export const BADGE_DEFINITIONS: BadgeDef[] = [
   {
     id: 'first-session',
     name: 'Première session',
-    description: 'Complétez votre première session d'étude.',
+    description: "Complétez votre première session d'étude.",
     icon: '🎯',
     tier: 'bronze',
     condition: { type: 'sessions', target: 1 },
