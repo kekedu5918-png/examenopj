@@ -306,7 +306,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'quiz') {
     return (
-      <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 pt-8'>
+      <div className='min-h-screen bg-[#080F1E] pt-8'>
         <div className='mx-auto mb-4 max-w-2xl px-4 text-center'>
           <button
             type='button'
@@ -327,7 +327,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'result') {
     return (
-      <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950'>
+      <div className='min-h-screen bg-[#080F1E]'>
         <QuizResult
           correct={result.correct}
           total={result.total}
@@ -341,7 +341,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'setup' && maxDailyQuiz != null && quizUsedToday >= maxDailyQuiz) {
     return (
-      <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 px-4 pb-24 pt-12 md:px-6 md:pt-16'>
+      <div className='relative min-h-screen overflow-hidden bg-[#080F1E] px-4 pb-24 pt-12 md:px-6 md:pt-16'>
         <div className='mx-auto max-w-5xl'>
           <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-10'>
             <motion.div variants={headerItem}>
@@ -361,16 +361,16 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   }
 
   return (
-    <div className='min-h-screen bg-gradient-to-b from-navy-950 via-[#0a1412] to-navy-950 px-4 pb-24 pt-12 md:px-6 md:pt-16'>
+    <div className='relative min-h-screen overflow-hidden bg-[#080F1E] px-4 pb-24 pt-12 md:px-6 md:pt-16'>
       <div className='mx-auto max-w-5xl'>
         <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-12'>
           <motion.div variants={headerItem}>
             <SectionTitle
               badge='ENTRAÎNEMENT'
-              badgeClassName='bg-cyan-500/20 text-cyan-300'
+              badgeClassName='bg-blue-500/15 text-blue-300 border-blue-500/20'
               title='Quiz OPJ'
               subtitle='QCM ou mode hardcore : réponses libres, comme à l’oral ou au papier'
-              className='[&_h2]:font-display [&_h2]:text-4xl [&_h2]:font-bold [&_h2]:text-white md:[&_h2]:text-5xl'
+              className='[&_h2]:text-4xl [&_h2]:font-extrabold [&_h2]:tracking-tight [&_h2]:text-white md:[&_h2]:text-5xl'
             />
           </motion.div>
         </motion.header>
@@ -378,7 +378,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         <div className='mb-8 flex flex-col items-center gap-2 text-center text-sm text-gray-500'>
           {streakDays > 0 ? (
             <p
-              className='inline-flex items-center gap-2 rounded-md border border-amber-500/25 bg-amber-500/10 px-3 py-1.5 text-amber-100'
+              className='inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-amber-200'
               aria-live='polite'
             >
               <Flame className='h-4 w-4 shrink-0 text-amber-400' aria-hidden />
