@@ -178,7 +178,7 @@ export default async function DashboardPage() {
             <div className='flex items-center gap-2'>
               <Target className='h-5 w-5 text-amber-400' aria-hidden />
               <CardTitle className='text-base font-bold text-slate-100'>
-                ⏰ À REVOIR AUJOURD'HUI
+                ⏰ À REVOIR AUJOURD&apos;HUI
                 <Badge className='ml-2 bg-amber-500/20 text-amber-300'>
                   {toReview.length} item{toReview.length > 1 ? 's' : ''}
                 </Badge>
@@ -369,10 +369,10 @@ export default async function DashboardPage() {
               <div>
                 <p className='text-sm font-semibold text-amber-200'>
                   🎯 {todayCount} révision{todayCount > 1 ? 's' : ''} prioritaire
-                  {todayCount > 1 ? 's' : ''} aujourd'hui
+                  {todayCount > 1 ? 's' : ''} aujourd&apos;hui
                 </p>
                 <p className='mt-0.5 text-xs text-slate-400'>
-                  → Commencez par les flashcards marquées "Je ne sais pas"
+                  → Commencez par les flashcards marquées &ldquo;Je ne sais pas&rdquo;
                 </p>
               </div>
               <Button asChild size='sm' variant='secondary' className='shrink-0'>
@@ -383,7 +383,7 @@ export default async function DashboardPage() {
             <div className='flex items-start justify-between gap-3 rounded-lg border border-blue-500/20 bg-blue-500/10 p-3'>
               <div>
                 <p className='text-sm font-semibold text-blue-200'>
-                  🎯 Session d'étude recommandée
+                  🎯 Session d&apos;étude recommandée
                 </p>
                 <p className='mt-0.5 text-xs text-slate-400'>
                   → Lancez un quiz thématique pour progresser

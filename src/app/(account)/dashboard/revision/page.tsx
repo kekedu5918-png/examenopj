@@ -207,7 +207,7 @@ export default async function RevisionPage({ searchParams }: Props) {
                 aria-hidden
               />
               <CardTitle className='text-base font-bold text-slate-100'>
-                🔴 À RÉVISER AUJOURD'HUI
+                🔴 À RÉVISER AUJOURD&apos;HUI
                 {schedule.stats.todayCount > 0 && (
                   <Badge className='ml-2 bg-emerald-500/20 text-emerald-300'>
                     {schedule.stats.todayCount}
