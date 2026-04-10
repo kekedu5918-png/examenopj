@@ -261,7 +261,7 @@ export function HomeEpreuvesLandingSection() {
           badge='ÉPREUVES'
           badgeClassName='bg-rose-500/20 text-rose-200'
           title='3 épreuves. Une méthode pour chacune.'
-          subtitle='Beaucoup de candidats arrivent sans savoir exactement ce qui les attend. Voici ce que l’examen demande.'
+          subtitle="Beaucoup de candidats arrivent sans savoir exactement ce qui les attend. Voici ce que l'examen demande."
           className='mx-auto mb-12 max-w-2xl text-center'
         />
         <div className='grid gap-6 md:grid-cols-3'>
@@ -345,8 +345,8 @@ export function HomeInfractionsPreviewSection({ items }: { items: InfractionPrev
           titleId='home-infractions-title'
           badge='ÉPREUVE 1'
           badgeClassName='bg-amber-500/20 text-amber-200'
-          title='55 infractions à maîtriser pour l’épreuve 1'
-          subtitle='Chaque infraction : élément légal, matériel, moral, et les pièges de l’examen. Aucune ne doit t’échapper.'
+          title="55 infractions à maîtriser pour l'épreuve 1"
+          subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
           className='mx-auto mb-8 max-w-2xl text-center'
         />
         <Accordion type='single' collapsible className='w-full space-y-2'>
@@ -388,8 +388,8 @@ export function HomeInfractionsPreviewSection({ items }: { items: InfractionPrev
 }
 
 const FOND_BLOCS = [
-  { icon: Map, title: 'Cadres d’enquête', line: 'Flagrance, préliminaire, instruction…' },
-  { icon: Shield, title: 'Contrôle d’identité', line: 'Art. 78-1 à 78-6 CPP' },
+  { icon: Map, title: "Cadres d'enquête", line: 'Flagrance, préliminaire, instruction…' },
+  { icon: Shield, title: "Contrôle d'identité", line: 'Art. 78-1 à 78-6 CPP' },
   { icon: Gavel, title: 'Garde à vue', line: 'Placement, droits, durées' },
   { icon: BookOpen, title: 'Audition libre', line: 'Art. 61-1 CPP' },
   { icon: Layers, title: 'Nullités de procédure', line: 'Causes, effets, pièges' },
@@ -405,8 +405,8 @@ export function HomeFondamentauxPreviewSection() {
           titleId='home-fond-title'
           badge='SOCLE'
           badgeClassName='bg-sky-500/20 text-sky-200'
-          title='Les fondamentaux de l’OPJ'
-          subtitle='Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d’enquête, contrôle d’identité, GAV, nullités.'
+          title="Les fondamentaux de l'OPJ"
+          subtitle="Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d'enquête, contrôle d'identité, GAV, nullités."
           className='mx-auto mb-12 max-w-2xl text-center'
         />
         <div className='grid gap-4 sm:grid-cols-2 lg:grid-cols-3'>
@@ -482,11 +482,11 @@ export function HomeTestimonialsSection() {
           author: 'Brigadier, Paris · session 2026',
         },
         {
-          quote: 'Le quiz en mode libre m’a forcé à formuler comme à l’oral. Gros gain sur la DPG et la procédure.',
+          quote: "Le quiz en mode libre m'a forcé à formuler comme à l'oral. Gros gain sur la DPG et la procédure.",
           author: 'GAV, région Centre',
         },
         {
-          quote: 'Clair, carré, sans blabla. Ça ne remplace pas le cours mais c’est mon fil rouge jusqu’au jury.',
+          quote: "Clair, carré, sans blabla. Ça ne remplace pas le cours mais c'est mon fil rouge jusqu'au jury.",
           author: 'Major, formation OPJ',
         },
       ] as const,
@@ -694,7 +694,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
               badge='ÉPREUVE 1'
               badgeClassName='bg-amber-500/20 text-amber-200'
               title='55 infractions à maîtriser pour l’épreuve 1'
-              subtitle='Chaque infraction : élément légal, matériel, moral, et les pièges de l’examen. Aucune ne doit t’échapper.'
+          subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
               className='mb-8 text-left'
             />
             <Accordion type='single' collapsible className='w-full space-y-2'>
@@ -745,7 +745,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
               badge='SOCLE'
               badgeClassName='bg-sky-500/20 text-sky-200'
               title='Les fondamentaux de l’OPJ'
-              subtitle='Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d’enquête, contrôle d’identité, GAV, nullités.'
+          subtitle="Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d'enquête, contrôle d'identité, GAV, nullités."
               className='mb-12 text-left'
             />
             <div className='grid gap-4 sm:grid-cols-2'>

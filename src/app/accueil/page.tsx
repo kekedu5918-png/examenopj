@@ -34,7 +34,7 @@ const FASCICULE_SESSIONS: Record<number, SessionDuJour> = {
     points: [
       'Vol simple et qualifié : éléments matériel / moral',
       'Extorsion, escroquerie, abus de confiance : distinctions',
-      'Circonstances aggravantes à maîtriser pour l'oral',
+      "Circonstances aggravantes à maîtriser pour l'oral",
     ],
     href: '/infractions',
     estimatedMinutes: 25,
@@ -72,8 +72,8 @@ const FASCICULE_SESSIONS: Record<number, SessionDuJour> = {
   6: {
     title: 'Sécurité routière — infractions et procédure',
     points: [
-      'Conduite sous l'empire de l'alcool ou de stupéfiants',
-      'Fuite, délit de fuite, refus d'obtempérer',
+      "Conduite sous l'empire de l'alcool ou de stupéfiants",
+      "Fuite, délit de fuite, refus d'obtempérer",
       'Immobilisation, mise en fourrière, rétention du permis',
     ],
     href: '/cours/modules?f=06',
@@ -95,7 +95,7 @@ const DEFAULT_SESSION: SessionDuJour = {
   title: 'Maîtriser la GAV et l\'enquête BRAVO — actes 16 à 19',
   points: [
     'Cadre juridique et motifs de GAV (art. 62-2 CPP)',
-    'Enchaînement des actes 16 à 19 sur l'enquête BRAVO',
+    "Enchaînement des actes 16 à 19 sur l'enquête BRAVO",
     'Points de vigilance Parquet / mineur',
   ],
   href: '/fondamentaux/garde-a-vue',
