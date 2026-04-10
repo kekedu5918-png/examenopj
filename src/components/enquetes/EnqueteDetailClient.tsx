@@ -5,11 +5,11 @@ import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
 import { EnqueteArticulation } from '@/components/enquetes/EnqueteArticulation';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { EnquetePedagoPanel } from '@/components/enquetes/EnquetePedagoPanel';
 import { EnquetePV } from '@/components/enquetes/EnquetePV';
 import { EnqueteRapport } from '@/components/enquetes/EnqueteRapport';
 import { EnqueteSujet } from '@/components/enquetes/EnqueteSujet';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getEnqueteDocRender } from '@/data/enquete-content';
 import type { EnqueteDocument, EnqueteMeta } from '@/data/enquetes-types';

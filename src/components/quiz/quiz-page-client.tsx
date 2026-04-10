@@ -10,8 +10,8 @@ import {
   FreemiumDailyQuotaProgress,
   FreemiumQuizDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { LANDING_EASE } from '@/components/home/motion';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';

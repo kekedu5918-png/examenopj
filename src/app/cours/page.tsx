@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandidat';
 import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { cn } from '@/utils/cn';

@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { CourseModuleJsonLd } from '@/components/cours/CourseModuleJsonLd';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { ModuleEnquetesLinks } from '@/components/cours/ModuleEnquetesLinks';
 import { ModuleExamBridge } from '@/components/cours/ModuleExamBridge';
 import { ModuleProgressHeader } from '@/components/cours/ModuleProgressHeader';
 import { ModuleQuizProgressBar } from '@/components/cours/ModuleQuizProgressBar';
 import { ModuleVisitRecorder } from '@/components/cours/ModuleVisitRecorder';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { ModelesPVModuleSection } from '@/components/modeles-pv/ModelesPVModuleSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { notFound, permanentRedirect } from 'next/navigation';
 
 import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { FREEMIUM_UNLOCKED_IDS } from '@/components/fondamentaux/fondamentaux-theme';
 import { FondamentauxFicheDetail } from '@/components/fondamentaux/FondamentauxFicheDetail';
 import { FondamentauxViewTracker } from '@/components/fondamentaux/FondamentauxViewTracker';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { getContentAccess } from '@/features/access/get-content-access';

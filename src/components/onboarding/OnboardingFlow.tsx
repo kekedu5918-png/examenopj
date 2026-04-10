@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useTransition, type ReactNode } from 'react';
+import { type ReactNode, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';

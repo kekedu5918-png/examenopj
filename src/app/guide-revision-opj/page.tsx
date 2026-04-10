@@ -11,9 +11,9 @@ import {
 } from 'lucide-react';
 
 import { GuideBreadcrumbJsonLd } from '@/components/guide/GuideBreadcrumbJsonLd';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { GuideEpreuvesAccordion } from '@/components/guide/GuideEpreuvesAccordion';
 import { GuideFaqJsonLd } from '@/components/guide/GuideFaqJsonLd';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { StickyToc } from '@/components/ui/StickyToc';
 import { GUIDE_REVISION_FAQ } from '@/data/guide-revision-faq';
 import { openGraphForPage } from '@/utils/seo-metadata';

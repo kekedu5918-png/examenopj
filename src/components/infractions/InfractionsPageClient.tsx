@@ -7,13 +7,13 @@ import { motion } from 'framer-motion';
 import { BookOpen, MessageCircle } from 'lucide-react';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { InfractionDetailBubble } from '@/components/infractions/InfractionDetailBubble';
 import { InfractionsFlashMode } from '@/components/infractions/InfractionsFlashMode';
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';

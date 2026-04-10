@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
-import { LegalProse } from '@/components/legal/legal-prose';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { LegalProse } from '@/components/legal/legal-prose';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
