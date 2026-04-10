@@ -172,7 +172,7 @@ export function AccueilDashboard({
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           {/* Session card */}
-          <div className='relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] shadow-2xl shadow-black/40'>
+          <div className='relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] shadow-2xl shadow-black/40 ring-1 ring-white/[0.04]'>
             {/* Top gradient bar */}
             <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/60 to-transparent' />
             {/* Decorative orb */}
@@ -248,7 +248,7 @@ export function AccueilDashboard({
                 <Link
                   href={action.href}
                   className={cn(
-                    'flex flex-col items-center gap-2 rounded-xl border bg-gradient-to-b p-4 text-center transition-all duration-200 hover:scale-[1.03] hover:shadow-lg',
+                    'flex flex-col items-center gap-2 rounded-2xl border bg-gradient-to-b p-4 text-center transition-all duration-200 hover:scale-[1.03] hover:shadow-lg',
                     action.color,
                   )}
                 >
@@ -264,7 +264,7 @@ export function AccueilDashboard({
         <div className='flex flex-col gap-4'>
           {/* Countdown */}
           <motion.div
-            className='relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] p-6 shadow-xl shadow-black/30'
+            className='relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] p-6 shadow-xl shadow-black/30 ring-1 ring-white/[0.04]'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -305,7 +305,7 @@ export function AccueilDashboard({
 
           {/* Progression */}
           <motion.div
-            className='relative overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] p-6 shadow-xl shadow-black/30'
+            className='relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-br from-[#0f1d3a] to-[#0a0f1e] p-6 shadow-xl shadow-black/30 ring-1 ring-white/[0.04]'
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
@@ -333,7 +333,7 @@ export function AccueilDashboard({
                 { value: qcmReussis, label: 'QCM réussis', color: 'text-blue-400' },
                 { value: sessionsCount, label: 'Sessions', color: 'text-violet-400' },
               ].map(({ value, label, color }) => (
-                <div key={label} className='rounded-xl border border-white/[0.06] bg-white/[0.02] p-3 text-center'>
+                <div key={label} className='rounded-2xl border border-white/[0.06] bg-white/[0.02] p-3 text-center'>
                   <p className={cn('font-mono text-xl font-extrabold', color)}>
                     <AnimatedNumber value={value} />
                   </p>
@@ -367,7 +367,7 @@ export function AccueilDashboard({
             >
               <Link
                 href={r.href}
-                className='group relative flex flex-col justify-between overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-200 hover:border-blue-500/30 hover:bg-blue-500/[0.04] hover:shadow-lg hover:shadow-blue-500/10'
+                className='group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] p-4 transition-all duration-200 hover:border-blue-500/30 hover:bg-blue-500/[0.04] hover:shadow-lg hover:shadow-blue-500/10'
               >
                 <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent' />
                 <p className='text-[11px] font-medium uppercase tracking-widest text-slate-500'>{r.hint}</p>
@@ -380,7 +380,7 @@ export function AccueilDashboard({
             </motion.div>
           ))}
           {!loggedIn || recent.length === 0 ? (
-            <div className='relative overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.025] p-5 md:col-span-3'>
+            <div className='relative overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] p-5 md:col-span-3'>
               <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent' />
               <p className='text-sm text-slate-400'>
                 {loggedIn

@@ -196,27 +196,43 @@ export function ParcoursCandidatClient() {
   const days = mounted ? daysUntilExam() : null;
 
   return (
-    <div className='container pb-24 pt-10 md:pt-14'>
-      <nav className='mb-6 text-sm text-gray-500'>
-        <Link href='/entrainement' className='text-cyan-400 hover:underline'>
-          Entraînement
-        </Link>
-        <span className='mx-2'>/</span>
-        <span className='text-gray-400'>Parcours candidat</span>
-      </nav>
-
-      <SectionTitle
-        badge='PARCOURS'
-        badgeClassName='bg-gold-500/20 text-gold-200'
-        title='Parcours candidat — 26 semaines'
-        subtitle='Trois phases pour enchaîner fondations, approfondissement et simulation examen OPJ.'
-        className='mb-8 max-w-3xl'
+    <div className='relative pb-24 pt-8 md:pt-12'>
+      <div
+        className='pointer-events-none absolute left-1/2 top-0 h-[420px] w-[min(100%,900px)] -translate-x-1/2 opacity-30'
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -10%, #3b82f6, transparent)' }}
+        aria-hidden
       />
 
-      {/* Bandeau compteur + progression */}
-      <div className='mb-10 flex flex-wrap gap-4'>
+      <div className='relative mx-auto max-w-6xl px-4'>
+        <nav className='mb-8 flex flex-wrap items-center gap-2 text-sm' aria-label="Fil d'Ariane">
+          <Link
+            href='/entrainement'
+            className='rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 font-medium text-slate-300 transition hover:border-cyan-500/30 hover:text-white'
+          >
+            Entraînement
+          </Link>
+          <span className='text-slate-600' aria-hidden>
+            /
+          </span>
+          <span className='rounded-full border border-cyan-500/25 bg-cyan-500/10 px-3 py-1 font-semibold text-cyan-200'>
+            Parcours candidat
+          </span>
+        </nav>
+
+        <SectionTitle
+          badge='PARCOURS 26 SEMAINES'
+          badgeClassName='text-amber-200'
+          title='Ta feuille de route jusqu&apos;au jury'
+          titleGradient
+          size='display'
+          subtitle='Trois phases — cartographier, approfondir, mode examen — avec les bons outils au bon moment.'
+          className='mb-10 max-w-3xl'
+        />
+
+        {/* Bandeau compteur + progression */}
+        <div className='mb-12 flex flex-wrap gap-4'>
         {/* ProgressRing checklist */}
-        <div className='flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.025] p-4'>
+        <div className='flex flex-1 items-center gap-4 rounded-3xl border border-white/[0.09] bg-gradient-to-br from-white/[0.06] to-white/[0.02] p-5 shadow-lg shadow-black/20 ring-1 ring-white/[0.04] min-w-[min(100%,280px)]'>
           <ProgressRing
             value={mounted ? doneCount : 0}
             max={CHECKLIST_IDS.length}
@@ -236,7 +252,7 @@ export function ParcoursCandidatClient() {
 
         {/* Compteur J-11 juin */}
         {mounted && weeks !== null && (
-          <div className='flex items-center gap-4 rounded-2xl border border-rose-500/25 bg-rose-500/[0.06] p-4'>
+          <div className='flex flex-1 items-center gap-4 rounded-3xl border border-rose-500/30 bg-gradient-to-br from-rose-500/[0.12] to-transparent p-5 shadow-lg shadow-black/20 ring-1 ring-rose-500/15 min-w-[min(100%,280px)]'>
             <div className='text-center'>
               <p className='text-3xl font-black tabular-nums text-white'>{weeks}</p>
               <p className='text-xs font-semibold uppercase tracking-wide text-rose-300'>semaines</p>
@@ -253,15 +269,15 @@ export function ParcoursCandidatClient() {
         <button
           type='button'
           onClick={resetChecklist}
-          className='ml-auto self-start rounded-xl border border-white/15 px-4 py-2 text-sm text-gray-300 transition hover:bg-white/10'
+          className='ml-auto self-start rounded-2xl border border-white/[0.12] bg-white/[0.03] px-4 py-2.5 text-sm font-medium text-slate-300 transition hover:border-white/20 hover:bg-white/[0.08]'
         >
           <RotateCcw className='mr-2 inline h-4 w-4' aria-hidden />
           Réinitialiser
         </button>
-      </div>
+        </div>
 
-      {/* Timeline des 3 phases */}
-      <div className='relative space-y-8'>
+        {/* Timeline des 3 phases */}
+        <div className='relative space-y-8'>
         {/* Ligne verticale de connexion */}
         <div className='absolute left-[1.875rem] top-10 hidden h-[calc(100%-5rem)] w-0.5 bg-gradient-to-b from-cyan-500/40 via-amber-500/40 to-emerald-500/40 md:block' aria-hidden />
 
@@ -274,13 +290,14 @@ export function ParcoursCandidatClient() {
             <section
               key={phase.id}
               className={cn(
-                'relative rounded-2xl border border-l-4 bg-gradient-to-r to-transparent',
+                'relative overflow-hidden rounded-3xl border border-l-[3px] bg-gradient-to-r to-transparent shadow-xl shadow-black/25 ring-1 ring-white/[0.05]',
                 phase.color.border,
                 phase.color.bg,
-                'border-white/[0.08] overflow-hidden',
+                'border-white/[0.09]',
               )}
               aria-labelledby={`phase-${phase.id}`}
             >
+              <div className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent' aria-hidden />
               {/* En-tête de phase */}
               <div className='flex items-start gap-4 p-5 md:p-6'>
                 {/* Icône phase */}
@@ -317,7 +334,7 @@ export function ParcoursCandidatClient() {
                   </div>
                   <h2
                     id={`phase-${phase.id}`}
-                    className='mt-2 font-display text-xl font-bold text-white'
+                    className='mt-2 font-sans text-xl font-extrabold tracking-tight text-white md:text-2xl'
                   >
                     {phase.title}
                   </h2>
@@ -326,39 +343,41 @@ export function ParcoursCandidatClient() {
               </div>
 
               {/* Cards outils */}
-              <div className='grid gap-3 px-5 pb-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:px-6'>
+              <div className='grid gap-3 px-5 pb-6 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:px-6'>
                 {phase.cards.map((c) => (
                   <Link
                     key={c.href + c.title}
                     href={c.href}
                     className={cn(
-                      'group rounded-xl border border-white/10 bg-white/[0.03] p-4 transition',
+                      'group rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-4 shadow-md shadow-black/20 transition hover:-translate-y-0.5',
                       phase.color.cardHover,
                     )}
                   >
-                    <p className='font-semibold text-white group-hover:text-current'>{c.title}</p>
-                    <p className='mt-1.5 text-xs leading-relaxed text-gray-500'>{c.description}</p>
-                    <span className='mt-3 inline-block text-xs font-medium text-cyan-400'>Ouvrir →</span>
+                    <p className='font-semibold text-white'>{c.title}</p>
+                    <p className='mt-1.5 text-xs leading-relaxed text-slate-500'>{c.description}</p>
+                    <span className='mt-3 inline-flex items-center gap-1 text-xs font-semibold text-cyan-400/90 transition group-hover:gap-2'>
+                      Ouvrir <span aria-hidden>→</span>
+                    </span>
                   </Link>
                 ))}
               </div>
             </section>
           );
         })}
-      </div>
+        </div>
 
-      {/* Checklist de révision */}
-      <div className='mt-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6'>
+        {/* Checklist de révision */}
+        <div className='mt-14 rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-6 shadow-xl shadow-black/25 ring-1 ring-white/[0.04] md:p-8'>
         <div className='flex items-center gap-3'>
           <ClipboardList className='h-5 w-5 text-gold-300' />
-          <h3 className='font-display text-lg font-bold text-white'>Checklist de révision</h3>
+          <h3 className='font-sans text-lg font-extrabold text-white'>Checklist de révision</h3>
           {mounted && (
             <span className='ml-auto text-xs text-gray-500'>
               {doneCount}/{CHECKLIST_IDS.length} validées
             </span>
           )}
         </div>
-        <p className='mt-1 text-sm text-gray-500'>Cochez au fil de l&apos;eau — l&apos;état est mémorisé sur cet appareil.</p>
+        <p className='mt-1 text-sm text-slate-500'>Coche au fil de l&apos;eau — l&apos;état est mémorisé sur cet appareil.</p>
 
         {/* Mini progress bar */}
         {mounted && (
@@ -386,10 +405,10 @@ export function ParcoursCandidatClient() {
                   type='button'
                   onClick={() => toggleItem(id)}
                   className={cn(
-                    'flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm transition',
+                    'flex w-full items-start gap-3 rounded-2xl border px-4 py-3 text-left text-sm transition',
                     isDone
-                      ? 'border-emerald-500/35 bg-emerald-500/[0.07]'
-                      : 'border-white/10 hover:bg-white/[0.04]',
+                      ? 'border-emerald-500/40 bg-emerald-500/[0.08]'
+                      : 'border-white/[0.09] hover:border-white/[0.14] hover:bg-white/[0.04]',
                   )}
                 >
                   {isDone ? (
@@ -408,6 +427,7 @@ export function ParcoursCandidatClient() {
             );
           })}
         </ul>
+        </div>
       </div>
     </div>
   );

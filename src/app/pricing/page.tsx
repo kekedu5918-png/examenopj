@@ -41,11 +41,20 @@ export default async function PricingPage() {
 
   if (!monthly && !exam) {
     return (
-      <div className='mx-auto max-w-4xl px-4 py-16 md:py-24'>
-        <h1 className='mb-2 text-center font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
-          Choisissez votre accès
-        </h1>
-        <p className='mb-12 text-center text-gray-400'>Gratuit pour démarrer. Premium pour réussir.</p>
+      <div className='relative mx-auto max-w-4xl px-4 py-16 md:py-24'>
+        <div
+          className='pointer-events-none absolute left-1/2 top-0 h-[320px] w-full max-w-[700px] -translate-x-1/2 opacity-20'
+          style={{ background: 'radial-gradient(ellipse 80% 50% at 50% -10%, #6366f1, transparent)' }}
+          aria-hidden
+        />
+        <header className='relative mb-12 text-center'>
+          <h1 className='bg-gradient-to-br from-white via-slate-100 to-violet-200/90 bg-clip-text font-sans text-3xl font-extrabold tracking-tight text-transparent md:text-4xl'>
+            Choisissez votre accès
+          </h1>
+          <p className='mx-auto mt-4 max-w-xl text-lg text-slate-400'>
+            Gratuit pour démarrer. Premium pour réussir — configuration Stripe en cours sur ce déploiement.
+          </p>
+        </header>
         <PricingFallbackPlans />
       </div>
     );

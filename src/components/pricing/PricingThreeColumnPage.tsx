@@ -5,6 +5,7 @@ import { isRedirectError } from 'next/dist/client/components/redirect';
 import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
+import { SectionTitle } from '@/components/ui/SectionTitle';
 import type { Price } from '@/features/pricing/types';
 import { cn } from '@/utils/cn';
 
@@ -90,15 +91,25 @@ export function PricingThreeColumnPage({
   }
 
   return (
-    <div className='mx-auto max-w-5xl px-4 py-14 md:py-20'>
-      <header className='mb-10 text-center'>
-        <h1 className='font-display text-3xl font-bold tracking-tight text-white md:text-4xl'>
-          Choisissez votre accès
-        </h1>
-        <p className='mx-auto mt-4 max-w-2xl text-lg text-examen-inkMuted'>
-          Gratuit pour démarrer. Premium pour réussir.
-        </p>
-        <div className='mx-auto mt-6 max-w-xl'>
+    <div className='relative mx-auto max-w-5xl px-4 py-14 md:py-20'>
+      <div
+        className='pointer-events-none absolute left-1/2 top-0 h-[360px] w-[min(100%,800px)] -translate-x-1/2 opacity-25'
+        style={{ background: 'radial-gradient(ellipse 70% 50% at 50% -15%, #6366f1, transparent)' }}
+        aria-hidden
+      />
+
+      <header className='relative mb-12 text-center'>
+        <SectionTitle
+          badge='TARIFS'
+          badgeClassName='text-violet-200'
+          title='Choisissez votre accès'
+          titleAs='h1'
+          titleGradient
+          size='display'
+          subtitle='Gratuit pour démarrer. Premium pour tout débloquer jusqu&apos;au jour J.'
+          className='mx-auto max-w-2xl items-center text-center'
+        />
+        <div className='mx-auto mt-8 max-w-xl'>
           <ExamCountdown />
         </div>
       </header>
@@ -110,7 +121,7 @@ export function PricingThreeColumnPage({
       ) : null}
 
       <div
-        className='mx-auto mb-10 flex flex-wrap items-center justify-center gap-2 rounded-2xl border border-white/[0.08] bg-white/[0.03] p-1.5 sm:inline-flex'
+        className='mx-auto mb-10 flex flex-wrap items-center justify-center gap-1 rounded-3xl border border-white/[0.1] bg-white/[0.04] p-1.5 shadow-inner shadow-black/20 sm:inline-flex'
         role='group'
         aria-labelledby={`${groupId}-label`}
       >
@@ -121,9 +132,9 @@ export function PricingThreeColumnPage({
           type='button'
           onClick={() => setBilling('monthly')}
           className={cn(
-            'rounded-xl px-4 py-2 text-sm font-semibold transition',
+            'rounded-2xl px-5 py-2.5 text-sm font-semibold transition',
             billing === 'monthly'
-              ? 'bg-examen-accent text-white shadow-lg shadow-examen-accent/25'
+              ? 'bg-examen-accent text-white shadow-lg shadow-examen-accent/30'
               : 'text-examen-inkMuted hover:text-white',
           )}
         >
@@ -133,9 +144,9 @@ export function PricingThreeColumnPage({
           type='button'
           onClick={() => setBilling('session')}
           className={cn(
-            'rounded-xl px-4 py-2 text-sm font-semibold transition',
+            'rounded-2xl px-5 py-2.5 text-sm font-semibold transition',
             billing === 'session'
-              ? 'bg-amber-500/90 text-navy-950 shadow-lg shadow-amber-500/20'
+              ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-navy-950 shadow-lg shadow-amber-500/25'
               : 'text-examen-inkMuted hover:text-white',
           )}
         >
@@ -143,8 +154,8 @@ export function PricingThreeColumnPage({
         </button>
       </div>
 
-      <div className='grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10'>
-        <section className='flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 md:p-8'>
+      <div className='relative grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-10'>
+        <section className='flex flex-col rounded-3xl border border-white/[0.09] bg-gradient-to-b from-white/[0.05] to-white/[0.02] p-6 shadow-xl shadow-black/25 ring-1 ring-white/[0.04] md:p-8'>
           <p className='text-xs font-bold uppercase tracking-widest text-examen-inkMuted'>Plan gratuit</p>
           <p className='mt-2 font-display text-3xl font-bold text-white'>
             GRATUIT · <span className='text-white'>0 €</span>
@@ -164,7 +175,7 @@ export function PricingThreeColumnPage({
           </ul>
           <Link
             href='/inscription'
-            className='mt-8 flex w-full items-center justify-center rounded-xl border border-white/15 py-3 text-sm font-semibold text-white transition hover:bg-white/10'
+            className='mt-8 flex w-full items-center justify-center rounded-2xl border border-white/[0.14] bg-white/[0.03] py-3.5 text-sm font-semibold text-white transition hover:border-white/25 hover:bg-white/[0.08]'
           >
             Créer mon compte gratuit
           </Link>
@@ -172,10 +183,11 @@ export function PricingThreeColumnPage({
 
         <section
           className={cn(
-            'relative flex flex-col rounded-2xl border-2 border-examen-accent/50 bg-gradient-to-b from-examen-accent/12 to-transparent p-6 shadow-xl shadow-examen-accent/10 md:p-8',
+            'relative flex flex-col overflow-hidden rounded-3xl border-2 border-examen-accent/55 bg-gradient-to-b from-examen-accent/18 via-white/[0.04] to-transparent p-6 shadow-2xl shadow-examen-accent/20 ring-1 ring-examen-accent/25 md:p-8',
             'lg:scale-[1.02] lg:z-10',
           )}
         >
+          <div className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent' aria-hidden />
           <div className='mb-3 flex flex-wrap gap-2'>
             <span className='rounded-full bg-examen-accent/25 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white'>
               Recommandé
@@ -211,8 +223,8 @@ export function PricingThreeColumnPage({
             disabled={pending}
             onClick={() => checkout(billing === 'monthly' ? monthlyPrice : examPrice)}
             className={cn(
-              'mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl py-3.5 text-sm font-semibold text-white transition',
-              'bg-examen-accent hover:bg-examen-accentHover disabled:cursor-not-allowed disabled:opacity-60',
+              'mt-8 inline-flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 text-sm font-bold text-white shadow-lg shadow-examen-accent/35 transition',
+              'bg-gradient-to-r from-examen-accent to-blue-600 hover:from-examen-accentHover hover:to-blue-500 disabled:cursor-not-allowed disabled:opacity-60',
             )}
           >
             {pending ? 'Redirection…' : 'Passer Premium'}
@@ -224,7 +236,7 @@ export function PricingThreeColumnPage({
         </section>
       </div>
 
-      <div className='mx-auto mt-14 max-w-3xl rounded-2xl border border-white/[0.08] bg-white/[0.02] px-6 py-5 text-center text-sm text-examen-inkMuted'>
+      <div className='relative mx-auto mt-14 max-w-3xl rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.04] to-transparent px-6 py-6 text-center text-sm text-examen-inkMuted shadow-lg shadow-black/20 ring-1 ring-white/[0.04]'>
         <p className='font-medium text-examen-ink'>Satisfait ou remboursé 14 jours · Sans engagement sur le mensuel</p>
         <p className='mt-2 text-xs'>
           Site indépendant · Non affilié à l’administration

@@ -182,11 +182,19 @@ export default async function AccueilPage() {
   return (
     <>
       {!session ? (
-        <div className='border-b border-amber-500/30 bg-amber-500/10 px-4 py-3 text-center text-sm text-amber-100'>
-          <Link href='/login?next=%2Faccueil' className='font-semibold underline'>
-            Connecte-toi
-          </Link>{' '}
-          pour synchroniser ta progression et tes reprises.
+        <div className='relative border-b border-white/[0.06] bg-gradient-to-r from-amber-500/[0.12] via-[#0a0f1e] to-blue-500/[0.08] px-4 py-4'>
+          <div className='absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/40 to-transparent' aria-hidden />
+          <div className='mx-auto flex max-w-5xl flex-col items-center justify-center gap-2 text-center sm:flex-row sm:justify-between sm:text-left'>
+            <p className='text-sm text-amber-100/95'>
+              <span className='font-semibold text-white'>Synchronise ta progression</span> — connexion requise pour les stats et les reprises.
+            </p>
+            <Link
+              href='/login?next=%2Faccueil'
+              className='inline-flex shrink-0 items-center justify-center rounded-full border border-amber-400/35 bg-amber-500/15 px-5 py-2 text-sm font-semibold text-amber-100 transition hover:border-amber-300/50 hover:bg-amber-500/25'
+            >
+              Se connecter
+            </Link>
+          </div>
         </div>
       ) : null}
       <AccueilDashboard

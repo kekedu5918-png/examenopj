@@ -47,18 +47,18 @@ export function PricingFallbackPlans() {
         <div
           key={plan.name}
           className={cn(
-            'flex w-full flex-1 flex-col rounded-xl border p-6 lg:p-8',
+            'flex w-full flex-1 flex-col rounded-3xl border p-6 shadow-xl shadow-black/20 ring-1 ring-white/[0.04] lg:p-8',
             plan.highlight
-              ? 'border-gold-500/40 bg-gradient-to-b from-gold-500/10 to-transparent'
-              : 'border-white/10 bg-white/[0.03]'
+              ? 'border-amber-500/45 bg-gradient-to-b from-amber-500/15 via-white/[0.04] to-transparent ring-amber-500/20'
+              : 'border-white/[0.09] bg-gradient-to-b from-white/[0.05] to-white/[0.02]'
           )}
         >
           {plan.highlight ? (
-            <span className='mb-2 inline-block w-fit rounded-full border border-gold-500/40 bg-gold-500/15 px-2 py-0.5 text-xs font-semibold text-gold-300'>
+            <span className='mb-2 inline-block w-fit rounded-full border border-amber-500/40 bg-amber-500/15 px-2.5 py-0.5 text-xs font-bold uppercase tracking-wide text-amber-200'>
               Recommandé
             </span>
           ) : null}
-          <h3 className='font-display text-xl font-bold text-white'>{plan.name}</h3>
+          <h3 className='font-sans text-xl font-extrabold text-white'>{plan.name}</h3>
           <p className='mt-1 text-sm text-gray-400'>{plan.description}</p>
           <p className='mt-4 flex items-baseline gap-1'>
             <span className='text-3xl font-bold text-white'>{plan.price}</span>
@@ -75,9 +75,9 @@ export function PricingFallbackPlans() {
           <Link
             href={plan.href}
             className={cn(
-              'mt-8 inline-flex w-full items-center justify-center rounded-lg px-4 py-3 text-center text-sm font-semibold transition-colors',
+              'mt-8 inline-flex w-full items-center justify-center rounded-2xl px-4 py-3.5 text-center text-sm font-bold transition-colors',
               plan.highlight
-                ? 'bg-gold-500 text-navy-950 hover:bg-gold-400'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-navy-950 shadow-lg shadow-amber-500/25 hover:from-amber-400 hover:to-orange-400'
                 : 'border border-white/15 bg-white/10 text-white hover:bg-white/15'
             )}
           >

@@ -16,6 +16,8 @@ type SectionTitleProps = {
   subtitle?: string;
   className?: string;
   titleId?: string;
+  /** Niveau de titre sémantique (ex. h1 sur une page article) */
+  titleAs?: 'h1' | 'h2';
 };
 
 const easeOut = [0.21, 0.47, 0.32, 0.98] as const;
@@ -29,7 +31,10 @@ export function SectionTitle({
   subtitle,
   className,
   titleId,
+  titleAs = 'h2',
 }: SectionTitleProps) {
+  const TitleTag = titleAs;
+
   return (
     <motion.div
       className={cn('space-y-4', className)}
@@ -55,7 +60,7 @@ export function SectionTitle({
         </span>
       </span>
 
-      <h2
+      <TitleTag
         id={titleId}
         className={cn(
           'font-sans font-extrabold tracking-tight',
@@ -66,7 +71,7 @@ export function SectionTitle({
         )}
       >
         {title}
-      </h2>
+      </TitleTag>
 
       {subtitle ? (
         <p className='max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg'>{subtitle}</p>
