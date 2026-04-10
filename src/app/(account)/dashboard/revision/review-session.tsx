@@ -8,6 +8,7 @@ import { ArrowRight, CheckCircle2, ChevronLeft, Eye, XCircle } from 'lucide-reac
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { submitSM2Review } from '@/features/examenopj/actions/sm2-review';
+import { updateUserStreak } from '@/features/examenopj/actions/update-user-streak';
 import { SM2_QUALITY_LABELS } from '@/lib/sm2';
 
 // ─────────────────────────────────────────────
@@ -117,6 +118,7 @@ export function ReviewSession({ cards, returnUrl }: Props) {
       await new Promise((r) => setTimeout(r, 700));
 
       if (isLast) {
+        void updateUserStreak();
         setCurrentIndex(cards.length); // trigger finished state
       } else {
         setCurrentIndex((i) => i + 1);

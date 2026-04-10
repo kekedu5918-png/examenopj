@@ -19,6 +19,7 @@ import { type QuizQuestion } from '@/data/types';
 import { addDailyQuizQuestionCount, getDailyQuizQuestionCount } from '@/features/access/daily-quota-client';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
+import { updateUserStreak } from '@/features/examenopj/actions/update-user-streak';
 import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
 import { cn } from '@/utils/cn';
 
@@ -277,6 +278,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
         if (res.attemptId) setLastAttemptId(res.attemptId);
       });
     }
+    void updateUserStreak();
 
     const gamification = recordQuizCompleted();
     setStreakDays(gamification.streak);
