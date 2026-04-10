@@ -56,11 +56,11 @@ function countRepères(fiche: Fiche): { label: string; hint?: string } {
 
 const cardClass = (c: (typeof COULEURS)['emerald'], locked: boolean | undefined) =>
   cn(
-    'group relative block w-full rounded-xl border border-white/10 bg-white/[0.03] p-5 text-left shadow-lg shadow-black/20 transition-all duration-200',
-    !locked && 'hover:z-[1] hover:scale-[1.02] hover:shadow-xl hover:shadow-black/30',
+    'group relative block w-full overflow-hidden rounded-xl border border-white/[0.08] bg-gradient-to-br from-white/[0.03] to-transparent p-5 text-left shadow-lg shadow-black/25 transition-all duration-250',
+    !locked && 'hover:z-[1] hover:scale-[1.015] hover:border-white/[0.15] hover:shadow-xl hover:shadow-black/40 hover:bg-white/[0.05]',
     !locked &&
-      'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500/50',
-    'border-l-4',
+      'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500/50',
+    'border-l-[3px]',
     c.borderLeft,
     !locked && c.borderHover,
   );
@@ -75,6 +75,8 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
 
   const inner = (
     <>
+      {/* Top highlight line */}
+      <div className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/[0.12] to-transparent' aria-hidden />
       <div className='mb-3 flex items-start justify-between gap-2'>
         <div className='flex min-w-0 flex-wrap items-center gap-1.5'>
           <span className={cn('rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest', c.badge)}>
@@ -158,8 +160,9 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
         ) : null}
       </div>
       {!locked ? (
-        <span className='mt-4 inline-flex text-xs font-medium text-emerald-400/90 group-hover:text-emerald-300'>
-          {fiche.ficheCanoniqueId ? '→ Voir la fiche complète' : 'Lire la fiche complète →'}
+        <span className='mt-4 inline-flex items-center gap-1 text-xs font-semibold text-blue-400/80 transition-all group-hover:gap-2 group-hover:text-blue-300'>
+          {fiche.ficheCanoniqueId ? 'Voir la fiche complète' : 'Lire la fiche complète'}
+          <span className='transition-transform group-hover:translate-x-0.5'>→</span>
         </span>
       ) : null}
     </>

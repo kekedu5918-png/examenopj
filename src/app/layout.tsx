@@ -89,9 +89,34 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <div
-          className='pointer-events-none fixed inset-0 -z-10 bg-examen-canvas bg-[radial-gradient(ellipse_100%_80%_at_50%_-20%,rgba(79,110,247,0.12),transparent_55%),radial-gradient(ellipse_60%_50%_at_100%_60%,rgba(124,58,237,0.08),transparent_50%)]'
+          className='pointer-events-none fixed inset-0 -z-10 bg-examen-canvas'
           aria-hidden
-        />
+        >
+          {/* Top center blue glow */}
+          <div
+            className='absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 opacity-[0.15]'
+            style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -10%, #3b82f6, transparent)' }}
+          />
+          {/* Top-right violet glow */}
+          <div
+            className='absolute right-0 top-0 h-[400px] w-[500px] opacity-[0.08]'
+            style={{ background: 'radial-gradient(ellipse 70% 60% at 100% 0%, #7c3aed, transparent)' }}
+          />
+          {/* Bottom-left accent */}
+          <div
+            className='absolute bottom-0 left-0 h-[300px] w-[400px] opacity-[0.06]'
+            style={{ background: 'radial-gradient(ellipse 60% 60% at 0% 100%, #0ea5e9, transparent)' }}
+          />
+          {/* Subtle grid overlay */}
+          <div
+            className='absolute inset-0 opacity-[0.018]'
+            style={{
+              backgroundImage:
+                'linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px)',
+              backgroundSize: '60px 60px',
+            }}
+          />
+        </div>
         <SiteJsonLd />
         <a
           href='#contenu-principal'

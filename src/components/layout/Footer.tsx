@@ -3,112 +3,104 @@ import Link from 'next/link';
 import { ExamenOpjLogo } from '@/components/layout/ExamenOpjLogo';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
-const colLink = 'text-sm text-examen-inkMuted transition hover:text-examen-ink';
+const colLink =
+  'text-sm text-slate-500 transition-colors duration-150 hover:text-slate-300 hover:translate-x-0.5 inline-block';
 
 export function Footer() {
   return (
-    <footer className='relative mt-auto border-t border-white/[0.06] bg-examen-canvas'>
-      <div className='mx-auto max-w-6xl px-4 py-14 md:py-16'>
-        <div className='mb-10'>
-          <div className='mb-3 flex items-center gap-2'>
-            <ExamenOpjLogo size={28} />
-            <span className='font-display text-sm font-black tracking-[0.12em] text-white'>EXAMENOPJ</span>
+    <footer className='relative mt-auto overflow-hidden border-t border-white/[0.05]'>
+      {/* Background */}
+      <div className='absolute inset-0 bg-gradient-to-b from-transparent to-[#04080f]' />
+      <div
+        className='pointer-events-none absolute bottom-0 left-1/2 h-48 w-[500px] -translate-x-1/2 opacity-10 blur-[80px]'
+        style={{ background: 'radial-gradient(ellipse, #3b82f6 0%, transparent 70%)' }}
+        aria-hidden
+      />
+
+      <div className='relative mx-auto max-w-6xl px-4 py-14 md:py-16'>
+        {/* Top section */}
+        <div className='mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end'>
+          <div>
+            <div className='mb-3 flex items-center gap-2.5'>
+              <ExamenOpjLogo size={28} />
+              <span className='font-sans text-sm font-black tracking-[0.12em] text-white'>EXAMENOPJ</span>
+            </div>
+            <p className='max-w-xs text-sm leading-relaxed text-slate-500'>
+              Préparation complète à l&apos;examen OPJ session 2026.
+              <br />
+              Site indépendant · Non affilié à l&apos;administration.
+            </p>
           </div>
-          <p className='max-w-md text-sm leading-relaxed text-examen-inkMuted'>
-            Préparation OPJ session 2026
-            <br />
-            Site indépendant · Non affilié à l&apos;administration
-          </p>
+
+          {/* Live status */}
+          <div className='flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/[0.07] px-4 py-2 text-xs font-semibold text-emerald-400'>
+            <span className='relative flex h-2 w-2'>
+              <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60' />
+              <span className='relative inline-flex h-2 w-2 rounded-full bg-emerald-400' />
+            </span>
+            Contenu mis à jour — Juin 2026
+          </div>
         </div>
 
+        {/* Links grid */}
         <div className='grid gap-10 md:grid-cols-3 md:gap-8'>
           <div>
-            <p className='mb-3 text-xs font-semibold uppercase tracking-widest text-examen-inkMuted'>Apprendre</p>
-            <ul className='space-y-2'>
-              <li>
-                <Link href='/fondamentaux' className={colLink}>
-                  Fondamentaux
-                </Link>
-              </li>
-              <li>
-                <Link href='/infractions' className={colLink}>
-                  Infractions
-                </Link>
-              </li>
-              <li>
-                <Link href='/cours/modules' className={colLink}>
-                  Modules F01–F15
-                </Link>
-              </li>
-              <li>
-                <Link href='/cours/enquetes' className={colLink}>
-                  Enquêtes
-                </Link>
-              </li>
-              <li>
-                <Link href='/guide-revision-opj' className={colLink}>
-                  Guide de révision
-                </Link>
-              </li>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Apprendre</p>
+            <ul className='space-y-2.5'>
+              {[
+                { href: '/fondamentaux', label: 'Fondamentaux' },
+                { href: '/infractions', label: 'Infractions' },
+                { href: '/cours/modules', label: 'Modules F01–F15' },
+                { href: '/cours/enquetes', label: 'Enquêtes' },
+                { href: '/guide-revision-opj', label: 'Guide de révision' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={colLink}>{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <p className='mb-3 text-xs font-semibold uppercase tracking-widest text-examen-inkMuted'>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>
               S&apos;entraîner
             </p>
-            <ul className='space-y-2'>
-              <li>
-                <Link href='/quiz' className={colLink}>
-                  Quiz
-                </Link>
-              </li>
-              <li>
-                <Link href='/flashcards' className={colLink}>
-                  Flashcards
-                </Link>
-              </li>
-              <li>
-                <Link href='/parcours-candidat' className={colLink}>
-                  Parcours candidat
-                </Link>
-              </li>
-              <li>
-                <Link href='/sujets-blancs' className={colLink}>
-                  Sujets blancs
-                </Link>
-              </li>
+            <ul className='space-y-2.5'>
+              {[
+                { href: '/quiz', label: 'Quiz QCM' },
+                { href: '/flashcards', label: 'Flashcards' },
+                { href: '/parcours-candidat', label: 'Parcours candidat' },
+                { href: '/sujets-blancs', label: 'Sujets blancs' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={colLink}>{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <p className='mb-3 text-xs font-semibold uppercase tracking-widest text-examen-inkMuted'>Informations</p>
-            <ul className='space-y-2'>
-              <li>
-                <Link href='/a-propos' className={colLink}>
-                  À propos
-                </Link>
-              </li>
-              <li>
-                <Link href='/contact' className={colLink}>
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href='/mentions-legales' className={colLink}>
-                  Mentions légales
-                </Link>
-              </li>
-              <li>
-                <Link href='/cgv' className={colLink}>
-                  CGV
-                </Link>
-              </li>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Informations</p>
+            <ul className='space-y-2.5'>
+              {[
+                { href: '/a-propos', label: 'À propos' },
+                { href: '/contact', label: 'Contact' },
+                { href: '/mentions-legales', label: 'Mentions légales' },
+                { href: '/cgv', label: 'CGV' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={colLink}>{l.label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        <div className='mt-10 border-t border-white/[0.06] pt-8'>
-          <p className='text-center text-xs text-examen-inkMuted/90' suppressHydrationWarning>
-            © {new Date().getFullYear()} ExamenOPJ.fr · Dernière mise à jour : {SITE_LAST_UPDATED_LABEL}
+        {/* Bottom bar */}
+        <div className='mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/[0.05] pt-8 md:flex-row'>
+          <p className='text-xs text-slate-600' suppressHydrationWarning>
+            © {new Date().getFullYear()} ExamenOPJ.fr · Tous droits réservés
+          </p>
+          <p className='text-xs text-slate-600'>
+            Dernière mise à jour : {SITE_LAST_UPDATED_LABEL}
           </p>
         </div>
       </div>
