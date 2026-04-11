@@ -12,7 +12,7 @@ import { ENQUETES } from '@/data/enquetes-data';
 export const metadata: Metadata = {
   title: 'Enquêtes (entraînement) — Examen OPJ',
   description:
-    'Parcours par enquêtes : planches Alpha / Bravo (PDF) et fiches thématiques alignées sur la frise de formation. Articulation, PV, rapport — préparation épreuve 2.',
+    'Enquêtes fictives Épreuve 2 : ordre formation Alpha, Bravo, Charlie ; articulation, PV, rapport. Autres planches en complément.',
 };
 
 export default function EnquetesHubPage() {
@@ -29,7 +29,7 @@ export default function EnquetesHubPage() {
           badge='CONCOURS'
           badgeClassName='bg-violet-500/20 text-violet-200'
           title='Enquêtes — cœur du parcours'
-          subtitle='Chaque fiche relie le scénario à l’épreuve 2 (articulation, PV, rapport). Filtrez par cadre procédural ; Alpha reste l’exemple complet gratuit.'
+          subtitle='Épreuve 2 : articulation, PV, rapport. En formation, enchaînez dans l’ordre Alpha, puis Bravo, puis Charlie ; le reste du hub complète vos cours papier.'
           size='display'
           titleGradient
           titleAs='h1'

@@ -100,20 +100,20 @@ function buildStrengthsFeedback(answers: DiagnosticAnswer[]): { strengths: strin
 
   const byQ = Object.fromEntries(answers.map((a) => [a.question_id, a]));
 
-  if (byQ['q1']?.correct) strengths.push('Vous maîtrisez les éléments constitutifs du vol');
-  else weaknesses_feedback.push('Éléments du vol à revoir (Q1)');
+  if (byQ['q1']?.correct) strengths.push('Durée initiale de GAV : repère acquis');
+  else weaknesses_feedback.push('Cadre de la garde à vue (durée initiale) à consolider (Q1)');
 
-  if (byQ['q2']?.correct) strengths.push('Vous distinguez vol et recel');
-  else weaknesses_feedback.push('Distinction vol/recel à consolider (Q2)');
+  if (byQ['q2']?.correct) strengths.push('Audition en GAV et droits de la personne : à jour');
+  else weaknesses_feedback.push('Auditions / assistance de l’avocat en GAV à revoir (Q2)');
 
-  if (byQ['q3']?.correct) strengths.push('La GAV de droit commun est claire pour vous');
-  else weaknesses_feedback.push('Procédure GAV à approfondir (Q3)');
+  if (byQ['q3']?.correct) strengths.push('Perquisitions en flagrance : vous connaissez l’article clé');
+  else weaknesses_feedback.push('Perquisitions et art. 56 CPP à mémoriser (Q3)');
 
-  if (byQ['q4']?.correct) strengths.push('Vous connaissez les articles de procédure');
-  else weaknesses_feedback.push('Articles références de procédure à mémoriser (Q4)');
+  if (byQ['q4']?.correct) strengths.push('Prolongations de GAV : ordre de grandeur maîtrisé');
+  else weaknesses_feedback.push('Durée totale et prolongations de GAV à approfondir (Q4)');
 
-  if (byQ['q5']?.correct) strengths.push('Vous savez qualifier les infractions en pratique');
-  else weaknesses_feedback.push('Qualification pratique à travailler (Q5)');
+  if (byQ['q5']?.correct) strengths.push('Perquisition au domicile en EP : distinction utile');
+  else weaknesses_feedback.push('Perquisitions en enquête préliminaire (JLD) à travailler (Q5)');
 
   return { strengths, weaknesses_feedback };
 }

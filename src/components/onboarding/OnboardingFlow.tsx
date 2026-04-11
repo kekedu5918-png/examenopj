@@ -1,6 +1,6 @@
 'use client';
 
-import { type ReactNode, useState, useTransition } from 'react';
+import { type ReactNode, useEffect, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
@@ -10,6 +10,7 @@ import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { completeDiagnostic, saveOnboardingStage } from '@/features/onboarding/actions/onboarding-actions';
 import {
   DIAGNOSTIC_QUESTIONS,
+  DIAGNOSTIC_SESSION_STORAGE_KEY,
   type DiagnosticAnswer,
   type DiagnosticResult,
   type FormationPhase,
@@ -272,14 +273,52 @@ function Stage2StrengthsWeaknesses({
 function Stage3Diagnostic({
   onComplete,
   onBack,
+  isSubmitting,
+  submitError,
 }: {
   onComplete: (answers: DiagnosticAnswer[]) => void;
   onBack: () => void;
+  isSubmitting: boolean;
+  submitError: string | null;
 }) {
+  const [hydrated, setHydrated] = useState(false);
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState<DiagnosticAnswer[]>([]);
   const [selectedAnswer, setSelectedAnswer] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem(DIAGNOSTIC_SESSION_STORAGE_KEY);
+      if (!raw) {
+        setHydrated(true);
+        return;
+      }
+      const parsed = JSON.parse(raw) as { currentQ?: number; answers?: DiagnosticAnswer[] };
+      if (parsed && typeof parsed.currentQ === 'number' && Array.isArray(parsed.answers)) {
+        const q = parsed.currentQ;
+        const ans = parsed.answers;
+        if (q >= 0 && q < DIAGNOSTIC_QUESTIONS.length && ans.length === q) {
+          setCurrentQ(q);
+          setAnswers(ans);
+        }
+      }
+    } catch {
+      /* ignore */
+    }
+    setHydrated(true);
+  }, []);
+
+  const persistProgress = (q: number, nextAnswers: DiagnosticAnswer[]) => {
+    try {
+      sessionStorage.setItem(
+        DIAGNOSTIC_SESSION_STORAGE_KEY,
+        JSON.stringify({ currentQ: q, answers: nextAnswers }),
+      );
+    } catch {
+      /* ignore */
+    }
+  };
 
   const question = DIAGNOSTIC_QUESTIONS[currentQ];
   const isCorrect = selectedAnswer === question.correct;
@@ -305,11 +344,26 @@ function Stage3Diagnostic({
     if (isLast) {
       onComplete(newAnswers);
     } else {
-      setCurrentQ(currentQ + 1);
+      const nextQ = currentQ + 1;
+      setCurrentQ(nextQ);
       setSelectedAnswer(null);
       setShowFeedback(false);
+      persistProgress(nextQ, newAnswers);
     }
   };
+
+  if (!hydrated) {
+    return (
+      <OnboardingStage
+        step={3}
+        total={4}
+        title='⚡ Diagnostic éclair'
+        subtitle='Chargement…'
+      >
+        <div className='h-32 animate-pulse rounded-xl bg-slate-800/60' />
+      </OnboardingStage>
+    );
+  }
 
   return (
     <OnboardingStage
@@ -318,6 +372,26 @@ function Stage3Diagnostic({
       title={`⚡ Diagnostic éclair — Q${currentQ + 1}/5`}
       subtitle="Pas de panique ! C'est juste pour adapter votre plan."
     >
+      <div className='relative min-h-[min(70vh,28rem)]'>
+        {isSubmitting ? (
+          <div
+            className='absolute inset-0 z-30 flex flex-col items-center justify-center rounded-xl bg-slate-950/88 backdrop-blur-[2px]'
+            role='status'
+            aria-live='polite'
+            aria-busy='true'
+          >
+            <div className='mb-4 text-4xl'>⚙️</div>
+            <p className='text-lg font-bold text-slate-50'>Génération de votre plan…</p>
+            <p className='mt-2 text-sm text-slate-400'>Analyse de vos réponses</p>
+          </div>
+        ) : null}
+
+        {submitError ? (
+          <div className='mb-4 rounded-lg border border-rose-500/40 bg-rose-950/40 px-3 py-2 text-sm text-rose-100'>
+            {submitError}
+          </div>
+        ) : null}
+
       <div className='mb-5'>
         <div className='mb-4 flex gap-1'>
           {DIAGNOSTIC_QUESTIONS.map((_, i) => (
@@ -377,10 +451,11 @@ function Stage3Diagnostic({
           </Button>
         )}
         {showFeedback && (
-          <Button className='flex-1 bg-cyan-600 hover:bg-cyan-700' onClick={handleNext}>
+          <Button className='flex-1 bg-cyan-600 hover:bg-cyan-700' onClick={handleNext} disabled={isSubmitting}>
             {isLast ? 'Voir mon plan →' : 'Question suivante →'}
           </Button>
         )}
+      </div>
       </div>
     </OnboardingStage>
   );
@@ -584,6 +659,7 @@ export function OnboardingFlow() {
   const [formationPhase, setFormationPhase] = useState<FormationPhase>('mid');
   const [weaknesses, setWeaknesses] = useState<string[]>([]);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
+  const [diagnosticError, setDiagnosticError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleStage1 = (phase: FormationPhase) => {
@@ -596,6 +672,11 @@ export function OnboardingFlow() {
 
   const handleStage2 = (strengths: string[], w: string[]) => {
     setWeaknesses(w);
+    try {
+      sessionStorage.removeItem(DIAGNOSTIC_SESSION_STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
     startTransition(async () => {
       await saveOnboardingStage(2, { strengths, weaknesses: w });
     });
@@ -603,29 +684,25 @@ export function OnboardingFlow() {
   };
 
   const handleDiagnosticComplete = (answers: DiagnosticAnswer[]) => {
+    setDiagnosticError(null);
     startTransition(async () => {
       const res = await completeDiagnostic(formationPhase, weaknesses, answers);
       if (res.ok && res.result) {
+        try {
+          sessionStorage.removeItem(DIAGNOSTIC_SESSION_STORAGE_KEY);
+        } catch {
+          /* ignore */
+        }
         setResult(res.result);
         setStage(4);
+      } else {
+        setDiagnosticError('Enregistrement impossible. Vérifiez votre connexion et réessayez.');
       }
     });
   };
 
   if (stage === 4 && result) {
     return <Stage4Results result={result} />;
-  }
-
-  if (isPending && stage === 3) {
-    return (
-      <OnboardingScreenShell>
-        <div className='text-center'>
-          <div className='mb-4 text-4xl'>⚙️</div>
-          <p className='text-xl font-bold text-slate-50'>Génération de votre plan…</p>
-          <p className='mt-2 text-sm text-slate-400'>Analyse de vos réponses en cours</p>
-        </div>
-      </OnboardingScreenShell>
-    );
   }
 
   return (
@@ -636,7 +713,19 @@ export function OnboardingFlow() {
         <Stage2StrengthsWeaknesses onNext={handleStage2} onBack={() => setStage(1)} />
       )}
       {stage === 3 && (
-        <Stage3Diagnostic onComplete={handleDiagnosticComplete} onBack={() => setStage(2)} />
+        <Stage3Diagnostic
+          onComplete={handleDiagnosticComplete}
+          onBack={() => {
+            try {
+              sessionStorage.removeItem(DIAGNOSTIC_SESSION_STORAGE_KEY);
+            } catch {
+              /* ignore */
+            }
+            setStage(2);
+          }}
+          isSubmitting={isPending}
+          submitError={diagnosticError}
+        />
       )}
     </>
   );

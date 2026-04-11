@@ -1,6 +1,7 @@
 {
   "_meta": {
-    "template_version": 0
+    "template_version": 1,
+    "note": "Montants en centimes EUR alignés sur l'UI (9,90 €/mois, pass session 49 €). À charger dans Stripe CLI ou dashboard de test."
   },
   "fixtures": [
     {
@@ -22,26 +23,11 @@
       "method": "post",
       "params": {
         "product": "${prod_mensuel:id}",
-        "currency": "usd",
+        "currency": "eur",
         "billing_scheme": "per_unit",
-        "unit_amount": 1000,
+        "unit_amount": 990,
         "recurring": {
           "interval": "month",
-          "interval_count": 1
-        }
-      }
-    },
-    {
-      "name": "price_mensuel_year",
-      "path": "/v1/prices",
-      "method": "post",
-      "params": {
-        "product": "${prod_mensuel:id}",
-        "currency": "usd",
-        "billing_scheme": "per_unit",
-        "unit_amount": 10000,
-        "recurring": {
-          "interval": "year",
           "interval_count": 1
         }
       }
@@ -57,6 +43,17 @@
           "price_card_variant": "examen",
           "support_level": "email"
         }
+      }
+    },
+    {
+      "name": "price_examen_onetime",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${prod_examen:id}",
+        "currency": "eur",
+        "billing_scheme": "per_unit",
+        "unit_amount": 4900
       }
     }
   ]

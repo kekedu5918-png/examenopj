@@ -95,7 +95,7 @@ const PHASES: Phase[] = [
     cards: [
       { href: '/flashcards', title: 'Flashcards', description: 'Mémorisation quotidienne sur le même référentiel que le récap.' },
       { href: '/entrainement/recapitulatif', title: 'Récap priorité examen (Épreuve 1)', description: "Tableaux comparatifs PRQC ; densifier avant l'écrit DPS." },
-      { href: '/cours/enquetes', title: 'Enquêtes types formation (Épreuve 2)', description: 'Planches complètes : même fil rouge que le dossier de procédure chronométré.' },
+      { href: '/cours/enquetes', title: 'Enquêtes — ordre Alpha → Bravo → Charlie', description: 'Même fil que le document centre ; les autres planches du hub sont un complément.' },
       { href: '/epreuves/epreuve-2', title: 'Méthode Épreuve 2 — dossier', description: 'Cartouches, articulation qualification/actes et attentes correcteurs.' },
     ],
   },

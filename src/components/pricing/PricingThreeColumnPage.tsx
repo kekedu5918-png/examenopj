@@ -1,17 +1,31 @@
 'use client';
 
 import { useEffect, useId, useState, useTransition } from 'react';
-import { isRedirectError } from 'next/dist/client/components/redirect';
 import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
+import type { CreateCheckoutResult } from '@/features/pricing/actions/create-checkout-action';
 import type { Price } from '@/features/pricing/types';
 import { cn } from '@/utils/cn';
 
-type CreateCheckoutFn = (args: { price: Price }) => Promise<void>;
+type CreateCheckoutFn = (args: { price: Price }) => Promise<CreateCheckoutResult>;
+
+function formatEurFromUnitAmount(unitAmount: number | null | undefined): string | null {
+  if (unitAmount == null) return null;
+  try {
+    return new Intl.NumberFormat('fr-FR', {
+      style: 'currency',
+      currency: 'EUR',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(unitAmount / 100);
+  } catch {
+    return null;
+  }
+}
 
 export type PricingThreeColumnPageProps = {
   isLoggedIn: boolean;
@@ -72,6 +86,9 @@ export function PricingThreeColumnPage({
   const [billing, setBilling] = useState<'monthly' | 'session'>('session');
   const groupId = useId();
 
+  const monthlyLabel = formatEurFromUnitAmount(monthlyPrice?.unit_amount) ?? '9,90 €';
+  const examLabel = formatEurFromUnitAmount(examPrice?.unit_amount) ?? '49 €';
+
   function checkout(price: Price | null) {
     setError(null);
     if (!price) {
@@ -84,9 +101,13 @@ export function PricingThreeColumnPage({
     }
     startTransition(async () => {
       try {
-        await createCheckoutAction({ price });
+        const result = await createCheckoutAction({ price });
+        if (!result.ok) {
+          window.location.href = result.redirectTo;
+          return;
+        }
+        window.location.href = result.url;
       } catch (e) {
-        if (isRedirectError(e)) throw e;
         setError(e instanceof Error ? e.message : 'Paiement indisponible.');
       }
     });
@@ -134,7 +155,7 @@ export function PricingThreeColumnPage({
               : 'text-examen-inkMuted hover:text-white',
           )}
         >
-          Mensuel · 9,90 €/mois
+          Mensuel · {monthlyLabel}/mois
         </button>
         <button
           type='button'
@@ -146,7 +167,7 @@ export function PricingThreeColumnPage({
               : 'text-examen-inkMuted hover:text-white',
           )}
         >
-          Pass session · 49 € jusqu’au 11 juin 2026
+          Pass session · {examLabel} jusqu’au 11 juin 2026
         </button>
       </div>
 
@@ -195,11 +216,13 @@ export function PricingThreeColumnPage({
           <p className='text-xs font-bold uppercase tracking-widest text-examen-inkMuted'>Plan Premium</p>
           {billing === 'monthly' ? (
             <p className='mt-2 font-display text-3xl font-bold text-white md:text-4xl'>
-              PREMIUM · 9,90 €<span className='text-lg font-medium text-examen-inkMuted'> / mois</span>
+              PREMIUM · {monthlyLabel}
+              <span className='text-lg font-medium text-examen-inkMuted'> / mois</span>
             </p>
           ) : (
             <p className='mt-2 font-display text-3xl font-bold text-white md:text-4xl'>
-              PREMIUM · 49 € <span className='text-base font-normal text-examen-inkMuted'>jusqu’au 11 juin 2026</span>
+              PREMIUM · {examLabel}{' '}
+              <span className='text-base font-normal text-examen-inkMuted'>jusqu’au 11 juin 2026</span>
             </p>
           )}
           <ul className='mt-6 flex-1 space-y-2.5'>

@@ -8,6 +8,8 @@ import { SexyBoarder } from '@/components/sexy-boarder';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
+import type { CreateCheckoutResult } from '@/features/pricing/actions/create-checkout-action';
+
 import {
   PriceCardVariant,
   productMetadataSchema,
@@ -23,7 +25,7 @@ export function PricingCard({
 }: {
   product: ProductWithPrices;
   price?: Price;
-  createCheckoutAction?: ({ price }: { price: Price }) => void;
+  createCheckoutAction?: ({ price }: { price: Price }) => void | Promise<CreateCheckoutResult>;
 }) {
   const [billingInterval, setBillingInterval] = useState<BillingInterval>(
     price ? (price.interval as BillingInterval) : 'month'
@@ -122,7 +124,9 @@ export function PricingCard({
               <Button
                 variant={buttonVariantByTier[metadata.price_card_variant]}
                 className='w-full'
-                onClick={() => createCheckoutAction({ price: currentPrice })}
+                onClick={() => {
+                  void createCheckoutAction({ price: currentPrice });
+                }}
               >
                 Get Started
               </Button>

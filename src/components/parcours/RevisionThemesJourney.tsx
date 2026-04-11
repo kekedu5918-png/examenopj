@@ -15,7 +15,12 @@ import {
   Wand2,
 } from 'lucide-react';
 
-import { REVISION_THEMES, type RevisionEtapeCle, type RevisionThemeVisualKey } from '@/data/revision-themes';
+import {
+  FORMATION_ENQUETES_CHRONO,
+  REVISION_THEMES,
+  type RevisionEtapeCle,
+  type RevisionThemeVisualKey,
+} from '@/data/revision-themes';
 import { cn } from '@/utils/cn';
 
 const STEP_ICONS: Record<RevisionEtapeCle, typeof BookOpen> = {
@@ -281,8 +286,37 @@ export function RevisionThemesJourney() {
               >
                 Épreuve 1 → 2 → 3
               </span>{' '}
-              sur le même thème. Choisis une bulle colorée pour révéler le parcours.
+              sur le même thème. Tes cours papier viennent en complément : garde la chronologie du document pour les
+              planches. Choisis une bulle colorée pour le détail par thème.
             </p>
+          </div>
+        </div>
+
+        {/* Séquence officielle présentiel — ne pas mélanger avec les planches complémentaires du hub */}
+        <div
+          className={cn(
+            'mb-8 rounded-2xl border border-white/[0.09] bg-black/30 p-4 shadow-inner shadow-black/30 md:p-5',
+            p.panelBorder,
+          )}
+        >
+          <p className='text-[11px] font-bold uppercase tracking-[0.2em] text-slate-500'>Séquence formation (document centre)</p>
+          <p className='mt-1 text-xs text-slate-500'>
+            Ordre à respecter : Alpha, puis Bravo, puis Charlie — avant d’explorer les autres fiches du site.
+          </p>
+          <div className='mt-4 flex flex-wrap gap-2'>
+            {FORMATION_ENQUETES_CHRONO.map((lien) => (
+              <Link
+                key={lien.href}
+                href={lien.href}
+                className={cn(
+                  'inline-flex items-center justify-center rounded-xl border px-3 py-2 text-center text-[11px] font-bold transition md:min-w-[7rem]',
+                  p.linkIdle,
+                  p.linkHover,
+                )}
+              >
+                {lien.label}
+              </Link>
+            ))}
           </div>
         </div>
 

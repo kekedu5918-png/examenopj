@@ -47,36 +47,16 @@ export type DiagnosticQuestion = {
   category: string;
 };
 
+/** Reprise du diagnostic après F5 / navigation (session navigateur uniquement). */
+export const DIAGNOSTIC_SESSION_STORAGE_KEY = 'examenopj:diagnostic-eclair-v1';
+
+/**
+ * 5 questions ciblées procédure pénale (GAV, auditions, perquisitions) — aligné révision OPJ / épreuve 2.
+ */
 export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
   {
     id: 'q1',
-    text: 'Les 3 éléments constitutifs du vol sont :',
-    options: [
-      { id: 'a', text: 'Soustraction frauduleuse, bien appartenant à autrui, intention frauduleuse' },
-      { id: 'b', text: 'Soustraction frauduleuse, bien appartenant à autrui, violence' },
-      { id: 'c', text: 'Violence, bien appartenant à autrui, mauvaise foi' },
-      { id: 'd', text: 'Je ne sais pas' },
-    ],
-    correct: 'a',
-    explanation: "Le vol est défini par trois éléments : la soustraction (action matérielle), le bien appartenant à autrui (objet), et l'intention frauduleuse (élément moral).",
-    category: 'infractions',
-  },
-  {
-    id: 'q2',
-    text: 'La principale distinction entre vol et recel est que le recel :',
-    options: [
-      { id: 'a', text: 'Est toujours moins sévèrement puni que le vol' },
-      { id: 'b', text: 'Nécessite que le bien provienne d\'un crime ou d\'un délit' },
-      { id: 'c', text: 'Implique une action violente de l\'auteur' },
-      { id: 'd', text: 'Je ne sais pas' },
-    ],
-    correct: 'b',
-    explanation: 'Le recel (art. 321-1 CP) est le fait de dissimuler, détenir ou transmettre une chose dont on sait qu\'elle provient d\'un crime ou d\'un délit.',
-    category: 'infractions',
-  },
-  {
-    id: 'q3',
-    text: 'La durée initiale d\'une garde à vue (GAV) de droit commun est de :',
+    text: 'La durée initiale maximale de la garde à vue de droit commun, avant toute prolongation, est de :',
     options: [
       { id: 'a', text: '12 heures' },
       { id: 'b', text: '24 heures' },
@@ -84,12 +64,27 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { id: 'd', text: 'Je ne sais pas' },
     ],
     correct: 'b',
-    explanation: 'La GAV de droit commun est de 24h, renouvelable une fois (art. 63 CPP). En matière de criminalité organisée, elle peut être portée à 96h.',
-    category: 'procedure',
+    explanation:
+      'En droit commun, la GAV est au plus de 24 h avant décision de prolongation (art. 63 et s. CPP). Des prolongations et un régime spécial (ex. 96 h) existent dans des cas précis.',
+    category: 'gav',
   },
   {
-    id: 'q4',
-    text: 'La perquisition en matière criminelle (flagrance) est régie par l\'article :',
+    id: 'q2',
+    text: 'Pour l’audition d’une personne placée en garde à vue, le code prévoit en principe :',
+    options: [
+      { id: 'a', text: 'L’absence totale d’assistance juridique pour accélérer la mesure' },
+      { id: 'b', text: 'L’assistance d’un avocat, sauf renonciation ou cas prévus par la loi' },
+      { id: 'c', text: 'La présence obligatoire d’un magistrat du parquet à chaque audition' },
+      { id: 'd', text: 'Je ne sais pas' },
+    ],
+    correct: 'b',
+    explanation:
+      'Les droits de la personne gardée à vue incluent l’assistance d’un avocat dans les conditions prévues par le CPP (renonciation, garde à vue provisoire, etc.).',
+    category: 'audition',
+  },
+  {
+    id: 'q3',
+    text: 'Les perquisitions et saisies au cours d’une enquête de flagrance (matière criminelle) relèvent notamment de l’article :',
     options: [
       { id: 'a', text: 'Art. 56 CPP' },
       { id: 'b', text: 'Art. 76 CPP' },
@@ -97,20 +92,36 @@ export const DIAGNOSTIC_QUESTIONS: DiagnosticQuestion[] = [
       { id: 'd', text: 'Je ne sais pas' },
     ],
     correct: 'a',
-    explanation: 'L\'art. 56 CPP régit les perquisitions et saisies dans le cadre d\'une enquête de flagrance. L\'art. 76 concerne l\'enquête préliminaire.',
-    category: 'procedure',
+    explanation:
+      'L’art. 56 CPP encadre perquisitions et saisies en flagrance. L’art. 76 concerne l’enquête préliminaire ; l’art. 100, les réquisitions et procédures connexes selon contexte.',
+    category: 'perquisition',
+  },
+  {
+    id: 'q4',
+    text: 'En droit commun, la durée totale maximale usuelle de la garde à vue après une première prolongation « standard » (sans prolongation exceptionnelle type 96 h) est le plus souvent de :',
+    options: [
+      { id: 'a', text: '24 heures' },
+      { id: 'b', text: '48 heures' },
+      { id: 'c', text: '72 heures' },
+      { id: 'd', text: 'Je ne sais pas' },
+    ],
+    correct: 'b',
+    explanation:
+      'Schéma courant : 24 h initiales + renouvellement de 24 h = 48 h, hors cas spéciaux (ex. criminalité organisée, prolongations exceptionnelles).',
+    category: 'gav',
   },
   {
     id: 'q5',
-    text: 'Un individu s\'empare d\'un téléphone posé sur une table dans un café, sans violence ni menace. Il s\'agit :',
+    text: 'Pour une perquisition au domicile d’une personne dans le cadre d’une enquête préliminaire, la règle générale impose en principe :',
     options: [
-      { id: 'a', text: 'D\'un vol simple' },
-      { id: 'b', text: 'D\'un vol avec violence' },
-      { id: 'c', text: 'D\'un recel' },
+      { id: 'a', text: 'Uniquement l’accord oral du propriétaire des lieux' },
+      { id: 'b', text: 'Une décision du juge des libertés et de la détention (sauf cas prévus par la loi)' },
+      { id: 'c', text: 'La seule qualité d’officier de police judiciaire, sans autorisation judiciaire' },
       { id: 'd', text: 'Je ne sais pas' },
     ],
-    correct: 'a',
-    explanation: 'Il s\'agit d\'un vol simple (art. 311-3 CP) : soustraction frauduleuse d\'un bien appartenant à autrui, sans circonstances aggravantes.',
-    category: 'application',
+    correct: 'b',
+    explanation:
+      'En EP, l’accès au domicile est en principe encadré par une autorisation du JLD (art. 76 et s. CPP), sous réserves d’exceptions prévues par le texte.',
+    category: 'perquisition',
   },
 ];

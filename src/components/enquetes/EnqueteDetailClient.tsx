@@ -4,6 +4,7 @@ import { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
+import { EnqueteAlphaFormationProgramme } from '@/components/enquetes/EnqueteAlphaFormationProgramme';
 import { EnqueteArticulation } from '@/components/enquetes/EnqueteArticulation';
 import { EnquetePedagoPanel } from '@/components/enquetes/EnquetePedagoPanel';
 import { EnquetePV } from '@/components/enquetes/EnquetePV';
@@ -169,6 +170,14 @@ export function EnqueteDetailClient({ enquete }: Props) {
             </div>
           </dl>
         </header>
+
+        {enquete.id === 'alpha' ? <EnqueteAlphaFormationProgramme /> : null}
+
+        {enquete.id === 'alpha' ? (
+          <p className='mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500'>
+            Sujet, exercices et corrigés (planches)
+          </p>
+        ) : null}
 
         <Tabs value={tab} onValueChange={setTab} className='w-full'>
           <TabsList className='mb-6 hidden h-auto w-full min-w-0 flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5 md:flex'>

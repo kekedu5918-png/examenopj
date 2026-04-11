@@ -1,7 +1,10 @@
 /**
  * Parcours de révision par thème : aligné sur la logique formation
  * (conditions → cours → rubriques → exercices → épreuves 1 · 2 · 3).
- * Les liens pointent vers les routes existantes du site.
+ *
+ * Les trois planches du présentiel document-centre sont traitées dans l’ordre
+ * **Alpha → Bravo → Charlie** ; les autres enquêtes du site restent un complément
+ * (hub), pas le fil principal de révision.
  */
 
 export type RevisionEtapeCle =
@@ -14,6 +17,13 @@ export type RevisionEtapeCle =
   | 'epreuve3';
 
 export type RevisionLien = { href: string; label: string };
+
+/** Ordre chronologique des planches formation (comme sur le document centre). */
+export const FORMATION_ENQUETES_CHRONO: RevisionLien[] = [
+  { href: '/cours/enquetes/alpha', label: '1 — Alpha' },
+  { href: '/cours/enquetes/bravo', label: '2 — Bravo' },
+  { href: '/cours/enquetes/charlie', label: '3 — Charlie' },
+];
 
 export type RevisionEtape = {
   cle: RevisionEtapeCle;
@@ -65,7 +75,7 @@ const ETAPES_META: Record<
   },
   epreuve2: {
     titre: 'Épreuve 2',
-    hint: 'PV, enquêtes, ME1 : relier les actes au cadre et à la qualification.',
+    hint: 'Dossier : même geste que sur les planches Alpha → Bravo → Charlie (ordre formation).',
   },
   epreuve3: {
     titre: 'Épreuve 3',
@@ -152,8 +162,12 @@ export const REVISION_THEMES: RevisionTheme[] = [
         { href: '/quiz?f=f01', label: 'Quiz F01' },
         { href: '/flashcards?f=f01', label: 'Flashcards F01' },
       ]),
-      etape('epreuve1', [{ href: '/entrainement/recapitulatif', label: 'Récap priorité E1' }]),
-      etape('epreuve2', [{ href: '/cours/enquetes', label: 'Enquêtes (Bravo, Charlie…)' }]),
+      etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Méthode Épreuve 1' }]),
+      etape('epreuve2', [
+        { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
+        { href: '/cours/enquetes/bravo', label: '2 — Bravo (personnes)' },
+        { href: '/cours/enquetes/charlie', label: '3 — Charlie (sexuel / CR)' },
+      ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — thème personnes' }]),
     ],
   },
@@ -182,7 +196,10 @@ export const REVISION_THEMES: RevisionTheme[] = [
         { href: '/flashcards?f=f02', label: 'Flashcards F02' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Cas & dissertation E1' }]),
-      etape('epreuve2', [{ href: '/cours/enquetes', label: 'Enquête Alpha' }]),
+      etape('epreuve2', [
+        { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
+        { href: '/cours/enquetes/alpha', label: '1 — Alpha (biens)' },
+      ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — thème biens' }]),
     ],
   },
@@ -216,8 +233,8 @@ export const REVISION_THEMES: RevisionTheme[] = [
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Épreuve 1' }]),
       etape('epreuve2', [
-        { href: '/cours/enquetes', label: 'Enquêtes Echo / Accident' },
-        { href: '/epreuves/epreuve-2', label: 'Méthode E2' },
+        { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
+        { href: '/cours/enquetes', label: 'Autres planches (complément)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Épreuve 3' }]),
     ],
@@ -246,14 +263,17 @@ export const REVISION_THEMES: RevisionTheme[] = [
       ]),
       etape('rubriques', [
         { href: '/infractions', label: 'Référentiel' },
-        { href: '/entrainement/recapitulatif', label: 'Récap F03–F07 / peines' },
+        { href: '/entrainement/recapitulatif', label: 'Récap F09 / F10 & DPG' },
       ]),
       etape('exercices', [
         { href: '/quiz?mode=domain&domain=DPG', label: 'Quiz DPG' },
         { href: '/flashcards', label: 'Flashcards' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Dissertation / cas E1' }]),
-      etape('epreuve2', [{ href: '/epreuves/epreuve-2', label: 'Relier peines & actes E2' }]),
+      etape('epreuve2', [
+        { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
+        { href: '/cours/enquetes', label: 'Hub enquêtes (complément)' },
+      ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — peines & principes' }]),
     ],
   },
@@ -289,7 +309,10 @@ export const REVISION_THEMES: RevisionTheme[] = [
         { href: '/entrainement/articulation', label: 'Articulation' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Épreuve 1' }]),
-      etape('epreuve2', [{ href: '/epreuves/epreuve-2', label: 'Épreuve 2 — dossier' }]),
+      etape('epreuve2', [
+        { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
+        { href: '/cours/enquetes', label: 'Hub enquêtes (complément)' },
+      ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Épreuve 3 — oral technique' }]),
     ],
   },

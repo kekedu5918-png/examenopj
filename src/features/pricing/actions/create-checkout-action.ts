@@ -1,19 +1,22 @@
 'use server';
 
-import { redirect } from 'next/navigation';
-
 import { getOrCreateCustomer } from '@/features/account/controllers/get-or-create-customer';
 import { getSession } from '@/features/account/controllers/get-session';
 import { Price } from '@/features/pricing/types';
 import { getStripeAdmin } from '@/libs/stripe/stripe-admin';
 import { getURL } from '@/utils/get-url';
 
-export async function createCheckoutAction({ price }: { price: Price }) {
+/** Retour JSON (pas `redirect`) pour que le client fasse la navigation : évite les conflits avec `useTransition` / erreur React #310. */
+export type CreateCheckoutResult =
+  | { ok: true; url: string }
+  | { ok: false; redirectTo: string };
+
+export async function createCheckoutAction({ price }: { price: Price }): Promise<CreateCheckoutResult> {
   // 1. Get the user from session
   const session = await getSession();
 
   if (!session?.user) {
-    return redirect(`${getURL()}/inscription`);
+    return { ok: false, redirectTo: `${getURL()}/inscription` };
   }
 
   if (!session.user.email) {
@@ -46,10 +49,9 @@ export async function createCheckoutAction({ price }: { price: Price }) {
     cancel_url: `${getURL()}/`,
   });
 
-  if (!checkoutSession || !checkoutSession.url) {
+  if (!checkoutSession?.url) {
     throw Error('checkoutSession is not defined');
   }
 
-  // 4. Redirect to checkout url
-  redirect(checkoutSession.url);
+  return { ok: true, url: checkoutSession.url };
 }
