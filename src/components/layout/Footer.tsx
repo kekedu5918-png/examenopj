@@ -59,8 +59,9 @@ export function Footer() {
             <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Apprendre</p>
             <ul className='space-y-2.5'>
               {[
+                { href: '/cours', label: 'Hub Cours' },
+                { href: '/infractions', label: 'Infractions (Épreuve 1)' },
                 { href: '/fondamentaux', label: 'Fondamentaux' },
-                { href: '/infractions', label: 'Infractions' },
                 { href: '/cours/modules', label: 'Modules F01–F15' },
                 { href: '/cours/enquetes', label: 'Enquêtes' },
                 { href: '/guide-revision-opj', label: 'Guide de révision' },

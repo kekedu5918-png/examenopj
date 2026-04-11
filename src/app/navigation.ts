@@ -45,9 +45,14 @@ export type NavMegaChild = {
 
 export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
-    name: 'Plan de révision',
+    name: 'Hub Cours',
     href: '/cours',
-    description: 'Méthode en 4 temps, priorités P0, fil 7 leçons — quoi faire concrètement',
+    description: 'Vue d’ensemble : rubrique infractions, fiches, enquêtes, méthode',
+  },
+  {
+    name: 'Infractions (Épreuve 1)',
+    href: '/infractions',
+    description: 'Référentiel complet — tableau, fiches, familles, probabilité examen',
   },
   {
     name: 'Modules & fiches',
@@ -120,8 +125,9 @@ export const NAV_PREMIUM_HREF = '/pricing' as const;
 
 /** Dropdowns header desktop + menu mobile (`SiteHeaderClient`) — source unique. */
 export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
+  { href: '/cours', label: 'Hub Cours' },
+  { href: '/infractions', label: 'Infractions · Épreuve 1' },
   { href: '/fondamentaux', label: 'Fondamentaux' },
-  { href: '/infractions', label: 'Infractions' },
   { href: '/cours/modules', label: 'Modules F01–F15' },
   { href: '/programme', label: 'Programme officiel' },
 ] as const;
