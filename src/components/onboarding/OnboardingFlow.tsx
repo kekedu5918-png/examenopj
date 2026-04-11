@@ -487,13 +487,40 @@ const LEVEL_META: Record<string, { color: string; emoji: string; message: string
   },
 };
 
-function Stage4Results({ result }: { result: DiagnosticResult }) {
+function Stage4Results({
+  result,
+  saveWarning,
+  onRetrySave,
+  isRetrying,
+}: {
+  result: DiagnosticResult;
+  saveWarning?: string | null;
+  onRetrySave?: () => void;
+  isRetrying?: boolean;
+}) {
   const router = useRouter();
   const meta = LEVEL_META[result.level] ?? LEVEL_META['Débutant'];
 
   return (
     <OnboardingScreenShell>
       <div className='w-full max-w-lg space-y-5'>
+        {saveWarning ? (
+          <div className='rounded-xl border border-amber-500/40 bg-amber-950/35 px-4 py-3 text-sm text-amber-100'>
+            <p className='font-medium text-amber-50'>Enregistrement à finaliser</p>
+            <p className='mt-1 text-amber-100/90'>{saveWarning}</p>
+            {onRetrySave ? (
+              <Button
+                type='button'
+                className='mt-3 w-full bg-amber-600 text-amber-50 hover:bg-amber-500'
+                disabled={isRetrying}
+                onClick={onRetrySave}
+              >
+                {isRetrying ? 'Enregistrement…' : 'Réessayer l’enregistrement'}
+              </Button>
+            ) : null}
+          </div>
+        ) : null}
+
         {/* Résultat */}
         <div className='rounded-2xl border border-cyan-500/30 bg-slate-900 p-6 shadow-2xl'>
           <div className='mb-1 text-4xl'>{meta.emoji}</div>
@@ -660,6 +687,12 @@ export function OnboardingFlow() {
   const [weaknesses, setWeaknesses] = useState<string[]>([]);
   const [result, setResult] = useState<DiagnosticResult | null>(null);
   const [diagnosticError, setDiagnosticError] = useState<string | null>(null);
+  const [saveWarning, setSaveWarning] = useState<string | null>(null);
+  const [retryPayload, setRetryPayload] = useState<{
+    formationPhase: FormationPhase;
+    weaknesses: string[];
+    answers: DiagnosticAnswer[];
+  } | null>(null);
   const [isPending, startTransition] = useTransition();
 
   const handleStage1 = (phase: FormationPhase) => {
@@ -685,24 +718,54 @@ export function OnboardingFlow() {
 
   const handleDiagnosticComplete = (answers: DiagnosticAnswer[]) => {
     setDiagnosticError(null);
+    setSaveWarning(null);
     startTransition(async () => {
-      const res = await completeDiagnostic(formationPhase, weaknesses, answers);
-      if (res.ok && res.result) {
+      try {
+        const res = await completeDiagnostic(formationPhase, weaknesses, answers);
         try {
           sessionStorage.removeItem(DIAGNOSTIC_SESSION_STORAGE_KEY);
         } catch {
           /* ignore */
         }
         setResult(res.result);
+        setRetryPayload({ formationPhase, weaknesses, answers });
+        setSaveWarning(res.saved ? null : res.saveError ?? null);
         setStage(4);
-      } else {
-        setDiagnosticError('Enregistrement impossible. Vérifiez votre connexion et réessayez.');
+      } catch {
+        setDiagnosticError(
+          'Impossible de finaliser pour le moment. Vérifiez votre connexion et touchez « Voir mon plan » à nouveau.',
+        );
+      }
+    });
+  };
+
+  const handleRetrySave = () => {
+    if (!retryPayload) return;
+    setSaveWarning(null);
+    startTransition(async () => {
+      try {
+        const res = await completeDiagnostic(
+          retryPayload.formationPhase,
+          retryPayload.weaknesses,
+          retryPayload.answers,
+        );
+        setResult(res.result);
+        setSaveWarning(res.saved ? null : res.saveError ?? null);
+      } catch {
+        setSaveWarning('Nouvel échec. Réessayez dans quelques minutes ou après vous être reconnecté.');
       }
     });
   };
 
   if (stage === 4 && result) {
-    return <Stage4Results result={result} />;
+    return (
+      <Stage4Results
+        result={result}
+        saveWarning={saveWarning}
+        onRetrySave={retryPayload ? handleRetrySave : undefined}
+        isRetrying={isPending}
+      />
+    );
   }
 
   return (

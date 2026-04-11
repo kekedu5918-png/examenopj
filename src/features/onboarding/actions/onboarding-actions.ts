@@ -190,18 +190,18 @@ export async function saveOnboardingStage(
   return { ok: true };
 }
 
+export type CompleteDiagnosticResponse = {
+  result: DiagnosticResult;
+  /** false si session absente ou erreur Supabase — le résultat est quand même calculé côté serveur */
+  saved: boolean;
+  saveError?: string;
+};
+
 export async function completeDiagnostic(
   formationPhase: FormationPhase,
   weaknesses: string[],
   answers: DiagnosticAnswer[],
-): Promise<{ ok: boolean; result?: DiagnosticResult }> {
-  const supabase = await createSupabaseServerClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  if (!user) return { ok: false };
-
+): Promise<CompleteDiagnosticResponse> {
   const levelData = calculateDiagnosticLevel(answers);
   const plan = generatePlan(formationPhase, weaknesses, levelData.level);
   const feedback = buildStrengthsFeedback(answers);
@@ -214,6 +214,20 @@ export async function completeDiagnostic(
     weaknesses_feedback: feedback.weaknesses_feedback,
     plan,
   };
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    return {
+      result,
+      saved: false,
+      saveError:
+        'Votre plan est calculé mais pas enregistré (session expirée). Reconnectez-vous si besoin, puis utilisez « Réessayer l’enregistrement ».',
+    };
+  }
 
   const { error } = await (supabase as any)
     .from('onboarding_progress')
@@ -235,10 +249,15 @@ export async function completeDiagnostic(
 
   if (error) {
     console.error('[completeDiagnostic]', error);
-    return { ok: false };
+    return {
+      result,
+      saved: false,
+      saveError:
+        'Enregistrement temporairement indisponible. Votre plan s’affiche ci-dessous — réessayez dans un instant ou via le bouton dédié.',
+    };
   }
 
-  return { ok: true, result };
+  return { result, saved: true };
 }
 
 export async function getOnboardingPlan(): Promise<DiagnosticResult | null> {
