@@ -1,6 +1,7 @@
+import type { SupabaseClient } from '@supabase/supabase-js';
+
 import { flashcardsData } from '@/data/flashcards-data';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
-import type { SupabaseClient } from '@supabase/supabase-js';
 import { todayIso } from '@/utils/date';
 
 // ─────────────────────────────────────────────
