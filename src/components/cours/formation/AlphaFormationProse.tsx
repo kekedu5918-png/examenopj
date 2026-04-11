@@ -114,7 +114,7 @@ export function FormationChapter({
     <details
       id={id}
       className='group rounded-2xl border border-white/[0.1] bg-gradient-to-b from-white/[0.05] to-transparent open:border-cyan-500/25 open:shadow-lg open:shadow-cyan-500/5'
-      defaultOpen={defaultOpen}
+      {...(defaultOpen ? { open: true } : {})}
     >
       <summary className='cursor-pointer list-none px-4 py-4 pr-12 marker:content-none md:px-5 md:py-5 [&::-webkit-details-marker]:hidden'>
         <span className='flex flex-wrap items-center gap-2'>
