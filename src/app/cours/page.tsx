@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { CoursHubRefonte } from '@/components/cours/CoursHubRefonte';
 import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandidat';
+import { CoursHubRefonte } from '@/components/cours/CoursHubRefonte';
 import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
