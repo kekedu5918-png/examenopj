@@ -1,3 +1,4 @@
+/** Banque QCM des pages `/quiz` — fichiers TS versionnés (voir `docs/CONTENT_SOURCES.md`). */
 import { excludeCadreLegalQuizQuestions } from '@/data/quiz-exclude-cadre-legal';
 import { quizQuestionsF01P1 } from '@/data/quiz-questions-f01-p1';
 import { quizQuestionsF03 } from '@/data/quiz-questions-f03';

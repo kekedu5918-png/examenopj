@@ -1,3 +1,7 @@
+/**
+ * Recherche, stats de révision, modules — données Supabase (voir `docs/CONTENT_SOURCES.md`).
+ * Ce n’est pas la banque QCM affichée sur `/quiz` (fichiers `src/data/quiz-*.ts`).
+ */
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import { Tables } from '@/libs/supabase/types';
 import type { SupabaseClient } from '@supabase/supabase-js';

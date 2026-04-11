@@ -162,19 +162,7 @@ There are many auth providers you can choose from. [See the Supabase docs](https
 
 ### Emails
 
-Your emails live in the `src/features/emails` dir. Emails are finicky and difficult to style correctly, so make sure to reference the [React Email docs](https://react.email/docs/introduction). After creating your email component, sending an email is as simple as:
-
-```ts
-import WelcomeEmail from '@/features/emails/welcome';
-import { resendClient } from '@/libs/resend/resend-client';
-
-resendClient.emails.send({
-  from: 'no-reply@your-domain.com',
-  to: userEmail,
-  subject: 'Welcome!',
-  react: <WelcomeEmail />,
-});
-```
+Le dépôt n’inclut pas encore d’envoi d’e-mails actif. Pour ajouter [Resend](https://resend.com) + [React Email](https://react.email/), réinstallez le package `resend`, créez un client (ex. `libs/resend/resend-client.ts`) et appelez-le depuis une route API ou une Server Action. Référence : [React Email docs](https://react.email/docs/introduction).
 
 ### File structure
 

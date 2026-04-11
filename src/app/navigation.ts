@@ -118,5 +118,28 @@ export const NAV_ENTRAINEMENT_HREF = '/entrainement' as const;
 export const NAV_GUIDE_HREF = '/guide-revision-opj' as const;
 export const NAV_PREMIUM_HREF = '/pricing' as const;
 
+/** Dropdowns header desktop + menu mobile (`SiteHeaderClient`) — source unique. */
+export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
+  { href: '/fondamentaux', label: 'Fondamentaux' },
+  { href: '/infractions', label: 'Infractions' },
+  { href: '/cours/modules', label: 'Modules F01–F15' },
+  { href: '/programme', label: 'Programme officiel' },
+] as const;
+
+export const SITE_HEADER_EPREUVES_LINKS: readonly NavDropdownItem[] = [
+  { href: '/epreuves', label: "Vue d'ensemble" },
+  { href: '/epreuves/epreuve-1', label: 'Épreuve 1' },
+  { href: '/epreuves/epreuve-2', label: 'Épreuve 2' },
+  { href: '/epreuves/epreuve-3', label: 'Épreuve 3' },
+] as const;
+
+export const SITE_HEADER_ENTRAINER_LINKS: readonly NavDropdownItem[] = [
+  { href: '/entrainement', label: "Vue d'ensemble" },
+  { href: '/quiz', label: 'Quiz' },
+  { href: '/flashcards', label: 'Flashcards' },
+  { href: '/entrainement/articulation', label: 'Articulation' },
+  { href: '/sujets-blancs', label: 'Sujets blancs' },
+] as const;
+
 /** Fin d’affichage du badge « Nouveau » sur Sujets blancs (30 jours après mise en ligne). */
 export const NAV_SUJETS_BLANCS_BADGE_DEADLINE_MS = new Date('2026-05-06T23:59:59').getTime();

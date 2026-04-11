@@ -1,7 +1,12 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-import { AccueilDashboard, type AccueilRecent, type SessionDuJour } from '@/components/accueil/AccueilDashboard';
+import {
+  AccueilDashboard,
+  type AccueilRecent,
+  type AccueilResume,
+  type SessionDuJour,
+} from '@/components/accueil/AccueilDashboard';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getRecentQuizAttempts, getRevisionStats } from '@/features/examenopj/controllers/get-dashboard-data';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -149,6 +154,7 @@ export default async function AccueilPage() {
   let sessionsCount = 0;
   let recent: AccueilRecent[] = [];
   let suggestedSession: SessionDuJour = DEFAULT_SESSION;
+  let resume: AccueilResume | null = null;
 
   if (session) {
     const [stats, attempts] = await Promise.all([
@@ -163,6 +169,18 @@ export default async function AccueilPage() {
     sessionsCount = attempts.length;
 
     suggestedSession = pickSuggestedSession(attempts, sessionsCount > 0);
+
+    const last = attempts[0];
+    const fasc = last?.fascicule_num;
+    resume = {
+      quizHref: fasc != null ? `/quiz?mode=module&f=${fasc}` : '/quiz',
+      quizCta: last
+        ? fasc != null
+          ? `Reprendre — F${String(fasc).padStart(2, '0')}${last.percent != null ? ` (${Number(last.percent).toFixed(0)} %)` : ''}`
+          : `Reprendre un quiz${last.percent != null ? ` (${Number(last.percent).toFixed(0)} %)` : ''}`
+        : 'Lancer un quiz',
+      revisionDue: stats.revisionDue,
+    };
 
     recent = attempts.slice(0, 3).map((a, i) => {
       const mode =
@@ -205,6 +223,7 @@ export default async function AccueilPage() {
         sessionsCount={sessionsCount}
         recent={recent}
         suggestedSession={suggestedSession}
+        resume={resume}
       />
     </>
   );

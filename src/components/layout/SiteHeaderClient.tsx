@@ -6,6 +6,11 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Flame, Menu, X } from 'lucide-react';
 
+import {
+  SITE_HEADER_COURS_LINKS,
+  SITE_HEADER_ENTRAINER_LINKS,
+  SITE_HEADER_EPREUVES_LINKS,
+} from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
@@ -44,28 +49,6 @@ const navBtn =
 const navInactive = 'text-slate-400 hover:text-white';
 const navActive = 'text-white after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-blue-400';
 const dropTriggerClass = cn(navBtn, 'border-0 bg-transparent');
-
-const coursLinks = [
-  { href: '/fondamentaux', label: 'Fondamentaux' },
-  { href: '/infractions', label: 'Infractions' },
-  { href: '/cours/modules', label: 'Modules F01–F15' },
-  { href: '/programme', label: 'Programme officiel' },
-] as const;
-
-const epreuvesLinks = [
-  { href: '/epreuves', label: "Vue d'ensemble" },
-  { href: '/epreuves/epreuve-1', label: 'Épreuve 1' },
-  { href: '/epreuves/epreuve-2', label: 'Épreuve 2' },
-  { href: '/epreuves/epreuve-3', label: 'Épreuve 3' },
-] as const;
-
-const entrainerLinks = [
-  { href: '/entrainement', label: "Vue d'ensemble" },
-  { href: '/quiz', label: 'Quiz' },
-  { href: '/flashcards', label: 'Flashcards' },
-  { href: '/entrainement/articulation', label: 'Articulation' },
-  { href: '/sujets-blancs', label: 'Sujets blancs' },
-] as const;
 
 export function SiteHeaderClient({
   homeHref,
@@ -152,7 +135,7 @@ export function SiteHeaderClient({
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
               <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
-                {coursLinks.map((item) => (
+                {SITE_HEADER_COURS_LINKS.map((item) => (
                   <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
@@ -175,7 +158,7 @@ export function SiteHeaderClient({
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
               <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
-                {epreuvesLinks.map((item) => (
+                {SITE_HEADER_EPREUVES_LINKS.map((item) => (
                   <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
@@ -191,7 +174,7 @@ export function SiteHeaderClient({
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
               <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
-                {entrainerLinks.map((item) => (
+                {SITE_HEADER_ENTRAINER_LINKS.map((item) => (
                   <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
@@ -329,7 +312,7 @@ export function SiteHeaderClient({
               </div>
               <nav className='flex-1 overflow-y-auto px-3 py-4' aria-label='Navigation mobile'>
                 <MobileAccordion title='Cours' defaultOpen>
-                  {coursLinks.map((item) => (
+                  {SITE_HEADER_COURS_LINKS.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
@@ -348,7 +331,7 @@ export function SiteHeaderClient({
                   Enquêtes
                 </Link>
                 <MobileAccordion title='Épreuves'>
-                  {epreuvesLinks.map((item) => (
+                  {SITE_HEADER_EPREUVES_LINKS.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
@@ -360,7 +343,7 @@ export function SiteHeaderClient({
                   ))}
                 </MobileAccordion>
                 <MobileAccordion title="S'entraîner">
-                  {entrainerLinks.map((item) => (
+                  {SITE_HEADER_ENTRAINER_LINKS.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}

@@ -101,6 +101,13 @@ export type SessionDuJour = {
   reason?: string;
 };
 
+/** Reprise quiz + file de révision (stats Supabase) — uniquement si connecté. */
+export type AccueilResume = {
+  quizHref: string;
+  quizCta: string;
+  revisionDue: number;
+};
+
 export type AccueilDashboardProps = {
   loggedIn: boolean;
   programmePct: number;
@@ -109,6 +116,7 @@ export type AccueilDashboardProps = {
   sessionsCount: number;
   recent: AccueilRecent[];
   suggestedSession: SessionDuJour;
+  resume: AccueilResume | null;
 };
 
 const quickActions = [
@@ -126,6 +134,7 @@ export function AccueilDashboard({
   sessionsCount,
   recent,
   suggestedSession,
+  resume,
 }: AccueilDashboardProps) {
   const now = new Date();
   const ms = EXAM.getTime() - now.getTime();
@@ -162,6 +171,45 @@ export function AccueilDashboard({
           Chaque session compte — avance méthodiquement.
         </p>
       </motion.header>
+
+      {loggedIn && resume ? (
+        <motion.section
+          className='mb-8 overflow-hidden rounded-2xl border border-emerald-500/20 bg-gradient-to-r from-emerald-500/[0.08] to-blue-500/[0.06] p-5 shadow-lg shadow-black/20'
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.05 }}
+          aria-labelledby='accueil-resume-title'
+        >
+          <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
+            <div>
+              <p id='accueil-resume-title' className='text-xs font-bold uppercase tracking-widest text-emerald-400/90'>
+                Continuer
+              </p>
+              <p className='mt-1 text-sm text-slate-300'>
+                Reprends ton dernier quiz ou passe en révision espacée si des cartes sont dues.
+              </p>
+            </div>
+            <div className='flex flex-col gap-2 sm:flex-row sm:items-center'>
+              <Link
+                href={resume.quizHref}
+                className='inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-600 px-5 py-2.5 text-sm font-bold text-white shadow-md shadow-emerald-900/30 transition hover:bg-emerald-500'
+              >
+                <Brain className='h-4 w-4 shrink-0' aria-hidden />
+                {resume.quizCta}
+              </Link>
+              {resume.revisionDue > 0 ? (
+                <Link
+                  href='/flashcards'
+                  className='inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-4 py-2.5 text-sm font-semibold text-slate-200 transition hover:border-violet-400/40 hover:bg-violet-500/10'
+                >
+                  <Layers className='h-4 w-4 shrink-0 text-violet-400' aria-hidden />
+                  {resume.revisionDue} carte{resume.revisionDue > 1 ? 's' : ''} à réviser
+                </Link>
+              ) : null}
+            </div>
+          </div>
+        </motion.section>
+      ) : null}
 
       {/* Main grid */}
       <div className='grid gap-5 lg:grid-cols-[1fr_minmax(0,300px)]'>

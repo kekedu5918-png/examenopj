@@ -89,12 +89,7 @@ export function HomeStatsSection() {
 
               {/* Chiffre + label */}
               <div>
-                <AnimatedStat
-                  finalValue={s.finalValue}
-                  suffix={s.suffix}
-                  label={s.label}
-                  animateOnMount
-                />
+                <AnimatedStat finalValue={s.finalValue} suffix={s.suffix} label={s.label} />
                 <p className='mt-1 text-[11px] font-medium text-slate-600'>{s.sublabel}</p>
               </div>
             </motion.div>
