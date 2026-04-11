@@ -16,6 +16,18 @@ const nextConfig = {
     esmExternals: 'loose',
   },
   async headers() {
+    const cspReportOnly = [
+      "default-src 'self'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://va.vercel-scripts.com",
+      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+      "font-src 'self' data: https://fonts.gstatic.com",
+      "img-src 'self' data: blob: https:",
+      "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://vitals.vercel-insights.com https://*.i.posthog.com https://eu.posthog.com https://us.posthog.com https://api.stripe.com",
+      "frame-src https://js.stripe.com https://hooks.stripe.com",
+    ].join('; ');
+
     const security = [
       { key: 'X-DNS-Prefetch-Control', value: 'on' },
       { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
@@ -25,6 +37,8 @@ const nextConfig = {
         key: 'Permissions-Policy',
         value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
       },
+      // Phase 1 : observation seulement (pas de blocage). Affiner selon la console navigateur.
+      { key: 'Content-Security-Policy-Report-Only', value: cspReportOnly },
     ];
     if (process.env.NODE_ENV === 'production') {
       security.splice(1, 0, {

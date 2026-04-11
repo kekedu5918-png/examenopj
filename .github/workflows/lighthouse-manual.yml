@@ -1,0 +1,46 @@
+# Déclenchement manuel — mesure Lighthouse sur build de production (pas sur la prod).
+name: Lighthouse (manuel)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://placeholder.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSJ9.placeholder
+          NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: pk_test_placeholder
+          NEXT_PUBLIC_POSTHOG_KEY: ''
+          NEXT_PUBLIC_POSTHOG_HOST: https://eu.i.posthog.com
+          NEXT_PUBLIC_SITE_URL: http://127.0.0.1:3000
+          SUPABASE_SERVICE_ROLE_KEY: service_role_placeholder
+          STRIPE_SECRET_KEY: sk_test_placeholder
+          STRIPE_WEBHOOK_SECRET: whsec_placeholder
+          RESEND_API_KEY: re_placeholder
+
+      - name: Lighthouse (home, pricing, quiz)
+        run: |
+          npm run start &
+          npx --yes wait-on@7 http://127.0.0.1:3000 -t 120000
+          npx --yes lighthouse@11 --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse-home.json --quiet http://127.0.0.1:3000/
+          npx --yes lighthouse@11 --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse-pricing.json --quiet http://127.0.0.1:3000/pricing
+          npx --yes lighthouse@11 --preset=desktop --only-categories=performance,accessibility,best-practices,seo --output=json --output-path=lighthouse-quiz.json --quiet http://127.0.0.1:3000/quiz
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-json
+          path: lighthouse-*.json

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "entry": ["next.config.js", "src/app/**/page.tsx", "src/app/**/layout.tsx", "src/app/**/route.ts", "src/middleware.ts"],
+  "project": ["src/**/*.{ts,tsx}"],
+  "ignore": ["graphify-out/**", "**/*.d.ts", "scripts/**", "e2e/**", "playwright.config.ts"]
+}
