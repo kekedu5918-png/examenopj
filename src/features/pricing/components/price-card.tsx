@@ -1,13 +1,12 @@
 'use client';
 
-import { useMemo, useState } from 'react';
 import Link from 'next/link';
+import { useMemo, useState } from 'react';
 import { IoCheckmark } from 'react-icons/io5';
 
 import { SexyBoarder } from '@/components/sexy-boarder';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
-
 import type { CreateCheckoutResult } from '@/features/pricing/actions/create-checkout-action';
 
 import {
