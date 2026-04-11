@@ -10,8 +10,8 @@ import {
   FreemiumFlashcardsDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { fasciculesList } from '@/data/fascicules-list';
 import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
 import {

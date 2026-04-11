@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { RapportSyntheseAtelierClient } from '@/components/rapport-synthese/RapportSyntheseAtelierClient';
 import { RapportSyntheseModesSection } from '@/components/rapport-synthese/RapportSyntheseModesSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 import { cn } from '@/utils/cn';
 

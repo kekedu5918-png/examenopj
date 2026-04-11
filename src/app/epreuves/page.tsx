@@ -3,10 +3,10 @@ import Link from 'next/link';
 import { ArrowRight, ClipboardCheck, Mic, Scale } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 const epTitle = 'Les 3 épreuves — Vue d’ensemble | Examen OPJ';

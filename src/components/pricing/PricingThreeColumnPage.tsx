@@ -6,8 +6,8 @@ import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import type { Price } from '@/features/pricing/types';
 import { cn } from '@/utils/cn';
 

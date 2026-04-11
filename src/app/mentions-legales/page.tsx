@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { LegalProse, LegalSection } from '@/components/legal/legal-prose';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
 

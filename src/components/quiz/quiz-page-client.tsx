@@ -12,9 +12,9 @@ import {
 } from '@/components/access/freemium-daily-quota';
 import { LANDING_EASE } from '@/components/home/motion';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { fasciculesList } from '@/data/fascicules-list';
 import { quizQuestions } from '@/data/quiz-questions';
 import { type QuizQuestion } from '@/data/types';

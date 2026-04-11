@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PVCoursMe1Section } from '@/components/pv/pv-cours-me1-section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import {
   PV_FIN_GAV_VERBATIM_MODELE,
   PV_NOTIFICATION_GAV_VERBATIM_MODELE,

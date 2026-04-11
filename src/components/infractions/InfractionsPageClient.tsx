@@ -14,10 +14,10 @@ import { InfractionsFlashMode } from '@/components/infractions/InfractionsFlashM
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import {
   INFRACTION_FAMILY_OPTIONS,
   type InfractionFamily,

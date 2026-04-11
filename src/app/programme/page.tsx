@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 
-import type { ProgrammeModuleItem } from '@/components/cours/ProgrammeClient';
-import { ProgrammeClient } from '@/components/cours/ProgrammeClient';
+import { ProgrammeClient, type ProgrammeModuleItem } from '@/components/cours/ProgrammeClient';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { APP_NAME } from '@/constants/site';
 import { courseModuleSyntheses } from '@/data/course-module-syntheses';
 import { fasciculesList } from '@/data/fascicules-list';

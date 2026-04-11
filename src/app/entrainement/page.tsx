@@ -15,14 +15,14 @@ import {
 import type { ReactNode } from 'react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { EXAM_SHORT_LABEL, type ExamNumber } from '@/data/exam-competency-map';
-
-type CardExamFocus = ExamNumber | 'transversal';
 import { cn } from '@/utils/cn';
 import { openGraphForPage } from '@/utils/seo-metadata';
+
+type CardExamFocus = ExamNumber | 'transversal';
 
 const entTitle = 'Entraînement — Examen OPJ';
 const entDescription =

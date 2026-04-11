@@ -3,8 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { ModelePVDetailClient } from '@/components/modeles-pv/ModelePVDetailClient';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getCourseModuleById } from '@/data/fascicules-list';
 import { getModelePVBySlug, getModelesPVSlugs } from '@/data/modeles-pv';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
 import { PricingFallbackPlans } from '@/features/pricing/components/pricing-fallback-plans';

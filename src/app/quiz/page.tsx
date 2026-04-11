@@ -2,8 +2,8 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { QuizPageClient } from '@/components/quiz/quiz-page-client';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { openGraphForPage } from '@/utils/seo-metadata';
 

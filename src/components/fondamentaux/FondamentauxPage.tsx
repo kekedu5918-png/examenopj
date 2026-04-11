@@ -4,8 +4,8 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { useToast } from '@/components/ui/use-toast';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
 import { groupFichesByProgramme } from '@/data/fondamentaux-display-order';
 import { cn } from '@/utils/cn';

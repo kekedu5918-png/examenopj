@@ -5,10 +5,10 @@ import Link from 'next/link';
 import { BookOpen, Check, Circle, ClipboardList, FlaskConical, RotateCcw, Trophy } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { RevisionThemesJourney } from '@/components/parcours/RevisionThemesJourney';
 import { ProgressRing } from '@/components/ui/ProgressRing';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { cn } from '@/utils/cn';
 
 const STORAGE_PROGRESS = 'examenopj:parcours-candidat-v2-progress';

@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import { EnqueteHub } from '@/components/enquetes/EnqueteHub';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { ENQUETES } from '@/data/enquetes-data';
 
 export const metadata: Metadata = {

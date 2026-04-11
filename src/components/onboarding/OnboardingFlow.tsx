@@ -4,9 +4,9 @@ import { type ReactNode, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { completeDiagnostic, saveOnboardingStage } from '@/features/onboarding/actions/onboarding-actions';
 import {
   DIAGNOSTIC_QUESTIONS,

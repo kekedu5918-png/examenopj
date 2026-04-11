@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PrepareSujetBlancPrerequis } from '@/components/sujets-blancs/PrepareSujetBlancPrerequis';
 import { SujetBlancDetailClient } from '@/components/sujets-blancs/SujetBlancDetailClient';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSujetBlancById, getSujetsBlancsIds } from '@/data/sujets-blancs';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 

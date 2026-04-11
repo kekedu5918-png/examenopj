@@ -5,9 +5,9 @@ import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandi
 import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { cn } from '@/utils/cn';
 import { openGraphForPage } from '@/utils/seo-metadata';
 

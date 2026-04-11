@@ -14,8 +14,8 @@ import { GuideBreadcrumbJsonLd } from '@/components/guide/GuideBreadcrumbJsonLd'
 import { GuideEpreuvesAccordion } from '@/components/guide/GuideEpreuvesAccordion';
 import { GuideFaqJsonLd } from '@/components/guide/GuideFaqJsonLd';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { StickyToc } from '@/components/ui/StickyToc';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GUIDE_REVISION_FAQ } from '@/data/guide-revision-faq';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
