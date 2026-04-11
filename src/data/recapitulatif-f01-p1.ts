@@ -8,11 +8,10 @@ export const recapSectionF01P1 = {
   rows: [
     {
       infraction: '**Le meurtre**',
-      legal:
-        'Art. 221-1 C.P. — « Le fait de donner volontairement la mort à autrui constitue un meurtre » (définition ; répression : 30 ans de réclusion criminelle)',
+      legal: 'Art. 221-1 C.P.',
       materiel:
-        '**ACTE POSITIF** / **DONNER VOLONTAIREMENT LA MORT À AUTRUI** / **DÉCÈS** / **LIEN DE CAUSALITÉ**',
-      moral: '**INTENTION HOMICIDE (ANIMUS NECANDI)** / **APPRÉCIÉE AU MOMENT DE L\'ACTE**',
+        '**UN ACTE POSITIF DE VIOLENCE** / **SUR LA PERSONNE D\'AUTRUI** / **UN LIEN DE CAUSALITÉ ENTRE L\'ACTE ET LE DÉCÈS DE LA VICTIME**',
+      moral: '**UNE INTENTION HOMICIDE**',
       priorite: 'core',
       noteExamen: 'Socle programme — citez la définition au mot près.',
     },
@@ -30,70 +29,80 @@ export const recapSectionF01P1 = {
       infraction: '**L\'empoisonnement**',
       legal: 'Art. 221-5 C.P.',
       materiel:
-        '**ADMINISTRATION DE SUBSTANCES DE NATURE À ENTRAÎNER LA MORT** / **SANS EXIGENCE DE DÉCÈS (INFRACTION FORMELLE)**',
+        '**UN ACTE D\'EMPLOI OU D\'ADMINISTRATION** / **SUR LA PERSONNE D\'AUTRUI** / **SUBSTANCES DE NATURE À ENTRAÎNER LA MORT**',
       moral:
-        '**CONNAISSANCE DE LA NATURE MORTELLE DE LA SUBSTANCE** / **ET INTENTION DE DONNER LA MORT — LES DEUX SONT REQUISES (Cass. crim. 18 juin 2003 : la seule connaissance du caractère mortel ne suffit pas)**',
+        '**CONNAISSANCE DE LA NATURE MORTELLE DE LA SUBSTANCE EMPLOYÉE** / **INTENTION DE DONNER LA MORT**',
       priorite: 'secours',
     },
     {
       infraction: '**L\'homicide involontaire**',
       legal: 'Art. 221-6 C.P.',
       materiel:
-        '**FAUTE D\'IMPRUDENCE, NÉGLIGENCE OU MANQUEMENT** / **OU VIOLATION MANIFESTEMENT DÉLIBÉRÉE (AL. 2)** / **MORT** / **CAUSALITÉ CERTAINE** / **DISTINCTION :** *homicide routier* (221-18, loi n° 2025-622) = conducteur VTM + au moins une circonstance de violence routière — infraction distincte',
-      moral: '**ABSENCE D\'INTENTION DE DONNER LA MORT** / **IMPRUDENCE OU NÉGLIGENCE**',
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE**',
+      moral: '**ABSENCE D\'INTENTION DE DONNER LA MORT**',
     },
     {
       infraction: '**Les violences ayant entraîné la mort sans intention de la donner**',
       legal: 'Art. 222-7 C.P.',
       materiel:
-        '**VIOLENCES PHYSIQUES OU PSYCHIQUES** (ex. choc émotif grave sans contact : Cass. crim. 18 mars 2008) / **MORT** / **LIEN DE CAUSALITÉ**',
-      moral: '**VOLONTÉ DE VIOLENCES** / **ABSENCE D\'INTENTION DE DONNER LA MORT**',
+        '**UN ACTE POSITIF** / **SUR LA PERSONNE D\'AUTRUI** / **UN RÉSULTAT DOMMAGEABLE : LE DÉCÈS** / **LIEN DE CAUSALITÉ**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI** / **ABSENCE D\'INTENTION DE DONNER LA MORT**',
       priorite: 'freq',
     },
     {
       infraction: '**Les violences ayant entraîné une mutilation ou infirmité permanente**',
       legal: 'Art. 222-9 C.P.',
-      materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **MUTILATION OU INFIRMITÉ PERMANENTE**',
-      moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      materiel:
+        '**UN ACTE POSITIF** / **SUR LA PERSONNE D\'AUTRUI** / **UN RÉSULTAT DOMMAGEABLE : MUTILATION OU INFIRMITÉ PERMANENTE**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI**',
       priorite: 'freq',
     },
     {
       infraction: '**Les violences ayant entraîné une ITT supérieure à 8 jours**',
       legal: 'Art. 222-11 C.P.',
-      materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **ITT > 8 JOURS**',
-      moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      materiel:
+        '**UN ACTE POSITIF** / **SUR LA PERSONNE D\'AUTRUI** / **UN RÉSULTAT DOMMAGEABLE : ITT > 8 JOURS**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI**',
       priorite: 'core',
       noteExamen: 'Très fréquent — maîtrisez le seuil ITT et le quantum.',
     },
     {
       infraction: '**Les violences ayant entraîné une ITT ≤ 8 jours ou sans ITT**',
       legal: 'Art. 222-13 C.P. / Art. R.625-1 C.P.',
-      materiel: '**VIOLENCES PHYSIQUES OU PSYCHIQUES** / **ITT ≤ 8 JOURS OU AUCUNE ITT**',
-      moral: '**VOLONTÉ DE COMMETTRE DES VIOLENCES**',
+      materiel:
+        '**UN ACTE POSITIF** / **SUR LA PERSONNE D\'AUTRUI** / **UN RÉSULTAT DOMMAGEABLE : ITT ≤ 8 JOURS OU SANS ITT**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI**',
       priorite: 'freq',
     },
     {
       infraction: '**Les violences habituelles sur conjoint ou concubin**',
       legal: 'Art. 222-14-3 C.P.',
-      materiel: '**RÉPÉTITION DES VIOLENCES** / **CONJOINT, CONCUBIN OU PARTENAIRE DE PACS**',
-      moral: '**VOLONTÉ DE VIOLENCES RÉPÉTÉES**',
+      materiel:
+        '**UN ACTE POSITIF** / **DES VIOLENCES HABITUELLES** / **UN LIEN PARTICULIER ENTRE LA VICTIME ET L\'AUTEUR** / **UN RÉSULTAT DOMMAGEABLE**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI**',
       priorite: 'freq',
       noteExamen: 'Rupture conventionnelle ou PACS : attention aux qualifications voisines.',
     },
     {
       infraction: '**L\'administration de substances nuisibles**',
       legal: 'Art. 222-15 C.P.',
-      materiel:
-        '**SUBSTANCES NUISIBLES ATTEIGNANT INTÉGRITÉ PHYSIQUE OU PSYCHIQUE** / **PEINE SELON RÉSULTAT**',
-      moral: '**CONNAISSANCE DU CARACTÈRE NUISIBLE** / **VOLONTÉ D\'ADMINISTRER**',
+      materiel: '**ADMINISTRATION DE SUBSTANCES** / **UNE ATTEINTE À LA PERSONNE**',
+      moral:
+        '**LA CONNAISSANCE DU CARACTÈRE NUISIBLE DE LA SUBSTANCE** / **L\'INTENTION DE NUIRE À LA SANTÉ PHYSIQUE OU PSYCHIQUE DE LA PERSONNE**',
       priorite: 'secours',
     },
     {
       infraction: '**Le viol**',
       legal: 'Art. 222-23 C.P. (définition) — Art. 222-23-1 C.P. (répression : 15 ans)',
       materiel:
-        '**PÉNÉTRATION SEXUELLE OU ACTE BUCCO-GÉNITAL** / **ABSENCE DE CONSENTEMENT CARACTÉRISÉE PAR VIOLENCE, CONTRAINTE, MENACE OU SURPRISE** / **SURPRISE** (ex. : hypnose, ivresse de la victime, sommeil, état de sidération — Cass. crim. 11 sept. 2024)',
-      moral: '**CONSCIENCE DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ D\'IMPOSER L\'ACTE**',
+        '**UN ACTE DE PÉNÉTRATION SEXUELLE OU UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UNE VICTIME** / **UNE ABSENCE DE CONSENTEMENT**',
+      moral:
+        '**CONNAISSANCE DE L\'AUTEUR DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE DE NATURE SEXUELLE**',
       priorite: 'core',
       noteExamen: 'Définition intégrale + absent consentement ; articulation mineurs : 222-23-1, 227-25, 227-27.',
     },
@@ -101,84 +110,101 @@ export const recapSectionF01P1 = {
       infraction: '**L\'agression sexuelle (autre que le viol)**',
       legal: 'Art. 222-22 C.P. — Art. 222-27 C.P.',
       materiel:
-        '**ATTEINTE SEXUELLE (PHYSIQUE OU PSYCHIQUE)** / **VIOLENCE, CONTRAINTE, MENACE OU SURPRISE** / **SANS PÉNÉTRATION**',
-      moral: '**CONSCIENCE DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ D\'ACTE À CARACTÈRE SEXUEL**',
+        '**UN ACTE DE NATURE SEXUELLE AUTRE QU\'UNE PÉNÉTRATION OU QU\'UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UNE VICTIME** / **UNE ABSENCE DE CONSENTEMENT**',
+      moral:
+        '**CONNAISSANCE DE L\'AUTEUR DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE IMMORAL OU OBSCÈNE**',
       priorite: 'core',
       noteExamen: 'Pas de pénétration : VCMS ; attention aux incriminations spécialisées mineurs / vulnérabilité.',
     },
     {
+      infraction:
+        '**Les agressions sexuelles imposées à un mineur de 15 ans par violence, contrainte, menace ou surprise**',
+      legal: 'Art. 222-27 C.P.',
+      materiel:
+        '**UN ACTE DE NATURE SEXUELLE AUTRE QU\'UNE PÉNÉTRATION OU QU\'UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **UNE VICTIME MINEURE DE MOINS DE 15 ANS** / **L\'ABSENCE DE CONSENTEMENT**',
+      moral:
+        '**CONSCIENCE DE L\'AUTEUR DE COMMETTRE UN ACTE IMMORAL OU OBSCÈNE CONTRE LE GRÉ DE LA VICTIME** / **LA CONNAISSANCE DE L\'ÂGE INFÉRIEUR À QUINZE ANS DE LA VICTIME**',
+      priorite: 'freq',
+    },
+    {
       infraction: '**L\'exhibition sexuelle**',
       legal: 'Art. 222-32 C.P.',
-      materiel:
-        '**EXPOSITION DE PARTIES SEXUELLES** / **IMPOSÉE À LA VUE D\'AUTRUI** / **LIEU ACCESSIBLE AU PUBLIC**',
-      moral: '**VOLONTÉ DE S\'EXHIBER** / **CONSCIENCE D\'ÊTRE VU OU SUSCEPTIBLE D\'ÊTRE VU**',
+      materiel: '**UN ACTE MATÉRIEL IMPUDIQUE** / **LA PUBLICITÉ DE L\'ACTE**',
+      moral: '**CONSCIENCE DE L\'IMPUDICITÉ DE L\'ACTE**',
       priorite: 'freq',
     },
     {
       infraction: '**Le harcèlement sexuel**',
       legal: 'Art. 222-33 C.P.',
       materiel:
-        '**PROPOS OU COMPORTEMENTS RÉPÉTITIFS À CONNOTATION SEXUELLE OU SEXISTE** / **OU PRESSION GRAVE** / **ATTEINTE À LA DIGNITÉ**',
-      moral: '**CONSCIENCE DU CARACTÈRE DÉGRADANT, HUMILIANT OU OFFENSANT**',
+        '**HARCÈLEMENT SEXUEL EXIGEANT DES ACTES RÉPÉTÉS** / **OU HARCÈLEMENT SEXUEL RÉSULTANT DE LA COMMISSION D\'UN ACTE UNIQUE**',
+      moral:
+        '**CONSCIENCE DE L\'AUTEUR DE SE LIVRER À UN ACTE DE HARCÈLEMENT** / **VOLONTÉ POUR L\'AUTEUR D\'OBTENIR UN ACTE DE NATURE SEXUELLE**',
       priorite: 'freq',
     },
     {
       infraction: '**Les menaces de commettre un crime ou un délit contre les personnes — sans condition**',
       legal: 'Art. 222-17 al. 1 C.P.',
-      materiel: '**MENACE** / **MATÉRIALISÉE PAR ÉCRIT, IMAGE OU OBJET**',
-      moral: '**VOLONTÉ D\'INTIMIDER**',
+      materiel:
+        '**MENACE D\'UN CRIME OU DÉLIT DONT LA TENTATIVE EST PUNISSABLE** / **DIRIGÉE CONTRE UNE PERSONNE** / **UN MOYEN DÉTERMINÉ**',
+      moral: '**CONSCIENCE D\'EXERCER UNE PRESSION SUR LA VICTIME**',
       priorite: 'freq',
     },
     {
       infraction: '**Les menaces de mort — sans condition**',
       legal: 'Art. 222-17 al. 2 C.P.',
       materiel: '**MENACE DE MORT** / **MATÉRIALISÉE**',
-      moral: '**VOLONTÉ D\'INTIMIDER**',
+      moral: '**CONSCIENCE D\'EXERCER UNE PRESSION SUR LA VICTIME**',
       priorite: 'freq',
     },
     {
       infraction: '**Les menaces de crime ou délit contre les personnes — avec condition**',
       legal: 'Art. 222-18 al. 1 C.P.',
-      materiel: '**MENACE** / **ACCOMPAGNÉE D\'UNE CONDITION**',
-      moral: '**VOLONTÉ D\'OBTENIR QUELQUE CHOSE SOUS LA MENACE**',
+      materiel:
+        '**MENACE DE TOUT CRIME OU DÉLIT CONTRE LES PERSONNES** / **DIRIGÉE CONTRE UNE PERSONNE** / **UN MOYEN INDÉTERMINÉ** / **ORDRE DE REMPLIR UNE CONDITION**',
+      moral:
+        '**CONSCIENCE D\'EXERCER UNE PRESSION SUR LA VICTIME EN VUE DE LA CONTRAINDRE À FAIRE OU NE PAS FAIRE UN ACTE DÉTERMINÉ**',
       priorite: 'secours',
     },
     {
       infraction: '**Les menaces de mort — avec condition**',
       legal: 'Art. 222-18 al. 2 C.P.',
-      materiel: '**MENACE DE MORT** / **CONDITION**',
-      moral: '**VOLONTÉ D\'OBTENIR SOUS MENACE DE MORT**',
+      materiel: '**MENACE DE MORT** / **ACCOMPAGNÉE D\'UNE CONDITION**',
+      moral:
+        '**CONSCIENCE D\'EXERCER UNE PRESSION SUR LA VICTIME EN VUE DE LA CONTRAINDRE À FAIRE OU NE PAS FAIRE UN ACTE DÉTERMINÉ**',
       priorite: 'secours',
     },
     {
       infraction: '**Les blessures involontaires — ITT > 3 mois**',
       legal: 'Art. 222-19 C.P.',
-      materiel: '**FAUTE D\'IMPRUDENCE OU MANQUEMENT** / **ITT > 3 MOIS** / **CAUSALITÉ**',
-      moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      materiel:
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE : ITT > 3 MOIS**',
+      moral: '**ABSENCE D\'INTENTION DE PORTER ATTEINTE À L\'INTÉGRITÉ**',
       priorite: 'freq',
     },
     {
       infraction: '**Les blessures involontaires — ITT ≤ 3 mois**',
       legal: 'Art. R.625-2 C.P. / Art. 222-20 C.P.',
-      materiel: '**FAUTE D\'IMPRUDENCE** / **ITT ≤ 3 MOIS** / **CAUSALITÉ**',
-      moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      materiel:
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE : ITT ≤ 3 MOIS (contraventions)**',
+      moral: '**ABSENCE D\'INTENTION DE PORTER ATTEINTE À L\'INTÉGRITÉ**',
       priorite: 'freq',
     },
     {
       infraction: '**Les tortures et actes de barbarie**',
       legal: 'Art. 222-1 C.P.',
-      materiel:
-        '**ACTES DE TORTURE OU BARBARIE** — gravité exceptionnelle, volonté de nier la dignité humaine (C.A. Lyon 19/01/1996) / **SOUFFRANCE PHYSIQUE OU MORALE D\'INTENSITÉ INSUPPORTABLE** / **SUR PERSONNE VIVANTE**',
+      materiel: '**DES ACTES DE TORTURE ET DE BARBARIE** / **SUR LA PERSONNE D\'AUTRUI**',
       moral:
-        '**INTENTION COUPABLE** / **VOLONTÉ DE CAUSER UNE SOUFFRANCE EXCEPTIONNELLEMENT AIGÜE OU DE NIER LA DIGNITÉ HUMAINE**',
+        '**INTENTION COUPABLE** / **VOLONTÉ DE CAUSER UNE SOUFFRANCE**',
       priorite: 'core',
     },
     {
       infraction: '**Les violences habituelles sur mineur de 15 ans ou personne vulnérable**',
       legal: 'Art. 222-14 C.P.',
       materiel:
-        '**VIOLENCES HABITUELLES (AU MOINS 2 FOIS)** / **MINEUR DE 15 ANS OU PERSONNE VULNÉRABLE** (vulnérabilité apparente ou connue)',
-      moral: '**VOLONTÉ DE VIOLENCES RÉPÉTÉES** / **CONSCIENCE DE LA QUALITÉ DE MINEUR OU DE LA VULNÉRABILITÉ**',
+        '**UN ACTE POSITIF** / **DES VIOLENCES HABITUELLES** / **UNE VICTIME PARTICULIÈRE** / **UN RÉSULTAT DOMMAGEABLE**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI**',
       priorite: 'core',
     },
     {
@@ -186,16 +212,18 @@ export const recapSectionF01P1 = {
         '**Les violences avec arme sur dépositaire d\'autorité publique, sapeur-pompier ou agent de transport public**',
       legal: 'Art. 222-14-4 C.P.',
       materiel:
-        '**VIOLENCES AVEC USAGE OU MENACE D\'UNE ARME** / **VICTIME : DAP, SAPEUR-/MARIN-POMPIER OU AGENT RÉSEAU DE TRANSPORT DE VOYAGEURS** / **DANS L\'EXERCICE OU DU FAIT DES FONCTIONS** / **QUALITÉ APPARENTE OU CONNUE**',
-      moral: '**VOLONTÉ DE VIOLENCES** / **CONNAISSANCE DE LA QUALITÉ DE LA VICTIME**',
+        '**UNE COMMISSION EN BANDE ORGANISÉE OU AVEC GUET-APENS** / **DES VIOLENCES COMMISES AVEC USAGE OU MENACE D\'UNE ARME** / **UNE VICTIME PARTICULIÈRE** / **UN CONTEXTE** / **UN RÉSULTAT DOMMAGEABLE**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI** / **VOLONTÉ DE COMMETTRE DES VIOLENCES SUR UNE PERSONNE DONT LA QUALITÉ EST DÉTERMINÉE**',
       priorite: 'core',
     },
     {
       infraction: '**La participation à un groupement violent**',
       legal: 'Art. 222-14-2 C.P.',
       materiel:
-        '**PARTICIPATION SCIEMMENT À UN GROUPEMENT (MÊME TEMPORAIRE)** / **EN VUE DE LA PRÉPARATION (FAITS MATÉRIELS) DE VIOLENCES CONTRE LES PERSONNES OU DÉGRADATIONS DE BIENS**',
-      moral: '**PARTICIPATION VOLONTAIRE ET EN CONNAISSANCE DE CAUSE** / **CONSCIENCE DU BUT VIOLENT**',
+        '**LE FAIT DE PARTICIPER À UN GROUPEMENT, MÊME FORMÉ DE FAÇON TEMPORAIRE** / **EN VUE DE LA PRÉPARATION CARACTÉRISÉE PAR UN OU PLUSIEURS FAITS MATÉRIELS** / **DE VIOLENCES VOLONTAIRES CONTRE LES PERSONNES OU DE DESTRUCTIONS OU DÉGRADATIONS DE BIENS**',
+      moral:
+        '**L\'AUTEUR PARTICIPE SCIEMMENT AU GROUPEMENT** / **L\'AUTEUR A CONNAISSANCE DES FAITS DE PRÉPARATION DE VIOLENCES OU DE DESTRUCTIONS**',
       priorite: 'freq',
     },
     {
@@ -203,24 +231,25 @@ export const recapSectionF01P1 = {
         '**Les violences sur forces de sécurité intérieure ou élus locaux (ITT ≤ 8 j ou sans ITT)**',
       legal: 'Art. 222-14-5 C.P.',
       materiel:
-        '**GENDARMERIE, POLICE NATIONALE, PÉNITENTIAIRE, DOUANES OU ÉLU LOCAL** / **EXERCICE OU FAIT DES FONCTIONS OU DU MANDAT** / **QUALITÉ CONNUE OU APPARENTE** / **ITT ≤ 8 J OU SANS ITT**',
-      moral: '**VOLONTÉ DE VIOLENCES** / **CONNAISSANCE DE LA QUALITÉ DE LA VICTIME**',
+        '**UN ACTE POSITIF** / **UNE VICTIME PARTICULIÈRE** / **UN CONTEXTE** / **UN RÉSULTAT DOMMAGEABLE**',
+      moral:
+        '**CONSCIENCE DE COMMETTRE UN ACTE QUI VA AFFECTER L\'INTÉGRITÉ PHYSIQUE ET/OU PSYCHIQUE D\'AUTRUI** / **VOLONTÉ DE COMMETTRE DES VIOLENCES SUR UNE PERSONNE DONT LA QUALITÉ EST DÉTERMINÉE**',
       priorite: 'freq',
     },
     {
       infraction: '**L\'embuscade**',
       legal: 'Art. 222-15-1 C.P.',
-      materiel:
-        '**ATTENDRE DANS UN LIEU DÉTERMINÉ** / **POUR COMETTRE VIOLENCES AVEC USAGE OU MENACE D\'UNE ARME** / **VICTIME D\'UN DES PERSONNELS VISÉS (DAP, GN, PN, PÉNITENTIAIRE, DOUANES, POMPIERS, PROFESSIONNEL DE SANTÉ…) DANS L\'EXERCICE OU DU FAIT DES FONCTIONS**',
-      moral: '**VOLONTÉ DE S\'EMBUSQUER** / **INTENTION DE VIOLENCES AVEC ARME**',
+      materiel: '**UNE INFRACTION PRÉPARÉE** / **UNE VICTIME PARTICULIÈRE**',
+      moral: '**UNE MATÉRIALISATION DE LA VOLONTÉ D\'AGIR**',
       priorite: 'secours',
     },
     {
       infraction: '**Les appels et messages malveillants / agressions sonores (trouble de la tranquillité)**',
       legal: 'Art. 222-16 C.P.',
       materiel:
-        '**APPELS TÉLÉPHONIQUES MALVEILLANTS RÉITÉRÉS, MESSAGES RÉITÉRÉS, AGRESSIONS SONORES** / **EN VUE DE TROUBLER LA TRANQUILLITÉ**',
-      moral: '**CONSCIENCE D\'EXERCER UNE PRESSION** / **VOLONTÉ DE TROUBLER LA TRANQUILLITÉ**',
+        '**DES APPELS TÉLÉPHONIQUES, DES ENVOIS DE MESSAGES ÉMIS PAR LA VOIE DES COMMUNICATIONS ÉLECTRONIQUES** / **UN CARACTÈRE MALVEILLANT** / **UNE RÉITÉRATION** / **AGRESSIONS SONORES**',
+      moral:
+        '**LA MALVEILLANCE** / **VOLONTÉ DE TROUBLER LA TRANQUILLITÉ D\'AUTRUI**',
     },
     {
       infraction: '**L\'homicide routier**',
@@ -241,76 +270,84 @@ export const recapSectionF01P1 = {
     {
       infraction: '**Les blessures routières — ITT ≤ 3 mois**',
       legal: 'Art. 221-20 C.P. (loi n° 2025-622)',
-      materiel: '**CONDUCTEUR VTM** / **ITT ≤ 3 MOIS** / **COMPORTEMENT DANGEREUX CARACTÉRISÉ** / **CAUSALITÉ**',
-      moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+      materiel:
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE** / **CONDUCTEUR DE VTM (ITT ≤ 3 MOIS)**',
+      moral: '**ABSENCE D\'INTENTION DE PORTER ATTEINTE À L\'INTÉGRITÉ**',
     },
     {
       infraction:
         '**Les atteintes involontaires à l\'intégrité par conducteur de VTM — ITT ≤ 3 mois (sans violence routière)**',
       legal: 'Art. 222-19-1 C.P.',
       materiel:
-        '**CONDUCTEUR VTM** / **ITT ≤ 3 MOIS** / **FAUTE D\'IMPRUDENCE OU MANQUEMENT** / **SANS LES CIRCONSTANCES DE « VIOLENCE ROUTIÈRE » DU 221-18/19/20** / **CAUSALITÉ**',
-      moral: '**ABSENCE D\'INTENTION DE BLESSER**',
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE**',
+      moral: '**ABSENCE D\'INTENTION DE PORTER ATTEINTE À L\'INTÉGRITÉ**',
       priorite: 'freq',
     },
     {
       infraction: '**Le viol commis par un majeur sur un mineur de 15 ans**',
       legal: 'Art. 222-23-1 C.P.',
       materiel:
-        '**PÉNÉTRATION OU ACTE BUCCO-GÉNITAL** / **MAJEUR SUR MINEUR DE 15 ANS** / **PAS BESOIN DE PROUVER VCMS** — exception : écart d\'âge inférieur à 5 ans (al. 2)',
-      moral: '**CONNAISSANCE PAR L\'AUTEUR DE L\'ÂGE DE LA VICTIME (OU INEXCUSABLE IGNORANCE)**',
+        '**UN ACTE DE PÉNÉTRATION SEXUELLE OU UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UN AUTEUR MAJEUR** / **UNE VICTIME MINEURE DE MOINS DE 15 ANS** / **UNE DIFFÉRENCE D\'ÂGE D\'AU MOINS CINQ ANS, SAUF CONTREPARTIE**',
+      moral:
+        '**CONNAISSANCE DE L\'ÂGE INFÉRIEUR À QUINZE ANS DE LA VICTIME** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE DE NATURE SEXUELLE**',
     },
     {
       infraction: '**Le viol incestueux**',
       legal: 'Art. 222-23-2 C.P.',
       materiel:
-        '**PÉNÉTRATION OU ACTE BUCCO-GÉNITAL** / **ASCENDANT, FRÈRE/SŒUR, ONCLE/TANTE, NEVEU/NIÈCE OU CONJOINT (OU ÉQUIVALENT) D\'AUTORITÉ SUR LA VICTIME** / **MINEUR** / **VICTIME MINEURE : PAS DE PREUVE DE VCMS**',
-      moral: '**CONNAISSANCE DU LIEN FAMILIAL**',
+        '**UN ACTE DE PÉNÉTRATION SEXUELLE OU UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UN AUTEUR MAJEUR** / **UNE VICTIME MINEURE** / **UN LIEN DE PARENTÉ DIRECT OU INDIRECT** / **UNE AUTORITÉ DE DROIT OU DE FAIT SUR LA VICTIME**',
+      moral:
+        '**CONNAISSANCE DU LIEN DE PARENTÉ ET DE LA MINORITÉ DE LA VICTIME** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE DE NATURE SEXUELLE**',
       priorite: 'core',
     },
     {
       infraction: '**Les agressions sexuelles sur personne vulnérable**',
       legal: 'Art. 222-29 C.P.',
       materiel:
-        '**ATTEINTE SEXUELLE SANS PÉNÉTRATION** / **PAR VCMS** / **VICTIME VULNÉRABLE (ÂGE, MALADIE, INFIRMITÉ, DÉFICIENCE, GROSSESSE…)** — apparent ou connu',
-      moral: '**CONSCIENCE DE LA VULNÉRABILITÉ** / **VOLONTÉ D\'ACTE À CARACTÈRE SEXUEL**',
+        '**UN ACTE DE NATURE SEXUELLE AUTRE QU\'UNE PÉNÉTRATION OU QU\'UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **UNE VICTIME PARTICULIÈRE** / **L\'ABSENCE DE CONSENTEMENT**',
+      moral:
+        '**CONNAISSANCE DE L\'AUTEUR DE L\'ABSENCE DE CONSENTEMENT** / **VOLONTÉ DE L\'AUTEUR DE COMMETTRE UN ACTE IMMORAL OU OBSCÈNE**',
       priorite: 'freq',
     },
     {
       infraction: '**L\'agression sexuelle commise par un majeur sur un mineur de 15 ans**',
       legal: 'Art. 222-29-2 C.P.',
       materiel:
-        '**SANS PÉNÉTRATION** / **MAJEUR / MINEUR DE 15 ANS** / **PAS DE VCMS À PROUVER** — exception : écart d\'âge ≥ 5 ans requis',
-      moral: '**CONNAISSANCE DE L\'ÂGE**',
+        '**UN ACTE DE NATURE SEXUELLE AUTRE QU\'UNE PÉNÉTRATION OU QU\'UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UN AUTEUR MAJEUR** / **UNE VICTIME MINEURE DE MOINS DE 15 ANS** / **UNE DIFFÉRENCE D\'ÂGE D\'AU MOINS CINQ ANS, SAUF CONTREPARTIE**',
+      moral:
+        '**CONNAISSANCE DE L\'ÂGE INFÉRIEUR À QUINZE ANS DE LA VICTIME** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE IMMORAL OU OBSCÈNE**',
     },
     {
       infraction: '**L\'agression sexuelle incestueuse**',
       legal: 'Art. 222-29-3 C.P.',
       materiel:
-        '**ATTEINTE SANS PÉNÉTRATION** / **LIENS FAMILIAUX COMME AU 222-23-2** / **MINEUR** / **PAS DE VCMS À PROUVER POUR LE MINEUR**',
-      moral: '**CONNAISSANCE DU LIEN FAMILIAL**',
+        '**UN ACTE DE NATURE SEXUELLE AUTRE QU\'UNE PÉNÉTRATION OU QU\'UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL** / **COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L\'AUTEUR** / **UN AUTEUR MAJEUR** / **UNE VICTIME MINEURE** / **UN LIEN DE PARENTÉ DIRECT OU INDIRECT** / **UNE AUTORITÉ DE DROIT OU DE FAIT SUR LA VICTIME**',
+      moral:
+        '**CONNAISSANCE DU LIEN DE PARENTÉ ET DE LA MINORITÉ DE LA VICTIME** / **VOLONTÉ DE L\'AUTEUR D\'IMPOSER UN ACTE IMMORAL OU OBSCÈNE**',
       priorite: 'freq',
     },
     {
       infraction: '**L\'administration de substance pour viol ou agression sexuelle**',
       legal: 'Art. 222-30-1 C.P.',
       materiel:
-        '**ADMINISTRATION À L\'INSU D\'UNE SUBSTANCE ALTÉRANT DISCERNEMENT OU CONTRÔLE** / **EN VUE D\'UN VIOL OU D\'UNE AGRESSION SEXUELLE**',
-      moral: '**CONNAISSANCE DE LA NATURE DE LA SUBSTANCE** / **VOLONTÉ D\'ALTÉRER LE DISCERNEMENT EN VUE DE L\'INFRACTION SEXUELLE**',
+        '**ADMINISTRATION D\'UNE SUBSTANCE** / **À L\'INSU DE LA VICTIME** / **DE NATURE À ALTÉRER SON DISCERNEMENT OU LE CONTRÔLE DE SES ACTES** / **DANS LE BUT DE COMMETTRE UN VIOL OU UNE AGRESSION SEXUELLE**',
+      moral:
+        '**CONNAISSANCE DU CARACTÈRE SÉDATIF/AMNÉSIANT DE LA SUBSTANCE** / **VOLONTÉ DE PROFITER DE LA SOUMISSION CHIMIQUE DE LA VICTIME POUR COMMETTRE UN VIOL OU UNE AGRESSION SEXUELLE**',
       priorite: 'freq',
     },
     {
       infraction: '**L\'enregistrement d\'images de violences (happy slapping)**',
       legal: 'Art. 222-33-3 C.P.',
-      materiel:
-        '**ENREGISTREMENT SCIEMMENT** / **IMAGES DE COMMISSION D\'INFRACTIONS DE VIOLENCES OU D\'AGRESSIONS SEXUELLES**',
-      moral: '**CONSCIENCE D\'ENREGISTRER DES ACTES DE VIOLENCE** / **VOLONTÉ DE PRODUIRE L\'ENREGISTREMENT**',
+      materiel: '**ENREGISTREMENT D\'IMAGES DE VIOLENCE** / **FAITS JUSTIFICATIFS**',
+      moral:
+        '**ENREGISTREMENT RÉALISÉ SCIEMMENT** / **CONSCIENCE QUE LES IMAGES SONT RELATIVES À DES INFRACTIONS DE VIOLENCE**',
     },
     {
       infraction: '**La diffusion d\'images de violences**',
       legal: 'Art. 222-33-3 al. 2 C.P.',
-      materiel: '**DIFFUSION PAR QUELQUE MOYEN** (internet, réseaux sociaux, MMS…)',
-      moral: '**CONSCIENCE ET VOLONTÉ DE PORTER À LA CONNAISSANCE D\'AUTRUI**',
+      materiel: '**DIFFUSION D\'IMAGES DE VIOLENCE** / **FAITS JUSTIFICATIFS**',
+      moral:
+        '**CONNAISSANCE DU CONTENU DES IMAGES ENREGISTRÉES** / **VOLONTÉ DE DIFFUSER CES IMAGES**',
       priorite: 'secours',
     },
   ],
