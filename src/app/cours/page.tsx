@@ -5,6 +5,7 @@ import { CoursHubLogiqueCandidat } from '@/components/cours/CoursHubLogiqueCandi
 import { CoursMethodeRevision } from '@/components/cours/CoursMethodeRevision';
 import { CoursRevisionPath } from '@/components/cours/CoursRevisionPath';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { cn } from '@/utils/cn';
@@ -56,7 +57,7 @@ const hubLinks = [
 
 export default function CoursHubPage() {
   return (
-    <InteriorPageShell maxWidth='6xl' glow='violet' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.coursHub} pad='default'>
       <div className='relative overflow-hidden rounded-3xl border border-white/[0.1] bg-gradient-to-br from-navy-900/80 via-navy-950 to-navy-950 p-8 shadow-xl shadow-black/30 ring-1 ring-white/[0.05] md:p-12'>
         <div
           className='pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-cyan-500/10 blur-3xl'

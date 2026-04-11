@@ -15,10 +15,14 @@ export function PageTransition({ children }: PropsWithChildren) {
         id='contenu-principal'
         className='relative flex-1 scroll-mt-28'
         tabIndex={-1}
-        initial={shouldReduce ? {} : { opacity: 0, y: 8 }}
+        initial={shouldReduce ? {} : { opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={shouldReduce ? {} : { opacity: 0, y: -6 }}
-        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+        exit={shouldReduce ? {} : { opacity: 0, y: -12 }}
+        transition={
+          shouldReduce
+            ? { duration: 0.2 }
+            : { type: 'spring', stiffness: 380, damping: 32, mass: 0.85 }
+        }
       >
         {children}
       </motion.main>

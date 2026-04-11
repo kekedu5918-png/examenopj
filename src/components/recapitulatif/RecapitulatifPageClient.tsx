@@ -4,6 +4,7 @@ import { Fragment, useEffect, useMemo, useState } from 'react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -75,7 +76,7 @@ export function RecapitulatifPageClient({
     <InteriorPageShell
       id='recap-print-root'
       maxWidth='7xl'
-      glow='emerald'
+      glow={SHELL_GLOW.recapitulatif}
       pad='default'
       className='print:bg-white print:text-black print:[&_.text-gray-200]:!text-black print:[&_.text-gray-300]:!text-neutral-800 print:[&_.text-gray-400]:!text-neutral-700'
     >

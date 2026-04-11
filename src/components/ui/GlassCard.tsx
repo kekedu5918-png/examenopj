@@ -23,10 +23,10 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        'relative overflow-hidden border border-white/[0.08] bg-white/[0.025]',
+        'relative overflow-hidden border border-white/[0.1] bg-white/[0.03]',
         radius === '3xl' ? 'rounded-3xl' : 'rounded-2xl',
-        'shadow-[0_4px_24px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.06)]',
-        'backdrop-blur-md',
+        'shadow-[0_8px_40px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.08)]',
+        'backdrop-blur-xl',
         hover && [
           'transition-all duration-300',
           'hover:border-white/[0.14] hover:bg-white/[0.045]',
@@ -39,7 +39,7 @@ export function GlassCard({
       {/* Top glow accent */}
       {topGlow ? (
         <span
-          className='pointer-events-none absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent'
+          className='pointer-events-none absolute left-0 right-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/60 to-transparent opacity-95'
           aria-hidden
         />
       ) : null}

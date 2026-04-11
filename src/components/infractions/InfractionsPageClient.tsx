@@ -14,6 +14,7 @@ import { InfractionsFlashMode } from '@/components/infractions/InfractionsFlashM
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -213,7 +214,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const listRef = useRef<HTMLDivElement>(null);
 
   return (
-    <InteriorPageShell maxWidth='6xl' glow='rose' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.infractions} pad='default'>
       <h1 className='sr-only'>Référentiel des infractions</h1>
       <SectionTitle
         badge='RÉFÉRENTIEL'

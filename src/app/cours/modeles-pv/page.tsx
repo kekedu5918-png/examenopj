@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { ModelesPVIndexClient } from '@/components/modeles-pv/ModelesPVIndexClient';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { MODELES_PV } from '@/data/modeles-pv';
@@ -23,7 +24,7 @@ function ModelesPVFallback() {
 
 export default function ModelesPVIndexPage() {
   return (
-    <InteriorPageShell maxWidth='6xl' glow='emerald' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.modelesPv} pad='default'>
       <div className='border-b border-white/[0.06] pb-6'>
         <SectionTitle
           badge='Cours'

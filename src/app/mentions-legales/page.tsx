@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { LegalProse, LegalSection } from '@/components/legal/legal-prose';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <InteriorPageShell maxWidth='4xl' glow='none' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.legal} pad='default'>
     <LegalProse title='Mentions légales' className='px-0 py-0'>
       <LegalSection title='Éditeur du site'>
         <p>

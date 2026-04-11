@@ -12,6 +12,7 @@ import {
 } from '@/components/access/freemium-daily-quota';
 import { LANDING_EASE } from '@/components/home/motion';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
@@ -307,7 +308,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'quiz') {
     return (
-      <InteriorPageShell fullBleed maxWidth='full' glow='cyan' pad='none' innerClassName='pt-8'>
+      <InteriorPageShell fullBleed maxWidth='full' glow={SHELL_GLOW.quiz} pad='none' innerClassName='pt-8'>
         <div className='mx-auto mb-4 max-w-2xl px-4 text-center'>
           <button
             type='button'
@@ -328,7 +329,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'result') {
     return (
-      <InteriorPageShell fullBleed maxWidth='6xl' glow='violet' pad='default'>
+      <InteriorPageShell fullBleed maxWidth='6xl' glow={SHELL_GLOW.quiz} pad='default'>
         <QuizResult
           correct={result.correct}
           total={result.total}
@@ -342,7 +343,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
   if (phase === 'setup' && maxDailyQuiz != null && quizUsedToday >= maxDailyQuiz) {
     return (
-      <InteriorPageShell fullBleed maxWidth='5xl' glow='blue' pad='default'>
+      <InteriorPageShell fullBleed maxWidth='5xl' glow={SHELL_GLOW.quiz} pad='default'>
         <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-10'>
           <motion.div variants={headerItem}>
             <SectionTitle
@@ -361,7 +362,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   }
 
   return (
-    <InteriorPageShell fullBleed maxWidth='5xl' glow='blue' pad='default'>
+    <InteriorPageShell fullBleed maxWidth='5xl' glow={SHELL_GLOW.quiz} pad='default'>
         <motion.header variants={headerContainer} initial='hidden' animate='visible' className='mb-12'>
           <motion.div variants={headerItem}>
             <SectionTitle

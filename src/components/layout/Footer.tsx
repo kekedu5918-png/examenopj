@@ -8,12 +8,24 @@ const colLink =
 
 export function Footer() {
   return (
-    <footer className='relative mt-auto overflow-hidden border-t border-white/[0.05]'>
-      {/* Background */}
-      <div className='absolute inset-0 bg-gradient-to-b from-transparent to-[#04080f]' />
+    <footer className='relative mt-auto overflow-hidden border-t border-white/[0.06]'>
       <div
-        className='pointer-events-none absolute bottom-0 left-1/2 h-48 w-[500px] -translate-x-1/2 opacity-10 blur-[80px]'
-        style={{ background: 'radial-gradient(ellipse, #3b82f6 0%, transparent 70%)' }}
+        className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent'
+        aria-hidden
+      />
+      {/* Background */}
+      <div className='absolute inset-0 bg-gradient-to-b from-transparent via-[#050a14]/80 to-[#030508]' />
+      <div
+        className='pointer-events-none absolute bottom-0 left-1/2 h-56 w-[min(600px,90vw)] -translate-x-1/2 opacity-[0.14] blur-[90px]'
+        style={{
+          background:
+            'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(59,130,246,0.9) 0%, rgba(124,58,237,0.35) 45%, transparent 70%)',
+        }}
+        aria-hidden
+      />
+      <div
+        className='pointer-events-none absolute bottom-8 right-[15%] h-40 w-40 rounded-full opacity-[0.12] blur-[70px]'
+        style={{ background: 'radial-gradient(circle, #06b6d4 0%, transparent 70%)' }}
         aria-hidden
       />
 

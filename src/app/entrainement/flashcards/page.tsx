@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default async function EntrainementFlashcardsPage() {
   return (
     <Suspense
       fallback={
-        <InteriorPageShell maxWidth='6xl' glow='amber' pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
+        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
           Chargement des flashcards…
         </InteriorPageShell>
       }

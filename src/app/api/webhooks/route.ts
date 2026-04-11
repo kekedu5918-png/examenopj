@@ -4,7 +4,6 @@ import { upsertUserSubscription } from '@/features/account/controllers/upsert-us
 import { upsertPrice } from '@/features/pricing/controllers/upsert-price';
 import { upsertProduct } from '@/features/pricing/controllers/upsert-product';
 import { getStripeAdmin } from '@/libs/stripe/stripe-admin';
-import { getEnvVar } from '@/utils/get-env-var';
 
 const relevantEvents = new Set([
   'product.created',
@@ -19,12 +18,17 @@ const relevantEvents = new Set([
 
 export async function POST(req: Request) {
   const body = await req.text();
-  const sig = req.headers.get('stripe-signature') as string;
-  const webhookSecret = getEnvVar(process.env.STRIPE_WEBHOOK_SECRET, 'STRIPE_WEBHOOK_SECRET');
+  const sig = req.headers.get('stripe-signature');
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
   let event: Stripe.Event;
 
   try {
-    if (!sig || !webhookSecret) return;
+    if (!sig || !webhookSecret) {
+      return Response.json(
+        { error: 'Stripe webhook: en-tête stripe-signature ou STRIPE_WEBHOOK_SECRET manquant' },
+        { status: 400 },
+      );
+    }
     event = getStripeAdmin().webhooks.constructEvent(body, sig, webhookSecret);
   } catch (error) {
     return Response.json(`Webhook Error: ${(error as any).message}`, { status: 400 });

@@ -44,7 +44,7 @@ export function SectionTitle({
       transition={{ duration: 0.55, ease: easeOut }}
     >
       {/* Badge avec contour dégradé type produit premium */}
-      <span className='inline-flex rounded-full bg-gradient-to-r from-blue-500/50 via-violet-500/40 to-cyan-500/45 p-[1px] shadow-sm shadow-black/20'>
+      <span className='inline-flex rounded-full bg-gradient-to-r from-violet-500/70 via-fuchsia-500/55 via-50% to-cyan-500/60 p-[1px] shadow-[0_0_24px_-4px_rgba(139,92,246,0.45)]'>
         <span
           className={cn(
             'inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]',
@@ -53,7 +53,7 @@ export function SectionTitle({
           )}
         >
           <span
-            className='h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 shadow-[0_0_8px_rgba(56,189,248,0.5)]'
+            className='h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-violet-400 via-fuchsia-400 to-cyan-400 shadow-[0_0_10px_rgba(167,139,250,0.75)]'
             aria-hidden
           />
           {badge}

@@ -10,6 +10,7 @@ import {
   FreemiumFlashcardsDailyLimitWall,
 } from '@/components/access/freemium-daily-quota';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import { type Flashcard, flashcardsData } from '@/data/flashcards-data';
@@ -318,7 +319,7 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
   const fascMeta = prepared ? fasciculeMeta(prepared.card.fascicule) : null;
 
   return (
-    <InteriorPageShell maxWidth='6xl' glow='amber' pad='compact'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='compact'>
       <SectionTitle
         badge='MÉMORISATION'
         badgeClassName='text-amber-200'

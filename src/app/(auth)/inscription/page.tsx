@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 
@@ -19,7 +20,7 @@ export default async function InscriptionPage() {
   const alreadyConnectedNoPremium = session && !premium;
 
   return (
-    <InteriorPageShell maxWidth='4xl' glow='violet' pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.auth} pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
     <main className='w-full max-w-md'>
       <div className='w-full space-y-4 rounded-3xl border border-slate-800/90 bg-slate-950/95 p-6 shadow-xl shadow-black/25 backdrop-blur-sm'>
         <h1 className='text-2xl font-bold text-slate-100'>

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { type CoursModuleExplorerItem, CoursModulesExplorer } from '@/components/cours/CoursModulesExplorer';
 import { CoursModulesJsonLd } from '@/components/cours/CoursModulesJsonLd';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { fasciculesList } from '@/data/fascicules-list';
 import type { Domain } from '@/data/fascicules-types';
@@ -36,7 +37,7 @@ const explorerModules: CoursModuleExplorerItem[] = fasciculesList.map((m) => ({
 
 export default function CoursModulesPage() {
   return (
-    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.modulesIndex} pad='default'>
       <CoursModulesJsonLd />
       <nav className='mb-6 text-sm text-gray-500'>
         <Link href='/cours' className='text-cyan-400 hover:underline'>

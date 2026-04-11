@@ -15,6 +15,7 @@ import {
 import type { ReactNode } from 'react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { EXAM_SHORT_LABEL, type ExamNumber } from '@/data/exam-competency-map';
@@ -244,7 +245,7 @@ function SectionBlock({
 
 export default function EntrainementHubPage() {
   return (
-    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.entrainement} pad='default'>
       <SectionTitle
         badge='RÉVISION'
         badgeClassName='text-cyan-200'

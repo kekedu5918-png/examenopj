@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Button } from '@/components/ui/button';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSubscription } from '@/features/account/controllers/get-subscription';
@@ -20,7 +21,11 @@ export default async function AccountPage() {
   let userProduct: ProductWithPrices | undefined;
   let userPrice: Price | undefined;
 
-  if (subscription) {
+  if (subscription?.prices?.products) {
+    const { products: linkedProduct, ...priceRow } = subscription.prices;
+    userPrice = priceRow as Price;
+    userProduct = { ...linkedProduct, prices: [userPrice] };
+  } else if (subscription) {
     for (const product of products) {
       if (product.prices && product.prices.length > 0) {
         for (const price of product.prices) {
@@ -35,21 +40,21 @@ export default async function AccountPage() {
   }
 
   return (
-    <InteriorPageShell maxWidth='4xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.account} pad='default'>
     <section className='rounded-lg bg-black/40 px-4 py-12 ring-1 ring-white/10'>
-      <h1 className='mb-8 text-center'>Account</h1>
+      <h1 className='mb-8 text-center'>Mon compte</h1>
 
       <div className='flex flex-col gap-4'>
         <Card
-          title='Your Plan'
+          title='Votre formule'
           footer={
             subscription ? (
               <Button size='sm' variant='secondary' asChild>
-                <Link href='/manage-subscription'>Manage your subscription</Link>
+                <Link href='/manage-subscription'>Gérer mon abonnement</Link>
               </Button>
             ) : (
               <Button size='sm' variant='secondary' asChild>
-                <Link href='/pricing'>Start a subscription</Link>
+                <Link href='/pricing'>Souscrire un abonnement</Link>
               </Button>
             )
           }
@@ -57,7 +62,17 @@ export default async function AccountPage() {
           {userProduct && userPrice ? (
             <PricingCard product={userProduct} price={userPrice} />
           ) : (
-            <p>You don&apos;t have an active subscription</p>
+            <div className='space-y-3 text-sm text-zinc-300'>
+              <p>Vous n&apos;avez pas d&apos;abonnement actif (ou la synchronisation Stripe n&apos;est pas encore à jour).</p>
+              <p className='text-zinc-400'>
+                Les tarifs et le paiement passent par Stripe ; après souscription, le statut apparaît ici une fois les
+                webhooks reçus. Vérifiez la page{' '}
+                <Link className='text-cyan-400 underline underline-offset-2 hover:text-cyan-300' href='/pricing'>
+                  Tarifs
+                </Link>{' '}
+                (à partir de 9,90&nbsp;€/mois).
+              </p>
+            </div>
           )}
         </Card>
       </div>

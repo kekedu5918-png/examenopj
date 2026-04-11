@@ -105,11 +105,10 @@ export function SiteHeaderClient({
   const enquetesActive = isActivePath(pathname, '/cours/enquetes');
 
   const headerStyle = {
-    background: scrolled
-      ? 'rgba(8, 15, 30, 0.92)'
-      : 'rgba(8, 15, 30, 0)',
-    borderBottomColor: scrolled ? 'rgba(255, 255, 255, 0.07)' : 'transparent',
-    transition: 'background 0.3s ease, border-color 0.3s ease',
+    background: scrolled ? 'rgba(6, 11, 22, 0.88)' : 'rgba(8, 15, 30, 0)',
+    borderBottomColor: scrolled ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
+    boxShadow: scrolled ? '0 4px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)' : 'none',
+    transition: 'background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
   } as const;
 
   return (
@@ -118,10 +117,16 @@ export function SiteHeaderClient({
         <TrialReminderBanner daysLeft={trialReminder.daysLeft} endsAtIso={trialReminder.endsAtIso} />
       ) : null}
       <motion.header
-        className='border-b backdrop-blur-[16px] [-webkit-backdrop-filter:blur(16px)]'
+        className='relative border-b backdrop-blur-xl [-webkit-backdrop-filter:blur(20px)]'
         style={headerStyle}
         aria-label='Navigation principale'
       >
+        {scrolled ? (
+          <div
+            className='pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent'
+            aria-hidden
+          />
+        ) : null}
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
           <BrandWordmark href={homeHref} className='min-w-0 shrink' />
 

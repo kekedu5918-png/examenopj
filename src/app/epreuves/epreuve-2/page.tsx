@@ -3,13 +3,14 @@ import Link from 'next/link';
 import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
 import { Epreuve2Layout } from '@/components/epreuves/epreuve-2/epreuve-2-layout';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
 
 export default async function Epreuve2Page() {
   const access = await getContentAccess();
   if (access.tier === 'freemium') {
     return (
-      <InteriorPageShell maxWidth='6xl' glow='blue' pad='compact'>
+      <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.epreuve2} pad='compact'>
         <div className='mx-auto max-w-3xl py-2 text-center'>
           <Link
             href='/cours/enquetes'

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { useToast } from '@/components/ui/use-toast';
 import type { Categorie, Fiche } from '@/data/fondamentaux-data';
 import { groupFichesByProgramme } from '@/data/fondamentaux-display-order';
@@ -183,7 +184,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
   }, [toast]);
 
   return (
-    <InteriorPageShell maxWidth='full' glow='emerald' pad='none' className='min-h-[calc(100vh-4rem)]'>
+    <InteriorPageShell maxWidth='full' glow={SHELL_GLOW.fondamentaux} pad='none' className='min-h-[calc(100vh-4rem)]'>
       <FondamentauxStructuredIntro />
       <FondamentauxHero fiches={fiches} categories={categories} viewedCount={viewedIds.size} />
       <FondamentauxFilters

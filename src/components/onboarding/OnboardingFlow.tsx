@@ -4,6 +4,7 @@ import { type ReactNode, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { completeDiagnostic, saveOnboardingStage } from '@/features/onboarding/actions/onboarding-actions';
@@ -34,7 +35,7 @@ function OnboardingScreenShell({ children }: { children: ReactNode }) {
       fullBleed
       bleedBgClassName='bg-slate-950'
       maxWidth='full'
-      glow='violet'
+      glow={SHELL_GLOW.auth}
       pad='none'
       innerClassName={ONBOARDING_SHELL_INNER}
     >

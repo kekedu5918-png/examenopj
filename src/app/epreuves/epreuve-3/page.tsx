@@ -1,13 +1,14 @@
 import { ContentPremiumOverlay } from '@/components/access/ContentPremiumOverlay';
 import { Epreuve3Layout } from '@/components/epreuves/epreuve-3/epreuve-3-layout';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
 
 export default async function Epreuve3Page() {
   const access = await getContentAccess();
 
   return (
-    <InteriorPageShell maxWidth='7xl' glow='violet' pad='none'>
+    <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.epreuve3} pad='none'>
       <section className='mx-auto max-w-3xl py-10 md:py-14'>
         <h1 className='font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'>
           Épreuve 3 — L&apos;oral de mise en situation

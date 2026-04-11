@@ -196,9 +196,16 @@
   }
 
   .home-start-card:hover {
-    border-color: rgba(37, 99, 235, 0.35);
-    background: rgba(37, 99, 235, 0.06);
-    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+    border-color: rgba(99, 102, 241, 0.45);
+    background: linear-gradient(
+      145deg,
+      rgba(99, 102, 241, 0.1) 0%,
+      rgba(6, 182, 212, 0.06) 100%
+    );
+    box-shadow:
+      0 12px 40px rgba(37, 99, 235, 0.18),
+      0 0 0 1px rgba(255, 255, 255, 0.06);
+    transform: translateY(-3px);
   }
 
   /* Barre de progression des modules */

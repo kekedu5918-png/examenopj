@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { RapportSyntheseAtelierClient } from '@/components/rapport-synthese/RapportSyntheseAtelierClient';
 import { RapportSyntheseModesSection } from '@/components/rapport-synthese/RapportSyntheseModesSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -20,7 +21,7 @@ export default async function RapportSynthesePage() {
   const ok = await hasPremiumAccess();
 
   return (
-    <InteriorPageShell maxWidth='7xl' glow='violet' pad='default'>
+    <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.rapportSynthese} pad='default'>
       <SectionTitle
         badge='Premium'
         badgeClassName='bg-examen-premium/25 text-violet-200'

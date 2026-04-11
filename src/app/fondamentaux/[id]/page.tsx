@@ -7,6 +7,7 @@ import { FREEMIUM_UNLOCKED_IDS } from '@/components/fondamentaux/fondamentaux-th
 import { FondamentauxFicheDetail } from '@/components/fondamentaux/FondamentauxFicheDetail';
 import { FondamentauxViewTracker } from '@/components/fondamentaux/FondamentauxViewTracker';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { getContentAccess } from '@/features/access/get-content-access';
@@ -53,7 +54,7 @@ export default async function FondamentauxFichePage({ params }: Props) {
   const locked = access.tier === 'freemium' && !FREEMIUM_UNLOCKED_IDS.has(fiche.id);
 
   const inner = (
-    <InteriorPageShell maxWidth='4xl' glow='emerald' pad='default' className='min-h-[calc(100vh-4rem)]'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.fondamentaux} pad='default' className='min-h-[calc(100vh-4rem)]'>
       <FondamentauxViewTracker ficheId={fiche.id} />
       <p className='mb-4 text-xs text-slate-500' suppressHydrationWarning>
         Dernière mise à jour du site : {SITE_LAST_UPDATED_LABEL}

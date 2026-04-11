@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import type { ProgrammeModuleItem } from '@/components/cours/ProgrammeClient';
 import { ProgrammeClient } from '@/components/cours/ProgrammeClient';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { APP_NAME } from '@/constants/site';
 import { courseModuleSyntheses } from '@/data/course-module-syntheses';
@@ -41,7 +42,7 @@ export default function ProgrammePage() {
     }));
 
   return (
-    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.programme} pad='default'>
       <SectionTitle
         badge='PROGRAMME'
         badgeClassName='bg-cyan-500/20 text-cyan-200'

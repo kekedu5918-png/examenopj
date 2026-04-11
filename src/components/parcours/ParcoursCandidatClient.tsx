@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { BookOpen, Check, Circle, ClipboardList, FlaskConical, RotateCcw, Trophy } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
+import { RevisionThemesJourney } from '@/components/parcours/RevisionThemesJourney';
 import { ProgressRing } from '@/components/ui/ProgressRing';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { cn } from '@/utils/cn';
@@ -197,7 +199,7 @@ export function ParcoursCandidatClient() {
   const days = mounted ? daysUntilExam() : null;
 
   return (
-    <InteriorPageShell maxWidth='6xl' glow='blue' pad='default' innerClassName='pt-8 md:pt-12'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.parcours} pad='default' innerClassName='pt-8 md:pt-12'>
         <nav className='mb-8 flex flex-wrap items-center gap-2 text-sm' aria-label="Fil d'Ariane">
           <Link
             href='/entrainement'
@@ -222,6 +224,8 @@ export function ParcoursCandidatClient() {
           subtitle='Trois phases — cartographier, approfondir, mode examen — avec les bons outils au bon moment.'
           className='mb-10 max-w-3xl'
         />
+
+        <RevisionThemesJourney />
 
         {/* Bandeau compteur + progression */}
         <div className='mb-12 flex flex-wrap gap-4'>

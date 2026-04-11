@@ -6,6 +6,7 @@ import { FloatingQuickFlashcards } from '@/components/layout/FloatingQuickFlashc
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { PageTransition } from '@/components/layout/PageTransition';
+import { SiteAmbientMotion } from '@/components/layout/SiteAmbientMotion';
 import { SiteJsonLd } from '@/components/seo/site-json-ld';
 import { Toaster } from '@/components/ui/toaster';
 import { APP_NAME, SEO_KEYWORDS } from '@/constants/site';
@@ -88,6 +89,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         className={cn('relative min-h-screen bg-[#050a14] font-sans text-examen-ink antialiased')}
         suppressHydrationWarning
       >
+        <SiteAmbientMotion />
         <div className='pointer-events-none fixed inset-0 -z-10 bg-[#050a14]' aria-hidden>
           {/* Base wash — profondeur type produit Apple */}
           <div

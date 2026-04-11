@@ -3,6 +3,7 @@
 import { Epreuve3Header } from '@/components/epreuves/epreuve-3/epreuve-3-header';
 import { Epreuve3Sections } from '@/components/epreuves/epreuve-3/epreuve-3-sections';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 
 type Epreuve3LayoutProps = {
   /** Quand false, le contenu est rendu sans enveloppe (ex. page parente fournit déjà le shell). */
@@ -22,7 +23,7 @@ export function Epreuve3Layout({ wrapWithShell = true }: Epreuve3LayoutProps) {
   }
 
   return (
-    <InteriorPageShell maxWidth='7xl' glow='violet' pad='none'>
+    <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.epreuve3} pad='none'>
       {inner}
     </InteriorPageShell>
   );

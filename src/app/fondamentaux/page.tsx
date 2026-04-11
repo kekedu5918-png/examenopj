@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import { FondamentauxPage } from '@/components/fondamentaux/FondamentauxPage';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { CATEGORIES, FICHES } from '@/data/fondamentaux-data';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -24,7 +25,7 @@ export default async function FondamentauxRoutePage() {
   return (
     <Suspense
       fallback={
-        <InteriorPageShell maxWidth='full' glow='emerald' pad='none' className='min-h-[40vh]' innerClassName='min-h-[40vh]'>
+        <InteriorPageShell maxWidth='full' glow={SHELL_GLOW.fondamentaux} pad='none' className='min-h-[40vh]' innerClassName='min-h-[40vh]'>
           <p className='sr-only'>Chargement des fondamentaux…</p>
         </InteriorPageShell>
       }

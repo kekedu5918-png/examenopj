@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
 import { getSession } from '@/features/account/controllers/get-session';
 import { createCheckoutAction } from '@/features/pricing/actions/create-checkout-action';
@@ -42,7 +43,7 @@ export default async function PricingPage() {
 
   if (!monthly && !exam) {
     return (
-      <InteriorPageShell maxWidth='4xl' glow='violet' pad='default' innerClassName='py-16 md:py-24'>
+      <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.pricing} pad='default' innerClassName='py-16 md:py-24'>
         <header className='relative mb-12 text-center'>
           <h1 className='bg-gradient-to-br from-white via-slate-100 to-violet-200/90 bg-clip-text font-sans text-3xl font-extrabold tracking-tight text-transparent md:text-4xl'>
             Choisissez votre accès

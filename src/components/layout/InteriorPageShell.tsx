@@ -15,12 +15,12 @@ const GLOW: Record<
   'blue' | 'violet' | 'cyan' | 'amber' | 'emerald' | 'rose' | 'none',
   string | undefined
 > = {
-  blue: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(59,130,246,0.22), transparent)',
-  violet: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(124,58,237,0.18), transparent)',
-  cyan: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(6,182,212,0.16), transparent)',
-  amber: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(245,158,11,0.13), transparent)',
-  emerald: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(16,185,129,0.12), transparent)',
-  rose: 'radial-gradient(ellipse 85% 58% at 50% -14%, rgba(244,63,94,0.12), transparent)',
+  blue: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59,130,246,0.32), transparent 55%)',
+  violet: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(124,58,237,0.28), transparent 55%)',
+  cyan: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(6,182,212,0.26), transparent 55%)',
+  amber: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(245,158,11,0.22), transparent 55%)',
+  emerald: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(16,185,129,0.22), transparent 55%)',
+  rose: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(244,63,94,0.22), transparent 55%)',
   none: undefined,
 };
 
@@ -71,7 +71,7 @@ export function InteriorPageShell({
       <div id={id} className={cn('relative min-h-screen', bleedBgClassName, className)}>
         {glow !== 'none' && glowStyle ? (
           <div
-            className='pointer-events-none absolute left-1/2 top-0 h-[min(480px,55vh)] w-[min(100%,960px)] -translate-x-1/2 opacity-90'
+            className='pointer-events-none absolute left-1/2 top-0 h-[min(520px,58vh)] w-[min(100%,1000px)] -translate-x-1/2 opacity-100'
             style={{ background: glowStyle }}
             aria-hidden
           />
@@ -87,12 +87,28 @@ export function InteriorPageShell({
     <div id={id} className={cn('relative', className)}>
       {glow !== 'none' && glowStyle ? (
         <div
-          className='pointer-events-none absolute left-1/2 top-0 h-[min(420px,48vh)] w-[min(100%,960px)] -translate-x-1/2 opacity-[0.9]'
+          className='pointer-events-none absolute left-1/2 top-0 h-[min(460px,52vh)] w-[min(100%,1000px)] -translate-x-1/2 opacity-100'
           style={{ background: glowStyle }}
           aria-hidden
         />
       ) : null}
-      <div className={cn('relative mx-auto w-full px-4', MAX_WIDTH[maxWidth], PAD[pad], innerClassName)}>{children}</div>
+      {/* Trait lumineux haut de page — cohérence visuelle globale */}
+      {glow !== 'none' && glowStyle ? (
+        <div
+          className='pointer-events-none absolute left-1/2 top-0 h-px w-[min(92%,920px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-80'
+          aria-hidden
+        />
+      ) : null}
+      <div
+        className={cn(
+          'relative mx-auto w-full px-4',
+          MAX_WIDTH[maxWidth],
+          PAD[pad],
+          innerClassName,
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { LegalProse } from '@/components/legal/legal-prose';
 import { APP_NAME } from '@/constants/site';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function AProposPage() {
   return (
-    <InteriorPageShell maxWidth='4xl' glow='blue' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.aPropos} pad='default'>
     <LegalProse title={title} className='px-0 py-0'>
       <section className='not-prose space-y-4'>
         <h2 className='font-display text-xl font-bold text-white'>Qui crée ce contenu ?</h2>

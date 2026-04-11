@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { LegalProse, LegalSection } from '@/components/legal/legal-prose';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function CgvPage() {
   return (
-    <InteriorPageShell maxWidth='4xl' glow='none' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.legal} pad='default'>
     <LegalProse title='Conditions générales de vente (CGV)' className='px-0 py-0'>
       <p className='rounded-lg border border-amber-500/30 bg-amber-500/10 p-4 text-amber-100/90'>
         Document type à adapter : remplacez les mentions « [À compléter] » par vos données juridiques (raison sociale,

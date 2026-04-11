@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import type { Price } from '@/features/pricing/types';
 import { cn } from '@/utils/cn';
@@ -92,7 +93,7 @@ export function PricingThreeColumnPage({
   }
 
   return (
-    <InteriorPageShell maxWidth='5xl' glow='violet' pad='default' innerClassName='py-14 md:py-20'>
+    <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.pricing} pad='default' innerClassName='py-14 md:py-20'>
       <header className='relative mb-12 text-center'>
         <SectionTitle
           badge='TARIFS'

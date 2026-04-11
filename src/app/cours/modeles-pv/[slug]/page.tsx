@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { ModelePVDetailClient } from '@/components/modeles-pv/ModelePVDetailClient';
 import { getCourseModuleById } from '@/data/fascicules-list';
 import { getModelePVBySlug, getModelesPVSlugs } from '@/data/modeles-pv';
@@ -55,7 +56,7 @@ export default async function ModelePVDetailPage({ params }: Props) {
     <>
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <InteriorPageShell maxWidth='5xl' glow='emerald' pad='default' innerClassName='pt-8 pb-32 md:pb-12 md:pt-12'>
+      <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.modelesPv} pad='default' innerClassName='pt-8 pb-32 md:pb-12 md:pt-12'>
         <nav className='mb-6 text-sm text-examen-inkMuted' aria-label='Fil d’Ariane'>
           <Link href='/cours' className='text-examen-accent hover:underline'>
             Cours

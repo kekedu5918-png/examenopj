@@ -117,7 +117,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       {
         label: 'Durée (droit commun, art. 63-II C.P.P.)',
         detail:
-          "24 h maximum en première phase. Une prolongation d'autre 24 h est possible uniquement si l'infraction soupçonnée est un crime ou un délit puni d'une peine d'emprisonnement supérieure ou égale à un an, et si cette prolongation est l'unique moyen d'atteindre un des six objectifs de l'art. 62-2 ou de permettre la présentation devant l'autorité judiciaire (dont visioconférence). Décision motivée du procureur de la République.",
+          "24 h maximum en première phase. Une prolongation d'une autre 24 h est possible uniquement si l'infraction soupçonnée est un crime ou un délit puni d'une peine d'emprisonnement supérieure ou égale à un an, et si cette prolongation est l'unique moyen d'atteindre un des six objectifs de l'art. 62-2 ou de permettre la présentation devant l'autorité judiciaire (dont visioconférence). Décision motivée du procureur de la République.",
         article: 'Art. 63-II C.P.P.',
         alerte: true,
       },

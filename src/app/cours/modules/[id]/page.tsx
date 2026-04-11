@@ -9,6 +9,7 @@ import { ModuleProgressHeader } from '@/components/cours/ModuleProgressHeader';
 import { ModuleQuizProgressBar } from '@/components/cours/ModuleQuizProgressBar';
 import { ModuleVisitRecorder } from '@/components/cours/ModuleVisitRecorder';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { ModelesPVModuleSection } from '@/components/modeles-pv/ModelesPVModuleSection';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { getCourseModuleSynthesis } from '@/data/course-module-syntheses';
@@ -56,7 +57,7 @@ export default function CoursModuleDetailPage({ params }: Props) {
   const enquetesLiees = getEnquetesLinkedToModule(m.id);
 
   return (
-    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.moduleDetail} pad='default'>
       <CourseModuleJsonLd module={m} />
       <ModuleVisitRecorder moduleId={m.id} />
       <nav className='mb-6 text-sm text-gray-500'>

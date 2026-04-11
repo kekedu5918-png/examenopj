@@ -10,6 +10,7 @@ import { EnquetePV } from '@/components/enquetes/EnquetePV';
 import { EnqueteRapport } from '@/components/enquetes/EnqueteRapport';
 import { EnqueteSujet } from '@/components/enquetes/EnqueteSujet';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { getEnqueteDocRender } from '@/data/enquete-content';
 import type { EnqueteDocument, EnqueteMeta } from '@/data/enquetes-types';
@@ -78,7 +79,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
 
   if (isPedago) {
     return (
-      <InteriorPageShell maxWidth='5xl' glow='violet' pad='default'>
+      <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.coursHub} pad='default'>
           <nav className='mb-8 text-sm text-gray-500'>
             <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
               Cours
@@ -117,7 +118,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
   }
 
   return (
-    <InteriorPageShell maxWidth='5xl' glow='violet' pad='default'>
+    <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.coursHub} pad='default'>
         <nav className='mb-8 text-sm text-gray-500'>
           <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
             Cours

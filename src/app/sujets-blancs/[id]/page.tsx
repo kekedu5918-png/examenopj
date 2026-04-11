@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PrepareSujetBlancPrerequis } from '@/components/sujets-blancs/PrepareSujetBlancPrerequis';
 import { SujetBlancDetailClient } from '@/components/sujets-blancs/SujetBlancDetailClient';
 import { getSujetBlancById, getSujetsBlancsIds } from '@/data/sujets-blancs';
@@ -30,7 +31,7 @@ export default async function SujetBlancDetailPage({ params }: Props) {
   const userHasPremium = await hasPremiumAccess();
 
   return (
-    <InteriorPageShell maxWidth='4xl' glow='blue' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.sujetsBlancs} pad='default'>
       <nav className='mb-6 text-sm text-examen-inkMuted'>
         <Link href='/sujets-blancs' className='text-examen-accent hover:underline'>
           Sujets blancs

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Lock } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { RedactionPVAtelierClient } from '@/components/redaction-pv/RedactionPVAtelierClient';
 import { SectionTitle } from '@/components/ui/SectionTitle';
 import { SUJETS_REDACTION_PV } from '@/data/sujets-redaction-pv';
@@ -32,7 +33,7 @@ export default async function RedactionPVPage({ searchParams }: Props) {
   const initialSujetId = bySujet ?? byModele;
 
   return (
-    <InteriorPageShell maxWidth='7xl' glow='violet' pad='default'>
+    <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.redactionPv} pad='default'>
       <SectionTitle
         badge='Premium'
         badgeClassName='bg-examen-premium/25 text-violet-200'

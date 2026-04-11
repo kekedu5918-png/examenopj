@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { PVCoursMe1Section } from '@/components/pv/pv-cours-me1-section';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -37,7 +38,7 @@ const phaseBCount = PV_PAGE_SAMPLES.filter((s) => s.phase === 'B').length;
 
 export default function ModelesPVPage() {
   return (
-    <InteriorPageShell maxWidth='6xl' glow='emerald' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.modelesPv} pad='default'>
       <SectionTitle
         badge='ÉPREUVE 2'
         badgeClassName='bg-emerald-500/20 text-emerald-200'

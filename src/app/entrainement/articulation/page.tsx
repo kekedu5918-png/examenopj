@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { ArticulationModesShell } from '@/components/entrainement/ArticulationModesShell';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getEnqueteById } from '@/data/enquetes-data';
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default function EntrainementArticulationPage({ searchParams }: Props) {
   const ref = searchParams?.ref?.toLowerCase();
   const suggestedTitre = suggestedTitreFromRef(ref);
   return (
-    <InteriorPageShell maxWidth='6xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.articulation} pad='default'>
       <ArticulationModesShell referenceEnqueteId={ref} suggestedTitre={suggestedTitre} />
     </InteriorPageShell>
   );

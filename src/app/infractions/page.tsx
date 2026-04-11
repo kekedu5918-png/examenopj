@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 
 import { InfractionsPageClient } from '@/components/infractions/InfractionsPageClient';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { APP_NAME } from '@/constants/site';
 import { getInfractionsCatalog } from '@/data/recapitulatif-data';
 import { openGraphForPage } from '@/utils/seo-metadata';
@@ -31,7 +32,7 @@ export default function InfractionsPage({ searchParams }: Props) {
       fallback={
         <InteriorPageShell
           maxWidth='6xl'
-          glow='rose'
+          glow={SHELL_GLOW.infractions}
           pad='default'
           innerClassName='flex min-h-[50vh] items-center justify-center text-gray-500'
         >

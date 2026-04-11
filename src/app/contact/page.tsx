@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'contact@examenopj.fr';
@@ -19,7 +20,7 @@ export default function ContactPage() {
   const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent('Contact ExamenOPJ')}`;
 
   return (
-    <InteriorPageShell maxWidth='4xl' glow='cyan' pad='default'>
+    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.contact} pad='default'>
     <article className='mx-auto max-w-2xl text-slate-300'>
       <h1 className='mb-4 font-display text-3xl font-bold text-white'>Contact</h1>
       <p className='mb-8 text-sm leading-relaxed text-slate-400'>

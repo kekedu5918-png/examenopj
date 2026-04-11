@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, ClipboardCheck, Mic, Scale } from 'lucide-react';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { MethodoRappel } from '@/components/methodo/MethodoRappel';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -66,7 +67,7 @@ const epreuves = [
 
 export default function EpreuvesHubPage() {
   return (
-    <InteriorPageShell maxWidth='7xl' glow='amber' pad='default' innerClassName='md:pt-16'>
+    <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.epreuvesHub} pad='default' innerClassName='md:pt-16'>
         <nav className='mb-8 text-sm text-gray-500'>
           <Link href='/' className='text-violet-400 hover:text-violet-300'>
             Accueil
