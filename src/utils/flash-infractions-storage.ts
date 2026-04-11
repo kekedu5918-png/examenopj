@@ -1,6 +1,7 @@
 /** Persistance résultats mode flash révision infractions. */
 
 import type { InfractionCatalogItem } from '@/data/recapitulatif-data';
+import { shuffleInPlace } from '@/utils/shuffle';
 
 export type FlashMark = 'su' | 'arevoir';
 
@@ -41,15 +42,6 @@ export function saveFlashMark(id: string, status: FlashMark): void {
   }
 }
 
-function shuffleInPlace<T>(arr: T[]): T[] {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const t = arr[i]!;
-    arr[i] = arr[j]!;
-    arr[j] = t;
-  }
-  return arr;
-}
 
 export function buildFlashDeck(
   base: InfractionCatalogItem[],

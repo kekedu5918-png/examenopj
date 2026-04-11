@@ -16,6 +16,24 @@ const nextConfig = {
     esmExternals: 'loose',
   },
   async headers() {
+    const supabaseHost = process.env.NEXT_PUBLIC_SUPABASE_URL
+      ? new URL(process.env.NEXT_PUBLIC_SUPABASE_URL).host
+      : '*.supabase.co';
+
+    const csp = [
+      "default-src 'self'",
+      `connect-src 'self' https://${supabaseHost} wss://${supabaseHost} https://api.stripe.com https://vitals.vercel-insights.com https://va.vercel-scripts.com`,
+      "script-src 'self' 'unsafe-inline' https://js.stripe.com https://va.vercel-scripts.com",
+      "style-src 'self' 'unsafe-inline'",
+      `img-src 'self' data: blob: https://${supabaseHost}`,
+      "font-src 'self' data:",
+      "frame-src https://js.stripe.com https://hooks.stripe.com",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "upgrade-insecure-requests",
+    ].join('; ');
+
     const security = [
       { key: 'X-DNS-Prefetch-Control', value: 'on' },
       { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
@@ -25,6 +43,7 @@ const nextConfig = {
         key: 'Permissions-Policy',
         value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
       },
+      { key: 'Content-Security-Policy', value: csp },
     ];
     if (process.env.NODE_ENV === 'production') {
       security.splice(1, 0, {

@@ -18,20 +18,12 @@ import {
 } from '@/features/access/daily-quota-client';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordFlashcardReview } from '@/features/examenopj/actions/record-flashcard-review';
+import { shuffle } from '@/utils/shuffle';
 
 import { FlashcardInterface } from './FlashcardInterface';
 import { FlashcardResult } from './FlashcardResult';
 import { recordFlashcardAnswer } from './flashcards-progress';
 import type { ContentStudyMode, FlashcardFacet, PreparedFlashcard } from './types';
-
-function shuffle<T>(items: T[]): T[] {
-  const a = [...items];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j]!, a[i]!];
-  }
-  return a;
-}
 
 function cardHasPlayableFacet(c: Flashcard, mode: ContentStudyMode): boolean {
   const hasMM = !!c.materielMoralComplet?.trim();

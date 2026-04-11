@@ -1,4 +1,5 @@
 import { type QuizQuestion } from '@/data/types';
+import { shuffle } from '@/utils/shuffle';
 
 export type QuizMode = 'global' | 'fascicule' | 'module' | 'domain';
 
@@ -22,13 +23,9 @@ export function isThemeQuizMode(mode: QuizMode): boolean {
   return mode === 'fascicule' || mode === 'module';
 }
 
+/** @deprecated Use `shuffle` from `@/utils/shuffle` directly. Kept for backwards compatibility. */
 export function fisherYates<T>(array: T[]): T[] {
-  const arr = [...array];
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-  return arr;
+  return shuffle(array);
 }
 
 /** Mélange les propositions à chaque session : la bonne réponse ne reste pas toujours au même rang. */

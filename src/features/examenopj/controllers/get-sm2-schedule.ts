@@ -1,6 +1,7 @@
 import { flashcardsData } from '@/data/flashcards-data';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import type { SupabaseClient } from '@supabase/supabase-js';
+import { todayIso } from '@/utils/date';
 
 // ─────────────────────────────────────────────
 // Types
@@ -78,7 +79,7 @@ function addDays(n: number): string {
 
 export async function getSM2Schedule(userId: string): Promise<SM2Schedule> {
   const supabase = sb(await createSupabaseServerClient());
-  const today = new Date().toISOString().slice(0, 10);
+  const today = todayIso();
   const in7Days = addDays(7);
 
   const { data: rows, error } = await supabase

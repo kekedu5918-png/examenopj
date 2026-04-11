@@ -39,15 +39,23 @@ export default async function AccueilPage() {
     sessionsCount = attempts.length;
 
     recent = attempts.slice(0, 3).map((a, i) => {
-      const mode =
-        a.mode === 'fascicule' || a.mode === 'module'
-          ? `Fascicule ${a.fascicule_num != null ? `F${String(a.fascicule_num).padStart(2, '0')}` : ''}`
-          : a.mode === 'global'
-            ? 'Quiz global'
-            : 'Quiz';
+      const isFasc = a.mode === 'fascicule' || a.mode === 'module';
+      const modeLabel = isFasc
+        ? `Fascicule ${a.fascicule_num != null ? `F${String(a.fascicule_num).padStart(2, '0')}` : ''}`
+        : a.mode === 'global'
+          ? 'Quiz global'
+          : 'Quiz';
+
+      let href = '/quiz';
+      if (a.mode === 'global') {
+        href = '/quiz?mode=global';
+      } else if (isFasc && a.fascicule_num != null) {
+        href = `/quiz?mode=fascicule&f=${a.fascicule_num}`;
+      }
+
       return {
-        href: '/quiz',
-        label: `${mode} — ${a.score ?? '?'}/${a.total ?? '?'} (${a.percent != null ? `${Number(a.percent).toFixed(0)} %` : '—'})`,
+        href,
+        label: `${modeLabel} — ${a.score ?? '?'}/${a.total ?? '?'} (${a.percent != null ? `${Number(a.percent).toFixed(0)} %` : '—'})`,
         hint: a.created_at ? new Date(a.created_at).toLocaleDateString('fr-FR') : `Session ${i + 1}`,
       };
     });

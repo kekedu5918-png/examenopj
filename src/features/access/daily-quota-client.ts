@@ -1,7 +1,9 @@
 'use client';
 
+import { todayIso } from '@/utils/date';
+
 function todayKey() {
-  return new Date().toISOString().slice(0, 10);
+  return todayIso();
 }
 
 const PREFIX_QUIZ = 'examenopj-quiz-q-';
