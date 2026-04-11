@@ -3,6 +3,7 @@
 import { BookOpen, ClipboardList, GraduationCap } from 'lucide-react';
 
 import { AlphaCadresFlagranceFiche } from '@/components/cours/formation/AlphaCadresFlagranceFiche';
+import { AlphaPvFormalismFiche } from '@/components/cours/formation/AlphaPvFormalismFiche';
 import {
   ALPHA_FORMATION_PLACEHOLDER,
   ALPHA_FORMATION_SCENARIO,
@@ -18,12 +19,16 @@ import { cn } from '@/utils/cn';
 export function EnqueteAlphaFormationProgramme() {
   return (
     <section
-      className='mb-10 rounded-2xl border border-violet-500/25 bg-gradient-to-br from-violet-950/40 via-navy-950/50 to-navy-950 p-5 shadow-lg shadow-black/20 md:p-7'
+      className='relative mb-10 overflow-hidden rounded-3xl border border-violet-500/30 bg-gradient-to-br from-violet-950/50 via-navy-950/60 to-[#0a0612] p-5 shadow-2xl shadow-violet-950/30 md:p-8'
       aria-labelledby='alpha-formation-title'
     >
-      <div className='flex flex-wrap items-start gap-3'>
-        <span className='inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-violet-500/35 bg-violet-500/15 text-violet-200'>
-          <GraduationCap className='h-5 w-5' aria-hidden />
+      <div
+        className='pointer-events-none absolute -right-20 top-0 h-64 w-64 rounded-full bg-fuchsia-500/10 blur-3xl'
+        aria-hidden
+      />
+      <div className='relative flex flex-wrap items-start gap-3'>
+        <span className='inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-violet-400/40 bg-gradient-to-br from-violet-500/25 to-violet-950/50 text-violet-100 shadow-lg shadow-violet-950/40'>
+          <GraduationCap className='h-6 w-6' aria-hidden />
         </span>
         <div className='min-w-0 flex-1'>
           <p className='text-[11px] font-bold uppercase tracking-[0.2em] text-violet-300/90'>Programme — formation</p>
@@ -31,9 +36,17 @@ export function EnqueteAlphaFormationProgramme() {
             {ALPHA_FORMATION_TITRE}
           </h2>
           <p className='mt-2 text-sm text-slate-300'>({ALPHA_FORMATION_SCENARIO})</p>
+          <div className='mt-4 flex flex-wrap gap-2'>
+            <span className='rounded-full border border-cyan-500/35 bg-cyan-500/10 px-3 py-1 text-[11px] font-semibold text-cyan-100'>
+              DPS / thèmes procédure
+            </span>
+            <span className='rounded-full border border-amber-500/35 bg-amber-500/10 px-3 py-1 text-[11px] font-semibold text-amber-100'>
+              Mémo examen
+            </span>
+          </div>
           <p className='mt-3 text-xs leading-relaxed text-slate-500'>
-            Les fiches s’enrichissent au fil de vos envois validés. Les onglets ci-dessous conservent le sujet, les
-            exercices et les corrigés pour votre entraînement.
+            Fiches enrichissables — bascule vers l’onglet <strong className='text-slate-400'>Planches PDF</strong> pour le
+            sujet et les corrigés.
           </p>
         </div>
       </div>
@@ -75,6 +88,8 @@ export function EnqueteAlphaFormationProgramme() {
                       <div className='mt-3 text-sm leading-relaxed text-slate-400'>
                         {item.richModuleId === 'cadres-flagrance' ? (
                           <AlphaCadresFlagranceFiche />
+                        ) : item.richModuleId === 'pv-formalisme-probant' ? (
+                          <AlphaPvFormalismFiche />
                         ) : item.corps === ALPHA_FORMATION_PLACEHOLDER ? (
                           <div className='border-l-2 border-violet-500/40 pl-3'>
                             <span className='font-mono text-amber-200/90'>{ALPHA_FORMATION_PLACEHOLDER}</span>

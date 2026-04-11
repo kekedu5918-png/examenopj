@@ -33,7 +33,6 @@ export const NAV_PRIMARY_LINKS = [
   { href: '/infractions', label: 'Infractions' },
   { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours', label: 'Cours' },
-  { href: '/guide-revision-opj', label: 'Guide' },
 ] as const;
 
 export type NavMegaChild = {
@@ -47,12 +46,7 @@ export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
     name: 'Hub Cours',
     href: '/cours',
-    description: 'Vue d’ensemble : rubrique infractions, fiches, enquêtes, méthode',
-  },
-  {
-    name: 'Infractions (Épreuve 1)',
-    href: '/infractions',
-    description: 'Référentiel complet — tableau, fiches, familles, probabilité examen',
+    description: 'Vue d’ensemble : fiches, enquêtes, méthode — rubrique Infractions à part (menu)',
   },
   {
     name: 'Modules & fiches',
@@ -123,10 +117,17 @@ export const NAV_ENTRAINEMENT_HREF = '/entrainement' as const;
 export const NAV_GUIDE_HREF = '/guide-revision-opj' as const;
 export const NAV_PREMIUM_HREF = '/pricing' as const;
 
+/** Rubrique de niveau 1 — uniquement les infractions (hors menu Cours). */
+export const SITE_HEADER_INFRACTIONS_LINKS: readonly NavDropdownItem[] = [
+  { href: '/infractions', label: 'Référentiel complet' },
+  { href: '/epreuves/epreuve-1', label: 'Épreuve 1 — contexte' },
+  { href: '/quiz', label: 'QCM' },
+  { href: '/flashcards', label: 'Flashcards' },
+] as const;
+
 /** Dropdowns header desktop + menu mobile (`SiteHeaderClient`) — source unique. */
 export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
   { href: '/cours', label: 'Hub Cours' },
-  { href: '/infractions', label: 'Infractions · Épreuve 1' },
   { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours/modules', label: 'Modules F01–F15' },
   { href: '/programme', label: 'Programme officiel' },

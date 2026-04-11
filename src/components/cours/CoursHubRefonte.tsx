@@ -64,9 +64,9 @@ const RUBRIQUES: Rubrique[] = [
     border: 'border-amber-500/25 hover:border-amber-400/35',
   },
   {
-    href: '/guide-revision-opj',
-    title: 'Guide de révision',
-    description: 'Méthode, calendrier et priorités jusqu’au jour J.',
+    href: '/epreuves/epreuve-2',
+    title: 'Épreuve 2 — attendu du jury',
+    description: 'Articulation, PV, rapport : critères et erreurs fréquentes.',
     icon: Sparkles,
     accent: 'from-rose-500/10 to-transparent',
     border: 'border-rose-500/20 hover:border-rose-400/30',
@@ -104,10 +104,15 @@ export function CoursHubRefonte({ infractionCount }: Props) {
 
       {/* Rubrique spéciale — Infractions */}
       <section aria-labelledby='cours-rubrique-infractions' className='relative'>
-        <div className='mb-4 flex items-center gap-2'>
-          <span className='h-px flex-1 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent' aria-hidden />
-          <span className='text-[11px] font-bold uppercase tracking-[0.2em] text-rose-300/90'>Rubrique dédiée</span>
-          <span className='h-px flex-1 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent' aria-hidden />
+        <div className='mb-4 flex flex-col items-center gap-2 sm:flex-row'>
+          <span className='hidden h-px flex-1 bg-gradient-to-r from-transparent via-rose-500/40 to-transparent sm:block' aria-hidden />
+          <div className='text-center'>
+            <span className='text-[11px] font-bold uppercase tracking-[0.2em] text-rose-300/90'>Rubrique Infractions</span>
+            <p className='mt-1 text-xs text-slate-500'>
+              Entrée dédiée dans le menu principal (à côté de Cours), pas mélangée aux fiches générales.
+            </p>
+          </div>
+          <span className='hidden h-px flex-1 bg-gradient-to-l from-transparent via-rose-500/40 to-transparent sm:block' aria-hidden />
         </div>
 
         <Link

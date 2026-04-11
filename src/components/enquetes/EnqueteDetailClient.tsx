@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { Lock } from 'lucide-react';
+import { FileStack, GraduationCap, Lock } from 'lucide-react';
 
 import { EnqueteAlphaFormationProgramme } from '@/components/enquetes/EnqueteAlphaFormationProgramme';
 import { EnqueteArticulation } from '@/components/enquetes/EnqueteArticulation';
@@ -75,8 +75,49 @@ function renderDoc(enquete: EnqueteMeta, doc: EnqueteDocument) {
 export function EnqueteDetailClient({ enquete }: Props) {
   const isPedago = enquete.contenuMode === 'pedago';
   const [tab, setTab] = useState(enquete.documents[0]?.id ?? '');
+  const [alphaView, setAlphaView] = useState<'formation' | 'planches'>('formation');
 
   const tabs = useMemo(() => enquete.documents.map((d) => ({ id: d.id, label: d.label })), [enquete.documents]);
+
+  const docTabsBlock = (
+    <Tabs value={tab} onValueChange={setTab} className='w-full'>
+      <TabsList className='mb-6 hidden h-auto w-full min-w-0 flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5 md:flex'>
+        {tabs.map((t) => (
+          <TabsTrigger
+            key={t.id}
+            value={t.id}
+            className='rounded-lg px-3 py-2 text-xs font-semibold data-[state=active]:bg-violet-600/40 data-[state=active]:text-white md:text-sm'
+          >
+            {t.label}
+          </TabsTrigger>
+        ))}
+      </TabsList>
+
+      <div className='mb-4 md:hidden'>
+        <label htmlFor='enquete-doc-select' className='sr-only'>
+          Document
+        </label>
+        <select
+          id='enquete-doc-select'
+          value={tab}
+          onChange={(e) => setTab(e.target.value)}
+          className='w-full rounded-xl border border-white/15 bg-navy-900 px-3 py-2.5 text-sm text-white'
+        >
+          {tabs.map((t) => (
+            <option key={t.id} value={t.id}>
+              {t.label}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {enquete.documents.map((doc) => (
+        <TabsContent key={doc.id} value={doc.id} className='mt-0 outline-none'>
+          {renderDoc(enquete, doc)}
+        </TabsContent>
+      ))}
+    </Tabs>
+  );
 
   if (isPedago) {
     return (
@@ -133,7 +174,9 @@ export function EnqueteDetailClient({ enquete }: Props) {
         </nav>
 
         <header className='mb-8 border-b border-white/10 pb-8'>
-          <p className='text-xs font-bold uppercase tracking-[0.2em] text-violet-300'>Planches — Entraînement</p>
+          <p className='text-xs font-bold uppercase tracking-[0.2em] text-violet-300'>
+            {enquete.id === 'alpha' ? 'Référentiel + planches — Alpha' : 'Planches — Entraînement'}
+          </p>
           <h1 className='mt-2 font-display text-3xl font-bold text-white md:text-4xl'>
             Enquête {enquete.code}
           </h1>
@@ -171,51 +214,44 @@ export function EnqueteDetailClient({ enquete }: Props) {
           </dl>
         </header>
 
-        {enquete.id === 'alpha' ? <EnqueteAlphaFormationProgramme /> : null}
-
         {enquete.id === 'alpha' ? (
-          <p className='mb-4 text-xs font-semibold uppercase tracking-[0.15em] text-slate-500'>
-            Sujet, exercices et corrigés (planches)
-          </p>
-        ) : null}
-
-        <Tabs value={tab} onValueChange={setTab} className='w-full'>
-          <TabsList className='mb-6 hidden h-auto w-full min-w-0 flex-wrap justify-start gap-1 rounded-xl border border-white/10 bg-white/[0.04] p-1.5 md:flex'>
-            {tabs.map((t) => (
+          <Tabs
+            value={alphaView}
+            onValueChange={(v) => setAlphaView(v as 'formation' | 'planches')}
+            className='w-full'
+          >
+            <TabsList className='mb-8 grid w-full grid-cols-1 gap-2 rounded-2xl border border-white/12 bg-gradient-to-r from-rose-950/20 via-navy-950/40 to-violet-950/25 p-2 sm:grid-cols-2'>
               <TabsTrigger
-                key={t.id}
-                value={t.id}
-                className='rounded-lg px-3 py-2 text-xs font-semibold data-[state=active]:bg-violet-600/40 data-[state=active]:text-white md:text-sm'
+                value='formation'
+                className='flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold data-[state=active]:bg-rose-500/25 data-[state=active]:text-rose-50 data-[state=active]:shadow-lg data-[state=active]:shadow-rose-950/30'
               >
-                {t.label}
+                <GraduationCap className='h-5 w-5 shrink-0 opacity-90' aria-hidden />
+                Programme formation (document centre)
               </TabsTrigger>
-            ))}
-          </TabsList>
+              <TabsTrigger
+                value='planches'
+                className='flex items-center justify-center gap-2 rounded-xl py-3 text-sm font-bold data-[state=active]:bg-violet-600/35 data-[state=active]:text-white data-[state=active]:shadow-lg data-[state=active]:shadow-violet-950/40'
+              >
+                <FileStack className='h-5 w-5 shrink-0 opacity-90' aria-hidden />
+                Planches PDF — sujet & corrigés
+              </TabsTrigger>
+            </TabsList>
 
-          <div className='mb-4 md:hidden'>
-            <label htmlFor='enquete-doc-select' className='sr-only'>
-              Document
-            </label>
-            <select
-              id='enquete-doc-select'
-              value={tab}
-              onChange={(e) => setTab(e.target.value)}
-              className='w-full rounded-xl border border-white/15 bg-navy-900 px-3 py-2.5 text-sm text-white'
-            >
-              {tabs.map((t) => (
-                <option key={t.id} value={t.id}>
-                  {t.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {enquete.documents.map((doc) => (
-            <TabsContent key={doc.id} value={doc.id} className='mt-0 outline-none'>
-              {renderDoc(enquete, doc)}
+            <TabsContent value='formation' className='mt-0 outline-none'>
+              <EnqueteAlphaFormationProgramme />
             </TabsContent>
-          ))}
-        </Tabs>
+
+            <TabsContent value='planches' className='mt-0 outline-none'>
+              <p className='mb-4 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-400'>
+                Sujet, articulation, PV et rapport : entraîne-toi planche par planche. Pense à chronométrer comme à
+                l’examen.
+              </p>
+              {docTabsBlock}
+            </TabsContent>
+          </Tabs>
+        ) : (
+          docTabsBlock
+        )}
     </InteriorPageShell>
   );
 }

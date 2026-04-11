@@ -54,17 +54,30 @@ export function Footer() {
         </div>
 
         {/* Links grid */}
-        <div className='grid gap-10 md:grid-cols-3 md:gap-8'>
+        <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8'>
           <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Apprendre</p>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Cours</p>
             <ul className='space-y-2.5'>
               {[
                 { href: '/cours', label: 'Hub Cours' },
-                { href: '/infractions', label: 'Infractions (Épreuve 1)' },
                 { href: '/fondamentaux', label: 'Fondamentaux' },
                 { href: '/cours/modules', label: 'Modules F01–F15' },
                 { href: '/cours/enquetes', label: 'Enquêtes' },
-                { href: '/guide-revision-opj', label: 'Guide de révision' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={colLink}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Infractions</p>
+            <ul className='space-y-2.5'>
+              {[
+                { href: '/infractions', label: 'Référentiel Épreuve 1' },
+                { href: '/epreuves/epreuve-1', label: 'Épreuve 1 — DPG / DPS' },
+                { href: '/quiz', label: 'QCM' },
+                { href: '/flashcards', label: 'Flashcards' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className={colLink}>{l.label}</Link>

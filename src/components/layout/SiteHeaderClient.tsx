@@ -10,6 +10,7 @@ import {
   SITE_HEADER_COURS_LINKS,
   SITE_HEADER_ENTRAINER_LINKS,
   SITE_HEADER_EPREUVES_LINKS,
+  SITE_HEADER_INFRACTIONS_LINKS,
 } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
@@ -98,10 +99,10 @@ export function SiteHeaderClient({
     setMobileOpen(false);
   }, [pathname]);
 
-  const coursActive = isActiveGroup(pathname, ['/fondamentaux', '/infractions', '/cours/modules', '/programme', '/cours']);
+  const coursActive = isActiveGroup(pathname, ['/fondamentaux', '/cours/modules', '/programme', '/cours']);
+  const infractionsActive = isActivePath(pathname, '/infractions');
   const epreuvesActive = isActiveGroup(pathname, ['/epreuves']);
   const entrainerActive = isActiveGroup(pathname, ['/quiz', '/flashcards', '/entrainement', '/sujets-blancs']);
-  const guideActive = isActivePath(pathname, '/guide-revision-opj');
   const enquetesActive = isActivePath(pathname, '/cours/enquetes');
 
   const headerStyle = {
@@ -148,6 +149,23 @@ export function SiteHeaderClient({
               </DropdownMenuContent>
             </DropdownMenu>
 
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={cn(navBtn, dropTriggerClass, infractionsActive ? navActive : navInactive)}
+                aria-expanded={undefined}
+              >
+                Infractions
+                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
+                {SITE_HEADER_INFRACTIONS_LINKS.map((item) => (
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                    <Link href={item.href}>{item.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             <Link
               href='/cours/enquetes'
               className={cn(navBtn, enquetesActive ? navActive : navInactive)}
@@ -187,12 +205,6 @@ export function SiteHeaderClient({
               </DropdownMenuContent>
             </DropdownMenu>
 
-            <Link
-              href='/guide-revision-opj'
-              className={cn(navBtn, guideActive ? navActive : navInactive)}
-            >
-              Guide
-            </Link>
           </nav>
 
           <div className='hidden shrink-0 items-center gap-3 lg:flex'>
@@ -328,6 +340,18 @@ export function SiteHeaderClient({
                     </Link>
                   ))}
                 </MobileAccordion>
+                <MobileAccordion title='Infractions'>
+                  {SITE_HEADER_INFRACTIONS_LINKS.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className='block border-b border-white/[0.06] py-2.5 pl-2 text-sm text-examen-ink hover:bg-white/[0.04]'
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </MobileAccordion>
                 <Link
                   href='/cours/enquetes'
                   className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
@@ -359,13 +383,6 @@ export function SiteHeaderClient({
                     </Link>
                   ))}
                 </MobileAccordion>
-                <Link
-                  href='/guide-revision-opj'
-                  className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
-                  onClick={() => setMobileOpen(false)}
-                >
-                  Guide
-                </Link>
               </nav>
               <div className='border-t border-white/[0.06] p-4'>
                 {isLoggedIn ? (

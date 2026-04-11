@@ -12,8 +12,8 @@ export type AlphaFormationThemeItem = {
   titre: string;
   /** Synthèse ou fiche : uniquement après validation éditoriale. */
   corps: typeof ALPHA_FORMATION_PLACEHOLDER | string;
-  /** Fiche riche pré-assemblée (ex. premier thème procédure Alpha). */
-  richModuleId?: 'cadres-flagrance';
+  /** Fiche riche pré-assemblée (ex. thèmes procédure Alpha). */
+  richModuleId?: 'cadres-flagrance' | 'pv-formalisme-probant';
 };
 
 export type AlphaFormationSection = {
@@ -54,6 +54,7 @@ export const ALPHA_FORMATION_SECTIONS: AlphaFormationSection[] = [
         id: 'pv-probant',
         titre: 'Le formalisme et la valeur probante des procès-verbaux',
         corps: ALPHA_FORMATION_PLACEHOLDER,
+        richModuleId: 'pv-formalisme-probant',
       },
       {
         id: 'plainte-taj',
