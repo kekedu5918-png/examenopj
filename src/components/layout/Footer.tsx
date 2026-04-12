@@ -34,9 +34,14 @@ export function Footer() {
         {/* Top section */}
         <div className='mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end'>
           <div>
-            <div className='mb-3 flex items-center gap-3'>
-              <MascottePeanut size={44} animate={false} />
-              <BrandWordmark href='/' size='footer' />
+            <div className='mb-3 flex flex-wrap items-end gap-x-3 gap-y-1'>
+              <MascottePeanut size={44} animate={false} interactive />
+              <div className='min-w-0'>
+                <BrandWordmark href='/' size='footer' />
+                <p className='mt-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-amber-600/90 dark:text-amber-400/90'>
+                  PEANUT · mascotte
+                </p>
+              </div>
             </div>
             <p className='max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-500'>
               Préparation complète à l&apos;examen OPJ session 2026.

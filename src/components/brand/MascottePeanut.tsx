@@ -5,46 +5,67 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 import { cn } from '@/utils/cn';
 
+const MotionG = motion.g;
+
 export type MascottePeanutProps = {
   className?: string;
   /** Taille du carré de rendu (px) */
   size?: number;
-  /** Animation de flottement + queue (désactivée si prefers-reduced-motion) */
+  /** Animation de flottement + queue + clignement (désactivée si prefers-reduced-motion) */
   animate?: boolean;
   /** Si true, masqué pour les lecteurs d’écran (déco uniquement) */
   decorative?: boolean;
+  /** Effet hover / tap (souris) + infobulle native */
+  interactive?: boolean;
+  /** `hero` : halo doré plus marqué (accueil) */
+  variant?: 'default' | 'hero';
 };
 
 /**
- * PEANUT — mascotte ExamenOPJ : shiba inu au képi police, style expressif (Duolingo) + rendu premium (dégradés, filtres, détails).
+ * PEANUT — mascotte ExamenOPJ : shiba inu au képi police, rendu premium + vie (clignement, queue, interaction).
  */
 export function MascottePeanut({
   className,
   size = 64,
   animate = true,
   decorative = true,
+  interactive = false,
+  variant = 'default',
 }: MascottePeanutProps) {
   const reduce = useReducedMotion();
   const shouldFloat = animate && !reduce;
+  const shouldBlink = shouldFloat;
   const rid = useId().replace(/:/g, '');
   const I = (name: string) => `peanut-${name}-${rid}`;
   const u = (name: string) => `url(#${I(name)})`;
 
   return (
     <motion.div
-      className={cn('inline-flex shrink-0 select-none', className)}
+      className={cn(
+        'inline-flex shrink-0 select-none',
+        interactive && 'cursor-pointer',
+        className,
+      )}
       style={{ width: size, height: size }}
       role={decorative ? undefined : 'img'}
       aria-hidden={decorative ? true : undefined}
       aria-label={decorative ? undefined : 'PEANUT, mascotte ExamenOPJ, shiba inu en uniforme de police'}
+      title={interactive ? 'PEANUT — votre coach révision OPJ' : undefined}
       animate={shouldFloat ? { y: [0, -6, 0], rotate: [0, 1.2, -0.8, 0] } : false}
       transition={shouldFloat ? { duration: 3.8, repeat: Infinity, ease: 'easeInOut' } : undefined}
+      whileHover={interactive ? { scale: 1.08 } : undefined}
+      whileTap={interactive ? { scale: 0.94 } : undefined}
     >
       <svg
         viewBox='0 0 100 100'
         width='100%'
         height='100%'
-        className='overflow-visible drop-shadow-[0_12px_32px_rgba(37,99,235,0.3)]'
+        className={cn(
+          'overflow-visible',
+          variant === 'hero'
+            ? 'drop-shadow-[0_14px_40px_rgba(251,191,36,0.45)] dark:drop-shadow-[0_18px_50px_rgba(251,191,36,0.35)]'
+            : 'drop-shadow-[0_12px_32px_rgba(37,99,235,0.3)]',
+        )}
       >
         <defs>
           <linearGradient id={I('fur')} x1='0%' y1='0%' x2='100%' y2='100%'>
@@ -82,11 +103,15 @@ export function MascottePeanut({
           </filter>
         </defs>
 
-        {/* Queue — groupe animé (léger balancement) */}
+        {/* Halo discret derrière (hero) */}
+        {variant === 'hero' ? (
+          <ellipse cx='50' cy='52' rx='36' ry='34' fill='rgba(251,191,36,0.12)' opacity='0.9' />
+        ) : null}
+
         <motion.g
           style={{ transformOrigin: '82px 56px' }}
-          animate={shouldFloat ? { rotate: [0, 10, -6, 0] } : false}
-          transition={shouldFloat ? { duration: 2.4, repeat: Infinity, ease: 'easeInOut' } : undefined}
+          animate={shouldFloat ? { rotate: [0, 11, -7, 0] } : false}
+          transition={shouldFloat ? { duration: 2.5, repeat: Infinity, ease: 'easeInOut' } : undefined}
         >
           <path
             d='M 82 58 Q 94 48 92 38 Q 90 30 84 36 Q 80 44 82 52 Q 84 58 82 58'
@@ -102,13 +127,11 @@ export function MascottePeanut({
           />
         </motion.g>
 
-        {/* Oreilles */}
         <path d='M 18 46 L 26 12 L 42 40 Z' fill={u('fur-deep')} filter={u('soft')} />
         <path d='M 24 38 L 28 22 L 36 38 Z' fill={u('cream')} />
         <path d='M 82 46 L 74 12 L 58 40 Z' fill={u('fur-deep')} filter={u('soft')} />
         <path d='M 76 38 L 72 22 L 64 38 Z' fill={u('cream')} />
 
-        {/* Tête */}
         <ellipse cx='50' cy='50' rx='31' ry='29' fill={u('fur')} />
         <ellipse cx='50' cy='54' rx='20' ry='16' fill={u('muzzle')} opacity='0.95' />
 
@@ -118,7 +141,6 @@ export function MascottePeanut({
         <ellipse cx='30' cy='54' rx='7' ry='5' fill={u('blush')} />
         <ellipse cx='70' cy='54' rx='7' ry='5' fill={u('blush')} />
 
-        {/* Képi */}
         <ellipse cx='50' cy='24' rx='28' ry='5' fill='#172554' opacity='0.95' />
         <path
           d='M 26 24 L 32 6 L 68 6 L 74 24 Z'
@@ -135,18 +157,32 @@ export function MascottePeanut({
           fill='#fbbf24'
         />
 
-        {/* Yeux */}
-        <ellipse cx='38' cy='46' rx='10' ry='11' fill='#fefce8' />
-        <ellipse cx='62' cy='46' rx='10' ry='11' fill='#fefce8' />
-        <ellipse cx='39' cy='47' rx='5.5' ry='6.5' fill='#451a03' />
-        <ellipse cx='63' cy='47' rx='5.5' ry='6.5' fill='#451a03' />
-        <ellipse cx='40' cy='46' rx='2.8' ry='3.2' fill='#0c0a09' />
-        <ellipse cx='64' cy='46' rx='2.8' ry='3.2' fill='#0c0a09' />
-        <circle cx='41.2' cy='44.8' r='1.6' fill='#fff' />
-        <circle cx='65.2' cy='44.8' r='1.6' fill='#fff' />
-        <circle cx='39.5' cy='47.5' r='0.9' fill='#fff' opacity='0.5' />
+        {/* Yeux + clignement synchronisé */}
+        <MotionG
+          style={{ transformOrigin: '50px 46px' }}
+          animate={shouldBlink ? { scaleY: [1, 1, 0.08, 1, 1] } : false}
+          transition={
+            shouldBlink
+              ? {
+                  duration: 4.2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                  times: [0, 0.86, 0.88, 0.91, 1],
+                }
+              : undefined
+          }
+        >
+          <ellipse cx='38' cy='46' rx='10' ry='11' fill='#fefce8' />
+          <ellipse cx='62' cy='46' rx='10' ry='11' fill='#fefce8' />
+          <ellipse cx='39' cy='47' rx='5.5' ry='6.5' fill='#451a03' />
+          <ellipse cx='63' cy='47' rx='5.5' ry='6.5' fill='#451a03' />
+          <ellipse cx='40' cy='46' rx='2.8' ry='3.2' fill='#0c0a09' />
+          <ellipse cx='64' cy='46' rx='2.8' ry='3.2' fill='#0c0a09' />
+          <circle cx='41.2' cy='44.8' r='1.6' fill='#fff' />
+          <circle cx='65.2' cy='44.8' r='1.6' fill='#fff' />
+          <circle cx='39.5' cy='47.5' r='0.9' fill='#fff' opacity='0.5' />
+        </MotionG>
 
-        {/* Moustaches */}
         <g stroke='#78716c' strokeWidth='0.45' strokeLinecap='round' opacity='0.55'>
           <path d='M 22 54 L 12 52' />
           <path d='M 22 57 L 11 58' />
@@ -156,11 +192,9 @@ export function MascottePeanut({
           <path d='M 78 60 L 87 64' />
         </g>
 
-        {/* Truffe */}
         <ellipse cx='50' cy='56' rx='4.5' ry='3.2' fill='#1c1917' />
         <ellipse cx='48.8' cy='55.2' rx='1.2' ry='0.9' fill='#fff' opacity='0.35' />
 
-        {/* Sourire */}
         <path
           d='M 42 60 Q 50 66 58 60'
           fill='none'
@@ -177,7 +211,6 @@ export function MascottePeanut({
           opacity='0.7'
         />
 
-        {/* Corps */}
         <path
           d='M 26 74 Q 24 88 50 93 Q 76 88 74 74 Q 72 68 50 70 Q 28 68 26 74'
           fill={u('uniform')}
@@ -192,7 +225,6 @@ export function MascottePeanut({
         <path d='M 38 72 L 50 78 L 62 72' fill='none' stroke='#d4a853' strokeWidth='2.2' strokeLinecap='round' />
         <path d='M 50 78 L 50 86' stroke='#1e40af' strokeWidth='3' strokeLinecap='round' />
 
-        {/* Épaulettes / détails uniforme */}
         <ellipse cx='30' cy='76' rx='4' ry='2.5' fill='#d4a853' opacity='0.85' />
         <ellipse cx='70' cy='76' rx='4' ry='2.5' fill='#d4a853' opacity='0.85' />
 
@@ -211,7 +243,7 @@ export function MascottePeanut({
         <ellipse cx='34' cy='91' rx='9' ry='5.5' fill={u('cream')} stroke='#fdba74' strokeWidth='0.4' />
         <ellipse cx='66' cy='91' rx='9' ry='5.5' fill={u('cream')} stroke='#fdba74' strokeWidth='0.4' />
 
-        <ellipse cx='42' cy='38' rx='8' ry='5' fill='#fff' opacity='0.12' />
+        <ellipse cx='42' cy='38' rx='8' ry='5' fill='#fff' opacity='0.14' />
       </svg>
     </motion.div>
   );

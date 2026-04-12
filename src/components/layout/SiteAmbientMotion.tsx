@@ -30,6 +30,12 @@ export function SiteAmbientMotion() {
         animate={{ opacity: [0.35, 0.55, 0.4, 0.35] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
+      {/* Accent chaud PEANUT (shiba) — très léger */}
+      <motion.div
+        className='absolute bottom-[8%] right-[6%] h-[min(340px,42vmin)] w-[min(340px,42vmin)] rounded-full bg-amber-400/18 blur-[100px]'
+        animate={{ opacity: [0.22, 0.38, 0.26, 0.22], scale: [1, 1.04, 1] }}
+        transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+      />
       <motion.div
         className='absolute bottom-0 left-1/2 h-[180px] w-[min(100%,720px)] -translate-x-1/2 opacity-40 blur-[60px]'
         style={{

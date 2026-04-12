@@ -12,6 +12,14 @@ import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
 import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { cn } from '@/utils/cn';
 
+const PEANUT_SPARKLES: { x: string; y: string }[] = [
+  { x: '82%', y: '4%' },
+  { x: '96%', y: '18%' },
+  { x: '78%', y: '28%' },
+  { x: '92%', y: '38%' },
+  { x: '70%', y: '12%' },
+];
+
 export function HeroSection() {
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
@@ -254,9 +262,32 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: LANDING_EASE, delay: 0.18 }}
         >
-          {/* Mascotte — ancrage émotionnel (type Duolingo), au-dessus de la carte */}
-          <div className='pointer-events-none absolute -top-2 right-2 z-20 sm:-top-4 sm:right-6'>
-            <MascottePeanut size={shouldReduce ? 72 : 88} decorative={false} />
+          {/* PEANUT + particules — présence forte sans surcharger */}
+          {!shouldReduce ? (
+            <div className='pointer-events-none absolute -right-2 -top-8 z-10 h-40 w-40 sm:h-44 sm:w-44' aria-hidden>
+              {PEANUT_SPARKLES.map((p, i) => (
+                <motion.span
+                  key={i}
+                  className='absolute h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.85)]'
+                  style={{ left: p.x, top: p.y }}
+                  animate={{ opacity: [0.25, 1, 0.25], scale: [0.65, 1.2, 0.65] }}
+                  transition={{
+                    duration: 2.4 + i * 0.25,
+                    repeat: Infinity,
+                    ease: 'easeInOut',
+                    delay: i * 0.12,
+                  }}
+                />
+              ))}
+            </div>
+          ) : null}
+          <div className='absolute -top-2 right-2 z-20 sm:-top-4 sm:right-6'>
+            <MascottePeanut
+              size={shouldReduce ? 72 : 88}
+              variant='hero'
+              interactive
+              decorative={false}
+            />
           </div>
 
           {/* Halo derrière la carte */}

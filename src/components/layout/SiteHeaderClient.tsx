@@ -127,7 +127,7 @@ export function SiteHeaderClient({
         ) : null}
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
           <div className='flex min-w-0 shrink items-center gap-2.5'>
-            <MascottePeanut size={34} animate={false} />
+            <MascottePeanut size={34} animate={false} interactive />
             <BrandWordmark href={homeHref} className='min-w-0' />
           </div>
 
