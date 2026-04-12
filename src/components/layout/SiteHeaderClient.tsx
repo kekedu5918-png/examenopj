@@ -8,7 +8,7 @@ import { ChevronDown, Flame, Menu, X } from 'lucide-react';
 
 import { SITE_HEADER_ENTRAINER_LINKS, SITE_HEADER_EPREUVES_LINKS } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
-import { MascotteJules } from '@/components/brand';
+import { MascottePeanut } from '@/components/brand';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import {
@@ -127,7 +127,7 @@ export function SiteHeaderClient({
         ) : null}
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
           <div className='flex min-w-0 shrink items-center gap-2.5'>
-            <MascotteJules size={34} animate={false} />
+            <MascottePeanut size={34} animate={false} />
             <BrandWordmark href={homeHref} className='min-w-0' />
           </div>
 

@@ -1,1 +1,1 @@
-export { MascotteJules, type MascotteJulesProps } from './MascotteJules';
+export { MascottePeanut, type MascottePeanutProps } from './MascottePeanut';

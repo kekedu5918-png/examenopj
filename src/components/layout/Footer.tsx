@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { MascotteJules } from '@/components/brand';
+import { MascottePeanut } from '@/components/brand';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
@@ -35,7 +35,7 @@ export function Footer() {
         <div className='mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end'>
           <div>
             <div className='mb-3 flex items-center gap-3'>
-              <MascotteJules size={44} animate={false} />
+              <MascottePeanut size={44} animate={false} />
               <BrandWordmark href='/' size='footer' />
             </div>
             <p className='max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-500'>
