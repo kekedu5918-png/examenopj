@@ -1,39 +1,18 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import { TrackOnMount } from '@/components/analytics/TrackOnMount';
-import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
-import { getContentAccess } from '@/features/access/get-content-access';
-import { AnalyticsEvents } from '@/lib/analytics/events';
-import { openGraphForPage } from '@/utils/seo-metadata';
+import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
 
 export const metadata: Metadata = {
   title: 'Flashcards — Examen OPJ',
-  description:
-    'Cartes mémoire pour ancrer éléments constitutifs et procédure : filtrage par thème, révision active pour l’examen OPJ.',
-  alternates: { canonical: '/flashcards' },
-  ...openGraphForPage(
-    '/flashcards',
-    'Flashcards — Examen OPJ',
-    'Révision active par flashcards : thèmes OPJ, recto/verso et suivi de mémorisation.',
-  ),
+  robots: { index: false, follow: true },
 };
 
-export default async function FlashcardsPage() {
-  const access = await getContentAccess();
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
 
-  return (
-    <Suspense
-      fallback={
-        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
-          Chargement des flashcards…
-        </InteriorPageShell>
-      }
-    >
-      <TrackOnMount event={AnalyticsEvents.flashcardSessionStart} />
-      <FlashcardsPageClient initialAccess={access} />
-    </Suspense>
-  );
+/** Ancienne URL : redirection vers la route canonique /entrainement/flashcards */
+export default function FlashcardsLegacyRedirect({ searchParams = {} }: PageProps) {
+  permanentRedirect(pathWithSearchParams('/entrainement/flashcards', searchParams));
 }

@@ -59,10 +59,8 @@ export function Footer() {
             <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Cours</p>
             <ul className='space-y-2.5'>
               {[
-                { href: '/cours', label: 'Hub Cours' },
-                { href: '/fondamentaux', label: 'Fondamentaux' },
-                { href: '/cours/modules', label: 'Modules F01–F15' },
-                { href: '/cours/enquetes', label: 'Enquêtes' },
+                { href: '/cours', label: 'Cours' },
+                { href: '/entrainement/enquetes', label: 'Enquêtes' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className={colLink}>{l.label}</Link>
@@ -73,12 +71,7 @@ export function Footer() {
           <div>
             <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Infractions</p>
             <ul className='space-y-2.5'>
-              {[
-                { href: '/infractions', label: 'Référentiel Épreuve 1' },
-                { href: '/epreuves/epreuve-1', label: 'Épreuve 1 — DPG / DPS' },
-                { href: '/quiz', label: 'QCM' },
-                { href: '/flashcards', label: 'Flashcards' },
-              ].map((l) => (
+              {[{ href: '/infractions', label: 'Référentiel' }].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className={colLink}>{l.label}</Link>
                 </li>
@@ -91,10 +84,9 @@ export function Footer() {
             </p>
             <ul className='space-y-2.5'>
               {[
-                { href: '/quiz', label: 'Quiz QCM' },
-                { href: '/flashcards', label: 'Flashcards' },
-                { href: '/parcours-candidat', label: 'Parcours candidat' },
-                { href: '/sujets-blancs', label: 'Sujets blancs' },
+                { href: '/entrainement/quiz', label: 'Quiz QCM' },
+                { href: '/entrainement/flashcards', label: 'Flashcards' },
+                { href: '/entrainement', label: 'Hub entraînement' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className={colLink}>{l.label}</Link>

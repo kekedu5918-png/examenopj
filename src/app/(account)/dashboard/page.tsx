@@ -98,7 +98,7 @@ export default async function DashboardPage() {
           { titre: 'Hub Cours (par où commencer)', href: '/cours' },
           { titre: 'Toutes les fiches F01–F15', href: '/cours/modules' },
           { titre: 'Entraînement par épreuve', href: '/entrainement' },
-          { titre: 'Sujets blancs complets', href: '/sujets-blancs' },
+          { titre: 'Vue d’ensemble des épreuves', href: '/epreuves' },
           { titre: 'Réviser les infractions', href: '/dashboard/infractions' },
           { titre: 'Ma progression', href: '/dashboard/progression' },
           { titre: 'Recherche', href: '/dashboard/recherche' },

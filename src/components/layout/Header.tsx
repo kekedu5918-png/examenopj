@@ -15,7 +15,7 @@ export async function Header() {
 
   return (
     <SiteHeaderClient
-      homeHref={session ? '/accueil' : '/'}
+      homeHref={session ? '/account' : '/'}
       isLoggedIn={!!session}
       isPremium={premium}
       signOut={signOut}

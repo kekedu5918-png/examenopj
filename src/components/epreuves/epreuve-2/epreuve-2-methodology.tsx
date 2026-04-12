@@ -167,7 +167,7 @@ export function Epreuve2Methodology() {
 
       <div className='flex justify-center pt-4'>
         <Link
-          href='/cours/enquetes'
+          href='/entrainement/enquetes'
           className='inline-flex items-center gap-2 rounded-xl bg-examen-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-examen-accent/20 hover:bg-examen-accentHover'
         >
           S’entraîner avec les enquêtes

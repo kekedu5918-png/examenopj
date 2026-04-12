@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "description": "Index du contenu quiz — les questions détaillées sont encore dans src/data/quiz-questions*.ts pour l’exécution du quiz. Migrez progressivement vers ce fichier ou vers une base.",
+  "sources": [
+    "src/data/quiz-questions.ts",
+    "src/data/quiz-questions-f01-p1.ts",
+    "src/data/quiz-questions-f03.ts",
+    "src/data/quiz-questions-f04.ts",
+    "src/data/quiz-questions-f05.ts",
+    "src/data/quiz-questions-f06.ts",
+    "src/data/quiz-questions-f07.ts",
+    "src/data/quiz-questions-opj-supplement.ts",
+    "src/data/quiz-questions-fascicules-theorie.ts"
+  ],
+  "items": []
+}

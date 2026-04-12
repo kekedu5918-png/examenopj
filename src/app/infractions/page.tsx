@@ -11,7 +11,7 @@ import { openGraphForPage } from '@/utils/seo-metadata';
 export async function generateMetadata(): Promise<Metadata> {
   const n = getInfractionsCatalog().length;
   const title = `Infractions — ${n} fiches (référentiel OPJ)`;
-  const description = `${APP_NAME} : ${n} infractions du programme — tableau et fiches avec élément moral formulé à réciter mot pour mot, matériel et peines. Vues liste et flashcards. Préparation examen OPJ.`;
+  const description = `${APP_NAME} : ${n} infractions du programme — tableau et fiches avec élément moral formulé à réciter mot pour mot, matériel et peines. Préparation examen OPJ.`;
   return {
     title,
     description,

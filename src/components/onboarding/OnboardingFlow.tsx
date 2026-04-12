@@ -617,7 +617,7 @@ function Stage4Results({
 
           <Button
             className='w-full bg-cyan-600 hover:bg-cyan-700 text-base font-semibold'
-            onClick={() => router.push('/accueil')}
+            onClick={() => router.push('/account')}
           >
             🚀 Commencer mon plan →
           </Button>

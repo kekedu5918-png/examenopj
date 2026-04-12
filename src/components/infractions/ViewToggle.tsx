@@ -5,12 +5,12 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { cn } from '@/utils/cn';
 
-export type InfractionsViewMode = 'tableau' | 'liste' | 'flashcard';
+export type InfractionsViewMode = 'tableau' | 'liste';
 
 const LS_KEY = 'infractions-view-mode';
 
 export function parseInfractionsVue(v: string | null): InfractionsViewMode | null {
-  if (v === 'tableau' || v === 'liste' || v === 'flashcard') return v;
+  if (v === 'tableau' || v === 'liste') return v;
   return null;
 }
 
@@ -58,10 +58,20 @@ export function ViewToggle({ className }: Props) {
     [pathname, router, searchParams],
   );
 
+  /** Ancienne URL ?vue=flashcard : normaliser vers liste */
+  useEffect(() => {
+    const raw = searchParams.get('vue');
+    if (raw === 'flashcard') {
+      const p = new URLSearchParams(searchParams.toString());
+      p.delete('vue');
+      const qs = p.toString();
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    }
+  }, [pathname, router, searchParams]);
+
   const items: { id: InfractionsViewMode; label: string; icon: string }[] = [
     { id: 'tableau', label: 'Tableau', icon: '⊞' },
     { id: 'liste', label: 'Liste', icon: '☰' },
-    { id: 'flashcard', label: 'Flashcards', icon: '🃏' },
   ];
 
   return (

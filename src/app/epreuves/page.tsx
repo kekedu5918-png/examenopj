@@ -157,11 +157,11 @@ export default function EpreuvesHubPage() {
         </ul>
 
         <div className='mt-12 flex flex-wrap gap-4 text-sm'>
-          <Link href='/guide-revision-opj' className='text-violet-300 underline-offset-4 hover:underline'>
+          <Link href='/entrainement' className='text-violet-300 underline-offset-4 hover:underline'>
             Guide de révision OPJ
           </Link>
           <span className='text-gray-600'>·</span>
-          <Link href='/cours/enquetes' className='text-violet-300 underline-offset-4 hover:underline'>
+          <Link href='/entrainement/enquetes' className='text-violet-300 underline-offset-4 hover:underline'>
             Enquêtes planches
           </Link>
           <span className='text-gray-600'>·</span>

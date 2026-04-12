@@ -92,7 +92,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     </span>
                   </div>
                   <Link
-                    href={`/cours/enquetes/${e.id}`}
+                    href={`/entrainement/enquetes/${e.id}`}
                     className='mt-3 text-center text-sm font-bold text-white underline-offset-4 transition hover:text-violet-200 hover:underline'
                   >
                     {e.titre.replace(/^Enquête \w+ — /, '')}
@@ -158,7 +158,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
                   </td>
                   <td className='px-4 py-3'>
                     <Link
-                      href={`/cours/enquetes/${e.id}`}
+                      href={`/entrainement/enquetes/${e.id}`}
                       className='font-semibold text-violet-300 underline-offset-2 hover:text-violet-200 hover:underline'
                     >
                       Ouvrir
@@ -173,7 +173,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
 
       <div className='flex flex-wrap justify-center gap-3 text-sm'>
         <Link
-          href='/cours/enquetes/alpha'
+          href='/entrainement/enquetes/alpha'
           className='inline-flex items-center gap-2 rounded-xl border border-rose-500/35 bg-rose-500/10 px-4 py-2.5 font-semibold text-rose-100 transition hover:bg-rose-500/20'
         >
           <BookOpen className='h-4 w-4' aria-hidden />
@@ -289,10 +289,11 @@ function MemosPanel() {
       </div>
 
       <p className='text-center text-xs text-slate-600'>
-        Le guide de révision long format reste accessible en direct :{' '}
-        <Link href='/guide-revision-opj' className='text-violet-400 underline-offset-2 hover:underline'>
-          /guide-revision-opj
+        Rappels de méthode :{' '}
+        <Link href='/entrainement' className='text-violet-400 underline-offset-2 hover:underline'>
+          hub Entraînement
         </Link>
+        .
       </p>
     </div>
   );

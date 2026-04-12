@@ -602,7 +602,7 @@ export function Epreuve1Sections() {
           <strong>reproduits tels que dans le référentiel</strong> (titres EXACTS), pas approximés.
         </p>
         <p>
-          <Link href='/guide-revision-opj' className='font-semibold text-emerald-200 underline'>
+          <Link href='/entrainement' className='font-semibold text-emerald-200 underline'>
             Guide de révision
           </Link>
           {' · '}

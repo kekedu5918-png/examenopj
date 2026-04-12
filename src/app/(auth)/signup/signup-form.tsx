@@ -40,7 +40,7 @@ export function SignUpForm() {
       }
 
       if (data.session) {
-        window.location.assign('/post-login?next=%2Fbienvenue');
+        window.location.assign('/post-login?next=%2Faccount');
         return;
       }
 

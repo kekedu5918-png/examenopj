@@ -1,37 +1,31 @@
-/** Navigation principale — max 4 entrées de niveau 1 (UX refonte). */
+/** Navigation principale — chemins réduits (hub par zone). */
 
-export const NAV_ACCUEIL_HREF = '/accueil' as const;
+export const NAV_ACCUEIL_HREF = '/account' as const;
 
 export type NavDropdownItem = { readonly href: string; readonly label: string };
 
-/** Préparer — Épreuve 1 / 2 / Oral (enquêtes : lien depuis Épreuve 2). */
 export const NAV_PREPARER_CHILDREN: readonly NavDropdownItem[] = [
   { href: '/epreuves/epreuve-1', label: 'Épreuve 1' },
   { href: '/epreuves/epreuve-2', label: 'Épreuve 2' },
-  { href: '/epreuves/epreuve-3', label: 'Oral' },
+  { href: '/epreuves/epreuve-3', label: 'Épreuve 3' },
 ] as const;
 
-/** Références */
 export const NAV_REFERENCES_CHILDREN: readonly NavDropdownItem[] = [
   { href: '/infractions', label: 'Infractions' },
-  { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours', label: 'Cours' },
 ] as const;
 
-/** S'entraîner — URLs canoniques quiz/flashcards : `/quiz` et `/flashcards` (pas `/entrainement/quiz|flashcards`). */
 export const NAV_ENTRAINER_CHILDREN: readonly NavDropdownItem[] = [
-  { href: '/quiz', label: 'QCM' },
-  { href: '/flashcards', label: 'Flashcards' },
+  { href: '/entrainement/quiz', label: 'QCM' },
+  { href: '/entrainement/flashcards', label: 'Flashcards' },
   { href: '/entrainement/articulation', label: 'Articulation' },
   { href: '/entrainement/redaction-pv', label: 'PV' },
 ] as const;
 
-/** @deprecated Ancienne nav plate — conserver exports pour liens profonds / SEO. */
 export const NAV_PRIMARY_LINKS = [
-  { href: '/cours/enquetes', label: 'Enquêtes' },
+  { href: '/entrainement/enquetes', label: 'Enquêtes' },
   { href: '/epreuves', label: 'Épreuves' },
   { href: '/infractions', label: 'Infractions' },
-  { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours', label: 'Cours' },
 ] as const;
 
@@ -44,29 +38,9 @@ export type NavMegaChild = {
 
 export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
-    name: 'Hub Cours',
+    name: 'Cours',
     href: '/cours',
-    description: 'Vue d’ensemble : fiches, enquêtes, méthode — rubrique Infractions à part (menu)',
-  },
-  {
-    name: 'Modules & fiches',
-    href: '/cours/modules',
-    description: 'Priorité examen OPJ (P0/P1) ou index officiel — fondamentaux en appui',
-  },
-  {
-    name: 'Modèles de PV',
-    href: '/cours/modeles-pv',
-    description: 'Bibliothèque complète, mise en forme officielle',
-  },
-  {
-    name: 'Enquêtes thématiques',
-    href: '/cours/enquetes',
-    description: 'Mises en situation complètes',
-  },
-  {
-    name: 'Fondamentaux',
-    href: '/fondamentaux',
-    description: 'Notions clés à maîtriser',
+    description: 'Fiches issues du dossier content/cours',
   },
 ] as const;
 
@@ -84,13 +58,7 @@ export const NAV_EPREUVES_CHILDREN: readonly NavMegaChild[] = [
   {
     name: 'Épreuve 3 — Oral',
     href: '/epreuves/epreuve-3',
-    description: 'Compte-rendu parquet',
-  },
-  {
-    name: 'Sujets blancs',
-    href: '/sujets-blancs',
-    description: 'Les 3 épreuves — session fictive complète',
-    badge: 'nouveau',
+    description: 'Mise en situation',
   },
 ] as const;
 
@@ -98,7 +66,7 @@ export const NAV_ENTRAINEMENT_CHILDREN: readonly NavMegaChild[] = [
   {
     name: 'Vue d’ensemble',
     href: '/entrainement',
-    description: 'Hub quiz, flashcards, parcours',
+    description: 'Hub quiz, flashcards, outils',
   },
   {
     name: 'Rédaction PV',
@@ -114,25 +82,13 @@ export const NAV_ENTRAINEMENT_CHILDREN: readonly NavMegaChild[] = [
 
 export const NAV_INFRACTIONS_HREF = '/infractions' as const;
 export const NAV_ENTRAINEMENT_HREF = '/entrainement' as const;
-export const NAV_GUIDE_HREF = '/guide-revision-opj' as const;
-export const NAV_PREMIUM_HREF = '/pricing' as const;
+export const NAV_PREMIUM_HREF = '/premium' as const;
 
-/** Rubrique de niveau 1 — uniquement les infractions (hors menu Cours). */
 export const SITE_HEADER_INFRACTIONS_LINKS: readonly NavDropdownItem[] = [
   { href: '/infractions', label: 'Référentiel complet' },
-  { href: '/epreuves/epreuve-1', label: 'Épreuve 1 — contexte' },
-  { href: '/quiz', label: 'QCM' },
-  { href: '/flashcards', label: 'Flashcards' },
 ] as const;
 
-/** Dropdowns header desktop + menu mobile (`SiteHeaderClient`) — source unique. */
-export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
-  { href: '/cours', label: 'Hub Cours' },
-  { href: '/parcours-opj', label: 'Parcours OPJ (7 modules)' },
-  { href: '/fondamentaux', label: 'Fondamentaux' },
-  { href: '/cours/modules', label: 'Modules F01–F15' },
-  { href: '/programme', label: 'Programme officiel' },
-] as const;
+export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [{ href: '/cours', label: 'Fiches cours' }] as const;
 
 export const SITE_HEADER_EPREUVES_LINKS: readonly NavDropdownItem[] = [
   { href: '/epreuves', label: "Vue d'ensemble" },
@@ -143,11 +99,8 @@ export const SITE_HEADER_EPREUVES_LINKS: readonly NavDropdownItem[] = [
 
 export const SITE_HEADER_ENTRAINER_LINKS: readonly NavDropdownItem[] = [
   { href: '/entrainement', label: "Vue d'ensemble" },
-  { href: '/quiz', label: 'Quiz' },
-  { href: '/flashcards', label: 'Flashcards' },
+  { href: '/entrainement/quiz', label: 'Quiz' },
+  { href: '/entrainement/flashcards', label: 'Flashcards' },
+  { href: '/entrainement/enquetes', label: 'Enquêtes' },
   { href: '/entrainement/articulation', label: 'Articulation' },
-  { href: '/sujets-blancs', label: 'Sujets blancs' },
 ] as const;
-
-/** Fin d’affichage du badge « Nouveau » sur Sujets blancs (30 jours après mise en ligne). */
-export const NAV_SUJETS_BLANCS_BADGE_DEADLINE_MS = new Date('2026-05-06T23:59:59').getTime();

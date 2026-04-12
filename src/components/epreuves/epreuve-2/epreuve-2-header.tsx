@@ -69,7 +69,7 @@ export function Epreuve2Header() {
 
       <motion.div variants={item} className='mt-6 flex flex-wrap gap-3'>
         <Link
-          href='/cours/enquetes'
+          href='/entrainement/enquetes'
           className='inline-flex items-center gap-2 rounded-xl border border-examen-accent/35 bg-examen-accent/10 px-4 py-2.5 text-sm font-semibold text-examen-accent transition hover:border-examen-accent/50 hover:bg-examen-accent/15'
         >
           Enquêtes types (mise en situation) →

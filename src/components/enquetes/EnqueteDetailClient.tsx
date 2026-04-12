@@ -127,7 +127,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
               Cours
             </Link>
             <span className='mx-2'>/</span>
-            <Link href='/cours/enquetes' className='text-violet-400 hover:text-violet-300'>
+            <Link href='/entrainement/enquetes' className='text-violet-400 hover:text-violet-300'>
               Enquêtes
             </Link>
             <span className='mx-2'>/</span>
@@ -166,7 +166,7 @@ export function EnqueteDetailClient({ enquete }: Props) {
             Cours
           </Link>
           <span className='mx-2'>/</span>
-          <Link href='/cours/enquetes' className='text-violet-400 hover:text-violet-300'>
+          <Link href='/entrainement/enquetes' className='text-violet-400 hover:text-violet-300'>
             Enquêtes
           </Link>
           <span className='mx-2'>/</span>

@@ -1,36 +1,18 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import { TrackOnMount } from '@/components/analytics/TrackOnMount';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { QuizPageClient } from '@/components/quiz/quiz-page-client';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
-import { getContentAccess } from '@/features/access/get-content-access';
-import { AnalyticsEvents } from '@/lib/analytics/events';
-import { openGraphForPage } from '@/utils/seo-metadata';
+import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
 
 export const metadata: Metadata = {
   title: 'Quiz — Examen OPJ',
-  description:
-    'QCM et mode « hardcore » pour l’examen OPJ : thèmes F01–F15, domaines et quiz global. Entraînez-vous avec correction immédiate.',
-  alternates: { canonical: '/quiz' },
-  ...openGraphForPage('/quiz', 'Quiz — Examen OPJ', 'QCM et entraînement ciblé pour l’examen OPJ 2026 : thèmes, domaines, mode réponse libre.'),
+  robots: { index: false, follow: true },
 };
 
-export default async function QuizPage() {
-  const access = await getContentAccess();
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
 
-  return (
-    <Suspense
-      fallback={
-        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.quiz} pad='default' innerClassName='flex min-h-[50vh] items-center justify-center'>
-          <p className='sr-only'>Chargement du quiz…</p>
-          <div className='h-10 w-10 animate-pulse rounded-full bg-white/10' aria-hidden />
-        </InteriorPageShell>
-      }
-    >
-      <TrackOnMount event={AnalyticsEvents.quizSessionStart} />
-      <QuizPageClient initialAccess={access} />
-    </Suspense>
-  );
+/** Ancienne URL : redirection vers la route canonique /entrainement/quiz */
+export default function QuizLegacyRedirect({ searchParams = {} }: PageProps) {
+  permanentRedirect(pathWithSearchParams('/entrainement/quiz', searchParams));
 }

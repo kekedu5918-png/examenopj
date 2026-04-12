@@ -202,7 +202,7 @@ export function HeroSection() {
             </MotionLink>
 
             <Link
-              href='/guide-revision-opj'
+              href='/entrainement'
               className='inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-medium text-slate-400 transition hover:text-white'
             >
               Voir le guide

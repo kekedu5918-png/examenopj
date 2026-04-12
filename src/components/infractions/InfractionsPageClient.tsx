@@ -10,7 +10,6 @@ import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { InfractionDetailBubble } from '@/components/infractions/InfractionDetailBubble';
-import { InfractionsFlashMode } from '@/components/infractions/InfractionsFlashMode';
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
@@ -51,21 +50,6 @@ const FASCICULE_FILTER_MAP: Record<Exclude<RecapFasciculeFilter, 'all' | 'f01p1'
   f06: 'F06',
   f07: 'F07',
 };
-
-function flashcardsHrefForRecapFilter(f: RecapFasciculeFilter): string {
-  if (f === 'all') return '/flashcards';
-  if (f === 'f01p1' || f === 'f01p2') return '/flashcards?f=1';
-  const n = { f02: 2, f03: 3, f04: 4, f05: 5, f06: 6, f07: 7 }[f] as number | undefined;
-  if (typeof n === 'number') return `/flashcards?f=${n}`;
-  return '/flashcards';
-}
-
-function flashcardsFilterLabel(f: RecapFasciculeFilter): string {
-  if (f === 'all') return 'tout le programme';
-  if (f === 'f01p1') return 'F01 · P1';
-  if (f === 'f01p2') return 'F01 · P2';
-  return f.toUpperCase();
-}
 
 function matchesInfractionFascicleFilter(item: InfractionCatalogItem, filter: RecapFasciculeFilter): boolean {
   if (filter === 'all') return true;
@@ -178,9 +162,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     }
   }, [selected, deepLinkReady]);
 
-  const flashSessionHref = useMemo(() => flashcardsHrefForRecapFilter(fascFilter), [fascFilter]);
-  const flashLabel = useMemo(() => flashcardsFilterLabel(fascFilter), [fascFilter]);
-
   const filtered = useMemo(() => {
     const q = stripForSearch(query.trim());
     const list = catalog.filter((item) => {
@@ -222,7 +203,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         title='Infractions'
         titleGradient
         size='display'
-        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Utilise le filtre par fascicule et la recherche pour cibler tes révisions. Familles (personnes, biens…) et probabilité à l’examen : le plus attendu d’abord.'
+        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par fascicule, famille et probabilité ; la recherche cible tes révisions.'
         className='mb-6'
       />
 
@@ -312,26 +293,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                 {label}
               </button>
             ))}
-          </div>
-        </div>
-        <div className='flex flex-col gap-3 rounded-xl border border-emerald-500/25 bg-emerald-950/35 p-4 sm:flex-row sm:items-center sm:justify-between'>
-          <p className='text-sm text-gray-300'>
-            Chaque session flashcards est <strong className='text-emerald-200'>mélangée</strong> : complète la lecture ligne par ligne
-            ici, puis enchaîne pour ancrer L / M / M.
-          </p>
-          <div className='flex flex-shrink-0 flex-wrap gap-2'>
-            <Link
-              href={flashSessionHref}
-              className='inline-flex items-center justify-center rounded-xl bg-emerald-600 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:bg-emerald-500'
-            >
-              Session flashcards ({flashLabel})
-            </Link>
-            <Link
-              href='/cours/enquetes'
-              className='inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-4 py-2.5 text-center text-sm font-medium text-gray-200 hover:bg-white/10'
-            >
-              Alpha / Bravo
-            </Link>
           </div>
         </div>
         <p className='flex flex-wrap items-center gap-2 text-sm text-gray-500'>
@@ -497,19 +458,6 @@ function InfractionsListView({
                             </div>
 
                             <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
-                              {item.flashcardsCat ? (
-                                <Link
-                                  href={`/flashcards?cat=${item.flashcardsCat}`}
-                                  onClick={(e) => e.stopPropagation()}
-                                  className='inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-2.5 text-center text-sm font-semibold text-white transition hover:opacity-95'
-                                >
-                                  Réviser en flashcards
-                                </Link>
-                              ) : (
-                                <span className='max-w-[11rem] text-right text-xs text-gray-500'>
-                                  Fiches sur la page Flashcards (filtre par module F).
-                                </span>
-                              )}
                               <Link
                                 href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
                                 onClick={(e) => e.stopPropagation()}
@@ -567,7 +515,6 @@ function InfractionsViewBody({
         />
       ) : null}
 
-      {vue === 'flashcard' ? <InfractionsFlashMode filtered={filtered} /> : null}
     </>
   );
 }

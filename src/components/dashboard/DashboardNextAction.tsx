@@ -16,13 +16,12 @@ export interface DashboardNextActionProps {
 }
 
 /**
- * Repère une « prochaine leçon » via les recommandations dont le lien cible le parcours ou les fondamentaux.
- * À affiner si `getLoginResumeData` expose plus tard un champ dédié.
+ * Repère une recommandation dont le lien cible l’entraînement ou les cours.
  */
 function findParcoursContinue(resume: LoginResumeData | null): { title: string; href: string } | null {
   if (!resume) return null;
   const rec = resume.recommendations.find(
-    (r) => r.href.includes('/parcours-opj') || r.href.includes('/fondamentaux'),
+    (r) => r.href.includes('/entrainement') || r.href.includes('/cours'),
   );
   if (!rec) return null;
   return { title: rec.title, href: rec.href };
@@ -47,7 +46,7 @@ export function DashboardNextAction({
     actionLabel = 'Reprendre →';
   } else if (todayReviews > 0) {
     actionLine = `🔄 ${todayReviews} révision${todayReviews > 1 ? 's' : ''} espacée${todayReviews > 1 ? 's' : ''} à faire`;
-    actionHref = '/parcours-opj';
+    actionHref = '/entrainement';
     actionLabel = 'Réviser →';
   } else {
     actionLine = '✅ Tout est à jour ! Explorez les épreuves →';

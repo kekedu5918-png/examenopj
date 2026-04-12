@@ -20,7 +20,7 @@ export default async function PostLoginPage({ searchParams = {} }: PostLoginPage
   }
 
   const premium = await hasPremiumAccess();
-  const nextPath = safeInternalPath(searchParams.next, '/accueil');
+  const nextPath = safeInternalPath(searchParams.next, '/account');
 
   if (!premium) {
     redirect(nextPath);
@@ -33,8 +33,6 @@ export default async function PostLoginPage({ searchParams = {} }: PostLoginPage
   }
 
   if (
-    nextPath.startsWith('/accueil') ||
-    nextPath.startsWith('/bienvenue') ||
     nextPath.startsWith('/dashboard') ||
     nextPath.startsWith('/account') ||
     nextPath.startsWith('/manage-subscription')

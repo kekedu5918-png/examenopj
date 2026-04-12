@@ -96,7 +96,7 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     objectifs: ['Deux colonnes, huis clos, chronologie', 'Enchaînement minute par minute sur des sujets types'],
     liens: [
       { href: '/cours/pv', label: 'Procès-verbaux ME1' },
-      { href: '/cours/enquetes', label: 'Enquêtes type examen OPJ' },
+      { href: '/entrainement/enquetes', label: 'Enquêtes type examen OPJ' },
       { href: '/entrainement/articulation', label: 'Articulation' },
     ],
  },

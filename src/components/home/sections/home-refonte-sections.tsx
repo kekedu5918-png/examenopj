@@ -64,7 +64,7 @@ export function StartHereSection() {
       title: "Je m'entraîne",
       text: "Enquêtes types, modèles de PV et articulation comme en formation.",
       cta: 'Lancer une enquête',
-      href: '/cours/enquetes',
+      href: '/entrainement/enquetes',
     },
   ] as const;
 
@@ -205,7 +205,7 @@ export function HomeEnquetesPillarSection() {
           {ENQUETES.slice(0, 4).map((e) => (
             <motion.div key={e.id} variants={cardVariants}>
               <Link
-                href={`/cours/enquetes/${e.id}`}
+                href={`/entrainement/enquetes/${e.id}`}
                 className='home-enquete-card-horizontal group flex flex-col gap-3 rounded-2xl border border-white/[0.09] bg-gradient-to-r from-orde-navy800/80 to-white/[0.03] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-orde-blue500/35 hover:shadow-xl hover:shadow-black/30 sm:flex-row sm:items-center sm:justify-between sm:gap-6'
               >
                 <div className='flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-6'>
@@ -231,7 +231,7 @@ export function HomeEnquetesPillarSection() {
         </motion.div>
         <div className='mt-10 flex flex-col items-center text-center'>
           <MotionLink
-            href='/cours/enquetes'
+            href='/entrainement/enquetes'
             className='inline-flex items-center gap-2 rounded-md bg-orde-blue500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-orde-blue400'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}

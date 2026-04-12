@@ -43,3 +43,6 @@ next-env.d.ts
 
 # supabase
 /supabase/.temp/
+
+# graphify (cache local, régénéré)
+/graphify-out/cache/

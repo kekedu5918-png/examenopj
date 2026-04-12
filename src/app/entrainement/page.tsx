@@ -65,7 +65,7 @@ function ExamTag({ n }: { n: CardExamFocus }) {
 
 const cardsE1: HubCard[] = [
   {
-    href: '/quiz',
+    href: '/entrainement/quiz',
     Icon: Target,
     title: 'Quiz',
     desc: 'QCM par thème F01–F15, domaine DPS/DPG/procédure ou mode global — socle Épreuve 1.',
@@ -74,7 +74,7 @@ const cardsE1: HubCard[] = [
     exam: 1,
   },
   {
-    href: '/flashcards',
+    href: '/entrainement/flashcards',
     Icon: Layers2,
     title: 'Flashcards',
     desc: 'Éléments constitutifs et titres du programme : mémorisation active pour l’écrit.',
@@ -112,15 +112,7 @@ const cardsE2: HubCard[] = [
     exam: 2,
   },
   {
-    href: '/cours/pv',
-    Icon: PenLine,
-    title: 'Cours PV ME1',
-    desc: 'Modèles verbatim, deux colonnes et textes à trous alignés examen OPJ.',
-    badge: null,
-    exam: 2,
-  },
-  {
-    href: '/cours/enquetes',
+    href: '/entrainement/enquetes',
     Icon: FileText,
     title: 'Enquêtes type examen OPJ',
     desc: 'Planches complètes : sujet, PV, articulation — pont vers épreuve 2.',
@@ -159,28 +151,18 @@ const cardsE3: HubCard[] = [
 
 const cardsTransversal: HubCard[] = [
   {
-    href: '/parcours-candidat',
-    Icon: ClipboardList,
-    title: 'Parcours candidat',
-    desc: 'Phases semaine par semaine avec rappels E1 / E2 / E3 et sujets blancs.',
-    badge: 'Recommandé',
-    badgeClass: 'bg-cyan-500/20 text-cyan-200',
-    exam: 'transversal',
-  },
-  {
-    href: '/sujets-blancs',
+    href: '/epreuves',
     Icon: Sparkles,
-    title: 'Sujets blancs complets',
-    desc: 'Trois sessions : même affaire sur les trois épreuves — conditions réelles (Premium).',
-    badge: 'Examen OPJ',
-    badgeClass: 'bg-emerald-500/20 text-emerald-200',
+    title: 'Les 3 épreuves',
+    desc: 'Vue d’ensemble des attendus et accès direct à chaque épreuve.',
+    badge: null,
     exam: 'transversal',
   },
   {
-    href: '/guide-revision-opj',
+    href: '/cours',
     Icon: BookOpen,
-    title: 'Guide de révision',
-    desc: 'Rythme, charge cognitive et priorités sur les dernières semaines.',
+    title: 'Fiches cours',
+    desc: 'Contenu central (/content/cours) — filtrable sur la page Cours.',
     badge: null,
     exam: 'transversal',
   },
@@ -293,7 +275,7 @@ export default function EntrainementHubPage() {
 
         <p className='text-center text-sm text-slate-500'>
           <Link href='/cours' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>
-            Retour aux cours (fiches F01–F15)
+            Fiches cours (content/cours)
           </Link>
           {' · '}
           <Link href='/epreuves' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>

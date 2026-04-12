@@ -36,7 +36,7 @@ const STEPS = [
     step: 4,
     label: 'Méthode',
     hint: 'Plan de révision',
-    href: '/guide-revision-opj',
+    href: '/entrainement',
     Icon: Sparkles,
     accent: 'from-emerald-500 to-teal-600',
   },

@@ -3,9 +3,6 @@
  * Données statiques — alimente Cours, modules, entraînement et sujets blancs.
  */
 
-import { SUJETS_BLANCS } from '@/data/sujets-blancs';
-import type { SujetBlanc } from '@/data/sujets-blancs-types';
-
 export type ExamNumber = 1 | 2 | 3;
 
 export type RevisionPriority = 'P0' | 'P1';
@@ -260,8 +257,4 @@ export function getDefaultExamenAttendus(fasciculeId: string): string[] {
     lines.push('Thème prioritaire fin de préparation : prévoir une révision ciblée quiz + flashcards + un passage articulation ou PV.');
   }
   return lines;
-}
-
-export function getSujetsBlancsForFascicule(fasciculeId: string): SujetBlanc[] {
-  return SUJETS_BLANCS.filter((s) => s.themesFascicules?.includes(fasciculeId));
 }

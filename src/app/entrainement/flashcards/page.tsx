@@ -1,18 +1,39 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { permanentRedirect } from 'next/navigation';
 
-import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
+import { TrackOnMount } from '@/components/analytics/TrackOnMount';
+import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
+import { getContentAccess } from '@/features/access/get-content-access';
+import { AnalyticsEvents } from '@/lib/analytics/events';
+import { openGraphForPage } from '@/utils/seo-metadata';
 
-/** URLs canoniques : `/flashcards` (évite le doublon `/entrainement/flashcards`). */
 export const metadata: Metadata = {
   title: 'Flashcards — Examen OPJ',
-  robots: { index: false, follow: true },
+  description:
+    'Cartes mémoire pour ancrer éléments constitutifs et procédure : filtrage par thème, révision active pour l’examen OPJ.',
+  alternates: { canonical: '/entrainement/flashcards' },
+  ...openGraphForPage(
+    '/entrainement/flashcards',
+    'Flashcards — Examen OPJ',
+    'Révision active par flashcards : thèmes OPJ, recto/verso et suivi de mémorisation.',
+  ),
 };
 
-type PageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
+export default async function EntrainementFlashcardsPage() {
+  const access = await getContentAccess();
 
-export default function EntrainementFlashcardsRedirect({ searchParams = {} }: PageProps) {
-  permanentRedirect(pathWithSearchParams('/flashcards', searchParams));
+  return (
+    <Suspense
+      fallback={
+        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
+          Chargement des flashcards…
+        </InteriorPageShell>
+      }
+    >
+      <TrackOnMount event={AnalyticsEvents.flashcardSessionStart} />
+      <FlashcardsPageClient initialAccess={access} />
+    </Suspense>
+  );
 }

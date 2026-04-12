@@ -6,12 +6,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ChevronDown, Flame, Menu, X } from 'lucide-react';
 
-import {
-  SITE_HEADER_COURS_LINKS,
-  SITE_HEADER_ENTRAINER_LINKS,
-  SITE_HEADER_EPREUVES_LINKS,
-  SITE_HEADER_INFRACTIONS_LINKS,
-} from '@/app/navigation';
+import { SITE_HEADER_ENTRAINER_LINKS, SITE_HEADER_EPREUVES_LINKS } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
@@ -29,7 +24,7 @@ import { cn } from '@/utils/cn';
 type TrialReminder = { daysLeft: number; endsAtIso: string };
 
 type SiteHeaderClientProps = {
-  /** Accueil marketing (/) ou espace connecté (/accueil) */
+  /** Accueil marketing (/) ou espace connecté (/account) */
   homeHref: string;
   isLoggedIn: boolean;
   isPremium: boolean;
@@ -104,11 +99,10 @@ export function SiteHeaderClient({
     setMobileOpen(false);
   }, [pathname]);
 
-  const coursActive = isActiveGroup(pathname, ['/fondamentaux', '/cours/modules', '/programme', '/cours']);
+  const coursActive = isActivePath(pathname, '/cours');
   const infractionsActive = isActivePath(pathname, '/infractions');
   const epreuvesActive = isActiveGroup(pathname, ['/epreuves']);
-  const entrainerActive = isActiveGroup(pathname, ['/quiz', '/flashcards', '/entrainement', '/sujets-blancs']);
-  const enquetesActive = isActivePath(pathname, '/cours/enquetes');
+  const entrainerActive = isActiveGroup(pathname, ['/entrainement', '/quiz', '/flashcards']);
 
   return (
     <div className='sticky top-0 z-[1000]'>
@@ -134,45 +128,12 @@ export function SiteHeaderClient({
           <BrandWordmark href={homeHref} className='min-w-0 shrink' />
 
           <nav className='hidden flex-1 items-center justify-center gap-1 lg:flex' aria-label='Menu'>
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={cn(navBtn, dropTriggerClass, coursActive ? navActive : navInactive)}
-                aria-expanded={undefined}
-              >
-                Cours
-                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className={dropSurface}>
-                {SITE_HEADER_COURS_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
-                    <Link href={item.href}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Link href='/cours' className={cn(navBtn, coursActive ? navActive : navInactive)}>
+              Cours
+            </Link>
 
-            <DropdownMenu>
-              <DropdownMenuTrigger
-                className={cn(navBtn, dropTriggerClass, infractionsActive ? navActive : navInactive)}
-                aria-expanded={undefined}
-              >
-                Infractions
-                <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className={dropSurface}>
-                {SITE_HEADER_INFRACTIONS_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
-                    <Link href={item.href}>{item.label}</Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Link
-              href='/cours/enquetes'
-              className={cn(navBtn, enquetesActive ? navActive : navInactive)}
-            >
-              Enquêtes
+            <Link href='/infractions' className={cn(navBtn, infractionsActive ? navActive : navInactive)}>
+              Infractions
             </Link>
 
             <DropdownMenu>
@@ -223,7 +184,7 @@ export function SiteHeaderClient({
             ) : null}
             {!isPremium ? (
               <Link
-                href='/pricing'
+                href='/premium'
                 className='inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-3 py-1 text-[11px] font-semibold text-white'
               >
                 Premium ✨
@@ -232,14 +193,14 @@ export function SiteHeaderClient({
             {isLoggedIn ? (
               <>
                 <Link
-                  href='/parcours-candidat'
+                  href='/account'
                   className={cn(
                     navBtn,
-                    isActivePath(pathname, '/parcours-candidat') ? navActive : navInactive,
+                    isActivePath(pathname, '/account') ? navActive : navInactive,
                     'px-2',
                   )}
                 >
-                  Mon parcours
+                  Compte
                 </Link>
                 <AccountMenu signOut={signOut} />
               </>
@@ -274,7 +235,7 @@ export function SiteHeaderClient({
             ) : null}
             {!isPremium ? (
               <Link
-                href='/pricing'
+                href='/premium'
                 className='inline-flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-2 py-1 text-[10px] font-semibold text-white'
               >
                 Premium
@@ -335,36 +296,19 @@ export function SiteHeaderClient({
                 </button>
               </div>
               <nav className='flex-1 overflow-y-auto px-3 py-4' aria-label='Navigation mobile'>
-                <MobileAccordion title='Cours' defaultOpen>
-                  {SITE_HEADER_COURS_LINKS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className='block border-b border-white/[0.06] py-2.5 pl-2 text-sm text-examen-ink hover:bg-white/[0.04]'
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </MobileAccordion>
-                <MobileAccordion title='Infractions'>
-                  {SITE_HEADER_INFRACTIONS_LINKS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className='block border-b border-white/[0.06] py-2.5 pl-2 text-sm text-examen-ink hover:bg-white/[0.04]'
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </MobileAccordion>
                 <Link
-                  href='/cours/enquetes'
+                  href='/cours'
                   className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
                   onClick={() => setMobileOpen(false)}
                 >
-                  Enquêtes
+                  Cours
+                </Link>
+                <Link
+                  href='/infractions'
+                  className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Infractions
                 </Link>
                 <MobileAccordion title='Épreuves'>
                   {SITE_HEADER_EPREUVES_LINKS.map((item) => (
@@ -395,11 +339,11 @@ export function SiteHeaderClient({
                 {isLoggedIn ? (
                   <div className='flex flex-col gap-2'>
                     <Link
-                      href='/parcours-candidat'
+                      href='/account'
                       className='rounded-lg border border-white/10 py-2.5 text-center text-sm text-white'
                       onClick={() => setMobileOpen(false)}
                     >
-                      Mon parcours
+                      Compte
                     </Link>
                     <AccountMenu signOut={signOut} />
                   </div>

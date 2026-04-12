@@ -16,7 +16,7 @@ export default async function OnboardingPage() {
   if (!session) redirect('/login?next=/onboarding');
 
   const completed = await checkOnboardingCompleted();
-  if (completed) redirect('/accueil');
+  if (completed) redirect('/account');
 
   return <OnboardingFlow />;
 }

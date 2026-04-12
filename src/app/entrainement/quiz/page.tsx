@@ -1,18 +1,40 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import { permanentRedirect } from 'next/navigation';
 
-import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
+import { TrackOnMount } from '@/components/analytics/TrackOnMount';
+import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { QuizPageClient } from '@/components/quiz/quiz-page-client';
+import { SHELL_GLOW } from '@/constants/interior-shell-glow';
+import { getContentAccess } from '@/features/access/get-content-access';
+import { AnalyticsEvents } from '@/lib/analytics/events';
+import { openGraphForPage } from '@/utils/seo-metadata';
 
-/** URLs canoniques : `/quiz` (évite le doublon `/entrainement/quiz`). */
 export const metadata: Metadata = {
   title: 'Quiz — Examen OPJ',
-  robots: { index: false, follow: true },
+  description:
+    'QCM et mode « hardcore » pour l’examen OPJ : thèmes, domaines et quiz global. Entraînez-vous avec correction immédiate.',
+  alternates: { canonical: '/entrainement/quiz' },
+  ...openGraphForPage(
+    '/entrainement/quiz',
+    'Quiz — Examen OPJ',
+    'QCM et entraînement ciblé pour l’examen OPJ : thèmes, domaines, mode réponse libre.',
+  ),
 };
 
-type PageProps = {
-  searchParams?: Record<string, string | string[] | undefined>;
-};
+export default async function EntrainementQuizPage() {
+  const access = await getContentAccess();
 
-export default function EntrainementQuizRedirect({ searchParams = {} }: PageProps) {
-  permanentRedirect(pathWithSearchParams('/quiz', searchParams));
+  return (
+    <Suspense
+      fallback={
+        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.quiz} pad='default' innerClassName='flex min-h-[50vh] items-center justify-center'>
+          <p className='sr-only'>Chargement du quiz…</p>
+          <div className='h-10 w-10 animate-pulse rounded-full bg-white/10' aria-hidden />
+        </InteriorPageShell>
+      }
+    >
+      <TrackOnMount event={AnalyticsEvents.quizSessionStart} />
+      <QuizPageClient initialAccess={access} />
+    </Suspense>
+  );
 }
