@@ -18,7 +18,7 @@ export const NAV_REFERENCES_CHILDREN: readonly NavDropdownItem[] = [
   { href: '/cours', label: 'Cours' },
 ] as const;
 
-/** S'entraîner */
+/** S'entraîner — URLs canoniques quiz/flashcards : `/quiz` et `/flashcards` (pas `/entrainement/quiz|flashcards`). */
 export const NAV_ENTRAINER_CHILDREN: readonly NavDropdownItem[] = [
   { href: '/quiz', label: 'QCM' },
   { href: '/flashcards', label: 'Flashcards' },
@@ -128,6 +128,7 @@ export const SITE_HEADER_INFRACTIONS_LINKS: readonly NavDropdownItem[] = [
 /** Dropdowns header desktop + menu mobile (`SiteHeaderClient`) — source unique. */
 export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
   { href: '/cours', label: 'Hub Cours' },
+  { href: '/parcours-opj', label: 'Parcours OPJ (7 modules)' },
   { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/cours/modules', label: 'Modules F01–F15' },
   { href: '/programme', label: 'Programme officiel' },

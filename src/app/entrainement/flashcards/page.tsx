@@ -1,28 +1,18 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
-import { getContentAccess } from '@/features/access/get-content-access';
+import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
 
+/** URLs canoniques : `/flashcards` (évite le doublon `/entrainement/flashcards`). */
 export const metadata: Metadata = {
   title: 'Flashcards — Examen OPJ',
-  description: 'Révision active par cartes mémoire : recto / verso pour ancrer les points clés du programme OPJ.',
+  robots: { index: false, follow: true },
 };
 
-export default async function EntrainementFlashcardsPage() {
-  const access = await getContentAccess();
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
 
-  return (
-    <Suspense
-      fallback={
-        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='default' innerClassName='flex min-h-[40vh] items-center justify-center text-gray-400'>
-          Chargement des flashcards…
-        </InteriorPageShell>
-      }
-    >
-      <FlashcardsPageClient initialAccess={access} />
-    </Suspense>
-  );
+export default function EntrainementFlashcardsRedirect({ searchParams = {} }: PageProps) {
+  permanentRedirect(pathWithSearchParams('/flashcards', searchParams));
 }

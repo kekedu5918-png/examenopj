@@ -21,6 +21,7 @@ describe('getSiteUrl', () => {
 
   it('utilise examenopj.fr en production si NEXT_PUBLIC_SITE_URL est absent', async () => {
     vi.unstubAllEnvs();
+    vi.stubEnv('NEXT_PUBLIC_SITE_URL', '');
     vi.stubEnv('NODE_ENV', 'production');
     vi.resetModules();
     const { getSiteUrl } = await import('@/utils/site-url');

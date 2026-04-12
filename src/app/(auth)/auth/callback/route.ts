@@ -5,6 +5,7 @@ import { NextResponse } from 'next/server';
 
 import { isUserInSignupTrialPeriod } from '@/features/access/trial-window';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { Database } from '@/libs/supabase/types';
 import { safeInternalPath } from '@/utils/safe-internal-path';
 import { getSiteUrl } from '@/utils/site-url';
 
@@ -47,11 +48,18 @@ export async function GET(request: NextRequest) {
   }
 
   // Rediriger vers l'onboarding si pas encore complété (nouveaux inscrits)
-  const { data: onboarding } = await (supabase as any)
+  type OnboardingCompletedPick = Pick<
+    Database['public']['Tables']['onboarding_progress']['Row'],
+    'completed'
+  >;
+
+  const { data: onboardingRaw } = await supabase
     .from('onboarding_progress')
     .select('completed')
     .eq('user_id', user.id)
     .maybeSingle();
+
+  const onboarding = onboardingRaw as OnboardingCompletedPick | null;
 
   const isNewUser = !onboarding;
   const onboardingPending = isNewUser || onboarding?.completed === false;

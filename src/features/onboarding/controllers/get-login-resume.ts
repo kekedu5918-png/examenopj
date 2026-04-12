@@ -1,6 +1,13 @@
 import { fasciculesList } from '@/data/fascicules-list';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
-import type { SupabaseClient } from '@supabase/supabase-js';
+import type { Database } from '@/libs/supabase/types';
+
+type UserProgressResultatRow = Pick<Database['public']['Tables']['user_progress']['Row'], 'resultat'>;
+type UserStreaksRow = Database['public']['Tables']['user_streaks']['Row'];
+type QuizAttemptResumeRow = Pick<
+  Database['public']['Tables']['quiz_attempts']['Row'],
+  'fascicule_num' | 'percent' | 'score' | 'total' | 'mode' | 'created_at'
+>;
 
 export type LoginResumeData = {
   userName: string | null;
@@ -47,25 +54,24 @@ function getFasciculeName(num: number): string {
 
 export async function getLoginResumeData(userId: string): Promise<LoginResumeData> {
   const supabase = await createSupabaseServerClient();
-  const db = supabase as unknown as SupabaseClient<any>;
 
   const [userRes, streakRes, attemptsRes, progressRes] = await Promise.all([
     supabase.auth.getUser(),
-    db.from('user_streaks').select('*').eq('user_id', userId).maybeSingle(),
-    db
+    supabase.from('user_streaks').select('*').eq('user_id', userId).maybeSingle(),
+    supabase
       .from('quiz_attempts')
       .select('fascicule_num, percent, score, total, mode, created_at')
       .eq('user_id', userId)
       .order('created_at', { ascending: false })
       .limit(5),
-    db.from('user_progress').select('resultat').eq('user_id', userId),
+    supabase.from('user_progress').select('resultat').eq('user_id', userId),
   ]);
 
   const user = userRes.data.user;
   const userName = user?.user_metadata?.full_name ?? user?.email?.split('@')[0] ?? null;
 
   // ── Streak ──────────────────────────────────────────────
-  const streakRow = streakRes.data;
+  const streakRow = streakRes.data as UserStreaksRow | null;
   const currentStreak = streakRow?.current_streak ?? 0;
   const longestStreak = streakRow?.longest_streak ?? 0;
   const lastSessionDate = streakRow?.last_session_date;
@@ -82,13 +88,13 @@ export async function getLoginResumeData(userId: string): Promise<LoginResumeDat
       : 'Commencez votre première session pour démarrer un streak.';
 
   // ── Progression ──────────────────────────────────────────
-  const progressRows = progressRes.data ?? [];
+  const progressRows = (progressRes.data ?? []) as UserProgressResultatRow[];
   const totalItems = 55;
-  const mastered = progressRows.filter((r: any) => (r.resultat ?? 0) >= 4).length;
+  const mastered = progressRows.filter((r) => (r.resultat ?? 0) >= 4).length;
   const percentage = totalItems > 0 ? Math.round((mastered / totalItems) * 100) : 0;
 
   // ── Dernière session ─────────────────────────────────────
-  const attempts = attemptsRes.data ?? [];
+  const attempts = (attemptsRes.data ?? []) as QuizAttemptResumeRow[];
   const lastAttempt = attempts[0] ?? null;
   let lastSession: LoginResumeData['progress']['lastSession'] = null;
 

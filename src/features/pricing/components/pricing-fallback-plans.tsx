@@ -3,6 +3,7 @@ import { IoCheckmark } from 'react-icons/io5';
 
 import { cn } from '@/utils/cn';
 
+/** Affiché uniquement si l’API Stripe / produits ne renvoie pas les prix. Aligner sur l’offre réelle (ex. 9,90 €/mois). */
 const PLANS_FALLBACK = [
   {
     name: 'Gratuit',
@@ -22,7 +23,7 @@ const PLANS_FALLBACK = [
   },
   {
     name: 'Premium',
-    price: '19 €',
+    price: '9,90 €',
     period: '/ mois',
     description: 'Pour une préparation complète et sans limites',
     features: [

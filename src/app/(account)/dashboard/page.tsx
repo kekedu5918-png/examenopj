@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { DashboardNextAction } from '@/components/dashboard/DashboardNextAction';
 import { StreakCard } from '@/components/gamification/StreakCard';
 import { LoginResumeCard } from '@/components/onboarding/LoginResumeCard';
 import { Badge } from '@/components/ui/badge';
@@ -11,6 +12,7 @@ import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/
 import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
 import { getOnboardingPlan } from '@/features/onboarding/actions/onboarding-actions';
 import { getLoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
+import { getTodayReviews } from '@/lib/learningPath';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
@@ -28,7 +30,7 @@ function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number |
 
 export default async function DashboardPage() {
   const session = await getSession();
-  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan] = session
+  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan, todayReviews] = session
     ? await Promise.all([
         getModules(),
         getRevisionStats(session.user.id),
@@ -36,6 +38,7 @@ export default async function DashboardPage() {
         getGamificationData(session.user.id),
         getLoginResumeData(session.user.id),
         getOnboardingPlan(),
+        getTodayReviews(session.user.id),
       ])
     : await Promise.all([
         getModules(),
@@ -44,7 +47,16 @@ export default async function DashboardPage() {
         Promise.resolve(null),
         Promise.resolve(null),
         Promise.resolve(null),
+        Promise.resolve([]),
       ]);
+
+  const todayReviewCount = todayReviews.length;
+  const userName = session
+    ? (session.user.user_metadata as { full_name?: string } | null)?.full_name?.trim() ||
+      session.user.email?.split('@')[0] ||
+      null
+    : null;
+  const streakDays = gamification?.streak?.currentStreak ?? 0;
 
   const lastAttempt = recentAttempts[0] ?? null;
   const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
@@ -52,6 +64,15 @@ export default async function DashboardPage() {
 
   return (
     <section className='space-y-6 rounded-xl bg-slate-950 p-6'>
+      {session ? (
+        <DashboardNextAction
+          loginResume={loginResume}
+          streak={streakDays}
+          todayReviews={todayReviewCount}
+          userName={userName}
+        />
+      ) : null}
+
       <header>
         <div className='flex flex-wrap items-center gap-2'>
           <h1 className='text-3xl font-bold text-slate-50'>Bienvenue sur ExamenOPJ</h1>

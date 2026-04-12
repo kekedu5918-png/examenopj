@@ -1,5 +1,8 @@
+import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
+import { PricingCheckoutCancelledAnalytics } from '@/components/analytics/CheckoutReturnAnalytics';
+import { TrackOnMount } from '@/components/analytics/TrackOnMount';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { PricingThreeColumnPage } from '@/components/pricing/PricingThreeColumnPage';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
@@ -8,6 +11,7 @@ import { createCheckoutAction } from '@/features/pricing/actions/create-checkout
 import { PricingFallbackPlans } from '@/features/pricing/components/pricing-fallback-plans';
 import { getProducts } from '@/features/pricing/controllers/get-products';
 import { pickFreemiumStripePrices } from '@/features/pricing/controllers/pick-freemium-stripe-prices';
+import { AnalyticsEvents } from '@/lib/analytics/events';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 export const dynamic = 'force-dynamic';
@@ -44,6 +48,10 @@ export default async function PricingPage() {
   if (!monthly && !exam) {
     return (
       <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.pricing} pad='default' innerClassName='py-16 md:py-24'>
+        <Suspense fallback={null}>
+          <PricingCheckoutCancelledAnalytics />
+        </Suspense>
+        <TrackOnMount event={AnalyticsEvents.pricingViewed} />
         <header className='relative mb-12 text-center'>
           <h1 className='bg-gradient-to-br from-white via-slate-100 to-violet-200/90 bg-clip-text font-sans text-3xl font-extrabold tracking-tight text-transparent md:text-4xl'>
             Choisissez votre accès
@@ -58,11 +66,17 @@ export default async function PricingPage() {
   }
 
   return (
-    <PricingThreeColumnPage
-      isLoggedIn={!!session}
-      monthlyPrice={monthly}
-      examPrice={exam}
-      createCheckoutAction={createCheckoutAction}
-    />
+    <>
+      <Suspense fallback={null}>
+        <PricingCheckoutCancelledAnalytics />
+      </Suspense>
+      <TrackOnMount event={AnalyticsEvents.pricingViewed} />
+      <PricingThreeColumnPage
+        isLoggedIn={!!session}
+        monthlyPrice={monthly}
+        examPrice={exam}
+        createCheckoutAction={createCheckoutAction}
+      />
+    </>
   );
 }

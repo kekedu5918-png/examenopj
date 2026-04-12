@@ -1,12 +1,15 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Instrument_Serif, JetBrains_Mono } from 'next/font/google';
+import { DM_Sans, Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
 
+import { AnalyticsProviders } from '@/components/analytics/AnalyticsProviders';
 import { FloatingQuickFlashcards } from '@/components/layout/FloatingQuickFlashcards';
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { SiteAmbientMotion } from '@/components/layout/SiteAmbientMotion';
+import { SiteBackground } from '@/components/layout/SiteBackground';
+import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { SiteJsonLd } from '@/components/seo/site-json-ld';
 import { Toaster } from '@/components/ui/toaster';
 import { APP_NAME, SEO_KEYWORDS } from '@/constants/site';
@@ -17,6 +20,13 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import '@/styles/globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
+});
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -74,86 +84,48 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [{ media: '(prefers-color-scheme: dark)', color: '#0C1B33' }],
-  colorScheme: 'dark',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
+    { media: '(prefers-color-scheme: dark)', color: '#0C1B33' },
+  ],
+  colorScheme: 'dark light',
 };
 
 export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html
       lang='fr'
-      className={cn('dark', dmSans.variable, instrumentSerif.variable, jetbrainsMono.variable)}
+      className={cn(inter.variable, dmSans.variable, instrumentSerif.variable, jetbrainsMono.variable)}
       suppressHydrationWarning
     >
       <body
-        className={cn('relative min-h-screen bg-[#050a14] font-sans text-examen-ink antialiased')}
+        className={cn(
+          'relative min-h-screen bg-transparent font-sans text-slate-900 antialiased dark:text-examen-ink',
+        )}
         suppressHydrationWarning
       >
-        <SiteAmbientMotion />
-        <div className='pointer-events-none fixed inset-0 -z-10 bg-[#050a14]' aria-hidden>
-          {/* Base wash — profondeur type produit Apple */}
-          <div
-            className='absolute inset-0'
-            style={{
-              background:
-                'radial-gradient(ellipse 140% 100% at 50% 120%, rgba(12, 27, 51, 0.95) 0%, #050a14 45%, #030508 100%)',
-            }}
-          />
-          {/* Top center blue glow */}
-          <div
-            className='absolute left-1/2 top-0 h-[520px] w-[920px] -translate-x-1/2 opacity-[0.16]'
-            style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -8%, #3b82f6, transparent)' }}
-          />
-          {/* Top-right violet */}
-          <div
-            className='absolute right-0 top-0 h-[420px] w-[520px] opacity-[0.09]'
-            style={{ background: 'radial-gradient(ellipse 70% 60% at 100% 0%, #7c3aed, transparent)' }}
-          />
-          {/* Bottom-left cyan */}
-          <div
-            className='absolute bottom-0 left-0 h-[320px] w-[420px] opacity-[0.07]'
-            style={{ background: 'radial-gradient(ellipse 60% 60% at 0% 100%, #0ea5e9, transparent)' }}
-          />
-          {/* Vignette lisibilité */}
-          <div
-            className='absolute inset-0'
-            style={{
-              background: 'radial-gradient(ellipse 90% 70% at 50% 40%, transparent 0%, rgba(0,0,0,0.25) 100%)',
-            }}
-          />
-          {/* Grille subtile */}
-          <div
-            className='absolute inset-0 opacity-[0.02]'
-            style={{
-              backgroundImage:
-                'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-              backgroundSize: '64px 64px',
-            }}
-          />
-          {/* Grain film — cohérent avec le hero */}
-          <div
-            className='absolute inset-0 opacity-[0.035] mix-blend-overlay'
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
-            }}
-          />
-        </div>
-        <SiteJsonLd />
-        <a
-          href='#contenu-principal'
-          className='sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-examen-accent focus:px-4 focus:py-2 focus:text-white focus:outline-none'
-        >
-          Aller au contenu principal
-        </a>
-        <div className='flex min-h-screen flex-col'>
-          <Header />
-          <PageTransition>{children}</PageTransition>
-          <FloatingQuickFlashcards />
-          <Footer />
-        </div>
-        <Toaster />
-        <Analytics />
-        <SpeedInsights />
+        <ThemeProvider>
+          <AnalyticsProviders>
+            <SiteBackground />
+            <SiteAmbientMotion />
+            <SiteJsonLd />
+            <a
+              href='#contenu-principal'
+              className='sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-examen-accent focus:px-4 focus:py-2 focus:text-white focus:outline-none'
+            >
+              Aller au contenu principal
+            </a>
+            <div className='flex min-h-screen flex-col'>
+              <Header />
+              <PageTransition>{children}</PageTransition>
+              <FloatingQuickFlashcards />
+              <Footer />
+            </div>
+            <Toaster />
+            <Analytics />
+            <SpeedInsights />
+          </AnalyticsProviders>
+        </ThemeProvider>
       </body>
     </html>
   );

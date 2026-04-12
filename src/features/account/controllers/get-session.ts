@@ -17,6 +17,7 @@ export async function getSession() {
       id: user.id,
       email: user.email,
       created_at: user.created_at,
+      user_metadata: user.user_metadata ?? null,
     },
   };
 }

@@ -7,6 +7,7 @@ import { cn } from '@/utils/cn';
 
 import { COULEURS, DRAWER_MODULE_BTN } from './fondamentaux-theme';
 import { FondamentauxFicheIcon } from './FondamentauxFicheIcon';
+import { FondamentauxFicheLessonBlocks } from './FondamentauxFicheLessonBlocks';
 import { FondamentauxTableau } from './FondamentauxTableau';
 
 function RichInline({ text, className }: { text: string; className?: string }) {
@@ -47,7 +48,14 @@ type Props = {
 
 export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }: Props) {
   const cat = categories[fiche.categorie];
-  const c = COULEURS[cat.couleur];
+  if (!cat) {
+    return (
+      <div className="p-8 text-center text-slate-400">
+        <p>Catégorie introuvable pour cette fiche.</p>
+      </div>
+    );
+  }
+  const c = COULEURS[cat.couleur] ?? COULEURS.blue;
   const titleId = `fondamentaux-fiche-title-${fiche.id}`;
   const isPage = variant === 'page';
   const reperesSommaire = getReperesSommaireForModuleId(fiche.fasciculeId);
@@ -99,6 +107,8 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       >
         {fiche.accroche}
       </blockquote>
+
+      <FondamentauxFicheLessonBlocks ficheId={fiche.id} />
 
       {fiche.indispensableExamen ? (
         <div className='mb-10 rounded-2xl border border-gold-500/35 bg-gradient-to-br from-gold-500/[0.12] to-amber-600/[0.06] px-5 py-4 sm:px-6'>

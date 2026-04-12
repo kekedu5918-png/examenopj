@@ -155,6 +155,80 @@ export interface Database {
           }
         ];
       };
+      learning_modules: {
+        Row: {
+          color: string | null;
+          created_at: string;
+          icon: string | null;
+          id: string;
+          sort_order: number;
+          title: string;
+        };
+        Insert: {
+          color?: string | null;
+          created_at?: string;
+          icon?: string | null;
+          id: string;
+          sort_order: number;
+          title: string;
+        };
+        Update: {
+          color?: string | null;
+          created_at?: string;
+          icon?: string | null;
+          id?: string;
+          sort_order?: number;
+          title?: string;
+        };
+        Relationships: [];
+      };
+      learning_nodes: {
+        Row: {
+          client_key: string | null;
+          created_at: string;
+          description: string | null;
+          href: string | null;
+          id: string;
+          kind: string;
+          min_score_pct: number;
+          module_id: string;
+          sort_order: number;
+          title: string;
+        };
+        Insert: {
+          client_key?: string | null;
+          created_at?: string;
+          description?: string | null;
+          href?: string | null;
+          id?: string;
+          kind: string;
+          min_score_pct?: number;
+          module_id: string;
+          sort_order: number;
+          title: string;
+        };
+        Update: {
+          client_key?: string | null;
+          created_at?: string;
+          description?: string | null;
+          href?: string | null;
+          id?: string;
+          kind?: string;
+          min_score_pct?: number;
+          module_id?: string;
+          sort_order?: number;
+          title?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'learning_nodes_module_id_fkey';
+            columns: ['module_id'];
+            isOneToOne: false;
+            referencedRelation: 'learning_modules';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       modules: {
         Row: {
           couleur: string | null;
@@ -363,6 +437,21 @@ export interface Database {
           }
         ];
       };
+      stripe_webhook_events: {
+        Row: {
+          created_at: string;
+          id: string;
+        };
+        Insert: {
+          created_at?: string;
+          id: string;
+        };
+        Update: {
+          created_at?: string;
+          id?: string;
+        };
+        Relationships: [];
+      };
       subscriptions: {
         Row: {
           cancel_at: string | null;
@@ -570,6 +659,45 @@ export interface Database {
         };
         Relationships: [];
       };
+      user_node_progress: {
+        Row: {
+          best_score_pct: number | null;
+          completed_at: string | null;
+          node_id: string;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          best_score_pct?: number | null;
+          completed_at?: string | null;
+          node_id: string;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          best_score_pct?: number | null;
+          completed_at?: string | null;
+          node_id?: string;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: 'user_node_progress_node_id_fkey';
+            columns: ['node_id'];
+            isOneToOne: false;
+            referencedRelation: 'learning_nodes';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'user_node_progress_user_id_fkey';
+            columns: ['user_id'];
+            isOneToOne: false;
+            referencedRelation: 'users';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
       user_streaks: {
         Row: {
           id: string;
@@ -633,6 +761,27 @@ export interface Database {
           current_progress?: number;
           target_progress?: number;
           created_at?: string;
+        };
+        Relationships: [];
+      };
+      waitlist: {
+        Row: {
+          created_at: string;
+          email: string;
+          id: string;
+          source: string;
+        };
+        Insert: {
+          created_at?: string;
+          email: string;
+          id?: string;
+          source?: string;
+        };
+        Update: {
+          created_at?: string;
+          email?: string;
+          id?: string;
+          source?: string;
         };
         Relationships: [];
       };

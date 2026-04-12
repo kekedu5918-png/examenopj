@@ -4,17 +4,17 @@ import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
 const colLink =
-  'text-sm text-slate-500 transition-colors duration-150 hover:text-slate-300 hover:translate-x-0.5 inline-block';
+  'text-sm text-slate-600 transition-colors duration-150 hover:text-slate-900 hover:translate-x-0.5 dark:text-slate-500 dark:hover:text-slate-300 inline-block';
 
 export function Footer() {
   return (
-    <footer className='relative mt-auto overflow-hidden border-t border-white/[0.06]'>
+    <footer className='relative mt-auto overflow-hidden border-t border-slate-200 dark:border-white/[0.06]'>
       <div
         className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent'
         aria-hidden
       />
       {/* Background */}
-      <div className='absolute inset-0 bg-gradient-to-b from-transparent via-[#050a14]/80 to-[#030508]' />
+      <div className='absolute inset-0 bg-slate-50/90 dark:bg-gradient-to-b dark:from-transparent dark:via-[#050a14]/80 dark:to-[#030508]' />
       <div
         className='pointer-events-none absolute bottom-0 left-1/2 h-56 w-[min(600px,90vw)] -translate-x-1/2 opacity-[0.14] blur-[90px]'
         style={{
@@ -36,7 +36,7 @@ export function Footer() {
             <div className='mb-3'>
               <BrandWordmark href='/' size='footer' />
             </div>
-            <p className='max-w-xs text-sm leading-relaxed text-slate-500'>
+            <p className='max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-500'>
               Préparation complète à l&apos;examen OPJ session 2026.
               <br />
               Site indépendant · Non affilié à l&apos;administration.

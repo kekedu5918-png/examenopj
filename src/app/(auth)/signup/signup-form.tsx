@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { describeAuthError } from '@/app/(auth)/auth-error-message';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { AnalyticsEvents, track } from '@/lib/analytics/events';
 import { createSupabaseBrowserClient } from '@/libs/supabase/supabase-browser';
 
 export function SignUpForm() {
@@ -15,6 +16,7 @@ export function SignUpForm() {
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    track(AnalyticsEvents.signupStart, { source: 'email' });
     setErrorText(null);
     setPending(true);
     const form = e.currentTarget;

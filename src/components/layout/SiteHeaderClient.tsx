@@ -21,6 +21,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import { ThemeToggle } from '@/components/ui/ThemeToggle';
 import { getQuizStreak } from '@/lib/quiz-gamification';
 import { ActionResponse } from '@/types/action-response';
 import { cn } from '@/utils/cn';
@@ -47,8 +48,12 @@ function isActiveGroup(pathname: string, prefixes: string[]): boolean {
 
 const navBtn =
   'relative inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3';
-const navInactive = 'text-slate-400 hover:text-white';
-const navActive = 'text-white after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-blue-400';
+const navInactive =
+  'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white';
+const navActive =
+  'text-slate-900 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-blue-600 dark:text-white dark:after:bg-blue-400';
+const dropSurface =
+  'min-w-[220px] border-slate-200 bg-white text-slate-900 dark:border-white/10 dark:bg-examen-raised dark:text-examen-ink';
 const dropTriggerClass = cn(navBtn, 'border-0 bg-transparent');
 
 export function SiteHeaderClient({
@@ -105,26 +110,23 @@ export function SiteHeaderClient({
   const entrainerActive = isActiveGroup(pathname, ['/quiz', '/flashcards', '/entrainement', '/sujets-blancs']);
   const enquetesActive = isActivePath(pathname, '/cours/enquetes');
 
-  const headerStyle = {
-    background: scrolled ? 'rgba(6, 11, 22, 0.88)' : 'rgba(8, 15, 30, 0)',
-    borderBottomColor: scrolled ? 'rgba(255, 255, 255, 0.08)' : 'transparent',
-    boxShadow: scrolled ? '0 4px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.04)' : 'none',
-    transition: 'background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease',
-  } as const;
-
   return (
     <div className='sticky top-0 z-[1000]'>
       {trialReminder ? (
         <TrialReminderBanner daysLeft={trialReminder.daysLeft} endsAtIso={trialReminder.endsAtIso} />
       ) : null}
       <motion.header
-        className='relative border-b backdrop-blur-xl [-webkit-backdrop-filter:blur(20px)]'
-        style={headerStyle}
+        className={cn(
+          'relative border-b backdrop-blur-xl transition-[background,box-shadow,border-color] duration-300 [-webkit-backdrop-filter:blur(20px)]',
+          scrolled
+            ? 'border-slate-200/90 bg-white/90 shadow-md dark:border-white/[0.08] dark:bg-[rgba(6,11,22,0.88)] dark:shadow-[0_4px_32px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04)]'
+            : 'border-transparent bg-transparent',
+        )}
         aria-label='Navigation principale'
       >
         {scrolled ? (
           <div
-            className='pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent'
+            className='pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent dark:via-cyan-400/40'
             aria-hidden
           />
         ) : null}
@@ -140,9 +142,9 @@ export function SiteHeaderClient({
                 Cours
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
+              <DropdownMenuContent align='start' className={dropSurface}>
                 {SITE_HEADER_COURS_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
@@ -157,9 +159,9 @@ export function SiteHeaderClient({
                 Infractions
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
+              <DropdownMenuContent align='start' className={dropSurface}>
                 {SITE_HEADER_INFRACTIONS_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
@@ -180,9 +182,9 @@ export function SiteHeaderClient({
                 Épreuves
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
+              <DropdownMenuContent align='start' className={dropSurface}>
                 {SITE_HEADER_EPREUVES_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
@@ -196,9 +198,9 @@ export function SiteHeaderClient({
                 S&apos;entraîner
                 <ChevronDown className='h-4 w-4 opacity-70' aria-hidden />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align='start' className='min-w-[220px] border-white/10 bg-examen-raised text-examen-ink'>
+              <DropdownMenuContent align='start' className={dropSurface}>
                 {SITE_HEADER_ENTRAINER_LINKS.map((item) => (
-                  <DropdownMenuItem key={item.href} asChild className='focus:bg-white/10'>
+                  <DropdownMenuItem key={item.href} asChild className='focus:bg-slate-100 dark:focus:bg-white/10'>
                     <Link href={item.href}>{item.label}</Link>
                   </DropdownMenuItem>
                 ))}
@@ -208,6 +210,7 @@ export function SiteHeaderClient({
           </nav>
 
           <div className='hidden shrink-0 items-center gap-3 lg:flex'>
+            <ThemeToggle />
             {quizStreak > 0 ? (
               <span
                 className='inline-flex items-center gap-1 rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-1 text-[11px] font-semibold text-amber-300'
@@ -242,7 +245,10 @@ export function SiteHeaderClient({
               </>
             ) : (
               <>
-                <Link href='/login' className='text-sm font-medium text-examen-inkMuted no-underline transition-colors hover:text-white'>
+                <Link
+                  href='/login'
+                  className='text-sm font-medium text-slate-600 no-underline transition-colors hover:text-slate-900 dark:text-examen-inkMuted dark:hover:text-white'
+                >
                   Connexion
                 </Link>
                 <Link
@@ -255,7 +261,8 @@ export function SiteHeaderClient({
             )}
           </div>
 
-          <div className='flex items-center gap-2 lg:hidden'>
+          <div className='flex items-center gap-1 lg:hidden'>
+            <ThemeToggle />
             {quizStreak > 0 ? (
               <span
                 className='inline-flex items-center gap-0.5 rounded-md border border-amber-500/30 bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-semibold text-amber-300'
@@ -281,7 +288,7 @@ export function SiteHeaderClient({
             </Link>
             <button
               type='button'
-              className='inline-flex rounded-lg p-2 text-examen-inkMuted hover:text-white focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/50'
+              className='inline-flex rounded-lg p-2 text-slate-600 hover:text-slate-900 focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/50 dark:text-examen-inkMuted dark:hover:text-white'
               aria-expanded={mobileOpen}
               aria-controls={mobileMenuId}
               onClick={() => setMobileOpen(true)}

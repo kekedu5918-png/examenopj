@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { describeAuthError } from '@/app/(auth)/auth-error-message';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { AnalyticsEvents, track } from '@/lib/analytics/events';
 import { createSupabaseBrowserClient } from '@/libs/supabase/supabase-browser';
 import { safeInternalPath } from '@/utils/safe-internal-path';
 
@@ -36,6 +37,7 @@ export function LoginForm({ nextPath }: LoginFormProps) {
         setPending(false);
         return;
       }
+      track(AnalyticsEvents.loginSuccess, { method: 'password' });
       // Navigation complète : évite la course refresh RSC /login + push (boucles ou clignotements).
       const postLogin = `/post-login?next=${encodeURIComponent(dest)}`;
       window.location.assign(postLogin);

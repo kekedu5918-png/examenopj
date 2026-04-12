@@ -3,7 +3,7 @@
 import { type NextRequest, NextResponse } from 'next/server';
 
 import { getEnvVar } from '@/utils/get-env-var';
-import { createServerClient } from '@supabase/ssr';
+import { type CookieOptions, createServerClient } from '@supabase/ssr';
 
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({
@@ -18,7 +18,7 @@ export async function updateSession(request: NextRequest) {
         getAll() {
           return request.cookies.getAll();
         },
-        setAll(cookiesToSet: Array<{ name: string; value: string; options?: any }>) {
+        setAll(cookiesToSet: Array<{ name: string; value: string; options?: CookieOptions }>) {
           for (const { name, value, options } of cookiesToSet) {
             request.cookies.set(name, value);
           }
@@ -54,6 +54,27 @@ export async function updateSession(request: NextRequest) {
     url.pathname = '/login';
     url.searchParams.set('next', `${path}${request.nextUrl.search}`);
     return NextResponse.redirect(url);
+  }
+
+  if (user && path === '/onboarding') {
+    try {
+      const { data, error } = await supabase
+        .from('onboarding_progress')
+        .select('completed')
+        .eq('user_id', user.id)
+        .maybeSingle();
+      if (!error && data?.completed === true) {
+        const url = request.nextUrl.clone();
+        url.pathname = '/dashboard';
+        const redirectResponse = NextResponse.redirect(url);
+        for (const c of supabaseResponse.cookies.getAll()) {
+          redirectResponse.cookies.set(c.name, c.value);
+        }
+        return redirectResponse;
+      }
+    } catch {
+      /* laisser passer */
+    }
   }
 
   // IMPORTANT: You *must* return the supabaseResponse object as it is.

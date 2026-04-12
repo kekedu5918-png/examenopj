@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useId, useState, useTransition } from 'react';
+import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Check, X } from 'lucide-react';
 
@@ -9,6 +9,7 @@ import { SectionTitle } from '@/components/ui/SectionTitle';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import type { CreateCheckoutResult } from '@/features/pricing/actions/create-checkout-action';
 import type { Price } from '@/features/pricing/types';
+import { AnalyticsEvents, track } from '@/lib/analytics/events';
 import { cn } from '@/utils/cn';
 
 type CreateCheckoutFn = (args: { price: Price }) => Promise<CreateCheckoutResult>;
@@ -82,14 +83,14 @@ export function PricingThreeColumnPage({
   createCheckoutAction,
 }: PricingThreeColumnPageProps) {
   const [error, setError] = useState<string | null>(null);
-  const [pending, startTransition] = useTransition();
+  const [pending, setPending] = useState(false);
   const [billing, setBilling] = useState<'monthly' | 'session'>('session');
   const groupId = useId();
 
   const monthlyLabel = formatEurFromUnitAmount(monthlyPrice?.unit_amount) ?? '9,90 €';
   const examLabel = formatEurFromUnitAmount(examPrice?.unit_amount) ?? '49 €';
 
-  function checkout(price: Price | null) {
+  async function checkout(price: Price | null) {
     setError(null);
     if (!price) {
       setError('Paiement : configuration Stripe en cours. Réessayez plus tard ou contactez-nous.');
@@ -99,18 +100,28 @@ export function PricingThreeColumnPage({
       window.location.href = '/inscription';
       return;
     }
-    startTransition(async () => {
-      try {
-        const result = await createCheckoutAction({ price });
-        if (!result.ok) {
-          window.location.href = result.redirectTo;
-          return;
-        }
-        window.location.href = result.url;
-      } catch (e) {
-        setError(e instanceof Error ? e.message : 'Paiement indisponible.');
+    setPending(true);
+    try {
+      const result = await createCheckoutAction({ price });
+      if (!result.ok) {
+        window.location.href = result.redirectTo;
+        return;
       }
-    });
+      // Évite React #310 : PostHog/track peut mettre à jour le contexte pendant une transition ;
+      // on reporte tracking + navigation au prochain tour (hors cycle de rendu React).
+      const url = result.url;
+      const payload = {
+        price_id: price.id,
+        billing: price.type === 'recurring' ? ('monthly' as const) : ('one_time' as const),
+      };
+      window.setTimeout(() => {
+        track(AnalyticsEvents.checkoutStart, payload);
+        window.location.href = url;
+      }, 0);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Paiement indisponible.');
+      setPending(false);
+    }
   }
 
   return (

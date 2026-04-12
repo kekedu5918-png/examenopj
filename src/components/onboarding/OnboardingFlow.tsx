@@ -4,6 +4,7 @@ import { type ReactNode, useEffect, useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { OnboardingStepIndicator } from '@/components/onboarding/OnboardingStepIndicator';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
@@ -759,17 +760,21 @@ export function OnboardingFlow() {
 
   if (stage === 4 && result) {
     return (
-      <Stage4Results
-        result={result}
-        saveWarning={saveWarning}
-        onRetrySave={retryPayload ? handleRetrySave : undefined}
-        isRetrying={isPending}
-      />
+      <>
+        <OnboardingStepIndicator currentStep={stage} />
+        <Stage4Results
+          result={result}
+          saveWarning={saveWarning}
+          onRetrySave={retryPayload ? handleRetrySave : undefined}
+          isRetrying={isPending}
+        />
+      </>
     );
   }
 
   return (
     <>
+      <OnboardingStepIndicator currentStep={stage} />
       {stage === 0 && <Stage0Welcome onStart={() => setStage(1)} />}
       {stage === 1 && <Stage1Phase onNext={handleStage1} />}
       {stage === 2 && (

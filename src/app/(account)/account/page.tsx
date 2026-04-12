@@ -1,7 +1,8 @@
-import { PropsWithChildren, ReactNode } from 'react';
+import { PropsWithChildren, ReactNode, Suspense } from 'react';
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
+import { AccountCheckoutSuccessAnalytics } from '@/components/analytics/CheckoutReturnAnalytics';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Button } from '@/components/ui/button';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
@@ -41,6 +42,9 @@ export default async function AccountPage() {
 
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.account} pad='default'>
+    <Suspense fallback={null}>
+      <AccountCheckoutSuccessAnalytics />
+    </Suspense>
     <section className='rounded-lg bg-black/40 px-4 py-12 ring-1 ring-white/10'>
       <h1 className='mb-8 text-center'>Mon compte</h1>
 

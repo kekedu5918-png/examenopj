@@ -1,30 +1,18 @@
-import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { QuizPageClient } from '@/components/quiz/quiz-page-client';
-import { SHELL_GLOW } from '@/constants/interior-shell-glow';
-import { getContentAccess } from '@/features/access/get-content-access';
+import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
 
+/** URLs canoniques : `/quiz` (évite le doublon `/entrainement/quiz`). */
 export const metadata: Metadata = {
   title: 'Quiz — Examen OPJ',
-  description:
-    "QCM et mode hardcore (réponse libre) pour l'examen OPJ : infractions, procédure et cas pratiques. Lien direct : ?hardcore=1.",
+  robots: { index: false, follow: true },
 };
 
-export default async function EntrainementQuizPage() {
-  const access = await getContentAccess();
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
 
-  return (
-    <Suspense
-      fallback={
-        <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.quiz} pad='default' innerClassName='flex min-h-[50vh] items-center justify-center'>
-          <p className='sr-only'>Chargement du quiz…</p>
-          <div className='h-10 w-10 animate-pulse rounded-full bg-white/10' aria-hidden />
-        </InteriorPageShell>
-      }
-    >
-      <QuizPageClient initialAccess={access} />
-    </Suspense>
-  );
+export default function EntrainementQuizRedirect({ searchParams = {} }: PageProps) {
+  permanentRedirect(pathWithSearchParams('/quiz', searchParams));
 }

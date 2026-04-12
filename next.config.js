@@ -76,8 +76,6 @@ const nextConfig = {
       { source: '/enquetes', destination: '/cours/enquetes', permanent: true },
       { source: '/fascicules', destination: '/programme', permanent: true },
       { source: '/fascicules/:id', destination: '/cours/modules/:id', permanent: true },
-      { source: '/entrainement/quiz', destination: '/quiz', permanent: false },
-      { source: '/entrainement/flashcards', destination: '/flashcards', permanent: false },
       { source: '/recapitulatif', destination: '/entrainement/recapitulatif', permanent: true },
       { source: '/about', destination: '/a-propos', permanent: true },
       { source: '/about-us', destination: '/a-propos', permanent: true },

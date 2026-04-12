@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 
 /** @type {import('tailwindcss').Config} */
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: ['./src/**/*.{ts,tsx}'],
   theme: {
     container: {
@@ -92,6 +92,17 @@ const config: Config = {
           slate50: '#F8FAFC',
           slate900: '#0F172A',
         },
+        ds: {
+          'bg-primary': 'var(--ds-bg-primary)',
+          'bg-secondary': 'var(--ds-bg-secondary)',
+          'bg-elevated': 'var(--ds-bg-elevated)',
+          border: 'var(--ds-border)',
+          'text-primary': 'var(--ds-text-primary)',
+          'text-muted': 'var(--ds-text-muted)',
+          accent: 'var(--ds-accent)',
+          success: 'var(--ds-success)',
+          warning: 'var(--ds-warning)',
+        },
       },
       boxShadow: {
         'ex-card': '0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)',
@@ -109,7 +120,13 @@ const config: Config = {
         sm: 'calc(var(--radius) - 4px)',
       },
       fontFamily: {
-        sans: ['var(--font-dm-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: [
+          'var(--font-inter)',
+          'var(--font-dm-sans)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
         display: ['var(--font-instrument-serif)', 'Georgia', 'ui-serif', 'serif'],
         body: ['var(--font-dm-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
@@ -157,6 +174,10 @@ const config: Config = {
           '0%': { backgroundPosition: '200% 0' },
           '100%': { backgroundPosition: '-200% 0' },
         },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
         'ex-pulse-dot': {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.65', transform: 'scale(1.15)' },
@@ -184,6 +205,7 @@ const config: Config = {
         'countdown-pulse': 'countdown-pulse 3s ease-in-out infinite',
         'ex-float': 'ex-float 3s ease-in-out infinite',
         'ex-shimmer': 'ex-shimmer 2.2s linear infinite',
+        shimmer: 'shimmer 2s ease-in-out infinite',
         'ex-pulse-dot': 'ex-pulse-dot 2s ease-in-out infinite',
         'ex-glow-pulse': 'ex-glow-pulse 2.5s ease-in-out infinite',
         'ex-fade-up': 'ex-fade-up 0.5s ease-out forwards',

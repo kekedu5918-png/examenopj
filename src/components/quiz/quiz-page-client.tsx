@@ -24,9 +24,8 @@ import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-atte
 import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
 import { cn } from '@/utils/cn';
 
-import { QuizInterface } from './quiz-interface';
+import { QuizInterface, type QuizMcqSessionResult } from './quiz-interface';
 import { QuizInterfaceHardcore } from './quiz-interface-hardcore';
-import { QuizResult } from './quiz-result';
 import {
   applyQuestionLimit,
   filterQuestions,
@@ -40,6 +39,7 @@ import {
   recordQuizBestPercent,
   shuffleQuizQuestionOptions,
 } from './quiz-utils';
+import { SessionComplete } from './SessionComplete';
 
 const ease = [...LANDING_EASE] as [number, number, number, number];
 
@@ -98,8 +98,8 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const [answerMode, setAnswerMode] = useState<QuizAnswerMode>('mcq');
   const [sessionQuestions, setSessionQuestions] = useState<QuizQuestion[]>([]);
   const [launchConfig, setLaunchConfig] = useState<LaunchConfig | null>(null);
-  const [result, setResult] = useState({ correct: 0, total: 0 });
-  const [bestAfterQuiz, setBestAfterQuiz] = useState<number | null>(null);
+  const [sessionResult, setSessionResult] = useState<QuizMcqSessionResult | null>(null);
+  const [lastQuizPersonalBest, setLastQuizPersonalBest] = useState(false);
   const [quotaTick, setQuotaTick] = useState(0);
   const [streakDays, setStreakDays] = useState(0);
 
@@ -242,8 +242,10 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     setPhase('quiz');
   }
 
-  function handleQuizComplete(correct: number, total: number) {
-    const pct = total > 0 ? (correct / total) * 100 : 0;
+  function finalizeQuizSession(result: QuizMcqSessionResult) {
+    const pct = result.score;
+    const correct = result.correctAnswers;
+    const total = result.totalQuestions;
     const key = launchConfig
       ? getQuizStorageKey(
           launchConfig.mode,
@@ -252,9 +254,12 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           launchConfig.answerMode
         )
       : storageKey;
-    const best = recordQuizBestPercent(key, pct);
-    setBestAfterQuiz(best);
-    setResult({ correct, total });
+    const prevBest = readBestQuizPercent(key);
+    const roundedPct = Math.round(pct * 10) / 10;
+    const isPB = prevBest == null || roundedPct > prevBest;
+    recordQuizBestPercent(key, pct);
+    setLastQuizPersonalBest(isPB);
+    setSessionResult(result);
     setPhase('result');
 
     if (launchConfig && isThemeQuizMode(launchConfig.mode) && launchConfig.fascicule != null) {
@@ -289,21 +294,27 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
     }
   }
 
-  function handleRecommencer() {
-    if (!launchConfig) return;
-    const cap =
-      access.maxQuizQuestionsPerDay == null ? null : Math.max(0, access.maxQuizQuestionsPerDay - getDailyQuizQuestionCount());
-    const pool = buildPool(launchConfig, cap);
-    if (pool.length === 0) return;
-    setSessionQuestions(pool);
-    setPhase('quiz');
+  function handleMcqComplete(result: QuizMcqSessionResult) {
+    finalizeQuizSession(result);
+  }
+
+  function handleHardcoreComplete(correct: number, total: number) {
+    const pct = total > 0 ? (correct / total) * 100 : 0;
+    finalizeQuizSession({
+      score: pct,
+      correctAnswers: correct,
+      totalQuestions: total,
+      xpGained: correct * 10,
+      mistakeTopics: [],
+    });
   }
 
   function handleChangerMode() {
     setPhase('setup');
     setSessionQuestions([]);
     setLaunchConfig(null);
-    setBestAfterQuiz(null);
+    setSessionResult(null);
+    setLastQuizPersonalBest(false);
   }
 
   if (phase === 'quiz') {
@@ -319,23 +330,43 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           </button>
         </div>
         {(launchConfig?.answerMode ?? answerMode) === 'hardcore' ? (
-          <QuizInterfaceHardcore questions={sessionQuestions} onComplete={handleQuizComplete} />
+          <QuizInterfaceHardcore questions={sessionQuestions} onComplete={handleHardcoreComplete} />
         ) : (
-          <QuizInterface questions={sessionQuestions} onComplete={handleQuizComplete} />
+          <QuizInterface
+            questions={sessionQuestions}
+            onComplete={handleMcqComplete}
+            onQuit={handleChangerMode}
+            streak={streakDays}
+          />
         )}
       </InteriorPageShell>
     );
   }
 
   if (phase === 'result') {
+    if (!sessionResult) {
+      return null;
+    }
     return (
       <InteriorPageShell fullBleed maxWidth='6xl' glow={SHELL_GLOW.quiz} pad='default'>
-        <QuizResult
-          correct={result.correct}
-          total={result.total}
-          bestPercent={bestAfterQuiz}
-          onRecommencer={handleRecommencer}
-          onChangerMode={handleChangerMode}
+        <SessionComplete
+          score={sessionResult.score}
+          totalQuestions={sessionResult.totalQuestions}
+          correctAnswers={sessionResult.correctAnswers}
+          xpGained={sessionResult.xpGained}
+          streakAfter={streakDays}
+          isPersonalBest={lastQuizPersonalBest}
+          mistakeTopics={sessionResult.mistakeTopics}
+          onContinue={handleChangerMode}
+          onReviewMistakes={() => {
+            const topics = sessionResult.mistakeTopics;
+            const reviewQuestions = sessionQuestions.filter((q) => topics.includes(q.domaine));
+            if (reviewQuestions.length === 0) return;
+            setSessionQuestions(reviewQuestions);
+            setSessionResult(null);
+            setLastQuizPersonalBest(false);
+            setPhase('quiz');
+          }}
         />
       </InteriorPageShell>
     );

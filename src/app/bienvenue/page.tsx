@@ -3,7 +3,9 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { CheckCircle2 } from 'lucide-react';
 
+import { TrackOnMount } from '@/components/analytics/TrackOnMount';
 import { getSession } from '@/features/account/controllers/get-session';
+import { AnalyticsEvents } from '@/lib/analytics/events';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 const title = 'Bienvenue — ExamenOPJ';
@@ -55,6 +57,7 @@ export default async function BienvenuePage() {
 
   return (
     <main className='mx-auto max-w-2xl px-4 py-14 md:py-20'>
+      <TrackOnMount event={AnalyticsEvents.onboardingComplete} />
       <h1 className='font-display text-3xl font-bold text-white'>Bienvenue. Voici comment commencer.</h1>
       <p className='mt-3 text-slate-400'>
         Quatre étapes pour ne jamais te demander quoi faire en premier.

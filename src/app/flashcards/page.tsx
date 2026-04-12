@@ -1,10 +1,12 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
 
+import { TrackOnMount } from '@/components/analytics/TrackOnMount';
 import { FlashcardsPageClient } from '@/components/flashcards/FlashcardsPageClient';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
+import { AnalyticsEvents } from '@/lib/analytics/events';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 export const metadata: Metadata = {
@@ -30,6 +32,7 @@ export default async function FlashcardsPage() {
         </InteriorPageShell>
       }
     >
+      <TrackOnMount event={AnalyticsEvents.flashcardSessionStart} />
       <FlashcardsPageClient initialAccess={access} />
     </Suspense>
   );

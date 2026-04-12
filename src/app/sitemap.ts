@@ -32,10 +32,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/guide-revision-opj',
   ];
 
-  const coursPages = ['/cours', '/cours/pv', '/cours/modules', '/cours/enquetes'];
+  const coursPages = ['/cours', '/parcours-opj', '/cours/pv', '/cours/modules', '/cours/enquetes'];
 
   const epreuvesPages = ['/epreuves', '/epreuves/epreuve-1', '/epreuves/epreuve-2', '/epreuves/epreuve-3'];
 
+  /** Hub entraînement + URLs canoniques quiz/flashcards (`/entrainement/quiz` → redirect `/quiz`, idem flashcards). */
   const entrainementPages = [
     '/entrainement',
     '/quiz',

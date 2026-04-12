@@ -1,8 +1,17 @@
 'use server';
 
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { Database } from '@/libs/supabase/types';
 
 import type { DiagnosticAnswer, DiagnosticLevel, DiagnosticResult, FormationPhase, PersonalizedPlan } from '../types';
+
+type OnboardingProgressInsert = Database['public']['Tables']['onboarding_progress']['Insert'];
+type OnboardingProgressRow = Database['public']['Tables']['onboarding_progress']['Row'];
+type OnboardingCompletedOnly = Pick<OnboardingProgressRow, 'completed'>;
+type OnboardingPlanPick = Pick<
+  OnboardingProgressRow,
+  'diagnostic_level' | 'diagnostic_score' | 'generated_plan' | 'strengths' | 'weaknesses'
+>;
 
 const EXAM_DATE = new Date('2026-06-11');
 
@@ -50,7 +59,7 @@ function generatePlan(
       phase1Topics.push({ id: 'fondamentaux_procedure', name: 'Fondamentaux Procédure (GAV, perquisition)' });
     }
     if (weaknesses.includes('oral')) {
-      phase1Topics.push({ id: 'oral_intro', name: 'Introduction à l\'oral (techniques, posture)' });
+      phase1Topics.push({ id: 'oral_intro', name: "Introduction à l'oral (techniques, posture)" });
     }
     if (phase1Topics.length === 0) {
       phase1Topics.push({ id: 'revision_generale', name: 'Révision générale des fondamentaux' });
@@ -126,16 +135,19 @@ export async function initializeOnboarding(): Promise<{ ok: boolean; alreadyComp
 
   if (!user) return { ok: false, alreadyCompleted: false };
 
-  const { data: existing } = await (supabase as any)
+  const { data: existingRaw } = await supabase
     .from('onboarding_progress')
     .select('completed')
     .eq('user_id', user.id)
     .maybeSingle();
 
+  const existing = existingRaw as OnboardingCompletedOnly | null;
+
   if (existing?.completed) return { ok: true, alreadyCompleted: true };
 
   if (!existing) {
-    await (supabase as any).from('onboarding_progress').insert({ user_id: user.id, stage: 1 });
+    // @ts-expect-error — Insert inféré `never` (Database manuel vs @supabase/ssr) ; aligner avec `supabase gen types`.
+    await supabase.from('onboarding_progress').insert({ user_id: user.id, stage: 1 });
   }
 
   return { ok: true, alreadyCompleted: false };
@@ -149,13 +161,15 @@ export async function checkOnboardingCompleted(): Promise<boolean> {
 
   if (!user) return true; // pas d'utilisateur → pas d'onboarding à afficher
 
-  const { data } = await (supabase as any)
+  const { data: completedRaw } = await supabase
     .from('onboarding_progress')
     .select('completed')
     .eq('user_id', user.id)
     .maybeSingle();
 
-  return data?.completed === true;
+  const completedRow = completedRaw as OnboardingCompletedOnly | null;
+
+  return completedRow?.completed === true;
 }
 
 export async function saveOnboardingStage(
@@ -173,14 +187,16 @@ export async function saveOnboardingStage(
 
   if (!user) return { ok: false };
 
-  const update: Record<string, unknown> = { stage: stage + 1 };
-  if (data.formation_phase) update.formation_phase = data.formation_phase;
-  if (data.strengths !== undefined) update.strengths = data.strengths;
-  if (data.weaknesses !== undefined) update.weaknesses = data.weaknesses;
+  const row: OnboardingProgressInsert = {
+    user_id: user.id,
+    stage: stage + 1,
+  };
+  if (data.formation_phase) row.formation_phase = data.formation_phase;
+  if (data.strengths !== undefined) row.strengths = data.strengths;
+  if (data.weaknesses !== undefined) row.weaknesses = data.weaknesses;
 
-  const { error } = await (supabase as any)
-    .from('onboarding_progress')
-    .upsert({ user_id: user.id, ...update }, { onConflict: 'user_id' });
+  // @ts-expect-error — idem insert : upsert onboarding_progress.
+  const { error } = await supabase.from('onboarding_progress').upsert(row, { onConflict: 'user_id' });
 
   if (error) {
     console.error('[saveOnboardingStage]', error);
@@ -229,23 +245,21 @@ export async function completeDiagnostic(
     };
   }
 
-  const { error } = await (supabase as any)
-    .from('onboarding_progress')
-    .upsert(
-      {
-        user_id: user.id,
-        formation_phase: formationPhase,
-        weaknesses,
-        diagnostic_answers: answers,
-        diagnostic_level: levelData.level,
-        diagnostic_score: levelData.score,
-        generated_plan: plan as unknown as Record<string, unknown>,
-        stage: 5,
-        completed: true,
-        completed_at: new Date().toISOString(),
-      },
-      { onConflict: 'user_id' },
-    );
+  const upsertRow: OnboardingProgressInsert = {
+    user_id: user.id,
+    formation_phase: formationPhase,
+    weaknesses,
+    diagnostic_answers: answers,
+    diagnostic_level: levelData.level,
+    diagnostic_score: levelData.score,
+    generated_plan: plan as unknown as Record<string, unknown>,
+    stage: 5,
+    completed: true,
+    completed_at: new Date().toISOString(),
+  };
+
+  // @ts-expect-error — idem insert : upsert onboarding_progress.
+  const { error } = await supabase.from('onboarding_progress').upsert(upsertRow, { onConflict: 'user_id' });
 
   if (error) {
     console.error('[completeDiagnostic]', error);
@@ -268,21 +282,23 @@ export async function getOnboardingPlan(): Promise<DiagnosticResult | null> {
 
   if (!user) return null;
 
-  const { data } = await (supabase as any)
+  const { data: planRaw } = await supabase
     .from('onboarding_progress')
     .select('diagnostic_level, diagnostic_score, generated_plan, strengths, weaknesses')
     .eq('user_id', user.id)
     .maybeSingle();
 
-  if (!data?.diagnostic_level) return null;
+  const row = planRaw as OnboardingPlanPick | null;
+
+  if (!row?.diagnostic_level) return null;
 
   return {
-    level: data.diagnostic_level,
-    score: data.diagnostic_score ?? 0,
-    score_percent: Math.round(((data.diagnostic_score ?? 0) / 5) * 100),
+    level: row.diagnostic_level,
+    score: row.diagnostic_score ?? 0,
+    score_percent: Math.round(((row.diagnostic_score ?? 0) / 5) * 100),
     strengths: [],
     weaknesses_feedback: [],
-    plan: (data.generated_plan as unknown as PersonalizedPlan) ?? {
+    plan: (row.generated_plan as unknown as PersonalizedPlan) ?? {
       total_weeks: 7,
       exam_date: '2026-06-11',
       phases: [],

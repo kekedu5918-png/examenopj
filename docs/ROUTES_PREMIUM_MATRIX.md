@@ -22,8 +22,8 @@ Généré pour l’audit sécurité produit. Les pages **sans** `getContentAcces
 | `/quiz` | `getContentAccess` | Plafond journalier freemium côté client attendu |
 | `/flashcards` | `getContentAccess` | Idem |
 | `/fondamentaux` (hub) | `getContentAccess` | Tier pour affichage |
-| `/entrainement/quiz` | `getContentAccess` | |
-| `/entrainement/flashcards` | `getContentAccess` | |
+| `/entrainement/quiz` | — | **Redirect 308** → `/quiz` (même query string) ; contrôle sur `/quiz` |
+| `/entrainement/flashcards` | — | **Redirect 308** → `/flashcards` (même query string) ; contrôle sur `/flashcards` |
 | `/entrainement/redaction-pv` | `hasPremiumAccess` | Paywall complet si non premium |
 | `/entrainement/rapport-synthese` | `hasPremiumAccess` | Idem |
 | `/cours/modeles-pv/[slug]` | `hasPremiumAccess` + flags fiche | OK |
