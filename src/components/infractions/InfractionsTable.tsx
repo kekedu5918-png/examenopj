@@ -2,7 +2,7 @@
 
 import { useCallback, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRight, X } from 'lucide-react';
+import { ArrowRight, ChevronRight, List, X } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { InfractionDetailContent } from '@/components/infractions/InfractionDetailContent';
@@ -116,10 +116,10 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
     );
 
   return (
-    <div className='space-y-3'>
-      <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
+    <div className='space-y-5'>
+      <div className='flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between'>
         <div className='min-w-0 space-y-2'>
-          <p className='text-xs font-semibold uppercase tracking-wide text-[#8888A0]'>Tri du tableau</p>
+          <p className='text-xs font-semibold uppercase tracking-[0.12em] text-[#8888A0]'>Tri du référentiel</p>
           <div className='flex flex-wrap gap-2'>
             {(
               [
@@ -134,9 +134,9 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
                 type='button'
                 onClick={() => toggleSort(k)}
                 className={cn(
-                  'rounded-lg border px-3 py-1.5 text-xs font-medium transition',
+                  'rounded-full border px-3 py-1.5 text-xs font-medium transition',
                   sortKey === k
-                    ? 'border-[#4F6EF7]/55 bg-[#4F6EF7]/15 text-white'
+                    ? 'border-[#4F6EF7]/55 bg-[#4F6EF7]/15 text-white shadow-[0_0_20px_-8px_rgba(79,110,247,0.6)]'
                     : 'border-white/10 bg-white/[0.04] text-gray-400 hover:border-white/20',
                 )}
               >
@@ -148,33 +148,37 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
               </button>
             ))}
           </div>
-          <p className='text-[11px] text-[#8888A0]'>
+          <p className='hidden text-[11px] text-[#8888A0] md:block'>
             Astuce : Ctrl+F pour chercher dans le tableau une fois affiché.
           </p>
         </div>
         <button
           type='button'
           onClick={exportCsv}
-          className='rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/[0.1]'
+          className='inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-white/[0.1]'
         >
-          📥 Exporter en CSV
+          Exporter CSV
         </button>
       </div>
 
-      <div className='relative'>
-        <div
-          className='pointer-events-none absolute inset-y-0 left-0 z-[1] w-8 bg-gradient-to-r from-[#0a0a12] to-transparent md:hidden'
-          aria-hidden
-        />
-        <div
-          className='pointer-events-none absolute inset-y-0 right-0 z-[1] w-8 bg-gradient-to-l from-[#0a0a12] to-transparent md:hidden'
-          aria-hidden
-        />
-        <p className='mb-2 text-center text-[10px] text-[#8888A0] md:hidden'>← faites glisser →</p>
-        <div className='overflow-x-auto rounded-xl border border-white/[0.08]'>
-          <table role='grid' className='w-full min-w-[1120px] border-collapse text-left'>
+      {/* Vue cartes — mobile : tout visible sans défilement horizontal */}
+      <div className='space-y-3 md:hidden'>
+        {sorted.map((item) => (
+          <InfractionMobileCard
+            key={item.id}
+            item={item}
+            onOpen={() => setDrawerItem(item)}
+            onListe={() => onOpenInListe(item.id)}
+          />
+        ))}
+      </div>
+
+      <div className='relative hidden md:block'>
+        <div className='overflow-hidden rounded-2xl border border-white/[0.09] bg-[#0c0c14]/80 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] ring-1 ring-white/[0.04]'>
+          <div className='overflow-x-auto'>
+            <table role='grid' className='w-full min-w-[1000px] border-collapse text-left'>
             <thead>
-              <tr className='border-b border-white/[0.08] bg-[#16161F]'>
+              <tr className='border-b border-white/[0.08] bg-gradient-to-b from-[#1a1a26] to-[#12121a]'>
                 <th scope='col' className='w-[118px] min-w-[118px] px-2 py-3 text-xs font-semibold uppercase tracking-wider text-[#8888A0]'>
                   <button
                     type='button'
@@ -241,9 +245,10 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
               </tr>
             </thead>
             <tbody>
-              {sorted.map((item) => (
+              {sorted.map((item, ri) => (
                 <TableRow
                   key={item.id}
+                  rowIndex={ri}
                   item={item}
                   onRowClick={() => setDrawerItem(item)}
                   onArrowListe={() => onOpenInListe(item.id)}
@@ -251,6 +256,7 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       </div>
 
@@ -274,7 +280,7 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'tween', duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-              className='fixed inset-y-0 right-0 z-[70] flex w-full max-w-[480px] flex-col border-l border-white/[0.08] bg-[#0d0d14] shadow-2xl'
+              className='fixed inset-y-0 right-0 z-[70] flex w-full max-w-[min(100vw,560px)] flex-col border-l border-white/[0.08] bg-gradient-to-b from-[#0c0e14] to-[#08090d] shadow-2xl'
             >
               <div className='flex items-center justify-between border-b border-white/[0.08] px-4 py-3'>
                 <h2 id='infraction-drawer-title' className='sr-only'>
@@ -300,12 +306,91 @@ export function InfractionsTable({ rows, onOpenInListe }: Props) {
   );
 }
 
+function InfractionMobileCard({
+  item,
+  onOpen,
+  onListe,
+}: {
+  item: InfractionCatalogItem;
+  onOpen: () => void;
+  onListe: () => void;
+}) {
+  const peine = derivePeineFromLegal(item.legal);
+  const pTier = (item.priorite ?? 'secours') as RecapPriorite;
+  const pBadge = PRIORITE_EXAMEN_BADGE[pTier];
+  return (
+    <article className='group rounded-2xl border border-white/[0.09] bg-gradient-to-br from-[#12121c] via-[#0e0e16] to-[#0a0a10] shadow-[0_16px_40px_-20px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.04] transition hover:border-[#4F6EF7]/35 hover:shadow-[0_20px_50px_-18px_rgba(79,110,247,0.2)]'>
+      <button
+        type='button'
+        onClick={onOpen}
+        className='w-full rounded-2xl p-4 text-left transition hover:bg-white/[0.02]'
+      >
+        <div className='flex items-start justify-between gap-3'>
+          <span
+            className={cn(
+              'shrink-0 rounded-lg border px-2 py-1 text-[9px] font-bold uppercase tracking-wide',
+              pBadge.className,
+            )}
+          >
+            {pBadge.label}
+          </span>
+          <span className='rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold text-[#8888A0]'>
+            {item.fascicule}
+          </span>
+        </div>
+        <p className='mt-3 font-display text-base font-bold leading-snug text-white'>
+          <FlashcardRichText text={item.infraction} inline />
+        </p>
+        <p className='mt-2 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-[#4F6EF7]/95'>
+          {item.legal}
+        </p>
+        <div className='mt-3 grid grid-cols-2 gap-2 text-left'>
+          <div className='rounded-xl border border-white/[0.06] bg-white/[0.03] px-2.5 py-2'>
+            <p className='text-[9px] font-bold uppercase tracking-wide text-[#8888A0]'>Matériel</p>
+            <p className='mt-1 line-clamp-3 text-[11px] leading-snug text-[#E8E8EF]'>{condenseMaterielKeys(item.materiel)}</p>
+          </div>
+          <div className='rounded-xl border border-white/[0.06] bg-white/[0.03] px-2.5 py-2'>
+            <p className='text-[9px] font-bold uppercase tracking-wide text-[#8888A0]'>Peine</p>
+            <p
+              className={cn(
+                'mt-1 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-[11px] font-semibold',
+                peineTierTextClass(peine.tier),
+              )}
+            >
+              {peine.label}
+            </p>
+          </div>
+        </div>
+        <div className='mt-3 rounded-xl border border-emerald-500/15 bg-emerald-500/[0.06] px-2.5 py-2'>
+          <p className='text-[9px] font-bold uppercase tracking-wide text-emerald-300/90'>Élément moral</p>
+          <div className='mt-1 max-h-[4.5rem] overflow-hidden'>
+            <RecapBulletCell text={item.moral} compact density='micro' />
+          </div>
+        </div>
+      </button>
+      <div className='border-t border-white/[0.06] px-3 pb-3'>
+        <button
+          type='button'
+          onClick={onListe}
+          className='flex w-full items-center justify-center gap-2 rounded-xl border border-[#4F6EF7]/25 bg-[#4F6EF7]/10 py-2.5 text-xs font-semibold text-[#4F6EF7] transition hover:bg-[#4F6EF7]/18'
+        >
+          <List className='h-3.5 w-3.5' aria-hidden />
+          Voir dans la liste
+          <ChevronRight className='h-3.5 w-3.5' aria-hidden />
+        </button>
+      </div>
+    </article>
+  );
+}
+
 function TableRow({
   item,
+  rowIndex,
   onRowClick,
   onArrowListe,
 }: {
   item: InfractionCatalogItem;
+  rowIndex: number;
   onRowClick: () => void;
   onArrowListe: () => void;
 }) {
@@ -314,7 +399,11 @@ function TableRow({
   const pBadge = PRIORITE_EXAMEN_BADGE[pTier];
   return (
     <tr
-      className='cursor-pointer border-b border-white/[0.04] transition-colors hover:bg-white/[0.02]'
+      className={cn(
+        'cursor-pointer border-b border-white/[0.04] transition-colors',
+        rowIndex % 2 === 0 ? 'bg-white/[0.015]' : 'bg-transparent',
+        'hover:bg-[#4F6EF7]/[0.06]',
+      )}
       onClick={onRowClick}
     >
       <td className='w-[118px] min-w-[118px] px-2 py-3 align-top'>
@@ -349,8 +438,8 @@ function TableRow({
       <td className='w-[220px] px-3 py-3 align-top text-sm leading-snug text-[#F0F0F5]'>
         <span className='line-clamp-2'>{condenseMaterielKeys(item.materiel)}</span>
       </td>
-      <td className='min-w-[260px] max-w-[380px] px-3 py-3 align-top'>
-        <RecapBulletCell text={item.moral} compact />
+      <td className='min-w-[240px] max-w-[400px] px-3 py-3 align-top'>
+        <RecapBulletCell text={item.moral} compact density='compact' />
       </td>
       <td
         className={cn(

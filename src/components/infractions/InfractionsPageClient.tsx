@@ -4,7 +4,7 @@ import { type RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { BookOpen, MessageCircle } from 'lucide-react';
+import { ArrowUpRight, BookOpen, Gavel, MessageCircle } from 'lucide-react';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
@@ -34,6 +34,7 @@ import {
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
+import { derivePeineFromLegal, peineTierTextClass } from '@/utils/infraction-display-derive';
 
 function stripForSearch(s: string): string {
   return s
@@ -406,34 +407,34 @@ function InfractionsListView({
                       >
                         <article
                           className={cn(
-                            'rounded-2xl border bg-gradient-to-br from-navy-950/90 via-navy-950/70 to-navy-950/50 shadow-lg',
-                            'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-amber-950/20',
+                            'overflow-hidden rounded-2xl border bg-gradient-to-br from-[#12121c] via-[#0e0e16] to-[#0a0a0f] shadow-[0_16px_44px_-22px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.04]',
+                            'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-amber-500/20 hover:shadow-[0_22px_50px_-20px_rgba(251,191,36,0.12)]',
                             isFocused
-                              ? 'border-[#4F6EF7] ring-2 ring-[#4F6EF7]/50 hover:border-[#4F6EF7]'
-                              : 'border-white/10 hover:border-amber-500/25',
+                              ? 'border-[#4F6EF7] ring-2 ring-[#4F6EF7]/45'
+                              : 'border-white/[0.09]',
                           )}
                         >
-                          <div className='flex flex-col gap-4 p-5 sm:flex-row sm:items-start sm:justify-between'>
+                          <div className='flex flex-col gap-4 p-4 sm:flex-row sm:items-stretch sm:justify-between sm:p-5'>
                             <div className='min-w-0 flex-1'>
                               <button
                                 type='button'
                                 onClick={() => setSelected(item)}
-                                className='group w-full rounded-xl text-left transition-colors hover:bg-white/[0.04] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50'
+                                className='group w-full rounded-xl text-left transition-colors hover:bg-white/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/50'
                               >
                                 <div className='flex gap-3'>
                                   <span
-                                    className='mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 text-amber-300 transition group-hover:border-amber-400/50 group-hover:bg-amber-500/20'
+                                    className='mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-500/35 bg-gradient-to-br from-amber-500/15 to-amber-600/5 text-amber-200 shadow-inner shadow-amber-900/20'
                                     aria-hidden
                                   >
-                                    <MessageCircle className='h-4 w-4' />
+                                    <MessageCircle className='h-[18px] w-[18px]' />
                                   </span>
-                                  <div className='min-w-0 flex-1 space-y-2 pb-1'>
-                                    <p className='text-xs font-medium uppercase tracking-wide text-gray-500'>
+                                  <div className='min-w-0 flex-1 space-y-2.5'>
+                                    <p className='text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500'>
                                       {item.fascicule}
                                       {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
                                     </p>
                                     <div className='flex flex-wrap items-center gap-2'>
-                                      <h2 className='font-display text-lg font-bold text-white md:text-xl'>
+                                      <h2 className='font-display text-lg font-bold leading-snug text-white md:text-xl'>
                                         <FlashcardRichText text={item.infraction} inline />
                                       </h2>
                                       <span
@@ -445,25 +446,35 @@ function InfractionsListView({
                                         {badge.label}
                                       </span>
                                     </div>
-                                    <p className='text-sm text-gray-400'>
-                                      <span className='text-gray-500'>Élément légal : </span>
+                                    <p className='font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-cyan-300/90'>
                                       {item.legal}
                                     </p>
-                                    <p className='text-xs font-medium text-amber-400/90'>
-                                      Ouvrir la fiche en bulle → matériel, moral, Légifrance
-                                    </p>
+                                    <div className='flex flex-wrap items-center gap-2 pt-0.5'>
+                                      <span
+                                        className={cn(
+                                          'inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.04] px-2.5 py-1 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-[11px] font-semibold',
+                                          peineTierTextClass(derivePeineFromLegal(item.legal).tier),
+                                        )}
+                                      >
+                                        <Gavel className='h-3 w-3 opacity-80' aria-hidden />
+                                        {derivePeineFromLegal(item.legal).label}
+                                      </span>
+                                      <span className='text-[11px] text-slate-500'>Fiche express · oral & écrit</span>
+                                    </div>
                                   </div>
                                 </div>
                               </button>
                             </div>
 
-                            <div className='flex shrink-0 flex-col gap-2 sm:items-end sm:pt-1'>
+                            <div className='flex shrink-0 flex-col justify-center gap-2 border-t border-white/[0.06] pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0'>
                               <Link
                                 href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
                                 onClick={(e) => e.stopPropagation()}
-                                className='text-center text-sm text-emerald-400/90 underline-offset-2 hover:underline'
+                                className='inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-center text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/18'
                               >
-                                Voir le tableau récapitulatif
+                                <BookOpen className='h-4 w-4 shrink-0 opacity-90' aria-hidden />
+                                Récap synthèse
+                                <ArrowUpRight className='h-3.5 w-3.5 opacity-80' aria-hidden />
                               </Link>
                             </div>
                           </div>

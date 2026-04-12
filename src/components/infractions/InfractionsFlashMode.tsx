@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, ChevronLeft, ChevronRight, Filter, X } from 'lucide-react';
+import { BookMarked, Check, ChevronLeft, ChevronRight, Filter, Gavel, Layers, Lightbulb, X } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
@@ -16,7 +16,7 @@ import {
   loadFlashResults,
   saveFlashMark,
 } from '@/utils/flash-infractions-storage';
-import { condenseMaterielKeys, derivePeineFromLegal, stripMdBold } from '@/utils/infraction-display-derive';
+import { condenseMaterielKeys, derivePeineFromLegal, peineTierTextClass, stripMdBold } from '@/utils/infraction-display-derive';
 
 type FascOpt = 'all' | 'F01' | 'F02';
 
@@ -305,9 +305,9 @@ export function InfractionsFlashMode({ filtered }: Props) {
           </div>
         </div>
 
-        <div className='mx-auto max-w-xl' style={{ perspective: 1000 }}>
+        <div className='mx-auto max-w-3xl' style={{ perspective: 1200 }}>
           <motion.div
-            className='relative min-h-[320px] cursor-pointer'
+            className='relative min-h-[min(72vh,520px)] cursor-pointer sm:min-h-[420px]'
             style={{ transformStyle: 'preserve-3d' }}
             animate={{ rotateY: flipped ? 180 : 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -323,67 +323,86 @@ export function InfractionsFlashMode({ filtered }: Props) {
             aria-label={flipped ? 'Masquer le détail' : 'Afficher le détail'}
           >
             <div
-              className='absolute inset-0 flex flex-col justify-center rounded-2xl border border-white/[0.1] bg-gradient-to-br from-[#16161F] to-[#0d0d14] p-8 backface-hidden'
+              className='absolute inset-0 flex flex-col justify-between rounded-2xl border border-white/[0.12] bg-gradient-to-br from-[#18182a] via-[#12121c] to-[#0a0a12] p-5 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] backface-hidden sm:p-7'
               style={{ backfaceVisibility: 'hidden' }}
             >
               {current ? (
                 <>
-                  <div className='flex flex-wrap gap-2'>
-                    <span className='rounded-md border border-white/10 bg-white/[0.06] px-2 py-0.5 text-xs font-bold text-[#8888A0]'>
-                      {current.fascicule}
-                    </span>
-                    <span className='rounded-md bg-[#4F6EF7]/20 px-2 py-0.5 text-xs font-semibold text-[#4F6EF7]'>
-                      {current.groupTitle}
-                    </span>
+                  <div>
+                    <div className='flex flex-wrap gap-2'>
+                      <span className='rounded-lg border border-white/10 bg-white/[0.06] px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-[#A8A8BC]'>
+                        {current.fascicule}
+                      </span>
+                      <span className='rounded-lg border border-[#4F6EF7]/35 bg-[#4F6EF7]/15 px-2 py-0.5 text-[10px] font-semibold text-[#8FA8FF]'>
+                        {current.groupTitle}
+                      </span>
+                    </div>
+                    <h3 className='mt-4 text-xl font-bold leading-snug text-white sm:text-2xl'>
+                      <FlashcardRichText text={current.infraction} inline />
+                    </h3>
+                    <p className='mt-3 inline-flex w-fit items-center gap-2 rounded-xl border border-cyan-500/25 bg-cyan-950/30 px-3 py-1.5 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-cyan-100'>
+                      {current.legal}
+                    </p>
                   </div>
-                  <h3 className='mt-4 text-2xl font-bold leading-snug text-white'>
-                    <FlashcardRichText text={current.infraction} inline />
-                  </h3>
-                  <p className='mt-3 inline-block w-fit rounded-lg bg-[#4F6EF7]/15 px-2 py-1 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-sm text-[#4F6EF7]'>
-                    {current.legal}
-                  </p>
-                  <p className='mt-auto pt-6 text-center text-xs text-[#8888A0]'>Appuyez pour révéler</p>
+                  <p className='pt-4 text-center text-[11px] text-[#8888A0]'>Toucher ou Espace · révéler la fiche</p>
                 </>
               ) : null}
             </div>
             <div
-              className='absolute inset-0 flex flex-col justify-center rounded-2xl border border-white/[0.1] bg-gradient-to-br from-[#16161F] to-[#0d0d14] p-8'
+              className='absolute inset-0 flex flex-col rounded-2xl border border-white/[0.12] bg-gradient-to-br from-[#14141f] via-[#101018] to-[#08080e] p-3 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.85)] sm:p-4'
               style={{
                 backfaceVisibility: 'hidden',
                 transform: 'rotateY(180deg)',
               }}
             >
               {current ? (
-                <div className='space-y-4 text-left text-sm text-[#F0F0F5]'>
-                  <div>
-                    <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Élément matériel</p>
-                    <p className='mt-1 leading-relaxed'>{condenseMaterielKeys(current.materiel)}</p>
-                    <p className='mt-2 line-clamp-4 text-xs text-[#8888A0]'>{stripMdBold(current.materiel)}</p>
-                  </div>
-                  <div>
-                    <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Élément moral</p>
-                    <p className='mt-1 text-[11px] leading-relaxed text-[#8888A0]'>
-                      À réciter mot pour mot (libellé du programme).
-                    </p>
-                    <div className='mt-2 rounded-xl border border-sky-500/20 bg-sky-500/[0.06] p-3'>
-                      <RecapBulletCell text={current.moral} compact />
+                <div className='flex h-full min-h-0 flex-col text-[#F0F0F5]'>
+                  <div className='grid min-h-0 flex-1 grid-cols-1 gap-2 sm:grid-cols-2 sm:gap-3'>
+                    <div className='flex min-h-0 flex-col overflow-hidden rounded-xl border border-emerald-500/20 bg-emerald-950/25 p-2.5 sm:p-3'>
+                      <p className='flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-emerald-300/95'>
+                        <Layers className='h-3 w-3 shrink-0' aria-hidden />
+                        Matériel
+                      </p>
+                      <p className='mt-1.5 line-clamp-4 text-[11px] leading-snug text-[#E8E8EF] sm:line-clamp-5'>
+                        {condenseMaterielKeys(current.materiel)}
+                      </p>
+                    </div>
+                    <div className='flex min-h-0 flex-col overflow-hidden rounded-xl border border-violet-500/20 bg-violet-950/20 p-2.5 sm:p-3'>
+                      <p className='flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-violet-200/95'>
+                        <Gavel className='h-3 w-3 shrink-0' aria-hidden />
+                        Peine
+                      </p>
+                      <p
+                        className={cn(
+                          'mt-1.5 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-[12px] font-semibold leading-snug',
+                          peineTierTextClass(derivePeineFromLegal(current.legal).tier),
+                        )}
+                      >
+                        {derivePeineFromLegal(current.legal).label}
+                      </p>
+                    </div>
+                    <div className='flex min-h-0 flex-col overflow-hidden rounded-xl border border-sky-500/25 bg-sky-950/25 p-2.5 sm:col-span-2 sm:p-3'>
+                      <p className='flex items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-sky-300/95'>
+                        <BookMarked className='h-3 w-3 shrink-0' aria-hidden />
+                        Moral (programme)
+                      </p>
+                      <div className='mt-1.5 min-h-0 max-h-[28vh] flex-1 overflow-y-auto pr-0.5 sm:max-h-[10.5rem]'>
+                        <RecapBulletCell text={current.moral} density='micro' />
+                      </div>
+                    </div>
+                    <div className='flex min-h-0 flex-col justify-center rounded-xl border border-amber-500/20 bg-amber-950/20 p-2.5 sm:col-span-2 sm:flex-row sm:items-center sm:gap-3 sm:p-3'>
+                      <p className='flex shrink-0 items-center gap-1.5 text-[9px] font-bold uppercase tracking-[0.12em] text-amber-200/95'>
+                        <Lightbulb className='h-3 w-3' aria-hidden />
+                        Repère
+                      </p>
+                      <p className='mt-1 line-clamp-3 text-[10px] leading-snug text-amber-100/90 sm:mt-0'>
+                        {current.noteExamen
+                          ? current.noteExamen
+                          : `${stripMdBold(current.legal).slice(0, 140)}${stripMdBold(current.legal).length > 140 ? '…' : ''}`}
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Peine</p>
-                    <p className='mt-1 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace]'>
-                      {derivePeineFromLegal(current.legal).label}
-                    </p>
-                  </div>
-                  <div>
-                    <p className='text-xs font-bold uppercase tracking-wide text-[#8888A0]'>Repères</p>
-                    <p className='mt-1 text-xs'>
-                      {current.noteExamen
-                        ? current.noteExamen
-                        : stripMdBold(current.legal).slice(0, 160)}
-                      {stripMdBold(current.legal).length > 160 ? '…' : ''}
-                    </p>
-                  </div>
+                  <p className='mt-2 shrink-0 text-center text-[10px] text-[#6B6B80]'>Toucher · retourner la carte</p>
                 </div>
               ) : null}
             </div>

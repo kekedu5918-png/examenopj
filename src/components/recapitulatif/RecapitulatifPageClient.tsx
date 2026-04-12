@@ -45,6 +45,67 @@ function CellPlain({ text, compact }: { text: string; compact?: boolean }) {
   );
 }
 
+function RecapRowMobileCard({
+  row,
+  compact,
+}: {
+  row: {
+    infraction: string;
+    legal: string;
+    materiel: string;
+    moral: string;
+    priorite?: RecapPriorite;
+    noteExamen?: string;
+  };
+  compact: boolean;
+}) {
+  const pTier = (row.priorite ?? 'secours') as RecapPriorite;
+  return (
+    <article className='overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br from-[#111118] via-[#0c0c12] to-[#08080c] shadow-[0_14px_40px_-22px_rgba(0,0,0,0.75)] ring-1 ring-white/[0.04]'>
+      <div className='border-b border-white/[0.06] bg-gradient-to-r from-emerald-950/40 to-transparent px-4 py-3'>
+        <div className='flex flex-wrap items-center gap-2'>
+          <span
+            className={cn(
+              'rounded-lg border px-2 py-0.5 text-[9px] font-bold uppercase tracking-wide',
+              PRIORITE_EXAMEN_BADGE[pTier].className,
+            )}
+          >
+            {PRIORITE_EXAMEN_BADGE[pTier].label}
+          </span>
+        </div>
+        <div className='mt-2 text-sm font-semibold leading-snug text-white'>
+          <FlashcardRichText text={row.infraction} />
+        </div>
+        {row.noteExamen ? (
+          <p className='mt-2 text-[11px] leading-snug text-amber-200/85'>{row.noteExamen}</p>
+        ) : null}
+      </div>
+      <div className='space-y-3 p-4'>
+        <div className='rounded-xl border border-cyan-500/20 bg-cyan-950/25 px-3 py-2 text-xs text-cyan-100'>
+          <p className='text-[9px] font-bold uppercase tracking-wide text-cyan-300/90'>Élément légal</p>
+          <div className='mt-1'>
+            <CellPlain text={row.legal} compact={compact} />
+          </div>
+        </div>
+        <div className='grid grid-cols-1 gap-3 sm:grid-cols-2'>
+          <div className='rounded-xl border border-emerald-500/20 bg-emerald-950/20 px-3 py-2'>
+            <p className='text-[9px] font-bold uppercase tracking-wide text-emerald-300/90'>Élément matériel</p>
+            <div className='mt-1'>
+              <RecapBulletCell text={row.materiel} compact={compact} density='compact' />
+            </div>
+          </div>
+          <div className='rounded-xl border border-sky-500/20 bg-sky-950/20 px-3 py-2'>
+            <p className='text-[9px] font-bold uppercase tracking-wide text-sky-300/90'>Élément moral</p>
+            <div className='mt-1'>
+              <RecapBulletCell text={row.moral} compact={compact} density='compact' />
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 export function RecapitulatifPageClient({
   initialFasc,
   initialPrioriteVue,
@@ -193,10 +254,31 @@ export function RecapitulatifPageClient({
         </p>
       </div>
 
-      <div className='overflow-x-auto rounded-2xl border border-white/10 bg-navy-950/40 shadow-xl print:border-neutral-300 print:shadow-none'>
+      <div className='space-y-6 print:hidden lg:hidden'>
+        {sections.map((section) => (
+          <div key={section.id} className='space-y-3'>
+            <div
+              className={cn(
+                'rounded-xl border border-white/10 px-4 py-2.5 text-sm font-semibold text-white',
+                section.headerClass,
+              )}
+            >
+              {section.fascicule}
+              {section.fasciculePart ? ` — ${section.fasciculePart}` : ''} — {section.groupTitle}
+            </div>
+            <div className='space-y-3'>
+              {section.rows.map((row, ri) => (
+                <RecapRowMobileCard key={`${section.id}-m-${ri}`} row={row} compact={compact} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className='hidden overflow-x-auto rounded-2xl border border-white/10 bg-navy-950/40 shadow-[0_24px_60px_-28px_rgba(0,0,0,0.65)] ring-1 ring-white/[0.04] print:block print:border-neutral-300 print:shadow-none lg:block'>
         <table className='recap-table w-full min-w-[900px] border-collapse text-left print:min-w-0'>
           <thead>
-            <tr className='border-b border-white/10 bg-navy-900/90 text-xs uppercase tracking-wide text-gray-400 print:bg-neutral-100 print:text-neutral-700'>
+            <tr className='border-b border-white/10 bg-gradient-to-b from-[#1a1d2a] to-[#12141c] text-xs uppercase tracking-[0.08em] text-gray-400 print:bg-neutral-100 print:text-neutral-700'>
               <th className={cn('sticky left-0 z-10 bg-navy-900/95 px-3 py-3 print:static print:bg-neutral-100')}>
                 Infraction
               </th>
