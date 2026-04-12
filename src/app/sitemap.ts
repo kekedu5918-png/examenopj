@@ -32,6 +32,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const entrainementPages = [
     '/entrainement',
+    '/entrainement/parcours/cadres-enquetes',
     '/entrainement/quiz',
     '/entrainement/flashcards',
     '/entrainement/enquetes',

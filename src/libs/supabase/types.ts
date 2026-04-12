@@ -659,6 +659,33 @@ export interface Database {
         };
         Relationships: [];
       };
+      parcours_cadres_progress: {
+        Row: {
+          user_id: string;
+          step_slug: string;
+          lesson_completed: boolean;
+          quiz_best_score: number | null;
+          quiz_passed: boolean;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          step_slug: string;
+          lesson_completed?: boolean;
+          quiz_best_score?: number | null;
+          quiz_passed?: boolean;
+          updated_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          step_slug?: string;
+          lesson_completed?: boolean;
+          quiz_best_score?: number | null;
+          quiz_passed?: boolean;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       user_node_progress: {
         Row: {
           best_score_pct: number | null;

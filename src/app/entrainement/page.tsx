@@ -9,6 +9,7 @@ import {
   Layers2,
   Mic,
   PenLine,
+  Route,
   Sparkles,
   Target,
 } from 'lucide-react';
@@ -150,6 +151,15 @@ const cardsE3: HubCard[] = [
 ];
 
 const cardsTransversal: HubCard[] = [
+  {
+    href: '/entrainement/parcours/cadres-enquetes',
+    Icon: Route,
+    title: 'Parcours cadres d’enquête',
+    desc: 'Flagrance, GAV, enquête préliminaire — leçons courtes, QCM et synthèse débloquée (compte).',
+    badge: 'Parcours',
+    badgeClass: 'bg-amber-500/20 text-amber-100',
+    exam: 'transversal',
+  },
   {
     href: '/epreuves',
     Icon: Sparkles,

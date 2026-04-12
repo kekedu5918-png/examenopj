@@ -69,6 +69,11 @@ export const NAV_ENTRAINEMENT_CHILDREN: readonly NavMegaChild[] = [
     description: 'Hub quiz, flashcards, outils',
   },
   {
+    name: 'Parcours cadres d’enquête',
+    href: '/entrainement/parcours/cadres-enquetes',
+    description: 'Flagrance, GAV, EP — leçons, QCM, synthèse débloquée',
+  },
+  {
     name: 'Rédaction PV',
     href: '/entrainement/redaction-pv',
     description: 'Atelier ME1 et correction IA',
@@ -99,6 +104,7 @@ export const SITE_HEADER_EPREUVES_LINKS: readonly NavDropdownItem[] = [
 
 export const SITE_HEADER_ENTRAINER_LINKS: readonly NavDropdownItem[] = [
   { href: '/entrainement', label: "Vue d'ensemble" },
+  { href: '/entrainement/parcours/cadres-enquetes', label: 'Parcours cadres' },
   { href: '/entrainement/quiz', label: 'Quiz' },
   { href: '/entrainement/flashcards', label: 'Flashcards' },
   { href: '/entrainement/enquetes', label: 'Enquêtes' },
