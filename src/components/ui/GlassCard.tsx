@@ -23,7 +23,7 @@ export function GlassCard({
   return (
     <div
       className={cn(
-        'relative overflow-hidden border border-white/[0.1] bg-white/[0.03]',
+        'relative overflow-hidden border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-elevated)] dark:border-white/[0.08] dark:bg-white/[0.035]',
         radius === '3xl' ? 'rounded-3xl' : 'rounded-2xl',
         'shadow-[0_8px_40px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.08)]',
         'backdrop-blur-xl',

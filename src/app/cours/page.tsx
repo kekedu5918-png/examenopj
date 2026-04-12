@@ -24,7 +24,6 @@ export default async function CoursPage() {
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.coursHub} pad='default'>
       <SectionTitle
         badge='CONTENU'
-        badgeClassName='bg-cyan-500/15 text-cyan-200'
         title='Cours'
         subtitle='Une seule entrée : les fiches Markdown du dossier content/cours. Filtrez et ouvrez le détail par fiche.'
         size='display'

@@ -36,7 +36,6 @@ export default async function RedactionPVPage({ searchParams }: Props) {
     <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.redactionPv} pad='default'>
       <SectionTitle
         badge='Premium'
-        badgeClassName='bg-examen-premium/25 text-violet-200'
         title='Atelier — rédaction de procès-verbal'
         subtitle='Mise en situation, rédaction libre, correction IA avec note sur 20 et relevé des éléments obligatoires. Chronomètre au démarrage de la session.'
         size='display'

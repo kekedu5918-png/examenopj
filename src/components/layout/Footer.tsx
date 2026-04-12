@@ -15,7 +15,7 @@ export function Footer() {
         aria-hidden
       />
       {/* Background */}
-      <div className='absolute inset-0 bg-slate-50/90 dark:bg-gradient-to-b dark:from-transparent dark:via-[#050a14]/80 dark:to-[#030508]' />
+      <div className='absolute inset-0 bg-slate-50/90 dark:bg-gradient-to-b dark:from-transparent dark:via-[color:var(--ex-canvas)]/85 dark:to-[#030508]' />
       <div
         className='pointer-events-none absolute bottom-0 left-1/2 h-56 w-[min(600px,90vw)] -translate-x-1/2 opacity-[0.14] blur-[90px]'
         style={{

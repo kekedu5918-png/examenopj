@@ -143,7 +143,7 @@ export function RecapitulatifPageClient({
     >
       <SectionTitle
         badge='SYNTHÈSE'
-        badgeClassName='text-emerald-200 print:border print:border-neutral-300'
+        badgeClassName='print:border print:border-neutral-300'
         title='Récapitulatif'
         titleGradient
         size='display'

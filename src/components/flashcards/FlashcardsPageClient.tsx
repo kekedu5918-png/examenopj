@@ -322,7 +322,6 @@ export function FlashcardsPageClient({ initialAccess }: FlashcardsPageClientProp
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.flashcards} pad='compact'>
       <SectionTitle
         badge='MÉMORISATION'
-        badgeClassName='text-amber-200'
         title='Flashcards'
         titleGradient
         size='display'

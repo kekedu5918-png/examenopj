@@ -76,7 +76,7 @@ export function StartHereSection() {
 
   return (
     <motion.section
-      className='border-t border-white/[0.05] bg-[#080F1E] px-4 py-20 md:py-28'
+      className='border-t border-white/[0.05] bg-[color:var(--ex-deep)] px-4 py-20 md:py-28'
       aria-labelledby='start-here-title'
       initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -87,7 +87,6 @@ export function StartHereSection() {
         <SectionTitle
           titleId='start-here-title'
           badge='PARCOURS'
-          badgeClassName='text-cyan-200'
           title='Par où commencer ?'
           titleGradient
           size='display'
@@ -187,7 +186,6 @@ export function HomeEnquetesPillarSection() {
           <SectionTitle
             titleId='enquetes-pilier-title'
             badge='PILIER N°1 · Exclusif'
-            badgeClassName='text-violet-200'
             title='Les enquêtes — la trame de la formation'
             titleGradient
             size='display'
@@ -263,7 +261,6 @@ export function HomeEpreuvesLandingSection() {
         <SectionTitle
           titleId='home-epreuves-title'
           badge='ÉPREUVES'
-          badgeClassName='text-rose-200'
           title='3 épreuves. Une méthode pour chacune.'
           titleGradient
           size='display'
@@ -350,7 +347,6 @@ export function HomeInfractionsPreviewSection({ items }: { items: InfractionPrev
         <SectionTitle
           titleId='home-infractions-title'
           badge='ÉPREUVE 1'
-          badgeClassName='bg-amber-500/20 text-amber-200'
           title="55 infractions à maîtriser pour l'épreuve 1"
           subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
           className='mx-auto mb-8 max-w-2xl text-center'
@@ -410,7 +406,6 @@ export function HomeFondamentauxPreviewSection() {
         <SectionTitle
           titleId='home-fond-title'
           badge='SOCLE'
-          badgeClassName='bg-sky-500/20 text-sky-200'
           title="Les fondamentaux de l'OPJ"
           subtitle="Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d'enquête, contrôle d'identité, GAV, nullités."
           className='mx-auto mb-12 max-w-2xl text-center'
@@ -454,7 +449,6 @@ export function TerrainOriginSection() {
         <SectionTitle
           titleId='terrain-title'
           badge='TRANSPARENCE'
-          badgeClassName='bg-white/10 text-examen-ink'
           title='Un contenu qui vient du terrain.'
           className='mb-8'
         />
@@ -509,7 +503,7 @@ export function HomeTestimonialsSection() {
       transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
     >
       {/* Fond subtil */}
-      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0C1525]/80 to-transparent' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[color:var(--ex-section-mid)]/80 to-transparent' aria-hidden />
 
       <div className='relative mx-auto max-w-6xl'>
         <div className='mb-12 text-center'>
@@ -573,7 +567,7 @@ export function HomeFinalPricingSection() {
       transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
     >
       {/* Fond dégradé */}
-      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[#080F1E] via-[#0C1525] to-[#080F1E]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[color:var(--ex-deep)] via-[color:var(--ex-section-mid)] to-[color:var(--ex-deep)]' aria-hidden />
       {/* Orb centré */}
       <div className='pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(37,99,235,0.10)_0%,transparent_65%)]' aria-hidden />
 
@@ -620,7 +614,7 @@ export function HomeFinalPricingSection() {
           </div>
 
           {/* Premium */}
-          <div className='relative flex flex-col overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-600/15 via-[#0E1B2E] to-violet-600/10 p-7 md:-translate-y-1'>
+          <div className='relative flex flex-col overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-br from-blue-600/15 via-[color:var(--ex-panel)] to-violet-600/10 p-7 md:-translate-y-1'>
             <span className='absolute right-4 top-4 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400 px-3 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg'>
               Recommandé
             </span>
@@ -684,7 +678,6 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
         <SectionTitle
           titleId='programme-complet-title'
           badge='PROGRAMME'
-          badgeClassName='bg-sky-500/20 text-sky-200'
           title='Le programme complet'
           className='mx-auto mb-12 max-w-2xl text-center'
         />
@@ -698,7 +691,6 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
             <SectionTitle
               titleId='home-infractions-title'
               badge='ÉPREUVE 1'
-              badgeClassName='bg-amber-500/20 text-amber-200'
               title='55 infractions à maîtriser pour l’épreuve 1'
           subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
               className='mb-8 text-left'
@@ -749,7 +741,6 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
             <SectionTitle
               titleId='home-fond-title'
               badge='SOCLE'
-              badgeClassName='bg-sky-500/20 text-sky-200'
               title='Les fondamentaux de l’OPJ'
           subtitle="Le socle de procédure que tout OPJ doit maîtriser en fond : cadres d'enquête, contrôle d'identité, GAV, nullités."
               className='mb-12 text-left'

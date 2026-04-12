@@ -24,7 +24,6 @@ export default async function RapportSynthesePage() {
     <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.rapportSynthese} pad='default'>
       <SectionTitle
         badge='Premium'
-        badgeClassName='bg-examen-premium/25 text-violet-200'
         title='Atelier — rapport de synthèse'
         subtitle='Dossier pièces + rédaction type parquet + correction IA. Le chrono tourne en continu pendant la session.'
         size='display'

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
@@ -42,7 +43,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.auth} pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
     <main className='w-full max-w-md'>
-      <div className='w-full space-y-4 rounded-3xl border border-slate-800/90 bg-slate-950/95 p-6 shadow-xl shadow-black/25 backdrop-blur-sm'>
+      <GlassCard topGlow radius='3xl' padding='p-6' className='w-full space-y-4 shadow-xl shadow-black/30'>
         <h1 className='text-2xl font-bold text-slate-100'>Connexion</h1>
         {banner ? (
           <p className='rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200'>
@@ -64,7 +65,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
             S&apos;inscrire gratuitement
           </Link>
         </p>
-      </div>
+      </GlassCard>
     </main>
     </InteriorPageShell>
   );

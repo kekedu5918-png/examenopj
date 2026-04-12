@@ -55,7 +55,7 @@ export function HomeStatsSection() {
       aria-labelledby='home-stats-title'
     >
       {/* Fond légèrement différent pour contraste section */}
-      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0C1525] to-[#080F1E]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[color:var(--ex-section-mid)] to-[color:var(--ex-deep)]' aria-hidden />
 
       <div className='relative mx-auto max-w-6xl px-4'>
         <h2 id='home-stats-title' className='sr-only'>Chiffres clés de la préparation</h2>

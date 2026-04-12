@@ -268,7 +268,7 @@ export function HeroSection() {
           {/* Card quiz */}
           <div
             className={cn(
-              'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-[#0E1B2E]/90 shadow-[0_32px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl',
+              'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-[color:var(--ex-panel)]/95 shadow-[0_32px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl',
               !shouldReduce && 'animate-ex-float',
             )}
           >
@@ -441,7 +441,7 @@ export function HeroSection() {
 
           {/* Floating badges */}
           <motion.div
-            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#0E1B2E] px-3 py-1.5 shadow-lg'
+            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[color:var(--ex-panel)] px-3 py-1.5 shadow-lg'
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.4, type: 'spring' }}

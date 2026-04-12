@@ -240,7 +240,6 @@ export default function EntrainementHubPage() {
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.entrainement} pad='default'>
       <SectionTitle
         badge='RÉVISION'
-        badgeClassName='text-cyan-200'
         title='Entraînement'
         titleGradient
         size='display'

@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { AccountCheckoutSuccessAnalytics } from '@/components/analytics/CheckoutReturnAnalytics';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Button } from '@/components/ui/button';
+import { GlassCard } from '@/components/ui/GlassCard';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getSubscription } from '@/features/account/controllers/get-subscription';
@@ -45,8 +46,10 @@ export default async function AccountPage() {
     <Suspense fallback={null}>
       <AccountCheckoutSuccessAnalytics />
     </Suspense>
-    <section className='rounded-lg bg-black/40 px-4 py-12 ring-1 ring-white/10'>
-      <h1 className='mb-8 text-center'>Mon compte</h1>
+    <GlassCard topGlow radius='3xl' padding='p-6 md:p-10' className='mx-auto w-full'>
+      <h1 className='mb-8 text-center font-display text-3xl font-semibold tracking-tight text-white md:text-4xl'>
+        Mon compte
+      </h1>
 
       <div className='flex flex-col gap-4'>
         <Card
@@ -80,7 +83,7 @@ export default async function AccountPage() {
           )}
         </Card>
       </div>
-    </section>
+    </GlassCard>
     </InteriorPageShell>
   );
 }
@@ -94,12 +97,14 @@ function Card({
   footer?: ReactNode;
 }>) {
   return (
-    <div className='m-auto w-full max-w-3xl rounded-md bg-zinc-900'>
-      <div className='p-4'>
-        <h2 className='mb-1 text-xl font-semibold'>{title}</h2>
-        <div className='py-4'>{children}</div>
+    <div className='m-auto w-full max-w-3xl overflow-hidden rounded-2xl border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-panel)]/60 shadow-lg shadow-black/20'>
+      <div className='p-4 md:p-6'>
+        <h2 className='mb-1 text-xl font-semibold text-white'>{title}</h2>
+        <div className='py-4 text-slate-200'>{children}</div>
       </div>
-      <div className='flex justify-end rounded-b-md border-t border-zinc-800 p-4'>{footer}</div>
+      <div className='flex justify-end border-t border-[color:var(--ex-border-subtle)] bg-black/20 p-4'>
+        {footer}
+      </div>
     </div>
   );
 }

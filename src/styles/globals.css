@@ -117,6 +117,11 @@
     --ex-elevated: rgba(15, 23, 42, 0.04);
     --ex-border-subtle: rgba(15, 23, 42, 0.08);
     --ex-glow-line: rgba(37, 99, 235, 0.35);
+    /* Halo haut de page — une seule signature sur tout le site */
+    --ex-shell-halo: radial-gradient(ellipse 90% 62% at 50% -12%, rgba(37, 99, 235, 0.11), transparent 55%);
+    --ex-panel: #f1f5f9;
+    --ex-section-mid: #e8edf4;
+    --ex-deep: #e2e8f0;
   }
 
   /* Design system OPJ — tokens sémantiques (Inter chargée via next/font dans layout) */
@@ -146,6 +151,10 @@
     --ex-elevated: rgba(255, 255, 255, 0.045);
     --ex-border-subtle: rgba(255, 255, 255, 0.09);
     --ex-glow-line: rgba(255, 255, 255, 0.22);
+    --ex-shell-halo: radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59, 130, 246, 0.2), transparent 58%);
+    --ex-panel: #0e1b2e;
+    --ex-section-mid: #0c1525;
+    --ex-deep: #080f1e;
   }
 
   ::selection {

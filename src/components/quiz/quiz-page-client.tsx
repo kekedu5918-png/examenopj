@@ -379,7 +379,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           <motion.div variants={headerItem}>
             <SectionTitle
               badge='ENTRAÎNEMENT'
-              badgeClassName='text-cyan-300'
               title='Quiz OPJ'
               titleGradient
               size='display'
@@ -398,7 +397,6 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           <motion.div variants={headerItem}>
             <SectionTitle
               badge='ENTRAÎNEMENT'
-              badgeClassName='text-blue-300'
               title='Quiz OPJ'
               titleGradient
               size='display'
