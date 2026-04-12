@@ -18,7 +18,7 @@ export function BrandWordmark({ href, className, size = 'header' }: BrandWordmar
     <Link
       href={href}
       className={cn(
-        'group inline-flex max-w-full min-w-0 items-center gap-2 rounded-lg no-underline outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-cyan-400/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080F1E]',
+        'group inline-flex max-w-full min-w-0 items-center gap-2 rounded-lg no-underline outline-none transition-opacity hover:opacity-95 focus-visible:ring-2 focus-visible:ring-blue-400/45 focus-visible:ring-offset-2 focus-visible:ring-offset-[color:var(--ex-canvas)] dark:focus-visible:ring-offset-[color:var(--ex-canvas)]',
         className,
       )}
       aria-label='Examen OPJ — accueil'

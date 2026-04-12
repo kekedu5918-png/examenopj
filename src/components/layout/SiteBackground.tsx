@@ -5,16 +5,16 @@ export function SiteBackground() {
   return (
     <div className='pointer-events-none fixed inset-0 -z-10' aria-hidden>
       <div className='absolute inset-0 bg-gradient-to-b from-slate-100 via-[#f1f5f9] to-[#e2e8f0] dark:hidden' />
-      <div className='absolute inset-0 hidden bg-[#050a14] dark:block'>
+      <div className='absolute inset-0 hidden bg-[color:var(--ex-canvas)] dark:block'>
         <div
           className='absolute inset-0'
           style={{
             background:
-              'radial-gradient(ellipse 140% 100% at 50% 120%, rgba(12, 27, 51, 0.95) 0%, #050a14 45%, #030508 100%)',
+              'radial-gradient(ellipse 140% 100% at 50% 118%, rgba(15, 23, 42, 0.92) 0%, var(--ex-canvas) 48%, #020617 100%)',
           }}
         />
         <div
-          className='absolute left-1/2 top-0 h-[520px] w-[920px] -translate-x-1/2 opacity-[0.16]'
+          className='absolute left-1/2 top-0 h-[520px] w-[920px] -translate-x-1/2 opacity-[0.14]'
           style={{ background: 'radial-gradient(ellipse 80% 60% at 50% -8%, #3b82f6, transparent)' }}
         />
         <div

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, HelpCircle, RotateCcw, Trophy, XCircle } from 'lucide-react';
 
+import { MascotteJules } from '@/components/brand';
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
@@ -52,7 +53,7 @@ export function HeroSection() {
   return (
     <section className='relative min-h-[92vh] overflow-hidden' aria-label='Présentation ExamenOPJ'>
       {/* ── Fond multicouches ── */}
-      <div className='pointer-events-none absolute inset-0 bg-[#080F1E]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-[#060d18]' aria-hidden />
 
       {/* Orb bleu principal — top-right */}
       <div
@@ -253,6 +254,11 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: LANDING_EASE, delay: 0.18 }}
         >
+          {/* Mascotte — ancrage émotionnel (type Duolingo), au-dessus de la carte */}
+          <div className='pointer-events-none absolute -top-2 right-2 z-20 sm:-top-4 sm:right-6'>
+            <MascotteJules size={shouldReduce ? 72 : 88} />
+          </div>
+
           {/* Halo derrière la carte */}
           <div
             className='pointer-events-none absolute inset-0 -z-10 scale-110 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.15),transparent_65%)] blur-2xl'

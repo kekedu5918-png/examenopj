@@ -62,7 +62,7 @@ export function InteriorPageShell({
   className,
   innerClassName,
   fullBleed = false,
-  bleedBgClassName = 'bg-[#050a14]',
+  bleedBgClassName = 'bg-[color:var(--ex-canvas)]',
 }: InteriorPageShellProps) {
   const glowStyle = GLOW[glow];
 

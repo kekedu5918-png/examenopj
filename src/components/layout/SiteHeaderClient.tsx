@@ -8,6 +8,7 @@ import { ChevronDown, Flame, Menu, X } from 'lucide-react';
 
 import { SITE_HEADER_ENTRAINER_LINKS, SITE_HEADER_EPREUVES_LINKS } from '@/app/navigation';
 import { AccountMenu } from '@/components/account-menu';
+import { MascotteJules } from '@/components/brand';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { TrialReminderBanner } from '@/components/layout/TrialReminderBanner';
 import {
@@ -42,11 +43,11 @@ function isActiveGroup(pathname: string, prefixes: string[]): boolean {
 }
 
 const navBtn =
-  'relative inline-flex items-center gap-1 whitespace-nowrap rounded-lg px-2.5 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:ring-2 focus-visible:ring-examen-accent/45 xl:px-3';
+  'relative inline-flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-[color,background] duration-200 focus-visible:outline focus-visible:ring-2 focus-visible:ring-blue-500/40 xl:px-3.5';
 const navInactive =
-  'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white';
+  'text-slate-600 hover:bg-slate-100/90 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-white/[0.06] dark:hover:text-white';
 const navActive =
-  'text-slate-900 after:absolute after:bottom-0 after:left-2 after:right-2 after:h-0.5 after:rounded-full after:bg-blue-600 dark:text-white dark:after:bg-blue-400';
+  'bg-slate-900/[0.06] text-slate-900 shadow-[inset_0_0_0_1px_rgba(15,23,42,0.08)] dark:bg-white/[0.08] dark:text-white dark:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.1)]';
 const dropSurface =
   'min-w-[220px] border-slate-200 bg-white text-slate-900 dark:border-white/10 dark:bg-examen-raised dark:text-examen-ink';
 const dropTriggerClass = cn(navBtn, 'border-0 bg-transparent');
@@ -111,9 +112,9 @@ export function SiteHeaderClient({
       ) : null}
       <motion.header
         className={cn(
-          'relative border-b backdrop-blur-xl transition-[background,box-shadow,border-color] duration-300 [-webkit-backdrop-filter:blur(20px)]',
+          'relative border-b backdrop-blur-2xl transition-[background,box-shadow,border-color] duration-300 [-webkit-backdrop-filter:blur(24px)]',
           scrolled
-            ? 'border-slate-200/90 bg-white/90 shadow-md dark:border-white/[0.08] dark:bg-[rgba(6,11,22,0.88)] dark:shadow-[0_4px_32px_rgba(0,0,0,0.45),0_0_0_1px_rgba(255,255,255,0.04)]'
+            ? 'border-slate-200/90 bg-white/92 shadow-[0_8px_40px_rgba(15,23,42,0.08)] dark:border-white/[0.07] dark:bg-[rgba(6,13,24,0.92)] dark:shadow-[0_12px_48px_rgba(0,0,0,0.55),0_0_0_1px_rgba(255,255,255,0.05)]'
             : 'border-transparent bg-transparent',
         )}
         aria-label='Navigation principale'
@@ -125,7 +126,10 @@ export function SiteHeaderClient({
           />
         ) : null}
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
-          <BrandWordmark href={homeHref} className='min-w-0 shrink' />
+          <div className='flex min-w-0 shrink items-center gap-2.5'>
+            <MascotteJules size={34} animate={false} />
+            <BrandWordmark href={homeHref} className='min-w-0' />
+          </div>
 
           <nav className='hidden flex-1 items-center justify-center gap-1 lg:flex' aria-label='Menu'>
             <Link href='/cours' className={cn(navBtn, coursActive ? navActive : navInactive)}>

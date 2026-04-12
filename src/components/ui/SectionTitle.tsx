@@ -43,17 +43,16 @@ export function SectionTitle({
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.55, ease: easeOut }}
     >
-      {/* Badge avec contour dégradé type produit premium */}
-      <span className='inline-flex rounded-full bg-gradient-to-r from-violet-500/70 via-fuchsia-500/55 via-50% to-cyan-500/60 p-[1px] shadow-[0_0_24px_-4px_rgba(139,92,246,0.45)]'>
+      {/* Badge sobre type produit premium (Apple) + point d’accent unique */}
+      <span className='inline-flex rounded-full border border-white/[0.1] bg-white/[0.04] p-[1px] shadow-[0_1px_0_rgba(255,255,255,0.06)_inset] backdrop-blur-sm'>
         <span
           className={cn(
-            'inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]',
-            'bg-[#080f1e]/95 backdrop-blur-sm',
-            badgeClassName ?? 'text-slate-200',
+            'inline-flex items-center gap-2 rounded-full px-3.5 py-1 text-[11px] font-semibold uppercase tracking-[0.14em]',
+            badgeClassName ?? 'text-slate-300',
           )}
         >
           <span
-            className='h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-violet-400 via-fuchsia-400 to-cyan-400 shadow-[0_0_10px_rgba(167,139,250,0.75)]'
+            className='h-1.5 w-8 rounded-full bg-gradient-to-r from-blue-500 to-indigo-400'
             aria-hidden
           />
           {badge}
