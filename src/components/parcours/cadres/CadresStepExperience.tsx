@@ -3,6 +3,7 @@
 import { useMemo, useState, useTransition } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import confetti from 'canvas-confetti';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle2, PartyPopper, Zap } from 'lucide-react';
 
@@ -70,6 +71,7 @@ export function CadresStepExperience({ step, markdown, progress }: Props) {
       const r = await cadresMarkLessonCompleteAction(step.slug);
       if (r.ok) {
         if (step.kind === 'intro' || step.kind === 'synthese') {
+          void confetti({ particleCount: 90, spread: 60, origin: { y: 0.65 }, colors: ['#fbbf24', '#f97316', '#22d3ee'] });
           setPhase('done');
         } else {
           setPhase('quiz');
@@ -85,7 +87,19 @@ export function CadresStepExperience({ step, markdown, progress }: Props) {
       const r = await cadresSubmitQuizAction(step.slug as CadresStepSlug, answers);
       if (r.ok) {
         setResult({ scorePct: r.scorePct, passed: r.passed });
-        if (r.passed) setPhase('done');
+        if (r.passed) {
+          void confetti({
+            particleCount: 130,
+            spread: 78,
+            startVelocity: 32,
+            ticks: 220,
+            gravity: 0.9,
+            scalar: 1.05,
+            origin: { x: 0.5, y: 0.55 },
+            colors: ['#22d3ee', '#a78bfa', '#fbbf24', '#34d399', '#f472b6'],
+          });
+          setPhase('done');
+        }
         router.refresh();
       }
     });
