@@ -135,7 +135,7 @@ export async function getLoginResumeData(userId: string): Promise<LoginResumeDat
         title: `Commencer ${getFasciculeName(nextFNum)}`,
         reason: 'Progression logique — suite du programme',
         timeMinutes: 25,
-        href: `/cours/modules/${nextFascicule.id}`,
+        href: '/fondamentaux',
       });
     }
   }

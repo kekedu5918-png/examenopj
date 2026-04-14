@@ -1,6 +1,6 @@
 /**
- * Regroupement « candidat » des infractions du référentiel (F01–F07),
- * sans imposer les codes fascicule en premier.
+ * Regroupement « candidat » des infractions du référentiel (blocs thématiques 01 à 07),
+ * sans imposer les codes internes en premier.
  */
 
 import type { InfractionCatalogItem, RecapFasciculeId } from '@/data/recapitulatif-data';
@@ -16,14 +16,14 @@ export type InfractionFamily =
   | 'armes';
 
 export const INFRACTION_FAMILY_OPTIONS: { id: InfractionFamily; label: string; hint: string }[] = [
-  { id: 'all', label: 'Toutes les familles', hint: 'Programme DPS + liés' },
-  { id: 'personnes', label: 'Contre les personnes', hint: 'F01 — vie, intégrité, libertés…' },
-  { id: 'biens', label: 'Contre les biens', hint: 'F02 — vol, escroquerie, recel…' },
-  { id: 'circulation', label: 'Circulation routière', hint: 'F03' },
-  { id: 'ordre-public', label: 'Nation, État, paix publique', hint: 'F04' },
-  { id: 'stupefiants', label: 'Stupéfiants', hint: 'F05' },
-  { id: 'mineurs-famille', label: 'Mineurs & famille', hint: 'F06' },
-  { id: 'armes', label: 'Armes & munitions', hint: 'F07' },
+  { id: 'all', label: 'Toutes les familles', hint: 'Vue complète du référentiel' },
+  { id: 'personnes', label: 'Contre les personnes', hint: 'Vie, intégrité, libertés, atteintes sexuelles…' },
+  { id: 'biens', label: 'Contre les biens', hint: 'Vol, escroquerie, recel, destructions…' },
+  { id: 'circulation', label: 'Circulation routière', hint: 'Accidentologie, délit de fuite…' },
+  { id: 'ordre-public', label: 'Nation, État, paix publique', hint: 'Atteintes aux institutions, administration…' },
+  { id: 'stupefiants', label: 'Stupéfiants', hint: 'Usage, trafic, figures associées' },
+  { id: 'mineurs-famille', label: 'Mineurs & famille', hint: 'Protection de l’enfance, autorité parentale…' },
+  { id: 'armes', label: 'Armes & munitions', hint: 'Détention, port, infractions associées' },
 ];
 
 const FASC_TO_FAMILY: Record<RecapFasciculeId, Exclude<InfractionFamily, 'all'>> = {

@@ -6,7 +6,7 @@ import { LoginResumeCard } from '@/components/onboarding/LoginResumeCard';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { fasciculesList, getCourseModuleById } from '@/data/fascicules-list';
+import { fasciculesList } from '@/data/fascicules-list';
 import { getSession } from '@/features/account/controllers/get-session';
 import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/examenopj/controllers/get-dashboard-data';
 import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
@@ -16,7 +16,7 @@ import { getTodayReviews } from '@/lib/learningPath';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
-    return `F${String(row.fascicule_num).padStart(2, '0')}`;
+    return `Thème ${String(row.fascicule_num).padStart(2, '0')}`;
   }
   if (row.mode === 'domain' && row.domain_key) return row.domain_key;
   if (row.mode === 'global') return 'Global';
@@ -77,7 +77,7 @@ export default async function DashboardPage() {
         <div className='flex flex-wrap items-center gap-2'>
           <h1 className='text-3xl font-bold text-slate-50'>Bienvenue sur ExamenOPJ</h1>
           <Badge variant='examen' className='text-xs'>
-            {modules.length} fascicules disponibles
+            {modules.length} thèmes disponibles
           </Badge>
         </div>
         <p className='mt-2 max-w-3xl text-slate-300'>
@@ -95,10 +95,10 @@ export default async function DashboardPage() {
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         {[
-          { titre: 'Hub Cours (par où commencer)', href: '/cours' },
-          { titre: 'Toutes les fiches F01–F15', href: '/cours/modules' },
-          { titre: 'Entraînement par épreuve', href: '/entrainement' },
-          { titre: 'Vue d’ensemble des épreuves', href: '/epreuves' },
+          { titre: 'Fondamentaux', href: '/fondamentaux' },
+          { titre: 'Les enquêtes', href: '/enquetes' },
+          { titre: 'Entraînement', href: '/entrainement' },
+          { titre: 'Les épreuves', href: '/epreuves' },
           { titre: 'Réviser les infractions', href: '/dashboard/infractions' },
           { titre: 'Ma progression', href: '/dashboard/progression' },
           { titre: 'Recherche', href: '/dashboard/recherche' },
@@ -133,8 +133,8 @@ export default async function DashboardPage() {
                   {lastModuleMeta ? (
                     <>
                       <Button asChild className='bg-cyan-600 hover:bg-cyan-700'>
-                        <Link href={`/cours/modules/${lastModuleMeta.id}`}>
-                          Revoir la fiche {formatQuizMode(lastAttempt)}
+                        <Link href='/fondamentaux'>
+                          Revoir les fondamentaux ({formatQuizMode(lastAttempt)})
                         </Link>
                       </Button>
                       <Button asChild variant='secondary'>
@@ -212,30 +212,28 @@ export default async function DashboardPage() {
             </CardDescription>
           </CardHeader>
           <CardContent className='space-y-2 text-sm text-slate-200'>
-            <p>1. Parcourez le hub Cours : fil en 7 leçons ou parcours candidat selon votre niveau.</p>
-            <p>2. Pour chaque fiche F : lire le bloc « Examen OPJ » puis quiz / flashcards sur le même thème.</p>
-            <p>3. À mi-parcours : articulation ou enquête type ; en fin : sujet blanc sur les trois épreuves.</p>
+            <p>1. Parcourez les fondamentaux : cadres, GAV, perquisitions, fiches thématiques.</p>
+            <p>2. Enchaînez avec quiz / flashcards sur le même thème depuis l’entraînement.</p>
+            <p>3. À mi-parcours : une enquête type ; en fin : mise en situation sur les trois épreuves.</p>
           </CardContent>
         </Card>
       )}
 
       <div className='flex flex-wrap items-center justify-between gap-3'>
-        <h2 className='text-xl font-semibold text-slate-100'>Aperçu des fascicules</h2>
+        <h2 className='text-xl font-semibold text-slate-100'>Thèmes du programme</h2>
         <Button asChild variant='outline' className='border-slate-700 bg-slate-900 text-slate-100 hover:bg-slate-800'>
-          <Link href='/cours/modules'>Voir tous les fascicules</Link>
+          <Link href='/fondamentaux'>Voir les fiches</Link>
         </Button>
       </div>
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
         {featuredModules.map((module) => {
-          const coursePath = getCourseModuleById(module.slug)
-            ? `/cours/modules/${module.slug}`
-            : '/cours/modules';
+          const coursePath = '/fondamentaux';
           return (
             <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>
               <CardHeader>
                 <CardTitle className='text-slate-100'>
-                  {module.slug} - {module.titre}
+                  {module.titre}
                 </CardTitle>
                 <CardDescription className='text-slate-300'>
                   {module.description ?? 'Module pédagogique ExamenOPJ.'}

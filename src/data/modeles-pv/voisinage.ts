@@ -7,7 +7,7 @@ import type { ModelePV } from '@/types/pv';
 export const modeleVoisinage: ModelePV = {
   id: 'voisinage',
   titre: 'Enquête de voisinage',
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 127',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 127',
   fascicule: 'F11',
   categorie: 'voisinage',
   isPremium: false,

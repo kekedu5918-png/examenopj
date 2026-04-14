@@ -56,11 +56,12 @@ export function Footer() {
         {/* Links grid */}
         <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8'>
           <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Cours</p>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Apprendre</p>
             <ul className='space-y-2.5'>
               {[
-                { href: '/cours', label: 'Cours' },
-                { href: '/entrainement/enquetes', label: 'Enquêtes' },
+                { href: '/fondamentaux', label: 'Fondamentaux' },
+                { href: '/enquetes', label: 'Enquêtes' },
+                { href: '/epreuves', label: 'Épreuves' },
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className={colLink}>{l.label}</Link>

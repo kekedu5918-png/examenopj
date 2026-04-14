@@ -1,9 +1,9 @@
 import { ENQUETES } from '@/data/enquetes-data';
 import type { EnqueteMeta } from '@/data/enquetes-types';
 
-/** URL canonique d’un module de cours (ex. f02 → `/cours/modules/f02`). */
-export function courseModuleHref(moduleId: string): string {
-  return `/cours/modules/${moduleId}`;
+/** Hub fondamentaux (les anciennes URLs « modules » fusionnées). */
+export function courseModuleHref(_moduleId: string): string {
+  return '/fondamentaux';
 }
 
 /** Enquêtes dont au moins un lien pédagogique pointe vers ce module. */

@@ -15,6 +15,6 @@
 ## Dernière ligne droite
 
 - Refais ce parcours **une fois** la veille d’un blanc.
-- Croise avec ton **fascicule** pour les **articles** et **durées** exacts au jour de l’examen.
+- Croise avec ton **support officiel** pour les **articles** et **durées** exacts au jour de l’examen.
 
 **Bravo** : cette synthèse est **débloquée** parce que tu as validé les trois QCM. Garde-la en favori.

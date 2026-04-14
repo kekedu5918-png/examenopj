@@ -36,7 +36,7 @@ export const ME1_EX4_PARENTHESES_CONSIGNES = [
 export const ME1_EX5_PARENTHESES_CONSIGNES = [
   'Mêmes parenthèses que l’incipit classique (dates, OPJ, service, ville).',
   'Plainte déposée « au nom de » : (… victime) en qualité de […].',
-  'Contre […] pour (… faits) : crochets et parenthèses du fascicule à compléter.',
+  'Contre […] pour (… faits) : crochets et parenthèses du modèle officiel à compléter.',
   'Lecture faite personnellement, M. (prénom, nom) : signataire représentant.',
 ];
 
@@ -103,7 +103,7 @@ function defaultsForVariant(v: PVMe1ExerciseVariant): { left: string; right: str
 }
 
 /**
- * Exercice plainte : deux colonnes éditables (marge / bloc principal), calées sur le fascicule ME1.
+ * Exercice plainte : deux colonnes éditables (marge / bloc principal), calées sur le support ME1.
  */
 export function PVRedactionPlainteExercise() {
   const { toast } = useToast();
@@ -206,7 +206,7 @@ export function PVRedactionPlainteExercise() {
   return (
     <div className='space-y-6'>
       <div className='flex flex-col gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 print:hidden sm:flex-row sm:flex-wrap sm:items-center'>
-        <span className='text-xs font-medium text-slate-400'>Modèle fascicule</span>
+        <span className='text-xs font-medium text-slate-400'>Modèle officiel</span>
         <div className='flex flex-wrap gap-2'>
           <button
             type='button'
@@ -275,7 +275,7 @@ export function PVRedactionPlainteExercise() {
             </li>
             <li>
               <strong className='text-white'>Ex. 5</strong> : vérifier les trois lignes <strong className='font-mono text-white'>---</strong> sous
-              l’OBJET avant le corps, comme au fascicule.
+              l’OBJET avant le corps, comme sur le modèle ME1.
             </li>
           </ul>
           <p className='mt-4 text-xs font-bold uppercase tracking-wide text-amber-300/90'>Rappel des zones typiques</p>
@@ -297,7 +297,7 @@ export function PVRedactionPlainteExercise() {
           Feuille de procès-verbal — gabarit deux colonnes (PDF ME1)
         </h3>
         <p className='mb-3 text-[11px] text-slate-500'>
-          Marge étroite à gauche, corps du PV à droite, filet de séparation — comme l’imposé du fascicule.
+          Marge étroite à gauche, corps du PV à droite, filet de séparation — comme l’imposé du support ME1.
         </p>
         <div className='max-h-[min(78vh,940px)] overflow-auto print:max-h-none'>
           <PVMe1DocumentShell

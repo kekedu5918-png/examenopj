@@ -20,9 +20,9 @@ export type RevisionLien = { href: string; label: string };
 
 /** Ordre chronologique des planches formation (comme sur le document centre). */
 export const FORMATION_ENQUETES_CHRONO: RevisionLien[] = [
-  { href: '/entrainement/enquetes/alpha', label: '1 — Alpha' },
-  { href: '/entrainement/enquetes/bravo', label: '2 — Bravo' },
-  { href: '/entrainement/enquetes/charlie', label: '3 — Charlie' },
+  { href: '/enquetes/alpha', label: '1 — Alpha' },
+  { href: '/enquetes/bravo', label: '2 — Bravo' },
+  { href: '/enquetes/charlie', label: '3 — Charlie' },
 ];
 
 export type RevisionEtape = {
@@ -118,22 +118,22 @@ export const REVISION_THEMES: RevisionTheme[] = [
         { href: '/fondamentaux', label: 'Index fondamentaux' },
       ]),
       etape('cours', [
-        { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
-        { href: '/cours/modules/f14', label: 'F14 — Police judiciaire' },
+        { href: '/fondamentaux', label: 'Thème 11 — Cadres et actes PJ' },
+        { href: '/fondamentaux', label: 'Thème 14 — Police judiciaire' },
       ]),
       etape('rubriques', [
         { href: '/infractions', label: 'Référentiel infractions' },
         { href: '/entrainement/recapitulatif', label: 'Tableaux récap' },
       ]),
       etape('exercices', [
-        { href: '/quiz?mode=module&f=f11', label: 'Quiz F11' },
-        { href: '/flashcards?f=f11', label: 'Flashcards F11' },
+        { href: '/quiz?mode=module&f=f11', label: 'Quiz thème 11' },
+        { href: '/flashcards?f=f11', label: 'Flashcards thème 11' },
         { href: '/entrainement/articulation', label: 'Articulation' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Méthode Épreuve 1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/cours/pv', label: 'Modèles PV' },
+        { href: '/entrainement/redaction-pv', label: 'Modèles PV' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Méthode Épreuve 3' }]),
     ],
@@ -141,7 +141,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
   {
     id: 'personnes',
     titre: 'Atteintes aux personnes',
-    sousTitre: 'F01 — Vie, intégrité, violences, agressions sexuelles',
+    sousTitre: 'Vie, intégrité, violences, agressions sexuelles',
     emoji: '🛡️',
     visualKey: 'rose',
     accent: 'border-rose-500/50 text-rose-200',
@@ -152,21 +152,21 @@ export const REVISION_THEMES: RevisionTheme[] = [
       'Titres PRQC exacts depuis le référentiel',
     ],
     etapes: [
-      etape('conditions', [{ href: '/cours/modules/f01', label: 'Module F01 — aperçu' }]),
-      etape('cours', [{ href: '/cours/modules/f01', label: 'Lecture synthèse F01' }]),
+      etape('conditions', [{ href: '/fondamentaux/crimes-personnes', label: 'Synthèse — atteintes aux personnes' }]),
+      etape('cours', [{ href: '/fondamentaux/crimes-personnes', label: 'Lecture guidée' }]),
       etape('rubriques', [
         { href: '/infractions?q=violences', label: 'Référentiel — violences' },
-        { href: '/entrainement/recapitulatif?f=f01p1', label: 'Récap F01 p.1' },
+        { href: '/entrainement/recapitulatif?f=f01p1', label: 'Récap partie 1' },
       ]),
       etape('exercices', [
-        { href: '/quiz?f=f01', label: 'Quiz F01' },
-        { href: '/flashcards?f=f01', label: 'Flashcards F01' },
+        { href: '/quiz?f=f01', label: 'Quiz thème 01' },
+        { href: '/flashcards?f=f01', label: 'Flashcards thème 01' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Méthode Épreuve 1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/entrainement/enquetes/bravo', label: '2 — Bravo (personnes)' },
-        { href: '/entrainement/enquetes/charlie', label: '3 — Charlie (sexuel / CR)' },
+        { href: '/enquetes/bravo', label: '2 — Bravo (personnes)' },
+        { href: '/enquetes/charlie', label: '3 — Charlie (sexuel / CR)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — thème personnes' }]),
     ],
@@ -174,7 +174,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
   {
     id: 'biens',
     titre: 'Atteintes aux biens',
-    sousTitre: 'F02 — Vol, escroquerie, abus de confiance, recel…',
+    sousTitre: 'Vol, escroquerie, abus de confiance, recel…',
     emoji: '💼',
     visualKey: 'amber',
     accent: 'border-amber-500/50 text-amber-200',
@@ -185,20 +185,20 @@ export const REVISION_THEMES: RevisionTheme[] = [
       'Lien avec constatations et PV (Alpha, scellés)',
     ],
     etapes: [
-      etape('conditions', [{ href: '/cours/modules/f02', label: 'Module F02' }]),
-      etape('cours', [{ href: '/cours/modules/f02', label: 'Synthèse F02' }]),
+      etape('conditions', [{ href: '/fondamentaux/crimes-biens', label: 'Synthèse — atteintes aux biens' }]),
+      etape('cours', [{ href: '/fondamentaux/crimes-biens', label: 'Lecture guidée' }]),
       etape('rubriques', [
         { href: '/infractions?q=vol', label: 'Référentiel — biens' },
         { href: '/entrainement/recapitulatif', label: 'Récap comparatif' },
       ]),
       etape('exercices', [
-        { href: '/quiz?f=f02', label: 'Quiz F02' },
-        { href: '/flashcards?f=f02', label: 'Flashcards F02' },
+        { href: '/quiz?f=f02', label: 'Quiz thème 02' },
+        { href: '/flashcards?f=f02', label: 'Flashcards thème 02' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Cas & dissertation E1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/entrainement/enquetes/alpha', label: '1 — Alpha (biens)' },
+        { href: '/enquetes/alpha', label: '1 — Alpha (biens)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — thème biens' }]),
     ],
@@ -206,7 +206,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
   {
     id: 'route-stup-armes',
     titre: 'Route · stupéfiants · armes',
-    sousTitre: 'F03, F05, F07 — régimes spéciaux et seuils',
+    sousTitre: 'Circulation, stupéfiants, armes — régimes spéciaux et seuils',
     emoji: '🚔',
     visualKey: 'cyan',
     accent: 'border-cyan-500/50 text-cyan-200',
@@ -218,23 +218,23 @@ export const REVISION_THEMES: RevisionTheme[] = [
     ],
     etapes: [
       etape('conditions', [
-        { href: '/cours/modules/f03', label: 'F03 — circulation' },
-        { href: '/cours/modules/f05', label: 'F05 — stupéfiants' },
+        { href: '/fondamentaux', label: 'Thème 03 — circulation' },
+        { href: '/fondamentaux', label: 'Thème 05 — stupéfiants' },
       ]),
-      etape('cours', [{ href: '/cours/modules/f07', label: 'F07 — armes' }]),
+      etape('cours', [{ href: '/fondamentaux', label: 'Thème 07 — armes' }]),
       etape('rubriques', [
         { href: '/infractions', label: 'Référentiel' },
         { href: '/entrainement/recapitulatif', label: 'Récap' },
       ]),
       etape('exercices', [
-        { href: '/quiz?f=f03', label: 'Quiz F03' },
-        { href: '/quiz?f=f05', label: 'Quiz F05' },
-        { href: '/quiz?f=f07', label: 'Quiz F07' },
+        { href: '/quiz?f=f03', label: 'Quiz thème 03' },
+        { href: '/quiz?f=f05', label: 'Quiz thème 05' },
+        { href: '/quiz?f=f07', label: 'Quiz thème 07' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Épreuve 1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/entrainement/enquetes', label: 'Autres planches (complément)' },
+        { href: '/enquetes', label: 'Autres planches (complément)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Épreuve 3' }]),
     ],
@@ -242,7 +242,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
   {
     id: 'dpg-peines',
     titre: 'DPG & peines',
-    sousTitre: 'F09, F10 — tentative, complicité, récidive, circonstances',
+    sousTitre: 'DPG, peines — tentative, complicité, récidive, circonstances',
     emoji: '📐',
     visualKey: 'emerald',
     accent: 'border-emerald-500/50 text-emerald-200',
@@ -254,16 +254,16 @@ export const REVISION_THEMES: RevisionTheme[] = [
     ],
     etapes: [
       etape('conditions', [
-        { href: '/cours/modules/f09', label: 'F09 — DPG' },
-        { href: '/cours/modules/f10', label: 'F10 — peines' },
+        { href: '/fondamentaux', label: 'Thème 09 — DPG' },
+        { href: '/fondamentaux', label: 'Thème 10 — peines' },
       ]),
       etape('cours', [
-        { href: '/cours/modules/f09', label: 'Synthèse F09' },
-        { href: '/cours/modules/f10', label: 'Synthèse F10' },
+        { href: '/fondamentaux', label: 'Synthèse DPG' },
+        { href: '/fondamentaux', label: 'Synthèse peines' },
       ]),
       etape('rubriques', [
         { href: '/infractions', label: 'Référentiel' },
-        { href: '/entrainement/recapitulatif', label: 'Récap F09 / F10 & DPG' },
+        { href: '/entrainement/recapitulatif', label: 'Récap DPG & peines' },
       ]),
       etape('exercices', [
         { href: '/quiz?mode=domain&domain=DPG', label: 'Quiz DPG' },
@@ -272,7 +272,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Dissertation / cas E1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/entrainement/enquetes', label: 'Hub enquêtes (complément)' },
+        { href: '/enquetes', label: 'Hub enquêtes (complément)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Oral — peines & principes' }]),
     ],
@@ -280,7 +280,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
   {
     id: 'pj-juridictions',
     titre: 'PJ, instruction, juridictions',
-    sousTitre: 'F12, F13, F15 — instruction, nullités, exécution',
+    sousTitre: 'Instruction, juridictions, exécution',
     emoji: '🏛️',
     visualKey: 'sky',
     accent: 'border-sky-500/50 text-sky-200',
@@ -292,26 +292,26 @@ export const REVISION_THEMES: RevisionTheme[] = [
     ],
     etapes: [
       etape('conditions', [
-        { href: '/fondamentaux', label: 'Fondamentaux' },
-        { href: '/cours/modules/f12', label: 'F12 — instruction' },
+        { href: '/fondamentaux', label: 'Index fondamentaux' },
+        { href: '/fondamentaux', label: 'Thème 12 — instruction' },
       ]),
       etape('cours', [
-        { href: '/cours/modules/f13', label: 'F13 — juridictions' },
-        { href: '/cours/modules/f15', label: 'F15 — exécution' },
+        { href: '/fondamentaux', label: 'Thème 13 — juridictions' },
+        { href: '/fondamentaux', label: 'Thème 15 — exécution' },
       ]),
       etape('rubriques', [
         { href: '/infractions', label: 'Référentiel' },
         { href: '/entrainement/recapitulatif', label: 'Récap' },
       ]),
       etape('exercices', [
-        { href: '/quiz?f=f12', label: 'Quiz F12' },
-        { href: '/quiz?f=f13', label: 'Quiz F13' },
+        { href: '/quiz?f=f12', label: 'Quiz thème 12' },
+        { href: '/quiz?f=f13', label: 'Quiz thème 13' },
         { href: '/entrainement/articulation', label: 'Articulation' },
       ]),
       etape('epreuve1', [{ href: '/epreuves/epreuve-1', label: 'Épreuve 1' }]),
       etape('epreuve2', [
         { href: '/epreuves/epreuve-2', label: 'Méthode Épreuve 2' },
-        { href: '/entrainement/enquetes', label: 'Hub enquêtes (complément)' },
+        { href: '/enquetes', label: 'Hub enquêtes (complément)' },
       ]),
       etape('epreuve3', [{ href: '/epreuves/epreuve-3', label: 'Épreuve 3 — oral technique' }]),
     ],

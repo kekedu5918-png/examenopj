@@ -3,11 +3,11 @@ import type { Fiche } from './fondamentaux-types';
 const F06_REPERES_MINIERS_FAMILLE: Fiche = {
   id: 'repères-f06-mineurs-famille',
   categorie: 'droit-penal',
-  titre: 'F06 — Mineurs, famille et vulnérabilité (repères)',
+  titre: 'Mineurs, famille et vulnérabilité (repères)',
   accroche:
-    'Complète les fiches L303 / L307 (CJPM, GAV mineur, magistrat) : méthode pour le volet « infractions » du fascicule n°6 du programme officiel — à recouper avec le Code pénal et votre support de formation.',
-  source: 'Programme fascicule n°6 (SDCP / IREP) — repères méthode',
-  lienModule: '/cours/modules/f06',
+    'Complète les fiches L303 / L307 (CJPM, GAV mineur, magistrat) : méthode pour le volet « infractions » du thème mineurs / famille — à recouper avec le Code pénal et votre support de formation.',
+  source: 'Programme SDCP / IREP — repères méthode',
+  lienModule: '/fondamentaux',
   fasciculeId: 'f06',
   fasciculeNumero: 6,
   fasciculeDomaine: 'DPS',
@@ -36,7 +36,7 @@ const F06_REPERES_MINIERS_FAMILLE: Fiche = {
 };
 
 /**
- * Synthèses « programme complet » (thèmes type fascicules F08 à F15 du cursus SDCP / IREP).
+ * Synthèses « programme complet » (blocs avancés du cursus SDCP / IREP).
  * Référence : vérifier toujours Légifrance — objectif examen = vision transversale lisible en 5 minutes.
  */
 export const FONDAMENTAUX_PART4: Fiche[] = [
@@ -47,8 +47,8 @@ export const FONDAMENTAUX_PART4: Fiche[] = [
     titre: 'Libertés publiques, loi pénale et sanction',
     accroche:
       'Du texte à la peine : légalité et interprétation, personnalisation, unité, concours, tentative, responsabilité et peines — la toile de fond de toute qualification OPJ.',
-    source: 'Fascicules type F08, F09, F10 C.P. / C.P.P. — synthèse',
-    lienModule: '/cours/modules/f09',
+    source: 'Thèmes programme — droit pénal général (C.P. / C.P.P.) — synthèse',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {
@@ -105,8 +105,8 @@ export const FONDAMENTAUX_PART4: Fiche[] = [
     titre: 'Mission PJ, instruction, mandats et juridictions de jugement',
     accroche:
       'De la première mesure au prononcé : cadres d’enquête, mandats de justice, contraintes, saisine des juridictions et exécution — le fil qu’un correcteur attend dans un PV / un rapport.',
-    source: 'Fascicules type F11, F12, F13 C.P.P. — synthèse',
-    lienModule: '/cours/modules/f12',
+    source: 'Thèmes programme — procédure pénale (C.P.P.) — synthèse',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f12',
     regles: [
       {
@@ -156,8 +156,8 @@ export const FONDAMENTAUX_PART4: Fiche[] = [
     titre: 'Parquet, police PJ, contrôle de la PJ et nullités',
     accroche:
       'Qui oriente, qui contrôle, quand l’acte est annulé : action publique, hiérarchie, inspections et juridiction de contrôle — le triptyque « mission — responsabilité — sanction procédurale ».',
-    source: 'Fascicules type F14, F15 C.P.P. — synthèse',
-    lienModule: '/cours/modules/f14',
+    source: 'Thèmes programme — parquet & exécution (C.P.P.) — synthèse',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f14',
     regles: [
       {

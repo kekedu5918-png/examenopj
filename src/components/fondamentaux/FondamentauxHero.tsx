@@ -56,7 +56,7 @@ export function FondamentauxHero({ fiches, viewedCount }: Props) {
           transition={{ duration: 0.4 }}
         >
           <GraduationCap className='h-3.5 w-3.5' />
-          Programme F01 – F15 officiel
+          Programme officiel — 15 thèmes
         </motion.div>
 
         <motion.h1
@@ -73,7 +73,7 @@ export function FondamentauxHero({ fiches, viewedCount }: Props) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.1 }}
         >
-          Les <strong className='font-semibold text-slate-200'>{total} fiches</strong> raccord avec le programme en 15 fascicules (F01–F15) : synthèses courtes, fiches longues alignées corpus, pièges d&apos;examen et modules de cours.
+          Les <strong className='font-semibold text-slate-200'>{total} fiches</strong> raccord avec le programme officiel (15 grands thèmes) : synthèses courtes, fiches longues alignées sur le corpus, pièges d&apos;examen et liens vers quiz.
         </motion.p>
 
         {/* Stats row */}

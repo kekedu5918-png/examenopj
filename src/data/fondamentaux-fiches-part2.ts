@@ -9,7 +9,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       "Trois niveaux d'habilitation en police judiciaire avec des pouvoirs distincts. L'OPJ a les pouvoirs les plus étendus.",
     source: 'Art. 16, 20, 21 C.P.P.',
-    lienModule: '/cours/modules/f14',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f14',
     regles: [
       {
@@ -59,7 +59,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       "Le ministère public (parquet) exerce l'action publique et veille à l'application de la loi. Il est placé sous l'autorité du garde des Sceaux mais dispose d'une liberté de parole à l'audience.",
     source: 'Art. 31, 40, 41 C.P.P.',
-    lienModule: '/cours/modules/f14',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f14',
     regles: [
       {
@@ -101,7 +101,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Une infraction génère deux actions : l\'action publique (poursuivre le coupable) et l\'action civile (réparer le préjudice de la victime).',
     source: 'Art. 1 à 10 C.P.P.',
-    lienModule: '/cours/modules/f14',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f14',
     regles: [
       {
@@ -153,7 +153,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Chaque catégorie d\'infraction est jugée par une juridiction spécifique. La classification tripartite (crime/délit/contravention) détermine la compétence.',
     source: 'Art. 231, 381, 521 C.P.P.',
-    lienModule: '/cours/modules/f13',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f13',
     regles: [
       {
@@ -198,7 +198,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Après un jugement, plusieurs voies permettent de le contester : certaines sont ordinaires (effet suspensif), d\'autres extraordinaires.',
     source: 'Art. 489, 498, 567 C.P.P.',
-    lienModule: '/cours/modules/f13',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f13',
     regles: [
       {
@@ -245,7 +245,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Le droit pénal français distingue trois catégories d\'infractions selon leur gravité. Cette classification tripartite a des conséquences sur la juridiction compétente, la prescription et les règles applicables.',
     source: 'Art. 111-1 C.P.',
-    lienModule: '/cours/modules/f09',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {
@@ -289,7 +289,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Toute infraction est composée de trois éléments cumulatifs : légal, matériel et moral. L\'absence de l\'un entraîne la non-constitution de l\'infraction.',
     source: 'Art. 111-3, 121-3 C.P.',
-    lienModule: '/cours/modules/f09',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {
@@ -326,7 +326,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Les circonstances aggravantes (art. 132-71 à 132-80 C.P.) alourdissent la peine. Elles doivent être démontrées dans le devoir avec les éléments du thème.',
     source: 'Art. 132-71 à 132-80 C.P.',
-    lienModule: '/cours/modules/f10',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f10',
     regles: [
       {
@@ -395,7 +395,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Plusieurs personnes peuvent participer à la même infraction à des titres différents. Il faut qualifier précisément le rôle de chacun.',
     source: 'Art. 121-4, 121-6, 121-7 C.P.',
-    lienModule: '/cours/modules/f09',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {
@@ -436,7 +436,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Certains faits ou états suppriment ou atténuent la responsabilité pénale. Ils doivent être identifiés dans le thème de l\'épreuve 1.',
     source: 'Art. 122-1 à 122-9 C.P.',
-    lienModule: '/cours/modules/f09',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {
@@ -468,7 +468,7 @@ export const FONDAMENTAUX_PART2: Fiche[] = [
     accroche:
       'Quand une personne commet plusieurs infractions, des règles spéciales s\'appliquent pour calculer la peine. La récidive aggrave fortement les peines.',
     source: 'Art. 132-2, 132-8, 132-16-7 C.P.',
-    lienModule: '/cours/modules/f10',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f10',
     regles: [
       {

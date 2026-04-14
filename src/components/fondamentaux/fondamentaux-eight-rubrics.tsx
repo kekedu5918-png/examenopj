@@ -256,7 +256,7 @@ function RubriqueSection({
   );
 }
 
-/** Architecture 8 rubriques — sources F09, F10, F11, F15. */
+/** Architecture 8 rubriques — repères programme (thèmes 09 à 15). */
 export function FondamentauxEightRubrics() {
   const sectionIds = SIDEBAR_ITEMS.map((s) => s.id);
   const activeId = useActiveSection(sectionIds);
@@ -269,8 +269,8 @@ export function FondamentauxEightRubrics() {
             Les fondamentaux de l&apos;OPJ
           </h2>
           <p className='mt-3 max-w-3xl text-slate-400'>
-            Synthèse procédurale et pénale — à recaler sur les fascicules SDCP (F09 à F15). Les tableaux reprennent la structure
-            imposée ; toute ligne doit être vérifiée sur le fascicule indiqué.
+            Synthèse procédurale et pénale — à recaler sur le programme SDCP (thèmes 09 à 15). Les tableaux reprennent la structure
+            imposée ; toute ligne doit être vérifiée sur le support indiqué.
             Les badges <span className='rounded border border-blue-500/40 bg-blue-500/15 px-1.5 py-0.5 text-[10px] font-bold text-blue-200'>CPP</span> et{' '}
             <span className='rounded border border-violet-500/40 bg-violet-500/15 px-1.5 py-0.5 text-[10px] font-bold text-violet-200'>CP</span>{' '}
             sont cliquables — ouvre la définition courte et le lien Légifrance.
@@ -290,7 +290,7 @@ export function FondamentauxEightRubrics() {
           <div className='min-w-0 flex-1 space-y-5'>
 
             {/* RUBRIQUE 1 */}
-            <RubriqueSection id='r1' num={1} titre='La classification des infractions' fascicule='F09'>
+            <RubriqueSection id='r1' num={1} titre='La classification des infractions' fascicule='Thème 09'>
               <p className='mb-4'>
                 <strong className='text-white'>Éléments constitutifs</strong> — Élément légal :{' '}
                 <Ref id='art. 111-1 CP' /> principe légal d&apos;une infraction. Élément matériel : acte positif
@@ -344,7 +344,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 2 */}
-            <RubriqueSection id='r2' num={2} titre="Les cadres d'enquête" fascicule='F11'>
+            <RubriqueSection id='r2' num={2} titre="Les cadres d'enquête" fascicule='Thème 11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[800px] border-collapse text-left'>
                   <thead>
@@ -403,7 +403,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 3 */}
-            <RubriqueSection id='r3' num={3} titre="Le contrôle d'identité" fascicule='F11 — art. 78-1 à 78-6 CPP'>
+            <RubriqueSection id='r3' num={3} titre="Le contrôle d'identité" fascicule='Thème 11 — art. 78-1 à 78-6 CPP'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
@@ -452,7 +452,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 4 */}
-            <RubriqueSection id='r4' num={4} titre='La garde à vue' fascicule='F11'>
+            <RubriqueSection id='r4' num={4} titre='La garde à vue' fascicule='Thème 11'>
               <p className='mb-4'>
                 <strong className='text-white'>Six motifs</strong> <Ref id='art. 62-2 CPP' /> : 1° investigations — 2° présentation
                 procureur — 3° preuves/indices — 4° témoins/victimes — 5° coauteurs/complices — 6° faire cesser le crime.
@@ -489,7 +489,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 5 */}
-            <RubriqueSection id='r5' num={5} titre="L'audition libre" fascicule='F11'>
+            <RubriqueSection id='r5' num={5} titre="L'audition libre" fascicule='Thème 11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[500px] border-collapse text-left'>
                   <thead>
@@ -518,7 +518,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 6 */}
-            <RubriqueSection id='r6' num={6} titre='Les nullités de procédure' fascicule='F15 + F11'>
+            <RubriqueSection id='r6' num={6} titre='Les nullités de procédure' fascicule='Thèmes 15 + 11'>
               <div className='grid gap-3 sm:grid-cols-2 text-sm'>
                 <div className='rounded-xl border border-white/10 bg-white/[0.02] p-4'>
                   <p className='font-semibold text-white'>Nullités textuelles</p>
@@ -543,7 +543,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 7 */}
-            <RubriqueSection id='r7' num={7} titre='Perquisitions, saisies, réquisitions' fascicule='F11'>
+            <RubriqueSection id='r7' num={7} titre='Perquisitions, saisies, réquisitions' fascicule='Thème 11'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <table className='w-full min-w-[640px] border-collapse text-left'>
                   <thead>
@@ -582,7 +582,7 @@ export function FondamentauxEightRubrics() {
             </RubriqueSection>
 
             {/* RUBRIQUE 8 */}
-            <RubriqueSection id='r8' num={8} titre="La récidive et le concours d'infractions" fascicule='F10'>
+            <RubriqueSection id='r8' num={8} titre="La récidive et le concours d'infractions" fascicule='Thème 10'>
               <GlassCard padding='p-4' className='overflow-x-auto text-xs'>
                 <p className='mb-2 font-semibold text-white'>Récidive — tableau des effets</p>
                 <table className='w-full min-w-[720px] border-collapse text-left'>
@@ -614,7 +614,7 @@ export function FondamentauxEightRubrics() {
                 </table>
               </GlassCard>
               <p className='mt-4'>
-                Infractions assimilées <Ref id='art. 132-16 CP' /> — liste au fascicule F10.{' '}
+                Infractions assimilées <Ref id='art. 132-16 CP' /> — liste au thème 10 (programme).{' '}
                 <strong className='text-white'>Non bis in idem</strong> : un même fait ne reçoit pas deux qualifications sauf
                 distinctions (faits distincts, qualifications incompatibles ou absorbantes).
               </p>

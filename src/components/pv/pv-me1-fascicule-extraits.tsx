@@ -38,7 +38,7 @@ export function PVMe1FasciculeExtraits() {
       <div>
         <h3 className='text-xs font-bold uppercase tracking-wide text-amber-400/90'>Extraits verbatim (ME1 — support officiel)</h3>
         <p className='mt-2 text-xs leading-relaxed text-slate-500'>
-          Textes structurants issus du fascicule « La procédure pénale policière » (session examen juin 2026, version référencée au
+          Textes structurants issus du support « La procédure pénale policière » (session examen juin 2026, version référencée au
           01/12/2025 dans le document diffuseur). Usage pédagogique : ne substitue pas au PDF complet ni à Légifrance.
         </p>
       </div>

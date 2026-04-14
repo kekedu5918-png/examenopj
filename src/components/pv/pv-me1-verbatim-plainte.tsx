@@ -162,7 +162,7 @@ export function PVMe1VerbatimPlainte() {
             </button>
           </div>
           <h3 className='mb-3 text-xs font-bold uppercase tracking-wide text-emerald-400/90'>
-            Exemple 4 — Plainte avec interprète (texte conforme au fascicule)
+            Exemple 4 — Plainte avec interprète (texte conforme au modèle officiel)
           </h3>
           <TwoColumnPV left={ME1_PV_ENTETE_GAUCHE_EX4} right={ME1_PV_BLOC_DROIT_EX4} />
         </TabsContent>

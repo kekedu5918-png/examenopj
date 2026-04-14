@@ -14,7 +14,7 @@ const STEPS = [
   { n: 5, t: 'ACTES', d: 'Quels actes de police judiciaire ?' },
 ] as const;
 
-/** // TODO: enrichir exemples annotés et listes exhaustives cartouches depuis fascicules ME1. */
+/** // TODO: enrichir exemples annotés et listes exhaustives cartouches (support ME1). */
 export function Epreuve2Methodology() {
   return (
     <div className='mx-auto max-w-5xl space-y-16 px-6 pb-16'>
@@ -49,8 +49,8 @@ export function Epreuve2Methodology() {
           <GlassCard padding='p-6'>
             <h3 className='text-sm font-bold uppercase tracking-wide text-gray-400'>Les cartouches obligatoires</h3>
             <p className='mt-2 text-sm leading-relaxed text-gray-300'>
-              {/* TODO: liste exhaustive alignée fascicule ME1 — saisines, GAV, interpellations, auditions, etc. */}
-              Liste complète à recaler sur votre fascicule « procès-verbaux » : une cartouche par type d’acte, mentions
+              {/* TODO: liste exhaustive alignée support ME1 — saisines, GAV, interpellations, auditions, etc. */}
+              Liste complète à recaler sur votre support « procès-verbaux » (ME1) : une cartouche par type d’acte, mentions
               d’identité OPJ/APJ, références d’articles, chronologie et renvois aux pièces jointes.
             </p>
           </GlassCard>
@@ -60,7 +60,7 @@ export function Epreuve2Methodology() {
           </GlassCard>
           <GlassCard padding='p-6'>
             <h3 className='text-sm font-bold uppercase tracking-wide text-gray-400'>Formules exactes</h3>
-            <p className='text-sm text-gray-300'>Les formulations officielles du fascicule doivent être récitées mot à mot où le programme l’exige.</p>
+            <p className='text-sm text-gray-300'>Les formulations officielles du programme doivent être récitées mot à mot où l’examen l’exige.</p>
           </GlassCard>
           <GlassCard padding='p-6'>
             <h3 className='text-sm font-bold uppercase tracking-wide text-gray-400'>Erreurs qui coûtent des points</h3>
@@ -87,7 +87,7 @@ export function Epreuve2Methodology() {
                   <td className='px-4 py-3 text-gray-200'>{e.themeCourt ?? e.titre}</td>
                   <td className='px-4 py-3 font-mono text-examen-accent'>{e.code}</td>
                   <td className='px-4 py-3'>
-                    <Link href='/cours/modeles-pv' className='text-examen-accent hover:underline'>
+                    <Link href='/entrainement/redaction-pv' className='text-examen-accent hover:underline'>
                       Voir →
                     </Link>
                   </td>
@@ -98,7 +98,7 @@ export function Epreuve2Methodology() {
         </div>
 
         <p className='mt-6 rounded-xl border border-amber-500/35 bg-amber-500/10 px-4 py-3 text-sm text-amber-100'>
-          Les modèles sont conformes aux fascicules officiels. Ils doivent être sus par cœur. Le thème est tiré au sort
+          Les modèles sont conformes aux supports officiels. Ils doivent être sus par cœur. Le thème est tiré au sort
           le jour J.
         </p>
       </section>
@@ -146,13 +146,13 @@ export function Epreuve2Methodology() {
       <section id='e2-rapport' className='scroll-mt-28'>
         <h2 className='font-display text-2xl font-bold text-white md:text-3xl'>3. Le rapport de synthèse</h2>
         <p className='mt-3 text-gray-400'>
-          Le rapport de synthèse obéit à une structure stricte issue des fascicules. Chaque partie a ses formules
+          Le rapport de synthèse obéit à une structure stricte issue du programme officiel. Chaque partie a ses formules
           imposées.
         </p>
         <div className='mt-8 space-y-4'>
           <GlassCard padding='p-6'>
             <h3 className='text-sm font-bold text-gray-400'>Structure conforme</h3>
-            <p className='mt-2 text-sm text-gray-300'>Parties obligatoires selon le modèle parquet / fascicule RS.</p>
+            <p className='mt-2 text-sm text-gray-300'>Parties obligatoires selon le modèle parquet / rapport de synthèse.</p>
           </GlassCard>
           <GlassCard padding='p-6'>
             <h3 className='text-sm font-bold text-gray-400'>Introduction et clôture</h3>
@@ -167,7 +167,7 @@ export function Epreuve2Methodology() {
 
       <div className='flex justify-center pt-4'>
         <Link
-          href='/entrainement/enquetes'
+          href='/enquetes'
           className='inline-flex items-center gap-2 rounded-xl bg-examen-accent px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-examen-accent/20 hover:bg-examen-accentHover'
         >
           S’entraîner avec les enquêtes

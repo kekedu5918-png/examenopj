@@ -17,15 +17,15 @@ export function ModelesPVModuleSection({ fasciculeNumero }: Props) {
 
   return (
     <section className='not-prose mt-10 border-t border-white/10 pt-8'>
-      <p className='mb-1 text-sm font-semibold uppercase tracking-wide text-gray-500'>PV liés (SDCP)</p>
+      <p className='mb-1 text-sm font-semibold uppercase tracking-wide text-gray-500'>Modèles de PV</p>
       <p className='mb-4 text-sm text-gray-500'>
-        Modèles officiels reproduits depuis le fascicule de référence — fascicule {code}.
+        Modèles officiels alignés sur la formation — ouverture dans l’atelier rédaction PV.
       </p>
       <ul className='m-0 grid list-none gap-3 p-0 sm:grid-cols-2 lg:grid-cols-3'>
         {lies.map((m) => (
           <li key={m.id}>
             <Link
-              href={`/cours/modeles-pv/${m.id}`}
+              href={`/entrainement/redaction-pv?modele=${encodeURIComponent(m.id)}`}
               className={cn(
                 'flex h-full flex-col rounded-xl border border-white/10 bg-white/[0.03] p-4 transition duration-200 hover:-translate-y-0.5 hover:border-examen-accent/30 hover:shadow-ex-card-hover',
               )}
@@ -52,7 +52,7 @@ export function ModelesPVModuleSection({ fasciculeNumero }: Props) {
       </ul>
       <p className='mt-4 text-sm'>
         <Link
-          href='/cours/modeles-pv'
+          href='/entrainement/redaction-pv'
           className='text-cyan-400 underline-offset-2 hover:text-cyan-300 hover:underline'
         >
           Voir tous les modèles de PV

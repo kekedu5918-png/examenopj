@@ -11,7 +11,7 @@ import type { ModelePV } from '@/types/pv';
 export const modelePlainteHorsLocaux: ModelePV = {
   id: 'plainte-hors-locaux',
   titre: 'Plainte prise hors des locaux du service — Exemple 2',
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 86',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 86',
   fascicule: 'F11',
   categorie: 'plainte',
   isPremium: false,

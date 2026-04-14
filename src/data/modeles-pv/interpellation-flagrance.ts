@@ -7,7 +7,7 @@ import type { ModelePV } from '@/types/pv';
 export const modeleInterpellationFlagrance: ModelePV = {
   id: 'interpellation-flagrance',
   titre: "Interpellation en flagrant délit — Contrôle d'identité",
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 133',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 133',
   fascicule: 'F11',
   categorie: 'interpellation',
   isPremium: false,

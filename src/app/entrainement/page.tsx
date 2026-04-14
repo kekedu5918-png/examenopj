@@ -113,7 +113,7 @@ const cardsE2: HubCard[] = [
     exam: 2,
   },
   {
-    href: '/entrainement/enquetes',
+    href: '/enquetes',
     Icon: FileText,
     title: 'Enquêtes type examen OPJ',
     desc: 'Planches complètes : sujet, PV, articulation — pont vers épreuve 2.',
@@ -169,10 +169,10 @@ const cardsTransversal: HubCard[] = [
     exam: 'transversal',
   },
   {
-    href: '/cours',
+    href: '/fondamentaux',
     Icon: BookOpen,
-    title: 'Fiches cours',
-    desc: 'Contenu central (/content/cours) — filtrable sur la page Cours.',
+    title: 'Fondamentaux',
+    desc: 'Synthèses procédure et thématiques : cadres, GAV, perquisitions, fiches filtrables.',
     badge: null,
     exam: 'transversal',
   },
@@ -244,7 +244,7 @@ export default function EntrainementHubPage() {
         title='Entraînement'
         titleGradient
         size='display'
-        subtitle='Chaque outil est étiqueté E1 / E2 / E3 selon l’épreuve qu’il sert le plus. Enchaînez d’abord les fiches cours, puis le mode d’entraînement correspondant.'
+        subtitle='Chaque outil est étiqueté E1 / E2 / E3 selon l’épreuve qu’il sert le plus. Enchaînez d’abord les fondamentaux, puis le mode d’entraînement correspondant.'
         className='mb-12'
       />
 
@@ -284,8 +284,8 @@ export default function EntrainementHubPage() {
         </section>
 
         <p className='text-center text-sm text-slate-500'>
-          <Link href='/cours' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>
-            Fiches cours (content/cours)
+          <Link href='/fondamentaux' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>
+            Fiches fondamentaux
           </Link>
           {' · '}
           <Link href='/epreuves' className='font-medium text-cyan-400/90 underline-offset-2 hover:text-cyan-300 hover:underline'>

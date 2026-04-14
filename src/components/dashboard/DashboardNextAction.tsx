@@ -21,7 +21,7 @@ export interface DashboardNextActionProps {
 function findParcoursContinue(resume: LoginResumeData | null): { title: string; href: string } | null {
   if (!resume) return null;
   const rec = resume.recommendations.find(
-    (r) => r.href.includes('/entrainement') || r.href.includes('/cours'),
+    (r) => r.href.includes('/entrainement') || r.href.includes('/fondamentaux'),
   );
   if (!rec) return null;
   return { title: rec.title, href: rec.href };

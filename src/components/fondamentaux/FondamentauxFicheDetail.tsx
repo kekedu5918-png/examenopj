@@ -121,14 +121,11 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
         </div>
       ) : null}
 
-      {fiche.fasciculeNumero != null && fiche.lienModule ? (
+      {fiche.lienModule ? (
         <div className='mb-10 rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-3 sm:px-5'>
           <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
             <p className='text-sm text-slate-400'>
-              <span className='font-semibold text-slate-200'>Traçabilité programme</span> — fascicule officiel{' '}
-              <span className='tabular-nums font-mono text-gold-400/90'>
-                F{fiche.fasciculeNumero.toString().padStart(2, '0')}
-              </span>
+              <span className='font-semibold text-slate-200'>Repère formation</span>
               {fiche.fasciculeDomaine ? (
                 <span className='text-slate-500'> · {fiche.fasciculeDomaine}</span>
               ) : null}
@@ -151,7 +148,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
                   c.outlineBtn,
                 )}
               >
-                Module de cours →
+                Hub Fondamentaux →
               </Link>
             </div>
           </div>
@@ -191,11 +188,11 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
       {reperesSommaire?.parties.length ? (
         <section className='mb-12' aria-label='Parties du sommaire officiel (repère)'>
           <p className='mb-4 text-xs leading-relaxed text-slate-500'>
-            Liste de repère issue du <strong className='font-medium text-slate-400'>sommaire type</strong> du fascicule (titres de
+            Liste de repère issue d&apos;un <strong className='font-medium text-slate-400'>sommaire type</strong> (titres de
             chapitres, pas le corps du texte). À recouper avec votre support officiel et Légifrance.
           </p>
           <h2 className='mb-4 text-xs font-bold uppercase tracking-[0.22em] text-slate-500'>
-            Recoupement avec le fascicule (sommaire)
+            Recoupement avec le programme (sommaire)
           </h2>
           {reperesSommaire.intro ? (
             <p className='mb-4 text-[15px] leading-relaxed text-slate-400'>{reperesSommaire.intro}</p>
@@ -394,7 +391,7 @@ export function FondamentauxFicheDetail({ fiche, categories, variant = 'page' }:
                 DRAWER_MODULE_BTN,
               )}
             >
-              Voir le module de cours →
+              Hub Fondamentaux →
             </Link>
           ) : null}
           <Link

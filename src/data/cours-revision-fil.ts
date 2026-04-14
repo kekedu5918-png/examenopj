@@ -1,6 +1,6 @@
 /**
  * Fil de révision « par leçons » : ordre pédagogique pour le candidat,
- * sans coller au classement F01–F15 du programme (disponible en index plus bas).
+ * sans coller à l’index numéroté du programme (disponible plus bas).
  */
 
 export type CoursRevisionEtape = {
@@ -20,10 +20,10 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     titre: 'Comprendre le procès pénal et votre rôle',
     accroche: 'Avant les infractions : phases, OPJ / APJ, parquet et juridictions — c’est le socle de toute copie et de tout ME1.',
     dureeIndicative: '½ à 1 journée',
-    objectifs: ['Lecture active des fiches « Fondamentaux » procédure', 'À relier à votre fascicule procédure (ME2 / formation)'],
+    objectifs: ['Lecture active des fiches « Fondamentaux » procédure', 'À relier à votre support procédure (ME2 / formation)'],
     liens: [
       { href: '/fondamentaux', label: 'Fondamentaux procédure' },
-      { href: '/programme', label: 'Vue d’ensemble du programme' },
+      { href: '/fondamentaux', label: 'Vue d’ensemble du programme' },
     ],
   },
   {
@@ -44,9 +44,9 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     titre: 'Atteintes aux personnes (priorité rédactionnelle)',
     accroche: 'Violences, atteintes sexuelles, formes aggravées : très présentes à l’examen ; apprenez les éléments type par thème.',
     dureeIndicative: '3 à 5 jours',
-    objectifs: ['Tableau récap + référentiel infractions F01', 'Flashcards densifiées sur les peines et qualifications'],
+    objectifs: ['Tableau récap + référentiel infractions (personnes)', 'Flashcards densifiées sur les peines et qualifications'],
     liens: [
-      { href: '/entrainement/recapitulatif?f=f01p1', label: 'Récap F01 — partie 1' },
+      { href: '/entrainement/recapitulatif?f=f01p1', label: 'Récap partie 1 — personnes' },
       { href: '/infractions?q=violences', label: 'Référentiel — violences' },
     ],
   },
@@ -58,8 +58,8 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     dureeIndicative: '3 à 4 jours',
     objectifs: ['Distinguer éléments matériel / moral par famille', 'Quiz ciblé DPS patrimoine'],
     liens: [
-      { href: '/cours/modules/f02', label: 'Module F02 — atteintes aux biens' },
-      { href: '/quiz?f=f02', label: 'Quiz thème F02' },
+      { href: '/fondamentaux/crimes-biens', label: 'Synthèse — atteintes aux biens' },
+      { href: '/quiz?f=f02', label: 'Quiz thème 02' },
     ],
   },
   {
@@ -70,8 +70,8 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     dureeIndicative: '3 à 5 jours',
     objectifs: ['Textes du Code de la route et C.S.P. utiles à l’examen OPJ', 'Outrage, rébellion, faux et usage'],
     liens: [
-      { href: '/cours/modules/f03', label: 'F03 — circulation' },
-      { href: '/cours/modules/f05', label: 'F05 — stupéfiants' },
+      { href: '/fondamentaux', label: 'Thème 03 — circulation' },
+      { href: '/fondamentaux', label: 'Thème 05 — stupéfiants' },
       { href: '/infractions?q=outrage', label: 'Référentiel — atteintes SP' },
     ],
   },
@@ -84,19 +84,19 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     objectifs: ['Questions transverses en quiz « domaine DPG »', 'Pas de révision sans relecture Légifrance sur les articles cités'],
     liens: [
       { href: '/quiz?mode=domain&domain=DPG', label: 'Quiz DPG' },
-      { href: '/cours/modules/f09', label: 'Module F09 — DPG' },
+      { href: '/fondamentaux', label: 'Synthèse DPG' },
     ],
   },
   {
     id: 'epr2',
     ordre: 7,
     titre: 'Épreuve 2 : ME1, enquêtes, articulation',
-    accroche: 'Une leçon = une séance de mise en forme : PV comme au fascicule, puis sujets complets et oral structuré.',
+    accroche: 'Une leçon = une séance de mise en forme : PV comme sur le support officiel ME1, puis sujets complets et oral structuré.',
     dureeIndicative: 'En continu jusqu’à l’examen OPJ',
     objectifs: ['Deux colonnes, huis clos, chronologie', 'Enchaînement minute par minute sur des sujets types'],
     liens: [
-      { href: '/cours/pv', label: 'Procès-verbaux ME1' },
-      { href: '/entrainement/enquetes', label: 'Enquêtes type examen OPJ' },
+      { href: '/entrainement/redaction-pv', label: 'Procès-verbaux ME1' },
+      { href: '/enquetes', label: 'Enquêtes type examen OPJ' },
       { href: '/entrainement/articulation', label: 'Articulation' },
     ],
  },

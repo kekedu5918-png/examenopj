@@ -112,7 +112,12 @@
     --radius: 0.5rem;
   }
 
-  /* Design system OPJ — tokens sémantiques (Inter chargée via next/font dans layout) */
+  /*
+   * Design system OPJ — tokens sémantiques (--ds-*)
+   * Usage : préférer bg-ds-bg-primary, text-ds-text-muted, border-ds-border (Tailwind theme ds.*)
+   * + composants shell : InteriorPageShell, SectionTitle, GlassCard, SynthèsePattern (puces / tableaux).
+   * Inter via next/font dans layout.tsx.
+   */
   :root {
     --ds-bg-primary: #ffffff;
     --ds-bg-secondary: #f8fafc;

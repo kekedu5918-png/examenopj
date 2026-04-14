@@ -7,7 +7,7 @@ import type { ModelePV } from '@/types/pv';
 export const modelePerquisitionFlagrance: ModelePV = {
   id: 'perquisition-flagrance',
   titre: "Perquisition en enquête de flagrance — au domicile d'un individu placé en GAV",
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 199',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 199',
   fascicule: 'F11',
   categorie: 'perquisition',
   isPremium: true,

@@ -1,5 +1,5 @@
 /**
- * Méta « qualité contenu » : à mettre à jour après chaque passe de relecture (fascicule + Légifrance).
+ * Méta « qualité contenu » : à mettre à jour après chaque passe de relecture (programme officiel + Légifrance).
  * Affiché sur les rubriques les plus sensibles juridiquement.
  */
 export const CONTENT_REVIEW = {

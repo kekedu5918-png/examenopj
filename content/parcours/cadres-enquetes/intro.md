@@ -20,4 +20,4 @@ Ouverte et **pilotée par le parquet**, l’EP structure une enquête **plus lar
 2. **Trois leçons** — flagrance, GAV, EP : chacune se termine par un **mini-QCM**.
 3. **Synthèse** — débloquée quand les trois QCM sont validés : une **fiche unique** à réviser la veille de l’examen.
 
-> Les formulations ci-dessus sont **pédagogiques** : en salle, appuie-toi toujours sur **le programme / ton fascicule** pour les précisions textuelles.
+> Les formulations ci-dessus sont **pédagogiques** : en salle, appuie-toi toujours sur **le programme officiel / ton support de formation** pour les précisions textuelles.

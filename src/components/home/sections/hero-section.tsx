@@ -150,7 +150,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.14 }}
           >
-            Méthode structurée alignée sur les fascicules SDCP · Session 2026.
+            Méthode structurée alignée sur le programme officiel SDCP · Session 2026.
             Savoir quoi réviser, dans quel ordre, et comment le rendre le jour J.
           </motion.p>
 
@@ -162,7 +162,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.17 }}
           >
             {[
-              { value: '15', label: 'fascicules couverts' },
+              { value: '15', label: 'thèmes programme' },
               { value: '200+', label: 'questions de quiz' },
               { value: '3', label: 'épreuves détaillées' },
             ].map((s) => (
@@ -246,7 +246,7 @@ export function HeroSection() {
           >
             <span className='mt-0.5 text-blue-400' aria-hidden>🛡️</span>
             <p className='text-xs leading-relaxed text-slate-400'>
-              Rédigé par un gardien de la paix en formation OPJ · Conforme aux fascicules SDCP · Mis à jour en temps réel
+              Rédigé par un gardien de la paix en formation OPJ · Calé sur le programme officiel · Mis à jour en temps réel
             </p>
           </motion.div>
         </div>

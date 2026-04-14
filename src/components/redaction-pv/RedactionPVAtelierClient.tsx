@@ -9,9 +9,11 @@ import { ModelePVOfficielLayout } from '@/components/modeles-pv/ModelePVOfficiel
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useToast } from '@/components/ui/use-toast';
-import { getModelePVBySlug,MODELES_PV } from '@/data/modeles-pv';
+import { getModelePVBySlug, MODELES_PV } from '@/data/modeles-pv';
 import type { SujetRedactionPV } from '@/data/sujets-redaction-pv';
 import { SUJETS_REDACTION_PV } from '@/data/sujets-redaction-pv';
+import { PV_CATEGORIE_META, PV_CATEGORIES_ORDER } from '@/lib/pv-categories';
+import type { PVCategorie } from '@/types/pv';
 import { cn } from '@/utils/cn';
 
 type CorrectionPVResult = {
@@ -130,10 +132,10 @@ const MSG_CORRECTION_INDISPONIBLE = 'La correction est temporairement indisponib
 
 export function RedactionPVAtelierClient({ initialSujetId }: Props) {
   const { toast } = useToast();
-  const fascicules = useMemo(
-    () => [...new Set(SUJETS_REDACTION_PV.map((s) => s.fascicule))].sort(),
-    [],
-  );
+  const categories = useMemo(() => {
+    const set = new Set(SUJETS_REDACTION_PV.map((s) => s.categorie));
+    return PV_CATEGORIES_ORDER.filter((c) => set.has(c));
+  }, []);
 
   const validInitial =
     initialSujetId && SUJETS_REDACTION_PV.some((s) => s.id === initialSujetId)
@@ -142,7 +144,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
 
   const [sidebarTab, setSidebarTab] = useState<'sujets' | 'historique'>('sujets');
   const [filterDiff, setFilterDiff] = useState<'all' | SujetRedactionPV['difficulte']>('all');
-  const [filterFasc, setFilterFasc] = useState<string>('all');
+  const [filterCat, setFilterCat] = useState<PVCategorie | 'all'>('all');
   const [sujetId, setSujetId] = useState(validInitial);
 
   const sujet = useMemo(
@@ -153,10 +155,10 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
   const filteredSujets = useMemo(() => {
     return SUJETS_REDACTION_PV.filter((s) => {
       if (filterDiff !== 'all' && s.difficulte !== filterDiff) return false;
-      if (filterFasc !== 'all' && s.fascicule !== filterFasc) return false;
+      if (filterCat !== 'all' && s.categorie !== filterCat) return false;
       return true;
     });
-  }, [filterDiff, filterFasc]);
+  }, [filterDiff, filterCat]);
 
   const [texte, setTexte] = useState('');
   const [hydrated, setHydrated] = useState(false);
@@ -384,17 +386,17 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
             </div>
             <div className='grid gap-2'>
               <label className='text-[10px] font-bold uppercase tracking-wider text-examen-inkMuted'>
-                Fascicule
+                Type de PV
               </label>
               <select
-                value={filterFasc}
-                onChange={(e) => setFilterFasc(e.target.value)}
+                value={filterCat}
+                onChange={(e) => setFilterCat(e.target.value as PVCategorie | 'all')}
                 className='rounded-lg border border-white/[0.1] bg-white/[0.04] px-2 py-1.5 text-xs text-examen-ink'
               >
                 <option value='all'>Tous</option>
-                {fascicules.map((f) => (
-                  <option key={f} value={f}>
-                    {f}
+                {categories.map((c) => (
+                  <option key={c} value={c}>
+                    {PV_CATEGORIE_META[c].label}
                   </option>
                 ))}
               </select>
@@ -417,7 +419,8 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                 >
                   <p className='text-[11px] font-semibold leading-snug text-white'>{s.titre}</p>
                   <p className='mt-1 text-[10px] text-examen-inkMuted'>
-                    {s.fascicule} · {DIFF_LABEL[s.difficulte]} · {s.dureeConseillee} min
+                    {PV_CATEGORIE_META[s.categorie].shortLabel} · {DIFF_LABEL[s.difficulte]} · {s.dureeConseillee}{' '}
+                    min
                   </p>
                 </button>
               ))}
@@ -540,7 +543,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                 {DIFF_LABEL[sujet.difficulte]}
               </span>
               <span className='text-xs text-examen-inkMuted'>
-                {sujet.fascicule} · {sujet.dureeConseillee} min conseillées
+                {PV_CATEGORIE_META[sujet.categorie].label} · {sujet.dureeConseillee} min conseillées
               </span>
             </div>
           </div>
@@ -733,7 +736,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                     Plein écran
                   </Button>
                   <Link
-                    href={`/cours/modeles-pv/${modeleRef.id}`}
+                    href={`/entrainement/redaction-pv?modele=${encodeURIComponent(modeleRef.id)}`}
                     className='inline-flex items-center rounded-md border border-white/10 px-3 py-1.5 text-xs font-medium text-examen-accent hover:bg-white/[0.04]'
                   >
                     Fiche modèle →
@@ -865,7 +868,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
             <div className='mt-6 pb-8'>
               <ModelePVOfficielLayout modele={modeleRef} />
               <Link
-                href={`/cours/modeles-pv/${modeleRef.id}`}
+                href={`/entrainement/redaction-pv?modele=${encodeURIComponent(modeleRef.id)}`}
                 className='mt-6 inline-flex text-sm font-semibold text-examen-accent hover:underline'
               >
                 Fiche modèle complète →
@@ -911,7 +914,9 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                     className='w-full rounded-xl border border-white/[0.08] bg-white/[0.02] p-3 text-left transition-colors hover:border-white/[0.14]'
                   >
                     <p className='text-sm font-semibold text-white'>{m.titre}</p>
-                    <p className='mt-1 text-[11px] text-examen-inkMuted'>{m.fascicule}</p>
+                    <p className='mt-1 text-[11px] text-examen-inkMuted'>
+                      {PV_CATEGORIE_META[m.categorie].shortLabel}
+                    </p>
                   </button>
                 </li>
               ))}
@@ -927,7 +932,7 @@ export function RedactionPVAtelierClient({ initialSujetId }: Props) {
                     <div className='mt-6'>
                       <ModelePVOfficielLayout modele={m} />
                       <Link
-                        href={`/cours/modeles-pv/${m.id}`}
+                        href={`/entrainement/redaction-pv?modele=${encodeURIComponent(m.id)}`}
                         className='mt-6 inline-flex text-sm font-semibold text-examen-accent hover:underline'
                       >
                         Fiche modèle complète →

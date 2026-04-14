@@ -5,10 +5,10 @@ import { getSiteUrl } from '@/utils/site-url';
 
 function priorityForPath(path: string): number {
   if (path === '') return 1;
-  if (path === '/cours' || path === '/infractions') return 0.9;
+  if (path === '/fondamentaux' || path === '/infractions' || path === '/enquetes') return 0.9;
   if (path === '/pricing' || path === '/premium' || path.startsWith('/epreuves')) return 0.8;
   if (path.startsWith('/entrainement')) return 0.65;
-  if (path.startsWith('/cours/')) return 0.75;
+  if (path.startsWith('/fondamentaux/')) return 0.75;
   return 0.7;
 }
 
@@ -26,7 +26,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/mentions-legales',
   ];
 
-  const coursPages = ['/cours'];
+  const pillarPages = ['/fondamentaux', '/enquetes'];
 
   const epreuvesPages = ['/epreuves', '/epreuves/epreuve-1', '/epreuves/epreuve-2', '/epreuves/epreuve-3'];
 
@@ -35,7 +35,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/entrainement/parcours/cadres-enquetes',
     '/entrainement/quiz',
     '/entrainement/flashcards',
-    '/entrainement/enquetes',
     '/entrainement/recapitulatif',
     '/entrainement/articulation',
     '/entrainement/redaction-pv',
@@ -46,7 +45,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const allStaticPaths = [
     ...mainPages,
-    ...coursPages,
+    ...pillarPages,
     ...epreuvesPages,
     ...entrainementPages,
     ...infractionsPages,
@@ -60,9 +59,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const coursBasenames = await listMarkdownBasenames('cours');
-  const coursFicheEntries: MetadataRoute.Sitemap = coursBasenames.map((b) => {
+  const fondamentauxFicheEntries: MetadataRoute.Sitemap = coursBasenames.map((b) => {
     const slug = slugFromBasename(b);
-    const p = `/cours/${slug}`;
+    const p = `/fondamentaux/${slug}`;
     return {
       url: `${base}${p}`,
       lastModified: now,
@@ -71,5 +70,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  return [...staticEntries, ...coursFicheEntries];
+  return [...staticEntries, ...fondamentauxFicheEntries];
 }

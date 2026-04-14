@@ -69,13 +69,13 @@ export function Epreuve2Header() {
 
       <motion.div variants={item} className='mt-6 flex flex-wrap gap-3'>
         <Link
-          href='/entrainement/enquetes'
+          href='/enquetes'
           className='inline-flex items-center gap-2 rounded-xl border border-examen-accent/35 bg-examen-accent/10 px-4 py-2.5 text-sm font-semibold text-examen-accent transition hover:border-examen-accent/50 hover:bg-examen-accent/15'
         >
           Enquêtes types (mise en situation) →
         </Link>
         <Link
-          href='/cours/pv'
+          href='/entrainement/redaction-pv'
           className='inline-flex items-center gap-2 rounded-xl border border-emerald-500/35 bg-emerald-500/10 px-4 py-2.5 text-sm font-semibold text-emerald-200 transition hover:border-emerald-400/50 hover:bg-emerald-500/15'
         >
           Modèles de PV complets →

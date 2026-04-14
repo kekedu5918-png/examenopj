@@ -92,7 +92,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     </span>
                   </div>
                   <Link
-                    href={`/entrainement/enquetes/${e.id}`}
+                    href={`/enquetes/${e.id}`}
                     className='mt-3 text-center text-sm font-bold text-white underline-offset-4 transition hover:text-violet-200 hover:underline'
                   >
                     {e.titre.replace(/^Enquête \w+ — /, '')}
@@ -158,7 +158,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
                   </td>
                   <td className='px-4 py-3'>
                     <Link
-                      href={`/entrainement/enquetes/${e.id}`}
+                      href={`/enquetes/${e.id}`}
                       className='font-semibold text-violet-300 underline-offset-2 hover:text-violet-200 hover:underline'
                     >
                       Ouvrir
@@ -173,7 +173,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
 
       <div className='flex flex-wrap justify-center gap-3 text-sm'>
         <Link
-          href='/entrainement/enquetes/alpha'
+          href='/enquetes/alpha'
           className='inline-flex items-center gap-2 rounded-xl border border-rose-500/35 bg-rose-500/10 px-4 py-2.5 font-semibold text-rose-100 transition hover:bg-rose-500/20'
         >
           <BookOpen className='h-4 w-4' aria-hidden />
@@ -221,7 +221,7 @@ function MemosPanel() {
       title: 'Tableau récap entraînement',
       color: 'border-amber-500/35 bg-amber-950/30 from-amber-500/15',
       accent: 'text-amber-200',
-      body: 'Filtrer par fascicule et réviser en mode flash.',
+      body: 'Filtrer par thème du programme et réviser en mode flash.',
       href: '/entrainement/recapitulatif',
       cta: 'Ouvrir',
     },

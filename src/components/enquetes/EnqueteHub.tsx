@@ -122,7 +122,7 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                   ) : null}
                   <h2 className='mt-3 font-display text-lg font-bold text-white'>
                     <Link
-                      href={`/entrainement/enquetes/${e.id}`}
+                      href={`/enquetes/${e.id}`}
                       className='text-white hover:text-violet-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500/50'
                     >
                       {e.titre}
@@ -138,7 +138,7 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                   )}
                   <div className='mt-4 flex flex-wrap gap-2'>
                     <Link
-                      href={`/entrainement/enquetes/${e.id}`}
+                      href={`/enquetes/${e.id}`}
                       className='rounded-lg border border-violet-500/40 bg-violet-500/15 px-2.5 py-1 text-[11px] font-semibold text-violet-100 hover:bg-violet-500/25'
                     >
                       Fiche

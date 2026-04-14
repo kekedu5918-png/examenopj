@@ -1,6 +1,6 @@
 /**
  * Métadonnées des modules thématiques du programme OPJ (titres de référence + structure pédagogique).
- * Le contenu détaillé est proposé sous forme de synthèses rédactionnelles sur /cours/modules/[id], pas de reproduction de supports tiers.
+ * Le contenu détaillé candidat est proposé sous forme de synthèses sur /fondamentaux (pas de reproduction de supports tiers).
  */
 
 import type { Domain } from '@/data/fascicules-types';
@@ -162,8 +162,8 @@ export function fasciculeDetailPath(id: string): string {
   return courseModulePath(id);
 }
 
-export function courseModulePath(id: string): string {
-  return `/cours/modules/${id}`;
+export function courseModulePath(_id: string): string {
+  return '/fondamentaux';
 }
 
 /** Points d’attention législatifs et jurisprudentiels — liste indicative à mettre à jour sans lier à un support tiers. */

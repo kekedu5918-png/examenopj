@@ -20,16 +20,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   const { data } = await readMarkdownFile(`cours/${base}.md`);
   const title = typeof data.title === 'string' ? data.title : params.slug;
   const description =
-    typeof data.description === 'string' ? data.description : `Fiche cours — ${title}`;
+    typeof data.description === 'string' ? data.description : `Fiche fondamentaux — ${title}`;
   return {
-    title: `${title} — Cours | Examen OPJ`,
+    title: `${title} | Fondamentaux | Examen OPJ`,
     description,
-    alternates: { canonical: `/cours/${params.slug}` },
-    ...openGraphForPage(`/cours/${params.slug}`, title, description),
+    alternates: { canonical: `/fondamentaux/${params.slug}` },
+    ...openGraphForPage(`/fondamentaux/${params.slug}`, title, description),
   };
 }
 
-export default async function CoursFichePage({ params }: { params: { slug: string } }) {
+export default async function FondamentauxFichePage({ params }: { params: { slug: string } }) {
   const base = await resolveCourseBasename(params.slug);
   if (!base) notFound();
   const { content } = await readMarkdownFile(`cours/${base}.md`);
@@ -37,8 +37,8 @@ export default async function CoursFichePage({ params }: { params: { slug: strin
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
       <nav className='mb-8 text-sm text-gray-500'>
-        <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
-          Cours
+        <Link href='/fondamentaux' className='text-blue-400 hover:text-blue-300'>
+          Fondamentaux
         </Link>
         <span className='mx-2' aria-hidden>
           /

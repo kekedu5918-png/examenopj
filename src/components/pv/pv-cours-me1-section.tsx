@@ -26,7 +26,7 @@ export function PVCoursMe1Section() {
   return (
     <div id='me1-pv' className='mt-14 scroll-mt-24'>
       <h2 className='font-display text-xl font-bold text-white sm:text-2xl'>
-        Fascicule ME1 — procès-verbaux (épreuve 2)
+        Support ME1 — procès-verbaux (épreuve 2)
       </h2>
       <p className='mt-2 max-w-3xl text-sm text-slate-400'>
         Modèle officiel « La procédure pénale policière » : <strong className='text-slate-200'>deux colonnes</strong> (marge / bloc principal),

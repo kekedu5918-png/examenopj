@@ -9,9 +9,11 @@ import { cn } from '@/utils/cn';
 
 type Props = {
   items: CourseSummary[];
+  /** Base URL des fiches (ex. `/fondamentaux`) */
+  basePath?: string;
 };
 
-export function CoursFichesListClient({ items }: Props) {
+export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Props) {
   const [q, setQ] = useState('');
 
   const filtered = useMemo(() => {
@@ -26,19 +28,19 @@ export function CoursFichesListClient({ items }: Props) {
   return (
     <div className='space-y-6'>
       <GlassCard className='p-5' padding=''>
-        <label htmlFor='cours-filter' className='mb-2 block text-sm font-medium text-gray-300'>
+        <label htmlFor='fondamentaux-filter' className='mb-2 block text-sm font-medium text-gray-300'>
           Filtrer les fiches
         </label>
         <input
-          id='cours-filter'
+          id='fondamentaux-filter'
           type='search'
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder='Titre, thème, tag…'
-          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none placeholder:text-gray-600 focus:border-violet-500/40 focus:ring-2 focus:ring-violet-500/20'
+          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none placeholder:text-gray-600 focus:border-blue-500/40 focus:ring-2 focus:ring-blue-500/20'
         />
         <p className='mt-2 text-xs text-gray-500'>
-          Contenu lu depuis le dossier <code className='rounded bg-white/5 px-1 py-0.5 text-[11px]'>/content/cours</code>.
+          Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat.
         </p>
       </GlassCard>
 
@@ -46,10 +48,10 @@ export function CoursFichesListClient({ items }: Props) {
         {filtered.map((it) => (
           <li key={it.slug}>
             <Link
-              href={`/cours/${it.slug}`}
+              href={`${basePath}/${it.slug}`}
               className={cn(
                 'block rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition',
-                'hover:border-violet-500/35 hover:bg-white/[0.06]',
+                'hover:border-blue-500/35 hover:bg-white/[0.06]',
               )}
             >
               <span className='font-semibold text-white'>{it.title}</span>

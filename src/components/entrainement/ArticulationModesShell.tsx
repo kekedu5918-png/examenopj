@@ -17,7 +17,7 @@ type Props = {
   suggestedTitre?: string;
 };
 
-/** 3 modes articulation — // TODO: timeline couleurs + alertes avis parquet / mineur depuis fascicules B0 */
+/** 3 modes articulation — // TODO: timeline couleurs + alertes avis parquet / mineur (modèles B0) */
 export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: Props) {
   const [tab, setTab] = useState<(typeof TABS)[number]['id']>('temps');
 
@@ -86,7 +86,7 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
             </ol>
           </div>
           <p className='text-xs text-gray-600'>
-            Calé sur le fascicule B0_ARTICUL_08242 — vérifier les intitulés exacts sur le fascicule officiel de votre centre de formation.
+            Calé sur le modèle B0_ARTICUL_08242 — vérifier les intitulés exacts sur le support officiel de votre centre de formation.
           </p>
         </GlassCard>
       ) : null}
@@ -124,7 +124,7 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
             </ul>
           </div>
           <p className='text-xs text-gray-600'>
-            Référence : B0_ARTICUL_INCID — vérifier la structure exacte sur le fascicule de votre centre de formation.
+            Référence : B0_ARTICUL_INCID — vérifier la structure exacte sur le support de votre centre de formation.
           </p>
         </GlassCard>
       ) : null}

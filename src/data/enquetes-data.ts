@@ -66,8 +66,8 @@ export const ENQUETES: EnqueteMeta[] = [
     ],
     premium: false,
     liensModules: [
-      { href: '/cours/modules/f02', label: 'F02 — Atteintes aux biens' },
-      { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
+      { href: '/fondamentaux/crimes-biens', label: 'Crimes contre les biens' },
+      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
     ],
   },
   {
@@ -100,8 +100,8 @@ export const ENQUETES: EnqueteMeta[] = [
     ],
     premium: true,
     liensModules: [
-      { href: '/cours/modules/f01', label: 'F01 — Atteintes aux personnes' },
-      { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
+      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
+      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
     ],
   },
   fichePedago({
@@ -120,8 +120,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'PV et articulation : distinguer faits bruts, résultats des investigations et rapports hiérarchiques.',
     ],
     liensModules: [
-      { href: '/cours/modules/f01', label: 'F01 — Personnes (agressions sexuelles)' },
-      { href: '/cours/modules/f12', label: 'F12 — Procédure et actes d’enquête' },
+      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
+      { href: '/fondamentaux/perquisition', label: 'Perquisition & actes d’enquête' },
     ],
   }),
   fichePedago({
@@ -140,8 +140,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Respecter la chronologie et les mentions obligatoires dans les PV d’interpellation.',
     ],
     liensModules: [
-      { href: '/cours/modules/f08', label: 'F08 — Libertés publiques / contrôles' },
-      { href: '/cours/modules/f11', label: 'F11 — Cadres et actes PJ' },
+      { href: '/fondamentaux/controle-identite', label: 'Contrôle d’identité' },
+      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
     ],
   }),
   fichePedago({
@@ -159,8 +159,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Rapport de synthèse : résumer opérations, quantités, personnes et demandes au parquet sans hors-sujet.',
     ],
     liensModules: [
-      { href: '/cours/modules/f07', label: 'F07 — Stupéfiants' },
-      { href: '/cours/modules/f11', label: 'F11 — Actes d’enquête / GAV' },
+      { href: '/infractions', label: 'Référentiel infractions (stupéfiants)' },
+      { href: '/fondamentaux/garde-a-vue', label: 'Garde à vue' },
     ],
   }),
   fichePedago({
@@ -178,8 +178,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Enchaîner constatations, expertises et transmissions sans anticiper des qualifications non posées par le sujet.',
     ],
     liensModules: [
-      { href: '/cours/modules/f01', label: 'F01 — Atteintes aux personnes' },
-      { href: '/cours/modules/f11', label: 'F11 — Actes d’enquête' },
+      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
+      { href: '/fondamentaux/cadres-enquete', label: 'Actes d’enquête' },
     ],
   }),
   fichePedago({
@@ -196,7 +196,7 @@ export const ENQUETES: EnqueteMeta[] = [
     objectifsEpreuve2: [
       'Gérer plusieurs mis en cause et victimes : un fil PV clair par acte majeur.',
     ],
-    liensModules: [{ href: '/cours/modules/f01', label: 'F01 — Personnes' }],
+    liensModules: [{ href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' }],
   }),
   fichePedago({
     id: 'india',
@@ -213,8 +213,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Mettre en évidence les actes spécifiques (audition adaptée, AEMO, etc.) dans l’articulation.',
     ],
     liensModules: [
-      { href: '/cours/modules/f01', label: 'F01 — Personnes' },
-      { href: '/cours/modules/f14', label: 'F14 — Police judiciaire / parquet' },
+      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
+      { href: '/fondamentaux/cadres-enquete', label: 'Police judiciaire & cadres' },
     ],
   }),
   fichePedago({
@@ -231,7 +231,7 @@ export const ENQUETES: EnqueteMeta[] = [
     objectifsEpreuve2: [
       'Hiérarchiser constatations techniques et auditions dans des PV courts.',
     ],
-    liensModules: [{ href: '/cours/modules/f01', label: 'F01 — Atteintes / accidentologie' }],
+    liensModules: [{ href: '/fondamentaux/crimes-personnes', label: 'Accidentologie & personnes' }],
   }),
   fichePedago({
     id: 'patrimoniale',
@@ -245,11 +245,11 @@ export const ENQUETES: EnqueteMeta[] = [
     premium: true,
     themeCourt: 'Approche transversale patrimoine',
     objectifsEpreuve2: [
-      'Comparer votre articulation aux fiches Alpha (vol) et aux modules F02 sur les biens.',
+      'Comparer votre articulation aux fiches Alpha (vol) et à la fiche « crimes contre les biens ».',
     ],
     liensModules: [
-      { href: '/cours/modules/f02', label: 'F02 — Atteintes aux biens' },
-      { href: '/cours/modules/f03', label: 'F03 — DPG / éléments constitutifs' },
+      { href: '/fondamentaux/crimes-biens', label: 'Crimes contre les biens' },
+      { href: '/infractions', label: 'Référentiel infractions (DPG)' },
     ],
   }),
 ];

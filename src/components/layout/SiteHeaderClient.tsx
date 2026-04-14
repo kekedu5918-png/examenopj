@@ -99,8 +99,9 @@ export function SiteHeaderClient({
     setMobileOpen(false);
   }, [pathname]);
 
-  const coursActive = isActivePath(pathname, '/cours');
+  const fondamentauxActive = isActivePath(pathname, '/fondamentaux');
   const infractionsActive = isActivePath(pathname, '/infractions');
+  const enquetesActive = isActivePath(pathname, '/enquetes');
   const epreuvesActive = isActiveGroup(pathname, ['/epreuves']);
   const entrainerActive = isActiveGroup(pathname, ['/entrainement', '/quiz', '/flashcards']);
 
@@ -127,13 +128,17 @@ export function SiteHeaderClient({
         <div className='mx-auto flex h-[60px] max-w-6xl items-center justify-between gap-3 px-4 md:px-8'>
           <BrandWordmark href={homeHref} className='min-w-0 shrink' />
 
-          <nav className='hidden flex-1 items-center justify-center gap-1 lg:flex' aria-label='Menu'>
-            <Link href='/cours' className={cn(navBtn, coursActive ? navActive : navInactive)}>
-              Cours
+          <nav className='hidden flex-1 items-center justify-center gap-0.5 xl:gap-1 lg:flex' aria-label='Menu'>
+            <Link href='/fondamentaux' className={cn(navBtn, fondamentauxActive ? navActive : navInactive)}>
+              Fondamentaux
             </Link>
 
             <Link href='/infractions' className={cn(navBtn, infractionsActive ? navActive : navInactive)}>
               Infractions
+            </Link>
+
+            <Link href='/enquetes' className={cn(navBtn, enquetesActive ? navActive : navInactive)}>
+              Enquêtes
             </Link>
 
             <DropdownMenu>
@@ -297,11 +302,11 @@ export function SiteHeaderClient({
               </div>
               <nav className='flex-1 overflow-y-auto px-3 py-4' aria-label='Navigation mobile'>
                 <Link
-                  href='/cours'
+                  href='/fondamentaux'
                   className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
                   onClick={() => setMobileOpen(false)}
                 >
-                  Cours
+                  Fondamentaux
                 </Link>
                 <Link
                   href='/infractions'
@@ -309,6 +314,13 @@ export function SiteHeaderClient({
                   onClick={() => setMobileOpen(false)}
                 >
                   Infractions
+                </Link>
+                <Link
+                  href='/enquetes'
+                  className='block border-b border-white/[0.06] py-3 text-sm font-medium text-examen-ink'
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Enquêtes
                 </Link>
                 <MobileAccordion title='Épreuves'>
                   {SITE_HEADER_EPREUVES_LINKS.map((item) => (

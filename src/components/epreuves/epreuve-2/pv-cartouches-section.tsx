@@ -171,7 +171,7 @@ export function PVCartouchesSection({ lockCategory }: PVCartouchesSectionProps =
                   m='À compter de JJ/MM/AA à … h'
                   i='(moment de son interpellation ou de sa présentation au service d’enquête)'
                 />
-                <PVLine m='Qualification provisoire :' i='crime ou délit puni d’au moins 5 ans d’emprisonnement (vérifier le fascicule / texte en vigueur)' />
+                <PVLine m='Qualification provisoire :' i='crime ou délit puni d’au moins 5 ans d’emprisonnement (vérifier le support officiel / texte en vigueur)' />
                 <PVLine m="Date et lieu présumés de l'infraction." />
                 <PVLine
                   m='Mesure : placement en retenue (mineur ne pouvant être placé en garde à vue)'
@@ -312,7 +312,7 @@ export function PVCartouchesSection({ lockCategory }: PVCartouchesSectionProps =
                   { m: 'Accès au dossier utile / copie des pièces selon le stade' },
                   {
                     m: 'Pour mineur victime d’infractions sexuelles :',
-                    i: 'personne qualifiée + psychologue ou personne compétente si le texte / le thème l’exigent — ne pas paraphraser : citer le fascicule',
+                    i: 'personne qualifiée + psychologue ou personne compétente si le texte / le thème l’exigent — ne pas paraphraser : citer le support officiel',
                   },
                 ]}
               />

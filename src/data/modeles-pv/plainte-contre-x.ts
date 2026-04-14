@@ -11,7 +11,7 @@ import type { ModelePV } from '@/types/pv';
 export const modelePlainteContreX: ModelePV = {
   id: 'plainte-contre-x',
   titre: 'Plainte contre X — Exemple 1 (saisine initiale)',
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 85',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 85',
   fascicule: 'F11',
   categorie: 'plainte',
   isPremium: false,

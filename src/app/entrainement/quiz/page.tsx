@@ -1,13 +1,17 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 
 import { TrackOnMount } from '@/components/analytics/TrackOnMount';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
-import { QuizPageClient } from '@/components/quiz/quiz-page-client';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getContentAccess } from '@/features/access/get-content-access';
 import { AnalyticsEvents } from '@/lib/analytics/events';
 import { openGraphForPage } from '@/utils/seo-metadata';
+
+const QuizPageClient = dynamic(() => import('@/components/quiz/quiz-page-client').then((m) => m.QuizPageClient), {
+  ssr: true,
+});
 
 export const metadata: Metadata = {
   title: 'Quiz — Examen OPJ',

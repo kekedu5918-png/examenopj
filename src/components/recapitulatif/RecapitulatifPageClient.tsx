@@ -19,6 +19,12 @@ import {
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
 
+function themeBadgeFromFascicule(fasc: string): string {
+  const m = fasc.match(/^F(\d{1,2})$/);
+  if (m) return `Thème ${m[1]!.padStart(2, '0')}`;
+  return fasc;
+}
+
 function parseRecapQuery(f?: string): RecapFasciculeFilter {
   if (!f) return 'all';
   const v = f.toLowerCase();
@@ -153,26 +159,26 @@ export function RecapitulatifPageClient({
 
       <GlassCard radius='3xl' topGlow className='mb-8 space-y-4 p-6 print:hidden' padding=''>
         <p className='text-sm text-gray-400'>
-          Filtre par fascicule. La colonne « Élément légal » est calée sur les rubriques{' '}
-          <strong className='text-gray-200'>« I – Élément légal »</strong> des fascicules SDCP (réf. juin 2026, version au{' '}
+          Filtre par thème du programme. La colonne « Élément légal » est calée sur les rubriques{' '}
+          <strong className='text-gray-200'>« I – Élément légal »</strong> du référentiel SDCP (réf. juin 2026, version au{' '}
           <strong className='text-gray-200'>01/12/2025</strong>).
         </p>
         <p className='text-sm text-gray-400'>
-          La vue « Priorité examen » classe <strong className='text-gray-200'>toutes les lignes</strong> du fascicule choisi : d’abord
+          La vue « Priorité examen » classe <strong className='text-gray-200'>toutes les lignes</strong> du thème choisi : d’abord
           ce qu’il faut maîtriser absolument, puis le très probable, enfin le « à sécuriser » (grille pédagogique, pas statistique d’annales).
         </p>
         <div className='flex flex-wrap gap-2'>
           {(
             [
               ['all', 'Tous'],
-              ['f01p1', 'F01 — P1'],
-              ['f01p2', 'F01 — P2'],
-              ['f02', 'F02'],
-              ['f03', 'F03'],
-              ['f04', 'F04'],
-              ['f05', 'F05'],
-              ['f06', 'F06'],
-              ['f07', 'F07'],
+              ['f01p1', 'Thème 01 — P1'],
+              ['f01p2', 'Thème 01 — P2'],
+              ['f02', 'Thème 02'],
+              ['f03', 'Thème 03'],
+              ['f04', 'Thème 04'],
+              ['f05', 'Thème 05'],
+              ['f06', 'Thème 06'],
+              ['f07', 'Thème 07'],
             ] as const
           ).map(([v, label]) => (
             <button
@@ -263,7 +269,7 @@ export function RecapitulatifPageClient({
                 section.headerClass,
               )}
             >
-              {section.fascicule}
+              {themeBadgeFromFascicule(section.fascicule)}
               {section.fasciculePart ? ` — ${section.fasciculePart}` : ''} — {section.groupTitle}
             </div>
             <div className='space-y-3'>
@@ -293,7 +299,7 @@ export function RecapitulatifPageClient({
               <Fragment key={section.id}>
                 <tr className={cn(section.headerClass, 'print:!bg-neutral-200 print:!text-black')}>
                   <td colSpan={5} className='px-3 py-2 text-sm font-semibold print:text-black'>
-                    {section.fascicule}
+                    {themeBadgeFromFascicule(section.fascicule)}
                     {section.fasciculePart ? ` — ${section.fasciculePart}` : ''} — {section.groupTitle}
                   </td>
                 </tr>

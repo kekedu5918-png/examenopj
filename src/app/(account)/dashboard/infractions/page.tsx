@@ -12,6 +12,13 @@ type Props = {
   };
 };
 
+function formatPedagogicalSource(raw: string | null): string {
+  if (!raw) return 'N/A';
+  const m = raw.trim().match(/^F(\d{1,2})$/i);
+  if (m) return `Thème ${m[1]!.padStart(2, '0')}`;
+  return raw;
+}
+
 export default async function InfractionsPage({ searchParams }: Props) {
   const page = Math.max(Number(searchParams?.page ?? '1') || 1, 1);
   const q = searchParams?.q?.trim() || '';
@@ -51,7 +58,7 @@ export default async function InfractionsPage({ searchParams }: Props) {
             <CardHeader>
               <CardTitle className='text-slate-100'>{item.question}</CardTitle>
               <CardDescription className='text-slate-300'>
-                Thème : {item.source_fascicule ?? 'N/A'} {item.article_ref ? `— ${item.article_ref}` : ''}
+                Repère : {formatPedagogicalSource(item.source_fascicule)} {item.article_ref ? `— ${item.article_ref}` : ''}
               </CardDescription>
             </CardHeader>
             <CardContent className='text-sm text-slate-200'>

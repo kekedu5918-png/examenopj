@@ -177,7 +177,7 @@ export function PVTemplateExercise({ config }: Props) {
     <div className='space-y-5'>
       <div className='flex flex-wrap items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.04] p-3'>
         <p className='text-[11px] leading-snug text-slate-500'>
-          <span className='text-slate-400'>Mise en page type fascicule ME1</span> — deux colonnes (marge / PV) lorsque le modèle le
+          <span className='text-slate-400'>Mise en page type ME1</span> — deux colonnes (marge / PV) lorsque le modèle le
           prévoit ; saisie dans les zones en pointillés. {config.articles}
           {!hydrated ? ' — Chargement…' : ' — Brouillon local.'}
         </p>

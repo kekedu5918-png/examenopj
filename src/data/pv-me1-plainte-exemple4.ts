@@ -1,5 +1,5 @@
 /**
- * Extrait du fascicule ME1 « La procédure pénale policière » (session type juin 2026, SDCP).
+ * Extrait du support ME1 « La procédure pénale policière » (session type juin 2026, SDCP).
  * Modèle : Exemple 4 — plainte avec interprète (pages plainte / exemples).
  * À consolider avec votre support officiel ; ne se substitue pas au PDF diffuseur.
  */
@@ -47,7 +47,7 @@ OBJET :
 
 `;
 
-/** Bloc encadré gauche (en-tête service + marge), tel que dans le fascicule. */
+/** Bloc encadré gauche (en-tête service + marge), tel que dans le support ME1. */
 export const ME1_PV_ENTETE_GAUCHE_EX4 = `RÉPUBLIQUE FRANÇAISE
 MINISTÈRE DE L’INTÉRIEUR
 DIRECTION GÉNÉRALE DE
@@ -93,7 +93,7 @@ interprète, M. (prénom, nom) persiste et signe le présent avec
 nous.-------------------------------------------------------------------
 L’intéressé(e) L'interprète L’O.P.J.`;
 
-/** Mentions marginales types (deux schémas), fascicule p. 18-19 — référence. */
+/** Mentions marginales types (deux schémas), ME1 p. 18-19 — référence. */
 export const ME1_MENTIONS_MARGINALES_TYPES = `Premier procès-verbal de la procédure
 N° 2020/101/1
 AFFAIRE :
@@ -167,7 +167,7 @@ export const ME1_PV_CORPS_SQUELETTE_EX5 = `---
 persiste et signe le présent avec Nous.------------------------------
 L’intéressé L’Officier de Police Judiciaire`;
 
-/** Les six parties du PV rappelées par le fascicule (structure / techniques). */
+/** Les six parties du PV rappelées par le support ME1 (structure / techniques). */
 export const ME1_PARTIES_PROC_VERBAL = [
   { titre: 'Titre', detail: '« PROCÈS-VERBAL »' },
   { titre: 'Incipit', detail: 'Date et heure en toutes lettres, identité du rédacteur, lieu, cadre juridique, personnes présentes.' },
@@ -178,7 +178,7 @@ export const ME1_PARTIES_PROC_VERBAL = [
 ] as const;
 
 export const ME1_SOURCE_LABEL =
-  'Fascicule ME1 — La procédure pénale policière (SDCP / examen type juin 2026). Texte d’appui pédagogique.';
+  'Support ME1 — La procédure pénale policière (SDCP / examen type juin 2026). Texte d’appui pédagogique.';
 
 /** Clé localStorage pour le brouillon d’exercice PV ME1. */
 export const PV_ME1_EXERCISE_STORAGE_KEY = 'examenopj-pv-me1-exercise-v1';

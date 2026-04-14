@@ -207,7 +207,7 @@ export function Epreuve2Sections() {
           fac-similés des documents officiels.
         </p>
         <div className='mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm'>
-          <Link href='/entrainement/enquetes' className='font-medium text-violet-300 transition hover:text-violet-200'>
+          <Link href='/enquetes' className='font-medium text-violet-300 transition hover:text-violet-200'>
             Rubrique Enquêtes →
           </Link>
           <Link href='/epreuves' className='font-medium text-gray-400 transition hover:text-gray-300'>

@@ -19,7 +19,7 @@ const STEPS = [
   {
     step: 2,
     label: 'Fond',
-    hint: 'Fiches & fascicules',
+    hint: 'Fiches & programme officiel',
     href: '/fondamentaux',
     Icon: GraduationCap,
     accent: 'from-violet-500 to-indigo-600',

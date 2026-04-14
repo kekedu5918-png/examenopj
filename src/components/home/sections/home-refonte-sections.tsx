@@ -31,7 +31,8 @@ import { getDaysUntilExam } from '@/lib/exam-countdown';
 export type InfractionPreviewItem = {
   id: string;
   infraction: string;
-  fascicule: string;
+  /** Libellé famille (ex. « Contre les biens ») — jamais de code Fxx côté accueil. */
+  familleLabel: string;
 };
 
 /** Section 2 — Par où commencer (homepage). */
@@ -53,7 +54,7 @@ export function StartHereSection() {
       color: 'violet' as const,
       step: '02',
       title: 'Je révise le fond',
-      text: 'Fiches fondamentaux, infractions et procédure alignées sur les fascicules.',
+      text: 'Fiches fondamentaux, infractions et procédure alignées sur le programme officiel.',
       cta: 'Ouvrir les fondamentaux',
       href: '/fondamentaux',
     },
@@ -64,7 +65,7 @@ export function StartHereSection() {
       title: "Je m'entraîne",
       text: "Enquêtes types, modèles de PV et articulation comme en formation.",
       cta: 'Lancer une enquête',
-      href: '/entrainement/enquetes',
+      href: '/enquetes',
     },
   ] as const;
 
@@ -205,7 +206,7 @@ export function HomeEnquetesPillarSection() {
           {ENQUETES.slice(0, 4).map((e) => (
             <motion.div key={e.id} variants={cardVariants}>
               <Link
-                href={`/entrainement/enquetes/${e.id}`}
+                href={`/enquetes/${e.id}`}
                 className='home-enquete-card-horizontal group flex flex-col gap-3 rounded-2xl border border-white/[0.09] bg-gradient-to-r from-orde-navy800/80 to-white/[0.03] p-5 transition duration-200 hover:-translate-y-0.5 hover:border-orde-blue500/35 hover:shadow-xl hover:shadow-black/30 sm:flex-row sm:items-center sm:justify-between sm:gap-6'
               >
                 <div className='flex min-w-0 flex-1 flex-col gap-1 sm:flex-row sm:items-center sm:gap-6'>
@@ -231,7 +232,7 @@ export function HomeEnquetesPillarSection() {
         </motion.div>
         <div className='mt-10 flex flex-col items-center text-center'>
           <MotionLink
-            href='/entrainement/enquetes'
+            href='/enquetes'
             className='inline-flex items-center gap-2 rounded-md bg-orde-blue500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-orde-blue400'
             whileTap={{ scale: 0.96 }}
             whileHover={shouldReduce ? {} : { scale: 1.02 }}
@@ -364,7 +365,7 @@ export function HomeInfractionsPreviewSection({ items }: { items: InfractionPrev
                     Épreuve 1 — Qualification
                   </span>
                   <span className='shrink-0 rounded-md border border-white/10 px-2 py-0.5 font-mono-label text-[10px] text-examen-inkMuted'>
-                    {it.fascicule}
+                    {it.familleLabel}
                   </span>
                 </span>
                 <span className='min-w-0 flex-1 font-medium text-white'>
@@ -484,7 +485,7 @@ export function HomeTestimonialsSection() {
       [
         {
           quote:
-            'Les fiches procédure collent au fascicule SDCP : je révise sans me perdre dans les PDF du centre.',
+            'Les fiches procédure collent au programme SDCP : je révise sans me perdre dans les PDF du centre.',
           author: 'Brigadier, Paris · session 2026',
         },
         {
@@ -636,7 +637,7 @@ export function HomeFinalPricingSection() {
             <p className='mt-1 text-sm text-slate-400'>ou 49 € accès jusqu&apos;au 11 juin</p>
             <ul className='mt-5 flex-1 space-y-2.5 text-sm text-slate-300'>
               {[
-                'Tout le contenu — 15 fascicules',
+                'Tout le contenu — 15 thèmes du programme',
                 'Enquêtes complètes avec corrections',
                 "Modèles de PV et articulation",
                 'Quiz illimités + répétition espacée',
@@ -712,7 +713,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
                         Épreuve 1 — Qualification
                       </span>
                       <span className='shrink-0 rounded-md border border-white/10 px-2 py-0.5 font-mono-label text-[10px] text-examen-inkMuted'>
-                        {it.fascicule}
+                        {it.familleLabel}
                       </span>
                     </span>
                     <span className='min-w-0 flex-1 font-medium text-white'>

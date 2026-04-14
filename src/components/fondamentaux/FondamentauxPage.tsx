@@ -57,7 +57,7 @@ function programmeGroupTabLabel(g: { fasciculeNumero: number | null; titre: stri
   if (g.fasciculeNumero == null) {
     return `Transverses (${n})`;
   }
-  return `F${g.fasciculeNumero.toString().padStart(2, '0')} (${n})`;
+  return `Thème ${g.fasciculeNumero.toString().padStart(2, '0')} (${n})`;
 }
 
 export function FondamentauxPage({ fiches, categories, contentLocked = false }: Props) {
@@ -216,7 +216,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
         <p className='mb-6 text-center text-sm text-slate-500'>
           Ouvrez une fiche en <strong className='text-slate-300'>pleine page</strong> : parcours{' '}
           <strong className='text-slate-400'>accroche → en bref → repères → pièges → à retenir → synthèse</strong>
-          , badge <strong className='font-mono text-slate-400'>F##</strong>, puis quiz et module.
+          , repère <strong className='text-slate-400'>Thème xx</strong>, puis quiz et lien vers le parcours.
         </p>
         <div key={`${filtre}-${vueOrganisation}-${searchQuery}`} className='space-y-12'>
           {vueOrganisation === 'programme' && programmeGroups.length > 0 ? (
@@ -224,7 +224,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
               {/* Sidebar sticky — desktop seulement */}
               <aside className='hidden lg:block'>
                 <nav
-                  aria-label='Fascicules F01–F15'
+                  aria-label='Thèmes du programme officiel (01 à 15)'
                   className='sticky top-24 max-h-[calc(100vh-7rem)] overflow-y-auto rounded-2xl border border-white/[0.07] bg-white/[0.02] p-3 [-ms-overflow-style:none] [scrollbar-width:thin]'
                 >
                   <p className='mb-2 px-2 text-[10px] font-bold uppercase tracking-[0.15em] text-slate-600'>Programme</p>
@@ -307,7 +307,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
                       </div>
                       <p className='text-xs text-slate-500'>
                         {activeProgrammeGroup.fiches.filter((f) => viewedIds.has(f.id)).length}/
-                        {activeProgrammeGroup.fiches.length} fiches consultées dans ce fascicule
+                        {activeProgrammeGroup.fiches.length} fiches consultées pour ce thème
                       </p>
                     </div>
                     <div className='grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6 lg:grid-cols-2 xl:grid-cols-3'>

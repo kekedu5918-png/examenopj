@@ -1,5 +1,6 @@
 import { fasciculesList } from '@/data/fascicules-list';
 import { FICHES } from '@/data/fondamentaux-fiches';
+import type { Fiche } from '@/data/fondamentaux-types';
 
 export type FondamentauxCoverageRow = {
   moduleId: string;
@@ -9,15 +10,24 @@ export type FondamentauxCoverageRow = {
   ficheIds: string[];
 };
 
+function moduleKeyForFiche(f: Fiche): string | null {
+  if (f.fasciculeId?.trim()) return f.fasciculeId.trim().toLowerCase();
+  const q = f.lienQuiz;
+  if (q) {
+    const m = q.match(/[?&]f=(f\d+)/i);
+    if (m) return m[1]!.toLowerCase();
+  }
+  return null;
+}
+
 /**
- * Grille de couverture : module fascicule officiel → identifiants des fiches « fondamentaux » associées.
- * À mettre à jour lors d’un audit sommaire F01–F15 ou fusion avec votre document de révision.
+ * Grille de couverture : thème programme (référence interne f01–f15) → fiches « fondamentaux » associées.
  */
 export function getFondamentauxCoverageRows(): FondamentauxCoverageRow[] {
   const acc = new Map<string, string[]>();
   for (const f of FICHES) {
-    if (!f.lienModule) continue;
-    const id = f.lienModule.replace(/^\/cours\/modules\//, '');
+    const id = moduleKeyForFiche(f);
+    if (!id) continue;
     const prev = acc.get(id) ?? [];
     prev.push(f.id);
     acc.set(id, prev);
@@ -29,7 +39,7 @@ export function getFondamentauxCoverageRows(): FondamentauxCoverageRow[] {
     if (!ficheIds?.length) continue;
     rows.push({
       moduleId: meta.id,
-      href: `/cours/modules/${meta.id}`,
+      href: '/fondamentaux',
       numero: meta.numero,
       titre: meta.titre,
       ficheIds: [...new Set(ficheIds)].sort(),
@@ -38,7 +48,7 @@ export function getFondamentauxCoverageRows(): FondamentauxCoverageRow[] {
   return rows.sort((a, b) => a.numero - b.numero);
 }
 
-/** Fascicules du programme sans fiche fondamentaux liée encore (repère pour audit). */
+/** Thèmes du programme sans fiche fondamentaux liée encore (repère pour audit). */
 export function getFondamentauxModulesSansFiche(): { id: string; numero: number; titre: string }[] {
   const rows = getFondamentauxCoverageRows();
   const couverts = new Set(rows.map((r) => r.moduleId));

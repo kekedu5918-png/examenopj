@@ -171,7 +171,7 @@ export function PVExamModeBar({ onActiveChange }: Props) {
     return (
       <div className='mb-6 rounded-xl border border-slate-500/30 bg-slate-800/40 px-4 py-3 text-sm text-slate-300'>
         <p className='font-medium text-white'>Session terminée</p>
-        <p className='mt-1 text-xs text-slate-400'>Contrôlez votre PV avec le fascicule. Vous pouvez relancer une simulation.</p>
+        <p className='mt-1 text-xs text-slate-400'>Contrôlez votre PV avec le support ME1. Vous pouvez relancer une simulation.</p>
         <Button type='button' variant='outline' className='mt-3 rounded-xl border-white/20' onClick={() => setPhase('idle')}>
           Retour
         </Button>

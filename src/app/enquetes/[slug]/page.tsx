@@ -17,7 +17,7 @@ export function generateMetadata({ params }: Props): Metadata {
   return {
     title: `${e.code} — ${e.titre}`,
     description: e.resume,
-    alternates: { canonical: `/entrainement/enquetes/${params.slug}` },
+    alternates: { canonical: `/enquetes/${params.slug}` },
   };
 }
 
@@ -34,7 +34,7 @@ export default async function EnqueteDetailPage({ params }: Props) {
     return (
       <ContentPremiumOverlay
         title={`Enquête ${enquete.code} — réservée au Premium`}
-        description="Cette enquête (planches ou fiche péda complète) est débloquée avec l’offre Premium. L’enquête Alpha reste disponible comme exemple gratuit avec documents PDF."
+        description="Cette enquête (planches ou fiche complète) est débloquée avec l’offre Premium. L’enquête Alpha reste disponible comme exemple gratuit."
       >
         {inner}
       </ContentPremiumOverlay>

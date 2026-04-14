@@ -4,7 +4,7 @@ import type { ModelePV } from '@/types/pv';
 export const modeleRapportSynthese: ModelePV = {
   id: 'rapport-synthese',
   titre: 'Rapport de synthèse — structure officielle',
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 67+',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 67+',
   fascicule: 'F11',
   categorie: 'rapport-synthese',
   isPremium: true,

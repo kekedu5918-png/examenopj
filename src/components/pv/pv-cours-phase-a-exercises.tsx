@@ -46,7 +46,7 @@ export function PVCoursPhaseAExercises() {
           </h2>
           <p className='mt-3 max-w-3xl text-sm text-gray-400'>
             Complétez les champs : les segments non renseignés apparaissent comme <strong className='text-gray-300'>xxx</strong>{' '}
-            dans l’aperçu. Recoupez systématiquement avec votre fascicule ME1 (session juin 2026) et Légifrance.
+            dans l’aperçu. Recoupez systématiquement avec votre support ME1 (session juin 2026) et Légifrance.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export function PVCoursPhaseAExercises() {
         {PV_ME1_PHASE_A_EXERCISES.map(renderExerciseSection)}
 
         <div className='space-y-3 border-t border-white/10 pt-12'>
-          <h3 className='text-xs font-bold uppercase tracking-wider text-amber-400/90'>Extraits supplémentaires (fascicule)</h3>
+          <h3 className='text-xs font-bold uppercase tracking-wider text-amber-400/90'>Extraits supplémentaires (programme)</h3>
           <p className='max-w-3xl text-xs text-gray-500'>
             Squelettes calés sur les rubriques enquête de voisinage, audition de témoin, interpellation et constitution de groupe.
           </p>

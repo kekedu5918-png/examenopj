@@ -123,11 +123,11 @@ export function EnqueteDetailClient({ enquete }: Props) {
     return (
       <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.coursHub} pad='default'>
           <nav className='mb-8 text-sm text-gray-500'>
-            <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
+            <Link href='/fondamentaux' className='text-violet-400 hover:text-violet-300'>
               Cours
             </Link>
             <span className='mx-2'>/</span>
-            <Link href='/entrainement/enquetes' className='text-violet-400 hover:text-violet-300'>
+            <Link href='/enquetes' className='text-violet-400 hover:text-violet-300'>
               Enquêtes
             </Link>
             <span className='mx-2'>/</span>
@@ -162,11 +162,11 @@ export function EnqueteDetailClient({ enquete }: Props) {
   return (
     <InteriorPageShell maxWidth='5xl' glow={SHELL_GLOW.coursHub} pad='default'>
         <nav className='mb-8 text-sm text-gray-500'>
-          <Link href='/cours' className='text-violet-400 hover:text-violet-300'>
+          <Link href='/fondamentaux' className='text-violet-400 hover:text-violet-300'>
             Cours
           </Link>
           <span className='mx-2'>/</span>
-          <Link href='/entrainement/enquetes' className='text-violet-400 hover:text-violet-300'>
+          <Link href='/enquetes' className='text-violet-400 hover:text-violet-300'>
             Enquêtes
           </Link>
           <span className='mx-2'>/</span>

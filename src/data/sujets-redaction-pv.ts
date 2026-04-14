@@ -25,7 +25,7 @@ Selon le vigile et le récapitulatif établi par le service client, le mis en ca
 
 Les faits sont, à ce stade de l’enquête, présentés comme constituant un vol simple au sens de l’article 311-1 du Code pénal. Le mis en cause conteste partiellement l’intention de soustraire et invoque un « oubli de sortie des produits de la poche » ; le vigile maintient avoir observé un geste de dissimulation volontaire avant le contrôle.
 
-Vous rédigez le procès-verbal opérationnel d’interpellation ou de constatation de flagrance (selon la structure retenue par votre formation et le fascicule ME1), de manière à permettre une transmission au parquet avec les mentions obligatoires et une chronologie lisible.`,
+Vous rédigez le procès-verbal opérationnel d’interpellation ou de constatation de flagrance (selon la structure retenue par votre formation et le support ME1), de manière à permettre une transmission au parquet avec les mentions obligatoires et une chronologie lisible.`,
   elementsObligatoires: [
     "Cartouche d'en-tête complet (service, unité, référence)",
     "Formule d'ouverture légale (L'an... nous... OPJ...)",

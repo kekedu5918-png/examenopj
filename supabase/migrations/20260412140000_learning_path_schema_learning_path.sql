@@ -255,7 +255,7 @@ join (
     ('infractions', 'inf-1', 'inf-1', 'Découverte — référentiel', 'discover', 1, 10, 80, 12, '/infractions'),
     ('infractions', 'inf-2', 'inf-2', 'QCM guidé', 'practice', 2, 10, 80, 15, '/quiz'),
     ('infractions', 'inf-3', 'inf-3', 'Flashcards', 'consolidate', 3, 10, 80, 10, '/flashcards'),
-    ('infractions', 'inf-4', 'inf-4', 'Cas pratique', 'case', 4, 15, 80, 25, '/cours/modules'),
+    ('infractions', 'inf-4', 'inf-4', 'Cas pratique', 'case', 4, 15, 80, 25, '/fondamentaux'),
     ('infractions', 'inf-5', 'inf-5', 'Mini-examen', 'exam', 5, 20, 80, 20, '/quiz'),
     ('procedure', 'fla-1', 'fla-1', 'Découverte — cadres d’enquête', 'discover', 1, 10, 80, 12, '/fondamentaux/cadres-enquete'),
     ('procedure', 'fla-2', 'fla-2', 'QCM guidé', 'practice', 2, 10, 80, 15, '/quiz'),

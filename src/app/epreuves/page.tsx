@@ -161,7 +161,7 @@ export default function EpreuvesHubPage() {
             Guide de révision OPJ
           </Link>
           <span className='text-gray-600'>·</span>
-          <Link href='/entrainement/enquetes' className='text-violet-300 underline-offset-4 hover:underline'>
+          <Link href='/enquetes' className='text-violet-300 underline-offset-4 hover:underline'>
             Enquêtes planches
           </Link>
           <span className='text-gray-600'>·</span>

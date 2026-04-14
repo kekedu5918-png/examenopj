@@ -11,8 +11,8 @@ export const NAV_PREPARER_CHILDREN: readonly NavDropdownItem[] = [
 ] as const;
 
 export const NAV_REFERENCES_CHILDREN: readonly NavDropdownItem[] = [
+  { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/infractions', label: 'Infractions' },
-  { href: '/cours', label: 'Cours' },
 ] as const;
 
 export const NAV_ENTRAINER_CHILDREN: readonly NavDropdownItem[] = [
@@ -23,10 +23,11 @@ export const NAV_ENTRAINER_CHILDREN: readonly NavDropdownItem[] = [
 ] as const;
 
 export const NAV_PRIMARY_LINKS = [
-  { href: '/entrainement/enquetes', label: 'Enquêtes' },
-  { href: '/epreuves', label: 'Épreuves' },
+  { href: '/fondamentaux', label: 'Fondamentaux' },
   { href: '/infractions', label: 'Infractions' },
-  { href: '/cours', label: 'Cours' },
+  { href: '/enquetes', label: 'Enquêtes' },
+  { href: '/epreuves', label: 'Épreuves' },
+  { href: '/entrainement', label: 'Entraînement' },
 ] as const;
 
 export type NavMegaChild = {
@@ -38,9 +39,9 @@ export type NavMegaChild = {
 
 export const NAV_COURS_CHILDREN: readonly NavMegaChild[] = [
   {
-    name: 'Cours',
-    href: '/cours',
-    description: 'Fiches issues du dossier content/cours',
+    name: 'Fondamentaux',
+    href: '/fondamentaux',
+    description: 'Synthèses procédure, cadres, GAV, perquisitions…',
   },
 ] as const;
 
@@ -93,7 +94,9 @@ export const SITE_HEADER_INFRACTIONS_LINKS: readonly NavDropdownItem[] = [
   { href: '/infractions', label: 'Référentiel complet' },
 ] as const;
 
-export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [{ href: '/cours', label: 'Fiches cours' }] as const;
+export const SITE_HEADER_COURS_LINKS: readonly NavDropdownItem[] = [
+  { href: '/fondamentaux', label: 'Fiches fondamentaux' },
+] as const;
 
 export const SITE_HEADER_EPREUVES_LINKS: readonly NavDropdownItem[] = [
   { href: '/epreuves', label: "Vue d'ensemble" },
@@ -107,6 +110,7 @@ export const SITE_HEADER_ENTRAINER_LINKS: readonly NavDropdownItem[] = [
   { href: '/entrainement/parcours/cadres-enquetes', label: 'Parcours cadres' },
   { href: '/entrainement/quiz', label: 'Quiz' },
   { href: '/entrainement/flashcards', label: 'Flashcards' },
-  { href: '/entrainement/enquetes', label: 'Enquêtes' },
   { href: '/entrainement/articulation', label: 'Articulation' },
+  { href: '/entrainement/redaction-pv', label: 'Rédaction PV' },
+  { href: '/entrainement/rapport-synthese', label: 'Rapport de synthèse' },
 ] as const;

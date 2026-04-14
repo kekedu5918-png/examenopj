@@ -453,7 +453,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           >
             {(
               [
-                { id: 'module' as const, label: 'Module thématique', hint: 'Un fascicule F01–F18', Icon: BookOpen },
+                { id: 'module' as const, label: 'Module thématique', hint: 'Un thème du programme (01–18)', Icon: BookOpen },
                 { id: 'domain' as const, label: 'Par domaine', hint: 'DPS · DPG · Procédure', Icon: Layers },
                 { id: 'global' as const, label: 'Quiz global', hint: 'Tout mélangé', Icon: Shuffle },
               ] as const
@@ -499,10 +499,12 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
             <GlassCard hover={false} padding='p-6' className='border border-white/[0.07]'>
               {mode === 'module' ? (
                 <div>
-                  <h3 className='text-sm font-semibold text-white'>Fascicule</h3>
-                  <p className='mt-1 text-sm text-gray-500'>Sélectionnez le thème du programme (questions filtrées sur ce fascicule).</p>
+                  <h3 className='text-sm font-semibold text-white'>Thème du programme</h3>
+                  <p className='mt-1 text-sm text-gray-500'>
+                    Sélectionnez le thème (les questions sont filtrées sur ce bloc pédagogique).
+                  </p>
                   <label className='mt-4 block'>
-                    <span className='sr-only'>Fascicule thématique</span>
+                    <span className='sr-only'>Thème du programme</span>
                     <select
                       value={fascicule}
                       onChange={(e) => setFascicule(Number(e.target.value))}
@@ -510,7 +512,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
                     >
                       {fasciculeOptions.map((f) => (
                         <option key={f.numero} value={f.numero} className='bg-navy-900'>
-                          F{String(f.numero).padStart(2, '0')} — {f.titre}
+                          Thème {String(f.numero).padStart(2, '0')} — {f.titre}
                         </option>
                       ))}
                     </select>

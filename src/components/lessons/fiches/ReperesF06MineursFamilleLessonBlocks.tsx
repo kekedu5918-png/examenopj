@@ -17,7 +17,7 @@ const METHOD: TimelineStepItem[] = [
     number: 2,
     title: 'L.A.M. & aggravations',
     description:
-      'Âge, autorité, vulnérabilité : contrôler systématiquement les circonstances spécifiques au fascicule F06.',
+      'Âge, autorité, vulnérabilité : contrôler systématiquement les circonstances spécifiques au thème mineurs / famille.',
     article: 'C. pén.',
   },
   {
@@ -30,13 +30,13 @@ const METHOD: TimelineStepItem[] = [
 
 export function ReperesF06MineursFamilleLessonBlocks() {
   return (
-    <section aria-label='Repères visuels — F06 mineurs' className='space-y-6'>
+    <section aria-label='Repères visuels — mineurs et famille' className='space-y-6'>
       <div className='flex flex-wrap items-center gap-2'>
         <span className='text-[10px] font-bold uppercase tracking-[0.22em] text-rose-400/90'>
           Repères visuels
         </span>
         <span className='rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] text-slate-400'>
-          Fascicule F06
+          Thème mineurs / famille
         </span>
       </div>
 

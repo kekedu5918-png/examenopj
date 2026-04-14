@@ -1,5 +1,5 @@
 /**
- * Catalogue PV (page /cours/pv) : fiches pédagogiques + lien vers exercices interactifs quand disponibles.
+ * Catalogue PV (atelier /entrainement/redaction-pv) : fiches pédagogiques + lien vers exercices interactifs quand disponibles.
  * Phase A = MVP épreuve 2 ; Phase B = extension programme complète.
  */
 

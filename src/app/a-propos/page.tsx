@@ -43,8 +43,8 @@ export default function AProposPage() {
             existantes sont soit trop généralistes, soit déconnectées de ce que l&apos;examen demande concrètement.
           </p>
           <p>
-            {APP_NAME} comble ce manque : enquêtes types issues de la formation, modèles de PV conformes aux fascicules,
-            méthode d&apos;articulation, infractions exhaustives.
+            {APP_NAME} comble ce manque : enquêtes types issues de la formation, modèles de PV alignés sur les supports
+            officiels, méthode d&apos;articulation, infractions exhaustives.
           </p>
         </div>
       </section>
@@ -54,7 +54,7 @@ export default function AProposPage() {
         <div className='space-y-4 text-base leading-relaxed text-slate-300'>
           <p>{APP_NAME} est un outil de révision indépendant.</p>
           <p>
-            Il ne remplace pas la formation officielle, les fascicules SDCP, ni les consignes de tes formateurs. Il
+            Il ne remplace pas la formation officielle, les supports SDCP, ni les consignes de tes formateurs. Il
             n&apos;est pas affilié à la Police nationale ni à aucune administration.
           </p>
         </div>

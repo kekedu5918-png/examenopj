@@ -7,7 +7,7 @@ La **garde à vue** (lorsqu’elle est légalement mise en œuvre) permet de **r
 ## Droits et formalités (vision programme)
 
 - **Information** de la personne sur la nature des faits et ses droits (selon les textes applicables au moment de l’examen).
-- **Avocat** : selon les phases et le régime, l’assistance est **encadrée** — connais les **principes** du fascicule.
+- **Avocat** : selon les phases et le régime, l’assistance est **encadrée** — connais les **principes** du programme.
 - **Durée** : **plafonds** + **prolongations** sous conditions — c’est un classique de **QCM** et d’**oral**.
 
 ## Différence avec l’audition libre

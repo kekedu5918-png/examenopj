@@ -52,7 +52,7 @@ values
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-1'), 'infractions', 1, 'discovery', 'Découverte — référentiel', '/infractions', 80, 'inf-1'),
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-2'), 'infractions', 2, 'training', 'QCM guidé', '/quiz', 80, 'inf-2'),
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-3'), 'infractions', 3, 'consolidation', 'Flashcards', '/flashcards', 80, 'inf-3'),
-  (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-4'), 'infractions', 4, 'case', 'Cas pratique', '/cours/modules', 80, 'inf-4'),
+  (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-4'), 'infractions', 4, 'case', 'Cas pratique', '/fondamentaux', 80, 'inf-4'),
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:inf-5'), 'infractions', 5, 'exam', 'Mini-examen', '/quiz', 80, 'inf-5'),
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:fla-1'), 'procedure', 1, 'discovery', 'Découverte — cadres d’enquête', '/fondamentaux/cadres-enquete', 80, 'fla-1'),
   (uuid_generate_v5 ('a0000001-0001-4000-8000-000000000001'::uuid, 'learning-node:fla-2'), 'procedure', 2, 'training', 'QCM guidé', '/quiz', 80, 'fla-2'),

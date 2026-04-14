@@ -7,6 +7,7 @@ import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { InfractionAudioCoach } from '@/components/infractions/InfractionAudioCoach';
 import { RecapBulletCell } from '@/components/recapitulatif/RecapBulletCell';
 import { Button } from '@/components/ui/button';
+import { fasciculeToFamily, INFRACTION_FAMILY_OPTIONS } from '@/data/infractions-family-filter';
 import {
   type InfractionCatalogItem,
   infractionToRecapFilter,
@@ -26,6 +27,11 @@ function legifranceSearchUrl(legalLine: string): string {
 }
 
 type Props = { item: InfractionCatalogItem; className?: string };
+
+function familleBadgeLabel(item: InfractionCatalogItem): string {
+  const fam = fasciculeToFamily(item.fascicule);
+  return INFRACTION_FAMILY_OPTIONS.find((o) => o.id === fam)?.label ?? item.groupTitle;
+}
 
 function SectionShell({
   icon: Icon,
@@ -98,7 +104,7 @@ export function InfractionDetailContent({ item, className }: Props) {
             {badge.label}
           </span>
           <span className='rounded-lg border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[10px] font-semibold text-slate-400'>
-            {item.fascicule}
+            {familleBadgeLabel(item)}
             {item.fasciculePart ? ` · ${item.fasciculePart}` : ''}
           </span>
         </div>
@@ -145,15 +151,14 @@ export function InfractionDetailContent({ item, className }: Props) {
         <details className='group rounded-xl border border-cyan-500/20 bg-cyan-950/20'>
           <summary className='cursor-pointer list-none px-3 py-2 text-[11px] font-medium text-cyan-200/90 [&::-webkit-details-marker]:hidden'>
             <span className='inline-flex items-center gap-2'>
-              Source fascicule (audit)
+              Source audit programme
               <span className='text-cyan-500/70 transition group-open:rotate-180'>▼</span>
             </span>
           </summary>
           <p className='border-t border-cyan-500/15 px-3 py-2 text-[11px] leading-relaxed text-cyan-100/85'>
-            Éléments matériel / moral issus de l’audit fascicule (
+            Éléments matériel / moral issus du référentiel d’audit interne (
             <code className='rounded bg-black/30 px-1 text-[10px]'>reference/audit/infractions_officielles.json</code>
-            ). En cas d’écart, le fascicule SDCP et les fichiers sous{' '}
-            <code className='rounded bg-black/30 px-1 text-[10px]'>reference/audit/fascicules</code> font foi.
+            ). En cas d’écart, le support officiel SDCP et la base d’audit font foi.
           </p>
         </details>
       ) : null}
@@ -192,7 +197,7 @@ export function InfractionDetailContent({ item, className }: Props) {
       <div className='rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-xs leading-relaxed text-slate-500'>
         <p className='font-semibold text-slate-400'>Contrôle qualité</p>
         <p className='mt-1.5'>
-          Valider avec votre <strong className='text-slate-300'>fascicule officiel</strong> et{' '}
+          Valider avec votre <strong className='text-slate-300'>support officiel de formation</strong> et{' '}
           <strong className='text-slate-300'>Légifrance</strong> (textes en vigueur).
         </p>
         <a

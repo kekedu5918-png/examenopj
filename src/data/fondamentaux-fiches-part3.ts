@@ -9,7 +9,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Formaliser la chaîne de possession et l’état des pièces : chaque mouvement doit être traçable jusqu’au débat contradictoire.',
     source: 'Art. 56, 97, 706-159 et D. 15-5-1-1 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -46,7 +46,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Contrôle / interpellation ≠ audition : ce sont des actes coercitifs encadrés qui conditionnent toute la suite procédurale.',
     source: 'Art. 78-4 et 803-1 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -76,7 +76,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'La victime est une partie : ses droits conditionnent le calendrier d’audition, les mesures de protection et la communication avec le parquet.',
     source: 'Art. 11-1, 11-6, 12, 706-30 et suivants C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -107,7 +107,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'La commission rogatoire ne duplique pas une compétence : elle transporte précisément des actes encadrés dans le temps et dans l’objet.',
     source: 'Art. 81, 151 à 155 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -138,7 +138,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Les faits mobiles ou interdépartementaux imposent des mécanismes d’extension pour éviter les investigations hors cadre.',
     source: 'Art. 75-1 et R. 15-33-1 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -167,7 +167,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Les infractions structurées permettent des outils d’enquête renforcés (durées allongées, infiltrations encadrées, perquisitions dérogatoires).',
     source: 'Livre IV bis C.P.P. (dispositions d’application spéciales)',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -206,7 +206,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Qualifier une infraction, c’est déjà esquisser la fourchette : les peines principales, complémentaires et le régime temporel commandent l’articulation parquet / juridiction.',
     source: 'Art. 131-1 à 131-11, 132-1 à 132-57 C.P.',
-    lienModule: '/cours/modules/f10',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f10',
     regles: [
       {
@@ -245,7 +245,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Le juge d’instruction pilote l’information judiciaire ; l’OPJ agit sous sa direction lorsqu’une information est ouverte.',
     source: 'Art. 80, 81, 116 et suivants C.P.P.',
-    lienModule: '/cours/modules/f12',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f12',
     regles: [
       {
@@ -275,7 +275,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Le JLD est le garant des atteintes sérieuses à la liberté : garde à vue longue, perquisitions sensibles, placements sous contrôle.',
     source: 'Art. 137-1 et suivants C.P.P.',
-    lienModule: '/cours/modules/f12',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f12',
     regles: [
       {
@@ -304,7 +304,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Contrôle collégial de la tenue de l’information : elle statue sur les nullités, les placements et les coûts d’une enquête longue.',
     source: 'Art. 179 à 226 C.P.P.',
-    lienModule: '/cours/modules/f13',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f13',
     regles: [
       {
@@ -329,7 +329,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Au-delà du prononcé, la peine se « vit » devant le juge d’application des peines (JAP) et le SPIP.',
     source: 'Art. 712-1 à 712-8 C.P.P.',
-    lienModule: '/cours/modules/f13',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f13',
     regles: [
       {
@@ -353,7 +353,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Le cadre 74 est quasi autonome : préserver la scène, obtenir l’autorité scientifique et sécuriser la chaîne entre médecine légale et parquet.',
     source: 'Art. 74 et 74-1 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -382,7 +382,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Articuler recherche immédiate, traitement des données personnelles et réquisition judiciaire est déterminant dans la « fenêtre » des premières heures.',
     source: 'Art. 74-1, 99 et suivants C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -406,7 +406,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'Commission rogatoire internationale, EAW, Prüm ou Eurojust : chaque canal a ses délais et ses nullités potentielles.',
     source: 'L. 113-1 à 113-13 C.P.P. & instruments européens',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -436,7 +436,7 @@ export const FONDAMENTAUX_PART3: Fiche[] = [
     accroche:
       'La tentative pénalise déjà l’élément matériel inachevé dès lors que la loi l’annonce pour le crime (toujours) ou le délit (sur incrimination spécifique).',
     source: 'Art. 121-5, 121-4 C.P.',
-    lienModule: '/cours/modules/f09',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f09',
     regles: [
       {

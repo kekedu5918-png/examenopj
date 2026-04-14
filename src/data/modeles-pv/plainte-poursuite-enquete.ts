@@ -21,7 +21,7 @@ const r4 = SDCP_CORPS_PLAINTE_R3_R4[1]!;
 export const modelePlaintePoursuiteEnquete: ModelePV = {
   id: 'plainte-poursuite-enquete',
   titre: "Plainte — quand la plainte n'est pas la saisine initiale (Exemple 3)",
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 86',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 86',
   fascicule: 'F11',
   categorie: 'plainte',
   isPremium: false,

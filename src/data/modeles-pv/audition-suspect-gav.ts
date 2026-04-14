@@ -7,7 +7,7 @@ import type { ModelePV } from '@/types/pv';
 export const modeleAuditionSuspectGav: ModelePV = {
   id: 'audition-suspect-gav',
   titre: "Audition d'une personne placée en garde à vue — assistée d'un avocat",
-  source: 'Fascicule SDCP — La procédure pénale policière, p. 177–179',
+  source: 'Support officiel SDCP — La procédure pénale policière, p. 177–179',
   fascicule: 'F11',
   categorie: 'audition-suspect-gav',
   isPremium: true,

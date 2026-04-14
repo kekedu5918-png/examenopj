@@ -21,9 +21,9 @@ export function FondamentauxCoveragePanel() {
         <GlassCard padding='p-6' className='border-white/10'>
           <CollapsibleTrigger className='flex w-full items-center justify-between gap-3 text-left'>
             <div>
-              <h2 className='font-display text-lg font-bold text-white'>Audit de couverture (fascicules → fiches)</h2>
+              <h2 className='font-display text-lg font-bold text-white'>Audit de couverture (programme → fiches)</h2>
               <p className='mt-1 text-sm text-gray-400'>
-                Table de traçabilité entre les <strong className='text-gray-200'>modules F01–F15</strong> et les fiches (y compris les id{' '}
+                Table de traçabilité entre les <strong className='text-gray-200'>thèmes 01 à 15</strong> du programme et les fiches (y compris les id{' '}
                 <strong className='text-gray-200'>L…</strong> issues du corpus étendu).
               </p>
             </div>
@@ -38,7 +38,7 @@ export function FondamentauxCoveragePanel() {
           </CollapsibleTrigger>
           <CollapsibleContent>
             <p className='mt-4 text-sm text-gray-400'>
-              Chaque fiche longue affiche aussi son numéro de fascicule — vérifier toujours le texte sur{' '}
+              Vérifier toujours le texte sur{' '}
               <strong className='text-gray-200'>Légifrance et votre support officiel</strong>.
             </p>
 
@@ -56,7 +56,7 @@ export function FondamentauxCoveragePanel() {
                     <tr key={r.moduleId} className='border-b border-white/[0.06] align-top odd:bg-white/[0.02]'>
                       <td className='px-3 py-2'>
                         <Link href={r.href} className='font-medium text-cyan-300 hover:text-cyan-200'>
-                          F{r.numero.toString().padStart(2, '0')}
+                          Thème {r.numero.toString().padStart(2, '0')}
                         </Link>
                         <div className='text-xs text-gray-500'>{r.titre}</div>
                       </td>
@@ -66,7 +66,7 @@ export function FondamentauxCoveragePanel() {
                           href={quizHrefForFasciculeId(r.moduleId)}
                           className='text-sm font-medium text-emerald-400/95 hover:text-emerald-300'
                         >
-                          Thème F{r.numero.toString().padStart(2, '0')}
+                          Quiz thème {r.numero.toString().padStart(2, '0')}
                         </Link>
                       </td>
                     </tr>
@@ -81,7 +81,7 @@ export function FondamentauxCoveragePanel() {
                 <ul className='mt-2 list-inside list-disc space-y-1 text-amber-100/90'>
                   {trous.map((t) => (
                     <li key={t.id}>
-                      F{t.numero.toString().padStart(2, '0')} — {t.titre}
+                      Thème {t.numero.toString().padStart(2, '0')} — {t.titre}
                     </li>
                   ))}
                 </ul>

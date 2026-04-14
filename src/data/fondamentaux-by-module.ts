@@ -1,11 +1,14 @@
 import { FICHES } from '@/data/fondamentaux-fiches';
 
-/** Fiches « Fondamentaux » dont le lien module pointe vers ce fascicule (ex. f11 → cadres d’enquête, GAV…). */
+/** Fiches liées à un module interne (`f11`, `f12`…), via `lienQuiz` ou `fasciculeId` — sans exposer de chemins `/cours`. */
 export function getFondamentauxLinksForCourseModule(moduleId: string): { id: string; titre: string; href: string }[] {
-  const prefix = `/cours/modules/${moduleId}`;
-  return FICHES.filter((f) => f.lienModule === prefix).map((f) => ({
-    id: f.id,
-    titre: f.titre,
-    href: `/fondamentaux/${f.id}`,
-  }));
+  const m = moduleId.trim().toLowerCase();
+  const needle = `f=${m}`;
+  return FICHES.filter((f) => f.fasciculeId?.toLowerCase() === m || (f.lienQuiz?.includes(needle) ?? false)).map(
+    (f) => ({
+      id: f.id,
+      titre: f.titre,
+      href: `/fondamentaux/${f.id}`,
+    }),
+  );
 }

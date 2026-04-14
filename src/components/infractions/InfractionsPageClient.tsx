@@ -28,8 +28,6 @@ import {
   infractionToRecapFilter,
   PRIORITE_EXAMEN_BADGE,
   PRIORITE_ORDER,
-  type RecapFasciculeFilter,
-  type RecapFasciculeId,
   type RecapPriorite,
 } from '@/data/recapitulatif-data';
 import { cn } from '@/utils/cn';
@@ -43,22 +41,6 @@ function stripForSearch(s: string): string {
     .toLowerCase();
 }
 
-const FASCICULE_FILTER_MAP: Record<Exclude<RecapFasciculeFilter, 'all' | 'f01p1' | 'f01p2'>, RecapFasciculeId> = {
-  f02: 'F02',
-  f03: 'F03',
-  f04: 'F04',
-  f05: 'F05',
-  f06: 'F06',
-  f07: 'F07',
-};
-
-function matchesInfractionFascicleFilter(item: InfractionCatalogItem, filter: RecapFasciculeFilter): boolean {
-  if (filter === 'all') return true;
-  if (filter === 'f01p1') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 1';
-  if (filter === 'f01p2') return item.fascicule === 'F01' && item.fasciculePart === 'Partie 2';
-  return item.fascicule === FASCICULE_FILTER_MAP[filter];
-}
-
 /** Séparateur de clé groupe (peu probable dans les titres catalogue). */
 const LIST_GROUP_SEP = '\u{001e}';
 
@@ -66,7 +48,7 @@ function listGroupValue(item: InfractionCatalogItem): string {
   return [item.fascicule, item.fasciculePart ?? '', item.groupTitle].join(LIST_GROUP_SEP);
 }
 
-/** Regroupe par thème et trie comme le référentiel (ordre fascicule / section), pas par priorité examen. */
+/** Regroupe par thème et trie comme le référentiel officiel, pas par priorité examen. */
 function groupFilteredForListAccordion(
   items: InfractionCatalogItem[],
   catalogOrder: Map<string, number>,
@@ -87,12 +69,11 @@ function groupFilteredForListAccordion(
     const sortedItems = [...groupItems].sort(
       (a, b) => (catalogOrder.get(a.id) ?? 0) - (catalogOrder.get(b.id) ?? 0),
     );
-    const [fa, pa, theme] = value.split(LIST_GROUP_SEP);
-    const partLabel = pa ? ` · ${pa}` : '';
+    const [, , theme] = value.split(LIST_GROUP_SEP);
     return {
       value,
       items: sortedItems,
-      triggerTitle: `${fa}${partLabel} — ${theme}`,
+      triggerTitle: theme ?? '',
     };
   });
 }
@@ -107,7 +88,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const searchParams = useSearchParams();
 
   const [query, setQuery] = useState(initialQuery);
-  const [fascFilter, setFascFilter] = useState<RecapFasciculeFilter>('all');
   const [familyFilter, setFamilyFilter] = useState<InfractionFamily>('all');
   const [prioriteTier, setPrioriteTier] = useState<RecapPriorite | 'all'>('all');
   const [selected, setSelected] = useState<InfractionCatalogItem | null>(null);
@@ -167,7 +147,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
     const q = stripForSearch(query.trim());
     const list = catalog.filter((item) => {
       if (!matchesInfractionFamily(item, familyFilter)) return false;
-      if (!matchesInfractionFascicleFilter(item, fascFilter)) return false;
       if (prioriteTier !== 'all' && (item.priorite ?? 'secours') !== prioriteTier) return false;
       if (!q) return true;
       const hay = `${stripForSearch(item.infraction)} ${stripForSearch(item.legal)} ${stripForSearch(item.groupTitle)} ${stripForSearch(item.materiel)} ${stripForSearch(item.moral)}`;
@@ -184,7 +163,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       if (pa !== pb) return pa - pb;
       return byCatalogOrder(a, b);
     });
-  }, [catalog, catalogIndex, query, fascFilter, familyFilter, prioriteTier]);
+  }, [catalog, catalogIndex, query, familyFilter, prioriteTier]);
 
   const openInListe = (id: string) => {
     const p = new URLSearchParams(searchParams.toString());
@@ -204,7 +183,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         title='Infractions'
         titleGradient
         size='display'
-        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par fascicule, famille et probabilité ; la recherche cible tes révisions.'
+        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par famille (personnes, biens, etc.) et probabilité ; la recherche affine ta sélection.'
         className='mb-6'
       />
 
@@ -237,7 +216,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
               onChange={(e) => setPrioriteTier(e.target.value as RecapPriorite | 'all')}
               className='w-full rounded-xl border border-white/10 bg-navy-900/90 px-3 py-3 text-sm text-gray-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20'
             >
-              <option value='all'>Toutes (ordre référentiel F01–F07)</option>
+              <option value='all'>Toutes (ordre du programme officiel)</option>
               <option value='core'>Uniquement prioritaires</option>
               <option value='freq'>Uniquement très probables</option>
               <option value='secours'>Uniquement à sécuriser</option>
@@ -246,7 +225,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         </div>
         <div>
           <p className='mb-2 text-xs font-medium text-gray-500'>Famille d’infractions</p>
-          <p className='mb-2 text-[11px] text-gray-600'>Regroupement lisible : personnes, biens, route, etc. (croise avec le fascicule ci‑dessous si besoin.)</p>
+          <p className='mb-2 text-[11px] text-gray-600'>Coche une ou plusieurs familles pour restreindre la liste.</p>
           <div className='flex flex-wrap gap-2'>
             {INFRACTION_FAMILY_OPTIONS.map((opt) => (
               <button
@@ -265,44 +244,13 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             ))}
           </div>
         </div>
-        <div>
-          <p className='mb-2 text-xs font-medium text-gray-500'>Affiner par fascicule (programme officiel)</p>
-          <div className='flex flex-wrap gap-2'>
-            {(
-              [
-                ['all', 'Tous'],
-                ['f01p1', 'F01 P1'],
-                ['f01p2', 'F01 P2'],
-                ['f02', 'F02'],
-                ['f03', 'F03'],
-                ['f04', 'F04'],
-                ['f05', 'F05'],
-                ['f06', 'F06'],
-                ['f07', 'F07'],
-              ] as const
-            ).map(([v, label]) => (
-              <button
-                key={v}
-                type='button'
-                onClick={() => setFascFilter(v)}
-                className={`rounded-xl border px-3 py-2 text-sm font-medium transition ${
-                  fascFilter === v
-                    ? 'border-amber-500/50 bg-amber-500/15 text-amber-100'
-                    : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
         <p className='flex flex-wrap items-center gap-2 text-sm text-gray-500'>
           <BookOpen className='h-4 w-4 text-amber-400/80' aria-hidden />
           <span>
             {filtered.length} infraction{filtered.length > 1 ? 's' : ''}
             {prioriteTier === 'all'
-              ? ' — ordre : référentiel officiel (fascicule / thème), comme dans le programme'
-              : ' — filtre strate actif ; sous-ordre : référentiel officiel'}
+              ? ' — ordre : thèmes du programme officiel'
+              : ' — filtre probabilité actif ; sous-ordre : programme officiel'}
           </span>
         </p>
       </GlassCard>
@@ -430,8 +378,7 @@ function InfractionsListView({
                                   </span>
                                   <div className='min-w-0 flex-1 space-y-2.5'>
                                     <p className='text-[11px] font-medium uppercase tracking-[0.14em] text-gray-500'>
-                                      {item.fascicule}
-                                      {item.fasciculePart ? ` · ${item.fasciculePart}` : ''} · {item.groupTitle}
+                                      {item.groupTitle}
                                     </p>
                                     <div className='flex flex-wrap items-center gap-2'>
                                       <h2 className='font-display text-lg font-bold leading-snug text-white md:text-xl'>

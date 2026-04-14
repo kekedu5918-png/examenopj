@@ -430,7 +430,7 @@ export function AlphaCadresFlagranceFiche() {
         </FormationOl>
 
         <p className='mt-8 border-t border-white/10 pt-6 text-center text-[11px] leading-relaxed text-slate-500'>
-          Version du fascicule : Fascicule n°11 — Examen Juin 2026 — Version au 01/12/2025 © SDCP
+          Référence éditoriale : programme officiel — Examen Juin 2026 — Version au 01/12/2025 © SDCP
         </p>
       </FormationChapter>
     </div>

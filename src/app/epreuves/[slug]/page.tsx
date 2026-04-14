@@ -67,7 +67,7 @@ export default async function EpreuveDetailPage({ params }: { params: { slug: st
         <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.epreuve2} pad='compact'>
           <div className='mx-auto max-w-3xl py-2 text-center'>
             <Link
-              href='/entrainement/enquetes'
+              href='/enquetes'
               className='text-sm font-medium text-violet-300 underline-offset-4 hover:text-violet-200 hover:underline'
             >
               Rubrique Enquêtes — planches Alpha (exemple gratuit) et Bravo

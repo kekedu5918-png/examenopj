@@ -48,7 +48,7 @@ function countRepères(fiche: Fiche): { label: string; hint?: string } {
   if (blocs > 0) {
     return {
       label: `${blocs} séquence${blocs > 1 ? 's' : ''} · ${itemsInBlocs} repère${itemsInBlocs > 1 ? 's' : ''}`,
-      hint: 'Fiche approfondie (corpus fascicules)',
+      hint: 'Fiche approfondie (corpus programme)',
     };
   }
   return { label: 'Synthèse' };
@@ -82,15 +82,14 @@ export function FondamentauxCard({ fiche, categorieLabel, couleurKey, index, loc
           <span className={cn('rounded-md border px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest', c.badge)}>
             {categorieLabel}
           </span>
-          {fiche.fasciculeNumero != null ? (
+          {fiche.fasciculeDomaine ? (
             <span
               className={cn(
-                'rounded-md border px-2 py-0.5 text-[10px] font-bold tabular-nums tracking-wide',
+                'rounded-md border px-2 py-0.5 text-[10px] font-bold tracking-wide',
                 fasciculeBadgeClass(fiche.fasciculeDomaine),
               )}
-              title={fiche.fasciculeId ? `Module programme ${fiche.fasciculeId.toUpperCase()}` : undefined}
             >
-              F{fiche.fasciculeNumero.toString().padStart(2, '0')}
+              {fiche.fasciculeDomaine === 'Procédure pénale' ? 'Proc. pénale' : fiche.fasciculeDomaine}
             </span>
           ) : null}
           {fiche.ficheCanoniqueId ? (

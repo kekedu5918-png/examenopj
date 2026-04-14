@@ -9,7 +9,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Trois cadres juridiques encadrent l'action de l'OPJ : la flagrance, l'enquête préliminaire et la commission rogatoire.",
     source: 'Art. 53, 75, 81 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -60,7 +60,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Le contrôle d'identité permet à l'OPJ ou l'APJ d'inviter une personne à justifier de son identité dans les cas prévus par la loi.",
     source: 'Art. 78-2 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -104,7 +104,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
       'Mesure de contrainte décidée par l\'OPJ, sous contrôle de l\'autorité judiciaire, maintenant à disposition des enquêteurs une personne soupçonnée.',
     source:
       'Art. 62-2, 63, 63-1 à 64-1 C.P.P. · Code de la justice pénale des mineurs (retenue) — relecture Légifrance obligatoire avant examen.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -143,7 +143,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
         label: 'Mineurs de 10 à 13 ans — retenue (pas GAV)',
         detail:
           'Mesure de dernier recours pour atteindre les finalités de l’art. 62-2 CPP, avec accord préalable du magistrat habilité. Durée : 12 heures ; prolongation possible d’autant (12 h) dans les hypothèses strictement prévues par le CJPM et son décret d’application (notamment selon la gravité des faits). Avocat, information des représentants légaux, examen médical : régime protecteur. À vérifier sur Légifrance (CPP livre V / CJPM) : ne pas confondre avec le plafond du majeur.',
-        article: 'CJPM (retenue) ; CPP art. 810-3 et s. (mineurs) — recouper fascicule F06',
+        article: 'CJPM (retenue) ; CPP art. 810-3 et s. (mineurs) — recouper le thème mineurs / famille',
         alerte: true,
       },
       {
@@ -204,7 +204,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
           'Mineur 10–13 ans (retenue, pas GAV)',
           '12 h (prolongation 12 h — cas légaux)',
           'Magistrat, dernier recours, art. 62-2',
-          'CJPM / fascicule F06',
+          'CJPM / thème mineurs',
         ],
       ],
     },
@@ -216,7 +216,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Acte d'enquête consistant à pénétrer dans un lieu pour y rechercher des preuves ou des personnes.",
     source: 'Art. 56 à 59, 76 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -274,7 +274,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       'Les mandats sont des actes écrits par lesquels le juge d\'instruction ordonne la comparution, la remise en liberté ou l\'incarcération d\'une personne.',
     source: 'Art. 122 à 136 C.P.P.',
-    lienModule: '/cours/modules/f12',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f12',
     regles: [
       {
@@ -332,7 +332,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "L'audition est la procédure par laquelle l'OPJ recueille les déclarations d'une personne. Le statut de la personne entendue détermine les droits applicables.",
     source: 'Art. 61 à 62, Art. 63-4 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -384,7 +384,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Les réquisitions permettent à l'OPJ d'obtenir de toute personne ou organisme des informations, des données ou des examens techniques nécessaires à l'enquête.",
     source: 'Art. 60, 60-1, 60-2, 60-3 C.P.P.',
-    lienModule: '/cours/modules/f11',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f11',
     regles: [
       {
@@ -428,7 +428,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       "Trois paliers de contrainte encadrés par le JLD après renvoi au tribunal ou en cours d’instruction : du CJ (obligations sous liberté) à l’ARSE (assignation surveillée), jusqu’à la détention provisoire si les mesures atténuées s’avèrent insuffisantes. À l’examen : maîtrise des critères de proportionnalité et des décideurs.",
     source: 'Art. 137 à 148-9 C.P.P.',
-    lienModule: '/cours/modules/f12',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f12',
     regles: [
       {
@@ -492,7 +492,7 @@ export const FONDAMENTAUX_PART1: Fiche[] = [
     accroche:
       'La nullité est la sanction d\'un acte de procédure irrégulier. Elle détruit ses effets juridiques et ceux des actes qui en découlent.',
     source: 'Art. 802, 173, 174 C.P.P.',
-    lienModule: '/cours/modules/f15',
+    lienModule: '/fondamentaux',
     lienQuiz: '/quiz?mode=module&f=f15',
     regles: [
       {

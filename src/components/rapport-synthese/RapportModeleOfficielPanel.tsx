@@ -88,7 +88,7 @@ P. JOINTES : Une procédure n°[XX/XXXX] comprenant [X] procès-verbaux et leurs
       </section>
 
       <p className='text-xs text-gray-600'>
-        Structure calée sur le fascicule B7_02_RAPP_SYNT — vérifier les formules exactes sur le fascicule officiel de votre centre de formation.
+        Structure calée sur le modèle B7_02_RAPP_SYNT — vérifier les formules exactes sur le support officiel de votre centre de formation.
       </p>
     </div>
   );

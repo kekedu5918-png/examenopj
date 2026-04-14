@@ -242,7 +242,7 @@ export function PricingThreeColumnPage({
             <RowOk>10 enquêtes complètes (Alpha → Accident)</RowOk>
             <RowOk>Quiz illimité + stats de progression</RowOk>
             <RowOk>Flashcards avec répétition espacée</RowOk>
-            <RowOk>Modèles de PV conformes aux fascicules</RowOk>
+            <RowOk>Modèles de PV alignés sur le programme officiel</RowOk>
             <RowOk>Articulation interactive</RowOk>
             <RowOk>Sujets blancs corrigés</RowOk>
             <RowOk>Rapport de synthèse type examen</RowOk>
