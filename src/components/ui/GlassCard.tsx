@@ -28,7 +28,7 @@ export function GlassCard({
         'shadow-[0_8px_40px_rgba(0,0,0,0.28),0_0_0_1px_rgba(255,255,255,0.04),inset_0_1px_0_rgba(255,255,255,0.08)]',
         'backdrop-blur-xl',
         hover && [
-          'transition-all duration-300',
+          'transition-[border-color,background-color,box-shadow] duration-300 motion-reduce:transition-none',
           'hover:border-white/[0.14] hover:bg-white/[0.045]',
           'hover:shadow-[0_8px_40px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.09)]',
         ],

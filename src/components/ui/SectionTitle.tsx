@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
-import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { cn } from '@/utils/cn';
 
 type SectionTitleProps = {
@@ -33,18 +32,23 @@ export function SectionTitle({
   titleId,
   titleAs = 'h2',
 }: SectionTitleProps) {
+  const shouldReduceMotion = useReducedMotion();
   const TitleTag = titleAs;
 
   return (
     <motion.div
       className={cn('space-y-4', className)}
-      initial={MOTION_INITIAL_FOR_SEO}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-40px' }}
-      transition={{ duration: 0.55, ease: easeOut }}
+      initial={false}
+      {...(!shouldReduceMotion
+        ? {
+            whileInView: { opacity: 1, y: 0 },
+            viewport: { once: true, margin: '-40px' },
+            transition: { duration: 0.55, ease: easeOut },
+          }
+        : {})}
     >
-      {/* Badge avec contour dégradé type produit premium */}
-      <span className='inline-flex rounded-full bg-gradient-to-r from-violet-500/70 via-fuchsia-500/55 via-50% to-cyan-500/60 p-[1px] shadow-[0_0_24px_-4px_rgba(139,92,246,0.45)]'>
+      {/* Badge : une seule famille (bleu marine / bleu institutionnel) — pas d’arc-en-ciel */}
+      <span className='inline-flex rounded-full bg-gradient-to-r from-blue-600/45 via-slate-500/35 to-blue-500/40 p-px shadow-[0_0_22px_-8px_rgba(37,99,235,0.4)]'>
         <span
           className={cn(
             'inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]',
@@ -53,7 +57,7 @@ export function SectionTitle({
           )}
         >
           <span
-            className='h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-violet-400 via-fuchsia-400 to-cyan-400 shadow-[0_0_10px_rgba(167,139,250,0.75)]'
+            className='h-2 w-2 shrink-0 rounded-full bg-gradient-to-br from-blue-400 to-blue-700 shadow-[0_0_10px_rgba(59,130,246,0.55)]'
             aria-hidden
           />
           {badge}
@@ -66,7 +70,7 @@ export function SectionTitle({
           'font-sans font-extrabold tracking-tight',
           size === 'display' ? 'text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.12]' : 'text-3xl md:text-4xl',
           titleGradient
-            ? 'bg-gradient-to-br from-white via-slate-100 to-blue-300/90 bg-clip-text text-transparent'
+            ? 'bg-gradient-to-br from-white via-slate-100 to-blue-200/95 bg-clip-text text-transparent'
             : 'text-white',
         )}
       >

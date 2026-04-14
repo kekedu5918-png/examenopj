@@ -64,9 +64,9 @@ export function HeroSection() {
         className='pointer-events-none absolute left-[-5%] top-[40%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(6,182,212,0.09)_0%,transparent_70%)]'
         aria-hidden
       />
-      {/* Orb violet subtil — bottom-center */}
+      {/* Halo bas — bleu nuit (cohérent SectionTitle / shell, pas de violet) */}
       <div
-        className='pointer-events-none absolute bottom-[-15%] left-[30%] h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(124,58,237,0.07)_0%,transparent_70%)]'
+        className='pointer-events-none absolute bottom-[-15%] left-[30%] h-[600px] w-[600px] rounded-full bg-[radial-gradient(circle,rgba(30,58,138,0.09)_0%,transparent_70%)]'
         aria-hidden
       />
 
@@ -102,7 +102,9 @@ export function HeroSection() {
             className='mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5'
           >
             <span className='relative flex h-2 w-2'>
-              <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60' />
+              {shouldReduce ? null : (
+                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60' />
+              )}
               <span className='relative inline-flex h-2 w-2 rounded-full bg-blue-400' />
             </span>
             <span className='text-xs font-semibold tracking-wide text-blue-300' suppressHydrationWarning>
@@ -123,7 +125,7 @@ export function HeroSection() {
               <span className='block text-white'>Réussissez</span>
               <span className='mt-1 block overflow-visible pb-0.5'>
                 <span
-                  className='relative inline-block bg-gradient-to-br from-[#f8fafc] via-[#e0e7ff] to-[#a5b4fc] bg-clip-text pb-[0.15em] text-transparent drop-shadow-[0_2px_32px_rgba(129,140,248,0.22)]'
+                  className='relative inline-block bg-gradient-to-br from-[#f8fafc] via-[#cbd5e1] to-[#93c5fd] bg-clip-text pb-[0.15em] text-transparent drop-shadow-[0_2px_28px_rgba(59,130,246,0.18)]'
                 >
                   l&apos;examen OPJ
                 </span>
@@ -194,7 +196,10 @@ export function HeroSection() {
             >
               {/* Shimmer interne */}
               <span
-                className='pointer-events-none absolute inset-0 -translate-x-full animate-[shimmer_2.5s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent'
+                className={cn(
+                  'pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent',
+                  !shouldReduce && 'animate-[shimmer_2.5s_infinite]',
+                )}
                 aria-hidden
               />
               Commencer gratuitement
@@ -277,7 +282,7 @@ export function HeroSection() {
                 transition={{ duration: 0.35, type: 'spring', stiffness: 300, damping: 28 }}
                 className='flex flex-col items-center px-6 py-10 text-center'
               >
-                <span className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-400/20 text-3xl ring-2 ring-blue-400/30'>
+                <span className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 to-blue-900/30 text-3xl ring-2 ring-blue-400/30'>
                   <Trophy className='h-8 w-8 text-amber-400' aria-hidden />
                 </span>
                 <h3 className='mt-4 font-sans text-xl font-extrabold text-white'>

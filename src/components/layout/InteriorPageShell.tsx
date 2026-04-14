@@ -15,9 +15,10 @@ const GLOW: Record<
   'blue' | 'violet' | 'cyan' | 'amber' | 'emerald' | 'rose' | 'none',
   string | undefined
 > = {
-  blue: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59,130,246,0.32), transparent 55%)',
-  violet: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(124,58,237,0.28), transparent 55%)',
-  cyan: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(6,182,212,0.26), transparent 55%)',
+  blue: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59,130,246,0.3), transparent 55%)',
+  /** Indigo (pas violet « disco ») — même famille que l’accent bleu */
+  violet: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(79,70,229,0.22), transparent 55%)',
+  cyan: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(14,165,233,0.22), transparent 55%)',
   amber: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(245,158,11,0.22), transparent 55%)',
   emerald: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(16,185,129,0.22), transparent 55%)',
   rose: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(244,63,94,0.22), transparent 55%)',
