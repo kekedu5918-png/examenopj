@@ -5,20 +5,11 @@ import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, HelpCircle, RotateCcw, Trophy, XCircle } from 'lucide-react';
 
-import { MascottePeanut } from '@/components/brand';
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
 import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { cn } from '@/utils/cn';
-
-const PEANUT_SPARKLES: { x: string; y: string }[] = [
-  { x: '82%', y: '4%' },
-  { x: '96%', y: '18%' },
-  { x: '78%', y: '28%' },
-  { x: '92%', y: '38%' },
-  { x: '70%', y: '12%' },
-];
 
 export function HeroSection() {
   const shouldReduce = useReducedMotion();
@@ -61,7 +52,7 @@ export function HeroSection() {
   return (
     <section className='relative min-h-[92vh] overflow-hidden' aria-label='Présentation ExamenOPJ'>
       {/* ── Fond multicouches ── */}
-      <div className='pointer-events-none absolute inset-0 bg-[#060d18]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-[#080F1E]' aria-hidden />
 
       {/* Orb bleu principal — top-right */}
       <div
@@ -262,34 +253,6 @@ export function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: LANDING_EASE, delay: 0.18 }}
         >
-          {/* PEANUT + particules — présence forte sans surcharger */}
-          {!shouldReduce ? (
-            <div className='pointer-events-none absolute -right-2 -top-8 z-10 h-40 w-40 sm:h-44 sm:w-44' aria-hidden>
-              {PEANUT_SPARKLES.map((p, i) => (
-                <motion.span
-                  key={i}
-                  className='absolute h-1.5 w-1.5 rounded-full bg-amber-300 shadow-[0_0_10px_rgba(251,191,36,0.85)]'
-                  style={{ left: p.x, top: p.y }}
-                  animate={{ opacity: [0.25, 1, 0.25], scale: [0.65, 1.2, 0.65] }}
-                  transition={{
-                    duration: 2.4 + i * 0.25,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: i * 0.12,
-                  }}
-                />
-              ))}
-            </div>
-          ) : null}
-          <div className='absolute -top-2 right-2 z-20 sm:-top-4 sm:right-6'>
-            <MascottePeanut
-              size={shouldReduce ? 72 : 88}
-              variant='hero'
-              interactive
-              decorative={false}
-            />
-          </div>
-
           {/* Halo derrière la carte */}
           <div
             className='pointer-events-none absolute inset-0 -z-10 scale-110 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.15),transparent_65%)] blur-2xl'
@@ -299,7 +262,7 @@ export function HeroSection() {
           {/* Card quiz */}
           <div
             className={cn(
-              'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-[color:var(--ex-panel)]/95 shadow-[0_32px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl',
+              'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-[#0E1B2E]/90 shadow-[0_32px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl',
               !shouldReduce && 'animate-ex-float',
             )}
           >
@@ -472,7 +435,7 @@ export function HeroSection() {
 
           {/* Floating badges */}
           <motion.div
-            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[color:var(--ex-panel)] px-3 py-1.5 shadow-lg'
+            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#0E1B2E] px-3 py-1.5 shadow-lg'
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.4, type: 'spring' }}

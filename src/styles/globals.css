@@ -112,18 +112,6 @@
     --radius: 0.5rem;
   }
 
-  :root {
-    --ex-canvas: #f4f6fb;
-    --ex-elevated: rgba(15, 23, 42, 0.04);
-    --ex-border-subtle: rgba(15, 23, 42, 0.08);
-    --ex-glow-line: rgba(37, 99, 235, 0.35);
-    /* Halo haut de page — une seule signature sur tout le site */
-    --ex-shell-halo: radial-gradient(ellipse 90% 62% at 50% -12%, rgba(37, 99, 235, 0.11), transparent 55%);
-    --ex-panel: #f1f5f9;
-    --ex-section-mid: #e8edf4;
-    --ex-deep: #e2e8f0;
-  }
-
   /* Design system OPJ — tokens sémantiques (Inter chargée via next/font dans layout) */
   :root {
     --ds-bg-primary: #ffffff;
@@ -146,15 +134,6 @@
     --ds-accent: #3b82f6;
     --ds-success: #22c55e;
     --ds-warning: #fbbf24;
-    /* Refonte premium — canvas unifié (type Apple : noir bleuté, une seule famille de surfaces) */
-    --ex-canvas: #060d18;
-    --ex-elevated: rgba(255, 255, 255, 0.045);
-    --ex-border-subtle: rgba(255, 255, 255, 0.09);
-    --ex-glow-line: rgba(255, 255, 255, 0.22);
-    --ex-shell-halo: radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59, 130, 246, 0.2), transparent 58%);
-    --ex-panel: #0e1b2e;
-    --ex-section-mid: #0c1525;
-    --ex-deep: #080f1e;
   }
 
   ::selection {
@@ -230,11 +209,11 @@
 
   /* Carte de parcours homepage — glassmorphism sombre */
   .home-start-card {
-    border: 1px solid var(--ex-border-subtle, rgba(255, 255, 255, 0.07));
-    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
     padding: 1.75rem;
-    background: var(--ex-elevated, rgba(255, 255, 255, 0.025));
-    backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.025);
+    backdrop-filter: blur(12px);
     transition:
       border-color 0.25s ease,
       background 0.25s ease,

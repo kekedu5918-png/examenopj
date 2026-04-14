@@ -1,1 +1,2 @@
-export { MascottePeanut, type MascottePeanutProps } from './MascottePeanut';
+/** Barrel pour assets / composants de marque — exporter ici si besoin. */
+export {};

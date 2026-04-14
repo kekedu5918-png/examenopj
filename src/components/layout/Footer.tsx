@@ -1,6 +1,5 @@
 import Link from 'next/link';
 
-import { MascottePeanut } from '@/components/brand';
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
 import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
 
@@ -15,7 +14,7 @@ export function Footer() {
         aria-hidden
       />
       {/* Background */}
-      <div className='absolute inset-0 bg-slate-50/90 dark:bg-gradient-to-b dark:from-transparent dark:via-[color:var(--ex-canvas)]/85 dark:to-[#030508]' />
+      <div className='absolute inset-0 bg-slate-50/90 dark:bg-gradient-to-b dark:from-transparent dark:via-[#050a14]/80 dark:to-[#030508]' />
       <div
         className='pointer-events-none absolute bottom-0 left-1/2 h-56 w-[min(600px,90vw)] -translate-x-1/2 opacity-[0.14] blur-[90px]'
         style={{
@@ -34,14 +33,8 @@ export function Footer() {
         {/* Top section */}
         <div className='mb-12 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end'>
           <div>
-            <div className='mb-3 flex flex-wrap items-end gap-x-3 gap-y-1'>
-              <MascottePeanut size={44} animate={false} interactive />
-              <div className='min-w-0'>
-                <BrandWordmark href='/' size='footer' />
-                <p className='mt-1.5 text-[10px] font-bold uppercase tracking-[0.22em] text-amber-600/90 dark:text-amber-400/90'>
-                  PEANUT · mascotte
-                </p>
-              </div>
+            <div className='mb-3'>
+              <BrandWordmark href='/' size='footer' />
             </div>
             <p className='max-w-xs text-sm leading-relaxed text-slate-600 dark:text-slate-500'>
               Préparation complète à l&apos;examen OPJ session 2026.

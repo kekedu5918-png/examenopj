@@ -47,7 +47,7 @@ export function HomeJourneyStrip() {
 
   return (
     <section
-      className='relative border-y border-white/[0.06] bg-gradient-to-b from-[color:var(--ex-canvas)] via-[color:var(--ex-deep)] to-[color:var(--ex-canvas)] py-10 md:py-12'
+      className='relative border-y border-white/[0.06] bg-gradient-to-b from-[#050a14] via-[#080f1e] to-[#050a14] py-10 md:py-12'
       aria-labelledby='journey-strip-title'
     >
       <div

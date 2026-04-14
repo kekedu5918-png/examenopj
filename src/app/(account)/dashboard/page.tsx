@@ -63,7 +63,7 @@ export default async function DashboardPage() {
   const featuredModules = modules.slice(0, 6);
 
   return (
-    <section className='space-y-6 rounded-2xl border border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-panel)]/35 p-6 shadow-[0_12px_40px_rgba(0,0,0,0.2)] backdrop-blur-sm'>
+    <section className='space-y-6 rounded-xl bg-slate-950 p-6'>
       {session ? (
         <DashboardNextAction
           loginResume={loginResume}
@@ -114,7 +114,7 @@ export default async function DashboardPage() {
 
       {/* Session classique si pas de resume actif */}
       {loginResume && !loginResume.showResume && (
-        <Card className='border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-panel)]/55'>
+        <Card className='border border-cyan-500/30 bg-slate-900/70'>
           <CardHeader>
             <CardTitle className='text-slate-100'>Reprendre la session</CardTitle>
             <CardDescription className='text-slate-300'>
@@ -170,7 +170,7 @@ export default async function DashboardPage() {
 
       {/* Plan personnalisé (si onboarding complété) OU plan statique */}
       {onboardingPlan ? (
-        <Card className='border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-panel)]/55'>
+        <Card className='border border-blue-500/30 bg-slate-900/70'>
           <CardHeader>
             <CardTitle className='text-slate-100'>📋 Votre plan personnalisé</CardTitle>
             <CardDescription className='text-slate-300'>
@@ -179,7 +179,7 @@ export default async function DashboardPage() {
           </CardHeader>
           <CardContent className='space-y-3'>
             {onboardingPlan.plan.phases.map((phase) => (
-              <div key={phase.phase_number} className='rounded-xl border border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-elevated)] p-3'>
+              <div key={phase.phase_number} className='rounded-lg border border-slate-700 bg-slate-800/40 p-3'>
                 <div className='mb-1.5 flex items-center gap-2'>
                   <span className='flex h-5 w-5 items-center justify-center rounded-full bg-cyan-800 text-[10px] font-bold text-cyan-200'>
                     {phase.phase_number}
@@ -204,7 +204,7 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
       ) : (
-        <Card className='border-[color:var(--ex-border-subtle)] bg-[color:var(--ex-panel)]/55'>
+        <Card className='border border-blue-500/30 bg-slate-900/70'>
           <CardHeader>
             <CardTitle className='text-slate-100'>Plan de départ recommandé</CardTitle>
             <CardDescription className='text-slate-300'>
@@ -232,7 +232,7 @@ export default async function DashboardPage() {
             ? `/cours/modules/${module.slug}`
             : '/cours/modules';
           return (
-            <Card key={module.id} className='border-l-4 border-blue-500 bg-[color:var(--ex-panel)]/60 shadow-md hover:shadow-xl'>
+            <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>
               <CardHeader>
                 <CardTitle className='text-slate-100'>
                   {module.slug} - {module.titre}

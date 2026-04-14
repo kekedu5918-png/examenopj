@@ -32,6 +32,7 @@ export default async function CadresEnquetesParcoursPage() {
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.parcours} pad='default'>
       <SectionTitle
         badge='PARCOURS'
+        badgeClassName='text-amber-200'
         title={title}
         titleGradient
         size='display'

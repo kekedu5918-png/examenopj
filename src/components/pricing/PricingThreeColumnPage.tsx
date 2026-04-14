@@ -129,6 +129,7 @@ export function PricingThreeColumnPage({
       <header className='relative mb-12 text-center'>
         <SectionTitle
           badge='TARIFS'
+          badgeClassName='text-violet-200'
           title='Choisissez votre accès'
           titleAs='h1'
           titleGradient

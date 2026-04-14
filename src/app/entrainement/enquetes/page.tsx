@@ -32,6 +32,7 @@ export default function EnquetesHubPage() {
       </nav>
       <SectionTitle
         badge='ÉPREUVE 2'
+        badgeClassName='bg-fuchsia-500/20 text-fuchsia-200'
         title='Enquêtes — mises en situation'
         subtitle='Parcours formation (Alpha → Bravo → Charlie), catalogue complet avec filtres, et mémos pour ne rien oublier le jour J.'
         size='display'

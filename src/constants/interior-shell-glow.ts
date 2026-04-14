@@ -1,6 +1,14 @@
 /**
- * Références sémantiques pour `InteriorPageShell` — le rendu visuel du halo est unique (`--ex-shell-halo`).
- * Les clés servent surtout à la lisibilité du code ; seul `legal` désactive le halo (`none`).
+ * Halos `InteriorPageShell` — référence unique pour garder le site visuellement cohérent.
+ *
+ * | Couleur   | Usage principal |
+ * |-----------|-----------------|
+ * | violet    | Cours (hub), programme, guide long, pricing, auth, rapport synthèse |
+ * | cyan      | Modules, contact, compte, dashboard, épreuve 2 (dossier) |
+ * | amber     | Entraînement, parcours, quiz, flashcards, sujets blancs, récap |
+ * | emerald   | Fondamentaux, PV / modèles |
+ * | rose      | Infractions, épreuve 1 |
+ * | amber hub | Hub épreuves (vue d’ensemble) |
  */
 
 export const SHELL_GLOW = {

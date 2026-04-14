@@ -80,6 +80,7 @@ export default function EpreuvesHubPage() {
 
         <SectionTitle
           badge='EXAMEN OPJ'
+          badgeClassName='bg-gold-500/20 text-gold-200'
           title='Les trois épreuves'
           subtitle='Ce que les correcteurs attendent — méthode commune et liens vers chaque épreuve détaillée'
           size='display'

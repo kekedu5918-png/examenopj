@@ -200,6 +200,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       <h1 className='sr-only'>Référentiel des infractions</h1>
       <SectionTitle
         badge='RÉFÉRENTIEL'
+        badgeClassName='text-rose-200'
         title='Infractions'
         titleGradient
         size='display'

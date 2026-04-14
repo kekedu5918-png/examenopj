@@ -10,10 +10,20 @@ const MAX_WIDTH = {
   full: 'max-w-full',
 } as const;
 
-/**
- * Halos : une seule ambiance (`--ex-shell-halo`) pour toutes les rubriques.
- * La prop `glow` ne fait qu’activer / désactiver (`none`).
- */
+/** Halos alignés sur le hero / parcours / pricing (cohérence globale). */
+const GLOW: Record<
+  'blue' | 'violet' | 'cyan' | 'amber' | 'emerald' | 'rose' | 'none',
+  string | undefined
+> = {
+  blue: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(59,130,246,0.32), transparent 55%)',
+  violet: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(124,58,237,0.28), transparent 55%)',
+  cyan: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(6,182,212,0.26), transparent 55%)',
+  amber: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(245,158,11,0.22), transparent 55%)',
+  emerald: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(16,185,129,0.22), transparent 55%)',
+  rose: 'radial-gradient(ellipse 90% 62% at 50% -12%, rgba(244,63,94,0.22), transparent 55%)',
+  none: undefined,
+};
+
 const PAD = {
   default: 'pt-10 pb-20 md:pt-14 md:pb-24',
   compact: 'pt-8 pb-16 md:pt-12 md:pb-20',
@@ -26,8 +36,8 @@ export type InteriorPageShellProps = PropsWithChildren<{
   id?: string;
   /** Largeur max du contenu (centré) */
   maxWidth?: keyof typeof MAX_WIDTH;
-  /** Halo en tête de page (`none` = page sobre, ex. légal) */
-  glow?: 'blue' | 'violet' | 'cyan' | 'amber' | 'emerald' | 'rose' | 'none';
+  /** Halo en tête de page */
+  glow?: keyof typeof GLOW;
   /** Padding vertical */
   pad?: keyof typeof PAD;
   className?: string;
@@ -52,21 +62,21 @@ export function InteriorPageShell({
   className,
   innerClassName,
   fullBleed = false,
-  bleedBgClassName = 'bg-[color:var(--ex-canvas)]',
+  bleedBgClassName = 'bg-[#050a14]',
 }: InteriorPageShellProps) {
-  const showGlow = glow !== 'none';
+  const glowStyle = GLOW[glow];
 
   if (fullBleed) {
     return (
       <div id={id} className={cn('relative min-h-screen', bleedBgClassName, className)}>
-        {showGlow ? (
+        {glow !== 'none' && glowStyle ? (
           <div
             className='pointer-events-none absolute left-1/2 top-0 h-[min(520px,58vh)] w-[min(100%,1000px)] -translate-x-1/2 opacity-100'
-            style={{ background: 'var(--ex-shell-halo)' }}
+            style={{ background: glowStyle }}
             aria-hidden
           />
         ) : null}
-        <div className={cn('relative mx-auto w-full px-4 md:px-8', MAX_WIDTH[maxWidth], PAD[pad], innerClassName)}>
+        <div className={cn('relative mx-auto w-full px-4 md:px-6', MAX_WIDTH[maxWidth], PAD[pad], innerClassName)}>
           {children}
         </div>
       </div>
@@ -75,22 +85,23 @@ export function InteriorPageShell({
 
   return (
     <div id={id} className={cn('relative', className)}>
-      {showGlow ? (
+      {glow !== 'none' && glowStyle ? (
         <div
           className='pointer-events-none absolute left-1/2 top-0 h-[min(460px,52vh)] w-[min(100%,1000px)] -translate-x-1/2 opacity-100'
-          style={{ background: 'var(--ex-shell-halo)' }}
+          style={{ background: glowStyle }}
           aria-hidden
         />
       ) : null}
-      {showGlow ? (
+      {/* Trait lumineux haut de page — cohérence visuelle globale */}
+      {glow !== 'none' && glowStyle ? (
         <div
-          className='pointer-events-none absolute left-1/2 top-0 h-px w-[min(92%,920px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-[color:var(--ex-glow-line)] to-transparent opacity-90'
+          className='pointer-events-none absolute left-1/2 top-0 h-px w-[min(92%,920px)] -translate-x-1/2 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-80'
           aria-hidden
         />
       ) : null}
       <div
         className={cn(
-          'relative mx-auto w-full px-4 md:px-8',
+          'relative mx-auto w-full px-4',
           MAX_WIDTH[maxWidth],
           PAD[pad],
           innerClassName,
