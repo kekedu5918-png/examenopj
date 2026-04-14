@@ -43,8 +43,9 @@ export async function recordQuizAttempt(input: RecordQuizAttemptInput): Promise<
     percent: Math.round(input.percent * 100) / 100,
   };
 
-  // Cast : le client typé `Database` résout parfois `.from('quiz_attempts')` en `never` (schéma partiel vs postgrest-js).
-  const { error } = await (supabase as unknown as SupabaseClient<any>).from('quiz_attempts').insert(row);
+  const { error } = await (supabase as unknown as SupabaseClient<Database>)
+    .from('quiz_attempts')
+    .insert(row);
 
   if (error) {
     console.error('[recordQuizAttempt]', error);

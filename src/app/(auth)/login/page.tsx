@@ -42,8 +42,8 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.auth} pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
     <main className='w-full max-w-md'>
-      <div className='w-full space-y-4 rounded-3xl border border-slate-800/90 bg-slate-950/95 p-6 shadow-xl shadow-black/25 backdrop-blur-sm'>
-        <h1 className='text-2xl font-bold text-slate-100'>Connexion</h1>
+      <div className='w-full space-y-4 rounded-3xl border border-ds-border bg-ds-bg-secondary/95 p-6 shadow-xl shadow-black/10 backdrop-blur-sm dark:border-slate-800/90 dark:bg-navy-950/95 dark:shadow-black/25'>
+        <h1 className='text-2xl font-bold text-ds-text-primary'>Connexion</h1>
         {banner ? (
           <p className='rounded-md border border-red-500/40 bg-red-500/10 px-3 py-2 text-sm text-red-200'>
             {banner}{' '}
@@ -58,7 +58,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
           </p>
         ) : null}
         <LoginForm nextPath={nextPath} />
-        <p className='text-center text-sm text-slate-500'>
+        <p className='text-center text-sm text-ds-text-muted'>
           Pas encore de compte ?{' '}
           <Link href='/inscription' className='text-gold-400 underline underline-offset-2'>
             S&apos;inscrire gratuitement

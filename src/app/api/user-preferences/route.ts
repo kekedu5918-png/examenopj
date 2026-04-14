@@ -1,19 +1,18 @@
 import { NextResponse } from 'next/server';
 
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { Database } from '@/libs/supabase/types';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
 type EngagementPrefsRow = {
   email_reminders_opt_in: boolean;
-  theme_hint: string | null;
+  theme_hint: Database['public']['Tables']['user_engagement_preferences']['Row']['theme_hint'];
   updated_at: string;
 };
 
 /**
  * GET/PATCH préférences engagement (opt-in emails, indice thème).
- * Le thème effectif reste piloté par `ThemeProvider` + localStorage côté client.
- *
- * Cast `SupabaseClient<any>` : aligné sur `record-quiz-attempt` (postgrest-js + schéma partiel).
+ * Le thème effectif reste piloté par `ThemeProvider` + localStorage côté client (`ThemeHintSync`).
  */
 export async function GET() {
   const supabase = await createSupabaseServerClient();
@@ -24,8 +23,7 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  const db = supabase as unknown as SupabaseClient<any>;
-  const { data, error } = await db
+  const { data, error } = await supabase
     .from('user_engagement_preferences')
     .select('email_reminders_opt_in, theme_hint, updated_at')
     .eq('user_id', user.id)
@@ -60,8 +58,7 @@ export async function PATCH(req: Request) {
     return NextResponse.json({ error: 'Invalid JSON' }, { status: 400 });
   }
 
-  const db = supabase as unknown as SupabaseClient<any>;
-  const { data: cur } = await db
+  const { data: cur } = await supabase
     .from('user_engagement_preferences')
     .select('email_reminders_opt_in, theme_hint')
     .eq('user_id', user.id)
@@ -69,7 +66,7 @@ export async function PATCH(req: Request) {
 
   const curRow = cur as Pick<EngagementPrefsRow, 'email_reminders_opt_in' | 'theme_hint'> | null;
 
-  const row = {
+  const row: Database['public']['Tables']['user_engagement_preferences']['Insert'] = {
     user_id: user.id,
     email_reminders_opt_in:
       typeof body.emailRemindersOptIn === 'boolean' ? body.emailRemindersOptIn : (curRow?.email_reminders_opt_in ?? false),
@@ -77,7 +74,9 @@ export async function PATCH(req: Request) {
     updated_at: new Date().toISOString(),
   };
 
-  const { error } = await db.from('user_engagement_preferences').upsert(row, { onConflict: 'user_id' });
+  const { error } = await (supabase as unknown as SupabaseClient<Database>)
+    .from('user_engagement_preferences')
+    .upsert(row, { onConflict: 'user_id' });
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });

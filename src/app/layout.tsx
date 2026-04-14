@@ -10,6 +10,7 @@ import { PageTransition } from '@/components/layout/PageTransition';
 import { SiteAmbientMotion } from '@/components/layout/SiteAmbientMotion';
 import { SiteBackground } from '@/components/layout/SiteBackground';
 import { ThemeColorSync } from '@/components/providers/ThemeColorSync';
+import { ThemeHintSync } from '@/components/providers/ThemeHintSync';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { SiteJsonLd } from '@/components/seo/site-json-ld';
 import { Toaster } from '@/components/ui/toaster';
@@ -111,6 +112,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <ThemeProvider>
+          <ThemeHintSync />
           <ThemeColorSync />
           <AnalyticsProviders>
             <SiteBackground />

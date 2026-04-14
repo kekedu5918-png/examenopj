@@ -22,8 +22,8 @@ export default async function InscriptionPage() {
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.auth} pad='compact' innerClassName='flex min-h-[70vh] items-center justify-center'>
     <main className='w-full max-w-md'>
-      <div className='w-full space-y-4 rounded-3xl border border-slate-800/90 bg-slate-950/95 p-6 shadow-xl shadow-black/25 backdrop-blur-sm'>
-        <h1 className='text-2xl font-bold text-slate-100'>
+      <div className='w-full space-y-4 rounded-3xl border border-ds-border bg-ds-bg-secondary/95 p-6 shadow-xl shadow-black/10 backdrop-blur-sm dark:border-slate-800/90 dark:bg-navy-950/95 dark:shadow-black/25'>
+        <h1 className='text-2xl font-bold text-ds-text-primary'>
           {alreadyConnectedNoPremium ? 'Votre compte' : 'Créer un compte'}
         </h1>
         <p className='text-sm text-slate-400'>
@@ -35,14 +35,14 @@ export default async function InscriptionPage() {
         {alreadyConnectedNoPremium ? <AlreadySignedInPanel /> : <SignUpForm />}
 
         {!alreadyConnectedNoPremium ? (
-          <p className='text-center text-sm text-slate-500'>
+          <p className='text-center text-sm text-ds-text-muted'>
             Déjà inscrit ?{' '}
             <Link href='/login' className='text-blue-400 underline underline-offset-2'>
               Se connecter
             </Link>
           </p>
         ) : null}
-        <p className='text-center text-xs text-slate-600'>
+        <p className='text-center text-xs text-ds-text-muted'>
           En vous inscrivant, vous acceptez nos{' '}
           <Link href='/cgv' className='text-cyan-400 underline underline-offset-2'>
             CGV

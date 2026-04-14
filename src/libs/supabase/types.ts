@@ -437,6 +437,27 @@ export interface Database {
           }
         ];
       };
+      user_engagement_preferences: {
+        Row: {
+          user_id: string;
+          email_reminders_opt_in: boolean;
+          theme_hint: 'light' | 'dark' | 'system' | null;
+          updated_at: string;
+        };
+        Insert: {
+          user_id: string;
+          email_reminders_opt_in?: boolean;
+          theme_hint?: 'light' | 'dark' | 'system' | null;
+          updated_at?: string;
+        };
+        Update: {
+          user_id?: string;
+          email_reminders_opt_in?: boolean;
+          theme_hint?: 'light' | 'dark' | 'system' | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
       stripe_webhook_events: {
         Row: {
           created_at: string;

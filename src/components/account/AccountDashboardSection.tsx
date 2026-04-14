@@ -18,7 +18,7 @@ export function AccountDashboardSection({ children, className, spacing = 'normal
       className={cn(
         spacing === 'relaxed' ? 'space-y-6' : 'space-y-4',
         'rounded-xl border border-ds-border bg-ds-bg-secondary p-6 text-ds-text-primary shadow-sm',
-        'dark:border-slate-700/80 dark:bg-slate-950 dark:text-slate-50',
+        'dark:border-white/[0.08] dark:bg-navy-950/95 dark:text-slate-50',
         className,
       )}
     >

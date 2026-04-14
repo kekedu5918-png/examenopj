@@ -291,10 +291,10 @@ export function Epreuve1Sections() {
 
   const structureBlock = (
     <div id='epreuve1-structure-anchor' className='scroll-mt-24 space-y-4'>
-      <div className='rounded-3xl border border-white/10 bg-navy-900/50 p-8 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.45)]'>
+      <div className='rounded-3xl border border-ds-border bg-ds-bg-secondary/90 p-8 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.12)] dark:border-white/10 dark:bg-navy-900/50 dark:shadow-[0_24px_80px_-24px_rgba(0,0,0,0.45)]'>
         <div className='mb-4 rounded-lg border-l-4 border-gold-400 bg-gold-400/5 p-6'>
           <h3 className='font-bold text-gold-400'>INTRODUCTION</h3>
-          <div className='mt-4 rounded-lg bg-navy-950/80 p-4 text-sm italic text-gray-400'>
+          <div className='mt-4 rounded-lg bg-ds-bg-primary p-4 text-sm italic text-ds-text-muted dark:bg-navy-950/80'>
             « Dans le thème proposé, il est possible de relever les faits suivants :
             <br />
             1 - [I° contextualisée n°1] (I° simple ou I° simple tentée, pas d&apos;aggravation, contextualisation)
@@ -387,7 +387,7 @@ export function Epreuve1Sections() {
 
         <div className='rounded-lg border-l-4 border-emerald-500 bg-emerald-500/5 p-6'>
           <h3 className='font-bold text-emerald-400'>CONCLUSION</h3>
-          <div className='mt-4 rounded-lg bg-navy-950/80 p-4 text-sm italic text-gray-400'>
+          <div className='mt-4 rounded-lg bg-ds-bg-primary p-4 text-sm italic text-ds-text-muted dark:bg-navy-950/80'>
             « X pourrait être poursuivi comme :
             <br />
             - auteur / coauteur / complice de [I°] aggravée
@@ -461,7 +461,7 @@ export function Epreuve1Sections() {
         <h3 className='text-base font-semibold text-gray-200'>
           Exemple : CA de discrimination (art. 132-76 ou 132-77 CP)
         </h3>
-        <div className='mt-4 rounded-xl bg-navy-900 p-4 text-sm leading-relaxed text-gray-300'>
+        <div className='mt-4 rounded-xl bg-ds-bg-primary p-4 text-sm leading-relaxed text-ds-text-primary dark:bg-navy-900 dark:text-gray-300'>
           <p>
             « Il s&apos;agit d&apos;une circonstance aggravante générale qui précède l&apos;infraction de{' '}
             <span className='italic text-blue-400'>[infraction]</span> commise par X.

@@ -84,6 +84,21 @@ function LessonCard({
     <div className='flex flex-wrap items-center gap-2 rounded-lg border border-ds-border bg-ds-bg-primary/80 px-3 py-2 text-sm dark:border-slate-700 dark:bg-slate-900/60'>
         <NodeStatusDot status={le.status} />
         <div className='min-w-0 flex-1'>
+          {le.status === 'needs_review' ? (
+            <p className='mb-1 inline-flex flex-wrap items-center gap-2'>
+              <span className='rounded-md border border-amber-500/35 bg-amber-500/10 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-amber-800 dark:text-amber-200'>
+                Révision recommandée
+              </span>
+              {le.href ? (
+                <Link
+                  href={le.href}
+                  className='text-[11px] font-medium text-cyan-700 underline-offset-2 hover:underline dark:text-cyan-400'
+                >
+                  Revoir la leçon
+                </Link>
+              ) : null}
+            </p>
+          ) : null}
           <p className='font-medium text-ds-text-primary dark:text-slate-100'>{le.title}</p>
           {objective ? (
             <p className='mt-0.5 text-xs text-ds-text-muted/90 dark:text-slate-500'>{objective}</p>
@@ -131,12 +146,29 @@ function ModuleSection({ mod }: { mod: ModuleFullProgress }) {
         <span className='text-2xl' aria-hidden>
           {mod.icon}
         </span>
-        <div>
+        <div className='min-w-0 flex-1'>
           <h2 className='text-lg font-semibold text-ds-text-primary dark:text-white'>{mod.title}</h2>
           {mod.description ? (
             <p className='text-sm text-ds-text-muted dark:text-slate-400'>{mod.description}</p>
           ) : null}
-          <p className='mt-1 text-xs text-ds-text-muted dark:text-slate-500'>Complétion : {mod.completionPercent} %</p>
+          <div className='mt-2 flex flex-wrap items-center gap-3'>
+            <div
+              className='relative h-2 min-w-[120px] max-w-[220px] flex-1 overflow-hidden rounded-full bg-ds-bg-primary dark:bg-slate-800'
+              role='progressbar'
+              aria-valuenow={mod.completionPercent}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-label={`Progression du module ${mod.title}`}
+            >
+              <div
+                className='h-full rounded-full bg-emerald-500/90 transition-[width] duration-300 dark:bg-emerald-500/80'
+                style={{ width: `${Math.min(100, Math.max(0, mod.completionPercent))}%` }}
+              />
+            </div>
+            <p className='text-xs font-medium tabular-nums text-ds-text-muted dark:text-slate-400'>
+              {mod.completionPercent} % complété
+            </p>
+          </div>
         </div>
       </header>
       {/* Mobile : piste horizontale avec repères ; desktop : liste verticale */}

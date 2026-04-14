@@ -25,6 +25,10 @@ function buildReminderHtml(siteUrl: string): string {
     <tr><td style="padding:12px 0;font-size:12px;color:#64748b;border-top:1px solid #e2e8f0;">
       Vous recevez ce message car les rappels sont activés dans votre compte.
       <a href="${compte}" style="color:#0891b2;">Gérer mes préférences</a>
+      · <a href="${compte}" style="color:#0891b2;">Se désinscrire des rappels e-mail</a>
+    </td></tr>
+    <tr><td style="padding:8px 0 0;font-size:11px;color:#94a3b8;line-height:1.5;">
+      Données utilisées : adresse e-mail et préférences de compte. Base légale : intérêt légitime (service) et consentement pour les rappels. Vous pouvez retirer votre consentement à tout moment depuis votre compte ou le lien ci-dessus.
     </td></tr>
   </table>
 </body>
