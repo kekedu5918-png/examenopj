@@ -53,7 +53,7 @@ export default async function EpreuveDetailPage({ params }: { params: { slug: st
             title='Méthodologie Épreuve 1 — réservée au Premium'
             description='La méthode détaillée DPG/DPS (plans types, exemples) est incluse dans l’offre Premium. Passez par la page Tarifs pour débloquer l’accès.'
           >
-            <div className='min-h-[80vh] bg-navy-950' />
+            <div className='min-h-[80vh] bg-ds-bg-primary dark:bg-navy-950' />
           </ContentPremiumOverlay>
         </InteriorPageShell>
       );
@@ -77,7 +77,7 @@ export default async function EpreuveDetailPage({ params }: { params: { slug: st
             title='Méthodologie Épreuve 2 — réservée au Premium'
             description='Les phrases types, structures de PV et rapports de synthèse détaillés sont débloqués avec le Premium. Les modèles de PV (aperçu) restent listés sur la page dédiée après souscription.'
           >
-            <div className='min-h-[80vh] bg-navy-950' />
+            <div className='min-h-[80vh] bg-ds-bg-primary dark:bg-navy-950' />
           </ContentPremiumOverlay>
         </InteriorPageShell>
       );
@@ -157,7 +157,7 @@ export default async function EpreuveDetailPage({ params }: { params: { slug: st
           title='Méthodologie Épreuve 3 — réservée au Premium'
           description='Le détail de la préparation à l’oral (CR Parquet, structure, exemples) est inclus dans l’offre Premium.'
         >
-          <div className='min-h-[80vh] bg-navy-950' />
+          <div className='min-h-[80vh] bg-ds-bg-primary dark:bg-navy-950' />
         </ContentPremiumOverlay>
       ) : (
         <Epreuve3Layout wrapWithShell={false} />

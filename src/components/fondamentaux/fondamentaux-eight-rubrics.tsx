@@ -262,7 +262,10 @@ export function FondamentauxEightRubrics() {
   const activeId = useActiveSection(sectionIds);
 
   return (
-    <section className='border-b border-white/10 bg-navy-950 px-4 py-12 md:px-8' aria-labelledby='fond-structure-title'>
+    <section
+      className='border-b border-ds-border bg-ds-bg-primary px-4 py-12 dark:border-white/10 dark:bg-navy-950 md:px-8'
+      aria-labelledby='fond-structure-title'
+    >
       <div className='mx-auto max-w-6xl'>
         <div className='mb-8'>
           <h2 id='fond-structure-title' className='font-sans text-2xl font-extrabold tracking-tight text-white md:text-3xl'>

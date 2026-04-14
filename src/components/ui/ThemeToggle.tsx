@@ -15,7 +15,7 @@ export function ThemeToggle() {
       onClick={toggleTheme}
       aria-label='Basculer le thème'
       aria-pressed={isDark}
-      className='flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-ds-border bg-ds-bg-secondary text-ds-text-primary shadow-sm transition-colors hover:bg-ds-bg-elevated focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ds-accent'
+      className='flex h-12 w-12 min-h-[48px] min-w-[48px] shrink-0 items-center justify-center rounded-lg border border-ds-border bg-ds-bg-secondary text-ds-text-primary shadow-sm transition-colors hover:bg-ds-bg-elevated focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ds-accent'
       whileTap={{ scale: 0.94 }}
       transition={{ type: 'spring', stiffness: 400, damping: 22 }}
     >

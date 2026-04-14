@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { AccountDashboardSection } from '@/components/account/AccountDashboardSection';
 import { DashboardNextAction } from '@/components/dashboard/DashboardNextAction';
 import { StreakCard } from '@/components/gamification/StreakCard';
 import { LoginResumeCard } from '@/components/onboarding/LoginResumeCard';
@@ -12,7 +13,7 @@ import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/
 import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
 import { getOnboardingPlan } from '@/features/onboarding/actions/onboarding-actions';
 import { getLoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
-import { getTodayReviews } from '@/lib/learningPath';
+import { getTodayReviews, getUserFullProgress, pickNextLessonFromProgress } from '@/lib/learningPath';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
@@ -30,25 +31,28 @@ function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number |
 
 export default async function DashboardPage() {
   const session = await getSession();
-  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan, todayReviews] = session
-    ? await Promise.all([
-        getModules(),
-        getRevisionStats(session.user.id),
-        getRecentQuizAttempts(session.user.id, 1),
-        getGamificationData(session.user.id),
-        getLoginResumeData(session.user.id),
-        getOnboardingPlan(),
-        getTodayReviews(session.user.id),
-      ])
-    : await Promise.all([
-        getModules(),
-        Promise.resolve(null),
-        Promise.resolve([]),
-        Promise.resolve(null),
-        Promise.resolve(null),
-        Promise.resolve(null),
-        Promise.resolve([]),
-      ]);
+  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan, todayReviews, pathProgress] =
+    session
+      ? await Promise.all([
+          getModules(),
+          getRevisionStats(session.user.id),
+          getRecentQuizAttempts(session.user.id, 1),
+          getGamificationData(session.user.id),
+          getLoginResumeData(session.user.id),
+          getOnboardingPlan(),
+          getTodayReviews(session.user.id),
+          getUserFullProgress(session.user.id).catch(() => [] as Awaited<ReturnType<typeof getUserFullProgress>>),
+        ])
+      : await Promise.all([
+          getModules(),
+          Promise.resolve(null),
+          Promise.resolve([]),
+          Promise.resolve(null),
+          Promise.resolve(null),
+          Promise.resolve(null),
+          Promise.resolve([]),
+          Promise.resolve([]),
+        ]);
 
   const todayReviewCount = todayReviews.length;
   const userName = session
@@ -62,25 +66,31 @@ export default async function DashboardPage() {
   const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
   const featuredModules = modules.slice(0, 6);
 
+  const pathPick = pickNextLessonFromProgress(pathProgress);
+  const nextLesson = pathPick
+    ? { title: `${pathPick.moduleTitle} — ${pathPick.lessonTitle}`, href: pathPick.href, kind: pathPick.kind }
+    : null;
+
   return (
-    <section className='space-y-6 rounded-xl bg-slate-950 p-6'>
+    <AccountDashboardSection spacing='relaxed'>
       {session ? (
         <DashboardNextAction
           loginResume={loginResume}
           streak={streakDays}
           todayReviews={todayReviewCount}
           userName={userName}
+          nextLesson={nextLesson}
         />
       ) : null}
 
       <header>
         <div className='flex flex-wrap items-center gap-2'>
-          <h1 className='text-3xl font-bold text-slate-50'>Bienvenue sur ExamenOPJ</h1>
+          <h1 className='text-3xl font-bold text-ds-text-primary dark:text-slate-50'>Bienvenue sur ExamenOPJ</h1>
           <Badge variant='examen' className='text-xs'>
             {modules.length} thèmes disponibles
           </Badge>
         </div>
-        <p className='mt-2 max-w-3xl text-slate-300'>
+        <p className='mt-2 max-w-3xl text-ds-text-muted dark:text-slate-300'>
           Chaque fiche cours indique le poids du thème aux Épreuves 1–3 et renvoie vers quiz, articulation et sujets blancs
           associés. Utilisez les raccourcis ci-dessous pour enchaîner théorie et entraînement.
         </p>
@@ -95,6 +105,7 @@ export default async function DashboardPage() {
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-4'>
         {[
+          { titre: 'Parcours OPJ', href: '/dashboard/parcours' },
           { titre: 'Fondamentaux', href: '/fondamentaux' },
           { titre: 'Les enquêtes', href: '/enquetes' },
           { titre: 'Entraînement', href: '/entrainement' },
@@ -114,14 +125,14 @@ export default async function DashboardPage() {
 
       {/* Session classique si pas de resume actif */}
       {loginResume && !loginResume.showResume && (
-        <Card className='border border-cyan-500/30 bg-slate-900/70'>
+        <Card className='border border-cyan-500/30 bg-ds-bg-elevated dark:bg-slate-900/70'>
           <CardHeader>
-            <CardTitle className='text-slate-100'>Reprendre la session</CardTitle>
-            <CardDescription className='text-slate-300'>
+            <CardTitle className='text-ds-text-primary dark:text-slate-100'>Reprendre la session</CardTitle>
+            <CardDescription className='text-ds-text-muted dark:text-slate-300'>
               Recommandation basée sur votre activité enregistrée sur le compte.
             </CardDescription>
           </CardHeader>
-          <CardContent className='space-y-3 text-sm text-slate-200'>
+          <CardContent className='space-y-3 text-sm text-ds-text-primary dark:text-slate-200'>
             {lastAttempt ? (
               <>
                 <p>
@@ -170,26 +181,31 @@ export default async function DashboardPage() {
 
       {/* Plan personnalisé (si onboarding complété) OU plan statique */}
       {onboardingPlan ? (
-        <Card className='border border-blue-500/30 bg-slate-900/70'>
+        <Card className='border border-blue-500/30 bg-ds-bg-elevated dark:bg-slate-900/70'>
           <CardHeader>
-            <CardTitle className='text-slate-100'>📋 Votre plan personnalisé</CardTitle>
-            <CardDescription className='text-slate-300'>
+            <CardTitle className='text-ds-text-primary dark:text-slate-100'>Votre plan personnalisé</CardTitle>
+            <CardDescription className='text-ds-text-muted dark:text-slate-300'>
               Basé sur votre diagnostic — Niveau : {onboardingPlan.level} ({onboardingPlan.score}/5) — {onboardingPlan.plan.total_weeks} semaines
             </CardDescription>
           </CardHeader>
           <CardContent className='space-y-3'>
             {onboardingPlan.plan.phases.map((phase) => (
-              <div key={phase.phase_number} className='rounded-lg border border-slate-700 bg-slate-800/40 p-3'>
+              <div
+                key={phase.phase_number}
+                className='rounded-lg border border-ds-border bg-ds-bg-secondary/80 p-3 dark:border-slate-700 dark:bg-slate-800/40'
+              >
                 <div className='mb-1.5 flex items-center gap-2'>
                   <span className='flex h-5 w-5 items-center justify-center rounded-full bg-cyan-800 text-[10px] font-bold text-cyan-200'>
                     {phase.phase_number}
                   </span>
-                  <p className='text-sm font-semibold text-slate-100'>{phase.name}</p>
-                  <span className='ml-auto text-xs text-slate-500'>{phase.duration_weeks} sem. — {phase.daily_time_minutes} min/j</span>
+                  <p className='text-sm font-semibold text-ds-text-primary dark:text-slate-100'>{phase.name}</p>
+                  <span className='ml-auto text-xs text-ds-text-muted dark:text-slate-500'>
+                    {phase.duration_weeks} sem. — {phase.daily_time_minutes} min/j
+                  </span>
                 </div>
                 <ul className='space-y-0.5'>
                   {phase.topics.map((t) => (
-                    <li key={t.id} className='flex items-start gap-1.5 text-xs text-slate-300'>
+                    <li key={t.id} className='flex items-start gap-1.5 text-xs text-ds-text-muted dark:text-slate-300'>
                       <span className='text-cyan-500'>•</span>
                       <span>
                         {t.name}
@@ -204,14 +220,14 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
       ) : (
-        <Card className='border border-blue-500/30 bg-slate-900/70'>
+        <Card className='border border-blue-500/30 bg-ds-bg-elevated dark:bg-slate-900/70'>
           <CardHeader>
-            <CardTitle className='text-slate-100'>Plan de départ recommandé</CardTitle>
-            <CardDescription className='text-slate-300'>
+            <CardTitle className='text-ds-text-primary dark:text-slate-100'>Plan de départ recommandé</CardTitle>
+            <CardDescription className='text-ds-text-muted dark:text-slate-300'>
               Une trajectoire simple pour les premières sessions de révision.
             </CardDescription>
           </CardHeader>
-          <CardContent className='space-y-2 text-sm text-slate-200'>
+          <CardContent className='space-y-2 text-sm text-ds-text-primary dark:text-slate-200'>
             <p>1. Parcourez les fondamentaux : cadres, GAV, perquisitions, fiches thématiques.</p>
             <p>2. Enchaînez avec quiz / flashcards sur le même thème depuis l’entraînement.</p>
             <p>3. À mi-parcours : une enquête type ; en fin : mise en situation sur les trois épreuves.</p>
@@ -220,8 +236,12 @@ export default async function DashboardPage() {
       )}
 
       <div className='flex flex-wrap items-center justify-between gap-3'>
-        <h2 className='text-xl font-semibold text-slate-100'>Thèmes du programme</h2>
-        <Button asChild variant='outline' className='border-slate-700 bg-slate-900 text-slate-100 hover:bg-slate-800'>
+        <h2 className='text-xl font-semibold text-ds-text-primary dark:text-slate-100'>Thèmes du programme</h2>
+        <Button
+          asChild
+          variant='outline'
+          className='border-ds-border bg-ds-bg-secondary text-ds-text-primary hover:bg-ds-bg-elevated dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800'
+        >
           <Link href='/fondamentaux'>Voir les fiches</Link>
         </Button>
       </div>
@@ -230,12 +250,15 @@ export default async function DashboardPage() {
         {featuredModules.map((module) => {
           const coursePath = '/fondamentaux';
           return (
-            <Card key={module.id} className='border-l-4 border-blue-500 bg-slate-900 shadow-md hover:shadow-xl'>
+            <Card
+              key={module.id}
+              className='border-l-4 border-blue-500 bg-ds-bg-elevated shadow-md hover:shadow-xl dark:bg-slate-900'
+            >
               <CardHeader>
-                <CardTitle className='text-slate-100'>
+                <CardTitle className='text-ds-text-primary dark:text-slate-100'>
                   {module.titre}
                 </CardTitle>
-                <CardDescription className='text-slate-300'>
+                <CardDescription className='text-ds-text-muted dark:text-slate-300'>
                   {module.description ?? 'Module pédagogique ExamenOPJ.'}
                 </CardDescription>
               </CardHeader>
@@ -248,6 +271,6 @@ export default async function DashboardPage() {
           );
         })}
       </div>
-    </section>
+    </AccountDashboardSection>
   );
 }

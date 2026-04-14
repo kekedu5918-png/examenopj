@@ -208,7 +208,7 @@ export function FondamentauxPage({ fiches, categories, contentLocked = false }: 
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder='Filtrer en temps réel…'
-          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-sm text-white outline-none placeholder:text-slate-500 focus:border-emerald-500/40 focus:ring-2 focus:ring-emerald-500/15'
+          className='w-full rounded-xl border border-ds-border bg-ds-bg-primary px-4 py-3 text-sm text-ds-text-primary outline-none placeholder:text-ds-text-muted focus:border-emerald-500/40 focus:ring-2 focus:ring-emerald-500/15 dark:border-white/10 dark:bg-navy-900/80 dark:text-white dark:placeholder:text-slate-500'
         />
       </div>
 

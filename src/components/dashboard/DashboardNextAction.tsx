@@ -13,6 +13,8 @@ export interface DashboardNextActionProps {
   streak: number;
   todayReviews: number;
   userName: string | null;
+  /** Prochaine étape du parcours OPJ (`learning_path`), prioritaire sur les autres suggestions. */
+  nextLesson?: { title: string; href: string; kind: 'needs_review' | 'continue' } | null;
 }
 
 /**
@@ -32,6 +34,7 @@ export function DashboardNextAction({
   streak,
   todayReviews,
   userName,
+  nextLesson,
 }: DashboardNextActionProps) {
   const reduceMotion = useReducedMotion();
   const parcours = findParcoursContinue(loginResume);
@@ -40,7 +43,14 @@ export function DashboardNextAction({
   let actionHref: string;
   let actionLabel: string;
 
-  if (parcours) {
+  if (nextLesson) {
+    actionLine =
+      nextLesson.kind === 'needs_review'
+        ? `Réviser (parcours) : ${nextLesson.title}`
+        : `Continuer le parcours : ${nextLesson.title}`;
+    actionHref = nextLesson.href;
+    actionLabel = nextLesson.kind === 'needs_review' ? 'Réviser →' : 'Continuer →';
+  } else if (parcours) {
     actionLine = `Continuer : ${parcours.title}`;
     actionHref = parcours.href;
     actionLabel = 'Reprendre →';

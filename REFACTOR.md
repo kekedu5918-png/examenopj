@@ -1,30 +1,33 @@
-# Refactorisations prioritaires (audit technique)
+# REFACTOR — priorités ExamenOPJ
 
-## [CRITIQUE] Cohérence des contenus « cours / quiz »
+> État au **2026-04** : les items P0/P1 ci-dessous sont **largement traités** (parcours `/dashboard/parcours`, `LearningPathTrack`, thème `--ds-*` sur le dashboard et zones sensibles). Ce fichier évite les instructions contradictoires avec la réalité du dépôt.
 
-- **Documenté** dans `docs/CONTENT_SOURCES.md` + commentaires en tête de `quiz-questions.ts` et `get-dashboard-data.ts`.
-- **Long terme** : unifier (CMS/Supabase comme source + génération de types) si vous industrialisez le contenu.
+## P0 — Cohérence thème clair / sombre (finition « full site »)
 
-## [IMPORTANT] Composants volumineux (lisibilité et tests)
+**Statut** : en cours de généralisation. `InteriorPageShell` utilise `bg-ds-bg-primary dark:bg-[#050a14]` en plein écran ; compte, quiz, fondamentaux (rubrique 8), épreuves (placeholders) et onboarding s’alignent sur les tokens `ds.*` avec variantes `dark:` où un fond très sombre reste nécessaire.
 
-| Fichier (ordre de priorité) | Observation |
-|-----------------------------|-------------|
-| `src/components/quiz/quiz-page-client.tsx` | Très long ; mélange setup quiz, freemium, gamification, UI — candidat pour sous-composants + hooks dédiés. |
-| `src/components/onboarding/OnboardingFlow.tsx` | Logique d’étapes + UI + shell ; extraire étapes et actions. |
-| `src/components/infractions/InfractionsPageClient.tsx` | Table, filtres, modes, motion — découper par domaine (liste, détail, flash mode). |
+**Action restante** : grep ponctuel `bg-navy|bg-slate-950` sur les composants secondaires (PV, récapitulatif print, etc.) et remplacer par sémantique ou `dark:`.
 
-## [IMPORTANT] Navigation centralisée
+## P1 — Parcours « learning path »
 
-- **Fait** : `SITE_HEADER_COURS_LINKS`, `SITE_HEADER_EPREUVES_LINKS`, `SITE_HEADER_ENTRAINER_LINKS` dans `navigation.ts`, consommés par `SiteHeaderClient.tsx`.
+**Statut** : **livré** — `getUserFullProgress`, `LearningPathTrack`, `completeLessonAction`, pont **quiz → parcours** (`src/data/learning-path-quiz-bridge.ts` + `recordQuizAttempt` si score ≥ 80 % et mapping domaine/fascicule → `inf-2` / `fla-2`).
 
-## [AMÉLIORATION] Affichage des statistiques homepage (SEO / aperçu sans JS)
+**Action restante** : enrichir le mapping si de nouveaux modes quiz ciblent d’autres `client_key` (ex. parcours thématiques dédiés).
 
-- **Fait** : `AnimatedStat` affiche désormais la valeur finale sans animation compteur (HTML toujours correct).
+## P2 — `ThemeProvider` + ESLint
 
-## [AMÉLIORATION] Librairies d’icônes
+**Fichier** : `src/components/providers/ThemeProvider.tsx` — avertissement éventuel `no-before-interactive-script-outside-document`.
 
-- Coexistence de `lucide-react` (très utilisé) et `react-icons` (quelques composants UI : `toast`, `sheet`, etc.). Pas bloquant ; fusion éventuelle pour réduire le bundle.
+**Options** : script inline dans `layout.tsx`, ou `afterInteractive` si flash acceptable.
 
-## [AMÉLIORATION] Error boundaries
+## P3 — Découpage des gros composants
 
-- `src/app/error.tsx` exporte un composant nommé `GlobalError` : fonctionnel pour la route, mais pas de `global-error.tsx` à la racine — comportement par défaut Next pour erreurs racine ; à documenter ou compléter si besoin de skin global pour erreurs de layout.
+Identifier les fichiers > 300 lignes (quiz, enquêtes, épreuves) pour extraire hooks et sous-composants **quand une évolution le justifie**.
+
+## P4 — Navigation exportée
+
+Vérifier `src/app/navigation.ts` avec knip ; retirer les exports réellement inutilisés.
+
+## P5 — Duplication schémas progression
+
+**Source de vérité** : `learning_path.*` pour le parcours OPJ ; `public.learning_nodes` legacy — documenté dans `SCHEMA_REVIEW.md` / `docs/TECH_DEBT.md`.

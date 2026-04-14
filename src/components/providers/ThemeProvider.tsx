@@ -9,7 +9,6 @@ import {
   useMemo,
   useState,
 } from 'react';
-import Script from 'next/script';
 
 export type ThemeName = 'dark' | 'light';
 
@@ -71,14 +70,7 @@ export function ThemeProvider({ children }: PropsWithChildren) {
     [theme, setTheme, toggleTheme],
   );
 
-  return (
-    <ThemeContext.Provider value={value}>
-      <Script id='ds-theme-init' strategy='beforeInteractive'>
-        {`(function(){try{var t=localStorage.getItem('theme');var d=t==='light'?'light':'dark';document.documentElement.classList.toggle('dark',d==='dark');}catch(e){document.documentElement.classList.add('dark');}})();`}
-      </Script>
-      {children}
-    </ThemeContext.Provider>
-  );
+  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
 
 export function useTheme(): ThemeContextValue {

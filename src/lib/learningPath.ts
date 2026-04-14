@@ -14,8 +14,9 @@ function isValidUuid(id: string): boolean {
 /**
  * Forme minimale du schéma `learning_path` pour typer le client sans `any`
  * (les types générés globaux ne couvrent pas encore ce schéma).
+ * @see docs/TECH_DEBT.md — génération Supabase multi-schéma
  */
-type LearningPathDatabase = {
+export type LearningPathDatabase = {
   public: {
     Tables: Record<string, never>;
     Views: Record<string, never>;
@@ -157,6 +158,45 @@ export type ModuleFullProgress = {
   completionPercent: number;
   lessons: LessonProgressItem[];
 };
+
+export type NextLessonPick = {
+  moduleTitle: string;
+  lessonTitle: string;
+  href: string;
+  kind: 'needs_review' | 'continue';
+};
+
+/**
+ * Prochaine étape recommandée pour le dashboard : révision espacée prioritaire,
+ * sinon première leçon déverrouillée non complétée (avec `href`).
+ */
+export function pickNextLessonFromProgress(modules: ModuleFullProgress[]): NextLessonPick | null {
+  for (const mod of modules) {
+    for (const le of mod.lessons) {
+      if (le.status === 'needs_review' && le.href) {
+        return {
+          moduleTitle: mod.title,
+          lessonTitle: le.title,
+          href: le.href,
+          kind: 'needs_review',
+        };
+      }
+    }
+  }
+  for (const mod of modules) {
+    for (const le of mod.lessons) {
+      if (le.status === 'unlocked' && le.href) {
+        return {
+          moduleTitle: mod.title,
+          lessonTitle: le.title,
+          href: le.href,
+          kind: 'continue',
+        };
+      }
+    }
+  }
+  return null;
+}
 
 type LessonRow = {
   id: string;
@@ -613,6 +653,23 @@ export async function completeLesson(
     needsReviewAt,
     isPersonalBest,
   };
+}
+
+/** Résout l’UUID d’une leçon par `client_key` (pont quiz / intégrations). */
+export async function getLessonIdByClientKey(clientKey: string): Promise<string | null> {
+  const key = clientKey.trim();
+  if (!key) return null;
+
+  const supabase = await getLearningPathClient();
+  const db = supabase.schema('learning_path');
+
+  const { data, error } = await db.from('lessons').select('id').eq('client_key', key).maybeSingle();
+
+  if (error || !data) {
+    return null;
+  }
+
+  return data.id;
 }
 
 export type ReviewLesson = {

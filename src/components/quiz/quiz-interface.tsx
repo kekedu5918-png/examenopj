@@ -73,7 +73,7 @@ export function QuizInterface({ questions, onComplete, onQuit, streak }: QuizInt
 
   if (!q || total === 0) {
     return (
-      <div className="mx-auto max-w-2xl rounded-2xl border border-white/[0.08] bg-navy-950/80 p-8 text-center text-gray-400">
+      <div className="mx-auto max-w-2xl rounded-2xl border border-ds-border bg-ds-bg-secondary/95 p-8 text-center text-ds-text-muted dark:border-white/[0.08] dark:bg-navy-950/80 dark:text-gray-400">
         Aucune question pour cette sélection.
       </div>
     );

@@ -37,8 +37,9 @@ const nextConfig = {
         key: 'Permissions-Policy',
         value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
       },
-      // Phase 1 : observation seulement (pas de blocage). Affiner selon la console navigateur.
+      // Phase 1 : report-only par défaut. Activer l’enforcement avec CSP_ENFORCE=1 après validation en prod.
       { key: 'Content-Security-Policy-Report-Only', value: cspReportOnly },
+      ...(process.env.CSP_ENFORCE === '1' ? [{ key: 'Content-Security-Policy', value: cspReportOnly }] : []),
     ];
     if (process.env.NODE_ENV === 'production') {
       security.splice(1, 0, {

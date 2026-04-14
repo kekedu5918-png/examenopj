@@ -1,13 +1,22 @@
+import AxeBuilder from '@axe-core/playwright';
 import { test, expect } from '@playwright/test';
 
 /**
  * Smoke E2E — pages publiques sans auth.
  * Les cinq rubriques pédagogiques : fondamentaux, infractions, enquêtes, épreuves, entraînement.
+ * A11y : 0 violation `serious`+ sur les URLs clés (axe-core).
  */
+async function expectNoSeriousA11yViolations(page: import('@playwright/test').Page, path: string) {
+  const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
+  const serious = results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical');
+  expect(serious, `a11y ${path}: ${serious.map((v) => v.id).join(', ')}`).toEqual([]);
+}
+
 test.describe('Pages publiques', () => {
   test('accueil charge', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('body')).toBeVisible();
+    await expectNoSeriousA11yViolations(page, '/');
   });
 
   test('tarifs charge', async ({ page }) => {
@@ -26,6 +35,7 @@ test.describe('Pages publiques', () => {
       const res = await page.goto(path);
       expect(res?.ok(), `${path} doit répondre OK`).toBeTruthy();
       await expect(page.locator('body')).toBeVisible();
+      await expectNoSeriousA11yViolations(page, path);
     }
   });
 

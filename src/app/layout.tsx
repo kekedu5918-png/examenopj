@@ -9,6 +9,7 @@ import { Header } from '@/components/layout/Header';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { SiteAmbientMotion } from '@/components/layout/SiteAmbientMotion';
 import { SiteBackground } from '@/components/layout/SiteBackground';
+import { ThemeColorSync } from '@/components/providers/ThemeColorSync';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { SiteJsonLd } from '@/components/seo/site-json-ld';
 import { Toaster } from '@/components/ui/toaster';
@@ -84,10 +85,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f8fafc' },
-    { media: '(prefers-color-scheme: dark)', color: '#0C1B33' },
-  ],
+  /** Défaut avant hydratation ; `ThemeColorSync` aligne sur le thème persistant. */
+  themeColor: '#0C1B33',
   colorScheme: 'dark light',
 };
 
@@ -98,6 +97,13 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       className={cn(inter.variable, dmSans.variable, instrumentSerif.variable, jetbrainsMono.variable)}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='light'?'light':'dark';document.documentElement.classList.toggle('dark',d==='dark');}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
+      </head>
       <body
         className={cn(
           'relative min-h-screen bg-transparent font-sans text-slate-900 antialiased dark:text-examen-ink',
@@ -105,6 +111,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         suppressHydrationWarning
       >
         <ThemeProvider>
+          <ThemeColorSync />
           <AnalyticsProviders>
             <SiteBackground />
             <SiteAmbientMotion />

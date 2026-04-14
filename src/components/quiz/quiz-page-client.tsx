@@ -449,7 +449,7 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
           <div
             role='tablist'
             aria-label='Choisir la portée du quiz'
-            className='flex flex-col gap-2 rounded-2xl border border-white/[0.08] bg-navy-950/80 p-1.5 sm:flex-row sm:items-stretch'
+            className='flex flex-col gap-2 rounded-2xl border border-ds-border bg-ds-bg-secondary/95 p-1.5 dark:border-white/[0.08] dark:bg-navy-950/80 sm:flex-row sm:items-stretch'
           >
             {(
               [
@@ -508,10 +508,10 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
                     <select
                       value={fascicule}
                       onChange={(e) => setFascicule(Number(e.target.value))}
-                      className='mt-2 w-full rounded-xl border border-white/15 bg-navy-900/90 px-3 py-3 text-sm text-white focus:border-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30'
+                      className='mt-2 w-full rounded-xl border border-ds-border bg-ds-bg-primary px-3 py-3 text-sm text-ds-text-primary focus:border-cyan-500/50 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 dark:border-white/15 dark:bg-navy-900/90 dark:text-white'
                     >
                       {fasciculeOptions.map((f) => (
-                        <option key={f.numero} value={f.numero} className='bg-navy-900'>
+                        <option key={f.numero} value={f.numero} className='bg-ds-bg-primary dark:bg-navy-900'>
                           Thème {String(f.numero).padStart(2, '0')} — {f.titre}
                         </option>
                       ))}

@@ -17,6 +17,8 @@ export const AnalyticsEvents = {
   paymentSuccess: 'payment_success',
   paymentFailed: 'payment_failed',
   onboardingComplete: 'onboarding_complete',
+  learningPathStepCompleted: 'learning_path_step_completed',
+  learningPathModuleCompleted: 'learning_path_module_completed',
 } as const;
 
 export function track(event: string, properties?: Record<string, unknown>): void {

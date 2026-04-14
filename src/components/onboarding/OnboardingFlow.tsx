@@ -35,7 +35,7 @@ function OnboardingScreenShell({ children }: { children: ReactNode }) {
   return (
     <InteriorPageShell
       fullBleed
-      bleedBgClassName='bg-slate-950'
+      bleedBgClassName='bg-ds-bg-primary dark:bg-slate-950'
       maxWidth='full'
       glow={SHELL_GLOW.auth}
       pad='none'

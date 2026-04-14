@@ -1,3 +1,4 @@
+import { getUserStreakCurrent } from '@/lib/learningPath';
 import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
 import type { SupabaseClient } from '@supabase/supabase-js';
 
@@ -50,15 +51,16 @@ export async function getGamificationData(userId: string): Promise<GamificationD
   const supabase = await createSupabaseServerClient();
   const db = supabase as unknown as SupabaseClient<any>;
 
-  const [streakRes, badgesRes, attemptsRes] = await Promise.all([
+  const [streakRes, badgesRes, attemptsRes, lpStreak] = await Promise.all([
     db.from('user_streaks').select('*').eq('user_id', userId).maybeSingle(),
     db.from('user_badges').select('*').eq('user_id', userId),
     db.from('quiz_attempts').select('fascicule_num, percent, mode').eq('user_id', userId).order('created_at', { ascending: false }).limit(200),
+    getUserStreakCurrent(userId).catch(() => 0),
   ]);
 
-  // ── Streak ──────────────────────────────────────────────
+  // ── Streak (public.quiz + `learning_path` : affichage = max des deux sources) ──
   const raw = streakRes.data;
-  const currentStreak = raw?.current_streak ?? 0;
+  const currentStreak = Math.max(raw?.current_streak ?? 0, lpStreak);
 
   let nextMilestone: StreakData['nextMilestone'] = null;
   let currentMilestoneBadge: string | null = null;
@@ -73,7 +75,7 @@ export async function getGamificationData(userId: string): Promise<GamificationD
 
   const streak: StreakData = {
     currentStreak,
-    longestStreak: raw?.longest_streak ?? 0,
+    longestStreak: Math.max(raw?.longest_streak ?? 0, currentStreak),
     lastSessionDate: raw?.last_session_date ?? null,
     nextMilestone,
     currentMilestoneBadge,
