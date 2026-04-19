@@ -15,15 +15,15 @@ import { HomeStatsSection } from '@/components/home/sections/home-stats-section'
 
 const HomeTestimonialsSection = dynamic(
   () => import('@/components/home/sections/home-refonte-sections').then((m) => m.HomeTestimonialsSection),
-  { loading: () => <div className='min-h-[160px]' aria-hidden /> },
+  { loading: () => <div className='min-h-[160px] rounded-xl bg-ij-surface-2/20 ring-1 ring-ij-border/40' aria-hidden /> },
 );
 const HomeFinalPricingSection = dynamic(
   () => import('@/components/home/sections/home-refonte-sections').then((m) => m.HomeFinalPricingSection),
-  { loading: () => <div className='min-h-[200px]' aria-hidden /> },
+  { loading: () => <div className='min-h-[200px] rounded-xl bg-ij-surface-2/20 ring-1 ring-ij-border/40' aria-hidden /> },
 );
 const HomeProgrammeCompletSection = dynamic(
   () => import('@/components/home/sections/home-refonte-sections').then((m) => m.HomeProgrammeCompletSection),
-  { loading: () => <div className='min-h-[120px]' aria-hidden /> },
+  { loading: () => <div className='min-h-[120px] rounded-xl bg-ij-surface-2/20 ring-1 ring-ij-border/40' aria-hidden /> },
 );
 
 export type HomePageClientProps = {

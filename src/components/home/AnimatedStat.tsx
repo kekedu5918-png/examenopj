@@ -29,20 +29,20 @@ export function AnimatedStat({
       className={cn(
         light
           ? 'text-left'
-          : 'rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-3 text-center',
+          : 'rounded-lg border border-ij-border/60 bg-ij-surface-2/30 px-3 py-3 text-center',
       )}
     >
       <strong
         className={cn(
           light
-            ? 'font-display text-2xl font-semibold tracking-tight text-orde-slate900'
-            : 'text-lg font-bold text-white',
+            ? 'font-ij-display text-2xl font-semibold tracking-tight text-ij-text'
+            : 'text-lg font-bold text-ij-text',
         )}
       >
         {finalValue}
         {suffix}
       </strong>
-      <p className={cn(light ? 'mt-1 text-sm text-slate-600' : 'text-[11px] text-examen-inkMuted')}>{label}</p>
+      <p className={cn(light ? 'mt-1 text-sm text-ij-text-subtle' : 'text-[11px] text-ij-text-muted')}>{label}</p>
     </div>
   );
 }

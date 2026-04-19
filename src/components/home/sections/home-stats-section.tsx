@@ -51,11 +51,11 @@ export function HomeStatsSection() {
 
   return (
     <section
-      className='relative overflow-hidden border-y border-white/[0.06] py-14 md:py-16'
+      className='relative overflow-hidden border-y border-ij-border/60 py-14 md:py-16'
       aria-labelledby='home-stats-title'
     >
       {/* Fond légèrement différent pour contraste section */}
-      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-[#0C1525] to-[#080F1E]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-ij-surface to-ij-bg' aria-hidden />
 
       <div className='relative mx-auto max-w-6xl px-4'>
         <h2 id='home-stats-title' className='sr-only'>Chiffres clés de la préparation</h2>
@@ -65,7 +65,7 @@ export function HomeStatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.45, ease: LANDING_EASE }}
-          className='grid grid-cols-2 gap-4 rounded-3xl border border-white/[0.07] bg-white/[0.02] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.35)] backdrop-blur-sm md:grid-cols-4 md:gap-5 md:p-6'
+          className='grid grid-cols-2 gap-4 rounded-3xl border border-ij-border/70 bg-ij-surface-2/25 p-4 shadow-ij-elevated backdrop-blur-sm md:grid-cols-4 md:gap-5 md:p-6'
         >
           {stats.map((s, i) => (
             <motion.div
@@ -74,7 +74,7 @@ export function HomeStatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.07, duration: 0.4, ease: LANDING_EASE }}
-              className='group relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.025] p-5 transition-all hover:border-white/[0.12] hover:bg-white/[0.04]'
+              className='group relative flex flex-col gap-3 overflow-hidden rounded-2xl border border-ij-border/70 bg-ij-surface-2/30 p-5 transition-all hover:border-ij-border-strong/50 hover:bg-ij-surface-2/45'
             >
               {/* Bord supérieur coloré */}
               <span
@@ -90,7 +90,7 @@ export function HomeStatsSection() {
               {/* Chiffre + label */}
               <div>
                 <AnimatedStat finalValue={s.finalValue} suffix={s.suffix} label={s.label} />
-                <p className='mt-1 text-[11px] font-medium text-slate-600'>{s.sublabel}</p>
+                <p className='mt-1 text-[11px] font-medium text-ij-text-subtle'>{s.sublabel}</p>
               </div>
             </motion.div>
           ))}

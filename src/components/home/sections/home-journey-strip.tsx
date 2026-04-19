@@ -47,7 +47,7 @@ export function HomeJourneyStrip() {
 
   return (
     <section
-      className='relative border-y border-white/[0.06] bg-gradient-to-b from-[#050a14] via-[#080f1e] to-[#050a14] py-10 md:py-12'
+      className='relative border-y border-ij-border/60 bg-gradient-to-b from-ij-bg via-ij-surface to-ij-bg py-10 md:py-12'
       aria-labelledby='journey-strip-title'
     >
       <div
@@ -61,10 +61,10 @@ export function HomeJourneyStrip() {
 
       <div className='relative mx-auto max-w-6xl px-4'>
         <div className='mb-8 text-center'>
-          <p id='journey-strip-title' className='font-sans text-xs font-bold uppercase tracking-[0.2em] text-slate-500'>
+          <p id='journey-strip-title' className='font-ij-sans text-xs font-bold uppercase tracking-[0.2em] text-ij-text-subtle'>
             Parcours type référence
           </p>
-          <p className='mt-2 font-sans text-lg font-semibold text-white md:text-xl'>
+          <p className='mt-2 font-ij-sans text-lg font-semibold text-ij-text md:text-xl'>
             Quatre étapes, une ligne claire — du cadre officiel à la méthode de révision.
           </p>
         </div>
@@ -74,7 +74,7 @@ export function HomeJourneyStrip() {
           <div className='relative flex items-start justify-between gap-2'>
             {/* Connector line */}
             <div
-              className='pointer-events-none absolute left-[10%] right-[10%] top-[28px] h-[2px] bg-gradient-to-r from-blue-500/20 via-violet-500/30 to-emerald-500/20'
+              className='pointer-events-none absolute left-[10%] right-[10%] top-[28px] h-[2px] bg-gradient-to-r from-ij-accent/20 via-ij-primary/25 to-ij-success/20'
               aria-hidden
             />
             {STEPS.map((s, i) => (
@@ -95,17 +95,17 @@ export function HomeJourneyStrip() {
                 >
                   <span
                     className={cn(
-                      'flex h-14 w-14 items-center justify-center rounded-2xl border border-white/[0.08] bg-white/[0.04] shadow-lg shadow-black/30 ring-2 ring-white/[0.06] transition-all duration-300',
+                      'flex h-14 w-14 items-center justify-center rounded-2xl border border-ij-border/80 bg-ij-surface-2/40 shadow-lg shadow-black/30 ring-2 ring-ij-border/50 transition-all duration-300',
                       'bg-gradient-to-br',
                       s.accent,
-                      'group-hover:ring-white/20 group-hover:shadow-[0_0_24px_rgba(59,130,246,0.25)]',
+                      'group-hover:ring-ij-accent/35 group-hover:shadow-[0_0_24px_rgba(212,168,83,0.2)]',
                     )}
                   >
-                    <s.Icon className='h-6 w-6 text-white drop-shadow-md' strokeWidth={1.75} aria-hidden />
+                    <s.Icon className='h-6 w-6 text-ij-text drop-shadow-md' strokeWidth={1.75} aria-hidden />
                   </span>
-                  <span className='mt-3 font-sans text-sm font-bold text-white'>{s.label}</span>
-                  <span className='mt-0.5 max-w-[140px] text-xs leading-snug text-slate-500'>{s.hint}</span>
-                  <span className='mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-blue-400/90 opacity-0 transition-opacity group-hover:opacity-100'>
+                  <span className='mt-3 font-ij-sans text-sm font-bold text-ij-text'>{s.label}</span>
+                  <span className='mt-0.5 max-w-[140px] text-xs leading-snug text-ij-text-subtle'>{s.hint}</span>
+                  <span className='mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-ij-accent/90 opacity-0 transition-opacity group-hover:opacity-100'>
                     Ouvrir
                     <CheckCircle2 className='h-3 w-3' aria-hidden />
                   </span>
@@ -127,24 +127,24 @@ export function HomeJourneyStrip() {
             >
               <Link
                 href={s.href}
-                className='flex items-center gap-4 rounded-2xl border border-white/[0.07] bg-white/[0.03] p-4 transition-colors active:bg-white/[0.06]'
+                className='flex items-center gap-4 rounded-2xl border border-ij-border/70 bg-ij-surface-2/25 p-4 transition-colors active:bg-ij-surface-2/40'
               >
                 <span
                   className={cn(
-                    'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white shadow-md',
+                    'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-ij-text shadow-md',
                     s.accent,
                   )}
                 >
                   <s.Icon className='h-5 w-5' strokeWidth={1.75} aria-hidden />
                 </span>
                 <div className='min-w-0 flex-1 text-left'>
-                  <p className='font-sans text-sm font-bold text-white'>
-                    <span className='mr-2 font-mono text-xs text-slate-500'>{s.step}.</span>
+                  <p className='font-ij-sans text-sm font-bold text-ij-text'>
+                    <span className='mr-2 font-mono text-xs text-ij-text-subtle'>{s.step}.</span>
                     {s.label}
                   </p>
-                  <p className='text-xs text-slate-500'>{s.hint}</p>
+                  <p className='text-xs text-ij-text-subtle'>{s.hint}</p>
                 </div>
-                <span className='shrink-0 text-slate-600' aria-hidden>
+                <span className='shrink-0 text-ij-text-subtle' aria-hidden>
                   →
                 </span>
               </Link>

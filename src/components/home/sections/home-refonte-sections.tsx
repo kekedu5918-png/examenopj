@@ -343,7 +343,11 @@ export function HomeEpreuvesLandingSection() {
   );
 }
 
-/** Section 5 — Aperçu infractions. */
+/**
+ * @deprecated Composant non monté sur / au 2026-04-19.
+ * Tokens legacy conservés intentionnellement — à migrer ou supprimer en Phase 3
+ * (décomposition de home-refonte-sections.tsx).
+ */
 export function HomeInfractionsPreviewSection({ items }: { items: InfractionPreviewItem[] }) {
   return (
     <section className='px-4 py-20 md:py-28' aria-labelledby='home-infractions-title'>
@@ -403,7 +407,11 @@ const FOND_BLOCS = [
   { icon: ClipboardList, title: 'Perquisitions & saisies', line: 'Conditions et formalités' },
 ] as const;
 
-/** Section 6 — Fondamentaux (aperçu). */
+/**
+ * @deprecated Composant non monté sur / au 2026-04-19.
+ * Tokens legacy conservés intentionnellement — à migrer ou supprimer en Phase 3
+ * (décomposition de home-refonte-sections.tsx).
+ */
 export function HomeFondamentauxPreviewSection() {
   return (
     <section className='border-t border-white/[0.06] bg-examen-canvas px-4 py-20 md:py-28' aria-labelledby='home-fond-title'>

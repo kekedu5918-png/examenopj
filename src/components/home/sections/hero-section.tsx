@@ -52,7 +52,7 @@ export function HeroSection() {
   return (
     <section className='relative min-h-[92vh] overflow-hidden' aria-label='Présentation ExamenOPJ'>
       {/* ── Fond multicouches ── */}
-      <div className='pointer-events-none absolute inset-0 bg-[#080F1E]' aria-hidden />
+      <div className='pointer-events-none absolute inset-0 bg-ij-bg' aria-hidden />
 
       {/* Orb bleu principal — top-right */}
       <div
@@ -99,42 +99,42 @@ export function HeroSection() {
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: LANDING_EASE }}
-            className='mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-blue-500/30 bg-blue-500/10 px-4 py-1.5'
+            className='mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-ij-accent/30 bg-ij-accent/10 px-4 py-1.5'
           >
             <span className='relative flex h-2 w-2'>
               {shouldReduce ? null : (
-                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-60' />
+                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-ij-accent opacity-60' />
               )}
-              <span className='relative inline-flex h-2 w-2 rounded-full bg-blue-400' />
+              <span className='relative inline-flex h-2 w-2 rounded-full bg-ij-accent' />
             </span>
-            <span className='text-xs font-semibold tracking-wide text-blue-300' suppressHydrationWarning>
+            <span className='text-xs font-semibold tracking-wide text-ij-accent' suppressHydrationWarning>
               {countdownLabel}
             </span>
-            <span className='h-3 w-px bg-white/20' />
-            <span className='text-xs text-slate-400'>Mis à jour : {SITE_LAST_UPDATED_LABEL}</span>
+            <span className='h-3 w-px bg-ij-border' />
+            <span className='text-xs text-ij-text-muted'>Mis à jour : {SITE_LAST_UPDATED_LABEL}</span>
           </motion.div>
 
           {/* Titre principal — dégradé doux type premium (pas de cyan flashy) */}
           <div className='space-y-2'>
             <motion.h1
-              className='overflow-visible font-display text-5xl font-normal leading-[1.14] tracking-tight sm:text-6xl md:text-[4rem] lg:text-[3.5rem] xl:text-[4.25rem]'
+              className='overflow-visible font-ij-display text-5xl font-normal leading-[1.14] tracking-tight sm:text-6xl md:text-[4rem] lg:text-[3.5rem] xl:text-[4.25rem]'
               initial={MOTION_INITIAL_FOR_SEO}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease: LANDING_EASE, delay: 0.06 }}
             >
-              <span className='block text-white'>Réussissez</span>
+              <span className='block text-ij-text'>Réussissez</span>
               <span className='mt-1 block overflow-visible pb-0.5'>
                 <span
-                  className='relative inline-block bg-gradient-to-br from-[#f8fafc] via-[#cbd5e1] to-[#93c5fd] bg-clip-text pb-[0.15em] text-transparent drop-shadow-[0_2px_28px_rgba(59,130,246,0.18)]'
+                  className='relative inline-block bg-gradient-to-br from-ij-text via-ij-text-muted to-ij-accent bg-clip-text pb-[0.15em] text-transparent drop-shadow-[0_2px_28px_rgba(212,168,83,0.18)]'
                 >
                   l&apos;examen OPJ
                 </span>
-                <span className='text-white'>.</span>
+                <span className='text-ij-text'>.</span>
               </span>
             </motion.h1>
 
             <motion.p
-              className='font-sans text-xl font-medium text-slate-300 sm:text-2xl'
+              className='font-ij-sans text-xl font-medium text-ij-text-muted sm:text-2xl'
               initial={MOTION_INITIAL_FOR_SEO}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.1 }}
@@ -145,7 +145,7 @@ export function HeroSection() {
 
           {/* Description */}
           <motion.p
-            className='mt-6 max-w-lg text-base leading-relaxed text-slate-400'
+            className='mt-6 max-w-lg text-base leading-relaxed text-ij-text-muted'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: LANDING_EASE, delay: 0.14 }}
@@ -168,10 +168,10 @@ export function HeroSection() {
             ].map((s) => (
               <span
                 key={s.label}
-                className='inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-xs font-medium text-slate-300'
+                className='inline-flex items-center gap-1.5 rounded-full border border-ij-border/80 bg-ij-surface-2/40 px-3 py-1 text-xs font-medium text-ij-text-muted'
               >
-                <span className='font-mono font-bold text-white'>{s.value}</span>
-                <span className='text-slate-500'>{s.label}</span>
+                <span className='font-mono font-bold text-ij-text'>{s.value}</span>
+                <span className='text-ij-text-subtle'>{s.label}</span>
               </span>
             ))}
           </motion.div>
@@ -186,9 +186,9 @@ export function HeroSection() {
             <MotionLink
               href='/inscription'
               className={cn(
-                'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-7 py-3.5 text-base font-semibold text-white shadow-lg transition-all',
-                'bg-gradient-to-r from-blue-600 to-blue-500',
-                'shadow-[0_0_24px_rgba(37,99,235,0.35)] hover:shadow-[0_0_32px_rgba(37,99,235,0.5)]',
+                'group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl px-7 py-3.5 text-base font-semibold text-ij-bg shadow-lg transition-all',
+                'bg-ij-accent shadow-ij-soft',
+                'hover:opacity-90',
                 !shouldReduce && 'hover:scale-[1.02] active:scale-[0.98]',
               )}
               whileTap={{ scale: 0.98 }}
@@ -197,7 +197,7 @@ export function HeroSection() {
               {/* Shimmer interne */}
               <span
                 className={cn(
-                  'pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent',
+                  'pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-ij-text/10 to-transparent',
                   !shouldReduce && 'animate-[shimmer_2.5s_infinite]',
                 )}
                 aria-hidden
@@ -208,7 +208,7 @@ export function HeroSection() {
 
             <Link
               href='/entrainement'
-              className='inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-medium text-slate-400 transition hover:text-white'
+              className='inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3.5 text-sm font-medium text-ij-text-muted transition hover:text-ij-text'
             >
               Voir le guide
               <ArrowRight className='size-3.5' aria-hidden />
@@ -217,7 +217,7 @@ export function HeroSection() {
 
           {/* Social proof */}
           <motion.div
-            className='mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-500'
+            className='mt-6 flex flex-wrap items-center gap-4 text-sm text-ij-text-subtle'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.45, delay: 0.25 }}
@@ -226,26 +226,26 @@ export function HeroSection() {
               <span className='text-emerald-400'>✓</span>
               Sans carte bancaire
             </span>
-            <span className='h-3 w-px bg-white/10' />
+            <span className='h-3 w-px bg-ij-border/60' />
             <span className='flex items-center gap-1.5'>
               <span className='text-emerald-400'>✓</span>
               Accès immédiat
             </span>
-            <span className='h-3 w-px bg-white/10' />
+            <span className='h-3 w-px bg-ij-border/60' />
             <span>
-              <span className='font-medium text-slate-300'>{SITE_SOCIAL_PROOF.registeredCandidates} candidats</span> inscrits
+              <span className='font-medium text-ij-text-muted'>{SITE_SOCIAL_PROOF.registeredCandidates} candidats</span> inscrits
             </span>
           </motion.div>
 
           {/* Signature terrain */}
           <motion.div
-            className='mt-8 flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-500/[0.06] px-4 py-3'
+            className='mt-8 flex items-start gap-3 rounded-xl border border-ij-accent/25 bg-ij-accent/10 px-4 py-3'
             initial={MOTION_INITIAL_FOR_SEO}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.45, delay: 0.3 }}
           >
-            <span className='mt-0.5 text-blue-400' aria-hidden>🛡️</span>
-            <p className='text-xs leading-relaxed text-slate-400'>
+            <span className='mt-0.5 text-ij-accent' aria-hidden>🛡️</span>
+            <p className='text-xs leading-relaxed text-ij-text-muted'>
               Rédigé par un gardien de la paix en formation OPJ · Calé sur le programme officiel · Mis à jour en temps réel
             </p>
           </motion.div>
@@ -260,19 +260,19 @@ export function HeroSection() {
         >
           {/* Halo derrière la carte */}
           <div
-            className='pointer-events-none absolute inset-0 -z-10 scale-110 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(37,99,235,0.15),transparent_65%)] blur-2xl'
+            className='pointer-events-none absolute inset-0 -z-10 scale-110 rounded-3xl bg-[radial-gradient(ellipse_at_center,rgba(212,168,83,0.12),transparent_65%)] blur-2xl'
             aria-hidden
           />
 
           {/* Card quiz */}
           <div
             className={cn(
-              'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-[#0E1B2E]/90 shadow-[0_32px_80px_rgba(0,0,0,0.5)] backdrop-blur-xl',
+              'relative overflow-hidden rounded-2xl border border-ij-border/60 bg-ij-surface/90 shadow-ij-elevated backdrop-blur-xl',
               !shouldReduce && 'animate-ex-float',
             )}
           >
             {/* Bord supérieur lumineux */}
-            <div className='absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent' aria-hidden />
+            <div className='absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-ij-accent/50 to-transparent' aria-hidden />
 
             {/* ── Écran de complétion ── */}
             {completed ? (
@@ -282,13 +282,13 @@ export function HeroSection() {
                 transition={{ duration: 0.35, type: 'spring', stiffness: 300, damping: 28 }}
                 className='flex flex-col items-center px-6 py-10 text-center'
               >
-                <span className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-500/30 to-blue-900/30 text-3xl ring-2 ring-blue-400/30'>
+                <span className='flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-ij-accent/25 to-ij-primary/20 text-3xl ring-2 ring-ij-accent/35'>
                   <Trophy className='h-8 w-8 text-amber-400' aria-hidden />
                 </span>
-                <h3 className='mt-4 font-sans text-xl font-extrabold text-white'>
+                <h3 className='mt-4 font-ij-sans text-xl font-extrabold text-ij-text'>
                   {score === totalQ ? 'Parfait !' : score >= totalQ / 2 ? 'Bien joué !' : 'À retravailler'}
                 </h3>
-                <p className='mt-1 text-sm text-slate-400'>
+                <p className='mt-1 text-sm text-ij-text-muted'>
                   {score} / {totalQ} bonnes réponses
                 </p>
 
@@ -299,13 +299,13 @@ export function HeroSection() {
                       key={i}
                       className={cn(
                         'h-2 w-8 rounded-full',
-                        i < score ? 'bg-emerald-500' : 'bg-white/10',
+                        i < score ? 'bg-emerald-500' : 'bg-ij-border/40',
                       )}
                     />
                   ))}
                 </div>
 
-                <p className='mt-4 text-xs text-slate-500'>
+                <p className='mt-4 text-xs text-ij-text-subtle'>
                   {score === totalQ
                     ? 'Excellent niveau sur les bases OPJ !'
                     : 'Le quiz complet vous attend pour aller plus loin.'}
@@ -314,7 +314,7 @@ export function HeroSection() {
                 <div className='mt-6 flex flex-col gap-2.5 w-full'>
                   <Link
                     href='/quiz'
-                    className='inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:opacity-90'
+                    className='inline-flex items-center justify-center gap-2 rounded-xl bg-ij-accent px-5 py-2.5 text-sm font-semibold text-ij-bg shadow-ij-soft transition hover:opacity-90'
                   >
                     Continuer le quiz complet
                     <ArrowRight className='h-3.5 w-3.5' aria-hidden />
@@ -322,7 +322,7 @@ export function HeroSection() {
                   <button
                     type='button'
                     onClick={handleRestart}
-                    className='inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 px-5 py-2.5 text-sm font-medium text-slate-400 transition hover:border-white/20 hover:text-white'
+                    className='inline-flex items-center justify-center gap-2 rounded-xl border border-ij-border px-5 py-2.5 text-sm font-medium text-ij-text-muted transition hover:border-ij-border-strong hover:text-ij-text'
                   >
                     <RotateCcw className='h-3.5 w-3.5' aria-hidden />
                     Recommencer le diagnostic
@@ -332,15 +332,15 @@ export function HeroSection() {
             ) : (
               <>
                 {/* Header quiz */}
-                <div className='bg-gradient-to-b from-blue-600/[0.12] to-transparent px-5 pt-5 pb-4'>
+                <div className='bg-gradient-to-b from-ij-accent/12 to-transparent px-5 pt-5 pb-4'>
                   <div className='flex items-center justify-between'>
                     <div className='flex items-center gap-3'>
-                      <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-blue-500/20 text-blue-400'>
+                      <div className='flex h-9 w-9 items-center justify-center rounded-lg bg-ij-accent/20 text-ij-accent'>
                         <HelpCircle className='h-4.5 w-4.5' aria-hidden />
                       </div>
                       <div>
-                        <p className='text-[10px] font-bold uppercase tracking-widest text-slate-500'>Diagnostic rapide</p>
-                        <p className='text-sm font-semibold text-white'>Question {qIndex + 1} / {totalQ}</p>
+                        <p className='text-[10px] font-bold uppercase tracking-widest text-ij-text-subtle'>Diagnostic rapide</p>
+                        <p className='text-sm font-semibold text-ij-text'>Question {qIndex + 1} / {totalQ}</p>
                       </div>
                     </div>
                     {/* Progress dots */}
@@ -350,7 +350,7 @@ export function HeroSection() {
                           key={i}
                           className={cn(
                             'h-1.5 rounded-full transition-all duration-300',
-                            i < qIndex ? 'w-4 bg-emerald-500' : i === qIndex ? 'w-4 bg-blue-400' : 'w-1.5 bg-white/15',
+                            i < qIndex ? 'w-4 bg-emerald-500' : i === qIndex ? 'w-4 bg-ij-accent' : 'w-1.5 bg-ij-border/60',
                           )}
                         />
                       ))}
@@ -360,7 +360,7 @@ export function HeroSection() {
 
                 {/* Corps quiz */}
                 <div className='px-5 pb-5'>
-                  <p className='mt-1 text-sm leading-relaxed text-slate-200'>{question.prompt}</p>
+                  <p className='mt-1 text-sm leading-relaxed text-ij-text'>{question.prompt}</p>
 
                   <ul className='mt-4 space-y-2' aria-label='Propositions de réponse'>
                     {question.options.map((row) => {
@@ -380,13 +380,13 @@ export function HeroSection() {
                           className={cn(
                             'group flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left text-sm transition-all',
                             answered && picked === row.id && row.correct
-                              ? 'border-emerald-500/40 bg-emerald-500/10 text-slate-100'
+                              ? 'border-emerald-500/40 bg-emerald-500/10 text-ij-text'
                               : answered && picked === row.id && !row.correct
-                                ? 'border-red-500/35 bg-red-500/10 text-slate-200'
-                                : 'border-white/[0.06] bg-white/[0.02] text-slate-300 hover:border-blue-500/30 hover:bg-blue-500/[0.05] hover:text-white',
+                                ? 'border-red-500/35 bg-red-500/10 text-ij-text'
+                                : 'border-ij-border/60 bg-ij-surface-2/30 text-ij-text-muted hover:border-ij-accent/35 hover:bg-ij-accent/10 hover:text-ij-text',
                           )}
                         >
-                          <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-white/[0.06] font-mono text-[11px] font-bold text-slate-400 group-hover:bg-blue-500/20 group-hover:text-blue-300'>
+                          <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-ij-surface-2/80 font-mono text-[11px] font-bold text-ij-text-subtle group-hover:bg-ij-accent/15 group-hover:text-ij-accent'>
                             {row.id}
                           </span>
                           <span className='min-w-0 flex-1 leading-relaxed'>{row.text}</span>
@@ -415,7 +415,7 @@ export function HeroSection() {
                       role='status'
                     >
                       <p className='font-semibold'>{isCorrect ? '✓ Bonne réponse.' : '✗ À retenir.'}</p>
-                      <p className='mt-1 text-slate-300'>{isCorrect ? question.explain : question.wrongHint}</p>
+                      <p className='mt-1 text-ij-text-muted'>{isCorrect ? question.explain : question.wrongHint}</p>
                     </motion.div>
                   ) : null}
 
@@ -425,12 +425,12 @@ export function HeroSection() {
                       <button
                         type='button'
                         onClick={handleNext}
-                        className='inline-flex items-center gap-2 rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-500'
+                        className='inline-flex items-center gap-2 rounded-xl bg-ij-accent px-4 py-2.5 text-sm font-semibold text-ij-bg shadow-ij-soft transition hover:opacity-90'
                       >
                         {qIndex < totalQ - 1 ? 'Question suivante' : 'Voir mes résultats'}
                         <ArrowRight className='h-3.5 w-3.5' aria-hidden />
                       </button>
-                      <span className='text-xs text-slate-500'>{score} ✓ sur {qIndex + 1}</span>
+                      <span className='text-xs text-ij-text-subtle'>{score} ✓ sur {qIndex + 1}</span>
                     </div>
                   ) : null}
                 </div>
@@ -440,7 +440,7 @@ export function HeroSection() {
 
           {/* Floating badges */}
           <motion.div
-            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-[#0E1B2E] px-3 py-1.5 shadow-lg'
+            className='absolute -bottom-3 -right-3 flex items-center gap-2 rounded-full border border-emerald-500/30 bg-ij-surface px-3 py-1.5 shadow-lg'
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.4, type: 'spring' }}
@@ -454,7 +454,7 @@ export function HeroSection() {
       </div>
 
       {/* Séparateur bas */}
-      <div className='absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent' aria-hidden />
+      <div className='absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ij-border/60 to-transparent' aria-hidden />
     </section>
   );
 }

@@ -43,16 +43,16 @@ export function EcritsBlancsCardContent() {
 
   if (state === 'pending') {
     return (
-      <p className='mt-6 font-display text-2xl font-bold tabular-nums text-examen-ink'>
-        <span className='text-examen-inkMuted'>—</span>
+      <p className='mt-6 font-ij-display text-2xl font-bold tabular-nums text-ij-text'>
+        <span className='text-ij-text-muted'>—</span>
       </p>
     );
   }
   if ('days' in state) {
     return (
-      <p className='mt-6 font-display text-2xl font-bold tabular-nums text-examen-ink'>
+      <p className='mt-6 font-ij-display text-2xl font-bold tabular-nums text-ij-text'>
         {state.days}{' '}
-        <span className='text-base font-normal text-examen-inkMuted'>jour{state.days > 1 ? 's' : ''}</span>
+        <span className='text-base font-normal text-ij-text-muted'>jour{state.days > 1 ? 's' : ''}</span>
       </p>
     );
   }
@@ -76,7 +76,7 @@ export function CountdownWrittenExamBlock() {
     return <p className='relative mt-6 text-lg font-semibold text-emerald-400'>Jour J</p>;
   }
   return (
-    <p className='relative mt-6 font-display text-4xl font-bold tabular-nums'>
+    <p className='relative mt-6 font-ij-display text-4xl font-bold tabular-nums'>
       <span className='inline-block animate-countdown-pulse text-gold-400 will-change-transform'>
         {v} jours restants
       </span>
@@ -92,18 +92,18 @@ export function OralFirstSlotDayCount() {
   }, []);
   if (v === null) {
     return (
-      <p className='mt-6 font-display text-2xl font-bold tabular-nums text-examen-ink'>
-        <span className='text-examen-inkMuted'>—</span>
+      <p className='mt-6 font-ij-display text-2xl font-bold tabular-nums text-ij-text'>
+        <span className='text-ij-text-muted'>—</span>
       </p>
     );
   }
   if (v <= 0) {
-    return <p className='mt-6 text-lg font-semibold text-examen-ink'>Période en cours ou passée</p>;
+    return <p className='mt-6 text-lg font-semibold text-ij-text'>Période en cours ou passée</p>;
   }
   return (
-    <p className='mt-6 font-display text-2xl font-bold tabular-nums text-examen-ink'>
+    <p className='mt-6 font-ij-display text-2xl font-bold tabular-nums text-ij-text'>
       {v}{' '}
-      <span className='text-base font-normal text-examen-inkMuted'>
+      <span className='text-base font-normal text-ij-text-muted'>
         jour{v > 1 ? 's' : ''} avant le premier créneau
       </span>
     </p>

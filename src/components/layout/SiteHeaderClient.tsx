@@ -159,6 +159,7 @@ export function SiteHeaderClient({
       ) : null}
       <motion.header
         data-site-header
+        data-scrolled={scrolled ? 'true' : 'false'}
         className={cn(
           'relative border-b backdrop-blur-xl transition-[background,box-shadow,border-color] duration-300 [-webkit-backdrop-filter:blur(20px)]',
           scrolled
