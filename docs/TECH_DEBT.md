@@ -59,3 +59,58 @@ npx supabase gen types typescript --project-id <id> --schema public,learning_pat
 ## Dead code
 
 - Voir [`DEADCODE.md`](../DEADCODE.md) : ne pas supprimer en masse les fichiers signalés par `knip` sans vérification `rg`/imports dynamiques.
+
+## Variables d'environnement Vercel — checklist déploiement
+
+> **Bug 0.4** : `next build` réussit *uniquement* parce que tous les modules
+> qui consomment `process.env.*` sont *lazy* (`getStripeAdmin()`, `createSupabaseServerClient()`).
+> Vérifié par [`src/libs/stripe/__tests__/stripe-admin-lazy.test.ts`](../src/libs/stripe/__tests__/stripe-admin-lazy.test.ts).
+> **MAIS** au runtime, l'absence d'une seule de ces clés casse la route concernée
+> (ex. `/manage-subscription` lance `ReferenceError: Reference to undefined env var: STRIPE_SECRET_KEY`).
+
+À configurer côté Vercel pour les environnements **Production** et **Preview** :
+
+### Supabase (toujours requis)
+
+| Clé | Description |
+|-----|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | URL projet Supabase (Settings → API) |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Clé anon publique (Settings → API) |
+| `SUPABASE_SERVICE_ROLE_KEY` | Clé service role (server-side uniquement) |
+
+### Stripe (paiement / portail facturation)
+
+| Clé | Description |
+|-----|-------------|
+| `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Publishable key (`pk_…`) |
+| `STRIPE_SECRET_KEY` | Secret key (`sk_…`) — **requise pour `/manage-subscription`** |
+| `STRIPE_WEBHOOK_SECRET` | Signing secret du webhook (`whsec_…`) |
+
+### Site / e-mails / cron
+
+| Clé | Description |
+|-----|-------------|
+| `NEXT_PUBLIC_SITE_URL` | URL canonique production (ex. `https://www.examenopj.fr`) |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Adresse contact affichée |
+| `RESEND_API_KEY` | Clé Resend (rappels e-mail) — optionnel mais sinon `/api/cron/email-reminders` plante |
+| `RESEND_FROM_EMAIL` | Expéditeur vérifié Resend |
+| `CRON_SECRET` | Bearer token Vercel Cron |
+
+### Analytics (optionnels)
+
+| Clé | Description |
+|-----|-------------|
+| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog (vide → analytics désactivé proprement) |
+| `NEXT_PUBLIC_POSTHOG_HOST` | Endpoint EU `https://eu.i.posthog.com` |
+
+### Vérification rapide
+
+```bash
+# Liste les envvars définies sur le projet Vercel courant
+vercel env ls production
+vercel env ls preview
+```
+
+Si une clé manque, l'ajouter via le dashboard Vercel ou `vercel env add NOM production`.
+Aucune envvar n'est créée/modifiée par le CI : c'est une opération manuelle (secrets).
+

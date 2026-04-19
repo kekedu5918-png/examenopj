@@ -7,6 +7,13 @@ import { getURL } from '@/utils/get-url';
 import { safeInternalPath } from '@/utils/safe-internal-path';
 
 export const dynamic = 'force-dynamic';
+/**
+ * Bug 0.4 — Stripe SDK n'est pas Edge-compatible : on verrouille le runtime
+ * Node.js explicitement pour éviter qu'un futur opt-in Edge ne casse le
+ * portail facturation. Couplé au lazy `getStripeAdmin()`, cela garantit
+ * qu'aucun `process.env.STRIPE_*` n'est lu pendant le build statique.
+ */
+export const runtime = 'nodejs';
 
 const MANAGE_SUB_PATH = '/manage-subscription';
 
