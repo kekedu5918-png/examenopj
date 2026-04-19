@@ -56,8 +56,8 @@ Plages de lignes (fichier au **2026-04-19**, commit courant). **Pas de refactor*
 | **39–146** | `StartHereSection` | **Parcours / « par où commencer »** (3 cartes — cible du *stagger diagnostic* en 2B.2) | Oui (`<StartHereSection />`) |
 | **149–248** | `HomeEnquetesPillarSection` | **Enquêtes** (pilier + cartes ENQUETES) | Oui |
 | **251–344** | `HomeEpreuvesLandingSection` | **Épreuves** (3 cartes + lien hub) | Oui |
-| **347–395** | `HomeInfractionsPreviewSection` | **Aperçu infractions** (accordéon Épreuve 1) | **Non** (export orphelin ; doublon fonctionnel avec partie « programme ») |
-| **397–448** | `FOND_BLOCS` + `HomeFondamentauxPreviewSection` | **Aperçu fondamentaux** (grille 6 blocs) | **Non** (export orphelin) |
+| **~351–399** | `HomeInfractionsPreviewSection` | **Aperçu infractions** (accordéon Épreuve 1) | **Non** (export orphelin ; doublon fonctionnel avec partie « programme ») |
+| **401–456** | `FOND_BLOCS` (données) + `HomeFondamentauxPreviewSection` | **Aperçu fondamentaux** (grille 6 blocs) ; **`FOND_BLOCS` réutilisé** par `HomeProgrammeCompletSection` (migré) | **Non** pour l’export preview uniquement |
 | **451–478** | `TerrainOriginSection` | **Terrain / transparence** (texte rédactionnel + encadré) | Oui |
 | **488–571** | `HomeTestimonialsSection` | **Profils d’usage** (ex-zone « témoignages » ; cartes citations fictives) | Oui (dynamic import) |
 | **574–681** | `HomeFinalPricingSection` | **Pricing** (J-X, 2 colonnes Gratuit / Premium, CTA) | Oui (dynamic import) |
@@ -75,6 +75,8 @@ Plages de lignes (fichier au **2026-04-19**, commit courant). **Pas de refactor*
 - Le **rapport grep** de **2B.1b** doit comporter deux parties :
   1. **Migré** : reste du fichier hors plages orphelines.
   2. **Orphelin, non migré, TODO Phase 3** : décompte isolé pour L347–395 et L397–448 (mêmes motifs que §1.1).
+
+**Motifs grep** : utiliser la commande **stricte** (frontières de mot) décrite en **§3.10** — pas de sous-chaînes ambiguës (`text-white` vs `text-ij-text`, etc.).
 
 ---
 
@@ -188,6 +190,31 @@ Renseigner les valeurs depuis les audits Lighthouse (`largest-contentful-paint`,
 **Implémentation Playwright** : `await page.evaluate((y) => window.scrollTo(0, y), value)` puis **attente courte** (`requestAnimationFrame` ou `setTimeout(0)` / `expect.poll`) pour stabiliser le listener `scroll` + `useLayoutEffect`.
 
 **Hors scope** : ne pas tester les classes Tailwind du header — uniquement **`data-scrolled`** et la logique seuil.
+
+### 3.8 LCP mobile baseline — dette perf (hors scope immédiat)
+
+La mesure **`lighthouse-before-2b.json`** a enregistré un **LCP mobile** d’environ **4,89 s** : zone **« poor »** Lighthouse (seuil **« good »** &lt; **2,5 s** ; **« needs improvement »** jusqu’à **4,0 s**). Le score perf mobile (~77) est cohérent avec ce diagnostic.
+
+- **Phase 2B** : on mesure surtout un **delta** (avant / après **2B.1**, puis règle **+10 %** vs **`lighthouse-after-2b1.json`** en **2B.2**). Cela **ne rend pas** le LCP absolu « acceptable » ; la règle **+10 %** doit être appliquée mais **ne dispense pas** d’une **investigation ultérieure** après la Phase 2B.
+- **Dette à traiter post-Phase 2B** (probablement **hero** : images, polices, charge d’hydratation / JS) : **hors scope** des animations **2B.2**, mais **à ne pas aggraver** sans justification ; prioriser ensuite une passe perf dédiée.
+
+### 3.9 Artefacts Graphify — versionnement
+
+**Décision** : le répertoire **`graphify-out/`** (dont `graph.json`, `GRAPH_REPORT.md`) est **ignoré par Git** (`.gitignore`). Les sorties sont **régénérables localement** via `npm run hooks:graphify` ou la commande documentée dans la règle Cursor **graphify**. Cela évite de **polluer** les commits applicatifs (ex. migration **2B.1a**) et les **revert** incohérents.
+
+### 3.10 Rapports grep — motifs stricts (norme 2B.1b)
+
+Pour les décomptes **slate / examen / bg-white / text-white / orde** (et extensions listées par vague), utiliser des **frontières de mot** afin d’éviter les faux positifs (ex. `translate-x`, `text-ij-text` si l’on cherchait `text-white` en sous-chaîne).
+
+**Commande de référence** (POSIX) :
+
+```bash
+grep -n -E '\bslate-[a-z0-9]+\b|\bexamen-[a-zA-Z0-9]+\b|\bbg-white\b|\btext-white\b|\borde-[a-z0-9]+\b' …fichiers…
+```
+
+*(Le segment **`examen-*`** inclut des utilitaires camelCase type **`examen-inkMuted`** : utiliser **`[a-zA-Z0-9]+`** après `examen-`, pas seulement des minuscules.)*
+
+Étendre avec `|\bbg-gradient-[a-z0-9-]+\b|` si le périmètre grep de la vague l’exige. **Résultat attendu** après migration : **0 ligne** sur la zone « migrée » ; les seules occurrences restantes pour **2B.1b** sont celles des **blocs orphelins** (rapport séparé « orphelin, non migré, TODO Phase 3 »).
 
 ---
 

@@ -1,1 +1,0 @@
-{"nodes": [{"id": "fix_start_here", "label": "fix_start_here.py", "file_type": "code", "source_file": "scripts\\fix_start_here.py", "source_location": "L1"}], "edges": [{"source": "fix_start_here", "target": "sys", "relation": "imports", "confidence": "EXTRACTED", "source_file": "scripts\\fix_start_here.py", "source_location": "L1", "weight": 1.0}]}

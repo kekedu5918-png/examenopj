@@ -44,5 +44,5 @@ next-env.d.ts
 # supabase
 /supabase/.temp/
 
-# graphify (cache local, régénéré)
-/graphify-out/cache/
+# graphify — sorties régénérées localement (`npm run hooks:graphify`), non versionnées
+/graphify-out/
