@@ -176,11 +176,11 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
 
   return (
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.infractions} pad='default'>
-      <h1 className='sr-only'>Référentiel des infractions</h1>
       <SectionTitle
         badge='RÉFÉRENTIEL'
         badgeClassName='text-rose-200'
         title='Infractions'
+        titleAs='h1'
         titleGradient
         size='display'
         subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par famille (personnes, biens, etc.) et probabilité ; la recherche affine ta sélection.'

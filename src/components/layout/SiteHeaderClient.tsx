@@ -17,7 +17,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { ThemeToggle } from '@/components/ui/ThemeToggle';
-import { getQuizStreak } from '@/lib/quiz-gamification';
+import { getQuizStreak, isStreakAtRisk } from '@/lib/quiz-gamification';
 import { ActionResponse } from '@/types/action-response';
 import { cn } from '@/utils/cn';
 
@@ -30,6 +30,8 @@ type SiteHeaderClientProps = {
   isPremium: boolean;
   signOut: () => Promise<ActionResponse>;
   trialReminder: TrialReminder | null;
+  /** Streak chargé côté serveur (table `user_streaks`). Le client peut le surcharger après une session locale. */
+  initialStreak?: number;
 };
 
 function isActivePath(pathname: string, href: string): boolean {
@@ -57,15 +59,26 @@ export function SiteHeaderClient({
   isPremium,
   signOut,
   trialReminder,
+  initialStreak = 0,
 }: SiteHeaderClientProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [quizStreak, setQuizStreak] = useState(0);
+  /**
+   * Streak affiché : on prend la valeur la plus haute entre serveur (initialStreak)
+   * et localStorage (utile après une session quiz qui n'a pas encore été synchronisée).
+   * Évite l'affichage de deux séries différentes selon l'écran.
+   */
+  const [quizStreak, setQuizStreak] = useState(initialStreak);
+  /** `true` si la série existe mais qu'aucun quiz n'a été fait aujourd'hui — déclenche le badge « en danger ». */
+  const [streakAtRisk, setStreakAtRisk] = useState(false);
   const mobileMenuId = useId();
 
   useEffect(() => {
-    const syncStreak = () => setQuizStreak(getQuizStreak());
+    const syncStreak = () => {
+      setQuizStreak(Math.max(initialStreak, getQuizStreak()));
+      setStreakAtRisk(isStreakAtRisk());
+    };
     syncStreak();
     window.addEventListener('examenopj:quiz-gamification', syncStreak);
     window.addEventListener('storage', syncStreak);
@@ -73,11 +86,12 @@ export function SiteHeaderClient({
       window.removeEventListener('examenopj:quiz-gamification', syncStreak);
       window.removeEventListener('storage', syncStreak);
     };
-  }, []);
+  }, [initialStreak]);
 
   useEffect(() => {
-    setQuizStreak(getQuizStreak());
-  }, [pathname]);
+    setQuizStreak(Math.max(initialStreak, getQuizStreak()));
+    setStreakAtRisk(isStreakAtRisk());
+  }, [pathname, initialStreak]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -178,18 +192,35 @@ export function SiteHeaderClient({
           <div className='hidden shrink-0 items-center gap-3 lg:flex'>
             <ThemeToggle />
             {quizStreak > 0 ? (
-              <span
-                className='inline-flex items-center gap-1 rounded-md border border-amber-500/30 bg-amber-500/10 px-2 py-1 text-[11px] font-semibold text-amber-300'
-                title={`Série de ${quizStreak} jour${quizStreak > 1 ? 's' : ''} avec au moins un quiz complété`}
-                aria-label={`Série de quiz : ${quizStreak} jour${quizStreak > 1 ? 's' : ''} consécutifs`}
+              <Link
+                href='/dashboard/badges'
+                className={cn(
+                  'inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[11px] font-semibold transition-colors',
+                  streakAtRisk
+                    ? 'border-rose-500/40 bg-rose-500/10 text-rose-300 hover:bg-rose-500/15 animate-pulse'
+                    : 'border-amber-500/30 bg-amber-500/10 text-amber-300 hover:bg-amber-500/15',
+                )}
+                title={
+                  streakAtRisk
+                    ? `Série de ${quizStreak} jour${quizStreak > 1 ? 's' : ''} en danger — faites au moins 1 quiz aujourd'hui pour la conserver !`
+                    : `Série de ${quizStreak} jour${quizStreak > 1 ? 's' : ''} avec au moins un quiz complété`
+                }
+                aria-label={
+                  streakAtRisk
+                    ? `Série de quiz en danger : ${quizStreak} jour${quizStreak > 1 ? 's' : ''} — faites un quiz aujourd'hui`
+                    : `Série de quiz : ${quizStreak} jour${quizStreak > 1 ? 's' : ''} consécutifs`
+                }
               >
-                <Flame className='h-3.5 w-3.5 text-amber-400' aria-hidden />
-                {quizStreak}j
-              </span>
+                <Flame
+                  className={cn('h-3.5 w-3.5', streakAtRisk ? 'text-rose-400' : 'text-amber-400')}
+                  aria-hidden
+                />
+                {quizStreak}j{streakAtRisk ? ' ⚠' : ''}
+              </Link>
             ) : null}
             {!isPremium ? (
               <Link
-                href='/premium'
+                href='/pricing'
                 className='inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-3 py-1 text-[11px] font-semibold text-white'
               >
                 Premium ✨
@@ -240,7 +271,7 @@ export function SiteHeaderClient({
             ) : null}
             {!isPremium ? (
               <Link
-                href='/premium'
+                href='/pricing'
                 className='inline-flex shrink-0 items-center gap-1 rounded-full bg-gradient-to-r from-examen-accent to-examen-premium px-2 py-1 text-[10px] font-semibold text-white'
               >
                 Premium

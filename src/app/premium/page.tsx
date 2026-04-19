@@ -1,22 +1,11 @@
-import type { Metadata } from 'next';
+import { permanentRedirect } from 'next/navigation';
 
-import { PricingPageServer } from '@/features/pricing/components/pricing-page-server';
-import { openGraphForPage } from '@/utils/seo-metadata';
+/**
+ * `/premium` est conservé en redirection 301 vers `/pricing` (URL canonique).
+ * Évite duplicate content SEO et confusion des libellés (Premium / Tarifs).
+ */
+export const dynamic = 'force-static';
 
-export const dynamic = 'force-dynamic';
-
-const title = 'Premium — Tarifs | Examen OPJ';
-const description =
-  'Gratuit, 9,90 €/mois ou 49 € jusqu’au 11 juin 2026 : enquêtes, PV, articulation, fondamentaux et quiz.';
-
-export const metadata: Metadata = {
-  title,
-  description,
-  robots: { index: true, follow: true },
-  alternates: { canonical: '/premium' },
-  ...openGraphForPage('/premium', title, description),
-};
-
-export default async function PremiumPage() {
-  return <PricingPageServer />;
+export default function PremiumPage(): never {
+  permanentRedirect('/pricing');
 }

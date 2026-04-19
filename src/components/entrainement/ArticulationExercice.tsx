@@ -10,12 +10,38 @@ import { CartoucheValidee } from '@/components/entrainement/CartoucheValidee';
 
 const STORAGE_KEY = 'examenopj:articulation-brouillon';
 
-type Stored = {
+type StoredV1 = {
   version: 1;
   cartouches: CartoucheData[];
   titreArticulation: string;
   termine: boolean;
 };
+
+type Stored = {
+  version: 2;
+  numeroProcedure: string;
+  cartouches: CartoucheData[];
+  titreArticulation: string;
+  termine: boolean;
+};
+
+function isStoredV1(value: unknown): value is StoredV1 {
+  return (
+    !!value &&
+    typeof value === 'object' &&
+    (value as { version?: unknown }).version === 1 &&
+    Array.isArray((value as { cartouches?: unknown }).cartouches)
+  );
+}
+
+function isStoredV2(value: unknown): value is Stored {
+  return (
+    !!value &&
+    typeof value === 'object' &&
+    (value as { version?: unknown }).version === 2 &&
+    Array.isArray((value as { cartouches?: unknown }).cartouches)
+  );
+}
 
 function makeEmpty(id: number): CartoucheData {
   return { id, date: '', heure: '', qualite: '', titre: '', contenu: '', valide: false };
@@ -32,6 +58,7 @@ export type ArticulationExerciceProps = {
 
 export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: ArticulationExerciceProps) {
   const [cartouches, setCartouches] = useState<CartoucheData[]>(initialCartouches);
+  const [numeroProcedure, setNumeroProcedure] = useState('');
   const [titreArticulation, setTitreArticulation] = useState('');
   const [termine, setTermine] = useState(false);
   const [flashingId, setFlashingId] = useState<number | null>(null);
@@ -44,9 +71,20 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (raw) {
-        const parsed = JSON.parse(raw) as Stored;
-        if (parsed?.version === 1 && Array.isArray(parsed.cartouches) && parsed.cartouches.length) {
+        const parsed: unknown = JSON.parse(raw);
+        if (isStoredV2(parsed) && parsed.cartouches.length) {
           setDraftPrompt(parsed);
+          return;
+        }
+        if (isStoredV1(parsed) && parsed.cartouches.length) {
+          const migrated: Stored = {
+            version: 2,
+            numeroProcedure: '',
+            cartouches: parsed.cartouches,
+            titreArticulation: parsed.titreArticulation ?? '',
+            termine: parsed.termine ?? false,
+          };
+          setDraftPrompt(migrated);
           return;
         }
       }
@@ -65,7 +103,8 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
   useEffect(() => {
     if (!allowPersist) return;
     const payload: Stored = {
-      version: 1,
+      version: 2,
+      numeroProcedure,
       cartouches,
       titreArticulation,
       termine,
@@ -75,7 +114,7 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
     } catch {
       /* ignore quota */
     }
-  }, [allowPersist, cartouches, titreArticulation, termine]);
+  }, [allowPersist, numeroProcedure, cartouches, titreArticulation, termine]);
 
   const handleValidate = useCallback((data: CartoucheData) => {
     setCartouches((prev) => {
@@ -133,6 +172,7 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
 
   const handleRecommencer = useCallback(() => {
     setCartouches(initialCartouches);
+    setNumeroProcedure('');
     setTitreArticulation(suggestedTitre?.trim() ? suggestedTitre : '');
     setTermine(false);
     setFlashingId(null);
@@ -146,6 +186,7 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
   const reprendreBrouillon = useCallback(() => {
     if (!draftPrompt) return;
     setCartouches(draftPrompt.cartouches);
+    setNumeroProcedure(draftPrompt.numeroProcedure ?? '');
     setTitreArticulation(draftPrompt.titreArticulation ?? '');
     setTermine(draftPrompt.termine ?? false);
     setDraftPrompt(null);
@@ -156,6 +197,7 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
     setDraftPrompt(null);
     setAllowPersist(true);
     setCartouches(initialCartouches);
+    setNumeroProcedure('');
     setTermine(false);
     setTitreArticulation(suggestedTitre?.trim() ? suggestedTitre : '');
     try {
@@ -173,6 +215,7 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
     return (
       <div className='mx-auto max-w-4xl px-4 py-8'>
         <ArticulationRecap
+          numeroProcedure={numeroProcedure}
           titreArticulation={titreArticulation}
           cartouches={cartouches}
           onRecommencer={handleRecommencer}
@@ -236,17 +279,31 @@ export function ArticulationExercice({ referenceEnqueteId, suggestedTitre }: Art
             </>
           ) : null}
         </p>
-        <div className='mt-4'>
-          <label htmlFor='titre-art' className='text-xs font-semibold uppercase tracking-wide text-gray-500'>
-            Titre de votre articulation (optionnel)
-          </label>
-          <input
-            id='titre-art'
-            value={titreArticulation}
-            onChange={(e) => setTitreArticulation(e.target.value)}
-            placeholder='ARTICULATION DE PROCÉDURE — ENQUÊTE « … » n° …'
-            className='mt-1 w-full rounded-lg border border-white/15 bg-navy-950 px-3 py-2 text-sm text-white outline-none placeholder:text-gray-600 focus:border-cyan-500/50'
-          />
+        <div className='mt-4 grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]'>
+          <div>
+            <label htmlFor='numero-procedure' className='text-xs font-semibold uppercase tracking-wide text-amber-200'>
+              Numéro de procédure
+            </label>
+            <input
+              id='numero-procedure'
+              value={numeroProcedure}
+              onChange={(e) => setNumeroProcedure(e.target.value)}
+              placeholder='n°(à compléter par le candidat)'
+              className='mt-1 w-full rounded-lg border border-amber-300/30 bg-navy-950 px-3 py-2 text-sm text-white outline-none placeholder:text-amber-100/40 focus:border-amber-300/70'
+            />
+          </div>
+          <div>
+            <label htmlFor='titre-art' className='text-xs font-semibold uppercase tracking-wide text-gray-500'>
+              Titre de votre articulation (optionnel)
+            </label>
+            <input
+              id='titre-art'
+              value={titreArticulation}
+              onChange={(e) => setTitreArticulation(e.target.value)}
+              placeholder='ARTICULATION DE PROCÉDURE — ENQUÊTE « … » n° …'
+              className='mt-1 w-full rounded-lg border border-white/15 bg-navy-950 px-3 py-2 text-sm text-white outline-none placeholder:text-gray-600 focus:border-cyan-500/50'
+            />
+          </div>
         </div>
         <p className='mt-4 flex items-start gap-2 text-sm text-amber-200/90'>
           <Lightbulb className='mt-0.5 size-4 shrink-0 text-amber-300/90' aria-hidden />

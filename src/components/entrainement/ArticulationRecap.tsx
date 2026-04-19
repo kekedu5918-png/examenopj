@@ -10,13 +10,20 @@ import { CartoucheValidee } from '@/components/entrainement/CartoucheValidee';
 import { getArticulationReferenceModel } from '@/data/articulation-reference-models';
 
 type Props = {
+  numeroProcedure?: string;
   titreArticulation: string;
   cartouches: CartoucheData[];
   onRecommencer: () => void;
   referenceEnqueteId?: string;
 };
 
-export function ArticulationRecap({ titreArticulation, cartouches, onRecommencer, referenceEnqueteId }: Props) {
+export function ArticulationRecap({
+  numeroProcedure,
+  titreArticulation,
+  cartouches,
+  onRecommencer,
+  referenceEnqueteId,
+}: Props) {
   const valides = cartouches.filter((c) => c.valide);
 
   const modele = useMemo(() => getArticulationReferenceModel(referenceEnqueteId), [referenceEnqueteId]);
@@ -37,6 +44,9 @@ export function ArticulationRecap({ titreArticulation, cartouches, onRecommencer
         className='space-y-6 rounded-xl border border-slate-300 bg-white p-6 font-serif text-black shadow-lg print:border-0 print:shadow-none'
       >
         <header className='border-b-2 border-black pb-4 text-center'>
+          <p className='mb-2 text-sm font-bold uppercase tracking-wide'>
+            Numéro de procédure n°{numeroProcedure?.trim() ? ` ${numeroProcedure.trim()}` : '(à compléter par le candidat)'}
+          </p>
           <h2 className='text-lg font-bold uppercase underline'>Articulation de procédure</h2>
           {titreArticulation.trim() ? (
             <p className='mt-3 text-sm font-semibold'>{titreArticulation.trim()}</p>

@@ -272,6 +272,70 @@ export function PricingThreeColumnPage({
           Site indépendant · Non affilié à l’administration
         </p>
       </div>
+
+      <PricingFaq />
     </InteriorPageShell>
+  );
+}
+
+/* ─────────────── FAQ ─────────────── */
+
+const FAQ_ITEMS: { q: string; a: string }[] = [
+  {
+    q: "Quelle est la différence entre l'abonnement mensuel et le pass session ?",
+    a: "Le mensuel à 9,90 €/mois donne un accès complet sans engagement, résiliable à tout moment. Le pass session à 49 € est un paiement unique qui débloque tout le contenu jusqu'au 11 juin 2026 (jour de l'épreuve écrite). Si vous prévoyez de réviser plus de 5 mois, le pass est plus économique.",
+  },
+  {
+    q: 'Le contenu est-il à jour des dernières lois ?',
+    a: "Oui. Toutes les fiches sont alignées sur le cahier de mise à jour SDCP juillet-décembre 2025, y compris la loi du 9 juillet 2025 (homicide routier — art. 221-18 C.P.) et les évolutions récentes du Code de procédure pénale. Une étiquette « MAJ 2025 » signale les nouveautés.",
+  },
+  {
+    q: 'Puis-je tester avant de payer ?',
+    a: "Oui. La création d'un compte donne accès à 7 jours d'essai complet, puis bascule en plan gratuit (5 quiz/jour, 6 fiches fondamentaux, parcours en 7 leçons). Aucune carte bancaire n'est demandée à l'inscription.",
+  },
+  {
+    q: 'Comment fonctionne la garantie satisfait ou remboursé ?',
+    a: "Vous avez 14 jours après l'achat pour demander un remboursement intégral, sans justification, par simple e-mail. Cette garantie s'applique aussi bien au mensuel qu'au pass session.",
+  },
+  {
+    q: 'Le site est-il accessible sur mobile ?',
+    a: "Oui, l'interface est entièrement responsive. Quiz, flashcards, fiches et enquêtes fonctionnent sur smartphone, tablette et ordinateur. Les flashcards utilisent un algorithme de répétition espacée (SM-2) optimisé pour les sessions courtes (5 à 10 minutes).",
+  },
+  {
+    q: "Y a-t-il des supports pour l'épreuve d'oral ?",
+    a: "Oui. Le contenu Premium couvre l'épreuve écrite (rédaction d'un PV ou d'un rapport de synthèse à partir d'une enquête) et fournit les fondamentaux de procédure pénale, articulation et juridictions de jugement nécessaires aux oraux d'admission (à partir du 15 juin 2026).",
+  },
+  {
+    q: "Que se passe-t-il après l'examen ?",
+    a: "Le pass session reste accessible jusqu'au 11 juin 2026. Si vous repassez l'examen l'année suivante, un nouveau pass est nécessaire (-30 % pour les anciens souscripteurs). Pour le mensuel, vous pouvez résilier à tout moment depuis votre espace personnel.",
+  },
+];
+
+function PricingFaq() {
+  return (
+    <section className='mx-auto mt-16 max-w-3xl' aria-labelledby='pricing-faq-title'>
+      <h2 id='pricing-faq-title' className='text-center font-display text-2xl font-bold text-white md:text-3xl'>
+        Questions fréquentes
+      </h2>
+      <p className='mt-2 text-center text-sm text-examen-inkMuted'>
+        Tout ce qu&apos;il faut savoir avant de souscrire.
+      </p>
+      <div className='mt-8 space-y-3'>
+        {FAQ_ITEMS.map((item, idx) => (
+          <details
+            key={idx}
+            className='group rounded-2xl border border-white/[0.08] bg-white/[0.03] p-5 shadow-sm shadow-black/20 transition open:border-examen-accent/40 open:bg-white/[0.05]'
+          >
+            <summary className='flex cursor-pointer items-center justify-between gap-3 text-sm font-semibold text-white outline-none transition-colors hover:text-examen-accent focus-visible:text-examen-accent'>
+              <span>{item.q}</span>
+              <span className='text-xl text-examen-inkMuted transition-transform group-open:rotate-45' aria-hidden>
+                +
+              </span>
+            </summary>
+            <p className='mt-3 text-sm leading-relaxed text-examen-inkMuted'>{item.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
   );
 }

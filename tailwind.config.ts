@@ -150,18 +150,6 @@ const config: Config = {
           '0%': { rotate: '0deg' },
           '100%': { rotate: '360deg' },
         },
-        'hero-pulse-blue': {
-          '0%, 100%': { transform: 'scale(1)', opacity: '0.08' },
-          '50%': { transform: 'scale(1.2)', opacity: '0.11' },
-        },
-        'hero-pulse-gold': {
-          '0%, 100%': { transform: 'scale(1.15)', opacity: '0.05' },
-          '50%': { transform: 'scale(1)', opacity: '0.08' },
-        },
-        'scroll-bounce': {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(8px)' },
-        },
         'countdown-pulse': {
           '0%, 100%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.02)' },
@@ -170,46 +158,23 @@ const config: Config = {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-6px)' },
         },
-        'ex-shimmer': {
-          '0%': { backgroundPosition: '200% 0' },
-          '100%': { backgroundPosition: '-200% 0' },
-        },
+        /** Utilisée via `animate-[shimmer_…]` arbitraire dans le hero (translation horizontale). */
         shimmer: {
-          '0%': { backgroundPosition: '-200% 0' },
-          '100%': { backgroundPosition: '200% 0' },
+          from: { transform: 'translateX(-100%)' },
+          to: { transform: 'translateX(200%)' },
         },
         'ex-pulse-dot': {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.65', transform: 'scale(1.15)' },
-        },
-        'ex-glow-pulse': {
-          '0%, 100%': { boxShadow: '0 0 16px rgba(37,99,235,0.25)' },
-          '50%': { boxShadow: '0 0 32px rgba(37,99,235,0.45)' },
-        },
-        'ex-fade-up': {
-          '0%': { opacity: '0', transform: 'translateY(12px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        'ex-slide-in': {
-          '0%': { opacity: '0', transform: 'translateX(-12px)' },
-          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'spin-slow': 'spin 10s linear infinite',
-        'hero-pulse-blue': 'hero-pulse-blue 8s ease-in-out infinite',
-        'hero-pulse-gold': 'hero-pulse-gold 12s ease-in-out infinite',
-        'scroll-bounce': 'scroll-bounce 2s ease-in-out infinite',
         'countdown-pulse': 'countdown-pulse 3s ease-in-out infinite',
         'ex-float': 'ex-float 3s ease-in-out infinite',
-        'ex-shimmer': 'ex-shimmer 2.2s linear infinite',
-        shimmer: 'shimmer 2s ease-in-out infinite',
         'ex-pulse-dot': 'ex-pulse-dot 2s ease-in-out infinite',
-        'ex-glow-pulse': 'ex-glow-pulse 2.5s ease-in-out infinite',
-        'ex-fade-up': 'ex-fade-up 0.5s ease-out forwards',
-        'ex-slide-in': 'ex-slide-in 0.4s ease-out forwards',
       },
     },
   },

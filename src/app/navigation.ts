@@ -16,10 +16,10 @@ export const NAV_REFERENCES_CHILDREN: readonly NavDropdownItem[] = [
 ] as const;
 
 export const NAV_ENTRAINER_CHILDREN: readonly NavDropdownItem[] = [
-  { href: '/entrainement/quiz', label: 'QCM' },
+  { href: '/entrainement/quiz', label: 'Quiz' },
   { href: '/entrainement/flashcards', label: 'Flashcards' },
   { href: '/entrainement/articulation', label: 'Articulation' },
-  { href: '/entrainement/redaction-pv', label: 'PV' },
+  { href: '/entrainement/redaction-pv', label: 'Rédaction PV' },
 ] as const;
 
 export const NAV_PRIMARY_LINKS = [
@@ -88,7 +88,8 @@ export const NAV_ENTRAINEMENT_CHILDREN: readonly NavMegaChild[] = [
 
 export const NAV_INFRACTIONS_HREF = '/infractions' as const;
 export const NAV_ENTRAINEMENT_HREF = '/entrainement' as const;
-export const NAV_PREMIUM_HREF = '/premium' as const;
+/** `/premium` est en redirect 301 vers `/pricing` — on pointe directement sur l'URL canonique. */
+export const NAV_PREMIUM_HREF = '/pricing' as const;
 
 export const SITE_HEADER_INFRACTIONS_LINKS: readonly NavDropdownItem[] = [
   { href: '/infractions', label: 'Référentiel complet' },

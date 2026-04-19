@@ -70,6 +70,11 @@ export type QuizQuestion = {
   domaine: 'DPS' | 'DPG' | 'Procédure pénale';
   explication?: string;
   /**
+   * Référence textuelle (CPP / CP / CSI / Légifrance) à afficher en feedback de réponse.
+   * Format libre, ex. « Art. 62-2 CPP », « Art. 311-1 CP », « 78-2 et s. CPP ».
+   */
+  article?: string;
+  /**
    * Mode réponse libre : formulations alternatives acceptées après normalisation
    * (synonymes, « art. » vs « article », abréviations courantes).
    */

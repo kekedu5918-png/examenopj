@@ -102,6 +102,7 @@ export function QuizInterface({ questions, onComplete, onQuit, streak }: QuizInt
             options={q.options}
             correctIndex={q.correctIndex}
             explanation={q.explication ?? ''}
+            article={q.article}
             questionNumber={index + 1}
             totalQuestions={total}
             onAnswer={handleCardAnswer}

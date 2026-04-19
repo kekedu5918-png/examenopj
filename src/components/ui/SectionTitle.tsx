@@ -52,8 +52,8 @@ export function SectionTitle({
         <span
           className={cn(
             'inline-flex items-center gap-1.5 rounded-full px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]',
-            'bg-[#080f1e]/95 backdrop-blur-sm',
-            badgeClassName ?? 'text-slate-200',
+            'bg-white/95 text-slate-700 backdrop-blur-sm dark:bg-[#080f1e]/95',
+            badgeClassName ?? 'dark:text-slate-200',
           )}
         >
           <span
@@ -70,15 +70,15 @@ export function SectionTitle({
           'font-sans font-extrabold tracking-tight',
           size === 'display' ? 'text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.12]' : 'text-3xl md:text-4xl',
           titleGradient
-            ? 'bg-gradient-to-br from-white via-slate-100 to-blue-200/95 bg-clip-text text-transparent'
-            : 'text-white',
+            ? 'bg-gradient-to-br from-slate-900 via-slate-700 to-blue-700 bg-clip-text text-transparent dark:from-white dark:via-slate-100 dark:to-blue-200/95'
+            : 'text-slate-900 dark:text-white',
         )}
       >
         {title}
       </TitleTag>
 
       {subtitle ? (
-        <p className='max-w-2xl text-base leading-relaxed text-slate-400 md:text-lg'>{subtitle}</p>
+        <p className='max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400 md:text-lg'>{subtitle}</p>
       ) : null}
     </motion.div>
   );

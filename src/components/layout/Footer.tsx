@@ -56,10 +56,11 @@ export function Footer() {
         {/* Links grid */}
         <div className='grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8'>
           <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Apprendre</p>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-700 dark:text-slate-300'>Apprendre</p>
             <ul className='space-y-2.5'>
               {[
                 { href: '/fondamentaux', label: 'Fondamentaux' },
+                { href: '/infractions', label: 'Infractions' },
                 { href: '/enquetes', label: 'Enquêtes' },
                 { href: '/epreuves', label: 'Épreuves' },
               ].map((l) => (
@@ -70,23 +71,15 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Infractions</p>
-            <ul className='space-y-2.5'>
-              {[{ href: '/infractions', label: 'Référentiel' }].map((l) => (
-                <li key={l.href}>
-                  <Link href={l.href} className={colLink}>{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-700 dark:text-slate-300'>
               S&apos;entraîner
             </p>
             <ul className='space-y-2.5'>
               {[
-                { href: '/entrainement/quiz', label: 'Quiz QCM' },
+                { href: '/entrainement/quiz', label: 'Quiz' },
                 { href: '/entrainement/flashcards', label: 'Flashcards' },
+                { href: '/entrainement/articulation', label: 'Articulation' },
+                { href: '/entrainement/redaction-pv', label: 'Rédaction PV' },
                 { href: '/entrainement', label: 'Hub entraînement' },
               ].map((l) => (
                 <li key={l.href}>
@@ -96,7 +89,21 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-600'>Informations</p>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-700 dark:text-slate-300'>Premium</p>
+            <ul className='space-y-2.5'>
+              {[
+                { href: '/pricing', label: 'Tarifs & abonnements' },
+                { href: '/inscription', label: "Créer un compte" },
+                { href: '/login', label: 'Se connecter' },
+              ].map((l) => (
+                <li key={l.href}>
+                  <Link href={l.href} className={colLink}>{l.label}</Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className='mb-4 text-xs font-bold uppercase tracking-widest text-slate-700 dark:text-slate-300'>Informations</p>
             <ul className='space-y-2.5'>
               {[
                 { href: '/a-propos', label: 'À propos' },
@@ -113,11 +120,11 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className='mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/[0.05] pt-8 md:flex-row'>
-          <p className='text-xs text-slate-600' suppressHydrationWarning>
+        <div className='mt-12 flex flex-col items-center justify-between gap-3 border-t border-slate-200 pt-8 dark:border-white/[0.05] md:flex-row'>
+          <p className='text-xs text-slate-600 dark:text-slate-500' suppressHydrationWarning>
             © {new Date().getFullYear()} ExamenOPJ.fr · Tous droits réservés
           </p>
-          <p className='text-xs text-slate-600'>
+          <p className='text-xs text-slate-600 dark:text-slate-500'>
             Dernière mise à jour : {SITE_LAST_UPDATED_LABEL}
           </p>
         </div>

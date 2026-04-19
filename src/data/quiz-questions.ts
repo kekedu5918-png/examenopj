@@ -28,6 +28,8 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 111-1 C. pén.',
+    explication: "Art. 111-1 C. pén. : « les infractions pénales sont classées, suivant leur gravité, en crimes, délits et contraventions. »",
   },
   {
     id: 'f09-02',
@@ -46,6 +48,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 121-6 et 121-7 C. pén.',
+    explication:
+      "Art. 121-6 : « le complice de l'infraction est puni comme auteur ». Art. 121-7 : définition (aide ou assistance, instructions, provocation par dons/menaces, etc.).",
   },
   {
     id: 'f09-04',
@@ -63,6 +68,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 122-5 C. pén.',
+    explication:
+      "Art. 122-5 C. pén. — riposte nécessaire, simultanée et proportionnée à l'agression. Al. 2 : la défense des biens exclut l'homicide volontaire.",
   },
   {
     id: 'f09-06',
@@ -71,6 +79,7 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 122-7 C. pén.',
   },
   {
     id: 'f09-07',
@@ -79,6 +88,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 7 C.P.P.',
+    explication:
+      "Art. 7 C.P.P. — 20 ans en principe ; 30 ans pour les crimes contre l'humanité, certains crimes de guerre, le trafic de stupéfiants en bande organisée ; imprescriptibilité pour les crimes contre l'humanité (art. 7 al. 2).",
   },
   {
     id: 'f09-08',
@@ -87,6 +99,7 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 8 C.P.P.',
   },
   {
     id: 'f09-09',
@@ -95,6 +108,7 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 9 C.P.P.',
   },
   {
     id: 'f09-10',
@@ -103,6 +117,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 0,
     fascicule: 9,
     domaine: 'DPG',
+    article: 'Art. 122-4 C. pén.',
+    explication:
+      "Art. 122-4 C. pén. — l'acte est justifié si prescrit ou autorisé par la loi, ou commandé par l'autorité légitime, sauf ordre manifestement illégal.",
   },
   {
     id: 'f10-01',
@@ -152,7 +169,8 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 12,
     domaine: 'Procédure pénale',
-    explication: '5 mandats : recherche, comparution, amener, arrêt, dépôt (art. 122 à 136 CPP).',
+    article: 'Art. 122 et s. C.P.P.',
+    explication: '5 mandats : recherche, comparution, amener, arrêt, dépôt (art. 122 à 136 C.P.P.).',
   },
   {
     id: 'f12-02',
@@ -246,6 +264,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 1,
     fascicule: 15,
     domaine: 'Procédure pénale',
+    article: 'Art. 171 C.P.P.',
+    explication:
+      "Art. 171 C.P.P. : « il y a nullité lorsque la méconnaissance d'une formalité substantielle prévue par le présent code ou toute autre disposition de procédure pénale a porté atteinte aux intérêts de la partie qu'elle concerne. »",
   },
   {
     id: 'f15-02',
@@ -254,8 +275,9 @@ const quizQuestionsRaw: QuizQuestion[] = [
     correctIndex: 2,
     fascicule: 15,
     domaine: 'Procédure pénale',
+    article: 'Art. 802 C.P.P.',
     explication:
-      "Art. 802 CPP : pas de nullité sans grief — il faut démontrer que l'irrégularité a porté atteinte aux intérêts de la partie.",
+      "Art. 802 C.P.P. : la juridiction ne peut prononcer la nullité que si l'irrégularité a porté atteinte aux intérêts de la partie qu'elle concerne — principe du « grief ».",
   },
   {
     id: 'f11-01',
@@ -541,14 +563,16 @@ const quizQuestionsRaw: QuizQuestion[] = [
     question: 'Dans un concours idéal d’infractions, une même action :',
     options: [
       'Donne toujours plusieurs peines additives sans limite',
-      'Réalise plusieurs infractions mais n’en constitue juridiquement qu’une seule pour l’application des peines',
+      'Réalise plusieurs infractions mais n’en constitue juridiquement qu’une seule pour l’application des peines (cumul juridique avec maximum légal le plus élevé)',
       'Exclut toute qualification',
       'Est punissable uniquement en droit civil',
     ],
     correctIndex: 1,
     fascicule: 10,
     domaine: 'DPG',
-    explication: 'Unité juridique d’infraction avec pluralité de qualifications (art. 132-8 C. pén.).',
+    article: 'Notion jurisprudentielle (Cass. crim., 3 mars 1960) ; à distinguer du concours réel (art. 132-2 C. pén.).',
+    explication:
+      "Concours idéal : une seule action matérielle relève de plusieurs qualifications. La jurisprudence retient une seule peine — la plus élevée parmi celles encourues. À ne pas confondre avec le concours réel (art. 132-2 C. pén.), qui suppose plusieurs actions distinctes.",
   },
   {
     id: 'f10-09',

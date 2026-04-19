@@ -1,14 +1,16 @@
 import type { MetadataRoute } from 'next';
 
+import { ENQUETES } from '@/data/enquetes-data';
 import { listMarkdownBasenames, slugFromBasename } from '@/lib/content/markdown';
 import { getSiteUrl } from '@/utils/site-url';
 
 function priorityForPath(path: string): number {
   if (path === '') return 1;
   if (path === '/fondamentaux' || path === '/infractions' || path === '/enquetes') return 0.9;
-  if (path === '/pricing' || path === '/premium' || path.startsWith('/epreuves')) return 0.8;
+  if (path === '/pricing' || path.startsWith('/epreuves')) return 0.8;
   if (path.startsWith('/entrainement')) return 0.65;
   if (path.startsWith('/fondamentaux/')) return 0.75;
+  if (path.startsWith('/enquetes/')) return 0.75;
   return 0.7;
 }
 
@@ -16,10 +18,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = getSiteUrl();
   const now = new Date();
 
+  /** `/premium` est volontairement omis (redirection 301 vers `/pricing`). */
   const mainPages = [
     '',
     '/pricing',
-    '/premium',
     '/a-propos',
     '/contact',
     '/cgv',
@@ -70,5 +72,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  return [...staticEntries, ...fondamentauxFicheEntries];
+  /** Enquêtes dynamiques — chaque scénario a une URL canonique indexable. */
+  const enqueteEntries: MetadataRoute.Sitemap = ENQUETES.map((e) => {
+    const p = `/enquetes/${e.id}`;
+    return {
+      url: `${base}${p}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: priorityForPath(p),
+    };
+  });
+
+  return [...staticEntries, ...fondamentauxFicheEntries, ...enqueteEntries];
 }

@@ -610,9 +610,9 @@ function Stage4Results({
         <div className='rounded-2xl border border-slate-700 bg-slate-900 p-5'>
           <p className='mb-1 text-xs font-semibold uppercase tracking-wider text-slate-400'>Accès inclus</p>
           <ul className='mb-4 space-y-1 text-sm text-slate-300'>
-            <li>✓ Toutes les fiches fondamentales</li>
-            <li>✓ Quiz quotidiens illimités</li>
-            <li>✓ Flashcards + révisions espacées</li>
+            <li>✓ 7 jours d&apos;accès complet offerts à l&apos;inscription</li>
+            <li>✓ Ensuite : 5 quiz/jour gratuits, illimités en Premium</li>
+            <li>✓ Flashcards avec révisions programmées</li>
           </ul>
 
           <Button

@@ -6,6 +6,7 @@ import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 
+import { OAuthSection } from '../oauth-buttons';
 import { AlreadySignedInPanel } from '../signup/already-signed-in';
 import { SignUpForm } from '../signup/signup-form';
 
@@ -32,7 +33,14 @@ export default async function InscriptionPage() {
             : "Dès la création du compte : 7 jours d’accès complet automatique (identique au Premium), puis freemium ou abonnement. Aucune carte bancaire pour s’inscrire."}
         </p>
 
-        {alreadyConnectedNoPremium ? <AlreadySignedInPanel /> : <SignUpForm />}
+        {alreadyConnectedNoPremium ? (
+          <AlreadySignedInPanel />
+        ) : (
+          <>
+            <OAuthSection />
+            <SignUpForm />
+          </>
+        )}
 
         {!alreadyConnectedNoPremium ? (
           <p className='text-center text-sm text-ds-text-muted'>

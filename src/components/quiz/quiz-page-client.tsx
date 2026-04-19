@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { useToast } from '@/components/ui/use-toast';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { fasciculesList } from '@/data/fascicules-list';
 import { quizQuestions } from '@/data/quiz-questions';
@@ -10,10 +12,17 @@ import { type QuizQuestion } from '@/data/types';
 import { addDailyQuizQuestionCount, getDailyQuizQuestionCount } from '@/features/access/daily-quota-client';
 import type { ContentAccessSnapshot } from '@/features/access/get-content-access';
 import { recordQuizAttempt } from '@/features/examenopj/actions/record-quiz-attempt';
-import { getQuizStreak, recordQuizCompleted, recordThemePerfectScore } from '@/lib/quiz-gamification';
+import {
+  type BadgeId,
+  getBadgeDefinition,
+  getQuizStreak,
+  recordQuizCompleted,
+  recordThemePerfectScore,
+} from '@/lib/quiz-gamification';
 
 import { QuizInterface, type QuizMcqSessionResult } from './quiz-interface';
 import { QuizInterfaceHardcore } from './quiz-interface-hardcore';
+import { QuizSetupView } from './quiz-setup-view';
 import {
   applyQuestionLimit,
   filterQuestions,
@@ -27,7 +36,6 @@ import {
   recordQuizBestPercent,
   shuffleQuizQuestionOptions,
 } from './quiz-utils';
-import { QuizSetupView } from './quiz-setup-view';
 import { SessionComplete } from './SessionComplete';
 
 type Phase = 'setup' | 'quiz' | 'result';
@@ -47,6 +55,7 @@ type QuizPageClientProps = {
 
 export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
   const searchParams = useSearchParams();
+  const { toast } = useToast();
 
   const access: ContentAccessSnapshot = initialAccess ?? {
     tier: 'full',
@@ -262,13 +271,46 @@ export function QuizPageClient({ initialAccess }: QuizPageClientProps) {
 
     const gamification = recordQuizCompleted();
     setStreakDays(gamification.streak);
+
+    const earnedNow: BadgeId[] = [...gamification.newBadges];
     if (
       pct === 100 &&
       launchConfig &&
       isThemeQuizMode(launchConfig.mode) &&
       launchConfig.fascicule != null
     ) {
-      recordThemePerfectScore(launchConfig.fascicule);
+      const themeBadgeIsNew = recordThemePerfectScore(launchConfig.fascicule);
+      if (themeBadgeIsNew && !earnedNow.includes('theme-100')) earnedNow.push('theme-100');
+    }
+
+    /**
+     * Toasts gamification — un toast par badge nouvellement gagné, plus un toast streak
+     * sur les paliers significatifs (3, 7, 14, 30) si pas de badge déclenché en parallèle.
+     */
+    earnedNow.forEach((badgeId) => {
+      const def = getBadgeDefinition(badgeId);
+      if (!def) return;
+      toast({
+        title: `${def.icon} Nouveau badge : ${def.label}`,
+        description: def.description,
+      });
+    });
+
+    if (gamification.streak > 0 && earnedNow.length === 0) {
+      const streakMilestone = [3, 7, 14, 30, 60, 100].includes(gamification.streak);
+      if (streakMilestone) {
+        toast({
+          title: `🔥 Série de ${gamification.streak} jours`,
+          description: 'Continuez sur cette lancée — la régularité est votre meilleure alliée.',
+        });
+      }
+    }
+
+    if (isPB && prevBest != null && earnedNow.length === 0) {
+      toast({
+        title: '✨ Nouveau record personnel',
+        description: `${roundedPct} % sur cette session — votre meilleur score sur ce mode.`,
+      });
     }
   }
 

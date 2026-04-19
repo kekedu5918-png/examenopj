@@ -170,6 +170,22 @@ export const recapSectionsF03F07 = [
         priorite: 'secours' as const,
       },
       {
+        infraction: '**La prise illégale d’intérêts**',
+        legal: 'Art. 432-12 C.P. (prévoit et réprime)',
+        materiel:
+          '**PRENDRE, RECEVOIR OU CONSERVER**, directement ou indirectement, un **INTÉRÊT QUELCONQUE** / dans une **AFFAIRE, ENTREPRISE OU OPÉRATION** dont la personne a, **AU MOMENT DE L’ACTE**, en tout ou partie, la **CHARGE D’ASSURER LA SURVEILLANCE, L’ADMINISTRATION, LA LIQUIDATION OU LE PAIEMENT** / **AUTORITÉ PUBLIQUE** ou **MISSION DE SP** ou **MANDAT ÉLECTIF**',
+        moral: '**CONSCIENCE D’AGIR EN VIOLATION DU DEVOIR DE PROBITÉ** / **CONNAISSANCE DE LA SITUATION D’INCOMPATIBILITÉ**',
+        priorite: 'secours' as const,
+      },
+      {
+        infraction: '**La soustraction et le détournement de biens publics**',
+        legal: 'Art. 432-15 C.P. (prévoit et réprime)',
+        materiel:
+          '**SOUSTRACTION OU DÉTOURNEMENT** de **DENIERS PUBLICS OU PRIVÉS, EFFETS, PIÈCES OU TITRES** détenus en raison des fonctions / **AUTORITÉ PUBLIQUE, MISSION DE SP, COMPTABLE PUBLIC, DÉPOSITAIRE PUBLIC OU L’UN DE SES SUBORDONNÉS**',
+        moral: '**CONSCIENCE D’APPROPRIER OU DE FAIRE BÉNÉFICIER UN TIERS** / **VOLONTÉ DE DÉTOURNER**',
+        priorite: 'secours' as const,
+      },
+      {
         infraction: '**L’outrage**',
         legal: 'Art. 433-5 C.P. (prévoit et réprime)',
         materiel:

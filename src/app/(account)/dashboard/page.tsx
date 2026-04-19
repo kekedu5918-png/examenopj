@@ -13,6 +13,7 @@ import { getModules, getRecentQuizAttempts, getRevisionStats } from '@/features/
 import { getGamificationData } from '@/features/gamification/controllers/get-gamification-data';
 import { getOnboardingPlan } from '@/features/onboarding/actions/onboarding-actions';
 import { getLoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
+import { getCoursPathForFascicule, getQuizPathForFascicule } from '@/lib/content/fascicule-cours-map';
 import { getTodayReviews, getUserFullProgress, pickNextLessonFromProgress } from '@/lib/learningPath';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
@@ -64,7 +65,24 @@ export default async function DashboardPage() {
 
   const lastAttempt = recentAttempts[0] ?? null;
   const lastModuleMeta = lastAttempt ? fasciculeModuleFromAttempt(lastAttempt) : null;
-  const featuredModules = modules.slice(0, 6);
+
+  /**
+   * Cartes « Thèmes du programme » : on s'appuie sur la liste éditoriale des 18 fascicules OPJ
+   * (`fasciculesList`) plutôt que sur la table Supabase `modules` qui peut être incomplète selon
+   * l'environnement. On privilégie les thèmes pour lesquels une fiche cours markdown existe afin
+   * que les boutons « Ouvrir la fiche cours » mènent réellement vers du contenu.
+   */
+  const featuredModules = fasciculesList
+    .map((f) => ({
+      numero: f.numero,
+      titre: f.titre,
+      description: f.accroche,
+      domaineLabel: f.domaineLabel,
+      coursPath: getCoursPathForFascicule(f.numero),
+      quizPath: getQuizPathForFascicule(f.numero),
+    }))
+    .filter((m) => m.coursPath !== null)
+    .slice(0, 6);
 
   const pathPick = pickNextLessonFromProgress(pathProgress);
   const nextLesson = pathPick
@@ -87,7 +105,7 @@ export default async function DashboardPage() {
         <div className='flex flex-wrap items-center gap-2'>
           <h1 className='text-3xl font-bold text-ds-text-primary dark:text-slate-50'>Bienvenue sur ExamenOPJ</h1>
           <Badge variant='examen' className='text-xs'>
-            {modules.length} thèmes disponibles
+            {fasciculesList.length} thèmes au programme
           </Badge>
         </div>
         <p className='mt-2 max-w-3xl text-ds-text-muted dark:text-slate-300'>
@@ -247,29 +265,41 @@ export default async function DashboardPage() {
       </div>
 
       <div className='grid gap-4 md:grid-cols-2 xl:grid-cols-3'>
-        {featuredModules.map((module) => {
-          const coursePath = '/fondamentaux';
-          return (
-            <Card
-              key={module.id}
-              className='border-l-4 border-blue-500 bg-ds-bg-elevated shadow-md hover:shadow-xl dark:bg-slate-900'
-            >
-              <CardHeader>
-                <CardTitle className='text-ds-text-primary dark:text-slate-100'>
-                  {module.titre}
-                </CardTitle>
-                <CardDescription className='text-ds-text-muted dark:text-slate-300'>
-                  {module.description ?? 'Module pédagogique ExamenOPJ.'}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <Button asChild className='bg-blue-600 hover:bg-blue-700'>
-                  <Link href={coursePath}>Ouvrir la fiche cours</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          );
-        })}
+        {featuredModules.map((module) => (
+          <Card
+            key={module.numero}
+            className='flex flex-col border-l-4 border-blue-500 bg-ds-bg-elevated shadow-md hover:shadow-xl dark:bg-slate-900'
+          >
+            <CardHeader>
+              <div className='flex items-center justify-between gap-2'>
+                <Badge variant='outline' className='text-[10px] uppercase tracking-wider'>
+                  Thème {String(module.numero).padStart(2, '0')}
+                </Badge>
+                <span className='text-[10px] font-semibold uppercase tracking-wider text-ds-text-muted'>
+                  {module.domaineLabel}
+                </span>
+              </div>
+              <CardTitle className='mt-2 text-ds-text-primary dark:text-slate-100'>
+                {module.titre}
+              </CardTitle>
+              <CardDescription className='text-ds-text-muted dark:text-slate-300'>
+                {module.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className='mt-auto flex flex-wrap gap-2'>
+              <Button asChild className='bg-blue-600 hover:bg-blue-700'>
+                <Link href={module.coursPath ?? '/fondamentaux'}>Ouvrir la fiche cours</Link>
+              </Button>
+              <Button
+                asChild
+                variant='outline'
+                className='border-ds-border bg-ds-bg-secondary text-ds-text-primary hover:bg-ds-bg-elevated dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800'
+              >
+                <Link href={module.quizPath}>Quiz du thème</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </AccountDashboardSection>
   );

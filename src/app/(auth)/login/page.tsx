@@ -7,6 +7,8 @@ import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
 import { safeInternalPath } from '@/utils/safe-internal-path';
 
+import { OAuthSection } from '../oauth-buttons';
+
 import { LoginForm } from './login-form';
 
 type LoginPageProps = {
@@ -57,6 +59,7 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
             ) : null}
           </p>
         ) : null}
+        <OAuthSection />
         <LoginForm nextPath={nextPath} />
         <p className='text-center text-sm text-ds-text-muted'>
           Pas encore de compte ?{' '}

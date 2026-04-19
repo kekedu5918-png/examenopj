@@ -1,9 +1,14 @@
-import { Inbox, Search } from 'lucide-react';
+import Link from 'next/link';
+import { ArrowUpRight, BookOpen, FileSearch, Inbox, Search, Sparkles } from 'lucide-react';
 
 import { AccountDashboardSection } from '@/components/account/AccountDashboardSection';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { searchLearningContent } from '@/features/examenopj/controllers/get-dashboard-data';
+import {
+  type LocalSearchHit,
+  searchLocalContent,
+} from '@/features/examenopj/controllers/local-search';
 
 type Props = {
   searchParams?: {
@@ -15,19 +20,27 @@ export default async function RecherchePage({ searchParams }: Props) {
   const query = searchParams?.q?.trim() ?? '';
   const hasQuery = query.length > 0;
 
-  const result = hasQuery ? await searchLearningContent(query) : null;
+  const [supabaseResult, localResult] = hasQuery
+    ? await Promise.all([searchLearningContent(query), searchLocalContent(query)])
+    : [null, null];
 
-  const totalHits =
-    result === null
+  const supabaseHits =
+    supabaseResult === null
       ? 0
-      : result.questions.length + result.chapitres.length + result.flashcards.length;
+      : supabaseResult.questions.length + supabaseResult.chapitres.length + supabaseResult.flashcards.length;
+  const localHits = localResult?.total ?? 0;
+  const totalHits = supabaseHits + localHits;
   const hasResults = hasQuery && totalHits > 0;
   const showNoHits = hasQuery && totalHits === 0;
 
   return (
     <AccountDashboardSection>
-      <h1 className='text-2xl font-bold text-ds-text-primary dark:text-slate-50'>Recherche globale</h1>
-      <p className='text-ds-text-muted dark:text-slate-300'>Recherche rapide dans les cours, questions et flashcards.</p>
+      <div className='space-y-1'>
+        <h1 className='text-2xl font-bold text-ds-text-primary dark:text-slate-50'>Recherche globale</h1>
+        <p className='text-ds-text-muted dark:text-slate-300'>
+          Cours, infractions, QCM, enquêtes — tout le contenu pédagogique en une requête.
+        </p>
+      </div>
 
       <form
         method='get'
@@ -42,7 +55,7 @@ export default async function RecherchePage({ searchParams }: Props) {
           name='q'
           type='search'
           defaultValue={query}
-          placeholder='Rechercher une leçon, une infraction…'
+          placeholder='Ex. : garde à vue, art. 78-2, perquisition…'
           autoComplete='off'
           className='min-w-0 flex-1 rounded-md border border-ds-border bg-ds-bg-primary px-3 py-2 text-sm text-ds-text-primary placeholder:text-ds-text-muted focus:border-violet-500/50 focus:outline-none focus:ring-2 focus:ring-violet-500/20 dark:border-slate-800 dark:bg-slate-950 dark:text-slate-100 dark:placeholder:text-slate-500'
         />
@@ -59,7 +72,8 @@ export default async function RecherchePage({ searchParams }: Props) {
               <Search className='h-6 w-6' aria-hidden />
             </div>
             <p className='max-w-md text-sm leading-relaxed text-ds-text-muted dark:text-slate-400'>
-              Saisissez un terme ci-dessus pour lancer une recherche dans les questions, chapitres et flashcards.
+              Saisissez un terme ci-dessus. La recherche couvre les fiches fondamentaux,
+              le référentiel des infractions, la banque QCM et les enquêtes pédagogiques.
             </p>
           </CardContent>
         </Card>
@@ -74,34 +88,117 @@ export default async function RecherchePage({ searchParams }: Props) {
             <div className='space-y-1'>
               <p className='text-base font-medium text-ds-text-primary dark:text-slate-200'>Aucun résultat</p>
               <p className='max-w-md text-sm text-ds-text-muted dark:text-slate-400'>
-                Aucun contenu ne correspond à « {query} ». Essayez un autre mot-clé ou une formulation plus courte.
+                Aucun contenu ne correspond à « {query} ». Essayez un autre mot-clé,
+                un numéro d&apos;article (ex. 62-2) ou une formulation plus courte.
               </p>
             </div>
           </CardContent>
         </Card>
       )}
 
-      {hasResults && result !== null && (
-        <div className='grid gap-4 md:grid-cols-3'>
-          <ResultCard
-            title={`Questions (${result.questions.length})`}
-            items={result.questions.map((item) => item.question)}
-          />
-          <ResultCard
-            title={`Chapitres (${result.chapitres.length})`}
-            items={result.chapitres.map((item) => item.titre)}
-          />
-          <ResultCard
-            title={`Flashcards (${result.flashcards.length})`}
-            items={result.flashcards.map((item) => item.recto)}
-          />
+      {hasResults && (
+        <div className='space-y-6'>
+          {localResult && localResult.fiches.length > 0 ? (
+            <LocalHitsCard
+              title='Fiches fondamentaux'
+              icon={<BookOpen className='h-4 w-4' aria-hidden />}
+              hits={localResult.fiches}
+            />
+          ) : null}
+
+          {localResult && localResult.quizzes.length > 0 ? (
+            <LocalHitsCard
+              title='Questions QCM'
+              icon={<Sparkles className='h-4 w-4' aria-hidden />}
+              hits={localResult.quizzes}
+            />
+          ) : null}
+
+          {localResult && localResult.enquetes.length > 0 ? (
+            <LocalHitsCard
+              title='Enquêtes pédagogiques'
+              icon={<FileSearch className='h-4 w-4' aria-hidden />}
+              hits={localResult.enquetes}
+            />
+          ) : null}
+
+          {supabaseResult && supabaseHits > 0 ? (
+            <div className='grid gap-4 md:grid-cols-3'>
+              <SupabaseResultCard
+                title={`Questions Supabase (${supabaseResult.questions.length})`}
+                items={supabaseResult.questions.map((item) => item.question)}
+              />
+              <SupabaseResultCard
+                title={`Chapitres (${supabaseResult.chapitres.length})`}
+                items={supabaseResult.chapitres.map((item) => item.titre)}
+              />
+              <SupabaseResultCard
+                title={`Flashcards (${supabaseResult.flashcards.length})`}
+                items={supabaseResult.flashcards.map((item) => item.recto)}
+              />
+            </div>
+          ) : null}
         </div>
       )}
     </AccountDashboardSection>
   );
 }
 
-function ResultCard({ title, items }: { title: string; items: string[] }) {
+function LocalHitsCard({
+  title,
+  icon,
+  hits,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  hits: LocalSearchHit[];
+}) {
+  return (
+    <Card className='bg-ds-bg-elevated dark:bg-slate-900'>
+      <CardHeader>
+        <CardTitle className='flex items-center gap-2 text-ds-text-primary dark:text-slate-100'>
+          <span className='text-blue-600 dark:text-blue-400'>{icon}</span>
+          <span>{title}</span>
+          <span className='ml-auto rounded-full bg-blue-50 px-2 py-0.5 text-[11px] font-semibold text-blue-700 dark:bg-blue-500/10 dark:text-blue-300'>
+            {hits.length}
+          </span>
+        </CardTitle>
+      </CardHeader>
+      <CardContent>
+        <ul className='space-y-2'>
+          {hits.map((hit) => (
+            <li key={`${hit.type}-${hit.href}-${hit.title.slice(0, 32)}`}>
+              <Link
+                href={hit.href}
+                className='group flex items-start gap-3 rounded-md border border-ds-border p-3 transition-colors hover:border-blue-400/50 hover:bg-blue-50/40 dark:border-slate-800 dark:hover:border-blue-500/40 dark:hover:bg-blue-500/5'
+              >
+                <div className='min-w-0 flex-1 space-y-1'>
+                  <p className='line-clamp-2 text-sm font-medium text-ds-text-primary group-hover:text-blue-700 dark:text-slate-100 dark:group-hover:text-blue-300'>
+                    {hit.title}
+                  </p>
+                  {hit.excerpt ? (
+                    <p className='line-clamp-2 text-xs text-ds-text-muted dark:text-slate-400'>{hit.excerpt}</p>
+                  ) : null}
+                  {hit.tag ? (
+                    <p className='inline-block rounded bg-ds-bg-secondary px-1.5 py-0.5 text-[10px] font-mono uppercase tracking-wider text-ds-text-muted dark:bg-slate-800 dark:text-slate-400'>
+                      {hit.tag}
+                    </p>
+                  ) : null}
+                </div>
+                <ArrowUpRight
+                  className='mt-1 h-4 w-4 shrink-0 text-ds-text-muted transition-colors group-hover:text-blue-600 dark:group-hover:text-blue-400'
+                  aria-hidden
+                />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
+
+function SupabaseResultCard({ title, items }: { title: string; items: string[] }) {
   return (
     <Card className='bg-ds-bg-elevated dark:bg-slate-900'>
       <CardHeader>

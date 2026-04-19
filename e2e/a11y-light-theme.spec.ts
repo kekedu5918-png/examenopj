@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import { test, expect } from '@playwright/test';
+import { expect,test } from '@playwright/test';
 
 /**
  * A11y — thème clair sur parcours représentatifs (sans auth).

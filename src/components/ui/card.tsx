@@ -7,7 +7,11 @@ const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElemen
     <div
       ref={ref}
       className={cn(
-        'rounded-[12px] border border-white/[0.06] bg-examen-card text-examen-ink shadow-ex-card',
+        /**
+         * Tokens shadcn (`--card`, `--card-foreground`, `--border`) → s'adapte
+         * automatiquement aux thèmes clair et sombre. Override possible via className.
+         */
+        'rounded-[12px] border border-border bg-card text-card-foreground shadow-ex-card',
         className,
       )}
       {...props}

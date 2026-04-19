@@ -3,11 +3,12 @@ import type { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 
 import { AccountBottomNav } from '@/components/account/AccountBottomNav';
+import { DashboardSidebar } from '@/components/account/DashboardSidebar';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
-import { cn } from '@/utils/cn';
 import { getSession } from '@/features/account/controllers/get-session';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
+import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   robots: { index: false, follow: false },
@@ -22,7 +23,11 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
 
   const premium = await hasPremiumAccess();
   if (!premium) {
-    redirect('/pricing');
+    /**
+     * Avant : redirection brutale vers `/pricing` (paywall sec).
+     * Maintenant : hub freemium contextualisé `/espace-gratuit` (Vague 3).
+     */
+    redirect('/espace-gratuit');
   }
 
   const bottomNav = process.env.NEXT_PUBLIC_ACCOUNT_BOTTOM_NAV === '1';
@@ -34,7 +39,10 @@ export default async function DashboardLayout({ children }: PropsWithChildren) {
       pad='default'
       className={cn('min-h-[60vh]', bottomNav && 'pb-20 md:pb-0')}
     >
-      {children}
+      <div className='flex flex-col gap-8 lg:flex-row lg:items-start'>
+        <DashboardSidebar />
+        <div className='min-w-0 flex-1'>{children}</div>
+      </div>
       <AccountBottomNav />
     </InteriorPageShell>
   );

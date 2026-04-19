@@ -183,12 +183,21 @@ export const recapSectionF01P1 = {
       priorite: 'freq',
     },
     {
-      infraction: '**Les blessures involontaires — ITT ≤ 3 mois**',
-      legal: 'Art. R.625-2 C.P. / Art. 222-20 C.P.',
+      infraction: '**Les blessures involontaires — ITT ≤ 3 mois (contraventions)**',
+      legal: 'Art. R.625-2 C.P.',
       materiel:
-        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE : ITT ≤ 3 MOIS (contraventions)**',
+        '**UN ACTE INVOLONTAIRE : LA FAUTE** / **UN LIEN DE CAUSALITÉ** / **SUR LA PERSONNE D\'AUTRUI** / **UN DOMMAGE : ITT ≤ 3 MOIS**',
       moral: '**ABSENCE D\'INTENTION DE PORTER ATTEINTE À L\'INTÉGRITÉ**',
       priorite: 'freq',
+    },
+    {
+      infraction: '**Les atteintes involontaires par violation manifestement délibérée d\'une obligation de sécurité ou de prudence — ITT ≤ 3 mois**',
+      legal: 'Art. 222-20 C.P.',
+      materiel:
+        '**EXISTENCE D\'UNE OBLIGATION PARTICULIÈRE DE PRUDENCE OU DE SÉCURITÉ** / **CONNAISSANCE DE CETTE OBLIGATION PAR LA PERSONNE** / **UNE VOLONTÉ DE NE PAS RESPECTER L\'OBLIGATION** / **UN DOMMAGE**',
+      moral: '**VIOLATION MANIFESTEMENT DÉLIBÉRÉE**',
+      priorite: 'freq',
+      noteExamen: 'Distinguer la faute simple (R.625-2) de la violation manifestement délibérée (222-20) : le seuil ITT est identique mais la qualification monte en délit.',
     },
     {
       infraction: '**Les tortures et actes de barbarie**',

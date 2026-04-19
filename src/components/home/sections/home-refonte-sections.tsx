@@ -477,7 +477,14 @@ export function TerrainOriginSection() {
   );
 }
 
-/** Témoignages — preuve sociale (collègues de formation). */
+/**
+ * Profils-types de candidats — section d'usage illustratif.
+ *
+ * Note honnêteté : tant que nous ne disposons pas de témoignages réels collectés
+ * avec consentement explicite, cette section présente des profils-types décrivant
+ * comment chaque type de candidat peut utiliser l'outil — pas des citations attribuées.
+ * Cf. plan d'engagement (vague 5).
+ */
 export function HomeTestimonialsSection() {
   const shouldReduce = useReducedMotion();
   const items = useMemo(
@@ -485,16 +492,18 @@ export function HomeTestimonialsSection() {
       [
         {
           quote:
-            'Les fiches procédure collent au programme SDCP : je révise sans me perdre dans les PDF du centre.',
-          author: 'Brigadier, Paris · session 2026',
+            "Profil pressé : 30 min/jour, fiches courtes + 5 quiz quotidiens. L'objectif est d'enchaîner les sessions courtes plutôt que les marathons.",
+          author: 'Profil A — révision rapide',
         },
         {
-          quote: "Le quiz en mode libre m'a forcé à formuler comme à l'oral. Gros gain sur la DPG et la procédure.",
-          author: 'GAV, région Centre',
+          quote:
+            "Profil méthodique : parcours guidé en 7 leçons, flashcards à répétition espacée et articulation interactive avant chaque enquête.",
+          author: 'Profil B — préparation structurée',
         },
         {
-          quote: "Clair, carré, sans blabla. Ça ne remplace pas le cours mais c'est mon fil rouge jusqu'au jury.",
-          author: 'Major, formation OPJ',
+          quote:
+            "Profil examen blanc : 2 enquêtes complètes par semaine + sujets blancs corrigés et rapport de synthèse type pour s'auto-évaluer.",
+          author: 'Profil C — entraînement intensif',
         },
       ] as const,
     []
@@ -516,16 +525,18 @@ export function HomeTestimonialsSection() {
         <div className='mb-12 text-center'>
           <span className='inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3.5 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-slate-400'>
             <span className='h-1.5 w-1.5 rounded-full bg-current opacity-70' aria-hidden />
-            Témoignages
+            Profils d&apos;usage
           </span>
           <h2
             id='home-testimonials-title'
             className='mt-4 font-sans text-3xl font-extrabold tracking-tight text-white md:text-4xl'
           >
-            Ils s&apos;entraînent avec ExamenOPJ
+            Trois façons de réviser avec ExamenOPJ
           </h2>
           <p className='mx-auto mt-3 max-w-xl text-sm text-slate-400'>
-            Retours anonymisés de candidats en préparation OPJ — le même rythme, les mêmes enjeux.
+            Profils-types illustrant les parcours possibles. Les vrais témoignages, recueillis avec
+            consentement, seront publiés progressivement à mesure que les candidats acceptent de
+            partager leur expérience.
           </p>
         </div>
 

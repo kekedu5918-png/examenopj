@@ -132,7 +132,7 @@ export const ENQUETES: EnqueteMeta[] = [
     resume:
       "Interpellation après contrôle d'identité contesté : outrage à agents, rébellion, usage possible de faux. À viser : qualités OPJ/APJ, notification GAV, PV télégraphiques.",
     qualification: 'Outrage, rébellion, faux et infractions voisines (schéma type)',
-    articles: 'Art. 433-5, 434-9, 433-11 C.P. ; 78-2 et s. CSI',
+    articles: 'Art. 433-5, 434-9, 433-11 C.P. ; 78-2 et s. C.P.P.',
     premium: true,
     themeCourt: 'Atteintes aux autorités et ordre public',
     objectifsEpreuve2: [

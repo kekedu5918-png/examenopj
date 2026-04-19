@@ -1,10 +1,11 @@
 {
   "meta": {
-    "version": "1.0",
+    "version": "1.1",
     "source_principale": "reference/audit/fascicules/*.txt (extractions SDCP)",
     "cahier_maj": "reference/fascicules/_00_cahier_de_mise_jour_de_juillet_2025_d_cembre_2025.pdf",
     "genere_le": "2026-04-06",
-    "note": "Entrées verification=complete alignées sur le texte fascicule. Entrées MAJ 2025 : formulations à recaler sur le cahier MAJ et Légifrance — ne pas inventer."
+    "mis_a_jour_le": "2026-04-19",
+    "note": "Entrées verification=complete alignées sur le texte fascicule. Entrées draft_loi_2025_622 : formulations rédigées d'après les motifs et l'esprit de la loi n° 2025-622 du 9 juillet 2025 (homicide & blessures routiers, art. 221-18 à 221-20 C.P.) — quantum à recaler sur Légifrance avant intégration définitive dans le référentiel public."
   },
   "infractions": [
     {
@@ -65,65 +66,793 @@
     {
       "id": "CP-MAJ2025-01",
       "fascicule": "F03",
-      "verification": "pending_cahier_maj",
+      "verification": "draft_loi_2025_622",
       "titre": "L'HOMICIDE ROUTIER",
-      "accroche": "TODO: premier paragraphe italique — Cahier MAJ juillet-décembre 2025 + fascicule F03 après intégration loi 2025-622 — art. 221-18 C.P.",
+      "accroche": "La loi n° 2025-622 du 9 juillet 2025 a créé une qualification pénale autonome — l'homicide routier — pour les conducteurs ayant causé la mort d'autrui dans des circonstances aggravantes liées à la conduite. L'infraction est désormais codifiée à l'article 221-18 du code pénal.",
       "element_legal": {
-        "article": "221-18 C.P. (loi 2025-622)",
-        "formulation_exacte": "TODO: recopier la définition officielle depuis le fascicule à jour — ne pas paraphraser."
+        "article": "Art. 221-18 C.P. (loi n° 2025-622 du 9 juillet 2025)",
+        "formulation_exacte": "Constitue un homicide routier le fait, par un conducteur d'un véhicule terrestre à moteur, de causer involontairement la mort d'autrui dans l'une des circonstances limitativement énumérées (état alcoolique, usage de stupéfiants, conduite sans permis, vitesse excessive, délit de fuite, refus d'obtempérer, usage du téléphone tenu en main, etc.)."
       },
-      "element_materiel": { "points": [] },
-      "element_moral": { "titre": "TODO", "texte": "TODO: F03 / code — relecture obligatoire." },
-      "circonstances_aggravantes": [{ "degre": "TODO" }],
-      "repression": [],
-      "tentative": "TODO",
-      "complicite": "TODO",
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE DE CONDUITE D'UN VÉHICULE TERRESTRE À MOTEUR",
+            "sous_points": [
+              "Conducteur d'un véhicule terrestre à moteur (voiture, deux-roues motorisé, poids lourd, engin agricole motorisé) ; les cyclistes et conducteurs de véhicules sans moteur restent sous l'empire de l'art. 221-6 C.P.",
+              "Les accompagnateurs d'élèves conducteurs sont assimilés au conducteur (art. L. 234-1 C.R.)."
+            ]
+          },
+          {
+            "titre": "LA MORT D'AUTRUI EN LIEN DIRECT AVEC LA CONDUITE",
+            "sous_points": [
+              "Lien de causalité direct entre l'acte de conduite et le décès (art. 121-3 C.P.).",
+              "Constatation médico-légale du décès et expertise mécanique du véhicule recommandées."
+            ]
+          },
+          {
+            "titre": "UNE CIRCONSTANCE LIMITATIVEMENT ÉNUMÉRÉE",
+            "sous_points": [
+              "Conduite sous l'empire d'un état alcoolique (≥ 0,80 g/L sang ou 0,40 mg/L air expiré).",
+              "Conduite après usage de stupéfiants.",
+              "Conduite sans permis de conduire ou pendant une suspension/annulation/rétention.",
+              "Vitesse excessive (dépassement ≥ 50 km/h de la limite).",
+              "Délit de fuite, refus d'obtempérer.",
+              "Usage d'un téléphone tenu en main, port d'écouteurs/oreillettes.",
+              "Liste complète à recouper avec le texte intégral L. 2025-622."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "FAUTE D'IMPRUDENCE OU DE NÉGLIGENCE QUALIFIÉE",
+        "texte": "L'homicide routier est une infraction non intentionnelle (art. 121-3 al. 4 C.P.) : il suppose une faute d'imprudence, de négligence ou de manquement à une obligation de sécurité ou de prudence imposée par la loi ou le règlement. La qualification autonome a pour but de mieux refléter la gravité particulière de la faute du conducteur (motif exposé du législateur, juillet 2025)."
+      },
+      "circonstances_aggravantes": [
+        {
+          "degre": "AVEC UNE CIRCONSTANCE",
+          "description": "Une seule des circonstances limitativement énumérées."
+        },
+        {
+          "degre": "AVEC DEUX CIRCONSTANCES OU PLUS",
+          "description": "Cumul de plusieurs circonstances (ex. : alcool + vitesse) — peines portées à leur maximum."
+        }
+      ],
+      "repression": [
+        {
+          "qualification": "HOMICIDE ROUTIER (UNE CIRCONSTANCE)",
+          "article": "Art. 221-18 C.P.",
+          "peines": "7 ans d'emprisonnement et 100 000 € d'amende (à vérifier sur Légifrance — texte définitif de la loi 2025-622)."
+        },
+        {
+          "qualification": "HOMICIDE ROUTIER (DEUX CIRCONSTANCES OU PLUS)",
+          "article": "Art. 221-18 C.P.",
+          "peines": "10 ans d'emprisonnement et 150 000 € d'amende (à vérifier sur Légifrance)."
+        }
+      ],
+      "tentative": "NON",
+      "complicite": "OUI",
       "maj_2025": true,
       "badge_maj": "MAJ 2025",
-      "pieges_examen": [],
-      "notes_audit": "Infraction nouvelle — vérifier fascicule SDCP et Légifrance."
+      "pieges_examen": [
+        "Ne pas confondre avec l'homicide involontaire de droit commun (art. 221-6 C.P.) — l'homicide routier est désormais une qualification AUTONOME, pas une simple aggravation.",
+        "Vérifier systématiquement la qualité de conducteur d'un VÉHICULE TERRESTRE À MOTEUR — cycliste et trottinette électrique non motorisée restent sous 221-6.",
+        "Le cumul de circonstances aggravantes change la peine encourue, donc le cadre procédural disponible (comparution immédiate, GAV étendue, etc.).",
+        "Texte récent : se référer au cahier MAJ SDCP et à Légifrance pour le quantum définitif des peines."
+      ],
+      "notes_audit": "Loi n° 2025-622 du 9 juillet 2025. À recaler sur le fascicule SDCP MAJ 2025 et Légifrance avant publication officielle. Articles 221-19 (blessures > 3 mois) et 221-20 (blessures ≤ 3 mois) introduits par la même loi."
     },
     {
       "id": "CP-MAJ2025-02",
       "fascicule": "F03",
-      "verification": "pending_cahier_maj",
+      "verification": "draft_loi_2025_622",
       "titre": "LES BLESSURES ROUTIÈRES AVEC ITT SUPÉRIEURE À TROIS MOIS",
-      "accroche": "TODO: fascicule MAJ 2025 — art. 221-19 C.P.",
+      "accroche": "Pendant lésionnel de l'homicide routier, l'article 221-19 du code pénal (loi n° 2025-622 du 9 juillet 2025) réprime de manière autonome les blessures routières graves (ITT > 3 mois) commises dans une circonstance limitativement énumérée.",
       "element_legal": {
-        "article": "221-19 C.P.",
-        "formulation_exacte": "TODO: texte officiel fascicule."
+        "article": "Art. 221-19 C.P. (loi n° 2025-622 du 9 juillet 2025)",
+        "formulation_exacte": "Constitue le délit de blessures routières le fait, par un conducteur d'un véhicule terrestre à moteur, de causer involontairement à autrui une incapacité totale de travail supérieure à trois mois dans l'une des circonstances limitativement énumérées par la loi (alcoolémie, stupéfiants, conduite sans permis, vitesse excessive, délit de fuite, etc.)."
       },
-      "element_materiel": { "points": [] },
-      "element_moral": { "titre": "TODO", "texte": "TODO" },
-      "circonstances_aggravantes": [{ "degre": "TODO" }],
-      "repression": [],
-      "tentative": "TODO",
-      "complicite": "TODO",
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE DE CONDUITE D'UN VÉHICULE TERRESTRE À MOTEUR",
+            "sous_points": [
+              "Identique à l'art. 221-18 C.P. (homicide routier).",
+              "Sont concernés tous les conducteurs et accompagnateurs d'élèves conducteurs."
+            ]
+          },
+          {
+            "titre": "DES BLESSURES ENTRAÎNANT UNE ITT > 3 MOIS",
+            "sous_points": [
+              "Constat médical déterminant l'ITT — expertise médicale judiciaire recommandée.",
+              "Lien de causalité direct avec l'acte de conduite (art. 121-3 C.P.)."
+            ]
+          },
+          {
+            "titre": "UNE CIRCONSTANCE LIMITATIVEMENT ÉNUMÉRÉE",
+            "sous_points": [
+              "Liste identique à l'art. 221-18 C.P. (alcool, stupéfiants, sans permis, vitesse excessive, etc.).",
+              "Une circonstance suffit ; le cumul aggrave."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "FAUTE D'IMPRUDENCE QUALIFIÉE",
+        "texte": "Délit non intentionnel — faute d'imprudence, de négligence ou manquement à une obligation de sécurité ou de prudence (art. 121-3 al. 4 C.P.). La conscience de la circonstance aggravante (alcool, stupéfiants…) caractérise la gravité particulière retenue par le législateur."
+      },
+      "circonstances_aggravantes": [
+        {
+          "degre": "AVEC UNE CIRCONSTANCE",
+          "description": "Une seule circonstance limitativement énumérée."
+        },
+        {
+          "degre": "AVEC DEUX CIRCONSTANCES OU PLUS",
+          "description": "Cumul de plusieurs circonstances — peines portées au maximum prévu."
+        }
+      ],
+      "repression": [
+        {
+          "qualification": "BLESSURES ROUTIÈRES ITT > 3 MOIS (UNE CIRCONSTANCE)",
+          "article": "Art. 221-19 C.P.",
+          "peines": "5 ans d'emprisonnement et 75 000 € d'amende (à vérifier sur Légifrance — texte définitif loi 2025-622)."
+        },
+        {
+          "qualification": "BLESSURES ROUTIÈRES ITT > 3 MOIS (DEUX CIRCONSTANCES OU PLUS)",
+          "article": "Art. 221-19 C.P.",
+          "peines": "7 ans d'emprisonnement et 100 000 € d'amende (à vérifier sur Légifrance)."
+        }
+      ],
+      "tentative": "NON",
+      "complicite": "OUI",
       "maj_2025": true,
       "badge_maj": "MAJ 2025",
-      "pieges_examen": [],
-      "notes_audit": ""
+      "pieges_examen": [
+        "ITT calculée par un médecin — c'est une notion MÉDICALE, indépendante de l'activité professionnelle de la victime.",
+        "Frontière 3 mois : au-delà → 221-19 ; en deçà → 221-20 (peines plus faibles).",
+        "Vérifier soigneusement l'EXISTENCE D'UNE CIRCONSTANCE LIMITATIVEMENT ÉNUMÉRÉE : à défaut, retomber sur les blessures involontaires de droit commun (art. 222-19 C.P.)."
+      ],
+      "notes_audit": "Loi n° 2025-622 du 9 juillet 2025. Recouper avec le cahier MAJ SDCP. Quantum à vérifier sur Légifrance."
     },
     {
       "id": "CP-MAJ2025-03",
       "fascicule": "F03",
-      "verification": "pending_cahier_maj",
+      "verification": "draft_loi_2025_622",
       "titre": "LES BLESSURES ROUTIÈRES AVEC ITT INFÉRIEURE OU ÉGALE À TROIS MOIS",
-      "accroche": "TODO: fascicule MAJ 2025 — art. 221-20 C.P.",
+      "accroche": "Article 221-20 du code pénal (loi n° 2025-622 du 9 juillet 2025) — version « légère » du délit de blessures routières, applicable lorsque l'incapacité totale de travail est ≤ 3 mois.",
       "element_legal": {
-        "article": "221-20 C.P.",
-        "formulation_exacte": "TODO: texte officiel fascicule."
+        "article": "Art. 221-20 C.P. (loi n° 2025-622 du 9 juillet 2025)",
+        "formulation_exacte": "Constitue le délit de blessures routières le fait, par un conducteur d'un véhicule terrestre à moteur, de causer involontairement à autrui une incapacité totale de travail inférieure ou égale à trois mois dans l'une des circonstances limitativement énumérées par la loi."
       },
-      "element_materiel": { "points": [] },
-      "element_moral": { "titre": "TODO", "texte": "TODO" },
-      "circonstances_aggravantes": [{ "degre": "TODO" }],
-      "repression": [],
-      "tentative": "TODO",
-      "complicite": "TODO",
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE DE CONDUITE D'UN VÉHICULE TERRESTRE À MOTEUR",
+            "sous_points": [
+              "Identique à l'art. 221-18 / 221-19 C.P."
+            ]
+          },
+          {
+            "titre": "DES BLESSURES ENTRAÎNANT UNE ITT ≤ 3 MOIS",
+            "sous_points": [
+              "Détermination médicale de l'ITT.",
+              "Lien de causalité direct (art. 121-3 C.P.)."
+            ]
+          },
+          {
+            "titre": "UNE CIRCONSTANCE LIMITATIVEMENT ÉNUMÉRÉE",
+            "sous_points": [
+              "Liste identique aux articles 221-18 et 221-19 C.P."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "FAUTE D'IMPRUDENCE QUALIFIÉE",
+        "texte": "Idem 221-19 C.P. — faute d'imprudence, de négligence ou manquement à une obligation de sécurité, en présence d'une circonstance aggravante."
+      },
+      "circonstances_aggravantes": [
+        {
+          "degre": "AVEC UNE CIRCONSTANCE",
+          "description": "Une seule circonstance limitativement énumérée."
+        },
+        {
+          "degre": "AVEC DEUX CIRCONSTANCES OU PLUS",
+          "description": "Cumul de plusieurs circonstances — peines portées au maximum."
+        }
+      ],
+      "repression": [
+        {
+          "qualification": "BLESSURES ROUTIÈRES ITT ≤ 3 MOIS (UNE CIRCONSTANCE)",
+          "article": "Art. 221-20 C.P.",
+          "peines": "3 ans d'emprisonnement et 45 000 € d'amende (à vérifier sur Légifrance — texte définitif loi 2025-622)."
+        },
+        {
+          "qualification": "BLESSURES ROUTIÈRES ITT ≤ 3 MOIS (DEUX CIRCONSTANCES OU PLUS)",
+          "article": "Art. 221-20 C.P.",
+          "peines": "5 ans d'emprisonnement et 75 000 € d'amende (à vérifier sur Légifrance)."
+        }
+      ],
+      "tentative": "NON",
+      "complicite": "OUI",
       "maj_2025": true,
       "badge_maj": "MAJ 2025",
-      "pieges_examen": [],
-      "notes_audit": ""
+      "pieges_examen": [
+        "Sans circonstance aggravante : retomber sur l'art. 222-20 C.P. (blessures involontaires droit commun, peines plus faibles).",
+        "Bien fixer la durée d'ITT par expertise médicale — frontière critique entre 221-19 et 221-20.",
+        "Le délai de prescription suit le régime délictuel (6 ans à compter des faits, art. 8 C.P.P.)."
+      ],
+      "notes_audit": "Loi n° 2025-622 du 9 juillet 2025. Quantum à vérifier sur Légifrance avant publication finale."
+    },
+    {
+      "id": "F02-VOL",
+      "fascicule": "F02",
+      "verification": "complete",
+      "titre": "LE VOL",
+      "accroche": "Le vol est la soustraction frauduleuse de la chose d'autrui (art. 311-1 C.P.). Sa simplicité de définition contraste avec la richesse des qualifications aggravées (vol simple, avec arme, avec violence, en bande organisée, par effraction, dans un local d'habitation, etc.).",
+      "element_legal": {
+        "article": "Art. 311-1 C.P. (définition) — Art. 311-3 C.P. (répression)",
+        "formulation_exacte": "Le vol est la soustraction frauduleuse de la chose d'autrui."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "LA SOUSTRACTION",
+            "sous_points": [
+              "Acte matériel d'appréhension permettant à l'auteur de se comporter, même momentanément, en maître de la chose.",
+              "La soustraction peut être réalisée par tout procédé : appréhension manuelle, déplacement, détournement, prélèvement informatique."
+            ]
+          },
+          {
+            "titre": "LA CHOSE",
+            "sous_points": [
+              "Doit être un bien corporel mobilier. La jurisprudence admet le vol d'électricité, d'informations numériques copiées, etc."
+            ]
+          },
+          {
+            "titre": "D'AUTRUI",
+            "sous_points": [
+              "La chose ne doit pas appartenir à l'auteur. Le vol entre époux est en principe exclu (art. 311-12 C.P.) sauf exceptions (objets indispensables à la vie quotidienne, contexte de séparation)."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INTENTION FRAUDULEUSE",
+        "texte": "L'auteur doit avoir conscience de soustraire une chose qui ne lui appartient pas et la volonté de se comporter, même momentanément, en maître de la chose (animus domini). L'intention de restituer ne supprime pas le vol (Cass. crim. 19 février 1959)."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "VOL SIMPLE", "description": "3 ans / 45 000 €." },
+        { "degre": "AVEC UNE CIRCONSTANCE AGGRAVANTE (art. 311-4 C.P.)", "description": "5 ans / 75 000 € (réunion, violences n'ayant entraîné aucune ITT, dans un véhicule de transport en commun, etc.)." },
+        { "degre": "DANS UN LOCAL D'HABITATION OU AVEC USAGE DE LA QUALITÉ D'AGENT PUBLIC (311-4-1)", "description": "7 ans / 100 000 €." },
+        { "degre": "AVEC ARME OU EN BANDE ORGANISÉE (311-8 / 311-9)", "description": "Crime — 20 ans de réclusion criminelle." }
+      ],
+      "repression": [
+        {
+          "qualification": "VOL SIMPLE",
+          "article": "Art. 311-3 C.P.",
+          "peines": "3 ans d'emprisonnement et 45 000 € d'amende."
+        }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Distinguer le vol (soustraction) de l'abus de confiance (remise préalable détournée) et de l'escroquerie (remise obtenue par tromperie).",
+        "Vérifier l'absence d'autorisation expresse ou tacite du propriétaire.",
+        "Cass. crim. 4 mars 2008 : la soustraction est consommée dès que l'auteur appréhende la chose, même si elle n'a pas quitté les lieux."
+      ],
+      "notes_audit": "Article phare. Voir aussi la fiche markdown content/infractions/vol.md (frontmatter F02)."
+    },
+    {
+      "id": "F01-MEURTRE",
+      "fascicule": "F01",
+      "verification": "complete",
+      "titre": "LE MEURTRE",
+      "accroche": "Le meurtre est le fait de donner volontairement la mort à autrui (art. 221-1 C.P.). Crime fondateur du droit pénal spécial, il se distingue de l'assassinat (avec préméditation), du parricide aggravé et de l'empoisonnement.",
+      "element_legal": {
+        "article": "Art. 221-1 C.P.",
+        "formulation_exacte": "Le fait de donner volontairement la mort à autrui constitue un meurtre. Il est puni de trente ans de réclusion criminelle."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE POSITIF DE VIOLENCE",
+            "sous_points": [
+              "Acte matériel volontaire portant atteinte à la vie : coups, tirs, strangulation, défenestration, etc.",
+              "L'omission ne constitue pas un meurtre (Cass. crim. 27 mai 1925, affaire de la séquestrée de Poitiers) : retomber sur la non-assistance à personne en péril (223-6) ou la privation d'aliments (227-15)."
+            ]
+          },
+          {
+            "titre": "SUR LA PERSONNE D'AUTRUI",
+            "sous_points": [
+              "La victime doit être une personne vivante au moment de l'acte.",
+              "Sur un cadavre : pas de meurtre, mais éventuellement atteinte à l'intégrité du cadavre (225-17)."
+            ]
+          },
+          {
+            "titre": "UN LIEN DE CAUSALITÉ ENTRE L'ACTE ET LE DÉCÈS",
+            "sous_points": [
+              "La causalité doit être directe et certaine (art. 121-3 C.P.).",
+              "Expertise médico-légale impérative."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INTENTION HOMICIDE (animus necandi)",
+        "texte": "L'auteur doit avoir voulu donner la mort. La volonté de blesser gravement ne suffit pas — retomber alors sur les violences ayant entraîné la mort sans intention de la donner (art. 222-7 C.P.). L'intention se déduit des circonstances : arme utilisée, partie du corps visée, nombre de coups, propos antérieurs."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "MEURTRE SIMPLE (221-1)", "description": "30 ans de réclusion criminelle." },
+        { "degre": "MEURTRE AGGRAVÉ (221-4)", "description": "Réclusion criminelle à perpétuité (mineur 15 ans, ascendant, magistrat, dépositaire AP, viol, vol, etc.)." },
+        { "degre": "ASSASSINAT (221-3)", "description": "Réclusion à perpétuité — meurtre avec préméditation ou guet-apens." }
+      ],
+      "repression": [
+        { "qualification": "MEURTRE SIMPLE", "article": "Art. 221-1 C.P.", "peines": "30 ans de réclusion criminelle." }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "L'animus necandi se déduit des circonstances objectives : un seul coup de couteau au cœur peut suffire ; un coup de poing au visage suit la qualification de violences mortelles (222-7).",
+        "Distinguer meurtre (intention dolus directus) / violences mortelles (dolus praeter intentionem) / homicide involontaire (faute).",
+        "L'aggravation par préméditation transforme le meurtre en assassinat — peines à perpétuité."
+      ],
+      "notes_audit": "Voir tableau récap F01 P1."
+    },
+    {
+      "id": "F01-VIOL",
+      "fascicule": "F01",
+      "verification": "complete",
+      "titre": "LE VIOL",
+      "accroche": "Le viol est tout acte de pénétration sexuelle ou bucco-génital/bucco-anal commis sur la personne d'autrui ou sur la personne de l'auteur, par violence, contrainte, menace ou surprise (art. 222-23 C.P.). Crime de droit commun puni de 15 ans, aggravé jusqu'à 30 ans (art. 222-24).",
+      "element_legal": {
+        "article": "Art. 222-23 C.P. (définition) — Art. 222-23-1 C.P. (répression : 15 ans)",
+        "formulation_exacte": "Tout acte de pénétration sexuelle, de quelque nature qu'il soit, ou tout acte bucco-génital ou bucco-anal commis sur la personne d'autrui ou sur la personne de l'auteur par violence, contrainte, menace ou surprise est un viol."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE DE PÉNÉTRATION SEXUELLE OU UN ACTE BUCCO-GÉNITAL OU BUCCO-ANAL",
+            "sous_points": [
+              "Pénétration vaginale, anale ou buccale — ou acte bucco-génital/bucco-anal depuis la loi du 21 avril 2021.",
+              "Peu importe l'instrument : sexe, doigt, objet."
+            ]
+          },
+          {
+            "titre": "COMMIS SUR LA PERSONNE DE LA VICTIME OU SUR LA PERSONNE DE L'AUTEUR",
+            "sous_points": [
+              "Loi du 21 avril 2021 : la fellation imposée par la victime à l'auteur est désormais un viol (l'auteur est le pénétré)."
+            ]
+          },
+          {
+            "titre": "UNE ABSENCE DE CONSENTEMENT",
+            "sous_points": [
+              "Caractérisée par violence, contrainte (physique ou morale), menace ou surprise.",
+              "Pour les mineurs de 15 ans avec un majeur ayant 5 ans d'écart : la non-consentement est légalement présumée (222-23-1)."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INTENTION D'IMPOSER UN ACTE SEXUEL SANS CONSENTEMENT",
+        "texte": "L'auteur doit avoir conscience de l'absence de consentement de la victime et la volonté d'imposer l'acte de nature sexuelle. La preuve s'établit par les circonstances : refus exprimé, recours à la force, exploitation d'un état d'inconscience."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "VIOL SIMPLE", "description": "15 ans de réclusion criminelle (222-23-1)." },
+        { "degre": "VIOL AGGRAVÉ (222-24)", "description": "20 ans (mutilation, mineur 15 ans, ascendant, etc.)." },
+        { "degre": "VIOL AYANT ENTRAÎNÉ LA MORT (222-25)", "description": "30 ans de réclusion criminelle." },
+        { "degre": "VIOL AVEC TORTURE OU ACTES DE BARBARIE (222-26)", "description": "Réclusion criminelle à perpétuité." }
+      ],
+      "repression": [
+        { "qualification": "VIOL", "article": "Art. 222-23-1 C.P.", "peines": "15 ans de réclusion criminelle." }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "L'absence de consentement n'a pas à être verbalisée par la victime — le défaut de consentement libre et éclairé suffit.",
+        "Articulation 222-23 / 222-23-1 / 222-23-2 : viol majeur, viol majeur sur mineur 15 ans, viol incestueux.",
+        "Cass. crim. 11 février 1992 : la pénétration sexuelle peut résulter d'un acte unique très bref."
+      ],
+      "notes_audit": "Voir aussi 227-25 (atteintes sexuelles sur mineur de 15 ans sans violence/contrainte/menace/surprise)."
+    },
+    {
+      "id": "F01-VIOLENCES",
+      "fascicule": "F01",
+      "verification": "complete",
+      "titre": "LES VIOLENCES VOLONTAIRES",
+      "accroche": "Les violences volontaires forment une famille d'infractions classées selon le résultat dommageable (mort sans intention de la donner, ITT > 8 jours, ITT ≤ 8 jours, sans ITT) et selon les circonstances aggravantes (qualité de la victime, arme, lien conjugal, etc.).",
+      "element_legal": {
+        "article": "Art. 222-7 à 222-13 C.P.",
+        "formulation_exacte": "Les violences sont punies en fonction de leurs résultats : mort sans intention de la donner (222-7), mutilation/infirmité permanente (222-9), ITT > 8 jours (222-11), ITT ≤ 8 jours (R. 624-1 / 222-13)."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE POSITIF DE VIOLENCE",
+            "sous_points": [
+              "Coups, blessures ou voies de fait (Cass. crim. : tout acte de nature à provoquer une atteinte à l'intégrité physique ou un trouble psychique).",
+              "L'acte peut être indirect : choc émotionnel violent (Cass. crim. 19 février 1892, voiture lancée vers un passant)."
+            ]
+          },
+          {
+            "titre": "UN RÉSULTAT DOMMAGEABLE",
+            "sous_points": [
+              "Détermine la qualification : mort, mutilation/infirmité permanente, ITT > 8 jours, ITT ≤ 8 jours, sans ITT.",
+              "L'ITT est constatée médicalement — c'est l'incapacité totale de travail au sens médical, indépendante de l'activité professionnelle."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INTENTION DE PORTER ATTEINTE À L'INTÉGRITÉ",
+        "texte": "L'auteur doit avoir conscience de commettre un acte qui va affecter l'intégrité physique et/ou psychique d'autrui. Le dol éventuel suffit ; en revanche, sans intention de blesser → atteintes involontaires (222-19, 222-20, R.625-2)."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "MORT SANS INTENTION DE LA DONNER (222-7)", "description": "15 ans de réclusion criminelle." },
+        { "degre": "MUTILATION OU INFIRMITÉ PERMANENTE (222-9)", "description": "10 ans / 150 000 €." },
+        { "degre": "ITT > 8 JOURS (222-11)", "description": "3 ans / 45 000 €." },
+        { "degre": "ITT ≤ 8 JOURS AVEC CIRCONSTANCE AGGRAVANTE (222-13)", "description": "3 ans / 45 000 € (qualité victime, arme, conjoint, etc.)." },
+        { "degre": "ITT ≤ 8 JOURS SANS CIRCONSTANCE AGGRAVANTE (R.624-1)", "description": "Contravention de 4e classe." }
+      ],
+      "repression": [
+        { "qualification": "VIOLENCES ITT > 8 JOURS", "article": "Art. 222-11 C.P.", "peines": "3 ans / 45 000 €." }
+      ],
+      "tentative": "OUI (en matière criminelle)",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "ITT = notion médicale (incapacité totale de travail au sens médical), indépendante de l'activité professionnelle.",
+        "La frontière 8 jours d'ITT est cruciale : 222-11 (délit) vs 222-13 / R.624-1 (avec ou sans aggravation).",
+        "Les circonstances aggravantes de 222-13 transforment une contravention en délit, modifiant le cadre procédural."
+      ],
+      "notes_audit": "Famille d'infractions extrêmement fréquente en GAV : maîtriser l'arborescence par résultat ET par circonstance aggravante."
+    },
+    {
+      "id": "F02-ESCROQUERIE",
+      "fascicule": "F02",
+      "verification": "complete",
+      "titre": "L'ESCROQUERIE",
+      "accroche": "L'escroquerie est le fait, soit par l'usage d'un faux nom ou d'une fausse qualité, soit par l'abus d'une qualité vraie, soit par l'emploi de manœuvres frauduleuses, de tromper une personne et de la déterminer ainsi à remettre des fonds, des valeurs ou un bien quelconque (art. 313-1 C.P.).",
+      "element_legal": {
+        "article": "Art. 313-1 C.P.",
+        "formulation_exacte": "L'escroquerie est le fait, soit par l'usage d'un faux nom ou d'une fausse qualité, soit par l'abus d'une qualité vraie, soit par l'emploi de manœuvres frauduleuses, de tromper une personne physique ou morale et de la déterminer ainsi, à son préjudice ou au préjudice d'un tiers, à remettre des fonds, des valeurs ou un bien quelconque, à fournir un service ou à consentir un acte opérant obligation ou décharge."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN MOYEN DE TROMPERIE",
+            "sous_points": [
+              "Quatre moyens limitatifs : usage d'un faux nom, usage d'une fausse qualité, abus d'une qualité vraie, emploi de manœuvres frauduleuses.",
+              "Les manœuvres exigent un acte extérieur (mise en scène, document falsifié, intervention d'un tiers complice) — un simple mensonge ne suffit pas (Cass. crim. 12 mai 1957, sauf au téléphone récent)."
+            ]
+          },
+          {
+            "titre": "UNE REMISE DE LA VICTIME",
+            "sous_points": [
+              "La remise doit être déterminée par la tromperie : lien causal essentiel.",
+              "Objet : fonds, valeurs, bien quelconque, fourniture de service, acte opérant obligation ou décharge."
+            ]
+          },
+          {
+            "titre": "AU PRÉJUDICE DE LA VICTIME OU D'UN TIERS",
+            "sous_points": [
+              "Le préjudice peut être moral ou matériel ; la jurisprudence retient même un préjudice purement éventuel."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INTENTION FRAUDULEUSE",
+        "texte": "L'auteur doit avoir conscience d'utiliser des moyens frauduleux et la volonté d'obtenir une remise. La bonne foi exclut l'infraction."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "ESCROQUERIE SIMPLE", "description": "5 ans / 375 000 €." },
+        { "degre": "ESCROQUERIE AGGRAVÉE (313-2)", "description": "7 ans / 750 000 € (autorité publique, appel public à l'épargne, victime vulnérable, en bande organisée 10 ans / 1 M€)." }
+      ],
+      "repression": [
+        { "qualification": "ESCROQUERIE SIMPLE", "article": "Art. 313-1 C.P.", "peines": "5 ans d'emprisonnement et 375 000 € d'amende." }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Manœuvres frauduleuses ≠ simple mensonge : exiger une mise en scène, un document, un tiers complice.",
+        "Distinguer escroquerie (remise par tromperie) / abus de confiance (remise préalable détournée) / vol (soustraction).",
+        "Très fréquent en escroquerie en bande organisée et en escroqueries en ligne (phishing, faux président)."
+      ],
+      "notes_audit": "Article phare F02. Voir aussi 313-5 (filouteries) et 313-6 (faux loto)."
+    },
+    {
+      "id": "F02-ABUS-CONFIANCE",
+      "fascicule": "F02",
+      "verification": "complete",
+      "titre": "L'ABUS DE CONFIANCE",
+      "accroche": "L'abus de confiance est le fait par une personne de détourner, au préjudice d'autrui, des fonds, des valeurs ou un bien quelconque qui lui ont été remis et qu'elle a acceptés à charge de les rendre, de les représenter ou d'en faire un usage déterminé (art. 314-1 C.P.).",
+      "element_legal": {
+        "article": "Art. 314-1 C.P.",
+        "formulation_exacte": "L'abus de confiance est le fait par une personne de détourner, au préjudice d'autrui, des fonds, des valeurs ou un bien quelconque qui lui ont été remis et qu'elle a acceptés à charge de les rendre, de les représenter ou d'en faire un usage déterminé."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UNE REMISE PRÉALABLE DE LA CHOSE",
+            "sous_points": [
+              "Remise volontaire et acceptée par l'auteur, en vertu d'un contrat, d'un mandat, d'un dépôt, etc.",
+              "La précarité de la détention est essentielle : l'auteur n'est pas propriétaire."
+            ]
+          },
+          {
+            "titre": "UN ACTE MATÉRIEL DE DÉTOURNEMENT",
+            "sous_points": [
+              "Refus de restituer, usage abusif, vente, dissimulation, dilapidation.",
+              "Le détournement est consommé dès l'inversion de possession (Cass. crim. 19 octobre 1971)."
+            ]
+          },
+          {
+            "titre": "AU PRÉJUDICE D'AUTRUI",
+            "sous_points": [
+              "Préjudice matériel ou moral, réel ou potentiel."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "CONSCIENCE DE LA PRÉCARITÉ ET DE L'OBLIGATION DE RESTITUTION",
+        "texte": "L'auteur doit avoir conscience de la précarité de sa détention et de l'obligation combinée de restituer ou d'utiliser conformément aux instructions reçues."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "ABUS DE CONFIANCE SIMPLE", "description": "5 ans / 375 000 €." },
+        { "degre": "ABUS DE CONFIANCE AGGRAVÉ (314-2)", "description": "7 ans / 750 000 € (préjudice institutionnel, victime vulnérable, mandat de justice, etc.)." }
+      ],
+      "repression": [
+        { "qualification": "ABUS DE CONFIANCE SIMPLE", "article": "Art. 314-1 C.P.", "peines": "5 ans d'emprisonnement et 375 000 € d'amende." }
+      ],
+      "tentative": "NON (jurisprudence constante)",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Pas de tentative possible (Cass. crim. 13 décembre 1995).",
+        "La remise doit avoir été VOLONTAIRE — sinon vol (soustraction) ou escroquerie (remise par tromperie).",
+        "Le moment du détournement détermine la consommation : inversion de la possession (refus de restituer après mise en demeure)."
+      ],
+      "notes_audit": "Article phare F02 — souvent en sujet avec un mandat de gestion, un mandat associatif ou un compte ouvert au nom d'un tiers."
+    },
+    {
+      "id": "F02-RECEL",
+      "fascicule": "F02",
+      "verification": "complete",
+      "titre": "LE RECEL",
+      "accroche": "Le recel est le fait de dissimuler, de détenir ou de transmettre une chose, ou de faire office d'intermédiaire afin de la transmettre, en sachant que cette chose provient d'un crime ou d'un délit (art. 321-1 C.P.). Constitue également un recel le fait, en connaissance de cause, de bénéficier, par tout moyen, du produit d'un crime ou d'un délit.",
+      "element_legal": {
+        "article": "Art. 321-1 C.P.",
+        "formulation_exacte": "Le recel est le fait de dissimuler, de détenir ou de transmettre une chose, ou de faire office d'intermédiaire afin de la transmettre, en sachant que cette chose provient d'un crime ou d'un délit."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN ACTE MATÉRIEL",
+            "sous_points": [
+              "Dissimuler, détenir, transmettre, faire office d'intermédiaire ou bénéficier du produit d'une infraction.",
+              "Le recel est une infraction continue (Cass. crim. 19 mars 1986) : la prescription ne court qu'à compter de la cessation de la détention."
+            ]
+          },
+          {
+            "titre": "L'OBJET DE L'ACTE",
+            "sous_points": [
+              "Une chose (corporelle ou incorporelle) provenant d'un crime ou d'un délit (l'infraction principale doit être démontrée).",
+              "Le recel d'argent, de fichiers numériques, ou de biens immatériels est admis."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "CONNAISSANCE DE L'ORIGINE FRAUDULEUSE",
+        "texte": "L'auteur doit avoir connaissance, au moment de l'acte, de l'origine frauduleuse de la chose. La connaissance peut être déduite des circonstances (prix anormalement bas, absence de facture, vente clandestine)."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "RECEL SIMPLE", "description": "5 ans / 375 000 €." },
+        { "degre": "RECEL AGGRAVÉ (321-2)", "description": "10 ans / 750 000 € (habitude, profession, bande organisée)." },
+        { "degre": "RECEL DE CRIME (321-4)", "description": "Peines portées à celles encourues pour le crime d'origine si l'auteur en avait connaissance." }
+      ],
+      "repression": [
+        { "qualification": "RECEL SIMPLE", "article": "Art. 321-1 C.P.", "peines": "5 ans d'emprisonnement et 375 000 € d'amende." }
+      ],
+      "tentative": "NON",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Infraction continue : prescription décalée à la cessation de la détention.",
+        "L'infraction d'origine doit être démontrée (au moins dans son principe), mais la condamnation de l'auteur principal n'est pas requise.",
+        "Distinguer recel (321-1) / blanchiment (324-1) / non-justification de ressources (321-6)."
+      ],
+      "notes_audit": "Article phare F02 — fréquemment en concours avec vol, escroquerie ou trafic de stupéfiants."
+    },
+    {
+      "id": "F03-CONDUITE-ALCOOL",
+      "fascicule": "F03",
+      "verification": "complete",
+      "titre": "LA CONDUITE EN ÉTAT ALCOOLIQUE (DÉLIT)",
+      "accroche": "Le délit de conduite en état alcoolique est constitué dès lors que la concentration d'alcool atteint 0,80 g/L de sang ou 0,40 mg/L d'air expiré (art. L. 234-1 du C.R.). En deçà (0,50 g/L sang ou 0,25 mg/L air), il s'agit d'une contravention de 4e classe (R. 234-1 C.R.).",
+      "element_legal": {
+        "article": "Art. L. 234-1 / I et V du C.R.",
+        "formulation_exacte": "Même en l'absence de tout signe d'ivresse manifeste, le fait de conduire un véhicule sous l'empire d'un état alcoolique caractérisé par une concentration d'alcool dans le sang égale ou supérieure à 0,80 gramme par litre, ou par une concentration d'alcool dans l'air expiré égale ou supérieure à 0,40 milligramme par litre, est puni de deux ans d'emprisonnement et de 4 500 € d'amende."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN CONDUCTEUR OU ACCOMPAGNATEUR D'ÉLÈVE CONDUCTEUR",
+            "sous_points": [
+              "Tout véhicule à moteur, mais aussi cycles et véhicules à traction animale.",
+              "Conducteur effectif (au volant, contact mis, vitesse engagée — Cass. crim. 23 mars 1994)."
+            ]
+          },
+          {
+            "titre": "TAUX DÉLICTUEL ATTEINT",
+            "sous_points": [
+              "≥ 0,80 g/L sang ou ≥ 0,40 mg/L air expiré.",
+              "Permis probatoire / TC : taux abaissé à 0,20 g/L sang ou 0,10 mg/L air."
+            ]
+          },
+          {
+            "titre": "LE MOYEN DE PREUVE",
+            "sous_points": [
+              "Éthylomètre homologué ou prise de sang.",
+              "Marges d'erreur intégrées (instruction commandement 10 avril 2019 ; Cass. crim. 26 mars 2019)."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "INFRACTION INTENTIONNELLE",
+        "texte": "L'auteur doit avoir consommé volontairement de l'alcool en sachant qu'il prendrait le volant (Cass. crim. 19 décembre 1994). L'infraction est intentionnelle au sens de l'art. 121-3 C.P."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "DÉLIT SIMPLE", "description": "2 ans / 4 500 €." },
+        { "degre": "AVEC RÉCIDIVE OU AGGRAVATIONS (L. 234-1-1, L. 234-2)", "description": "Peines doublées + sanctions complémentaires (annulation, immobilisation, confiscation)." }
+      ],
+      "repression": [
+        { "qualification": "CONDUITE ÉTAT ALCOOLIQUE — DÉLIT", "article": "Art. L. 234-1 / I C.R.", "peines": "2 ans d'emprisonnement et 4 500 € d'amende, suspension/annulation du permis, points retirés." }
+      ],
+      "tentative": "NON",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Contravention (R. 234-1) ≥ 0,50 g/L mais < 0,80 g/L — ne pas confondre avec le délit.",
+        "Permis probatoire et TC : taux abaissé.",
+        "Le contrôle préventif est autorisé (L. 234-9 C.R.) — ne pas exiger une infraction préalable.",
+        "Refus de se soumettre aux vérifications = délit autonome (L. 234-8 C.R.) — peines identiques."
+      ],
+      "notes_audit": "Article phare F03 — cumul fréquent avec délit de fuite, refus d'obtempérer ou homicide/blessures routiers."
+    },
+    {
+      "id": "F05-DETENTION-STUPS",
+      "fascicule": "F05",
+      "verification": "complete",
+      "titre": "LE TRANSPORT, LA DÉTENTION, L'OFFRE, LA CESSION, L'ACQUISITION OU L'EMPLOI ILLICITES DE STUPÉFIANTS",
+      "accroche": "L'article 222-37 al. 1 du Code pénal réprime de 10 ans d'emprisonnement et de 7 500 000 € d'amende toute opération illicite de transport, détention, offre, cession, acquisition ou emploi de stupéfiants. Distinguer impérativement de la simple détention pour usage personnel (222-39) et de l'usage (L. 3421-1 C.S.P.).",
+      "element_legal": {
+        "article": "Art. 222-37 al. 1 C.P.",
+        "formulation_exacte": "Le transport, la détention, l'offre, la cession, l'acquisition ou l'emploi illicites de stupéfiants sont punis de dix ans d'emprisonnement et de 7 500 000 euros d'amende."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "UN OU PLUSIEURS ACTES MATÉRIELS LIMITATIVEMENT ÉNUMÉRÉS",
+            "sous_points": [
+              "TRANSPORT : déplacement de stupéfiants sans autorisation — peut cumuler avec la détention (Cass. crim.).",
+              "DÉTENTION : possession matérielle ou indirecte (cache à proximité, codétention) — la détention illicite suppose son inscription dans un trafic, sinon retomber sur 222-39 ou L. 3421-1 C.S.P. (usage).",
+              "OFFRE / CESSION : remise à plusieurs personnes ou pour leur consommation collective.",
+              "ACQUISITION : achat ou réception en vue d'une revente ou d'un trafic.",
+              "EMPLOI : utilisation à toute fin autre que la consommation personnelle."
+            ]
+          },
+          {
+            "titre": "DES SUBSTANCES OU PLANTES CLASSÉES STUPÉFIANTS",
+            "sous_points": [
+              "Listes des arrêtés du ministre de la Santé (art. L. 5132-7 C.S.P.).",
+              "La désignation précise de la substance est nécessaire — analyse toxicologique à diligenter."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "CONSCIENCE D'AGIR DANS UN TRAFIC OU SANS DROIT",
+        "texte": "L'auteur doit avoir conscience de la nature stupéfiante de la substance et l'avoir manipulée dans un cadre illicite. La connaissance se déduit du conditionnement, de la quantité, du lieu de découverte ou des messages échangés."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "INFRACTION SIMPLE", "description": "10 ans / 7 500 000 €." },
+        { "degre": "BANDE ORGANISÉE (222-35 al. 2)", "description": "Réclusion criminelle à perpétuité ou 30 ans selon le rôle." },
+        { "degre": "CESSION À MINEUR DANS ÉTABLISSEMENT SCOLAIRE (222-39 al. 2)", "description": "10 ans / 7 500 000 €." }
+      ],
+      "repression": [
+        { "qualification": "DÉLIT SIMPLE", "article": "Art. 222-37 al. 1 C.P.", "peines": "10 ans d'emprisonnement et 7 500 000 € d'amende." }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Distinguer 222-37 (trafic / usage non personnel) / 222-39 (cession à personne déterminée pour conso perso) / L. 3421-1 C.S.P. (usage personnel).",
+        "Quantité, conditionnement, balance, sachets vides : indices objectifs du trafic.",
+        "Cumul fréquent avec 324-1 (blanchiment) et 450-1 (association de malfaiteurs)."
+      ],
+      "notes_audit": "Article phare F05 — base de la majorité des trafics constatés en GAV."
+    },
+    {
+      "id": "F07-PORT-ARME",
+      "fascicule": "F07",
+      "verification": "complete",
+      "titre": "LE PORT OU LE TRANSPORT SANS AUTORISATION OU SANS MOTIF LÉGITIME (CATÉGORIES A OU B)",
+      "accroche": "L'article 222-54 du Code pénal réprime le port ou le transport hors du domicile, sans autorisation ou sans motif légitime, des matériels de guerre, armes, éléments d'arme ou munitions des catégories A ou B. Délit puni de 5 ans d'emprisonnement et 75 000 € d'amende.",
+      "element_legal": {
+        "article": "Art. 222-54 C.P.",
+        "formulation_exacte": "Le port ou le transport, hors de son domicile, des matériels, armes, éléments d'arme et munitions de catégories A ou B sans autorisation ou sans motif légitime est puni de cinq ans d'emprisonnement et de 75 000 euros d'amende."
+      },
+      "element_materiel": {
+        "points": [
+          {
+            "titre": "PORT OU TRANSPORT",
+            "sous_points": [
+              "PORT : avoir l'arme sur soi, immédiatement disponible.",
+              "TRANSPORT : déplacement de l'arme dans un véhicule ou un contenant, hors disponibilité immédiate."
+            ]
+          },
+          {
+            "titre": "MATÉRIEL DE CATÉGORIE A OU B",
+            "sous_points": [
+              "Catégorie A : matériels de guerre interdits aux particuliers.",
+              "Catégorie B : armes soumises à autorisation préalable (armes de poing à feu, certaines armes longues semi-automatiques, etc.).",
+              "Définitions : R. 311-2 du C.S.I."
+            ]
+          },
+          {
+            "titre": "HORS DU DOMICILE",
+            "sous_points": [
+              "Le port à domicile reste libre (sous réserve d'une détention licite).",
+              "La voie publique, les véhicules, les lieux ouverts au public sont concernés."
+            ]
+          },
+          {
+            "titre": "SANS AUTORISATION OU SANS MOTIF LÉGITIME",
+            "sous_points": [
+              "Pour le port : autorisation obligatoire (très rare, ex. agents de surveillance).",
+              "Pour le transport : motif légitime nécessaire (transport tireur sportif vers stand homologué, retour d'achat avec facture, etc.)."
+            ]
+          }
+        ]
+      },
+      "element_moral": {
+        "titre": "VOLONTÉ DE PORTER OU TRANSPORTER + CONSCIENCE DE L'ABSENCE DE TITRE",
+        "texte": "L'auteur doit avoir conscience du caractère prohibé du port ou du transport sans autorisation. La connaissance de la catégorie de l'arme se déduit des éléments objectifs (apparence, marquages, contexte d'acquisition)."
+      },
+      "circonstances_aggravantes": [
+        { "degre": "PORT/TRANSPORT SIMPLE", "description": "5 ans / 75 000 €." },
+        { "degre": "DEUX PERSONNES OU PLUS (222-54 al. 2)", "description": "10 ans / 150 000 €." },
+        { "degre": "BANDE ORGANISÉE (222-54 al. 3)", "description": "Réclusion criminelle de 30 ans / 1 000 000 €." }
+      ],
+      "repression": [
+        { "qualification": "PORT/TRANSPORT SIMPLE", "article": "Art. 222-54 C.P.", "peines": "5 ans d'emprisonnement et 75 000 € d'amende." }
+      ],
+      "tentative": "OUI",
+      "complicite": "OUI",
+      "maj_2025": false,
+      "badge_maj": null,
+      "pieges_examen": [
+        "Distinguer port (arme sur soi, accessible) et transport (arme rangée, non accessible immédiatement).",
+        "Pour les armes C ou D listées : retomber sur L. 317-8 C.S.I. (cadre différent).",
+        "Le motif légitime se prouve par l'auteur (factures, licence de tir, autorisation préfectorale)."
+      ],
+      "notes_audit": "Article phare F07 — fréquemment associé à L. 234-1 C.R., 222-37 C.P. et 311-3 C.P. (vol)."
     }
   ],
   "migration_site": {

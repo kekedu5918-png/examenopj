@@ -128,6 +128,8 @@
     --ds-accent: #2563eb;
     --ds-success: #22c55e;
     --ds-warning: #f59e0b;
+    /* Alias historique (SiteBackground / hero) — aligné sur ds-bg-primary. */
+    --ex-canvas: var(--ds-bg-primary);
   }
   .dark {
     --ds-bg-primary: #0c1b33;
@@ -139,6 +141,7 @@
     --ds-accent: #3b82f6;
     --ds-success: #22c55e;
     --ds-warning: #fbbf24;
+    --ex-canvas: var(--ds-bg-primary);
   }
 
   ::selection {
@@ -278,20 +281,41 @@
 }
 
 /* ─────────────────────────────────────────────────────────
-   Typographie globale — hors @layer (priorité maximale dans la cascade CSS)
-   Écrase font-display sur h2/h3 quelle que soit la classe Tailwind explicite.
+   Typographie globale — défaut H2/H3 = DM Sans.
+   Placé dans @layer base pour que les utilitaires Tailwind (`font-display`,
+   `font-sans`, etc.) puissent surcharger explicitement ce défaut.
    h1 : reste Instrument Serif pour les pages hero/marketing.
    ───────────────────────────────────────────────────────── */
-h2,
-h3 {
-  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+@layer base {
+  h2,
+  h3 {
+    font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  }
 }
 
 /* Impression sujet blanc / rapport : masquer chrome site */
 @media print {
-  .print-hidden {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 14mm 16mm 14mm;
+  }
+
+  .print-hidden,
+  [data-print-hide],
+  body > header,
+  body > footer,
+  header[role='banner'],
+  footer[role='contentinfo'],
+  nav[aria-label='Navigation principale'] {
     display: none !important;
   }
+
+  html,
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
   .print-sujet-sheet {
     background: white !important;
     color: black !important;
@@ -300,5 +324,20 @@ h3 {
     color: black !important;
     border-color: #ccc !important;
     box-shadow: none !important;
+  }
+
+  /* Bloc imprimable de l'articulation : sortir du chrome de l'app pour A4 propre. */
+  #articulation-print-area {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    page-break-inside: auto;
+  }
+  #articulation-print-area article {
+    page-break-inside: avoid;
+    margin-bottom: 6mm;
   }
 }

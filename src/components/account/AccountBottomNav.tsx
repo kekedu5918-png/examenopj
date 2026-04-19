@@ -2,13 +2,15 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { BookOpen, LayoutDashboard, UserRound } from 'lucide-react';
+import { BookOpen, LayoutDashboard, LineChart, Search, UserRound } from 'lucide-react';
 
 import { cn } from '@/utils/cn';
 
 const links = [
   { href: '/dashboard/parcours', label: 'Parcours', Icon: LayoutDashboard },
-  { href: '/dashboard/courses', label: 'Cours', Icon: BookOpen },
+  { href: '/fondamentaux', label: 'Fondamentaux', Icon: BookOpen },
+  { href: '/dashboard/recherche', label: 'Rechercher', Icon: Search },
+  { href: '/dashboard/progression', label: 'Progrès', Icon: LineChart },
   { href: '/account', label: 'Compte', Icon: UserRound },
 ] as const;
 
@@ -16,11 +18,11 @@ const links = [
  * Navigation bas d’écran (mobile) — activable avec `NEXT_PUBLIC_ACCOUNT_BOTTOM_NAV=1`.
  */
 export function AccountBottomNav() {
+  const pathname = usePathname();
+
   if (process.env.NEXT_PUBLIC_ACCOUNT_BOTTOM_NAV !== '1') {
     return null;
   }
-
-  const pathname = usePathname();
 
   return (
     <nav
