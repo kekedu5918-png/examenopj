@@ -177,13 +177,13 @@
     --ij-text: #1a1a1a;
     --ij-text-muted: #5a5246;
     --ij-text-subtle: #7a7060;
-    --ij-primary: #1f2937;
-    --ij-accent: #a07728;
+    --ij-primary: #1a2847;
+    --ij-accent: #8b6b1f;
     --ij-accent-soft: #e8d9b2;
     --ij-success: #1f6b3a;
     --ij-warning: #a85d00;
     --ij-danger: #a02020;
-    --ij-focus-ring: rgba(160, 119, 40, 0.45);
+    --ij-focus-ring: rgba(139, 107, 31, 0.45);
   }
   .dark {
     --ij-bg: #0e1420;

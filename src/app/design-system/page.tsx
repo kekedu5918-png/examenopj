@@ -32,8 +32,8 @@ const TOKENS = [
   { name: '--ij-text', light: '#1A1A1A', dark: '#F2EFE6', role: 'Texte principal' },
   { name: '--ij-text-muted', light: '#5A5246', dark: '#B5AC97', role: 'Texte secondaire' },
   { name: '--ij-text-subtle', light: '#7A7060', dark: '#867E6C', role: 'Métadonnées' },
-  { name: '--ij-primary', light: '#1F2937', dark: '#F2EFE6', role: 'Encre primaire' },
-  { name: '--ij-accent', light: '#A07728', dark: '#D4A853', role: 'Or institutionnel' },
+  { name: '--ij-primary', light: '#1A2847', dark: '#F2EFE6', role: 'Encre primaire (marine institutionnel)' },
+  { name: '--ij-accent', light: '#8B6B1F', dark: '#D4A853', role: 'Or institutionnel (AA standard)' },
   { name: '--ij-accent-soft', light: '#E8D9B2', dark: '#3A2E14', role: 'Or sourdine' },
   { name: '--ij-success', light: '#1F6B3A', dark: '#4ADE80', role: 'Validation' },
   { name: '--ij-warning', light: '#A85D00', dark: '#FBBF24', role: 'Alerte' },
@@ -141,12 +141,9 @@ function Mockup({
       </p>
       <div style={{ marginTop: 22, display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
         {/*
-          Règle DS officielle : CTA `--ij-accent` (or institutionnel) ↦ texte
-          en "large text" WCAG (≥ 18pt normal OU ≥ 14pt bold = ≥ 18.66px bold).
-          Ratio mesuré : #FAF9F6 sur #A07728 = 3.86:1 → conforme AA "large".
-          En clair : tout bouton primary or DOIT être en `font-size: 19px+`
-          et `font-weight: 700+`. Sinon, utiliser un texte presque noir
-          (#1A1A1A) ou un fond accent plus sombre.
+          Avec `--ij-accent: #8B6B1F`, le ratio AA standard (≥ 4.5:1) est
+          atteint sur fond clair, donc plus aucune contrainte « large text »
+          sur les CTA accent : tailles UI standard (13-14px) acceptées.
         */}
         <button
           type='button'
@@ -155,11 +152,11 @@ function Mockup({
             background: accent,
             color: accentText,
             border: 'none',
-            padding: '12px 22px',
+            padding: '10px 18px',
             borderRadius: 6,
-            fontSize: 19,
-            fontWeight: 700,
-            letterSpacing: '0.005em',
+            fontSize: 13,
+            fontWeight: 600,
+            letterSpacing: '0.01em',
             cursor: 'default',
           }}
         >
@@ -172,10 +169,10 @@ function Mockup({
             background: 'transparent',
             color: text,
             border: `1px solid ${border}`,
-            padding: '12px 22px',
+            padding: '10px 18px',
             borderRadius: 6,
-            fontSize: 15,
-            fontWeight: 600,
+            fontSize: 13,
+            fontWeight: 500,
             cursor: 'default',
           }}
         >
@@ -267,7 +264,7 @@ export default function DesignSystemPage() {
             muted='#5A5246'
             border='#D8D3C4'
             surface='#F4F2EC'
-            accent='#A07728'
+            accent='#8B6B1F'
             accentText='#FAF9F6'
             scheme='light'
           />

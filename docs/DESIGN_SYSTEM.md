@@ -32,9 +32,8 @@ Direction artistique mise en place en **Phase 1** de la refonte. Voir
 | 3 | Tous les couples UI focusables ≥ **3:1** (WCAG AA non-text) | Idem |
 | 4 | Bordures fines = **1 px** avec `--ij-border` ; `--ij-border-strong` réservé aux séparations structurelles (sidebar, header, etc.) | Convention manuelle |
 | 5 | Accent or (`--ij-accent`) utilisé **avec parcimonie** : CTAs principaux, focus rings, états sélectionnés. Jamais en aplat étendu | Convention manuelle |
-| 6 | **CTA accent or** : texte clair (`--ij-bg`) doit être en "large text" WCAG (≥ 18pt normal OU ≥ 14pt bold = ≥ 19px bold). Sinon utiliser texte presque noir (`#1A1A1A`) ou assombrir l'accent. Ratio mesuré : `#FAF9F6` sur `#A07728` = 3.86:1 (AA large) | Test Playwright + axe-core sur `/design-system` |
-| 7 | Pas de gradients décoratifs sur les surfaces principales (réservés aux hero) | Convention manuelle |
-| 8 | Ombres : `shadow-ij-soft` par défaut, `shadow-ij-card` pour les cartes, `shadow-ij-elevated` pour les modales | Convention manuelle |
+| 6 | Pas de gradients décoratifs sur les surfaces principales (réservés aux hero) | Convention manuelle |
+| 7 | Ombres : `shadow-ij-soft` par défaut, `shadow-ij-card` pour les cartes, `shadow-ij-elevated` pour les modales | Convention manuelle |
 
 ---
 
@@ -52,13 +51,13 @@ Direction artistique mise en place en **Phase 1** de la refonte. Voir
 | `--ij-text` | `#1A1A1A` | Texte principal (16.4:1 ✓) |
 | `--ij-text-muted` | `#5A5246` | Texte secondaire (8.2:1 ✓) |
 | `--ij-text-subtle` | `#7A7060` | Métadonnées (5.1:1 ✓) |
-| `--ij-primary` | `#1F2937` | Encre primaire (boutons fonds) |
-| `--ij-accent` | `#A07728` | Or institutionnel (CTAs, focus) — 5.6:1 ✓ |
+| `--ij-primary` | `#1A2847` | Encre marine institutionnelle (≥ 13:1 ✓) |
+| `--ij-accent` | `#8B6B1F` | Or institutionnel (CTAs, focus) — AA standard, sans contrainte de taille |
 | `--ij-accent-soft` | `#E8D9B2` | Or léger (highlights) |
 | `--ij-success` | `#1F6B3A` | Validation (5.9:1 ✓) |
 | `--ij-warning` | `#A85D00` | Alerte (5.4:1 ✓) |
 | `--ij-danger` | `#A02020` | Erreur (6.1:1 ✓) |
-| `--ij-focus-ring` | `rgba(160,119,40,0.45)` | Anneau de focus (or translucide) |
+| `--ij-focus-ring` | `rgba(139,107,31,0.45)` | Anneau de focus (or translucide) |
 
 ### Dark mode (`.dark`)
 
