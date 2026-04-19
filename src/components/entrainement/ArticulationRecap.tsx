@@ -93,6 +93,11 @@ export function ArticulationRecap({
         />
       ) : null}
 
+      <div className='print:hidden'>
+        <p className='mb-3 max-w-xl text-xs leading-relaxed text-slate-500'>
+          Astuce : dans la fenêtre d’impression, décochez « En-têtes et pieds de page » pour un rendu propre.
+        </p>
+      </div>
       <div className='flex flex-wrap gap-3 print:hidden'>
         <button
           type='button'

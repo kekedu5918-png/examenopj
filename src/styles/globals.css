@@ -402,6 +402,6 @@
   }
   #articulation-print-area article {
     page-break-inside: avoid;
-    margin-bottom: 6mm;
+    margin-bottom: 2mm;
   }
 }

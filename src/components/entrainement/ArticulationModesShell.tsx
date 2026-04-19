@@ -23,7 +23,11 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
 
   return (
     <div className='space-y-8'>
-      <div className='flex flex-wrap gap-2 border-b border-white/10 pb-4'>
+      <nav
+        className='flex flex-wrap gap-2 border-b border-white/10 pb-4'
+        data-print-hide
+        aria-label='Modes d’articulation'
+      >
         {TABS.map((t) => (
           <button
             key={t.id}
@@ -40,7 +44,7 @@ export function ArticulationModesShell({ referenceEnqueteId, suggestedTitre }: P
             <span className='block text-[11px] opacity-80'>{t.hint}</span>
           </button>
         ))}
-      </div>
+      </nav>
 
       {tab === 'temps' ? (
         <ArticulationExercice referenceEnqueteId={referenceEnqueteId} suggestedTitre={suggestedTitre} />

@@ -68,5 +68,9 @@ test.describe('Impression /entrainement/articulation', () => {
         return el ? getComputedStyle(el).display : 'absent';
       });
     }).not.toBe('none');
+
+    /** Grille 2 colonnes conservée à l’impression : la classe utilitaire print: doit rester (non linéarisée en 1 col). */
+    const cartoucheGrid = page.locator('#articulation-print-area article .grid').first();
+    await expect(cartoucheGrid).toHaveClass(/print:grid-cols-\[130px_1fr\]/);
   });
 });
