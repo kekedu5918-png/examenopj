@@ -1,7 +1,7 @@
 'use client';
 
-import { useMemo } from 'react';
-import { Printer } from 'lucide-react';
+import { useMemo, useState } from 'react';
+import { FileText, Printer } from 'lucide-react';
 
 import { evaluerCartouchesParRessource } from '@/components/entrainement/articulation-check';
 import type { CartoucheData } from '@/components/entrainement/articulation-types';
@@ -36,6 +36,29 @@ export function ArticulationRecap({
   const dateStr = new Intl.DateTimeFormat('fr-FR', {
     dateStyle: 'long',
   }).format(new Date());
+
+  const [exporting, setExporting] = useState(false);
+
+  async function handleExportDocx() {
+    if (exporting) return;
+    setExporting(true);
+    try {
+      const [{ buildArticulationDocx }, { saveAs }] = await Promise.all([
+        import('@/lib/articulation-to-docx'),
+        import('file-saver'),
+      ]);
+      const blob = await buildArticulationDocx(
+        valides,
+        numeroProcedure ?? '',
+        titreArticulation,
+      );
+      const stamp = (numeroProcedure?.trim() || new Date().toISOString().slice(0, 10))
+        .replace(/[\\/:*?"<>|\s]+/g, '_');
+      saveAs(blob, `articulation_${stamp}.docx`);
+    } finally {
+      setExporting(false);
+    }
+  }
 
   return (
     <div className='space-y-8'>
@@ -85,6 +108,15 @@ export function ArticulationRecap({
         >
           <Printer className='size-4' aria-hidden />
           Imprimer / PDF
+        </button>
+        <button
+          type='button'
+          onClick={handleExportDocx}
+          disabled={exporting || valides.length === 0}
+          className='inline-flex items-center gap-2 rounded-lg border border-slate-500 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-60'
+        >
+          <FileText className='size-4' aria-hidden />
+          {exporting ? 'Génération…' : 'Exporter en Word'}
         </button>
       </div>
     </div>
