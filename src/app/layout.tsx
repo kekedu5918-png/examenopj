@@ -1,6 +1,13 @@
 import { PropsWithChildren } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { DM_Sans, Instrument_Serif, Inter, JetBrains_Mono } from 'next/font/google';
+import {
+  DM_Sans,
+  Fraunces,
+  Instrument_Serif,
+  Inter,
+  Inter_Tight,
+  JetBrains_Mono,
+} from 'next/font/google';
 
 import { AnalyticsProviders } from '@/components/analytics/AnalyticsProviders';
 import { FloatingQuickFlashcards } from '@/components/layout/FloatingQuickFlashcards';
@@ -51,6 +58,27 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ['400', '500', '600'],
 });
 
+/**
+ * Phase 1 — Direction artistique « Institut Judiciaire ».
+ * Fraunces (display) + Inter Tight (UI/body) cohabitent avec les fontes
+ * historiques (Inter, DM Sans, Instrument Serif) le temps que la migration
+ * des composants soit faite en Phase 1bis. Tout est self-host via next/font
+ * (pas de FOUT, pas de requête runtime vers Google Fonts).
+ */
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-fraunces',
+  weight: ['400', '500', '600', '700'],
+});
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter-tight',
+  weight: ['400', '500', '600', '700'],
+});
+
 const siteUrl = getSiteUrl();
 
 export const metadata: Metadata = {
@@ -95,7 +123,14 @@ export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html
       lang='fr'
-      className={cn(inter.variable, dmSans.variable, instrumentSerif.variable, jetbrainsMono.variable)}
+      className={cn(
+        inter.variable,
+        dmSans.variable,
+        instrumentSerif.variable,
+        jetbrainsMono.variable,
+        fraunces.variable,
+        interTight.variable,
+      )}
       suppressHydrationWarning
     >
       <head>

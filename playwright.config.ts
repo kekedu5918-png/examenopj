@@ -21,5 +21,11 @@ export default defineConfig({
     timeout: 180_000,
     stdout: 'pipe',
     stderr: 'pipe',
+    /**
+     * Phase 1 — autorise la page interne `/design-system` à se rendre en prod
+     * pour que le snapshot Playwright puisse l'attaquer. Variable lue par
+     * `src/app/design-system/page.tsx` ; sans elle, la page renvoie 404.
+     */
+    env: { ENABLE_DESIGN_SYSTEM: 'true' },
   },
 });

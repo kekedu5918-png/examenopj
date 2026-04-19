@@ -113,10 +113,10 @@
   }
 
   /*
-   * Design system OPJ — tokens sémantiques (--ds-*)
-   * Usage : préférer bg-ds-bg-primary, text-ds-text-muted, border-ds-border (Tailwind theme ds.*)
-   * + composants shell : InteriorPageShell, SectionTitle, GlassCard, SynthèsePattern (puces / tableaux).
-   * Inter via next/font dans layout.tsx.
+   * Design system OPJ — tokens sémantiques (--ds-*) [LEGACY]
+   * Conservés pour la compat des composants encore non migrés.
+   * Migration progressive vers --ij-* prévue en Phase 1bis.
+   * Usage actuel : bg-ds-bg-primary, text-ds-text-muted, border-ds-border (Tailwind theme ds.*)
    */
   :root {
     --ds-bg-primary: #ffffff;
@@ -142,6 +142,65 @@
     --ds-success: #22c55e;
     --ds-warning: #fbbf24;
     --ex-canvas: var(--ds-bg-primary);
+  }
+
+  /*
+   * ───────────────────────────────────────────────────────────────────────────
+   * Design system « Institut Judiciaire » (Phase 1) — tokens --ij-*
+   * ───────────────────────────────────────────────────────────────────────────
+   * Direction artistique : papier institutionnel + encre marine + or judiciaire.
+   *
+   * Règles d'or :
+   *   1. JAMAIS de pur blanc (#ffffff) ni de pur noir (#000000) en surface ou
+   *      en texte. Toujours --ij-bg / --ij-text.
+   *   2. Tous les contrastes texte/fond sont vérifiés ≥ 4.5:1 (WCAG AA texte
+   *      normal) et ≥ 3:1 pour les éléments UI / texte large.
+   *      Couvert par `src/styles/__tests__/ij-tokens.test.ts`.
+   *   3. Bordures fines (1px) avec --ij-border ; --ij-border-strong réservé aux
+   *      séparations structurelles (sidebar, header).
+   *   4. Accent or (--ij-accent) utilisé avec parcimonie : CTAs principaux,
+   *      focus rings, jamais en aplats étendus.
+   *
+   * Cohabitation : ces tokens coexistent avec --ds-* legacy. La migration
+   * composant-par-composant est tracée dans `docs/DESIGN_SYSTEM.md` et fera
+   * l'objet de la Phase 1bis.
+   *
+   * Exposition Tailwind : `colors.ij.*`, `boxShadow.ij-*`, `fontFamily.ij-*`
+   * dans tailwind.config.ts.
+   */
+  :root {
+    --ij-bg: #faf9f6;
+    --ij-surface: #f4f2ec;
+    --ij-surface-2: #edeae0;
+    --ij-border: #d8d3c4;
+    --ij-border-strong: #a89f87;
+    --ij-text: #1a1a1a;
+    --ij-text-muted: #5a5246;
+    --ij-text-subtle: #7a7060;
+    --ij-primary: #1f2937;
+    --ij-accent: #a07728;
+    --ij-accent-soft: #e8d9b2;
+    --ij-success: #1f6b3a;
+    --ij-warning: #a85d00;
+    --ij-danger: #a02020;
+    --ij-focus-ring: rgba(160, 119, 40, 0.45);
+  }
+  .dark {
+    --ij-bg: #0e1420;
+    --ij-surface: #161d2c;
+    --ij-surface-2: #1f2738;
+    --ij-border: #2a3145;
+    --ij-border-strong: #3d4660;
+    --ij-text: #f2efe6;
+    --ij-text-muted: #b5ac97;
+    --ij-text-subtle: #867e6c;
+    --ij-primary: #f2efe6;
+    --ij-accent: #d4a853;
+    --ij-accent-soft: #3a2e14;
+    --ij-success: #4ade80;
+    --ij-warning: #fbbf24;
+    --ij-danger: #f87171;
+    --ij-focus-ring: rgba(212, 168, 83, 0.55);
   }
 
   ::selection {

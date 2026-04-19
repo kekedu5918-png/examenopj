@@ -103,6 +103,28 @@ const config: Config = {
           success: 'var(--ds-success)',
           warning: 'var(--ds-warning)',
         },
+        /**
+         * Phase 1 — Design system « Institut Judiciaire ».
+         * Tokens consommables via `bg-ij-bg`, `text-ij-text-muted`,
+         * `border-ij-border`, etc. Cohabitation avec `ds.*` (legacy) pendant
+         * la migration Phase 1bis. Voir `docs/DESIGN_SYSTEM.md`.
+         */
+        ij: {
+          bg: 'var(--ij-bg)',
+          surface: 'var(--ij-surface)',
+          'surface-2': 'var(--ij-surface-2)',
+          border: 'var(--ij-border)',
+          'border-strong': 'var(--ij-border-strong)',
+          text: 'var(--ij-text)',
+          'text-muted': 'var(--ij-text-muted)',
+          'text-subtle': 'var(--ij-text-subtle)',
+          primary: 'var(--ij-primary)',
+          accent: 'var(--ij-accent)',
+          'accent-soft': 'var(--ij-accent-soft)',
+          success: 'var(--ij-success)',
+          warning: 'var(--ij-warning)',
+          danger: 'var(--ij-danger)',
+        },
       },
       boxShadow: {
         'ex-card': '0 1px 3px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)',
@@ -113,6 +135,11 @@ const config: Config = {
         'ex-glass': '0 4px 24px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06)',
         'ex-glass-hover': '0 8px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.09)',
         'ex-inset-top': 'inset 0 1px 0 rgba(255,255,255,0.08)',
+        /** Phase 1 — ombres douces Institut Judiciaire (light + dark friendly). */
+        'ij-soft': '0 1px 2px rgba(15, 20, 32, 0.04), 0 2px 8px rgba(15, 20, 32, 0.06)',
+        'ij-card': '0 2px 4px rgba(15, 20, 32, 0.06), 0 8px 24px rgba(15, 20, 32, 0.08)',
+        'ij-elevated': '0 4px 12px rgba(15, 20, 32, 0.10), 0 16px 48px rgba(15, 20, 32, 0.12)',
+        'ij-inset': 'inset 0 1px 0 rgba(255, 255, 255, 0.04)',
       },
       borderRadius: {
         lg: `var(--radius)`,
@@ -131,6 +158,15 @@ const config: Config = {
         body: ['var(--font-dm-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
         alt: ['var(--font-montserrat-alternates)'],
+        /** Phase 1 — Direction « Institut Judiciaire ». Migration des composants en Phase 1bis. */
+        'ij-display': ['var(--font-fraunces)', 'Georgia', 'ui-serif', 'serif'],
+        'ij-sans': [
+          'var(--font-inter-tight)',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+        'ij-mono': ['var(--font-jetbrains-mono)', 'ui-monospace', 'monospace'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
