@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "url": "http://127.0.0.1:3000/",
+    "capturedAt": "2026-04-19T21:20:00.000Z",
+    "lighthouseVersion": "11.7.1",
+    "commit": "d9688b3f34f5ed7e852fe665d33dd355b170041f",
+    "label": "before-2b",
+    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class"
+  },
+  "desktop": {
+    "performanceScore": 95,
+    "lcp": 1.431,
+    "cls": 0.0008,
+    "tbt": 0
+  },
+  "mobile": {
+    "performanceScore": 77,
+    "lcp": 4.89,
+    "cls": 0.0012,
+    "tbt": 22
+  }
+}
