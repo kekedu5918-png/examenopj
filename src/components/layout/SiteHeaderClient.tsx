@@ -1,6 +1,6 @@
 'use client';
 
-import { type ReactNode, useEffect, useId, useState } from 'react';
+import { type ReactNode, useEffect, useId, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
@@ -113,9 +113,17 @@ export function SiteHeaderClient({
     setStreakAtRisk(isStreakAtRisk());
   }, [pathname, initialStreak]);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    onScroll();
+  useLayoutEffect(() => {
+    const SCROLL_ENTER = 50;
+    const SCROLL_EXIT = 40;
+    const scrolledForY = (y: number, wasScrolled: boolean) =>
+      wasScrolled ? y > SCROLL_EXIT : y > SCROLL_ENTER;
+
+    const onScroll = () => {
+      setScrolled((prev) => scrolledForY(window.scrollY, prev));
+    };
+
+    setScrolled(scrolledForY(window.scrollY, false));
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
