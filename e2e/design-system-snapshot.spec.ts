@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test } from '@playwright/test';
+
+import { expect, test } from './fixtures';
 
 /**
  * Phase 1 — DS Institut Judiciaire.
@@ -26,9 +27,7 @@ test.describe('Design system Institut Judiciaire — page /design-system', () =>
       } catch {
         /* ignore */
       }
-      // `documentElement` peut être null sur about:blank au moment où l'init
-      // script s'exécute — chain optionnelle pour éviter un pageerror parasite.
-      document.documentElement?.classList.remove('dark');
+      // Verrou Phase 1 : le layout force `.dark` même si `theme=light`.
     });
   });
 

@@ -61,9 +61,9 @@ export default async function LoginPage({ searchParams = {} }: LoginPageProps) {
         ) : null}
         <OAuthSection />
         <LoginForm nextPath={nextPath} />
-        <p className='text-center text-sm text-ds-text-muted'>
+        <p className='text-center text-sm text-slate-300'>
           Pas encore de compte ?{' '}
-          <Link href='/inscription' className='text-gold-400 underline underline-offset-2'>
+          <Link href='/inscription' className='text-amber-200 underline underline-offset-2'>
             S&apos;inscrire gratuitement
           </Link>
         </p>

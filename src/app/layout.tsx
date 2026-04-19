@@ -124,6 +124,8 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html
       lang='fr'
       className={cn(
+        /** Verrou Phase 1bis : doit rester sur <html> à l’hydratation (sinon le script inline seul est effacé par React). */
+        'dark bg-examen-canvas',
         inter.variable,
         dmSans.variable,
         instrumentSerif.variable,
@@ -136,7 +138,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');var d=t==='light'?'light':'dark';document.documentElement.classList.toggle('dark',d==='dark');}catch(e){document.documentElement.classList.add('dark');}})();`,
+            __html: `(function(){try{document.documentElement.classList.add('dark');}catch(e){document.documentElement.classList.add('dark');}})();`,
           }}
         />
       </head>

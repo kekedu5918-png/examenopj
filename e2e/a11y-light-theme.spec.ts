@@ -1,14 +1,16 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect,test } from '@playwright/test';
+
+import { expect, test } from './fixtures';
 
 /**
- * A11y — thème clair sur parcours représentatifs (sans auth).
- * Complète la checklist manuelle « contrastes clair » documentée dans docs/TECH_DEBT.md.
+ * A11y — parcours représentatifs (sans auth) avec `localStorage.theme = 'light'`.
+ * Tant que le mode clair est verrouillé (Phase 1bis), le rendu reste en dark :
+ * on vérifie surtout qu’axe ne remonte pas de régressions sur ces URLs.
  */
 async function expectNoSeriousA11yViolations(page: import('@playwright/test').Page, path: string) {
   const results = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa']).analyze();
   const serious = results.violations.filter((v) => v.impact === 'serious' || v.impact === 'critical');
-  expect(serious, `a11y clair ${path}: ${serious.map((v) => v.id).join(', ')}`).toEqual([]);
+  expect(serious, `a11y ${path}: ${serious.map((v) => v.id).join(', ')}`).toEqual([]);
 }
 
 test.beforeEach(async ({ page }) => {
@@ -18,11 +20,10 @@ test.beforeEach(async ({ page }) => {
     } catch {
       /* ignore */
     }
-    document.documentElement.classList.remove('dark');
   });
 });
 
-test.describe('Thème clair — axe (pages clés)', () => {
+test.describe('A11y — pages clés (préférence light persistée, rendu dark verrouillé)', () => {
   test('connexion', async ({ page }) => {
     await page.goto('/login');
     await expect(page.locator('body')).toBeVisible();

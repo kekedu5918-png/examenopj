@@ -194,7 +194,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       <GlassCard radius='3xl' topGlow className='mb-8 space-y-4 p-6' padding=''>
         <div className='flex flex-col gap-4 lg:flex-row lg:items-end'>
           <div className='min-w-0 flex-1 space-y-2'>
-            <label htmlFor='inf-search' className='text-sm font-medium text-ds-text-primary'>
+            <label htmlFor='inf-search' className='text-sm font-medium text-slate-100'>
               Rechercher une infraction
             </label>
             <input
@@ -203,18 +203,18 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder='Ex. : extorsion, 223-1, vol…'
-              className='w-full rounded-xl border border-ds-border bg-ds-bg-secondary px-4 py-3 text-ds-text-primary outline-none placeholder:text-ds-text-muted focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 dark:border-white/10 dark:bg-navy-900/80'
+              className='w-full rounded-xl border border-ds-border bg-ds-bg-secondary px-4 py-3 text-slate-100 outline-none placeholder:text-slate-500 focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 dark:border-white/10 dark:bg-navy-900/80'
             />
           </div>
           <div className='w-full shrink-0 space-y-1 lg:w-56'>
-            <label htmlFor='inf-strate' className='text-xs font-medium text-ds-text-muted'>
+            <label htmlFor='inf-strate' className='text-xs font-medium text-slate-300'>
               Probabilité à l’examen
             </label>
             <select
               id='inf-strate'
               value={prioriteTier}
               onChange={(e) => setPrioriteTier(e.target.value as RecapPriorite | 'all')}
-              className='w-full rounded-xl border border-ds-border bg-ds-bg-secondary px-3 py-3 text-sm text-ds-text-primary outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 dark:border-white/10 dark:bg-navy-900/90'
+              className='w-full rounded-xl border border-ds-border bg-ds-bg-secondary px-3 py-3 text-sm text-slate-100 outline-none focus:border-amber-500/40 focus:ring-2 focus:ring-amber-500/20 dark:border-white/10 dark:bg-navy-900/90'
             >
               <option value='all'>Toutes (ordre du programme officiel)</option>
               <option value='core'>Uniquement prioritaires</option>
@@ -224,8 +224,8 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
           </div>
         </div>
         <div>
-          <p className='mb-2 text-xs font-medium text-ds-text-muted'>Famille d’infractions</p>
-          <p className='mb-2 text-[11px] text-ds-text-muted'>Coche une ou plusieurs familles pour restreindre la liste.</p>
+          <p className='mb-2 text-xs font-medium text-slate-300'>Famille d’infractions</p>
+          <p className='mb-2 text-[11px] text-slate-300'>Coche une ou plusieurs familles pour restreindre la liste.</p>
           <div className='flex flex-wrap gap-2'>
             {INFRACTION_FAMILY_OPTIONS.map((opt) => (
               <button
@@ -236,7 +236,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
                 className={`rounded-xl border px-3 py-2 text-left text-sm font-medium transition ${
                   familyFilter === opt.id
                     ? 'border-rose-500/50 bg-rose-500/15 text-rose-50'
-                    : 'border-ds-border bg-ds-bg-primary/50 text-ds-text-muted hover:border-ds-border dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:border-white/20'
+                    : 'border-ds-border bg-ds-bg-primary/50 text-ds-text-muted hover:border-ds-border dark:border-white/10 dark:bg-white/[0.03] dark:text-slate-300 dark:hover:border-white/20'
                 }`}
               >
                 {opt.label}
@@ -244,7 +244,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             ))}
           </div>
         </div>
-        <p className='flex flex-wrap items-center gap-2 text-sm text-ds-text-muted'>
+        <p className='flex flex-wrap items-center gap-2 text-sm text-slate-300'>
           <BookOpen className='h-4 w-4 text-amber-400/80' aria-hidden />
           <span>
             {filtered.length} infraction{filtered.length > 1 ? 's' : ''}
@@ -330,8 +330,8 @@ function InfractionsListView({
               className='overflow-hidden rounded-2xl border border-ds-border border-b-0 bg-ds-bg-secondary/70 dark:border-white/10 dark:border-b-0 dark:bg-navy-950/40'
             >
               <AccordionTrigger className='px-4 py-3 text-left text-base hover:no-underline'>
-                <span className='font-sans font-semibold text-ds-text-primary'>{g.triggerTitle}</span>
-                <span className='ml-2 shrink-0 text-xs font-normal text-ds-text-muted'>({g.items.length})</span>
+                <span className='font-sans font-semibold text-slate-100'>{g.triggerTitle}</span>
+                <span className='ml-2 shrink-0 text-xs font-normal text-slate-300'>({g.items.length})</span>
               </AccordionTrigger>
               <AccordionContent className='px-3 pb-4 pt-0'>
                 <div className='space-y-3'>

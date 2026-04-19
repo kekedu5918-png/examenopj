@@ -23,12 +23,12 @@ export const metadata: Metadata = {
 export default function EnquetesHubPage() {
   return (
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.coursHub} pad='default'>
-      <nav className='mb-6 text-sm text-gray-500'>
-        <Link href='/entrainement' className='text-blue-400 hover:text-blue-300'>
+      <nav className='mb-6 text-sm text-slate-300'>
+        <Link href='/entrainement' className='text-examen-ink hover:opacity-90'>
           Entraînement
         </Link>
         <span className='mx-2'>/</span>
-        <span className='text-gray-400'>Enquêtes</span>
+        <span className='text-examen-ink'>Enquêtes</span>
       </nav>
       <SectionTitle
         badge='FORMATION'
@@ -43,17 +43,17 @@ export default function EnquetesHubPage() {
 
       <GlassCard className='mb-10 space-y-3 p-6' padding=''>
         <p className='font-sans text-sm font-bold text-white'>Pourquoi cette rubrique</p>
-        <p className='text-sm leading-relaxed text-gray-400'>
-          Les enquêtes fictives condensent le présentiel : <strong className='text-gray-200'>sujet</strong>,{' '}
-          <strong className='text-gray-200'>procédure</strong> et{' '}
-          <strong className='text-gray-200'>rédaction</strong> sous contrainte — le même geste que le jour J.
+        <p className='text-sm leading-relaxed text-slate-300'>
+          Les enquêtes fictives condensent le présentiel : <strong className='text-slate-100'>sujet</strong>,{' '}
+          <strong className='text-slate-100'>procédure</strong> et{' '}
+          <strong className='text-slate-100'>rédaction</strong> sous contrainte — le même geste que le jour J.
         </p>
         <div className='flex flex-wrap gap-3 pt-1 text-sm'>
-          <Link href='/epreuves' className='text-blue-300 underline-offset-4 hover:underline'>
+          <Link href='/epreuves' className='text-examen-ink underline-offset-4 hover:underline'>
             Détail des 3 épreuves
           </Link>
-          <span className='text-gray-600'>·</span>
-          <Link href='/entrainement/articulation' className='text-blue-300 underline-offset-4 hover:underline'>
+          <span className='text-slate-400'>·</span>
+          <Link href='/entrainement/articulation' className='text-examen-ink underline-offset-4 hover:underline'>
             Articulation interactive
           </Link>
         </div>

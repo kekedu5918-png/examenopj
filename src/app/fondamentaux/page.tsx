@@ -37,7 +37,7 @@ export default async function FondamentauxPage() {
 
       <GlassCard className='mb-10 p-5' padding='' topGlow>
         <p className='text-sm font-semibold text-white'>Comment lire cette rubrique</p>
-        <ul className='mt-3 list-inside list-disc space-y-1 text-sm text-slate-400'>
+        <ul className='mt-3 list-inside list-disc space-y-1 text-sm text-slate-300'>
           <li>Chaque fiche va droit au but : repères d’examen, pièges, méthode.</li>
           <li>Le contenu détaillé est structuré en interne pour garantir la justesse ; vous voyez seulement la synthèse utile le jour J.</li>
         </ul>

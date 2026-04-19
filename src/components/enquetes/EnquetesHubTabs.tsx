@@ -61,7 +61,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
       {/* Bulles fil conducteur */}
       <div className='rounded-3xl border border-white/[0.08] bg-gradient-to-br from-violet-950/30 via-navy-950/40 to-navy-950 p-6 md:p-8'>
         <p className='text-center text-[11px] font-bold uppercase tracking-[0.28em] text-violet-300/90'>Ordre document centre</p>
-        <p className='mx-auto mt-2 max-w-xl text-center text-sm text-slate-400'>
+        <p className='mx-auto mt-2 max-w-xl text-center text-sm text-slate-300'>
           En présentiel comme ici : enchaîner <strong className='text-slate-200'>Alpha</strong>, puis{' '}
           <strong className='text-slate-200'>Bravo</strong>, puis <strong className='text-slate-200'>Charlie</strong> avant
           d’explorer le reste du catalogue.
@@ -120,7 +120,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
             Synthèse rapide — les trois du parcours
           </caption>
           <thead>
-            <tr className='border-b border-white/10 text-xs uppercase tracking-wide text-slate-500'>
+            <tr className='border-b border-white/10 text-xs uppercase tracking-wide text-slate-300'>
               <th className='px-4 py-3 font-semibold'>Enquête</th>
               <th className='px-4 py-3 font-semibold'>Thème</th>
               <th className='px-4 py-3 font-semibold'>Cadre procédural</th>
@@ -144,7 +144,7 @@ function ParcoursFormation({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     </span>
                   </td>
                   <td className='max-w-[200px] px-4 py-3 text-slate-300'>{e.themeCourt ?? '—'}</td>
-                  <td className='px-4 py-3 text-slate-400'>{e.cadre}</td>
+                  <td className='px-4 py-3 text-slate-300'>{e.cadre}</td>
                   <td className='px-4 py-3'>
                     {e.premium ? (
                       <span className='rounded-full border border-amber-500/40 bg-amber-500/10 px-2 py-0.5 text-[11px] font-bold text-amber-200'>
@@ -246,7 +246,7 @@ function MemosPanel() {
               </span>
               <div className='min-w-0'>
                 <h3 className={cn('font-display text-lg font-bold', m.accent)}>{m.title}</h3>
-                <p className='mt-2 text-sm leading-relaxed text-slate-400'>{m.body}</p>
+                <p className='mt-2 text-sm leading-relaxed text-slate-300'>{m.body}</p>
                 <Link
                   href={m.href}
                   className='mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white underline-offset-2 hover:underline'
@@ -330,14 +330,14 @@ export function EnquetesHubTabs({ enquetes }: { enquetes: EnqueteMeta[] }) {
               <span
                 className={cn(
                   'flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border',
-                  active ? 'border-violet-400/40 bg-violet-500/20 text-violet-100' : 'border-white/10 bg-black/20 text-slate-400',
+                  active ? 'border-violet-400/40 bg-violet-500/20 text-violet-100' : 'border-white/10 bg-black/20 text-slate-300',
                 )}
               >
                 <Icon className='h-5 w-5' aria-hidden />
               </span>
               <span className='min-w-0'>
                 <span className='block text-sm font-bold text-white'>{t.label}</span>
-                <span className='text-xs text-slate-500'>{t.short}</span>
+                <span className='text-xs text-slate-300'>{t.short}</span>
               </span>
             </button>
           );
@@ -350,7 +350,7 @@ export function EnquetesHubTabs({ enquetes }: { enquetes: EnqueteMeta[] }) {
           <div className='space-y-6'>
             <div>
               <h2 className='font-display text-xl font-bold text-white md:text-2xl'>Catalogue & filtres</h2>
-              <p className='mt-2 max-w-2xl text-sm text-slate-500'>
+              <p className='mt-2 max-w-2xl text-sm text-slate-300'>
                 Toutes les planches et fiches péda — utilise les pastilles pour isoler flagrance, préliminaire ou
                 changement de cadre.
               </p>

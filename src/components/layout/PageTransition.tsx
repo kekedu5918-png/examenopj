@@ -10,14 +10,18 @@ export function PageTransition({ children }: PropsWithChildren) {
 
   return (
     <AnimatePresence mode='wait'>
+      {/*
+        Pas d’opacity sur l’entrée/sortie : pendant le spring, axe/playwright peut
+        mesurer un texte semi-transparent et signaler de faux échecs de contraste.
+      */}
       <motion.main
         key={pathname}
         id='contenu-principal'
         className='relative flex-1 scroll-mt-28'
         tabIndex={-1}
-        initial={shouldReduce ? {} : { opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={shouldReduce ? {} : { opacity: 0, y: -12 }}
+        initial={shouldReduce ? {} : { y: 16 }}
+        animate={{ y: 0 }}
+        exit={shouldReduce ? {} : { y: -12 }}
         transition={
           shouldReduce
             ? { duration: 0.2 }

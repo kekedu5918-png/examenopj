@@ -43,20 +43,20 @@ export default async function InscriptionPage() {
         )}
 
         {!alreadyConnectedNoPremium ? (
-          <p className='text-center text-sm text-ds-text-muted'>
+          <p className='text-center text-sm text-slate-300'>
             Déjà inscrit ?{' '}
-            <Link href='/login' className='text-blue-400 underline underline-offset-2'>
+            <Link href='/login' className='text-sky-300 underline underline-offset-2'>
               Se connecter
             </Link>
           </p>
         ) : null}
-        <p className='text-center text-xs text-ds-text-muted'>
+        <p className='text-center text-xs text-slate-400'>
           En vous inscrivant, vous acceptez nos{' '}
-          <Link href='/cgv' className='text-cyan-400 underline underline-offset-2'>
+          <Link href='/cgv' className='text-cyan-200 underline underline-offset-2'>
             CGV
           </Link>{' '}
           et nos{' '}
-          <Link href='/mentions-legales' className='text-cyan-400 underline underline-offset-2'>
+          <Link href='/mentions-legales' className='text-cyan-200 underline underline-offset-2'>
             mentions légales
           </Link>
           .

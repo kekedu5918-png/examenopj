@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 /**
  * Bug 0.1 — non-régression : à l'impression, le chrome du site (Header

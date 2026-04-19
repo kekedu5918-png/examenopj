@@ -107,7 +107,7 @@ export function QuizSetupView({
         </motion.div>
       </motion.header>
 
-      <div className='mb-8 flex flex-col items-center gap-2 text-center text-sm text-gray-500'>
+      <div className='mb-8 flex flex-col items-center gap-2 text-center text-sm text-slate-400'>
         {streakDays > 0 ? (
           <p
             className='inline-flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-4 py-1.5 text-amber-200'
@@ -145,7 +145,7 @@ export function QuizSetupView({
       </div>
 
       <div className='mx-auto max-w-3xl'>
-        <p className='mb-3 text-center text-sm font-medium text-gray-400'>Portée du quiz</p>
+        <p className='mb-3 text-center text-sm font-medium text-slate-300'>Portée du quiz</p>
         <div
           role='tablist'
           aria-label='Choisir la portée du quiz'
@@ -170,7 +170,7 @@ export function QuizSetupView({
                   'flex flex-1 items-center gap-3 rounded-xl px-3 py-3 text-left transition-colors sm:min-h-[4.25rem]',
                   active
                     ? 'bg-cyan-500/15 text-white ring-1 ring-cyan-500/40'
-                    : 'text-gray-400 hover:bg-white/[0.04] hover:text-gray-200',
+                    : 'text-slate-300 hover:bg-white/[0.04] hover:text-slate-100',
                 )}
               >
                 <span
@@ -183,7 +183,7 @@ export function QuizSetupView({
                 </span>
                 <span className='min-w-0'>
                   <span className='block text-sm font-semibold leading-tight'>{label}</span>
-                  <span className='mt-0.5 block text-xs text-gray-500'>{hint}</span>
+                  <span className='mt-0.5 block text-xs text-slate-400'>{hint}</span>
                 </span>
               </button>
             );
@@ -200,7 +200,7 @@ export function QuizSetupView({
             {mode === 'module' ? (
               <div>
                 <h3 className='text-sm font-semibold text-white'>Thème du programme</h3>
-                <p className='mt-1 text-sm text-gray-500'>
+                <p className='mt-1 text-sm text-slate-400'>
                   Sélectionnez le thème (les questions sont filtrées sur ce bloc pédagogique).
                 </p>
                 <label className='mt-4 block'>
@@ -227,7 +227,7 @@ export function QuizSetupView({
             {mode === 'domain' ? (
               <div>
                 <h3 className='text-sm font-semibold text-white'>Domaine</h3>
-                <p className='mt-1 text-sm text-gray-500'>Regroupe les questions par grande famille (étiquettes du jeu de données).</p>
+                <p className='mt-1 text-sm text-slate-400'>Regroupe les questions par grande famille (étiquettes du jeu de données).</p>
                 <fieldset className='mt-4 space-y-2'>
                   <legend className='sr-only'>Domaine</legend>
                   {(
@@ -245,7 +245,7 @@ export function QuizSetupView({
                       key={v}
                       className={cn(
                         'flex cursor-pointer items-center gap-3 rounded-xl border px-3 py-3 text-sm transition-colors',
-                        domain === v ? cls + ' bg-white/[0.06]' : 'border-white/10 text-gray-400 hover:border-white/15',
+                        domain === v ? cls + ' bg-white/[0.06]' : 'border-white/10 text-slate-300 hover:border-white/15',
                       )}
                     >
                       <input
@@ -266,7 +266,7 @@ export function QuizSetupView({
               <div className='flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between'>
                 <div>
                   <h3 className='text-sm font-semibold text-white'>Mélange complet</h3>
-                  <p className='mt-1 max-w-xl text-sm text-gray-500'>
+                  <p className='mt-1 max-w-xl text-sm text-slate-400'>
                     Toutes les questions disponibles sont mélangées (hors filtres exclus par le jeu de données).
                   </p>
                 </div>
@@ -278,7 +278,7 @@ export function QuizSetupView({
       </div>
 
       <div className='mx-auto mt-10 max-w-xl'>
-        <p className='mb-3 text-center text-sm font-medium text-gray-400'>Format des réponses</p>
+        <p className='mb-3 text-center text-sm font-medium text-slate-300'>Format des réponses</p>
         <div className='mb-8 flex flex-wrap justify-center gap-2'>
           <button
             type='button'
@@ -287,7 +287,7 @@ export function QuizSetupView({
               'inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors',
               answerMode === 'mcq'
                 ? 'bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-500/45'
-                : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]',
+                : 'bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]',
             )}
           >
             <ListOrdered className='h-4 w-4 opacity-80' aria-hidden />
@@ -300,14 +300,14 @@ export function QuizSetupView({
               'inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium transition-colors',
               answerMode === 'hardcore'
                 ? 'bg-amber-500/20 text-amber-200 ring-1 ring-amber-500/45'
-                : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]',
+                : 'bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]',
             )}
           >
             <Keyboard className='h-4 w-4 opacity-80' aria-hidden />
             Hardcore (saisie libre)
           </button>
         </div>
-        <p className='mb-3 text-center text-sm font-medium text-gray-400'>Nombre de questions</p>
+        <p className='mb-3 text-center text-sm font-medium text-slate-300'>Nombre de questions</p>
         <div className='flex flex-wrap justify-center gap-2'>
           {([10, 20, 30, 'all'] as const).map((n) => {
             const want = n === 'all' ? 999 : n;
@@ -323,7 +323,7 @@ export function QuizSetupView({
                   'rounded-xl px-5 py-2.5 text-sm font-medium transition-colors',
                   limit === n
                     ? 'bg-cyan-500/20 text-cyan-200 ring-1 ring-cyan-500/40'
-                    : 'bg-white/[0.04] text-gray-400 hover:bg-white/[0.08]',
+                    : 'bg-white/[0.04] text-slate-300 hover:bg-white/[0.08]',
                   disabledFreemium && 'cursor-not-allowed opacity-35',
                 )}
               >
@@ -342,7 +342,7 @@ export function QuizSetupView({
             mélangés contiennent en général plus de volume.
           </p>
         ) : (
-          <p className='text-center text-sm text-gray-400'>
+          <p className='text-center text-sm text-slate-300'>
             <span className='font-semibold tabular-nums text-cyan-300/90'>{poolPreviewLength}</span> question
             {poolPreviewLength > 1 ? 's' : ''} prête{poolPreviewLength > 1 ? 's' : ''} pour une série avec les réglages
             actuels (après mélange et plafond éventuel).
@@ -356,7 +356,7 @@ export function QuizSetupView({
         >
           Lancer le quiz →
         </button>
-        <Link href='/' className='text-sm text-slate-500 hover:text-slate-300'>
+        <Link href='/' className='text-sm text-slate-400 hover:text-slate-200'>
           ← Retour à l&apos;accueil
         </Link>
       </div>

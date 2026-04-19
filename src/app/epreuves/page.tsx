@@ -68,14 +68,14 @@ const epreuves = [
 export default function EpreuvesHubPage() {
   return (
     <InteriorPageShell maxWidth='7xl' glow={SHELL_GLOW.epreuvesHub} pad='default' innerClassName='md:pt-16'>
-        <nav className='mb-8 text-sm text-gray-500'>
-          <Link href='/' className='text-violet-400 hover:text-violet-300'>
+        <nav className='mb-8 text-sm text-slate-400'>
+          <Link href='/' className='text-violet-200 underline-offset-4 hover:text-violet-100 hover:underline'>
             Accueil
           </Link>
           <span className='mx-2' aria-hidden>
             /
           </span>
-          <span className='text-gray-400'>Épreuves</span>
+          <span className='text-slate-300'>Épreuves</span>
         </nav>
 
         <SectionTitle
@@ -127,13 +127,13 @@ export default function EpreuvesHubPage() {
                       </span>
                     </div>
                     <h2 className='mt-4 font-display text-xl font-bold text-white'>{e.titre}</h2>
-                    <p className='mt-1 text-sm text-gray-400'>
-                      Durée indicative : <strong className='text-gray-200'>{e.duree}</strong>
+                    <p className='mt-1 text-sm text-slate-300'>
+                      Durée indicative : <strong className='text-white'>{e.duree}</strong>
                     </p>
                     <p className='mt-2 text-sm text-gray-300'>{e.focus}</p>
                   </div>
                   <div className='flex flex-1 flex-col gap-3 p-6 pt-4'>
-                    <p className='text-xs font-bold uppercase tracking-wide text-gray-500'>Attendus correcteurs</p>
+                    <p className='text-xs font-bold uppercase tracking-wide text-slate-400'>Attendus correcteurs</p>
                     <ul className='flex-1 space-y-2 text-sm text-gray-300'>
                       {e.attendus.map((a) => (
                         <li key={a} className='flex gap-2'>
@@ -157,19 +157,19 @@ export default function EpreuvesHubPage() {
         </ul>
 
         <div className='mt-12 flex flex-wrap gap-4 text-sm'>
-          <Link href='/entrainement' className='text-violet-300 underline-offset-4 hover:underline'>
+          <Link href='/entrainement' className='text-violet-200 underline-offset-4 hover:text-violet-100 hover:underline'>
             Guide de révision OPJ
           </Link>
-          <span className='text-gray-600'>·</span>
-          <Link href='/enquetes' className='text-violet-300 underline-offset-4 hover:underline'>
+          <span className='text-slate-500'>·</span>
+          <Link href='/enquetes' className='text-violet-200 underline-offset-4 hover:text-violet-100 hover:underline'>
             Enquêtes planches
           </Link>
-          <span className='text-gray-600'>·</span>
-          <Link href='/entrainement/articulation' className='text-violet-300 underline-offset-4 hover:underline'>
+          <span className='text-slate-500'>·</span>
+          <Link href='/entrainement/articulation' className='text-violet-200 underline-offset-4 hover:text-violet-100 hover:underline'>
             Articulation interactive
           </Link>
-          <span className='text-gray-600'>·</span>
-          <Link href='/entrainement/recapitulatif' className='text-violet-300 underline-offset-4 hover:underline'>
+          <span className='text-slate-500'>·</span>
+          <Link href='/entrainement/recapitulatif' className='text-violet-200 underline-offset-4 hover:text-violet-100 hover:underline'>
             Récap infractions
           </Link>
         </div>

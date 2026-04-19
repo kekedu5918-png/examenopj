@@ -31,7 +31,10 @@ export function CookieConsentBanner() {
         <p className='text-sm text-slate-700 dark:text-slate-300'>
           Nous utilisons des cookies pour la mesure d’audience (PostHog) et améliorer le service. Refuser n’impacte pas
           votre accès au contenu.{' '}
-          <a href='/mentions-legales' className='font-semibold text-examen-accent underline'>
+          <a
+            href='/mentions-legales'
+            className='font-semibold text-blue-700 underline dark:text-sky-300'
+          >
             Mentions légales
           </a>
         </p>

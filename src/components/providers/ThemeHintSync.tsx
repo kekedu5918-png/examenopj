@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import { useTheme } from '@/components/providers/ThemeProvider';
+import { LIGHT_MODE_ENABLED, useTheme } from '@/components/providers/ThemeProvider';
 
 /**
  * Synchronise `theme_hint` (API `/api/user-preferences`) avec le thème local.
@@ -32,6 +32,11 @@ export function ThemeHintSync() {
 
       if (hint === 'light' || hint === 'dark') {
         setTheme(hint);
+        return;
+      }
+
+      if (!LIGHT_MODE_ENABLED) {
+        setTheme('dark');
         return;
       }
 

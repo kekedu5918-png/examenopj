@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures';
 
 /**
  * Bug 0.3 — non-régression React #310 sur `/dashboard/progression`.

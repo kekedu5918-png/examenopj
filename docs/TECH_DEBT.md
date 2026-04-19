@@ -18,6 +18,37 @@
 - Les sections **témoignages**, **tarifs** et **programme complet** sous le pli sont chargées en **code-splitting** (`next/dynamic`) depuis [`home-page-client.tsx`](../src/components/home/home-page-client.tsx) pour réduire le JS initial sur `/` et laisser le thread principal traiter plus tôt le hero (texte / carte quiz).
 - Si le LCP reste dominé par une police ou un visuel futur, ajouter `next/image` avec `priority` et dimensions explicites sur le premier visuel au-dessus de la ligne de flottaison.
 
+## Mode light verrouillé (Phase 1bis)
+
+Le site force **toujours** le thème sombre sur `<html class="dark">` jusqu’à la
+migration des composants legacy en variantes light/dark cohérentes.
+
+**Causes racines (préexistantes, non liées à la Phase 1 design tokens `--ij-*`) :**
+
+1. `ThemeHintSync` poussait un thème **clair** dès que `prefers-color-scheme`
+   était clair et qu’aucun `localStorage.theme` n’était défini.
+2. Nombre de composants **legacy** (tokens `ds.*`, `examen.*`, `text-white`,
+   etc.) **sans** branches `light:` — fond clair + texte clair = illisible.
+
+**Comportement actuel :** script inline dans [`layout.tsx`](../src/app/layout.tsx),
+`LIGHT_MODE_ENABLED = false` dans [`ThemeProvider.tsx`](../src/components/providers/ThemeProvider.tsx),
+toggle masqué ([`ThemeToggle.tsx`](../src/components/ui/ThemeToggle.tsx)).
+
+**À migrer avant réouverture du light** (ordre : [Phase 1bis dans DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md#plan-de-migration-phase-1bis)) :
+
+1. Composants shell : `InteriorPageShell`, `SectionTitle`, `GlassCard`, `Card`, `ButtonExamen`
+2. Pages d’accès : `/`, `/login`, `/inscription`, `/manage-subscription`
+3. Articulation : `/entrainement/articulation`, recap, print
+4. Cours : `/fondamentaux/*`, `/infractions/*`
+5. Dashboard : `/dashboard/*`
+6. Chrome global : `Header`, `Footer`, `FloatingQuickFlashcards`, `SiteHeaderClient`
+
+La page interne [`/design-system`](../src/app/design-system/page.tsx) reste lisible :
+le contenu est isolé sous `[data-design-system-root]` et les swatches light/dark
+sont rendus explicitement dans la maquette.
+
+---
+
 ## Accessibilité — checklist contrastes (thème clair)
 
 À valider manuellement après finition des tokens `ds` sur les écrans à fort trafic :
@@ -28,7 +59,7 @@
 4. `/login` et `/inscription` — cartes formulaire.
 5. `/infractions` — filtres et accordéon liste.
 
-Automatisation : [`e2e/a11y-light-theme.spec.ts`](../e2e/a11y-light-theme.spec.ts) (axe, thème clair forcé, filtres serious/critical alignés sur `smoke.spec.ts`).
+Automatisation : [`e2e/a11y-light-theme.spec.ts`](../e2e/a11y-light-theme.spec.ts) (axe avec `localStorage.theme = 'light'`, rendu dark verrouillé) ; [`e2e/light-mode-locked.spec.ts`](../e2e/light-mode-locked.spec.ts) (`.dark` + snapshots).
 
 ## Dépendances npm
 

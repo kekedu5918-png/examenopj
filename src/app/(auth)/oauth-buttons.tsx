@@ -88,7 +88,7 @@ export function OAuthSection({ disabled = false }: { disabled?: boolean }) {
           <span className='w-full border-t border-ds-border dark:border-slate-700/60' />
         </div>
         <div className='relative flex justify-center text-[11px] font-medium uppercase tracking-wider'>
-          <span className='bg-ds-bg-secondary px-2 text-ds-text-muted dark:bg-navy-950'>ou par e-mail</span>
+          <span className='bg-ds-bg-secondary px-2 text-slate-400 dark:bg-navy-950'>ou par e-mail</span>
         </div>
       </div>
     </div>

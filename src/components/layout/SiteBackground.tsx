@@ -1,11 +1,13 @@
 /**
- * Fond plein écran — variantes clair (institutionnel) et sombre (DA actuelle).
+ * Fond plein écran — DA sombre (canvas `--ex-canvas`).
+ * Variante claire retirée tant que le mode light est verrouillé (Phase 1bis) :
+ * voir `docs/TECH_DEBT.md` — réintroduire le gradient `slate-100…` avec
+ * `dark:hidden` quand `LIGHT_MODE_ENABLED` repasse à true.
  */
 export function SiteBackground() {
   return (
     <div className='pointer-events-none fixed inset-0 -z-10' aria-hidden>
-      <div className='absolute inset-0 bg-gradient-to-b from-slate-100 via-[#f1f5f9] to-[#e2e8f0] dark:hidden' />
-      <div className='absolute inset-0 hidden bg-[color:var(--ex-canvas)] dark:block'>
+      <div className='absolute inset-0 bg-[color:var(--ex-canvas)]'>
         <div
           className='absolute inset-0'
           style={{

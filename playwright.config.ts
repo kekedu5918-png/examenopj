@@ -9,6 +9,8 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: process.env.CI ? 'github' : 'list',
+  /** Même fichier de référence Linux/Windows pour les screenshots E2E. */
+  snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}{-projectName}{ext}',
   use: {
     baseURL,
     trace: 'on-first-retry',

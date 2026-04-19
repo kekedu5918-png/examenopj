@@ -3,7 +3,6 @@
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
 
-import { GlassCard } from '@/components/ui/GlassCard';
 import type { CourseSummary } from '@/lib/content/courses';
 import { cn } from '@/utils/cn';
 
@@ -27,8 +26,8 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
 
   return (
     <div className='space-y-6'>
-      <GlassCard className='p-5' padding=''>
-        <label htmlFor='fondamentaux-filter' className='mb-2 block text-sm font-medium text-gray-300'>
+      <div className='rounded-2xl border border-white/10 bg-[#0a1628] p-5'>
+        <label htmlFor='fondamentaux-filter' className='mb-2 block text-sm font-medium text-slate-100'>
           Filtrer les fiches
         </label>
         <input
@@ -37,12 +36,12 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder='Titre, thème, tag…'
-          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none placeholder:text-gray-600 focus:border-blue-500/40 focus:ring-2 focus:ring-blue-500/20'
+          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none placeholder:text-slate-500 focus:border-blue-500/40 focus:ring-2 focus:ring-blue-500/20'
         />
-        <p className='mt-2 text-xs text-gray-500'>
+        <p className='mt-2 text-xs text-slate-300'>
           Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat.
         </p>
-      </GlassCard>
+      </div>
 
       <ul className='grid gap-3 sm:grid-cols-2'>
         {filtered.map((it) => (
@@ -60,7 +59,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                   {it.tags.map((t) => (
                     <span
                       key={t}
-                      className='rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[11px] text-gray-400'
+                      className='rounded-md border border-white/15 bg-[#152a40] px-2 py-0.5 text-[11px] font-medium text-slate-100'
                     >
                       {t}
                     </span>
@@ -73,7 +72,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
       </ul>
 
       {filtered.length === 0 ? (
-        <p className='py-8 text-center text-sm text-gray-500'>Aucune fiche ne correspond au filtre.</p>
+        <p className='py-8 text-center text-sm text-slate-400'>Aucune fiche ne correspond au filtre.</p>
       ) : null}
     </div>
   );

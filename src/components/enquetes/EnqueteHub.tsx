@@ -81,7 +81,7 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
               'rounded-xl border px-3 py-2 text-xs font-semibold transition md:text-sm',
               filtre === f.id
                 ? 'border-violet-500/50 bg-violet-500/15 text-violet-100'
-                : 'border-white/10 bg-white/[0.03] text-gray-400 hover:border-white/20',
+                : 'border-white/10 bg-white/[0.03] text-slate-300 hover:border-white/20',
             )}
           >
             {f.label}
@@ -90,7 +90,7 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
       </div>
 
       {list.length === 0 ? (
-        <p className='text-sm text-gray-500'>Aucune enquête dans ce filtre.</p>
+        <p className='text-sm text-slate-400'>Aucune enquête dans ce filtre.</p>
       ) : (
         <ul className='grid gap-6 md:grid-cols-2'>
           {list.map((e) => {
@@ -118,7 +118,7 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     ) : null}
                   </div>
                   {e.themeCourt ? (
-                    <p className='mt-2 text-xs font-medium uppercase tracking-wide text-gray-500'>{e.themeCourt}</p>
+                    <p className='mt-2 text-xs font-medium uppercase tracking-wide text-slate-400'>{e.themeCourt}</p>
                   ) : null}
                   <h2 className='mt-3 font-display text-lg font-bold text-white'>
                     <Link
@@ -128,13 +128,13 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                       {e.titre}
                     </Link>
                   </h2>
-                  <p className='mt-2 line-clamp-3 text-sm text-gray-400'>{e.resume}</p>
+                  <p className='mt-2 line-clamp-3 text-sm text-slate-300'>{e.resume}</p>
                   {!isPedago ? (
-                    <p className='mt-4 text-xs text-gray-500'>
+                    <p className='mt-4 text-xs text-slate-400'>
                       {e.documents.length} document{e.documents.length > 1 ? 's' : ''} (PDF + fac-similé)
                     </p>
                   ) : (
-                    <p className='mt-4 text-xs text-gray-500'>Fiche thématique + liens modules — planches PDF à compléter</p>
+                    <p className='mt-4 text-xs text-slate-400'>Fiche thématique + liens modules — planches PDF à compléter</p>
                   )}
                   <div className='mt-4 flex flex-wrap gap-2'>
                     <Link
@@ -145,13 +145,13 @@ export function EnqueteHub({ enquetes }: { enquetes: EnqueteMeta[] }) {
                     </Link>
                     <Link
                       href='/epreuves/epreuve-2'
-                      className='rounded-lg border border-white/15 bg-white/[0.05] px-2.5 py-1 text-[11px] text-gray-300 hover:bg-white/10'
+                      className='rounded-lg border border-white/15 bg-white/[0.05] px-2.5 py-1 text-[11px] text-slate-200 hover:bg-white/10'
                     >
                       Épreuve 2
                     </Link>
                     <Link
                       href={`/entrainement/articulation?ref=${refQ}`}
-                      className='rounded-lg border border-white/15 bg-white/[0.05] px-2.5 py-1 text-[11px] text-gray-300 hover:bg-white/10'
+                      className='rounded-lg border border-white/15 bg-white/[0.05] px-2.5 py-1 text-[11px] text-slate-200 hover:bg-white/10'
                     >
                       Articulation
                     </Link>
