@@ -8,7 +8,10 @@ const colLink =
 
 export function Footer() {
   return (
-    <footer className='relative mt-auto overflow-hidden border-t border-slate-200 dark:border-white/[0.06]'>
+    <footer
+      data-site-footer
+      className='relative mt-auto overflow-hidden border-t border-slate-200 dark:border-white/[0.06]'
+    >
       <div
         className='pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent'
         aria-hidden
