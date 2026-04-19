@@ -24,6 +24,13 @@ function formatQuizMode(row: { mode: string; fascicule_num: number | null; domai
   return row.mode;
 }
 
+/**
+ * Bug 0.3 — non-régression React #310.
+ * Audit statique de tout l'arbre client (layouts + providers + UI) : aucun hook
+ * conditionnel détecté. Cette page reste un Server Component pur ; tout ajout
+ * de composant client doit appeler ses hooks AVANT tout `return`/`if`.
+ * Couverture : `e2e/dashboard-progression.spec.ts`.
+ */
 export default async function ProgressionPage() {
   const session = await getSession();
   if (!session) redirect('/login');
