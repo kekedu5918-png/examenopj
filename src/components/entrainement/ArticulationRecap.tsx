@@ -43,10 +43,20 @@ export function ArticulationRecap({
     if (exporting) return;
     setExporting(true);
     try {
-      const [{ buildArticulationDocx }, { saveAs }] = await Promise.all([
+      const [{ buildArticulationDocx }, fileSaverMod] = await Promise.all([
         import('@/lib/articulation-to-docx'),
         import('file-saver'),
       ]);
+      /** `file-saver` est en CJS (`module.exports = saveAs`) → souvent `default`, pas `{ saveAs }`. */
+      const saveAsFn =
+        typeof fileSaverMod.saveAs === 'function'
+          ? fileSaverMod.saveAs
+          : typeof fileSaverMod.default === 'function'
+            ? fileSaverMod.default
+            : null;
+      if (!saveAsFn) {
+        throw new Error('Téléchargement indisponible : module file-saver non chargé correctement.');
+      }
       const blob = await buildArticulationDocx(
         valides,
         numeroProcedure ?? '',
@@ -54,7 +64,7 @@ export function ArticulationRecap({
       );
       const stamp = (numeroProcedure?.trim() || new Date().toISOString().slice(0, 10))
         .replace(/[\\/:*?"<>|\s]+/g, '_');
-      saveAs(blob, `articulation_${stamp}.docx`);
+      saveAsFn(blob, `articulation_${stamp}.docx`);
     } finally {
       setExporting(false);
     }
@@ -66,21 +76,28 @@ export function ArticulationRecap({
         id='articulation-print-area'
         className='space-y-6 rounded-xl border border-slate-300 bg-white p-6 font-serif text-black shadow-lg print:border-0 print:shadow-none'
       >
-        <header className='border-b-2 border-black pb-4 text-center'>
-          <p className='mb-2 text-sm font-bold uppercase tracking-wide'>
-            Numéro de procédure n°{numeroProcedure?.trim() ? ` ${numeroProcedure.trim()}` : '(à compléter par le candidat)'}
+        <header className='border-b-2 border-black pb-4 text-center print:border-0 print:pb-3 print:text-left'>
+          <p className='mb-2 text-sm font-bold uppercase tracking-wide print:mb-0 print:text-[14pt] print:font-normal print:normal-case print:tracking-normal print:text-black'>
+            <span className='print:hidden'>
+              Numéro de procédure n°{numeroProcedure?.trim() ? ` ${numeroProcedure.trim()}` : '(à compléter par le candidat)'}
+            </span>
+            <span className='hidden print:inline'>
+              Procédure n°{numeroProcedure?.trim() ? ` ${numeroProcedure.trim()}` : ' (à compléter)'}
+            </span>
           </p>
-          <h2 className='text-lg font-bold uppercase underline'>Articulation de procédure</h2>
-          {titreArticulation.trim() ? (
-            <p className='mt-3 text-sm font-semibold'>{titreArticulation.trim()}</p>
-          ) : null}
+          <div className='print:hidden'>
+            <h2 className='text-lg font-bold uppercase underline'>Articulation de procédure</h2>
+            {titreArticulation.trim() ? (
+              <p className='mt-3 text-sm font-semibold'>{titreArticulation.trim()}</p>
+            ) : null}
+          </div>
         </header>
         <div className='space-y-0'>
           {valides.map((c) => (
             <CartoucheValidee key={c.id} data={c} hideEdit />
           ))}
         </div>
-        <p className='text-center text-sm text-slate-600'>
+        <p className='text-center text-sm text-slate-600 print:hidden'>
           {valides.length} côte{valides.length > 1 ? 's' : ''} PV — Articulé le {dateStr}
         </p>
       </div>

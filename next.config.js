@@ -17,7 +17,7 @@ const nextConfig = {
   },
   async headers() {
     const cspReportOnly = [
-      "default-src 'self'",
+      "default-src 'self' blob:",
       "base-uri 'self'",
       "form-action 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://va.vercel-scripts.com",
