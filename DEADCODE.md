@@ -16,7 +16,6 @@
 
 ## Faux positifs fréquents (ne pas supprimer sans preuve)
 
-- **`src/components/fondamentaux/*.tsx`** : montées par `src/app/fondamentaux/page.tsx` et `[slug]/page.tsx` — knip peut ne pas lier toute la chaîne.
 - **`src/data/fondamentaux-*.ts`** : importés par pages serveur ou loaders — vérifier avec ripgrep.
 - **`SynthèsePattern.tsx`** : si présent sous nom encodé (`Synth%C3%A8sePattern`), unifier le nom de fichier en `SynthèsePattern.tsx` (UTF-8) pour éviter doublons Git sous Windows.
 
@@ -38,3 +37,7 @@ npm run docs:audit-deadcode
 ```
 
 Mettre à jour ce fichier après chaque passe de suppression validée.
+
+## Historique code mort supprimé
+
+- **2026-04-20** : `src/components/fondamentaux/` (**15** fichiers : **14** modules + **1** test unitaire) supprimé — code développé en parallèle de la route publique `/fondamentaux` sans jamais y être branché (hub = [`CoursFichesListClient`](src/components/cours/CoursFichesListClient.tsx)). Rollback possible : `git log --all -- src/components/fondamentaux/`

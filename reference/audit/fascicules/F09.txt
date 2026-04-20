@@ -7,7 +7,7 @@
 
 ## Déjà présent sur le site
 
-- `src/components/fondamentaux/FondamentauxStructuredIntro.tsx` — rubrique **1. La classification des infractions** (tableaux type F09 p. 8).
+- *(2026-04-20)* Ancienne référence UI `FondamentauxStructuredIntro.tsx` — composant retiré (code non monté sur la route publique). Vérifier le rendu équivalent dans le contenu markdown / fiches si besoin.
 
 ## TODO
 
