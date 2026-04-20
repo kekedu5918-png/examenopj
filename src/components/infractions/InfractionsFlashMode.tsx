@@ -131,13 +131,13 @@ export function InfractionsFlashMode({ filtered }: Props) {
         <h2 className='font-ij-display text-2xl font-bold text-ij-text'>Session terminée</h2>
         <div className='relative mt-8 h-36 w-36'>
           <svg className='-rotate-90' viewBox='0 0 120 120' aria-hidden>
-            <circle cx='60' cy='60' r='52' fill='none' stroke='var(--ij-border)' strokeWidth='10' />
+            <circle cx='60' cy='60' r='52' fill='none' stroke='rgb(var(--ij-border))' strokeWidth='10' />
             <motion.circle
               cx='60'
               cy='60'
               r='52'
               fill='none'
-              stroke='var(--ij-accent)'
+              stroke='rgb(var(--ij-accent))'
               strokeWidth='10'
               strokeLinecap='round'
               initial={{ strokeDasharray: `0 ${c}` }}

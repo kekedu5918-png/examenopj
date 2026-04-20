@@ -49,6 +49,24 @@ function hexToRgb(hex: string): [number, number, number] {
   return [r, g, b];
 }
 
+/** Valeur token Phase 2E : `R G B` séparés par des espaces (sans `rgb()`). */
+function tripletToRgb(t: string): [number, number, number] {
+  const parts = t
+    .trim()
+    .split(/\s+/)
+    .map((x) => Number.parseInt(x, 10));
+  if (parts.length !== 3 || parts.some((p) => !Number.isFinite(p) || p < 0 || p > 255)) {
+    throw new Error(`Triplet RGB invalide : "${t}"`);
+  }
+  return [parts[0], parts[1], parts[2]];
+}
+
+function tokenColorToRgb(value: string): [number, number, number] {
+  const v = value.trim();
+  if (v.startsWith('#')) return hexToRgb(v);
+  return tripletToRgb(v);
+}
+
 function relativeLuminance([r, g, b]: [number, number, number]): number {
   const toLinear = (c: number) => {
     const v = c / 255;
@@ -57,9 +75,9 @@ function relativeLuminance([r, g, b]: [number, number, number]): number {
   return 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);
 }
 
-function contrastRatio(hexA: string, hexB: string): number {
-  const lA = relativeLuminance(hexToRgb(hexA));
-  const lB = relativeLuminance(hexToRgb(hexB));
+function contrastRatioTokens(fg: string, bg: string): number {
+  const lA = relativeLuminance(tokenColorToRgb(fg));
+  const lB = relativeLuminance(tokenColorToRgb(bg));
   const [light, dark] = lA > lB ? [lA, lB] : [lB, lA];
   return (light + 0.05) / (dark + 0.05);
 }
@@ -124,30 +142,32 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
   describe('présence des tokens dans :root (light)', () => {
     it.each(REQUIRED_TOKENS)('définit %s', (name) => {
       expect(lightTokens[name], `--${name} manquant dans :root`).toBeDefined();
-      expect(lightTokens[name]).toMatch(/^#[0-9a-fA-F]{6}$/);
+      expect(lightTokens[name]).toMatch(/^\d{1,3} \d{1,3} \d{1,3}$/);
+      expect(() => tripletToRgb(lightTokens[name])).not.toThrow();
     });
   });
 
   describe('présence des tokens dans .dark', () => {
     it.each(REQUIRED_TOKENS)('définit %s', (name) => {
       expect(darkTokens[name], `--${name} manquant dans .dark`).toBeDefined();
-      expect(darkTokens[name]).toMatch(/^#[0-9a-fA-F]{6}$/);
+      expect(darkTokens[name]).toMatch(/^\d{1,3} \d{1,3} \d{1,3}$/);
+      expect(() => tripletToRgb(darkTokens[name])).not.toThrow();
     });
   });
 
   describe('règle « pas de pur blanc / pur noir »', () => {
-    it('aucun token light ne vaut #ffffff ou #000000', () => {
+    it('aucun token light ne vaut (255,255,255) ou (0,0,0)', () => {
       for (const name of REQUIRED_TOKENS) {
-        const v = lightTokens[name].toLowerCase();
-        expect(v, `${name} = ${v} interdit (pure blanc/noir)`).not.toBe('#ffffff');
-        expect(v).not.toBe('#000000');
+        const [r, g, b] = tripletToRgb(lightTokens[name]);
+        expect(r === 255 && g === 255 && b === 255, `${name} = pur blanc interdit`).toBe(false);
+        expect(r === 0 && g === 0 && b === 0, `${name} = pur noir interdit`).toBe(false);
       }
     });
-    it('aucun token dark ne vaut #ffffff ou #000000', () => {
+    it('aucun token dark ne vaut (255,255,255) ou (0,0,0)', () => {
       for (const name of REQUIRED_TOKENS) {
-        const v = darkTokens[name].toLowerCase();
-        expect(v, `${name} = ${v} interdit (pure blanc/noir)`).not.toBe('#ffffff');
-        expect(v).not.toBe('#000000');
+        const [r, g, b] = tripletToRgb(darkTokens[name]);
+        expect(r === 255 && g === 255 && b === 255, `${name} = pur blanc interdit`).toBe(false);
+        expect(r === 0 && g === 0 && b === 0, `${name} = pur noir interdit`).toBe(false);
       }
     });
   });
@@ -156,7 +176,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(TEXT_PAIRS)(
       '$label : ratio ≥ $minRatio (texte normal)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
         expect(
           ratio,
           `${label} (light) : ratio ${ratio.toFixed(2)} < ${minRatio}`,
@@ -166,7 +186,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(UI_PAIRS)(
       '$label : ratio ≥ $minRatio (UI/large)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
         expect(
           ratio,
           `${label} (light) : ratio ${ratio.toFixed(2)} < ${minRatio}`,
@@ -176,7 +196,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(DECORATIVE_PAIRS)(
       '$label : ratio ≥ $minRatio (visibilité décorative)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(lightTokens, fg), resolveToken(lightTokens, bg));
         expect(
           ratio,
           `${label} (light) : ratio ${ratio.toFixed(2)} < ${minRatio}`,
@@ -189,7 +209,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(TEXT_PAIRS)(
       '$label : ratio ≥ $minRatio (texte normal)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
         expect(
           ratio,
           `${label} (dark) : ratio ${ratio.toFixed(2)} < ${minRatio}`,
@@ -199,7 +219,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(UI_PAIRS)(
       '$label : ratio ≥ $minRatio (UI/large)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
         expect(
           ratio,
           `${label} (dark) : ratio ${ratio.toFixed(2)} < ${minRatio}`,
@@ -209,7 +229,7 @@ describe('Design system Institut Judiciaire — tokens --ij-*', () => {
     it.each(DECORATIVE_PAIRS)(
       '$label : ratio ≥ $minRatio (visibilité décorative)',
       ({ fg, bg, minRatio, label }) => {
-        const ratio = contrastRatio(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
+        const ratio = contrastRatioTokens(resolveToken(darkTokens, fg), resolveToken(darkTokens, bg));
         expect(
           ratio,
           `${label} (dark) : ratio ${ratio.toFixed(2)} < ${minRatio}`,

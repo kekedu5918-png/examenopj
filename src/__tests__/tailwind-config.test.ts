@@ -4,7 +4,7 @@ import tailwindConfig from '../../tailwind.config';
 
 /**
  * Sanity checks Phase 1 — vérifie que tailwind.config.ts expose bien :
- *   - les couleurs `colors.ij.*` (mapping vers --ij-* CSS vars)
+ *   - les couleurs `colors.ij.*` (triplets RGB + `rgb(var(--ij-*) / <alpha-value>)` Phase 2E)
  *   - les ombres `boxShadow.ij-*`
  *   - les fontes `fontFamily.ij-display / ij-sans / ij-mono`
  *
@@ -50,7 +50,7 @@ describe('tailwind.config.ts — exposition tokens Institut Judiciaire', () => {
     it.each(REQUIRED_IJ_COLORS)('expose colors.ij.%s', (key) => {
       const ij = colors.ij as Record<string, string>;
       expect(ij[key], `colors.ij.${key} manquant`).toBeDefined();
-      expect(ij[key]).toMatch(/^var\(--ij-[a-z0-9-]+\)$/);
+      expect(ij[key]).toMatch(/^rgb\(var\(--ij-[a-z0-9-]+\) \/ <alpha-value>\)$/);
     });
   });
 

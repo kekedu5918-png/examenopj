@@ -29,7 +29,7 @@ export default function DesignSystemLayout({ children }: PropsWithChildren) {
         position: 'relative',
         isolation: 'isolate',
         zIndex: 1,
-        background: 'var(--ij-bg)',
+        background: 'rgb(var(--ij-bg))',
         minHeight: '100vh',
       }}
     >

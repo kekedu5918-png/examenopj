@@ -65,7 +65,7 @@ function Swatch({ hex, token, role }: { hex: string; token: string; role: string
         aria-hidden='true'
         style={{
           background: hex,
-          border: '1px solid var(--ij-border)',
+          border: '1px solid rgb(var(--ij-border))',
           borderRadius: 8,
           height: 64,
         }}
@@ -73,19 +73,19 @@ function Swatch({ hex, token, role }: { hex: string; token: string; role: string
       <div>
         <div
           className='font-ij-mono'
-          style={{ fontSize: 11, color: 'var(--ij-text)', wordBreak: 'break-word' }}
+          style={{ fontSize: 11, color: 'rgb(var(--ij-text))', wordBreak: 'break-word' }}
         >
           {token}
         </div>
         <div
           className='font-ij-mono'
-          style={{ fontSize: 10, color: 'var(--ij-text-muted)', marginTop: 2 }}
+          style={{ fontSize: 10, color: 'rgb(var(--ij-text-muted))', marginTop: 2 }}
         >
           {hex}
         </div>
         <div
           className='font-ij-sans'
-          style={{ fontSize: 10, color: 'var(--ij-text-muted)', marginTop: 4 }}
+          style={{ fontSize: 10, color: 'rgb(var(--ij-text-muted))', marginTop: 4 }}
         >
           {role}
         </div>
@@ -204,8 +204,8 @@ export default function DesignSystemPage() {
   return (
     <main
       style={{
-        background: 'var(--ij-bg)',
-        color: 'var(--ij-text)',
+        background: 'rgb(var(--ij-bg))',
+        color: 'rgb(var(--ij-text))',
         minHeight: '100vh',
         padding: '40px 32px 80px',
       }}
@@ -221,7 +221,7 @@ export default function DesignSystemPage() {
           <p
             className='font-ij-sans'
             style={{
-              color: 'var(--ij-text-muted)',
+              color: 'rgb(var(--ij-text-muted))',
               maxWidth: 720,
               lineHeight: 1.55,
               fontSize: 15,
@@ -236,7 +236,7 @@ export default function DesignSystemPage() {
 
         <section
           aria-labelledby='palette-light'
-          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid var(--ij-border)' }}
+          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgb(var(--ij-border))' }}
         >
           <h2
             id='palette-light'
@@ -272,7 +272,7 @@ export default function DesignSystemPage() {
 
         <section
           aria-labelledby='palette-dark'
-          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid var(--ij-border)' }}
+          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgb(var(--ij-border))' }}
         >
           <h2
             id='palette-dark'
@@ -308,7 +308,7 @@ export default function DesignSystemPage() {
 
         <section
           aria-labelledby='typo'
-          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid var(--ij-border)' }}
+          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgb(var(--ij-border))' }}
         >
           <h2
             id='typo'
@@ -319,35 +319,35 @@ export default function DesignSystemPage() {
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             <div>
-              <p className='font-ij-mono' style={{ fontSize: 11, color: 'var(--ij-text-subtle)', margin: 0 }}>
+              <p className='font-ij-mono' style={{ fontSize: 11, color: 'rgb(var(--ij-text-subtle))', margin: 0 }}>
                 font-ij-display — Fraunces
               </p>
               <p className='font-ij-display' style={{ fontSize: 32, fontWeight: 600, margin: '4px 0 0', letterSpacing: '-0.015em' }}>
                 Procédure pénale
               </p>
-              <p className='font-ij-display' style={{ fontSize: 16, fontStyle: 'italic', margin: '4px 0 0', color: 'var(--ij-text-muted)' }}>
+              <p className='font-ij-display' style={{ fontSize: 16, fontStyle: 'italic', margin: '4px 0 0', color: 'rgb(var(--ij-text-muted))' }}>
                 Code de procédure pénale, art. 56
               </p>
             </div>
             <div>
-              <p className='font-ij-mono' style={{ fontSize: 11, color: 'var(--ij-text-subtle)', margin: 0 }}>
+              <p className='font-ij-mono' style={{ fontSize: 11, color: 'rgb(var(--ij-text-subtle))', margin: 0 }}>
                 font-ij-sans — Inter Tight
               </p>
               <p className='font-ij-sans' style={{ fontSize: 18, fontWeight: 600, margin: '4px 0 0' }}>
                 Officier de police judiciaire
               </p>
-              <p className='font-ij-sans' style={{ fontSize: 14, margin: '4px 0 0', color: 'var(--ij-text-muted)' }}>
+              <p className='font-ij-sans' style={{ fontSize: 14, margin: '4px 0 0', color: 'rgb(var(--ij-text-muted))' }}>
                 Texte courant pour l&apos;UI et les paragraphes — lecture confortable sur écran.
               </p>
             </div>
             <div>
-              <p className='font-ij-mono' style={{ fontSize: 11, color: 'var(--ij-text-subtle)', margin: 0 }}>
+              <p className='font-ij-mono' style={{ fontSize: 11, color: 'rgb(var(--ij-text-subtle))', margin: 0 }}>
                 font-ij-mono — JetBrains Mono
               </p>
               <p className='font-ij-mono' style={{ fontSize: 14, margin: '4px 0 0' }}>
                 art. 311-1 CP — Le vol
               </p>
-              <p className='font-ij-mono' style={{ fontSize: 12, margin: '4px 0 0', color: 'var(--ij-text-muted)' }}>
+              <p className='font-ij-mono' style={{ fontSize: 12, margin: '4px 0 0', color: 'rgb(var(--ij-text-muted))' }}>
                 Code, références, badges
               </p>
             </div>
@@ -356,7 +356,7 @@ export default function DesignSystemPage() {
 
         <section
           aria-labelledby='shadows'
-          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid var(--ij-border)' }}
+          style={{ marginTop: 40, paddingTop: 24, borderTop: '1px solid rgb(var(--ij-border))' }}
         >
           <h2
             id='shadows'
@@ -371,14 +371,14 @@ export default function DesignSystemPage() {
                 key={s.name}
                 className={s.name}
                 style={{
-                  background: 'var(--ij-surface)',
-                  border: '1px solid var(--ij-border)',
+                  background: 'rgb(var(--ij-surface))',
+                  border: '1px solid rgb(var(--ij-border))',
                   borderRadius: 10,
                   padding: 24,
                   textAlign: 'center',
                 }}
               >
-                <div className='font-ij-mono' style={{ fontSize: 11, color: 'var(--ij-text-muted)' }}>
+                <div className='font-ij-mono' style={{ fontSize: 11, color: 'rgb(var(--ij-text-muted))' }}>
                   {s.name}
                 </div>
                 <div className='font-ij-sans' style={{ fontSize: 14, fontWeight: 600, marginTop: 6 }}>
