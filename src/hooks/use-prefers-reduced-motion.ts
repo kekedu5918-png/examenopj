@@ -1,20 +1,25 @@
 'use client';
 
-import { useLayoutEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
+
+function subscribeReduced(callback: () => void) {
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  mq.addEventListener('change', callback);
+  return () => mq.removeEventListener('change', callback);
+}
+
+function getReducedSnapshot() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
 
 /**
- * `prefers-reduced-motion` côté client (aligné Playwright `emulateMedia` + navigateur).
+ * Préférence utilisateur « reduced motion » — alignée sur `matchMedia` (Playwright / e2e inclus).
+ * Variants Framer : passer ce booléen aux helpers motion.
  */
 export function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState(false);
-
-  useLayoutEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const update = () => setReduced(mq.matches);
-    update();
-    mq.addEventListener('change', update);
-    return () => mq.removeEventListener('change', update);
-  }, []);
-
-  return reduced;
+  return useSyncExternalStore(subscribeReduced, getReducedSnapshot, getServerSnapshot);
 }

@@ -25,15 +25,15 @@ export const PRIORITE_ORDER: Record<RecapPriorite, number> = {
 export const PRIORITE_EXAMEN_BADGE: Record<RecapPriorite, { label: string; className: string }> = {
   core: {
     label: 'Prioritaire',
-    className: 'border-rose-400/45 bg-rose-500/18 text-rose-50',
+    className: 'border-ij-danger/45 bg-ij-danger/15 text-ij-text',
   },
   freq: {
     label: 'Très probable',
-    className: 'border-amber-400/40 bg-amber-500/14 text-amber-50',
+    className: 'border-ij-warning/45 bg-ij-warning/12 text-ij-text',
   },
   secours: {
     label: 'À sécuriser',
-    className: 'border-slate-400/35 bg-slate-600/20 text-slate-100',
+    className: 'border-ij-border bg-ij-text/[0.08] text-ij-text-muted',
   },
 };
 

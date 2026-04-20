@@ -3,14 +3,15 @@
 import { type RefObject, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, BookOpen, Gavel, MessageCircle } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowUpRight, BookOpen, Check, Gavel, MessageCircle } from 'lucide-react';
 
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
-import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { InfractionDetailBubble } from '@/components/infractions/InfractionDetailBubble';
+import { getCardVariants } from '@/components/infractions/infractions-motion';
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
+import { useInfractionMaitrise } from '@/components/infractions/use-infraction-maitrise';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -30,6 +31,8 @@ import {
   PRIORITE_ORDER,
   type RecapPriorite,
 } from '@/data/recapitulatif-data';
+import { useDebouncedValue } from '@/hooks/use-debounced-value';
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import { cn } from '@/utils/cn';
 import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
 import { derivePeineFromLegal, peineTierTextClass } from '@/utils/infraction-display-derive';
@@ -93,6 +96,10 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   const [selected, setSelected] = useState<InfractionCatalogItem | null>(null);
   const [deepLinkReady, setDeepLinkReady] = useState(false);
 
+  const debouncedQuery = useDebouncedValue(query, 150);
+  const shouldReduceMotion = usePrefersReducedMotion();
+  const maitrise = useInfractionMaitrise();
+
   const vue = useMemo(() => parseInfractionsVue(searchParams.get('vue')) ?? 'liste', [searchParams]);
   const focusId = searchParams.get('focus');
 
@@ -101,18 +108,16 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   }, [initialQuery]);
 
   useEffect(() => {
-    const t = window.setTimeout(() => {
-      const trimmed = query.trim();
-      const next = new URL(window.location.href);
-      if (trimmed) next.searchParams.set('q', trimmed);
-      else next.searchParams.delete('q');
-      const path = `${next.pathname}${next.search}`;
-      if (path !== `${window.location.pathname}${window.location.search}`) {
-        window.history.replaceState(null, '', path);
-      }
-    }, 450);
-    return () => window.clearTimeout(t);
-  }, [query]);
+    if (typeof window === 'undefined') return;
+    const trimmed = debouncedQuery.trim();
+    const next = new URL(window.location.href);
+    if (trimmed) next.searchParams.set('q', trimmed);
+    else next.searchParams.delete('q');
+    const path = `${next.pathname}${next.search}`;
+    if (path !== `${window.location.pathname}${window.location.search}`) {
+      window.history.replaceState(null, '', path);
+    }
+  }, [debouncedQuery]);
 
   const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
 
@@ -144,7 +149,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
   }, [selected, deepLinkReady]);
 
   const filtered = useMemo(() => {
-    const q = stripForSearch(query.trim());
+    const q = stripForSearch(debouncedQuery.trim());
     const list = catalog.filter((item) => {
       if (!matchesInfractionFamily(item, familyFilter)) return false;
       if (prioriteTier !== 'all' && (item.priorite ?? 'secours') !== prioriteTier) return false;
@@ -163,7 +168,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       if (pa !== pb) return pa - pb;
       return byCatalogOrder(a, b);
     });
-  }, [catalog, catalogIndex, query, familyFilter, prioriteTier]);
+  }, [catalog, catalogIndex, debouncedQuery, familyFilter, prioriteTier]);
 
   const openInListe = (id: string) => {
     const p = new URLSearchParams(searchParams.toString());
@@ -199,6 +204,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
             </label>
             <input
               id='inf-search'
+              data-testid='infractions-search'
               type='search'
               value={query}
               onChange={(e) => setQuery(e.target.value)}
@@ -264,6 +270,10 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         openInListe={openInListe}
         selected={selected}
         setSelected={setSelected}
+        shouldReduceMotion={shouldReduceMotion}
+        maitriseReady={maitrise.ready}
+        hasMaitrise={maitrise.has}
+        toggleMaitrise={maitrise.toggle}
       />
 
       {filtered.length === 0 ? (
@@ -280,6 +290,10 @@ function InfractionsListView({
   listRef,
   selected,
   setSelected,
+  shouldReduceMotion,
+  maitriseReady,
+  hasMaitrise,
+  toggleMaitrise,
 }: {
   filtered: InfractionCatalogItem[];
   catalogIndex: Map<string, number>;
@@ -287,12 +301,18 @@ function InfractionsListView({
   listRef: RefObject<HTMLDivElement>;
   selected: InfractionCatalogItem | null;
   setSelected: (v: InfractionCatalogItem | null) => void;
+  shouldReduceMotion: boolean;
+  maitriseReady: boolean;
+  hasMaitrise: (id: string) => boolean;
+  toggleMaitrise: (id: string) => void;
 }) {
   const groups = useMemo(
     () => groupFilteredForListAccordion(filtered, catalogIndex),
     [filtered, catalogIndex],
   );
   const [openValues, setOpenValues] = useState<string[]>([]);
+
+  const cardVariants = useMemo(() => getCardVariants(shouldReduceMotion), [shouldReduceMotion]);
 
   useEffect(() => {
     if (!focusId) return;
@@ -311,6 +331,8 @@ function InfractionsListView({
     return () => clearTimeout(t);
   }, [focusId, openValues, filtered]);
 
+  const rmAttr = shouldReduceMotion ? 'true' : 'false';
+
   return (
     <>
       <InfractionDetailBubble
@@ -321,9 +343,14 @@ function InfractionsListView({
         }}
       />
 
-      <div ref={listRef} className='space-y-4'>
+      <div
+        ref={listRef}
+        data-testid='infractions-grid'
+        data-reduced-motion={rmAttr}
+        className='min-h-[min(60vh,32rem)] space-y-4'
+      >
         <Accordion type='multiple' value={openValues} onValueChange={setOpenValues} className='space-y-3'>
-          {groups.map((g, groupIndex) => (
+          {groups.map((g) => (
             <AccordionItem
               key={g.value}
               value={g.value}
@@ -335,100 +362,121 @@ function InfractionsListView({
               </AccordionTrigger>
               <AccordionContent className='px-3 pb-4 pt-0'>
                 <div className='space-y-3'>
-                  {g.items.map((item, itemIndex) => {
-                    const index =
-                      groups.slice(0, groupIndex).reduce((s, x) => s + x.items.length, 0) + itemIndex;
-                    const pTier = (item.priorite ?? 'secours') as RecapPriorite;
-                    const badge = PRIORITE_EXAMEN_BADGE[pTier];
-                    const isFocused = focusId === item.id;
-                    return (
-                      <motion.div
-                        id={`infraction-row-${item.id}`}
-                        key={item.id}
-                        initial={MOTION_INITIAL_FOR_SEO}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{
-                          duration: 0.28,
-                          delay: Math.min(index * 0.02, 0.35),
-                          ease: [0.25, 0.46, 0.45, 0.94],
-                        }}
-                      >
-                        <article
-                          className={cn(
-                            'overflow-hidden rounded-2xl border bg-gradient-to-br from-ij-surface via-ij-surface-2 to-ij-bg shadow-ij-card ring-1 ring-ij-border/40',
-                            'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-ij-accent/20 hover:shadow-[0_22px_50px_-20px_rgba(212,168,83,0.12)]',
-                            isFocused
-                              ? 'border-ij-accent ring-2 ring-ij-accent/45'
-                              : 'border-ij-border/90',
-                          )}
+                  <AnimatePresence initial={false} mode='popLayout'>
+                    {g.items.map((item) => {
+                      const pTier = (item.priorite ?? 'secours') as RecapPriorite;
+                      const badge = PRIORITE_EXAMEN_BADGE[pTier];
+                      const isFocused = focusId === item.id;
+                      const mastered = hasMaitrise(item.id);
+                      return (
+                        <motion.div
+                          id={`infraction-row-${item.id}`}
+                          key={item.id}
+                          layout={false}
+                          variants={cardVariants}
+                          initial='initial'
+                          animate='animate'
+                          exit='exit'
+                          data-testid='infraction-card'
+                          data-reduced-motion={rmAttr}
                         >
-                          <div className='flex flex-col gap-4 p-4 sm:flex-row sm:items-stretch sm:justify-between sm:p-5'>
-                            <div className='min-w-0 flex-1'>
-                              <button
-                                type='button'
-                                onClick={() => setSelected(item)}
-                                className='group w-full rounded-xl text-left transition-colors hover:bg-ij-text/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-ij-accent/50'
-                              >
-                                <div className='flex gap-3'>
-                                  <span
-                                    className='mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-ij-accent/35 bg-gradient-to-br from-ij-accent/15 to-ij-accent-soft/20 text-ij-accent shadow-inner shadow-ij-card'
-                                    aria-hidden
-                                  >
-                                    <MessageCircle className='h-[18px] w-[18px]' />
-                                  </span>
-                                  <div className='min-w-0 flex-1 space-y-2.5'>
-                                    <p className='text-[11px] font-medium uppercase tracking-[0.14em] text-ij-text-subtle'>
-                                      {item.groupTitle}
-                                    </p>
-                                    <div className='flex flex-wrap items-center gap-2'>
-                                      <h2 className='font-ij-display text-lg font-bold leading-snug text-ij-text md:text-xl'>
-                                        <FlashcardRichText text={item.infraction} inline />
-                                      </h2>
-                                      <span
-                                        className={cn(
-                                          'rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
-                                          badge.className,
-                                        )}
-                                      >
-                                        {badge.label}
-                                      </span>
-                                    </div>
-                                    <p className='font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-cyan-300/90'>
-                                      {item.legal}
-                                    </p>
-                                    <div className='flex flex-wrap items-center gap-2 pt-0.5'>
-                                      <span
-                                        className={cn(
-                                          'inline-flex items-center gap-1.5 rounded-lg border border-ij-border bg-ij-text/[0.04] px-2.5 py-1 font-ij-mono text-[11px] font-semibold',
-                                          peineTierTextClass(derivePeineFromLegal(item.legal).tier),
-                                        )}
-                                      >
-                                        <Gavel className='h-3 w-3 opacity-80' aria-hidden />
-                                        {derivePeineFromLegal(item.legal).label}
-                                      </span>
-                                      <span className='text-[11px] text-ij-text-subtle'>Fiche express · oral & écrit</span>
+                          <article
+                            className={cn(
+                              'overflow-hidden rounded-2xl border bg-gradient-to-br from-ij-surface via-ij-surface-2 to-ij-bg shadow-ij-card ring-1 ring-ij-border/40',
+                              'transition-[box-shadow,border-color,transform] duration-300 hover:-translate-y-0.5 hover:border-ij-accent/20 hover:shadow-[0_22px_50px_-20px_rgba(212,168,83,0.12)]',
+                              isFocused
+                                ? 'border-ij-accent ring-2 ring-ij-accent/45'
+                                : 'border-ij-border/90',
+                            )}
+                          >
+                            <div className='flex flex-col gap-4 p-4 sm:flex-row sm:items-stretch sm:justify-between sm:p-5'>
+                              <div className='min-w-0 flex-1'>
+                                <button
+                                  type='button'
+                                  onClick={() => setSelected(item)}
+                                  className='group w-full rounded-xl text-left transition-colors hover:bg-ij-text/[0.03] focus:outline-none focus-visible:ring-2 focus-visible:ring-ij-accent/50'
+                                >
+                                  <div className='flex gap-3'>
+                                    <span
+                                      className='mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-ij-accent/35 bg-gradient-to-br from-ij-accent/15 to-ij-accent-soft/20 text-ij-accent shadow-inner shadow-ij-card'
+                                      aria-hidden
+                                    >
+                                      <MessageCircle className='h-[18px] w-[18px]' />
+                                    </span>
+                                    <div className='min-w-0 flex-1 space-y-2.5'>
+                                      <p className='text-[11px] font-medium uppercase tracking-[0.14em] text-ij-text-subtle'>
+                                        {item.groupTitle}
+                                      </p>
+                                      <div className='flex flex-wrap items-center gap-2'>
+                                        <h2 className='font-ij-display text-lg font-bold leading-snug text-ij-text md:text-xl'>
+                                          <FlashcardRichText text={item.infraction} inline />
+                                        </h2>
+                                        <span
+                                          className={cn(
+                                            'rounded-lg border px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide',
+                                            badge.className,
+                                          )}
+                                        >
+                                          {badge.label}
+                                        </span>
+                                      </div>
+                                      <p className='font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-ij-accent/90'>
+                                        {item.legal}
+                                      </p>
+                                      <div className='flex flex-wrap items-center gap-2 pt-0.5'>
+                                        <span
+                                          className={cn(
+                                            'inline-flex items-center gap-1.5 rounded-lg border border-ij-border bg-ij-text/[0.04] px-2.5 py-1 font-ij-mono text-[11px] font-semibold',
+                                            peineTierTextClass(derivePeineFromLegal(item.legal).tier),
+                                          )}
+                                        >
+                                          <Gavel className='h-3 w-3 opacity-80' aria-hidden />
+                                          {derivePeineFromLegal(item.legal).label}
+                                        </span>
+                                        <span className='text-[11px] text-ij-text-subtle'>Fiche express · oral & écrit</span>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
-                            </div>
+                                </button>
+                              </div>
 
-                            <div className='flex shrink-0 flex-col justify-center gap-2 border-t border-ij-border/60 pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0'>
-                              <Link
-                                href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
-                                onClick={(e) => e.stopPropagation()}
-                                className='inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-center text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/18'
-                              >
-                                <BookOpen className='h-4 w-4 shrink-0 opacity-90' aria-hidden />
-                                Récap synthèse
-                                <ArrowUpRight className='h-3.5 w-3.5 opacity-80' aria-hidden />
-                              </Link>
+                              <div className='flex shrink-0 flex-col justify-center gap-2 border-t border-ij-border/60 pt-3 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0'>
+                                <button
+                                  type='button'
+                                  disabled={!maitriseReady}
+                                  aria-pressed={mastered}
+                                  aria-label={mastered ? 'Retirer de mes infractions maîtrisées' : 'Marquer comme maîtrisée'}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    toggleMaitrise(item.id);
+                                  }}
+                                  className={cn(
+                                    'inline-flex items-center justify-center gap-2 rounded-xl border px-4 py-2.5 text-center text-sm font-semibold transition',
+                                    mastered
+                                      ? 'border-ij-success/40 bg-ij-success/12 text-ij-text'
+                                      : 'border-ij-border bg-ij-text/[0.04] text-ij-text-muted hover:border-ij-accent/35 hover:text-ij-text',
+                                    !maitriseReady && 'opacity-60',
+                                  )}
+                                >
+                                  <Check className={cn('h-4 w-4 shrink-0', mastered ? 'opacity-100' : 'opacity-40')} aria-hidden />
+                                  Je maîtrise
+                                </button>
+                                <Link
+                                  href={`/entrainement/recapitulatif?f=${infractionToRecapFilter(item)}`}
+                                  onClick={(e) => e.stopPropagation()}
+                                  className='inline-flex items-center justify-center gap-2 rounded-xl border border-emerald-500/30 bg-emerald-500/10 px-4 py-2.5 text-center text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/18'
+                                >
+                                  <BookOpen className='h-4 w-4 shrink-0 opacity-90' aria-hidden />
+                                  Récap synthèse
+                                  <ArrowUpRight className='h-3.5 w-3.5 opacity-80' aria-hidden />
+                                </Link>
+                              </div>
                             </div>
-                          </div>
-                        </article>
-                      </motion.div>
-                    );
-                  })}
+                          </article>
+                        </motion.div>
+                      );
+                    })}
+                  </AnimatePresence>
                 </div>
               </AccordionContent>
             </AccordionItem>
@@ -448,6 +496,10 @@ function InfractionsViewBody({
   openInListe,
   selected,
   setSelected,
+  shouldReduceMotion,
+  maitriseReady,
+  hasMaitrise,
+  toggleMaitrise,
 }: {
   vue: InfractionsViewMode;
   filtered: InfractionCatalogItem[];
@@ -457,6 +509,10 @@ function InfractionsViewBody({
   openInListe: (id: string) => void;
   selected: InfractionCatalogItem | null;
   setSelected: (v: InfractionCatalogItem | null) => void;
+  shouldReduceMotion: boolean;
+  maitriseReady: boolean;
+  hasMaitrise: (id: string) => boolean;
+  toggleMaitrise: (id: string) => void;
 }) {
   return (
     <>
@@ -470,6 +526,10 @@ function InfractionsViewBody({
           listRef={listRef}
           selected={selected}
           setSelected={setSelected}
+          shouldReduceMotion={shouldReduceMotion}
+          maitriseReady={maitriseReady}
+          hasMaitrise={hasMaitrise}
+          toggleMaitrise={toggleMaitrise}
         />
       ) : null}
 

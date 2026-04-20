@@ -1,8 +1,9 @@
 'use client';
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import type { CourseSummary } from '@/lib/content/courses';
 import { cn } from '@/utils/cn';
 
@@ -14,6 +15,9 @@ type Props = {
 
 export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Props) {
   const [q, setQ] = useState('');
+  const listRef = useRef<HTMLUListElement>(null);
+  const shouldReduceMotion = usePrefersReducedMotion();
+  const [revealed, setRevealed] = useState<Record<string, boolean>>({});
 
   const filtered = useMemo(() => {
     const s = q.trim().toLowerCase();
@@ -24,6 +28,39 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
     });
   }, [items, q]);
 
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      const next: Record<string, boolean> = {};
+      for (const it of filtered) next[it.slug] = true;
+      setRevealed(next);
+      return;
+    }
+
+    setRevealed({});
+    const root = listRef.current;
+    if (!root || filtered.length === 0) return;
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        setRevealed((prev) => {
+          const n = { ...prev };
+          for (const e of entries) {
+            const id = (e.target as HTMLElement).dataset.ficheSlug;
+            if (id && e.isIntersecting) n[id] = true;
+          }
+          return n;
+        });
+      },
+      { root: null, rootMargin: '32px 0px 24px 0px', threshold: 0.06 },
+    );
+
+    const nodes = root.querySelectorAll<HTMLElement>('[data-fiche-slug]');
+    nodes.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, [filtered, shouldReduceMotion]);
+
+  const rm = shouldReduceMotion ? 'true' : 'false';
+
   return (
     <div className='space-y-6'>
       <div className='rounded-2xl border border-ij-border bg-ij-surface p-5'>
@@ -32,6 +69,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
         </label>
         <input
           id='fondamentaux-filter'
+          data-testid='fondamentaux-search'
           type='search'
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -43,32 +81,50 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
         </p>
       </div>
 
-      <ul className='grid gap-3 sm:grid-cols-2'>
-        {filtered.map((it) => (
-          <li key={it.slug}>
-            <Link
-              href={`${basePath}/${it.slug}`}
+      <ul
+        ref={listRef}
+        data-testid='fondamentaux-grid'
+        data-reduced-motion={rm}
+        className='grid gap-3 sm:grid-cols-2'
+      >
+        {filtered.map((it) => {
+          const show = revealed[it.slug] ?? false;
+          return (
+            <li
+              key={it.slug}
+              data-fiche-slug={it.slug}
+              data-testid='fondamentaux-card'
+              data-reduced-motion={rm}
               className={cn(
-                'block rounded-2xl border border-ij-border bg-ij-text/[0.03] p-4 transition',
-                'hover:border-ij-accent/35 hover:bg-ij-text/[0.06]',
+                'transition-[opacity,transform] duration-500 ease-out',
+                show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2',
+                shouldReduceMotion && 'duration-0',
               )}
             >
-              <span className='font-ij-sans font-semibold text-ij-text'>{it.title}</span>
-              {it.tags.length > 0 ? (
-                <div className='mt-2 flex flex-wrap gap-1.5'>
-                  {it.tags.map((t) => (
-                    <span
-                      key={t}
-                      className='rounded-md border border-ij-border bg-ij-surface-2 px-2 py-0.5 font-ij-sans text-[11px] font-medium text-ij-text'
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              ) : null}
-            </Link>
-          </li>
-        ))}
+              <Link
+                href={`${basePath}/${it.slug}`}
+                className={cn(
+                  'block rounded-2xl border border-ij-border bg-ij-text/[0.03] p-4 transition',
+                  'hover:border-ij-accent/35 hover:bg-ij-text/[0.06]',
+                )}
+              >
+                <span className='font-ij-sans font-semibold text-ij-text'>{it.title}</span>
+                {it.tags.length > 0 ? (
+                  <div className='mt-2 flex flex-wrap gap-1.5'>
+                    {it.tags.map((t) => (
+                      <span
+                        key={t}
+                        className='rounded-md border border-ij-border bg-ij-surface-2 px-2 py-0.5 font-ij-sans text-[11px] font-medium text-ij-text'
+                      >
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
 
       {filtered.length === 0 ? (
