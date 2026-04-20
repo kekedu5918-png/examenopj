@@ -116,10 +116,10 @@ export type InfractionCatalogItem = {
   - **`getGridContainerVariants(shouldReduceMotion: boolean)`** ;
   - **`getCardVariants(shouldReduceMotion: boolean)`** — si **`shouldReduceMotion === true`** : **stagger 0**, **durées de transition 0** (instantané, pas de motion superflue), aligné §4 et Phase 2B.
 
-### 2.6 Tags / code couleur (après arbitrage produit sur Cas A / B — §2.4)
+### 2.6 Tags / code couleur — **décision : Cas B** (données sans nature pénale typée)
 
-- Tant que **Cas B** : priorité **`PRIORITE_EXAMEN_BADGE`** + migration **`ij.*`** si validé.
-- **Familles** thématiques : inchangées fonctionnellement ; pas d’équivalence automatique crime/délit/contravention sans donnée nouvelle.
+- **Retenu** : pas de tags « crime / délit / contravention » — **uniquement** le code couleur **priorité examen** via **`PRIORITE_EXAMEN_BADGE`** (tokens **`ij.*`** dans [`recapitulatif-data.ts`](../../src/data/recapitulatif-data.ts)).
+- **Familles** thématiques : inchangées ; pas d’équivalence automatique crime/délit/contravention sans champ données dédié (§2.4).
 
 ---
 
@@ -195,5 +195,5 @@ Les **variants** Framer appliqués à ces nœuds sont ceux retournés par **`get
 | Champ | Valeur |
 |-------|--------|
 | Phase | 2D.2.a — Grille infractions + motion |
-| Statut | Plan — point bloquant tags (§2.3–§2.4), durcissements debounce / motion / data-reduced-motion (2026-04-20), **implémentation sous feu vert** |
+| Statut | **Cas B appliqué** — implémentation grille / debounce / motion / e2e alignée plan (2026-04-20) |
 | Dernière mise à jour | 2026-04-20 |

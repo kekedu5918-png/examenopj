@@ -9,7 +9,7 @@ import { ArrowUpRight, BookOpen, Check, Gavel, MessageCircle } from 'lucide-reac
 import { ContentReviewStrip } from '@/components/content/ContentReviewStrip';
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { InfractionDetailBubble } from '@/components/infractions/InfractionDetailBubble';
-import { getCardVariants } from '@/components/infractions/infractions-motion';
+import { getCardVariants, getGridContainerVariants } from '@/components/infractions/infractions-motion';
 import { InfractionsTable } from '@/components/infractions/InfractionsTable';
 import { useInfractionMaitrise } from '@/components/infractions/use-infraction-maitrise';
 import { type InfractionsViewMode, parseInfractionsVue, ViewToggle } from '@/components/infractions/ViewToggle';
@@ -312,6 +312,7 @@ function InfractionsListView({
   );
   const [openValues, setOpenValues] = useState<string[]>([]);
 
+  const gridContainerVariants = useMemo(() => getGridContainerVariants(shouldReduceMotion), [shouldReduceMotion]);
   const cardVariants = useMemo(() => getCardVariants(shouldReduceMotion), [shouldReduceMotion]);
 
   useEffect(() => {
@@ -361,7 +362,12 @@ function InfractionsListView({
                 <span className='ml-2 shrink-0 text-xs font-normal text-ij-text-muted'>({g.items.length})</span>
               </AccordionTrigger>
               <AccordionContent className='px-3 pb-4 pt-0'>
-                <div className='space-y-3'>
+                <motion.div
+                  className='space-y-3'
+                  variants={gridContainerVariants}
+                  initial='hidden'
+                  animate='visible'
+                >
                   <AnimatePresence initial={false} mode='popLayout'>
                     {g.items.map((item) => {
                       const pTier = (item.priorite ?? 'secours') as RecapPriorite;
@@ -477,7 +483,7 @@ function InfractionsListView({
                       );
                     })}
                   </AnimatePresence>
-                </div>
+                </motion.div>
               </AccordionContent>
             </AccordionItem>
           ))}
