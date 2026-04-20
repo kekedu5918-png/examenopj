@@ -1,9 +1,10 @@
 import { expect, test } from './fixtures';
 
 /**
- * Reduced motion — périmètre élargi en 2B.2.3 (pastille, flèche, etc.).
+ * Reduced motion.
  * 2B.2.1 : compteurs « Chiffres clés » → valeurs finales immédiates.
  * 2B.2.2 : cartes diagnostic + sections sous le hero → pas d’état masqué (opacity 0) au repos.
+ * 2B.2.3 : hero ATF — data-reduced-motion pastille / flèche ; quiz cliquable.
  */
 test.describe('Accueil — prefers-reduced-motion (2B.2.1 / 2B.2.2)', () => {
   test('section stats : valeurs finales visibles sans interpolation', async ({ page }) => {
@@ -37,5 +38,30 @@ test.describe('Accueil — prefers-reduced-motion (2B.2.1 / 2B.2.2)', () => {
     const journey = page.locator('section[aria-labelledby="journey-strip-title"]');
     await journey.scrollIntoViewIfNeeded();
     await expect(journey.getByText('Parcours type référence')).toBeVisible();
+  });
+});
+
+test.describe('Accueil — prefers-reduced-motion (2B.2.3 hero ATF)', () => {
+  test('pastille + flèche CTA : data-reduced-motion', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    await expect(page.locator('[data-testid="hero-pastille"]')).toHaveAttribute('data-reduced-motion', 'true', {
+      timeout: 15_000,
+    });
+    await expect(page.locator('[data-testid="hero-cta-arrow"]')).toHaveAttribute('data-reduced-motion', 'true', {
+      timeout: 15_000,
+    });
+  });
+
+  test('quiz : première option (A) visible et cliquable', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    const list = page.locator('ul[aria-label="Propositions de réponse"]');
+    await list.scrollIntoViewIfNeeded();
+    const firstOption = list.locator('li').first();
+    await expect(firstOption).toBeVisible();
+    await expect(firstOption.locator('span.font-mono').filter({ hasText: 'A' })).toBeVisible();
+    await firstOption.click();
+    await expect(page.locator('[role="status"]').first()).toBeVisible({ timeout: 10_000 });
   });
 });

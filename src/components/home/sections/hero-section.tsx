@@ -2,17 +2,18 @@
 
 import { useMemo, useState } from 'react';
 import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2, HelpCircle, RotateCcw, Trophy, XCircle } from 'lucide-react';
 
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
+import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { cn } from '@/utils/cn';
 
 export function HeroSection() {
-  const shouldReduce = useReducedMotion();
+  const shouldReduce = usePrefersReducedMotion();
   const MotionLink = motion(Link);
   const [qIndex, setQIndex] = useState(0);
   const [picked, setPicked] = useState<string | null>(null);
@@ -101,10 +102,12 @@ export function HeroSection() {
             transition={{ duration: 0.45, ease: LANDING_EASE }}
             className='mb-7 inline-flex w-fit items-center gap-2.5 rounded-full border border-ij-accent/30 bg-ij-accent/10 px-4 py-1.5'
           >
-            <span className='relative flex h-2 w-2'>
-              {shouldReduce ? null : (
-                <span className='absolute inline-flex h-full w-full animate-ping rounded-full bg-ij-accent opacity-60' />
-              )}
+            <span
+              data-testid='hero-pastille'
+              data-reduced-motion={shouldReduce ? 'true' : 'false'}
+              className='relative flex h-2 w-2'
+            >
+              {/* Pastille statique (escalade LCP §3 — pas de keyframes / ping sur le chemin LCP) */}
               <span className='relative inline-flex h-2 w-2 rounded-full bg-ij-accent' />
             </span>
             <span className='text-xs font-semibold tracking-wide text-ij-accent' suppressHydrationWarning>
@@ -203,7 +206,16 @@ export function HeroSection() {
                 aria-hidden
               />
               Commencer gratuitement
-              <ArrowRight className='size-4 transition-transform group-hover:translate-x-0.5' aria-hidden />
+              <span
+                data-testid='hero-cta-arrow'
+                data-reduced-motion={shouldReduce ? 'true' : 'false'}
+                className={cn(
+                  'inline-flex shrink-0 transition-transform duration-200 ease-out',
+                  shouldReduce ? 'group-hover:translate-x-0.5' : 'group-hover:translate-x-[3px]',
+                )}
+              >
+                <ArrowRight className='size-4' aria-hidden />
+              </span>
             </MotionLink>
 
             <Link
@@ -362,40 +374,43 @@ export function HeroSection() {
                 <div className='px-5 pb-5'>
                   <p className='mt-1 text-sm leading-relaxed text-ij-text'>{question.prompt}</p>
 
-                  <ul className='mt-4 space-y-2' aria-label='Propositions de réponse'>
+                  <ul className='mt-4 list-none space-y-2' aria-label='Propositions de réponse'>
                     {question.options.map((row) => {
                       const showFeedback = answered && picked === row.id;
+                      const feedbackAnimCorrect = showFeedback && row.correct && !shouldReduce;
+                      const feedbackAnimWrong = showFeedback && !row.correct && !shouldReduce;
                       return (
-                        <motion.li
-                          key={row.id}
-                          layout
-                          onClick={() => handlePick(row.id)}
-                          animate={
-                            shouldReduce || !showFeedback ? {} :
+                        <li key={row.id}>
+                          <button
+                            type='button'
+                            onClick={() => handlePick(row.id)}
+                            className={cn(
+                              'group flex w-full cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left text-sm',
+                              'transition-[transform,box-shadow,border-color,background-color] duration-200 ease-out',
+                              !answered &&
+                                !shouldReduce &&
+                                'hover:-translate-y-0.5 hover:border-ij-accent/35 hover:bg-ij-accent/10 hover:text-ij-text hover:shadow-md',
+                              !answered && shouldReduce && 'hover:border-ij-accent/35 hover:bg-ij-accent/10 hover:text-ij-text',
+                              answered && picked === row.id && row.correct
+                                ? 'border-emerald-500/40 bg-emerald-500/10 text-ij-text'
+                                : answered && picked === row.id && !row.correct
+                                  ? 'border-red-500/35 bg-red-500/10 text-ij-text'
+                                  : 'border-ij-border/60 bg-ij-surface-2/30 text-ij-text-muted',
+                              feedbackAnimCorrect && 'animate-hero-quiz-correct',
+                              feedbackAnimWrong && 'animate-hero-quiz-shake',
+                            )}
+                          >
+                            <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-ij-surface-2/80 font-mono text-[11px] font-bold text-ij-text-subtle group-hover:bg-ij-accent/15 group-hover:text-ij-accent'>
+                              {row.id}
+                            </span>
+                            <span className='min-w-0 flex-1 leading-relaxed'>{row.text}</span>
+                            {showFeedback ? (
                               row.correct
-                                ? { backgroundColor: ['rgba(34,197,94,0.0)', 'rgba(34,197,94,0.15)', 'rgba(34,197,94,0.1)'] }
-                                : { x: [0, -8, 8, -5, 5, 0] }
-                          }
-                          transition={shouldReduce || !showFeedback ? undefined : { duration: row.correct ? 0.4 : 0.3 }}
-                          className={cn(
-                            'group flex cursor-pointer items-start gap-3 rounded-xl border px-3.5 py-3 text-left text-sm transition-all',
-                            answered && picked === row.id && row.correct
-                              ? 'border-emerald-500/40 bg-emerald-500/10 text-ij-text'
-                              : answered && picked === row.id && !row.correct
-                                ? 'border-red-500/35 bg-red-500/10 text-ij-text'
-                                : 'border-ij-border/60 bg-ij-surface-2/30 text-ij-text-muted hover:border-ij-accent/35 hover:bg-ij-accent/10 hover:text-ij-text',
-                          )}
-                        >
-                          <span className='flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-ij-surface-2/80 font-mono text-[11px] font-bold text-ij-text-subtle group-hover:bg-ij-accent/15 group-hover:text-ij-accent'>
-                            {row.id}
-                          </span>
-                          <span className='min-w-0 flex-1 leading-relaxed'>{row.text}</span>
-                          {showFeedback ? (
-                            row.correct
-                              ? <CheckCircle2 className='mt-0.5 h-4 w-4 shrink-0 text-emerald-400' aria-hidden />
-                              : <XCircle className='mt-0.5 h-4 w-4 shrink-0 text-red-400' aria-hidden />
-                          ) : null}
-                        </motion.li>
+                                ? <CheckCircle2 className='mt-0.5 h-4 w-4 shrink-0 text-emerald-400' aria-hidden />
+                                : <XCircle className='mt-0.5 h-4 w-4 shrink-0 text-red-400' aria-hidden />
+                            ) : null}
+                          </button>
+                        </li>
                       );
                     })}
                   </ul>

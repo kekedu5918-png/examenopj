@@ -203,6 +203,19 @@ const config: Config = {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.65', transform: 'scale(1.15)' },
         },
+        /** Feedback quiz — inchangé visuellement vs Framer (réduit : désactivé via classe) */
+        'hero-quiz-shake': {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '15%': { transform: 'translateX(-8px)' },
+          '30%': { transform: 'translateX(8px)' },
+          '45%': { transform: 'translateX(-5px)' },
+          '60%': { transform: 'translateX(5px)' },
+        },
+        'hero-quiz-correct': {
+          '0%': { backgroundColor: 'rgba(34, 197, 94, 0)' },
+          '50%': { backgroundColor: 'rgba(34, 197, 94, 0.15)' },
+          '100%': { backgroundColor: 'rgba(34, 197, 94, 0.1)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -211,6 +224,8 @@ const config: Config = {
         'countdown-pulse': 'countdown-pulse 3s ease-in-out infinite',
         'ex-float': 'ex-float 3s ease-in-out infinite',
         'ex-pulse-dot': 'ex-pulse-dot 2s ease-in-out infinite',
+        'hero-quiz-shake': 'hero-quiz-shake 0.35s ease-out 1',
+        'hero-quiz-correct': 'hero-quiz-correct 0.4s ease-out 1',
       },
     },
   },
