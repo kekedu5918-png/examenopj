@@ -21,6 +21,8 @@
 
 # perf (npm run perf:lighthouse)
 lighthouse-report.html
+/.lh-*.json
+/.lighthouse-tmp.json
 
 # misc
 .DS_Store

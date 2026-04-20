@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "url": "http://127.0.0.1:3000/fondamentaux",
+    "capturedAt": "2026-04-20T14:36:20.674Z",
+    "lighthouseVersion": "11.7.1",
+    "commit": "adb61cdbb65584fe0d1442cac4453002c1f50741",
+    "label": "before-2d-fondamentaux",
+    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class",
+    "note": "Protocole: 3 passes mobile (médiane) + 1 passe desktop. Vérif §3.2: meta.commit === git rev-parse HEAD (OK, adb61cd)."
+  },
+  "mobilePasses": [
+    {
+      "performanceScore": 79,
+      "lcp": 5.191,
+      "cls": 0.000098,
+      "tbt": 0.5
+    },
+    {
+      "performanceScore": 79,
+      "lcp": 5.195,
+      "cls": 0.000098,
+      "tbt": 1
+    },
+    {
+      "performanceScore": 79,
+      "lcp": 5.223,
+      "cls": 0.000098,
+      "tbt": 0.5
+    }
+  ],
+  "mobile": {
+    "performanceScore": 79,
+    "lcp": 5.195,
+    "cls": 0.000098,
+    "tbt": 0.5
+  },
+  "desktop": {
+    "performanceScore": 97,
+    "lcp": 1.285,
+    "cls": 0.000138,
+    "tbt": 0
+  }
+}
