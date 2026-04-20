@@ -1,7 +1,12 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import { motion, useReducedMotion } from 'framer-motion';
 
+import {
+  getHomeBelowHeroContainerVariants,
+  getHomeBelowHeroItemVariants,
+} from '@/components/home/home-landing-motion';
 import { HeroSection } from '@/components/home/sections/hero-section';
 import { HomeJourneyStrip } from '@/components/home/sections/home-journey-strip';
 import {
@@ -31,18 +36,47 @@ export type HomePageClientProps = {
 };
 
 export function HomePageClient({ infractionPreview }: HomePageClientProps) {
+  const shouldReduce = useReducedMotion();
+  const belowHeroContainerVariants = getHomeBelowHeroContainerVariants(shouldReduce);
+  const belowHeroItemVariants = getHomeBelowHeroItemVariants(shouldReduce);
+
   return (
     <>
       <HeroSection />
-      <HomeJourneyStrip />
-      <HomeStatsSection />
-      <StartHereSection />
-      <TerrainOriginSection />
-      <HomeEnquetesPillarSection />
-      <HomeEpreuvesLandingSection />
-      <HomeTestimonialsSection />
-      <HomeFinalPricingSection />
-      <HomeProgrammeCompletSection items={infractionPreview} />
+      <motion.div
+        variants={belowHeroContainerVariants}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, margin: '-40px' }}
+      >
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeJourneyStrip />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeStatsSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <StartHereSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <TerrainOriginSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeEnquetesPillarSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeEpreuvesLandingSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeTestimonialsSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeFinalPricingSection />
+        </motion.div>
+        <motion.div variants={belowHeroItemVariants} className='w-full'>
+          <HomeProgrammeCompletSection items={infractionPreview} />
+        </motion.div>
+      </motion.div>
     </>
   );
 }

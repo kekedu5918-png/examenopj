@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
+import { getDiagnosticCardVariants, getDiagnosticGridVariants } from '@/components/home/home-landing-motion';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
@@ -38,6 +39,8 @@ export type InfractionPreviewItem = {
 /** Section 2 — Par où commencer (homepage). */
 export function StartHereSection() {
   const shouldReduce = useReducedMotion();
+  const diagnosticGridVariants = getDiagnosticGridVariants(shouldReduce);
+  const diagnosticCardVariants = getDiagnosticCardVariants(shouldReduce);
   const MotionLink = motion(Link);
   const cards = [
     {
@@ -95,17 +98,17 @@ export function StartHereSection() {
           subtitle='Trois gestes qui structurent ta préparation — du cadre officiel à la mise en situation.'
           className='mx-auto mb-14 max-w-3xl text-center'
         />
-        <div className='grid gap-5 sm:grid-cols-2 lg:grid-cols-3'>
-          {cards.map((c, i) => {
+        <motion.div
+          className='grid gap-5 sm:grid-cols-2 lg:grid-cols-3'
+          variants={diagnosticGridVariants}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, margin: '-40px' }}
+        >
+          {cards.map((c) => {
             const colors = colorMap[c.color];
             return (
-              <motion.div
-                key={c.href}
-                initial={MOTION_INITIAL_FOR_SEO}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, ease: LANDING_EASE, delay: i * 0.08 }}
-              >
+              <motion.div key={c.href} variants={diagnosticCardVariants}>
                 <MotionLink
                   href={c.href}
                   className={[
@@ -139,7 +142,7 @@ export function StartHereSection() {
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );
