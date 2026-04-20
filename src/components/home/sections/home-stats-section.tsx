@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { BookOpen, Brain, Scale, ScrollText } from 'lucide-react';
 
 import { AnimatedStat } from '@/components/home/AnimatedStat';
-import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
+import { LANDING_EASE } from '@/components/home/motion';
 
 const icons = [BookOpen, Scale, ScrollText, Brain] as const;
 
@@ -60,13 +60,7 @@ export function HomeStatsSection() {
       <div className='relative mx-auto max-w-6xl px-4'>
         <h2 id='home-stats-title' className='sr-only'>Chiffres clés de la préparation</h2>
 
-        <motion.div
-          initial={shouldReduce ? {} : MOTION_INITIAL_FOR_SEO}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.45, ease: LANDING_EASE }}
-          className='grid grid-cols-2 gap-4 rounded-3xl border border-ij-border/70 bg-ij-surface-2/25 p-4 shadow-ij-elevated backdrop-blur-sm md:grid-cols-4 md:gap-5 md:p-6'
-        >
+        <div className='grid grid-cols-2 gap-4 rounded-3xl border border-ij-border/70 bg-ij-surface-2/25 p-4 shadow-ij-elevated backdrop-blur-sm md:grid-cols-4 md:gap-5 md:p-6'>
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
@@ -94,7 +88,7 @@ export function HomeStatsSection() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

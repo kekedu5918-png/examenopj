@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useReducedMotion } from 'framer-motion';
 import { CheckCircle2, Compass, GraduationCap, Sparkles, Target } from 'lucide-react';
 
-import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { cn } from '@/utils/cn';
 
 const STEPS = [
@@ -77,15 +76,8 @@ export function HomeJourneyStrip() {
               className='pointer-events-none absolute left-[10%] right-[10%] top-[28px] h-[2px] bg-gradient-to-r from-ij-accent/20 via-ij-primary/25 to-ij-success/20'
               aria-hidden
             />
-            {STEPS.map((s, i) => (
-              <motion.div
-                key={s.href}
-                className='relative z-[1] flex flex-1 flex-col items-center text-center'
-                initial={reduce ? {} : MOTION_INITIAL_FOR_SEO}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-20px' }}
-                transition={{ duration: 0.45, delay: i * 0.06 }}
-              >
+            {STEPS.map((s) => (
+              <div key={s.href} className='relative z-[1] flex flex-1 flex-col items-center text-center'>
                 <Link
                   href={s.href}
                   className={cn(
@@ -110,21 +102,15 @@ export function HomeJourneyStrip() {
                     <CheckCircle2 className='h-3 w-3' aria-hidden />
                   </span>
                 </Link>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Mobile: stacked cards */}
         <ul className='grid gap-3 md:hidden'>
-          {STEPS.map((s, i) => (
-            <motion.li
-              key={s.href}
-              initial={reduce ? {} : { opacity: 0, x: -12 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.35, delay: i * 0.05 }}
-            >
+          {STEPS.map((s) => (
+            <li key={s.href}>
               <Link
                 href={s.href}
                 className='flex items-center gap-4 rounded-2xl border border-ij-border/70 bg-ij-surface-2/25 p-4 transition-colors active:bg-ij-surface-2/40'
@@ -148,7 +134,7 @@ export function HomeJourneyStrip() {
                   →
                 </span>
               </Link>
-            </motion.li>
+            </li>
           ))}
         </ul>
       </div>

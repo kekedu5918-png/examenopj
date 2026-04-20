@@ -22,7 +22,7 @@ import {
 
 import { FlashcardRichText } from '@/components/flashcards/flashcard-rich-text';
 import { getDiagnosticCardVariants, getDiagnosticGridVariants } from '@/components/home/home-landing-motion';
-import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
+import { MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { GlassCard } from '@/components/ui/GlassCard';
 import { SectionTitle } from '@/components/ui/SectionTitle';
@@ -79,14 +79,7 @@ export function StartHereSection() {
   } as const;
 
   return (
-    <motion.section
-      className='border-t border-ij-border/50 bg-ij-bg px-4 py-20 md:py-28'
-      aria-labelledby='start-here-title'
-      initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section className='border-t border-ij-border/50 bg-ij-bg px-4 py-20 md:py-28' aria-labelledby='start-here-title'>
       <div className='mx-auto max-w-6xl'>
         <SectionTitle
           titleId='start-here-title'
@@ -144,7 +137,7 @@ export function StartHereSection() {
           })}
         </motion.div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -172,22 +165,9 @@ export function HomeEnquetesPillarSection() {
       };
 
   return (
-    <motion.section
-      id='enquetes-pilier'
-      className='scroll-mt-24 px-4 py-20 md:py-28'
-      aria-labelledby='enquetes-pilier-title'
-      initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section id='enquetes-pilier' className='scroll-mt-24 px-4 py-20 md:py-28' aria-labelledby='enquetes-pilier-title'>
       <div className='mx-auto max-w-6xl'>
-        <motion.div
-          initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-        >
+        <div>
           <SectionTitle
             titleId='enquetes-pilier-title'
             badge='PILIER N°1 · Exclusif'
@@ -198,7 +178,7 @@ export function HomeEnquetesPillarSection() {
             subtitle='Chaque enquête suit exactement le cadre travaillé en formation présentielle.'
             className='mx-auto mb-12 max-w-3xl text-center'
           />
-        </motion.div>
+        </div>
         <motion.div
           className='mx-auto mt-6 max-w-4xl space-y-4'
           variants={parentVariants}
@@ -246,7 +226,7 @@ export function HomeEnquetesPillarSection() {
           </MotionLink>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -255,14 +235,7 @@ export function HomeEpreuvesLandingSection() {
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
   return (
-    <motion.section
-      className='border-t border-ij-border/60 bg-ij-surface-2/20 px-4 py-20 md:py-28'
-      aria-labelledby='home-epreuves-title'
-      initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section className='border-t border-ij-border/60 bg-ij-surface-2/20 px-4 py-20 md:py-28' aria-labelledby='home-epreuves-title'>
       <div className='mx-auto max-w-6xl'>
         <SectionTitle
           titleId='home-epreuves-title'
@@ -342,7 +315,7 @@ export function HomeEpreuvesLandingSection() {
           </Link>
         </p>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -497,7 +470,6 @@ export function TerrainOriginSection() {
  * Cf. plan d'engagement (vague 5).
  */
 export function HomeTestimonialsSection() {
-  const shouldReduce = useReducedMotion();
   const items = useMemo(
     () =>
       [
@@ -521,14 +493,7 @@ export function HomeTestimonialsSection() {
   );
 
   return (
-    <motion.section
-      className='relative overflow-hidden border-t border-ij-border/50 px-4 py-20 md:py-24'
-      aria-labelledby='home-testimonials-title'
-      initial={shouldReduce ? {} : { opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section className='relative overflow-hidden border-t border-ij-border/50 px-4 py-20 md:py-24' aria-labelledby='home-testimonials-title'>
       {/* Fond subtil */}
       <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-ij-surface/80 to-transparent' aria-hidden />
 
@@ -552,13 +517,9 @@ export function HomeTestimonialsSection() {
         </div>
 
         <ul className='mt-4 grid list-none gap-5 md:grid-cols-3'>
-          {items.map((t, i) => (
-            <motion.li
+          {items.map((t) => (
+            <li
               key={t.author}
-              initial={MOTION_INITIAL_FOR_SEO}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08, ease: LANDING_EASE }}
               className='relative flex flex-col overflow-hidden rounded-2xl border border-ij-border/70 bg-ij-surface-2/25 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-ij-border-strong/45 hover:bg-ij-surface-2/40'
             >
               {/* Inset top highlight */}
@@ -573,11 +534,11 @@ export function HomeTestimonialsSection() {
                 </span>
                 {t.author}
               </footer>
-            </motion.li>
+            </li>
           ))}
         </ul>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -588,13 +549,7 @@ export function HomeFinalPricingSection() {
   const daysLeft = getDaysUntilExam();
 
   return (
-    <motion.section
-      className='relative overflow-hidden border-t border-ij-border/50 px-4 py-20 md:py-28'
-      initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section className='relative overflow-hidden border-t border-ij-border/50 px-4 py-20 md:py-28'>
       {/* Fond dégradé */}
       <div className='pointer-events-none absolute inset-0 bg-gradient-to-b from-ij-bg via-ij-surface to-ij-bg' aria-hidden />
       {/* Orb centré */}
@@ -687,7 +642,7 @@ export function HomeFinalPricingSection() {
           Rédigé par un gardien de la paix en formation OPJ présentielle · Paris · Session 2026
         </p>
       </div>
-    </motion.section>
+    </section>
   );
 }
 
@@ -695,14 +650,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
   return (
-    <motion.section
-      className='border-t border-ij-border/60 bg-ij-bg px-4 py-20 md:py-28'
-      aria-labelledby='programme-complet-title'
-      initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-    >
+    <section className='border-t border-ij-border/60 bg-ij-bg px-4 py-20 md:py-28' aria-labelledby='programme-complet-title'>
       <div className='mx-auto max-w-6xl'>
         <SectionTitle
           titleId='programme-complet-title'
@@ -712,12 +660,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
           className='mx-auto mb-12 max-w-2xl text-center'
         />
         <div className='home-program-grid'>
-          <motion.div
-            initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+          <div>
             <SectionTitle
               titleId='home-infractions-title'
               badge='ÉPREUVE 1'
@@ -762,13 +705,8 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
                 <ArrowRight className='h-4 w-4' aria-hidden />
               </MotionLink>
             </div>
-          </motion.div>
-          <motion.div
-            initial={shouldReduce ? {} : { opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.55, ease: [0.25, 0.1, 0.25, 1] }}
-          >
+          </div>
+          <div>
             <SectionTitle
               titleId='home-fond-title'
               badge='SOCLE'
@@ -806,9 +744,9 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
                 <ArrowRight className='h-4 w-4' aria-hidden />
               </MotionLink>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
