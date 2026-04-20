@@ -36,14 +36,14 @@ export default async function FondamentauxFichePage({ params }: { params: { slug
 
   return (
     <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
-      <nav className='mb-8 text-sm text-gray-500'>
-        <Link href='/fondamentaux' className='text-blue-400 hover:text-blue-300'>
+      <nav className='mb-8 font-ij-sans text-sm text-ij-text-muted'>
+        <Link href='/fondamentaux' className='text-ij-accent hover:text-ij-accent/80'>
           Fondamentaux
         </Link>
         <span className='mx-2' aria-hidden>
           /
         </span>
-        <span className='text-gray-400'>Fiche</span>
+        <span className='text-ij-text-subtle'>Fiche</span>
       </nav>
       <MarkdownArticle markdown={content} />
     </InteriorPageShell>

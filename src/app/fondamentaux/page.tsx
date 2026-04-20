@@ -26,7 +26,7 @@ export default async function FondamentauxPage() {
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.coursHub} pad='default'>
       <SectionTitle
         badge='FONDAMENTAUX'
-        badgeClassName='bg-blue-500/15 text-blue-200'
+        badgeClassName='bg-ij-accent/15 text-ij-accent'
         title='Les bases pour réussir'
         subtitle='Procédure et opérationnels : une entrée unique, des fiches lisibles en quelques minutes (puces, tableaux, encadrés).'
         size='display'
@@ -36,8 +36,8 @@ export default async function FondamentauxPage() {
       />
 
       <GlassCard className='mb-10 p-5' padding='' topGlow>
-        <p className='text-sm font-semibold text-white'>Comment lire cette rubrique</p>
-        <ul className='mt-3 list-inside list-disc space-y-1 text-sm text-slate-300'>
+        <p className='font-ij-sans text-sm font-semibold text-ij-text'>Comment lire cette rubrique</p>
+        <ul className='mt-3 list-inside list-disc space-y-1 font-ij-sans text-sm text-ij-text-muted'>
           <li>Chaque fiche va droit au but : repères d’examen, pièges, méthode.</li>
           <li>Le contenu détaillé est structuré en interne pour garantir la justesse ; vous voyez seulement la synthèse utile le jour J.</li>
         </ul>

@@ -158,13 +158,13 @@ export function InfractionAudioCoach({ legal, materiel, moral, className }: Prop
           </span>
           <div>
             <h3 className='text-xs font-bold uppercase tracking-wide text-violet-200'>Révision vocale</h3>
-            <p className='mt-1 max-w-md text-[11px] leading-relaxed text-slate-400'>
-              Séquence unique : <strong className='font-medium text-slate-300'>légal</strong>, puis{' '}
-              <strong className='font-medium text-slate-300'>matériel</strong>, puis{' '}
-              <strong className='font-medium text-slate-300'>moral</strong> — rien d’autre. Pour un ton plus naturel et
-              souple, privilégiez <strong className='font-medium text-slate-300'>Chrome ou Edge</strong> et une voix{' '}
-              <strong className='font-medium text-slate-300'>Microsoft / Google française</strong> ou marquée{' '}
-              <strong className='font-medium text-slate-300'>Neural</strong> dans le menu.
+            <p className='mt-1 max-w-md text-[11px] leading-relaxed text-ij-text-subtle'>
+              Séquence unique : <strong className='font-medium text-ij-text-muted'>légal</strong>, puis{' '}
+              <strong className='font-medium text-ij-text-muted'>matériel</strong>, puis{' '}
+              <strong className='font-medium text-ij-text-muted'>moral</strong> — rien d’autre. Pour un ton plus naturel et
+              souple, privilégiez <strong className='font-medium text-ij-text-muted'>Chrome ou Edge</strong> et une voix{' '}
+              <strong className='font-medium text-ij-text-muted'>Microsoft / Google française</strong> ou marquée{' '}
+              <strong className='font-medium text-ij-text-muted'>Neural</strong> dans le menu.
             </p>
           </div>
         </div>
@@ -181,18 +181,18 @@ export function InfractionAudioCoach({ legal, materiel, moral, className }: Prop
           <Play className='h-3.5 w-3.5' aria-hidden />
           Lire / relancer
         </Button>
-        <Button type='button' size='sm' variant='outline' className='gap-1.5 border-white/15' onClick={pauseResume}>
+        <Button type='button' size='sm' variant='outline' className='gap-1.5 border-ij-border' onClick={pauseResume}>
           <Pause className='h-3.5 w-3.5' aria-hidden />
           Pause / reprendre
         </Button>
-        <Button type='button' size='sm' variant='outline' className='gap-1.5 border-white/15' onClick={stop}>
+        <Button type='button' size='sm' variant='outline' className='gap-1.5 border-ij-border' onClick={stop}>
           <Square className='h-3.5 w-3.5' aria-hidden />
           Stop
         </Button>
-        <label className='ml-1 flex cursor-pointer items-center gap-2 text-xs text-slate-400'>
+        <label className='ml-1 flex cursor-pointer items-center gap-2 font-ij-sans text-xs text-ij-text-subtle'>
           <input
             type='checkbox'
-            className='rounded border-white/20 bg-navy-900'
+            className='rounded border-ij-border bg-ij-surface'
             checked={loop}
             onChange={(e) => setLoop(e.target.checked)}
           />
@@ -202,14 +202,14 @@ export function InfractionAudioCoach({ legal, materiel, moral, className }: Prop
 
       <div className='mt-4 grid gap-3 sm:grid-cols-2'>
         <div>
-          <label className='text-[10px] font-semibold uppercase tracking-wide text-slate-500' htmlFor={`${idBase}-voice`}>
+          <label className='text-[10px] font-semibold uppercase tracking-wide text-ij-text-subtle' htmlFor={`${idBase}-voice`}>
             Voix (français)
           </label>
           <select
             id={`${idBase}-voice`}
             value={voiceUri}
             onChange={(e) => setVoiceUri(e.target.value)}
-            className='mt-1 w-full rounded-lg border border-white/10 bg-navy-950/80 px-2 py-2 text-xs text-slate-200'
+            className='mt-1 w-full rounded-lg border border-ij-border bg-ij-surface-2/80 px-2 py-2 font-ij-sans text-xs text-ij-text'
           >
             {voices.length === 0 ? <option value=''>Chargement des voix…</option> : null}
             {voices.map((v) => (
@@ -220,7 +220,7 @@ export function InfractionAudioCoach({ legal, materiel, moral, className }: Prop
           </select>
         </div>
         <div>
-          <label className='text-[10px] font-semibold uppercase tracking-wide text-slate-500' htmlFor={`${idBase}-rate`}>
+          <label className='text-[10px] font-semibold uppercase tracking-wide text-ij-text-subtle' htmlFor={`${idBase}-rate`}>
             Débit ({rate.toFixed(2)})
           </label>
           <input
@@ -231,9 +231,9 @@ export function InfractionAudioCoach({ legal, materiel, moral, className }: Prop
             step={0.02}
             value={rate}
             onChange={(e) => setRate(parseFloat(e.target.value))}
-            className='mt-2 w-full accent-violet-500'
+            className='mt-2 w-full accent-ij-accent'
           />
-          <p className='mt-1 text-[10px] text-slate-600'>Un léger débit vers 0,96 reste lisible et moins « robot ».</p>
+          <p className='mt-1 text-[10px] text-ij-text-subtle'>Un léger débit vers 0,96 reste lisible et moins « robot ».</p>
         </div>
       </div>
 

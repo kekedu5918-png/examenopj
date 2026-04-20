@@ -77,7 +77,7 @@ export function ViewToggle({ className }: Props) {
   return (
     <div
       className={cn(
-        'inline-flex rounded-full border border-white/[0.08] bg-white/[0.05] p-1',
+        'inline-flex rounded-full border border-ij-border bg-ij-surface p-1',
         className,
       )}
       role='tablist'
@@ -93,8 +93,8 @@ export function ViewToggle({ className }: Props) {
             aria-selected={active}
             onClick={() => setMode(id)}
             className={cn(
-              'rounded-full px-4 py-2 text-sm font-semibold transition-colors duration-150',
-              active ? 'bg-[#4F6EF7] text-white' : 'text-[#8888A0] hover:text-white',
+              'rounded-full px-4 py-2 font-ij-sans text-sm font-semibold transition-colors duration-150',
+              active ? 'bg-ij-accent text-ij-bg' : 'text-ij-text-subtle hover:text-ij-text',
             )}
           >
             <span aria-hidden className='mr-1.5'>

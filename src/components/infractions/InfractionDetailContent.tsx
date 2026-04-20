@@ -51,13 +51,13 @@ function SectionShell({
       ? 'border-emerald-500/35 bg-gradient-to-br from-emerald-950/50 to-emerald-950/20'
       : accent === 'sky'
         ? 'border-sky-500/35 bg-gradient-to-br from-sky-950/45 to-sky-950/15'
-        : 'border-white/10 bg-white/[0.03]';
+        : 'border-ij-border bg-ij-text/[0.03]';
   const iconBg =
     accent === 'emerald'
       ? 'bg-emerald-500/15 text-emerald-200'
       : accent === 'sky'
         ? 'bg-sky-500/15 text-sky-200'
-        : 'bg-white/10 text-slate-200';
+        : 'bg-ij-text/10 text-ij-text';
 
   return (
     <div className={cn('rounded-2xl border p-4 sm:p-5', border)}>
@@ -66,8 +66,8 @@ function SectionShell({
           <Icon className='h-5 w-5' />
         </span>
         <div className='min-w-0'>
-          <h3 className='text-xs font-bold uppercase tracking-[0.14em] text-slate-300'>{title}</h3>
-          {subtitle ? <p className='mt-1 text-[11px] leading-snug text-slate-500'>{subtitle}</p> : null}
+          <h3 className='font-ij-sans text-xs font-bold uppercase tracking-[0.14em] text-ij-text-muted'>{title}</h3>
+          {subtitle ? <p className='mt-1 text-[11px] leading-snug text-ij-text-subtle'>{subtitle}</p> : null}
         </div>
       </div>
       <div className='pl-0 sm:pl-[52px]'>{children}</div>
@@ -85,7 +85,7 @@ export function InfractionDetailContent({ item, className }: Props) {
 
   return (
     <div className={cn('space-y-5', className)}>
-      <div className='relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#141a24] via-[#0f1218] to-[#0a0c10] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] sm:p-6'>
+      <div className='relative overflow-hidden rounded-2xl border border-ij-border bg-gradient-to-br from-ij-surface via-ij-surface-2 to-ij-bg p-5 shadow-ij-inset sm:p-6'>
         <div
           className='pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-amber-500/10 blur-3xl'
           aria-hidden
@@ -103,26 +103,26 @@ export function InfractionDetailContent({ item, className }: Props) {
           >
             {badge.label}
           </span>
-          <span className='rounded-lg border border-white/10 bg-white/[0.05] px-2 py-0.5 text-[10px] font-semibold text-slate-400'>
+          <span className='rounded-lg border border-ij-border bg-ij-text/[0.05] px-2 py-0.5 font-ij-sans text-[10px] font-semibold text-ij-text-subtle'>
             {familleBadgeLabel(item)}
             {item.fasciculePart ? ` · ${item.fasciculePart}` : ''}
           </span>
         </div>
 
-        <h2 className='font-display mt-4 text-xl font-bold leading-snug text-white sm:text-2xl'>
+        <h2 className='font-ij-display mt-4 text-xl font-bold leading-snug text-ij-text sm:text-2xl'>
           <FlashcardRichText text={item.infraction} inline />
         </h2>
 
-        <p className='mt-2 text-xs font-medium text-slate-500'>{item.groupTitle}</p>
+        <p className='mt-2 font-ij-sans text-xs font-medium text-ij-text-subtle'>{item.groupTitle}</p>
 
         <div className='mt-4 flex flex-wrap items-center gap-2'>
-          <span className='inline-flex items-center gap-2 rounded-xl border border-cyan-500/25 bg-cyan-950/30 px-3 py-2 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs text-cyan-100'>
+          <span className='inline-flex items-center gap-2 rounded-xl border border-cyan-500/25 bg-cyan-950/30 px-3 py-2 font-ij-mono text-xs text-cyan-100'>
             <Scale className='h-3.5 w-3.5 shrink-0 text-cyan-400/80' aria-hidden />
             {item.legal}
           </span>
           <span
             className={cn(
-              'inline-flex items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.04] px-3 py-2 font-[family-name:var(--font-jetbrains-mono),ui-monospace,monospace] text-xs font-semibold',
+              'inline-flex items-center gap-1.5 rounded-xl border border-ij-border bg-ij-text/[0.04] px-3 py-2 font-ij-mono text-xs font-semibold',
               peineTierTextClass(peine.tier),
             )}
           >
@@ -183,7 +183,7 @@ export function InfractionDetailContent({ item, className }: Props) {
         </SectionShell>
       </div>
 
-      <div className='overflow-hidden rounded-2xl border border-white/[0.07] bg-gradient-to-r from-slate-900/40 to-slate-950/40 p-4'>
+      <div className='overflow-hidden rounded-2xl border border-ij-border/70 bg-gradient-to-r from-ij-surface/40 to-ij-bg/40 p-4'>
         <InfractionAudioCoach legal={item.legal} materiel={item.materiel} moral={item.moral} />
       </div>
 
@@ -194,11 +194,11 @@ export function InfractionDetailContent({ item, className }: Props) {
         </div>
       ) : null}
 
-      <div className='rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3 text-xs leading-relaxed text-slate-500'>
-        <p className='font-semibold text-slate-400'>Contrôle qualité</p>
+      <div className='rounded-xl border border-ij-border bg-ij-text/[0.02] px-4 py-3 font-ij-sans text-xs leading-relaxed text-ij-text-subtle'>
+        <p className='font-semibold text-ij-text-muted'>Contrôle qualité</p>
         <p className='mt-1.5'>
-          Valider avec votre <strong className='text-slate-300'>support officiel de formation</strong> et{' '}
-          <strong className='text-slate-300'>Légifrance</strong> (textes en vigueur).
+          Valider avec votre <strong className='text-ij-text'>support officiel de formation</strong> et{' '}
+          <strong className='text-ij-text'>Légifrance</strong> (textes en vigueur).
         </p>
         <a
           href={legifranceSearchUrl(item.legal)}
@@ -215,7 +215,7 @@ export function InfractionDetailContent({ item, className }: Props) {
         {item.flashcardsCat ? (
           <Button
             asChild
-            className='h-11 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 font-semibold text-white shadow-lg shadow-amber-900/20 hover:opacity-95'
+            className='h-11 rounded-xl bg-ij-accent font-ij-sans font-semibold text-ij-bg shadow-lg shadow-ij-accent/20 hover:opacity-95'
           >
             <Link href={`/flashcards?cat=${item.flashcardsCat}`}>Réviser en flashcards</Link>
           </Button>

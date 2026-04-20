@@ -26,8 +26,8 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
 
   return (
     <div className='space-y-6'>
-      <div className='rounded-2xl border border-white/10 bg-[#0a1628] p-5'>
-        <label htmlFor='fondamentaux-filter' className='mb-2 block text-sm font-medium text-slate-100'>
+      <div className='rounded-2xl border border-ij-border bg-ij-surface p-5'>
+        <label htmlFor='fondamentaux-filter' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
           Filtrer les fiches
         </label>
         <input
@@ -36,9 +36,9 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder='Titre, thème, tag…'
-          className='w-full rounded-xl border border-white/10 bg-navy-900/80 px-4 py-3 text-gray-100 outline-none placeholder:text-slate-500 focus:border-blue-500/40 focus:ring-2 focus:ring-blue-500/20'
+          className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-4 py-3 font-ij-sans text-ij-text outline-none placeholder:text-ij-text-subtle focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
         />
-        <p className='mt-2 text-xs text-slate-300'>
+        <p className='mt-2 font-ij-sans text-xs text-ij-text-muted'>
           Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat.
         </p>
       </div>
@@ -49,17 +49,17 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
             <Link
               href={`${basePath}/${it.slug}`}
               className={cn(
-                'block rounded-2xl border border-white/10 bg-white/[0.03] p-4 transition',
-                'hover:border-blue-500/35 hover:bg-white/[0.06]',
+                'block rounded-2xl border border-ij-border bg-ij-text/[0.03] p-4 transition',
+                'hover:border-ij-accent/35 hover:bg-ij-text/[0.06]',
               )}
             >
-              <span className='font-semibold text-white'>{it.title}</span>
+              <span className='font-ij-sans font-semibold text-ij-text'>{it.title}</span>
               {it.tags.length > 0 ? (
                 <div className='mt-2 flex flex-wrap gap-1.5'>
                   {it.tags.map((t) => (
                     <span
                       key={t}
-                      className='rounded-md border border-white/15 bg-[#152a40] px-2 py-0.5 text-[11px] font-medium text-slate-100'
+                      className='rounded-md border border-ij-border bg-ij-surface-2 px-2 py-0.5 font-ij-sans text-[11px] font-medium text-ij-text'
                     >
                       {t}
                     </span>
@@ -72,7 +72,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
       </ul>
 
       {filtered.length === 0 ? (
-        <p className='py-8 text-center text-sm text-slate-400'>Aucune fiche ne correspond au filtre.</p>
+        <p className='py-8 text-center font-ij-sans text-sm text-ij-text-muted'>Aucune fiche ne correspond au filtre.</p>
       ) : null}
     </div>
   );

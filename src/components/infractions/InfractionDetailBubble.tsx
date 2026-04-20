@@ -23,7 +23,7 @@ export function InfractionDetailBubble({ item, open, onOpenChange }: Props) {
       <DialogContent
         className={cn(
           'left-[50%] top-[50%] max-h-[min(92vh,880px)] w-[min(100vw-1rem,720px)] translate-x-[-50%] translate-y-[-50%]',
-          'overflow-y-auto rounded-[1.75rem] border border-amber-400/25 bg-gradient-to-b from-[#0f141f] via-[#0a0d14] to-[#06080d]',
+          'overflow-y-auto rounded-[1.75rem] border border-ij-accent/25 bg-gradient-to-b from-ij-surface via-ij-surface-2 to-ij-bg',
           'p-0 shadow-[0_0_0_1px_rgba(251,191,36,0.1),0_32px_90px_-24px_rgba(0,0,0,0.8),0_0_60px_-18px_rgba(251,191,36,0.18)]',
           'sm:max-w-3xl',
         )}

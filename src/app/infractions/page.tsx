@@ -34,7 +34,7 @@ export default function InfractionsPage({ searchParams }: Props) {
           maxWidth='6xl'
           glow={SHELL_GLOW.infractions}
           pad='default'
-          innerClassName='flex min-h-[50vh] items-center justify-center text-gray-500'
+          innerClassName='flex min-h-[50vh] items-center justify-center text-ij-text-subtle'
         >
           <p role='status' aria-busy='true' aria-label='Chargement du référentiel infractions'>
             Chargement…
