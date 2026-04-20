@@ -16,7 +16,7 @@
 | [`sections/home-refonte-sections.tsx`](../../src/components/home/sections/home-refonte-sections.tsx) | 804 | **Bloc monolithique** : parcours « par où commencer », enquêtes, épreuves, **profils d’usage**, **pricing**, **programme complet** (grille) ; exports « infractions / fondamentaux » aperçu **non montés** sur `/` (voir §1.2). **Pas de section FAQ dédiée** dans ce fichier (accordéons = aperçu infractions). |
 | [`hydration-safe-day-counts.tsx`](../../src/components/home/hydration-safe-day-counts.tsx) | 112 | **Compteurs / badge session** (hydratation client, évite mismatch). |
 | [`sections/home-journey-strip.tsx`](../../src/components/home/sections/home-journey-strip.tsx) | 158 | **Strip parcours** : timeline « Apprendre → S’entraîner → Premium ». |
-| [`sections/home-stats-section.tsx`](../../src/components/home/sections/home-stats-section.tsx) | 102 | **Section stats** : les 3 grands chiffres clés sous le hero. |
+| [`sections/home-stats-section.tsx`](../../src/components/home/sections/home-stats-section.tsx) | 102 | **Section stats** : quatre compteurs « Chiffres clés » sous le hero (`AnimatedStat` ×4). |
 | [`AnimatedStat.tsx`](../../src/components/home/AnimatedStat.tsx) | 49 | **Présentation d’un chiffre** (composant réutilisable ; variantes light/dark). |
 | [`home-page-client.tsx`](../../src/components/home/home-page-client.tsx) | 49 | **Composition** : enchaîne les sections de la home. |
 | [`hero-quiz-data.ts`](../../src/components/home/hero-quiz-data.ts) | 53 | **Données** du mini-quiz hero (pas de styles). |
@@ -85,17 +85,19 @@ Plages de lignes (fichier au **2026-04-19**, commit courant). **Pas de refactor*
 Aucun ajout ni substitution en cours de route. Chaque animation doit respecter **`prefers-reduced-motion`** (fallback : état final statique ou transition minimale).
 
 1. **Pastille pulsante** — badge session **J-X** (compte à rebours / urgence).
-2. **Compteur au scroll** — sur les **3 chiffres clés** (`home-stats-section` / stats hero selon implémentation retenue) via **`IntersectionObserver` natif** (pas de lib tierce).
+2. **Compteur au scroll** — compteurs de la section **Chiffres clés** (**4** instances d’`AnimatedStat` dans `home-stats-section`) via **`IntersectionObserver` natif** (pas de lib tierce).
 3. **Stagger d’entrée** — cartes **« diagnostic »** (bloc concerné dans `home-refonte-sections.tsx`).
 4. **Hover subtil** — réponses **A / B / C / D** du quiz hero.
 5. **Reveal progressif** — sections **sous le hero** (`staggerChildren` **0,08** s).
 6. **Flèche animée** — au hover du **CTA principal** du hero.
 
-### 2.1 CLS — compteurs des **3 chiffres clés** (2B.2, animation n°2)
+### 2.1 CLS — compteurs de la section Chiffres clés (**4** instances) (2B.2, animation n°2)
 
-- **Typographie** : `font-variant-numeric: tabular-nums` — en Tailwind : classe **`tabular-nums`** sur le nœud qui affiche le chiffre (ou le parent du triplet si cohérent).
+- **Typographie** : `font-variant-numeric: tabular-nums` — en Tailwind : classe **`tabular-nums`** sur le nœud qui affiche chaque chiffre (ou le parent commun aux quatre valeurs si cohérent).
 - **Largeur réservée** : conteneur avec **`min-w-[…ch]`** (nombre de caractères de la valeur **finale** formatée, ex. `min-w-[4ch]`) **ou** largeur fixe dérivée du design (éviter tout saut horizontal pendant le comptage).
 - **Comportement d’animation (spécification retenue)** : **comptage numérique de 0 → valeur finale** sur une courte durée après déclenchement par `IntersectionObserver` (pas de tick bruité type RNG ; easing lisible). **Pas** de simple fade-in de la valeur finale seule : l’effet « compteur » est explicite ; si `prefers-reduced-motion`, afficher **directement la valeur finale** sans interpolation (voir §6.2).
+
+> **Décompte confirmé au 2B.2.1** (commit `34cb07e`) : **4** instances d’`AnimatedStat` dans `HomeStatsSection`, valeurs **15**, **55+**, **3**, **200+**.
 
 ---
 
@@ -283,7 +285,7 @@ Fichiers **sans styles** (`hero-quiz-data.ts`, `motion.ts`, `home-fascicule-type
 
 - Réserver l’espace des compteurs / cartes (min-height ou skeleton statique) avant compteur ou reveal.
 - Ne pas changer de **taille de police** ou de **line-height** entre états d’animation sans garde-fou.
-- **Compteurs 3 chiffres** : appliquer **`tabular-nums` + largeur min** comme en **§2.1** pour éviter le jitter horizontal pendant le comptage **0 → valeur**.
+- **Compteurs** (section stats, **4** valeurs) : appliquer **`tabular-nums` + largeur min** comme en **§2.1** pour éviter le jitter horizontal pendant le comptage **0 → valeur**.
 
 ### 6.4 **e2e / snapshots**
 
