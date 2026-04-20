@@ -240,7 +240,7 @@ Après **2E validée** :
 - Dette a11y Phase 1 résolue côté utilitaires : **47** occurrences `ring-ij-*` désormais **émises** et effectives dans le bundle.
 - Option **`--ij-focus-ring`** : laissé en `rgba` standalone (non exposé dans `colors.ij` Tailwind), cf. §2.3.
 
-**Reprise Phase 2D** : **2D.1** rétroactivement validée ; feu vert **2D.2.a** (plan dédié `phase_2d2a_grille_infractions_*.plan.md`).
+**Reprise Phase 2D** : **2D.1** rétroactivement validée ; feu vert **2D.2.a** — plan [`phase_2d2a_grille_infractions_f8a2d19e.plan.md`](phase_2d2a_grille_infractions_f8a2d19e.plan.md).
 
 ---
 
