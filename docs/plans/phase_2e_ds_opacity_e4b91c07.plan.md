@@ -144,21 +144,58 @@ Avant de considérer 2E terminée, recette manuelle **dark mode** sur :
 | `/entrainement` | Hub + sous-pages principales |
 | `/entrainement/articulation` | Parcours articulation |
 
-Pour chaque route :
+**Captures pour comparaison côte à côte (obligatoire avant merge final 2E)** :
+
+- **Avant** le commit fonctionnel **2E.1** : captures sur les **5 routes** ci-dessus, **dark mode**, **desktop + mobile** (ex. 1440×900 et 390×844), stockées dans `docs/baselines/phase-2e/screenshots-before/` (arborescence libre : par route et viewport, ex. `home-desktop.png`).
+- **Après** build **2E.1** : mêmes angles, mêmes viewports → `docs/baselines/phase-2e/screenshots-after/`.
+
+**Comparaison côte à côte** (revue humaine) pour détecter les régressions non anticipées :
+
+- **Focus rings** : apparition attendue vs trop épais / mal positionnés.
+- **Composants** qui comptaient sur une transparence « cassée » pour un effet volontaire (à identifier avant qu’ils ne se comportent différemment).
+- **Dégradés et halos** : densité / contraste modifiés.
+
+**Traçabilité Git** : commit séparé `chore(qa): screenshots avant Phase 2E` puis, après le correctif, `chore(qa): screenshots après Phase 2E` (ne pas mélanger avec le commit `fix(ds)`).
+
+Pour chaque route (checklist comportementale) :
 
 - Pas de régression flagrante (bloc illisible, contraste cassé).
 - Au **Tab** : anneaux de focus visibles et cohérents avec la charte (or / accent).
 - États **hover** / **focus** / cartes inchangés ou améliorés.
 
-**Livrable** : captures « avant / après » (baseline existante si disponible + après 2E) pour les cinq routes, comparaison visuelle rapide.
-
 ---
 
 ## §5. Tests automatiques
 
+### Lighthouse et baselines Phase 2D
+
+**Impact Lighthouse attendu : aucun** — changement de **format CSS** pur (variables + génération Tailwind), pas de JS ajouté ; le bundle CSS peut être **marginalement** plus lourd (classes `/xx` désormais émises), négligeable pour les scores.
+
+Les baselines `docs/baselines/phase-2d/lighthouse-before-2d-infractions.json` et `docs/baselines/phase-2d/lighthouse-before-2d-fondamentaux.json` **restent valides** pour la comparaison prévue en **Phase 2D.5**. **Pas de remesure Lighthouse / nouvelle baseline avant 2E.1** spécifiquement pour 2E.
+
+### Tests outillage
+
 - **Unit** : impact attendu faible (peu ou pas de tests sur les chaînes de classes).
 - **E2E** : le smoke test qui échouait sur `/fondamentaux` (filtre) doit **redevenir vert** une fois le CSS réellement généré.
 - **Axe / a11y** : possibilité de **moins** de violations sur le focus visible si les `ring-ij-*` deviennent effectifs ; surveiller aussi les contrastes si des aplats deviennent plus opaques.
+
+### Critère de validation bloquant — classes émises dans le CSS (post-build)
+
+Après `npm run build` **2E.1**, vérifier que les utilitaires `ij` avec opacité sont **réellement présents** dans `.next/static/css/*.css` (sinon le correctif n’a pas pris effet).
+
+Exemple (adapter les motifs si besoin ; échappement `\/` selon le shell) :
+
+```bash
+npm run build
+# Au moins 5 patterns issus de l’inventaire §1 — cible : 5/5 avec correspondance dans au moins un fichier CSS :
+grep -l "bg-ij-surface-2\\\\/80" .next/static/css/*.css
+grep -l "ring-ij-accent\\\\/50" .next/static/css/*.css
+grep -l "border-ij-border\\\\/70" .next/static/css/*.css
+grep -l "from-ij-accent\\\\/20" .next/static/css/*.css
+grep -l "text-ij-text-subtle\\\\/90" .next/static/css/*.css
+```
+
+**Règle** : **5/5** motifs trouvés (fichier CSS listé). Si **moins de 5** : **ne pas valider** — investigation obligatoire avant commit fonctionnel.
 
 ---
 
@@ -197,5 +234,5 @@ Après **2E validée** :
 | Champ | Valeur |
 |-------|--------|
 | Phase | 2E — Fix design system opacity |
-| Statut | Plan — en attente validation avant implémentation |
+| Statut | Plan validé — durcissements §4 / §5 intégrés (2026-04-20) |
 | Dernière mise à jour | 2026-04-20 |
