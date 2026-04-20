@@ -229,10 +229,25 @@ Après **2E validée** :
 
 ---
 
+## 9. Clôture Phase 2E
+
+- **2E.1** close au commit **`bbd76b8`** (triplets RGB + `tailwind.config.ts` migré).
+- Screenshots avant (**`0433089`**) et après (**`77eb901`**) versionnés.
+- Grep CSS compilé : **5/5** patterns émis.
+- Tests : **104** unit + **31** e2e verts (dont smoke `/fondamentaux` dans le lot).
+- Mesures runtime : `#fondamentaux-filter` → `rgba(31, 39, 56, 0.8)` en dark (équivalent marine **80 %**).
+- QA visuelle 5 routes × 2 viewports : aucune régression constatée.
+- Dette a11y Phase 1 résolue côté utilitaires : **47** occurrences `ring-ij-*` désormais **émises** et effectives dans le bundle.
+- Option **`--ij-focus-ring`** : laissé en `rgba` standalone (non exposé dans `colors.ij` Tailwind), cf. §2.3.
+
+**Reprise Phase 2D** : **2D.1** rétroactivement validée ; feu vert **2D.2.a** (plan dédié `phase_2d2a_grille_infractions_*.plan.md`).
+
+---
+
 ## Méta
 
 | Champ | Valeur |
 |-------|--------|
 | Phase | 2E — Fix design system opacity |
-| Statut | Plan validé — durcissements §4 / §5 intégrés (2026-04-20) |
+| Statut | **Clôturée** — §9 (2026-04-20) |
 | Dernière mise à jour | 2026-04-20 |
