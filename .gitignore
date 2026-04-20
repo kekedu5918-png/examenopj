@@ -48,3 +48,7 @@ next-env.d.ts
 
 # graphify — sorties régénérées localement (`npm run hooks:graphify`), non versionnées
 /graphify-out/
+
+# audits locaux (scripts jetables + sortie console)
+/scripts/_inv-*.mjs
+/scripts/_inv-out.txt
