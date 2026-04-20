@@ -317,7 +317,19 @@ Fichiers **sans styles** (`hero-quiz-data.ts`, `motion.ts`, `home-fascicule-type
 
 ---
 
-## 8. Synthèse exécutive
+## 8. Clôture Phase 2B
+
+- **Phase 2B.1** close au commit `b53b07c` (migration iso-visuelle complète).
+- **Phase 2B.2.1** close au commit `34cb07e` (compteurs stats).
+- **Phase 2B.2.2** close aux commits `b478bb6` + `985fe94` (stagger/reveal + neutralisation doublons).
+- **Phase 2B.2.3** close au commit `83aae48` (micro-animations hero ATF).
+- **Références baselines** : [`lighthouse-after-2b1-remesure.json`](../baselines/phase-2b/lighthouse-after-2b1-remesure.json) (médiane) vs [`lighthouse-after-2b23.json`](../baselines/phase-2b/lighthouse-after-2b23.json) (médiane) — règle §3.2 respectée.
+- **Dettes identifiées** tracées ailleurs (audit 55+ vs 160 infractions, `aria-labelledby` HomeFinalPricingSection, focus trap drawer mobile, blocs orphelins `@deprecated`).
+- **Phase 2B.3 polish hero** : non déclenchée (les animations 2B.2.3 livrent un hero visuellement satisfaisant selon recette utilisateur).
+
+---
+
+## 9. Synthèse exécutive
 
 ```mermaid
 flowchart LR

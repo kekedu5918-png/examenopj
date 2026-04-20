@@ -6,7 +6,7 @@
     "commit": "83aae48dea29c355c983453fc13cf3baf5da6029",
     "label": "after-2b23",
     "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class",
-    "note": "Remesure 2026-04-20 — protocole 3 passes médiane mobile (aligné after-2b1-remesure)."
+    "note": "Comparaison valide contre lighthouse-after-2b1-remesure.json (médianes 3 passes). L'ancien lighthouse-after-2b1.json (passe unique, obsolète) n'est plus la référence §3.2."
   },
   "mobilePasses": [
     {

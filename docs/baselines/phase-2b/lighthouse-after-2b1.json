@@ -5,7 +5,9 @@
     "lighthouseVersion": "11.7.1",
     "commit": "b53b07cd4eed1a4c37dbc94a301c287b31e8a79d",
     "label": "after-2b1",
-    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class"
+    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class",
+    "deprecated": true,
+    "note": "Mesure unique mobile non représentative (variance ~1,5s observée). Voir lighthouse-after-2b1-remesure.json pour la médiane 3 passes, qui fait désormais foi pour la règle §3.2."
   },
   "desktop": {
     "performanceScore": 95,
