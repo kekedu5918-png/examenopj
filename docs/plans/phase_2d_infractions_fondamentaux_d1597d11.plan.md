@@ -239,3 +239,30 @@ Reprendre §3.3–3.5 du plan 2B (`npm run build` + `npm run start`, desktop + m
 
 - Fiches `[slug]` + **`MarkdownArticle`** : si hors périmètre grep 2D.1, traiter en vague ultérieure ou audit ciblé.
 - Recherche hub **sans debounce** — alignement UX optionnel avec `/infractions` (2D.4 / quick win).
+
+---
+
+## 8. Dettes perf héritées (pré-2D)
+
+Constatations des baselines `before-2d` (commit `adb61cd`, 2026-04-20) :
+
+### `/infractions` mobile LCP 6,144 s — zone « poor »
+
+Probablement lié au volume de contenu (160 cartes + filtres + recherche). Hors scope 2D (on ne doit pas aggraver, pas obligé d’améliorer). À investiguer en Phase 3 ou lot perf dédié :
+
+- Lazy-load de la grille d’infractions
+- Pagination ou virtualisation
+- Réduction du travail d’hydratation initiale
+
+### `/infractions` desktop CLS 0,05699 — élevé
+
+Écart anormal vs `/fondamentaux` (0,000138). Candidats :
+
+- Grille qui se réorganise au chargement
+- Drawer mobile ou panneau détail qui se matérialise après hydratation
+
+Diagnostic précis à faire en Phase 3, pas dans 2D.
+
+### Règle d’application pour 2D.5
+
+La comparaison after-2d vs before-2d utilise la règle **+10 % LCP médiane sur mobile**. Le CLS `/infractions` étant déjà élevé, **ne pas aggraver le CLS** (règle **+10 %** étendue au **CLS desktop `/infractions` uniquement**, à documenter en 2D.5).
