@@ -1,22 +1,43 @@
 {
   "meta": {
     "url": "http://127.0.0.1:3000/",
-    "capturedAt": "2026-04-20T13:17:24.732Z",
+    "capturedAt": "2026-04-20T13:52:00.000Z",
     "lighthouseVersion": "11.7.1",
-    "commit": "985fe941a8cdd4fc15378d683362fdfccb3b4e8c",
+    "commit": "83aae48dea29c355c983453fc13cf3baf5da6029",
     "label": "after-2b23",
-    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class"
+    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class",
+    "note": "Remesure 2026-04-20 — protocole 3 passes médiane mobile (aligné after-2b1-remesure)."
+  },
+  "mobilePasses": [
+    {
+      "performanceScore": 78,
+      "lcp": 4.741,
+      "cls": 0.001158,
+      "tbt": 27.132
+    },
+    {
+      "performanceScore": 72,
+      "lcp": 6.212,
+      "cls": 0.001158,
+      "tbt": 38
+    },
+    {
+      "performanceScore": 79,
+      "lcp": 4.732,
+      "cls": 0.001158,
+      "tbt": 18.968
+    }
+  ],
+  "mobile": {
+    "performanceScore": 78,
+    "lcp": 4.741,
+    "cls": 0.001158,
+    "tbt": 27.132
   },
   "desktop": {
     "performanceScore": 96,
-    "lcp": 1.354,
+    "lcp": 1.357,
     "cls": 0.000626,
     "tbt": 0
-  },
-  "mobile": {
-    "performanceScore": 75,
-    "lcp": 5.797,
-    "cls": 0.001158,
-    "tbt": 10
   }
 }

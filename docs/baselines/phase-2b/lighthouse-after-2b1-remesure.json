@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "url": "http://127.0.0.1:3000/",
+    "capturedAt": "2026-04-20T13:50:00.000Z",
+    "lighthouseVersion": "11.7.1",
+    "commit": "b53b07cd4eed1a4c37dbc94a301c287b31e8a79d",
+    "label": "after-2b1-remesure",
+    "darkModeMechanism": "html.classList.contains('dark') + tailwind darkMode:class",
+    "note": "Remesure 2026-04-20 pour comparaison après 2B.2.3. Protocole 3 passes médiane."
+  },
+  "mobilePasses": [
+    {
+      "performanceScore": 71,
+      "lcp": 6.231,
+      "cls": 0.001158,
+      "tbt": 10.5
+    },
+    {
+      "performanceScore": 72,
+      "lcp": 6.201,
+      "cls": 0.001158,
+      "tbt": 9
+    },
+    {
+      "performanceScore": 72,
+      "lcp": 6.211,
+      "cls": 0.001158,
+      "tbt": 27
+    }
+  ],
+  "mobile": {
+    "performanceScore": 72,
+    "lcp": 6.211,
+    "cls": 0.001158,
+    "tbt": 10.5
+  },
+  "desktop": {
+    "performanceScore": 96,
+    "lcp": 1.391,
+    "cls": 0.000593,
+    "tbt": 0
+  }
+}
