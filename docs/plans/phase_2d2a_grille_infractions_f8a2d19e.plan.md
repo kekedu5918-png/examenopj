@@ -27,18 +27,35 @@
 - **`AnimatePresence`** sur la zone liste / grille filtrée pour les apparitions/disparitions d’items lors des changements de filtre ou de résultats de recherche.
 - **`motion.div`** avec stratégie **`layout`** conforme au **benchmark FPS** et aux paliers §3 (pas de `layout` aveugle sur ~160 cartes sans mesure).
 
-### 2.2 Recherche — debounce (**figé**)
+### 2.2 Recherche — debounce (**tranché, spec technique**)
 
-- **Décision** : hook **`useDebouncedValue(query, 150)`** (nom exact **`useDebouncedValue`**) dans **`src/hooks/use-debounced-value.ts`**, réutilisable ailleurs.
-- **Pas** de `useDeferredValue` pour cette vague : le **150 ms** est une spec du plan parent ; comportement **prédictible** et **testable en e2e** avec fenêtre temporelle stable.
+**Décision unique** : **`useDebouncedValue(query, 150)`** — hook custom dans **`src/hooks/use-debounced-value.ts`** (nom export exact **`useDebouncedValue`**), réutilisable hors infractions.
 
-### 2.3 Structure des données catalogue — **réponse factuelle (Cas A / B)**
+**Interdit dans cette vague** : **`useDeferredValue`** (React) pour piloter le filtrage sur cette spec.
+
+**Raisons (durcissement)** :
+
+1. **150 ms** est une **spec figée** du plan parent Phase 2D — à respecter telle quelle, pas une approximation du moteur React.
+2. Comportement **prédictible** (délai fixe) vs `useDeferredValue`, dépendant de la charge scheduler.
+3. **Testabilité e2e** : fenêtre temporelle stable pour d’éventuels tests de timing / non-régression sur le filtrage.
+4. **Une seule source de vérité** : la valeur affichée dans l’input peut rester instantanée ; la valeur **utilisée pour le filtre** est la valeur debouncée (documenter dans le commit si besoin).
+
+### 2.3 Point bloquant — tags « crime / délit / contravention » vs **priorité examen** (§2 plan parent)
+
+**Livrable factuel pour arbitrage Cas A / B** (ne pas trancher dans ce plan — décision produit / utilisateur) : voir **type exporté** et **exemple** ci-dessous. Tant que le Cas n’est pas choisi, **aucune implémentation** des tags pénaux au-delà de ce qui est déjà en données.
+
+### 2.4 Structure des données catalogue — **réponse factuelle (Cas A / B)**
 
 Source : [`getInfractionsCatalog()`](../../src/data/recapitulatif-data.ts) construit des objets **`InfractionCatalogItem`** à partir des `RecapRow` des sections.
 
-**Type exporté** (extrait fidèle au fichier) :
+**Types exportés** (fidèles à [`recapitulatif-data.ts`](../../src/data/recapitulatif-data.ts) au moment de la révision) :
 
 ```ts
+/** Alignée sur PRIORITE_EXAMEN_BADGE — priorité pédagogique examen, pas nature pénale. */
+export type RecapPriorite = 'core' | 'freq' | 'secours';
+
+export type RecapFasciculeId = 'F01' | 'F02' | 'F03' | 'F04' | 'F05' | 'F06' | 'F07';
+
 export type InfractionCatalogItem = {
   id: string;
   fascicule: RecapFasciculeId;
@@ -51,13 +68,15 @@ export type InfractionCatalogItem = {
   priorite?: RecapPriorite;
   noteExamen?: string;
   flashcardsCat?: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
+  /** Renseigné côté UI via correspondance flashcards (OUI / NON) */
   tentative?: string;
   complicite?: string;
+  /** Matériel / moral issus de l’audit fascicule lorsque la ligne est validée. */
   elementsSource?: 'site' | 'fascicule_audit';
 };
 ```
 
-**Constat** : il **n’existe pas** de champ typé `nature` / `typePenal` / `classification` avec valeurs `'crime' | 'délit' | 'contravention'`. Les dimensions disponibles pour le code couleur côté données sont notamment :
+**Constat factuel** : il **n’existe pas** de champ explicite `nature` / `typePenal` / `classification` avec valeurs **`'crime' | 'délit' | 'contravention'`**. Les dimensions disponibles côté données pour distinguer les entrées sont notamment :
 
 - **`fascicule`** + **`fasciculePart`** / **`groupTitle`** (périmètre éditorial / fascicule) ;
 - **`priorite`** (`RecapPriorite` = `'core' | 'freq' | 'secours'`) — alignée sur **`PRIORITE_EXAMEN_BADGE`** (priorité examen, pas la nature pénale) ;
@@ -88,16 +107,16 @@ export type InfractionCatalogItem = {
 | **A** | Si l’on **ajoute** un champ nature en données (hors scope immédiat sauf décision) | Tags crime/délit/contravention avec **`border-ij-danger` / `border-ij-primary` / `border-ij-border`** (ou équivalent charte) **en plus** de **`PRIORITE_EXAMEN_BADGE`**. |
 | **B** | Tant qu’**aucun** champ nature n’existe (état actuel) | Renoncer aux tags « crime/délit/contravention » au sens plan parent ; conserver le **code couleur priorité examen** ; migration **`PRIORITE_EXAMEN_BADGE` → tokens `ij.*`** si nécessaire. Noter que le prompt Phase 2D était **imprécis** sur la distinction priorité examen vs classification pénale. |
 
-### 2.4 Fichier dédié `infractions-motion.ts` (**figé**)
+### 2.5 Fichier dédié `infractions-motion.ts` (**tranché — jamais d’inline**)
 
-- **Règle** : tous les variants Framer pour cette vague vivent dans **`src/components/infractions/infractions-motion.ts`** (même esprit que [`home-landing-motion.ts`](../../src/components/home/home-landing-motion.ts) — Phase 2B.2.2). **Aucun** objet `variants` inline dans **`InfractionsPageClient.tsx`**.
-- **Exports attendus** :
-  - `gridContainerVariants` — variantes statiques de base si utiles ;
-  - `cardVariants` — idem ;
+- **Règle** : **tous** les objets `variants` Framer pour la vague **2D.2.a** résident dans **`src/components/infractions/infractions-motion.ts`**, sur le même modèle que [`home-landing-motion.ts`](../../src/components/home/home-landing-motion.ts) (Phase 2B.2.2). **Aucun** `variants={…}` inline ni objet motion ad hoc dans **`InfractionsPageClient.tsx`** (hors props `initial`/`animate`/`exit` qui **référencent** des noms définis dans le fichier dédié).
+- **Exports obligatoires** :
+  - **`gridContainerVariants`** — variantes de base (stagger container si utilisé) ;
+  - **`cardVariants`** — variantes de base des items ;
   - **`getGridContainerVariants(shouldReduceMotion: boolean)`** ;
-  - **`getCardVariants(shouldReduceMotion: boolean)`** — en `prefers-reduced-motion` : stagger **0**, durées **0** (instantané / pas de motion superflue), cohérent §4.
+  - **`getCardVariants(shouldReduceMotion: boolean)`** — si **`shouldReduceMotion === true`** : **stagger 0**, **durées de transition 0** (instantané, pas de motion superflue), aligné §4 et Phase 2B.
 
-### 2.5 Tags / code couleur (après arbitrage §2.3)
+### 2.6 Tags / code couleur (après arbitrage produit sur Cas A / B — §2.4)
 
 - Tant que **Cas B** : priorité **`PRIORITE_EXAMEN_BADGE`** + migration **`ij.*`** si validé.
 - **Familles** thématiques : inchangées fonctionnellement ; pas d’équivalence automatique crime/délit/contravention sans donnée nouvelle.
@@ -123,29 +142,37 @@ Aligné sur le plan parent **§2.1** :
 
 ---
 
-## 4. Tests e2e + pattern `data-reduced-motion` (**obligatoire**)
+## 4. Tests e2e + pattern `data-reduced-motion` (**tranché — obligatoire**)
 
-Aligné **Phase 2B** (cohérence accessibilité / tests).
+Aligné **Phase 2B** (même esprit que les sections accueil / `data-reduced-motion` sur composants animés).
 
-### 4.1 Attributs `data-*` sur la grille et les cartes
+### 4.1 Booléen `shouldReduceMotion`
 
-- **Conteneur grille** : `data-testid="infractions-grid"` et **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`** (même valeur booléenne que les cartes, synchronisée avec `useReducedMotion()` ou équivalent Framer).
-- **Chaque carte** (`motion.div` item) : `data-testid="infraction-card"` et **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`**.
+- **Source** : préférence **`prefers-reduced-motion: reduce`** (ex. hook projet basé sur `matchMedia` + `useSyncExternalStore`, ou équivalent **fiable** avec les media queries du navigateur / Playwright). L’important pour le plan est le **booléen unique** **`shouldReduceMotion`** passé aux getters motion et aux attributs `data-*`.
 
-Les **variants** utilisés par ces nœuds sont ceux retournés par **`getGridContainerVariants` / `getCardVariants`** (§2.4), paramétrés par **`shouldReduceMotion`** (stagger 0, transition durée 0 en mode reduce).
+### 4.2 Attributs `data-*` (synchronisation grille + cartes)
 
-### 4.2 Fichier `e2e/infractions.spec.ts`
+- **Conteneur liste / grille** (`data-testid="infractions-grid"`) :  
+  **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`** — **même valeur** que pour chaque carte.
+- **Chaque carte** (`motion.div` item, `data-testid="infraction-card"`) :  
+  **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`**.
 
-- **Axe** : pas de violation `serious`/`critical` sur `/infractions` (liste).
-- **Clavier** : Tab vers recherche, filtres, cartes (ordre logique).
-- **`data-testid`** : au minimum `infractions-grid`, `infraction-card`, champ recherche (ex. `data-testid` dédié si ajouté sur l’input).
-- **Reduced motion (obligatoire)** :
-  - `await page.emulateMedia({ reducedMotion: 'reduce' });`
-  - `await page.goto('/infractions');`
-  - `await expect(page.getByTestId('infraction-card').first()).toHaveAttribute('data-reduced-motion', 'true');`
-  - (Variante : vérifier aussi `infractions-grid` à `'true'`.)
+Les **variants** Framer appliqués à ces nœuds sont ceux retournés par **`getGridContainerVariants(shouldReduceMotion)`** et **`getCardVariants(shouldReduceMotion)`** (§2.5) : en mode reduce, **stagger 0**, **durées 0**.
 
-**Note** : les tests **2D** parent mentionnaient aussi `fondamentaux.spec.ts` — hors **2D.2.a** (autre vague).
+### 4.3 Fichier `e2e/infractions.spec.ts` (obligatoire pour 2D.2.a)
+
+- **Axe** : pas de violation `serious` / `critical` sur `/infractions` (vue liste).
+- **Clavier / repères** : au minimum champ recherche focusable ; ordre logique documenté dans le spec.
+- **`data-testid`** : `infractions-grid`, `infraction-card`, et champ recherche (`data-testid` dédié si présent).
+- **Reduced motion (obligatoire)** — assertion **exacte** à couvrir :
+  1. `await page.emulateMedia({ reducedMotion: 'reduce' });`
+  2. Navigation vers **`/infractions`** (avec `?vue=liste` si nécessaire pour la vue liste).
+  3. **`await expect(page.getByTestId('infraction-card').first()).toHaveAttribute('data-reduced-motion', 'true');`**
+  4. (Recommandé : **`await expect(page.getByTestId('infractions-grid')).toHaveAttribute('data-reduced-motion', 'true');`**)
+
+**Note implémentation** : si le contenu liste est dans un **accordéon** fermé par défaut et que les cartes ne sont pas dans le DOM tant qu’un groupe n’est pas ouvert, le test doit **ouvrir un groupe** (ex. clic sur le premier trigger) **avant** l’assert sur `infraction-card`.
+
+**Note périmètre** : le plan parent mentionne aussi **`fondamentaux.spec.ts`** — hors fichier unique **2D.2.a** ; traiter en vague hub / plan parent.
 
 ---
 
@@ -168,5 +195,5 @@ Les **variants** utilisés par ces nœuds sont ceux retournés par **`getGridCon
 | Champ | Valeur |
 |-------|--------|
 | Phase | 2D.2.a — Grille infractions + motion |
-| Statut | Plan — durcissements §2.2–§2.4 + §4 (2026-04-20), arbitrage tags §2.3 en attente |
+| Statut | Plan — point bloquant tags (§2.3–§2.4), durcissements debounce / motion / data-reduced-motion (2026-04-20), **implémentation sous feu vert** |
 | Dernière mise à jour | 2026-04-20 |
