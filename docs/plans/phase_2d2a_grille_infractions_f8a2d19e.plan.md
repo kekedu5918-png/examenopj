@@ -27,25 +27,80 @@
 - **`AnimatePresence`** sur la zone liste / grille filtrée pour les apparitions/disparitions d’items lors des changements de filtre ou de résultats de recherche.
 - **`motion.div`** avec stratégie **`layout`** conforme au **benchmark FPS** et aux paliers §3 (pas de `layout` aveugle sur ~160 cartes sans mesure).
 
-### 2.2 Recherche — debounce
+### 2.2 Recherche — debounce (**figé**)
 
-- **150 ms** de debounce sur le champ de recherche **ou** `useDeferredValue` sur la chaîne filtrante — **un seul choix** par commit, justifié en message de commit (latence perçue vs simplicité).
+- **Décision** : hook **`useDebouncedValue(query, 150)`** (nom exact **`useDebouncedValue`**) dans **`src/hooks/use-debounced-value.ts`**, réutilisable ailleurs.
+- **Pas** de `useDeferredValue` pour cette vague : le **150 ms** est une spec du plan parent ; comportement **prédictible** et **testable en e2e** avec fenêtre temporelle stable.
 
-### 2.3 Tags / code couleur
+### 2.3 Structure des données catalogue — **réponse factuelle (Cas A / B)**
 
-Le plan parent §2 mentionne des bordures **`border-ij-danger` / `border-ij-primary` ou `border-ij-accent` / `border-ij-border`** pour distinguer des catégories.
+Source : [`getInfractionsCatalog()`](../../src/data/recapitulatif-data.ts) construit des objets **`InfractionCatalogItem`** à partir des `RecapRow` des sections.
 
-À la réalité du composant :
+**Type exporté** (extrait fidèle au fichier) :
 
-- Les **familles** d’infractions sont thématiques (`personnes`, `biens`, `circulation`, …) — **pas** crime/délit/contravention au sens CPP strict dans [`infractions-family-filter.ts`](../../src/data/infractions-family-filter.ts).
-- Les **badges de priorité examen** (`core` / `freq` / `secours`) utilisent aujourd’hui des classes **rose / amber / slate** dans [`PRIORITE_EXAMEN_BADGE`](../../src/data/recapitulatif-data.ts).
+```ts
+export type InfractionCatalogItem = {
+  id: string;
+  fascicule: RecapFasciculeId;
+  fasciculePart?: string;
+  groupTitle: string;
+  infraction: string;
+  legal: string;
+  materiel: string;
+  moral: string;
+  priorite?: RecapPriorite;
+  noteExamen?: string;
+  flashcardsCat?: 'atteintes-aux-personnes' | 'atteintes-aux-biens';
+  tentative?: string;
+  complicite?: string;
+  elementsSource?: 'site' | 'fascicule_audit';
+};
+```
 
-**Décision à figer en 2D.2.a** : soit migrer les badges priorité vers une palette **`ij.*`** alignée charte (ex. danger / warning / `border-ij-border` + texte), soit conserver les couleurs actuelles pour la vague motion uniquement — **documenter le mapping** dans le PR. Aucune régression de lisibilité (contraste WCAG).
+**Constat** : il **n’existe pas** de champ typé `nature` / `typePenal` / `classification` avec valeurs `'crime' | 'délit' | 'contravention'`. Les dimensions disponibles pour le code couleur côté données sont notamment :
 
-### 2.4 Variants Framer Motion
+- **`fascicule`** + **`fasciculePart`** / **`groupTitle`** (périmètre éditorial / fascicule) ;
+- **`priorite`** (`RecapPriorite` = `'core' | 'freq' | 'secours'`) — alignée sur **`PRIORITE_EXAMEN_BADGE`** (priorité examen, pas la nature pénale) ;
+- filtres **famille** côté UI : mapping **`fascicule` → famille** thématique dans [`infractions-family-filter.ts`](../../src/data/infractions-family-filter.ts) (`personnes`, `biens`, etc.).
 
-- **Objets TS complets** (`as const`), exportés depuis un module dédié — ex. **`src/components/infractions/infractions-motion.ts`** (nouveau) **ou** extension contrôlée de [`home-landing-motion.ts`](../../src/components/home/home-landing-motion.ts) si partage de conventions.
-- **Interdit** dans le JSX : stagger du type `i * 0.08` inline ; reporter les durées/stagger dans les **variants nommés** (comme `diagnosticGridVariants` / `diagnosticCardVariants` en 2B.2.2).
+**Exemple d’entrée complète** (première ligne catalogue générée depuis `recapSectionF01P1`, équivalent à ce que retourne `getInfractionsCatalog()[0]` pour cette ligne) :
+
+```json
+{
+  "id": "f01-p1-r0",
+  "fascicule": "F01",
+  "fasciculePart": "Partie 1",
+  "groupTitle": "F01 — Atteintes aux personnes (partie 1)",
+  "infraction": "**Le meurtre**",
+  "legal": "Art. 221-1 C.P.",
+  "materiel": "**UN ACTE POSITIF DE VIOLENCE** / **SUR LA PERSONNE D'AUTRUI** / **UN LIEN DE CAUSALITÉ ENTRE L'ACTE ET LE DÉCÈS DE LA VICTIME**",
+  "moral": "**UNE INTENTION HOMICIDE**",
+  "priorite": "core",
+  "noteExamen": "Socle programme — citez la définition au mot près.",
+  "flashcardsCat": "atteintes-aux-personnes"
+}
+```
+
+**Branchement Cas A / B** (ne pas implémenter avant arbitrage produit) :
+
+| Cas | Condition | Implémentation indicative |
+|-----|-----------|---------------------------|
+| **A** | Si l’on **ajoute** un champ nature en données (hors scope immédiat sauf décision) | Tags crime/délit/contravention avec **`border-ij-danger` / `border-ij-primary` / `border-ij-border`** (ou équivalent charte) **en plus** de **`PRIORITE_EXAMEN_BADGE`**. |
+| **B** | Tant qu’**aucun** champ nature n’existe (état actuel) | Renoncer aux tags « crime/délit/contravention » au sens plan parent ; conserver le **code couleur priorité examen** ; migration **`PRIORITE_EXAMEN_BADGE` → tokens `ij.*`** si nécessaire. Noter que le prompt Phase 2D était **imprécis** sur la distinction priorité examen vs classification pénale. |
+
+### 2.4 Fichier dédié `infractions-motion.ts` (**figé**)
+
+- **Règle** : tous les variants Framer pour cette vague vivent dans **`src/components/infractions/infractions-motion.ts`** (même esprit que [`home-landing-motion.ts`](../../src/components/home/home-landing-motion.ts) — Phase 2B.2.2). **Aucun** objet `variants` inline dans **`InfractionsPageClient.tsx`**.
+- **Exports attendus** :
+  - `gridContainerVariants` — variantes statiques de base si utiles ;
+  - `cardVariants` — idem ;
+  - **`getGridContainerVariants(shouldReduceMotion: boolean)`** ;
+  - **`getCardVariants(shouldReduceMotion: boolean)`** — en `prefers-reduced-motion` : stagger **0**, durées **0** (instantané / pas de motion superflue), cohérent §4.
+
+### 2.5 Tags / code couleur (après arbitrage §2.3)
+
+- Tant que **Cas B** : priorité **`PRIORITE_EXAMEN_BADGE`** + migration **`ij.*`** si validé.
+- **Familles** thématiques : inchangées fonctionnellement ; pas d’équivalence automatique crime/délit/contravention sans donnée nouvelle.
 
 ---
 
@@ -68,13 +123,27 @@ Aligné sur le plan parent **§2.1** :
 
 ---
 
-## 4. Tests e2e
+## 4. Tests e2e + pattern `data-reduced-motion` (**obligatoire**)
 
-- **Nouveau fichier** : `e2e/infractions.spec.ts` (ou nom équivalent dans `e2e/`), dédié au périmètre **liste** `/infractions` :
-  - **Axe** : pas de violation `serious`/`critical` sur la page (aligné smoke existant).
-  - **Clavier** : navigation Tab vers filtres / cartes / recherche (ordre logique).
-- **`data-testid`** sur éléments critiques (champ recherche, premier filtre famille, première carte liste) pour stabilité des sélecteurs.
-- **`data-reduced-motion`** ou équivalent sur le conteneur animé si cohérent avec **Phase 2B** (réduire motion = pas d’animation layout coûteuse, à trancher avec implémentation).
+Aligné **Phase 2B** (cohérence accessibilité / tests).
+
+### 4.1 Attributs `data-*` sur la grille et les cartes
+
+- **Conteneur grille** : `data-testid="infractions-grid"` et **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`** (même valeur booléenne que les cartes, synchronisée avec `useReducedMotion()` ou équivalent Framer).
+- **Chaque carte** (`motion.div` item) : `data-testid="infraction-card"` et **`data-reduced-motion={shouldReduceMotion ? 'true' : 'false'}`**.
+
+Les **variants** utilisés par ces nœuds sont ceux retournés par **`getGridContainerVariants` / `getCardVariants`** (§2.4), paramétrés par **`shouldReduceMotion`** (stagger 0, transition durée 0 en mode reduce).
+
+### 4.2 Fichier `e2e/infractions.spec.ts`
+
+- **Axe** : pas de violation `serious`/`critical` sur `/infractions` (liste).
+- **Clavier** : Tab vers recherche, filtres, cartes (ordre logique).
+- **`data-testid`** : au minimum `infractions-grid`, `infraction-card`, champ recherche (ex. `data-testid` dédié si ajouté sur l’input).
+- **Reduced motion (obligatoire)** :
+  - `await page.emulateMedia({ reducedMotion: 'reduce' });`
+  - `await page.goto('/infractions');`
+  - `await expect(page.getByTestId('infraction-card').first()).toHaveAttribute('data-reduced-motion', 'true');`
+  - (Variante : vérifier aussi `infractions-grid` à `'true'`.)
 
 **Note** : les tests **2D** parent mentionnaient aussi `fondamentaux.spec.ts` — hors **2D.2.a** (autre vague).
 
@@ -99,5 +168,5 @@ Aligné sur le plan parent **§2.1** :
 | Champ | Valeur |
 |-------|--------|
 | Phase | 2D.2.a — Grille infractions + motion |
-| Statut | Plan — en attente validation |
+| Statut | Plan — durcissements §2.2–§2.4 + §4 (2026-04-20), arbitrage tags §2.3 en attente |
 | Dernière mise à jour | 2026-04-20 |
