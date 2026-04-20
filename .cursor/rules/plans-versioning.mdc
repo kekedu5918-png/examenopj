@@ -1,0 +1,10 @@
+---
+description: Versionner les plans docs/plans/*.plan.md dès leur création (traçabilité)
+alwaysApply: true
+---
+
+# Plans Phase — versionnement Git
+
+- Tout fichier **`docs/plans/**/*.plan.md`** doit être **ajouté et commité dès sa création** (même si le contenu est encore une ébauche), dans le même lot de travail que la rédaction ou immédiatement après.
+- **Ne pas** laisser un plan uniquement sur le disque local : la revue, le diff et l’historique (`git log`) en dépendent (ex. plans parents / enfants, jalons 2B.x / 2C).
+- Le dépôt **n’ignore pas** `docs/plans/` ni `*.plan.md` (voir `.gitignore` racine). Si un plan semble « absent du remote », la cause attendue est un **oubli de `git add`**, pas une exclusion automatique.
