@@ -17,9 +17,9 @@ test.describe('Accueil — prefers-reduced-motion (2B.2.1 / 2B.2.2)', () => {
     const figures = section.locator('strong');
     await expect(figures).toHaveCount(4);
     await expect(figures.nth(0)).toHaveText('15');
-    await expect(figures.nth(1)).toHaveText('55+');
+    await expect(figures.nth(1)).toHaveText('160');
     await expect(figures.nth(2)).toHaveText('3');
-    await expect(figures.nth(3)).toHaveText('200+');
+    await expect(figures.nth(3)).toHaveText('230+');
   });
 
   test('StartHere : les 3 titres de cartes sont visibles (pas masqués)', async ({ page }) => {

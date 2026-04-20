@@ -21,8 +21,8 @@ export function HomeStatsSection() {
       iconBg: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     },
     {
-      finalValue: 55,
-      suffix: '+' as const,
+      finalValue: 160,
+      suffix: '' as const,
       label: 'Infractions détaillées',
       sublabel: 'éléments constitutifs',
       Icon: icons[1],
@@ -39,7 +39,7 @@ export function HomeStatsSection() {
       iconBg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     },
     {
-      finalValue: 200,
+      finalValue: 230,
       suffix: '+' as const,
       label: 'Questions de quiz',
       sublabel: 'avec correction détaillée',

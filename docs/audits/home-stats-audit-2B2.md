@@ -36,3 +36,19 @@ Pas vérifié à cette date. À recompter contre la source réelle (grep fascicu
 Ce fichier d'audit + pas de modification code.
 
 Message : `chore(home): audit cohérence chiffres clés vs contenu réel (Phase 2B.2.1)`
+
+## Résolution
+
+Référence Git : commit sur `main` avec le message `fix(home): chiffres clés alignés contenu réel (160 infractions, 230+ quiz)` — SHA : `git log -1 --grep='fix(home): chiffres clés' --format=%H` (ou `git rev-parse HEAD` si dernier commit).
+
+Date : 2026-04-20
+
+Stats corrigées :
+
+- `55+ Infractions détaillées` → `160 Infractions détaillées` (alignement avec `getInfractionsCatalog().length = 160`)
+- `200+ Questions de quiz` → `230+ Questions de quiz` (arrondi conservateur de `quizQuestions.length = 232`, marge pour évolution du corpus)
+
+Stats conservées :
+
+- `15 Fascicules officiels` (cohérent avec `fasciculesList.length = 15`)
+- `3 Épreuves couvertes` (règle métier immuable)
