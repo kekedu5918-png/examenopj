@@ -120,6 +120,16 @@ Chaque fichier contient **`desktop`** et **`mobile`** avec les métriques ci-des
 
 2. **2B.1 vs post-2A** (régression « silencieuse » migration tokens) : comparer **`lighthouse-after-2b1.json`** à **`lighthouse-before-2b.json`**. Même seuil **±10 %** sur **LCP** en alerte (investigation obligatoire si dégradation ; pas nécessairement blocage si justification perf acceptable et CLS/TBT stables — **décision humaine** documentée dans le corps du commit 2B.1).
 
+### 3.2.1 Protocole de mesure mobile (médiane)
+
+Les mesures Lighthouse **mobile** présentent une **variance élevée** en environnement local (écart d’environ **1,5 s** entre passes observé en avril 2026). La règle **+10 %** du §3.2 s’applique sur une **médiane d’au moins 3 passes** par point de mesure, **pas** sur une passe unique.
+
+Pour toute baseline ou comparaison **2B.2 vs 2B.1** fiable :
+
+- Enregistrer **`mobilePasses`** : tableau des **3** (ou plus) passes avec `performanceScore`, `lcp`, `cls`, `tbt`.
+- Enregistrer **`mobile`** : valeurs **médianes** dérivées (même structure que les passes).
+- Comparer **`mobile.lcp`** (médiane) entre artefacts ; optionnellement remesurer **`lighthouse-after-2b1`** sur le commit historique avec le même protocole (`lighthouse-after-2b1-remesure.json`) si l’ancienne baseline était une passe seule.
+
 ### 3.3 Conditions de mesure (équivalent Lighthouse CI « standard »)
 
 - **URL** : `/` (`http://127.0.0.1:3000/` ou preview identique).
