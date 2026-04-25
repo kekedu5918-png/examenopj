@@ -1,68 +1,34 @@
 ---
-title: "Contrôle et vérification d'identité"
-tags: ["procédure", "fondamentaux", "F11"]
-description: "Contrôle d'identité (judiciaire 78-2, administratif, sur réquisition), vérification d'identité (78-3, max 4h), contrôles transfrontaliers et frontaliers (78-2 al. 9)."
+title: "Identité, rétention, interpellation"
+description: "Identité, rétention, interpellation — Fiche synthèse (session JUIN 2026). Art. 60, 60-1, 60-2, 60-3 CPP (flagrance) | 77-1 et suiv. (préliminaire) 8.1 Principe et typologie DÉFINITION – RÉQUISITION Acte par lequel les enquêteurs sollicitent d'un organisme ou d'une personne …"
+tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
+partie: "II"
+chapitre: 8
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 60"
+  - "art. 60-1"
+  - "art. 60-2"
+  - "art. 60-3"
+  - "art. 77-1"
+  - "art. 77-1-1"
+  - "art. 77-1-2"
+  - "art. 99-5"
 ---
 
-# Contrôle et vérification d'identité
+![p. 23](/fondamentaux/controle-identite-tableau-p23.jpg)
 
-> **En 30 secondes.** Le **contrôle** d'identité est l'invitation faite à une personne à justifier son identité ; la **vérification** intervient quand la personne ne peut/veut justifier (78-3 C.P.P.) — durée maximale **4 heures** (8h pour mineur). Trois fondements possibles : **judiciaire**, **réquisition du procureur**, **administratif**.
+# Identité, rétention, interpellation
 
-## Les 3 régimes de contrôle (art. 78-2 C.P.P.)
+> Art. 60, 60-1, 60-2, 60-3 CPP (flagrance) | 77-1 et suiv. (préliminaire)
 
-| Régime | Texte | Conditions |
-|--------|-------|------------|
-| **Judiciaire** | 78-2 al. 1 | **Une ou plusieurs raisons plausibles** de soupçonner que la personne a commis/tenté/se prépare à commettre une infraction, est recherchée, peut fournir des renseignements utiles, ou viole ses obligations |
-| **Sur réquisition du procureur** | 78-2 al. 2 | Réquisitions **écrites**, motivées, pour la **recherche d'infractions précises** (durée et lieux limités) |
-| **Administratif** | 78-2 al. 3 | Prévention d'atteintes à l'**ordre public**, indépendamment du comportement de la personne (sécurité, tranquillité publique) |
+## 8.1 Principe et typologie
 
-## Régimes spéciaux
+> DÉFINITION – RÉQUISITION Acte par lequel les enquêteurs sollicitent d'un organisme ou d'une personne (expert, opérateur télécom, administration, laboratoire...) l'accomplissement d'un acte technique ou la remise d'informations. La réquisition est adressée à la personne compétente et doit être précise quant à son objet et à sa base légale. Article Objet Conditions Art. 60 Examens techniques / constatations Expert ou laboratoire. Recherche d'indices matériels ou biologiques Art. 60-1 Remise de documents Opérateurs privés ou publics. Documents nécessaires à la manifestation de la vérité Art. 60-2 Interception télécoms Contenu / traçage. Ordonnance JLD obligatoire Art. 60-3 Ouverture scellés informatiques Pour copie ou exploitation. Sans altération Art. 77-1 Équivalent préliminaire Autorisation PR préalable requise Art. 77-1-1 Remise documents en préliminaire Autorisation PR. Vidéoprotection comprise Art. 77-1-2 Télécoms en préliminaire Sur ordonnance JLD Art. 99-5 Scellés informatiques / CR Commission rogatoire du JI, même cadre que 60-3
 
-| Cas | Texte | Particularité |
-|-----|-------|---------------|
-| Zone **frontière** (20 km, ports, aéroports, gares internationales) | 78-2 al. 9 | Contrôle pour vérifier respect des obligations de **détention de titres** ; durée **max 12 h** consécutives |
-| **Zones d'attente / zones internationales** | CESEDA | Régime spécifique étrangers |
-| Contrôle d'**alcoolémie / stups** au volant | L.234-3 / L.235-2 C. route | Sans condition particulière (volonté du législateur) |
+> ATTENTION Nullités textuelles: les articles 60-1 et 77-1-1 (remise de documents) prévoient la nullité à peine de non-respect de certaines formalités. En particulier, le dépassement du périmètre autorisé (ex: réquisition de vidéoprotection dépassant la seule remise d'enregistrements) est une nullité textuelle.
 
-## Vérification d'identité (art. 78-3 C.P.P.)
+## 8.2 Formalisme de la réquisition
 
-Quand la personne **refuse ou est dans l'impossibilité** de justifier son identité :
-
-- **Rétention** dans le local de police pendant le temps strictement nécessaire.
-- **Durée maximale** : **4 heures** (à compter du contrôle) — **8 heures** pour les **mineurs** (4-1 CJPM, sur autorisation parquet).
-- **Avis immédiat** au procureur de la République + information de la personne :
-  - du motif de la vérification,
-  - de son droit de **prévenir un proche / employeur / consulat**,
-  - du droit de **garder le silence**,
-  - du droit à un **interprète** si besoin.
-- À l'issue : si l'identité est établie → **remise en liberté immédiate**, sauf placement en GAV justifié par un autre cadre.
-
-## Documents acceptés pour justifier l'identité
-
-- Carte nationale d'identité, passeport, titre de séjour (étranger).
-- Permis de conduire, livret de famille, carte d'électeur (admis par jurisprudence comme **commencement de preuve**).
-- **Témoignage d'un tiers** identifiable.
-
-## Articulation avec d'autres mesures
-
-- **Audition libre (61-1)** : si éléments laissent supposer infraction, sans condition de privation.
-- **GAV (62-2)** : si raisons plausibles + infraction punie d'emprisonnement + objectif 62-2.
-- **Vérification + GAV** : la durée de vérification s'**impute** sur la GAV qui suivrait.
-
-## Réflexes OPJ
-
-- Toujours justifier le **fondement** du contrôle (al. 1, 2, 3, 9 ou régime spécial) au PV.
-- En réquisition : copie de la **réquisition écrite** annexée + horaires/lieux respectés.
-- Vérification : tenir un **registre** (heure début, fin, mesures, identité établie ou non).
-- Si la personne ne peut être identifiée à l'issue de la vérification : possibilité de relevés signalétiques (78-3 al. 4) + photographies.
-- En cas de **mineur** non accompagné : aviser parquet + **représentant légal** sans délai.
-
-## Pièges examen
-
-- ❌ Confondre **contrôle** (78-2) et **vérification** (78-3).
-- ❌ Exécuter une réquisition expirée ou hors des lieux visés.
-- ❌ Dépasser **4 heures** de vérification (nullité, libération immédiate exigée).
-- ❌ Omettre l'avis au parquet en vérification d'identité.
-- ❌ Croire qu'un contrôle administratif (al. 3) permet de contrôler n'importe qui sans rationaliser le risque OP.
-- ❌ Effectuer une **palpation de sécurité** = contrôle d'identité (deux mesures distinctes, fondements distincts).
-- ❌ Refuser le **témoignage** d'un proche pour établir l'identité (admis si tiers identifié).
+Chaque réquisition doit comporter: (1) l'identification du requérant (OPJ ou, sur autorisation, APJ/AE); (2) la base légale précise; (3) l'objet précis et délimité; (4) le cadre d'enquête (flagrance, préliminaire, CR); (5) la mention de l'autorisation préalable du PR ou JLD lorsque requise; (6) le délai de réponse le cas échéant.

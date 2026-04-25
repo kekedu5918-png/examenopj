@@ -1,6 +1,6 @@
 ---
 title: "Viol et agressions sexuelles"
-description: "Viol, agressions, consentement (lois 2025), mineurs, inceste, soumission chimique, exhibition, harcèlement — C. pén. art. 222-22 à 222-33, réformes 2025-532, 2025-623, 2025-1057."
+description: "Viol, agressions, consentement (loi 2025-1057 notamment), mineurs, inceste, soumission chimique, exhibition, harcèlement — C. pén. art. 222-22 à 222-33. Voir dette 2F.1.c (rattachement lois 2025 dans la synthèse PDF)."
 tags: ["droit pénal spécial", "fondamentaux", "C. pén.", "atteintes sexuelles", "2025", "2F.1.a"]
 partie: "V"
 chapitre: 31
@@ -16,16 +16,16 @@ articlesCites:
   - "art. 222-26 C. pén."
   - "art. 222-32 C. pén."
   - "art. 222-33 C. pén."
+  - "loi n° 2025-1057"
   - "loi n° 2025-532"
   - "loi n° 2025-623"
-  - "loi n° 2025-1057"
 ---
 
 # Viol et agressions sexuelles
 
 *Réformes **2025** (consentement, actes bucco-anaux, **professionnels de santé** en circonstances aggravantes) — lire de concert les **textes** et **Commentaires législatifs** en vigueur sur la période d'examen.*
 
-> **Nouveautés 2025** (synthèse source) : lois **n° 2025-532** (13/06) et **n° 2025-1057** (06/11/2025) : introduction de la **notion de consentement** pour *agression sexuelle* et *viol* (art. 222-22, 222-23) ; prise en charge des actes **bucco-anaux** ; professionnels de santé + lieux d'exercice (loi **2025-623**) parmi des **circonstances aggravantes** ; point en suspens sur certaines *contraintes* au profit d'un tiers (ajustement jurisprudentiel/ législatif à confirmer).
+> **Nouveautés 2025** (à consolider en 2F.1.c) : la **mise en forme** de la **loi n° 2025-1057** (06/11/2025) couvre l’**introduction explicite du consentement** et les actes **bucco-anaux** sur les art. 222-22, 222-23. — **Dette** : la synthèse source citait auparavant la **loi n° 2025-532** (13/06) en parallèle des infractions sexuelles ; ce texte ne les concerne **pas** (thématique **narcotrafic** / dispositif distinct) : **ne pas** s’en servir comme fondement pédagogique ici. — **loi 2025-623** (professionnels de santé, lieux d’exercice, circonstances aggravantes) : **contexte législatif** à reposer sur le **C. pén. consolidé** en 2F.1.c. Point en suspens sur certaines *contraintes* au profit d'un tiers.
 
 ## 31.1 Le viol (art. 222-23 C. pén.)
 

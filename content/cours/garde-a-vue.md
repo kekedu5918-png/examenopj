@@ -1,80 +1,64 @@
 ---
-title: "Garde à vue"
-tags: ["procédure", "GAV", "fondamentaux", "F11"]
-description: "Garde à vue OPJ — conditions, durées (24h/48h/72h/96h/120h/144h), droits du gardé à vue, prolongations, régimes dérogatoires (terrorisme, criminalité organisée, mineurs)."
+title: "La garde à vue"
+description: "La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de contrainte par laquelle une personne soupçonnée est maintenue à …"
+tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
+partie: "II"
+chapitre: 5
+derniereMiseAJour: "2025-12-01"
+loi2025: true
+articlesCites:
+  - "art. 62-2"
+  - "art. 63 al. 1"
+  - "art. 63-1"
+  - "art. 63-3-1"
+  - "art. 706-73"
+  - "art. 706-88"
+  - "art. 706-88-1"
+  - "art. 706-88-2"
+  - "L. 413-1"
+  - "loi n° 2025-532"
 ---
 
-# Garde à vue
+![p. 17](/fondamentaux/garde-a-vue-schema-p17.jpg)
 
-> **En 30 secondes.** Mesure privative de liberté décidée par un **OPJ** sur une personne soupçonnée d'un délit ou crime puni d'**emprisonnement**, sous le contrôle du **procureur** (ou JI). **24 h**, prolongeable à **48 h**. Régimes dérogatoires : criminalité et délinquance organisées (96 h), terrorisme/trafic stupéfiants (96 h, exceptionnellement 144 h).
+# La garde à vue
 
-## Conditions de fond (art. 62-2 C.P.P.)
+> Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et suiv. CJPM (mineurs)
 
-Quatre conditions cumulatives :
+## 5.1 Définition et nature juridique
 
-1. **Une ou plusieurs raisons plausibles** de soupçonner la personne.
-2. Infraction = **crime ou délit puni d'emprisonnement**.
-3. Mesure le **seul moyen** d'atteindre au moins l'un des **6 objectifs** (62-2 C.P.P.) :
-   - permettre l'exécution des investigations,
-   - garantir la présentation à un magistrat,
-   - empêcher la modification des preuves,
-   - empêcher la pression sur témoins/victimes,
-   - empêcher la concertation avec co-auteurs/complices,
-   - garantir la mise en œuvre de mesures destinées à faire cesser l'infraction.
-4. **Proportionnalité** au regard des nécessités de l'enquête.
+> DÉFINITION – GARDE À VUE Mesure de contrainte par laquelle une personne soupçonnée est maintenue à la disposition des enquêteurs, dans les locaux de police ou de gendarmerie, pour les nécessités de l'enquête. Elle suppose des raisons plausibles de soupçonner la commission ou la tentative d'une infraction punie d'emprisonnement. La GAV est la mesure privative de liberté la plus courante. Elle obéit à un régime très encadré par la CEDH, le Conseil constitutionnel et le législateur depuis la loi du 14 avril 2011 qui a profondément réformé la matière. Le non-respect des conditions et des droits entraîne systématiquement des nullités lourdes.
 
-## Durées et autorités habilitées
+## 5.2 Conditions cumulatives de placement (art. 62-2 CPP)
 
-| Régime | Durée initiale | Prolongations | Total max |
-|--------|----------------|---------------|-----------|
-| **Droit commun** (art. 63 C.P.P.) | **24 h** (OPJ + AvP procureur) | +24 h sur autorisation **écrite** du procureur (ou JI) — délit puni ≥ 1 an d'emprisonnement | **48 h** |
-| **Criminalité / délinquance organisées** (706-88) | 24 h + 24 h | +48 h sur ordonnance **JLD** ou JI | **96 h** |
-| **Terrorisme / stups – risque d'attentat** (706-88-1) | Idem CO | +48 h supplémentaires (JLD/JI) | **144 h** (exceptionnel) |
-| **Mineurs 13-16 ans** (CJPM L.413-1 et s.) | 12 h + 12 h | Selon gravité | **24 h** (en principe) |
-| **Mineurs 16-18 ans** | Comme majeur | Idem | 48 h (96 h si CO) |
+# Condition Caractérisation 1 Raisons plausibles Une ou plusieurs raisons plausibles de soupçonner que la personne a commis ou tenté de commettre un crime ou un délit puni d'emprisonnement 2 Unique moyen Seul moyen de parvenir à l'un au moins des 6 objectifs limitatifs listés à l'art. 62-2 3 Notification immédiate Dès le début, notification des droits à la personne dans une langue comprise Les 6 objectifs limitatifs (art. 62-2 CPP) La GAV ne peut être ordonnée que si elle est l'unique moyen de parvenir à au moins l'un des objectifs suivants. Ces objectifs doivent être motivés concrètement au PV de placement — une motivation abstraite serait une nullité: • 1. Permettre l'exécution des investigations impliquant la présence ou la participation de la personne • 2. Garantir la présentation de la personne devant le PR pour apprécier la suite à donner • 3. Empêcher la modification ou la destruction des preuves ou indices matériels • 4. Empêcher une pression sur les témoins, victimes ou leurs familles/proches • 5. Empêcher une concertation avec auteurs, coauteurs ou complices éventuels • 6. Garantir la mise en œuvre des mesures destinées à faire cesser l'infraction
 
-> Mineurs **< 13 ans** : pas de GAV. Possible **retenue judiciaire** (12 h max, renouvelable une fois) si soupçon de crime/délit puni ≥ 5 ans.
+> ATTENTION Piège fréquent: indiquer au PV une motivation générique ou standardisée ('nécessités de l'enquête', 'éviter une concertation') expose à une nullité. Chaque objectif doit être rattaché aux faits concrets de l'espèce.
 
-## Droits du gardé à vue (art. 63-1 et s. C.P.P.)
+## 5.3 Durées de la garde à vue
 
-Notification **immédiate** par OPJ, dans une langue comprise :
+CHRONOLOGIE DES DURÉES DE GARDE À VUE 0 Début 24h PR 48h PR 72h JLD CrimOrg 96h JLD CrimOrg 144h Terro. RÉGIME DE DROIT COMMUN (max 48h) CRIMINALITÉ ORGANISÉE (art. 706-73/88) TERRORISME PR = Procureur de la République | JLD = Juge des libertés et de la détention Prolongation supplémentaire exceptionnelle 48h si nécessaire (art. 706-88 CPP) Passeur in corpore: hyper-prolongation (art. 706-88-2 rétabli par loi n° 2025-532)
 
-| Droit | Texte | Modalités |
-|-------|-------|-----------|
-| Connaître la **nature et la date présumée** de l'infraction, les motifs | 63-1 | Au début + à chaque prolongation |
-| **Avocat** dès le début (et chaque audition) | 63-3-1 | Entretien 30 min, assistance auditions/confrontations, accès PV audition + certificat médical |
-| **Médecin** | 63-3 | À tout moment, à la demande de la personne, parquet, OPJ, famille |
-| **Prévenir un proche / employeur / autorité consulaire** | 63-2 | Mise en œuvre dans les **3 h** sauf circonstances insurmontables |
-| **Faire des déclarations / répondre aux questions / se taire** | 63-1 3° | Notifié dès le début |
-| **Interprète** | 63-1 | Si la personne ne parle/comprend pas le français |
-| Consulter PV de notification, certificat médical, PV des auditions (par avocat) | 63-4-1 | — |
+*Schéma 4 — Timeline consolidée des durées de GAV et autorités compétentes*
 
-> Reports d'avocat : possibles sur autorisation écrite et motivée du **procureur** ou **JLD** dans CO.
+Régime Durée Conditions Précisions Durée initiale 24 heures Toute infraction éligible À compter de l'arrestation (ou présentation à l'OPJ si fait sans contrainte) Prolongation PR + 24 h (48h total) Peine ≥ 1 an empr. Décision écrite et motivée du PR. Présentation si ce dernier l'estime nécessaire GAV CO 48h + 2 × 24 h = 96h Art. 706-73 CPP (crim. org.) Sur requête du PR, autorisée par le JLD. Décision écrite et motivée GAV CO variante 48h + 1 × 48h = 96h Même cadre (706-88) Une seule prolongation de 48h possible si les investigations restantes le justifient GAV terro. + 2 × 24 h = 144h Art. 706-88-1 CPP Risque imminent d'action terroriste / coopération internationale. Décision JLD motivée Passeur in corpore Hyper-prolongation Art. 706-88-2 rétabli (loi 2025-532) Régime spécifique, examen médical d'office en vue de l'hyper-prolongation GAV mineurs 13-16 24h maximum Pas de prolongation possible Assistance avocat obligatoire, présence représentant légal obligatoire GAV mineurs 16-18 24h + prolong. possible Sous conditions restrictives Enregistrement audiovisuel obligatoire
 
-## Déroulement
+> CLÉ Le point de départ de la GAV est l'interpellation effective, ou la présentation volontaire à l'OPJ si la personne s'est présentée d'elle-même. C'est ce moment qui déclenche le compteur des 24 heures. Le PR doit être avisé immédiatement.
 
-1. **Décision OPJ** + avis immédiat au procureur (ou JI si commission rogatoire) : 63 al. 1.
-2. **Notification des droits** sans délai (62-2 + 63-1).
-3. **Début comptage** : à compter de l'**heure d'interpellation** (heure du début de la rétention).
-4. **Auditions** : enregistrées audiovisuellement pour les **crimes** (64-1 C.P.P.), pour les mineurs (4-2 CJPM).
-5. **Examen de la situation par le procureur** avant prolongation : présentation **physique ou visioconférence** (sauf décision motivée contraire).
-6. **Levée** : remise en liberté, défèrement, COPJ, comparution immédiate, etc. La fin de la GAV est notifiée et le gardé à vue informé des suites.
+## 5.4 Les droits du gardé à vue (art. 63-1 CPP)
 
-## Réflexes OPJ
+La notification des droits est un acte essentiel dont le défaut entraîne la nullité pour atteinte aux droits de la défense. Elle doit être faite immédiatement, ou dès que possible si l'état de la personne (ivresse, malaise) ne le permet pas. Dans ce dernier cas, l'impossibilité doit être documentée au PV. Droit Article Précisions 1. Information infraction 63-1 al. 2 CPP Nature et qualification des faits, date et lieu présumés 2. Durée et prolongation 63-1 al. 2 CPP Durée initiale et possibilité de prolongation 3. Avis à proche 63-2 CPP Un membre de la famille vivant habituellement, ascendant, frère/sœur, ou autre. Délai 3h 4. Avis à employeur 63-2 CPP En complément de l'avis au proche 5. Avis autorités consulaires 63-2 CPP Si ressortissant étranger 6. Examen médical 63-3 CPP À tout moment sur demande, ou d'office: prolongation, mineurs, passeur in corpore 7. Assistance avocat 63-3-1 CPP Choix ou commis d'office. Entretien 30 min confidentiel. Présence aux auditions 8. Interprète Art. prélim. CPP Si la personne ne comprend pas le français — y compris pour entretien avocat 9. Droit au silence 63-1 5° CPP Notifié avant tout recueil de déclarations. Ne pas s'auto-incriminer 10. Consultation pièces 63-4-1 CPP PV notification GAV, certificat médical, PV auditions de la personne 11. Déclaration au PV 63-1 dernier al. La personne peut faire une déclaration qui sera portée au PV 12. Présentation magistrat 63 CPP À l'issue de la mesure, le cas échéant
 
-- **Aviser le parquet sans délai** (TJ compétent, par tout moyen — souvent permanence parquet).
-- **Notifier les droits** AVANT toute audition de fond.
-- Tenir le **registre de garde à vue** : heures précises (interpellation, notification, repas, repos, médecin, avocat, début/fin auditions).
-- Repos : **temps de repos suffisant** entre auditions, **alimentation** assurée.
-- Demander **examen médical** systématique en cas de doute, blessures, intoxication.
-- Convocation pour audition libre (61-1) si conditions GAV non réunies — la personne peut quitter à tout moment.
+> ATTENTION Art. préliminaire CPP: la personne doit être informée de ses droits dans une langue qu'elle comprend. Le droit de se taire et celui d'être assistée par un avocat sont des droits fondamentaux, dont le défaut de notification est une cause de nullité. Aucune condamnation ne peut être prononcée sur les seules déclarations faites sans que le droit au silence ait été notifié.
 
-## Pièges examen
+## 5.5 L'avocat en garde à vue
 
-- ❌ Placer en GAV pour une **contravention** (impossible — il faut emprisonnement encouru).
-- ❌ Oublier d'aviser le parquet sans délai.
-- ❌ Calculer la durée à compter de la notification au lieu de l'**heure d'interpellation**.
-- ❌ Confondre **GAV** (privative de liberté + auditions) et **audition libre** (61-1, sans contrainte).
-- ❌ Omettre la **notification du droit de se taire** (cause de nullité — Cass. crim.).
-- ❌ Reporter l'avocat sans **motivation écrite** spéciale.
-- ❌ Appliquer le régime CO sans que les faits relèvent d'une infraction visée à **706-73 C.P.P.**
+> Art. 63-3-1 à 63-4-5 CPP Aspect Règle Désignation Choix ou commis d'office (via le bâtonnier) Entretien initial Confidentiel de 30 minutes Présence aux auditions Droit d'assister et de poser des questions à la fin Consultation des pièces PV de notification, certificat médical, PV d'audition de la personne Rencontres ultérieures 30 min à chaque prolongation Report d'intervention Max 12h (+12h pour JLD) si crimes ou délits ≥ 5 ans — raisons impérieuses Criminalité organisée PR/JI d'office ou sur demande OPJ: report jusqu'à 24h Terrorisme / trafic stup. JLD peut reporter jusqu'à 48h (voire 72h)
+
+> CLÉ L'avocat est informé sous 3 heures: nature, date et lieux présumés de l'infraction (art. 63-3-1). Si l'avocat ne se présente pas dans les 2 heures suivant son information, l'audition peut débuter sans lui. Ce délai court à partir de l'appel.
+
+## 5.6 Obligations procédurales de l'OPJ
+
+Obligation Règle Précisions Avis au PR Immédiat dès le début (art. 63 al. 1) Oral possible mais à confirmer par écrit (modèle standardisé) Notification des droits Dès le début, langue comprise (63-1) PV signé par la personne. Formulaire remis Registre GAV Tenu à jour en permanence Horaires repas, sommeil, interruptions, visites médicales Enregistrement audiovisuel Obligatoire pour CRIME (64-1) Impossibilité technique: à mentionner au PV + avis PR/JI Notification des prolongations Motivée et signée par PR Présentation si PR l'estime utile Entretien avocat Conditions matérielles de confidentialité Registre d'entretien Examen médical Sur demande ou d'office Médecin choisi par l'OPJ ou sur demande Notification de fin de GAV PV de déroulement et de fin Décompte précis des durées Transmission PV au PR en fin d'enquête Avec l'ensemble des pièces et scellés
+
+> JURISPRUDENCE Cass. crim. 26/03/2008 — Le défaut d'enregistrement d'une audition de mineur placé en garde à vue, en l'absence d'impossibilité technique mentionnée au PV, est une cause de nullité (bascule dans l'ordre public).

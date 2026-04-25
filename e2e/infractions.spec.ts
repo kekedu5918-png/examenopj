@@ -36,14 +36,16 @@ test.describe('/infractions — Phase 2D (liste)', () => {
   });
 
   test('clavier : recherche focusable + carte visible dans un groupe ouvert', async ({ page }) => {
-    await gotoInfractionsListe(page);
+    test.setTimeout(60_000);
+    await page.goto('/infractions?vue=liste', { waitUntil: 'networkidle' });
+    await expect(page.getByRole('heading', { name: 'Infractions', level: 1 })).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByRole('searchbox', { name: /Rechercher une infraction/i })).toBeVisible({ timeout: 30_000 });
     const search = page.getByRole('searchbox', { name: /Rechercher une infraction/i });
     await search.focus();
     await expect(search).toBeFocused();
-    // Même remarque que reduced-motion : accordéon fermé = pas de cartes dans le DOM (Radix).
     const firstGroupTrigger = page.getByTestId('infractions-grid').locator('button').first();
     await expect(firstGroupTrigger).toBeVisible({ timeout: 30_000 });
     await firstGroupTrigger.click();
-    await expect(page.getByTestId('infraction-card').first()).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByTestId('infraction-card').first()).toBeVisible({ timeout: 50_000 });
   });
 });

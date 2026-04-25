@@ -1,80 +1,28 @@
 ---
-title: "La sanction pénale (F10)"
-tags: ["fondamentaux", "peines", "récidive", "F10", "DPG"]
-description: "Hiérarchie des peines, récidive légale, sursis, prescription de la peine et réhabilitation — l'arsenal de la sanction pénale en droit français."
+title: "Sanction pénale, mesures, règles communes de sûreté"
+description: "Sanction pénale, mesures, règles communes de sûreté — Fiche synthèse (session JUIN 2026). Art. 768 à 781 CPP 26.1 Les trois bulletins Bulletin Nature Destinataires Bulletin n°1 Intégral Ensemble des condamnations prononcées. Remis aux magistrats et à certaines administrations uniquement Bu…"
+tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
+partie: "IV"
+chapitre: 26
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 768"
 ---
 
-# La sanction pénale (F10)
+![p. 47](/fondamentaux/sanction-penale-tableau-p47.jpg)
+![p. 48](/fondamentaux/sanction-penale-tableau-p48.jpg)
 
-> **En 30 secondes.** Trois familles de peines (crime / délit / contravention), un principe (**individualisation**, art. 132-1), une aggravation (**récidive légale** — pas la simple réitération), et deux prescriptions à ne jamais confondre : celle de **l'action publique** (poursuite) vs celle de **la peine** (exécution).
+# Sanction pénale, mesures, règles communes de sûreté
 
-## Hiérarchie des peines
+> Art. 768 à 781 CPP
 
-| Catégorie | Peine principale | Exemples de complémentaires |
-|-----------|------------------|------------------------------|
-| **Crime** | Réclusion criminelle (10 ans à perpétuité) ; détention criminelle pour atteintes aux intérêts fondamentaux | Interdiction droits civiques, confiscation, suivi socio-judiciaire |
-| **Délit** | Emprisonnement (≤ 10 ans) ; amende ; jour-amende ; TIG ; stage ; **DDSE** | Suspension/annulation permis, interdiction professionnelle, confiscation |
-| **Contravention** | Amende (5 classes : jusqu'à 1 500 €, 3 000 € en récidive 5e classe) | Suspension permis, retrait points, confiscation |
+## 26.1 Les trois bulletins
 
-> Loi de programmation **2019-222** : peines ≤ 1 mois ferme **interdites** ; entre 1 et 6 mois, l'aménagement est **principe**.
+Bulletin Nature Destinataires Bulletin n°1 Intégral Ensemble des condamnations prononcées. Remis aux magistrats et à certaines administrations uniquement Bulletin n°2 Expurgé Relevé principal des condamnations. Accessible aux administrations, employeurs publics, autorités militaires... Bulletin n°3 Restreint Condamnations les plus graves. Seul bulletin pouvant être remis à la personne concernée elle-même
 
-## Personnalisation de la peine (132-1)
+## 26.2 Communication et utilisation
 
-- Circonstances de l'infraction + personnalité de l'auteur + situation matérielle/familiale.
-- **Motivation spéciale** de toute peine d'emprisonnement ferme.
-- Aménagements possibles : DDSE, semi-liberté, placement extérieur, sursis probatoire, fractionnement.
+Aspect Règle Demande B3 À la personne concernée directement (ou représentant légal si mineur/tutelle) Demande B2 Via PR du lieu de résidence. Justification d'identité Usage par le juge Le B1 fait preuve de la récidive. Si contestation, demande des copies de décisions Effets amnistie/réhabilitation Effacement des mentions selon les règles applicables
 
-## Récidive légale (art. 132-8 et s.)
-
-| Type | Conditions | Effet |
-|------|-----------|-------|
-| **Crime → crime / délit puni de 10 ans** | Sans condition de délai | **Doublement** des peines |
-| **Délit → même délit / délit assimilé** | Dans les **5 ans** après peine définitive | Doublement (10 ans pour 5) |
-| **Contravention 5e classe → même** | Dans **1 an** | Aggravation prévue par le texte |
-
-> **Délits assimilés** (132-16) : vol / extorsion / escroquerie / recel forment une même famille pour la récidive.
-
-## Concours réel d'infractions (132-2)
-
-- Plusieurs infractions distinctes commises avant condamnation définitive.
-- **Cumul juridique** : chaque peine prononcée s'exécute dans la limite du **maximum légal le plus élevé** parmi celles encourues.
-- En **comparution immédiate**, toutes les infractions du même contexte sont jugées ensemble.
-
-## Sursis et alternatives
-
-| Mesure | Caractéristique |
-|--------|-----------------|
-| **Sursis simple** | Suspension si pas de nouvelle condamnation dans 5 ans (délit) / 3 ans (contravention) |
-| **Sursis probatoire** | Anciens « sursis avec mise à l'épreuve » + « contrainte pénale » — obligations + suivi SPIP |
-| **TIG** | 20 à 400 heures, accord préalable du condamné |
-| **Stage** | Citoyenneté, sensibilisation stupéfiants, sécurité routière, etc. |
-
-## Prescription de la peine (art. 133-2 et s.)
-
-| Infraction | Délai de prescription de la peine |
-|------------|-----------------------------------|
-| Crime | **20 ans** |
-| Délit | **6 ans** |
-| Contravention | **3 ans** |
-
-> Distinct de la **prescription de l'action publique** : 20 ans (crime), 6 ans (délit), 1 an (contravention) — art. 7 à 9 C.P.P.
-
-## Effacement / réhabilitation
-
-- **Réhabilitation légale** : automatique après un délai (3 à 10 ans selon peine).
-- **Réhabilitation judiciaire** : sur requête, conditions plus souples.
-- Conséquences sur **B2 / B3** à anticiper dans la motivation.
-
-## Réflexes OPJ
-
-- Vérifier la **peine encourue** (et non prononcée) pour articuler GAV, CRPC, comparution immédiate.
-- Identifier la **récidive légale** dès la GAV (TAJ, B1) — impact direct sur le quantum.
-- Pour les délits assimilés (132-16), élargir la recherche : un vol antérieur peut être en récidive d'une escroquerie.
-
-## Pièges examen
-
-- ❌ Confondre **récidive légale** et simple **réitération** (pas d'aggravation auto).
-- ❌ Oublier de raisonner sur la peine **encourue** pour les seuils procéduraux.
-- ❌ Croire que la **complicité** entraîne une peine moindre — punie **comme l'auteur** (121-6).
-- ❌ Confondre **prescription action publique** et **prescription de la peine**.
-- ❌ Méconnaître le **principe d'aménagement** entre 1 et 6 mois.
+PARTIE V DROIT PÉNAL SPÉCIAL Le droit pénal spécial examine les infractions définies une à une par le Code pénal et les codes spécialisés (code de la route, code de la sécurité intérieure, code de la santé publique). Pour chaque infraction, il faut maîtriser: ses éléments constitutifs (matériel + moral), ses circonstances aggravantes, sa répression (peines), ses particularités procédurales. Cette partie est indispensable pour toute qualification pénale devant le jury d'oral.

@@ -1,75 +1,52 @@
 ---
-title: "Nullités des actes de procédure (F15)"
-tags: ["procédure", "nullités", "F15", "DPP", "prioritaire"]
-description: "Typologie, causes, juridictions et effets en cascade des nullités de procédure pénale — la principale arme défensive de la défense."
+title: "La nullité des actes de procédure"
+description: "La nullité des actes de procédure — Fiche synthèse (session JUIN 2026). Art. 170 à 174, 802 CPP 16.1 Finalité et distinction Le régime des nullités a pour objet d'assurer le respect des règles procédurales. Il s'agit d'annuler l'acte procédural vicié (et éventuellement le…"
+tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
+partie: "III"
+chapitre: 16
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 100-7"
+  - "art. 105"
+  - "art. 170"
+  - "art. 171"
+  - "art. 174"
+  - "art. 198"
+  - "art. 56"
+  - "art. 59"
+  - "art. 60-1"
+  - "art. 706-81"
+  - "art. 706-95-14"
+  - "art. 78-3"
+  - "art. 802"
 ---
 
-# Nullités des actes de procédure (F15)
+![p. 34](/fondamentaux/nullites-procedure-tableau-p34.jpg)
+![p. 35](/fondamentaux/nullites-procedure-tableau-p35.jpg)
 
-> **En 30 secondes.** Une nullité = une procédure qui s'effondre. Quatre types (textuelle, substantielle, ordre public, privée), un principe (le **grief**, art. 802 C.P.P.), un risque majeur (**l'effet cascade**) et une règle de survie (**purge** à l'ouverture des débats au fond).
+# La nullité des actes de procédure
 
-## Typologie
+> Art. 170 à 174, 802 CPP
 
-| Type | Source | Conséquence |
-|------|--------|-------------|
-| **Textuelle** | Le texte prévoit expressément la nullité | Annulation **automatique** sur demande |
-| **Substantielle** | Atteinte à un principe essentiel sans texte | Annulation **si grief** démontré |
-| **D'ordre public** | Atteint un intérêt général (compétence, droits de la défense) | Pas besoin de grief |
-| **Privée** | Protège l'intérêt d'une partie | **Grief obligatoire** |
+## 16.1 Finalité et distinction
 
-> **Article 802 C.P.P.** : la juridiction ne peut prononcer la nullité que si elle a effectivement porté **atteinte aux intérêts** de la partie qu'elle concerne. → **principe du grief**.
+Le régime des nullités a pour objet d'assurer le respect des règles procédurales. Il s'agit d'annuler l'acte procédural vicié (et éventuellement les actes qui en découlent), afin d'en détruire les effets juridiques et les preuves engendrées. ARBRE DE DÉCISION - LES NULLITÉS DES ACTES DE PROCÉDURE Irrégularité constatée? Nullité TEXTUELLE (loi prévoit expressément) Nullité SUBSTANTIELLE (art. 171 CPP) Cas visés par la loi: • Perquisitions (art. 59) • Réquisitions (60-1, 77-1-1) • Interceptions (100-7) • Vérification identité (78-3) Appréciée au cas par cas: • Droit à avocat non notifié • Audition GAV avec indices • Délais non respectés • Droit au silence omis Atteinte aux intérêts? (art. 802 CPP) OUI → NULLITÉ prononcée NON → pas de nullité
 
-## Les principales causes de nullité
+*Schéma 6 — Arbre de décision pour le traitement des nullités*
 
-| Acte / Cadre | Cause typique | Texte |
-|--------------|---------------|-------|
-| Contrôle d'identité | Hors cas prévus / discriminatoire | Art. 78-2 |
-| Garde à vue | Notification tardive des droits, défaut d'avocat, défaut d'avis parquet | Art. 63 et s. |
-| Audition libre | Défaut de notification des droits | Art. 61-1 |
-| Perquisition | Hors cadre, sans assentiment écrit en EP, hors heures légales | Art. 56, 76, 59 |
-| Saisies / scellés | Inventaire manquant, scellé non placé sous main de justice | Art. 54, 56 |
-| Réquisitions | Sans autorisation parquet (EP), sans cadre | Art. 60 / 60-1 / 77-1 / 77-1-1 |
-| Géolocalisation, sonorisation | Hors autorisation, durée dépassée | Art. 230-32 et s. |
-| Interceptions téléphoniques | Hors cadre criminalité organisée ou hors instruction | Art. 100 et s. / 706-95 |
+Type Définition Exemples Régime NULLITÉS TEXTUELLES La loi prévoit EXPRESSÉMENT la nullité à peine de non-respect Ex.: art. 59 CPP (perquisitions), 60-1, 77-1-1 (remise docs), 100-7 (interceptions), 78-3 (verif. id.) Exclut toute appréciation du juge NULLITÉS SUBSTANTIELLES Formalité substantielle dont le non-respect porte atteinte aux intérêts (art. 171) Ex.: défaut notification droit à avocat, audition GAV avec indices graves, délais non respectés Appréciation du juge — démonstration du grief
 
-## Qui peut invoquer ?
+## 16.2 Nullités d'ordre privé vs d'ordre public
 
-- **Toute partie** au procès (mis en examen, témoin assisté, partie civile, procureur).
-- **La juridiction d'instruction d'office** pour certaines nullités d'ordre public.
+Ordre Règle Effets ORDRE PRIVÉ Prononcées si l'irrégularité a porté atteinte aux intérêts de la partie concernée (art. 802) Principe du 'pas de nullité sans grief'. Doit être soulevée par la partie concernée ORDRE PUBLIC Protègent les règles fondamentales du bon fonctionnement du système répressif Peuvent être relevées d'office, sans grief démontré. Pas de purge. Exemples: incompétence territoriale, délégation d'expertise à OPJ par CR
 
-## Devant qui et dans quels délais ?
+## 16.3 Les principales causes de nullité
 
-| Phase | Juridiction | Délai |
-|-------|-------------|-------|
-| Pendant l'instruction | **Chambre de l'instruction** | **6 mois** suivant la mise en examen / 1ère comparution |
-| Au stade du jugement | Correctionnel / cour d'assises | **In limine litis** (avant tout débat de fond) |
-| En cassation | Cour de cassation | Dans le cadre du pourvoi |
+Nullités textuelles (liste non exhaustive): • Perquisitions — art. 56, 56-1, 57, 59 CPP: défaut présence obligatoire, non-respect secret professionnel, droits de la défense • Réquisitions informatiques — art. 60-1 et 77-1-1 CPP: dépassement périmètre d'autorisation • Interceptions de correspondances — art. 100-7 CPP: infractions non visées par 100 CPP • Infiltration — art. 706-81 CPP: non-respect du cadre réglementaire • Vérification d'identité — art. 78-3 CPP: durée max 4 heures dépassée • Moyens d'investigation exorbitants — art. 706-95-14 CPP: détournement d'objet (écoutes, sonorisations, captations) Nullités substantielles (exemples): • Non-notification des droits en GAV (avocat, silence, interprète) • Audition d'une personne en qualité de témoin alors que des indices graves et concordants pèsent sur elle (art. 105) • Délai de 3h pour avis à avocat non respecté • Manque de motivation du placement en GAV (objectifs 62-2) • Défaut d'enregistrement audiovisuel d'audition de mineur en GAV
 
-## Effets
+## 16.4 Effets de la nullité (art. 174 CPP)
 
-| Effet | Description |
-|-------|-------------|
-| **Annulation de l'acte** | Acte retiré du dossier (cancellation) |
-| **Annulation en cascade** | Tout acte dont l'acte annulé est le **support nécessaire** tombe |
-| **Conservation** des actes utiles | Éléments matériels indépendants restent valables |
-| **Purge** | À l'ouverture des débats au fond, nullités non soulevées = forclos |
+Effet Conséquence Sur la procédure Retrait du dossier et classement au greffe de la CA. Interdiction d'y puiser renseignements Sur les parties Impossibilité pour avocats et magistrats d'utiliser les actes annulés. Poursuites disciplinaires si violation Sur les actes subséquents La chambre de l'instruction décide si l'annulation s'étend à tout ou partie de la procédure ultérieure Purge La chambre de l'instruction purge les nullités. Pas d'appel possible par les parties pour celles qu'elle n'a pas retenues Délais Délictuel: 1 mois si MCI détenu, 3 mois sinon post-175. Forclusion si dépassé Cancellation Actes partiellement annulés: rayés/bâtonnés pour être rendus illisibles. Copie certifiée conforme classée au greffe CA
 
-> **Cancellation** : l'acte annulé ne peut plus être consulté ni utilisé ; il est physiquement retiré du dossier.
-
-## Réflexes OPJ pour éviter la nullité
-
-1. **Vérifier le cadre** d'enquête (flagrance, EP, CR) avant chaque acte.
-2. **Notifier les droits** systématiquement (GAV, audition libre).
-3. **Tracer** dans les PV : heure, motif, autorité avisée.
-4. **Assentiment écrit** en perquisition d'EP ; à défaut, autorisation JLD.
-5. **Aviser le parquet sans délai** (GAV, prolongation, perquisition).
-6. **Heures légales** 6 h–21 h en perquisition hors flagrance/CR/crim. orga.
-7. **Conserver** réquisitions, autorisations, retours JLD.
-
-## Pièges examen
-
-- ❌ Confondre **textuelle** (sans grief) et **substantielle** (grief).
-- ❌ Oublier **l'effet cascade** : un contrôle d'identité illégal fait tomber la GAV.
-- ❌ Soulever une nullité au fond après ouverture des débats — la **purge** est implacable.
-- ❌ Penser qu'une simple irrégularité = nullité — il faut un **grief** ou un **texte**.
-- ❌ Dépasser les **6 mois** devant la chambre de l'instruction (forclusion).
+> CLÉ Règle applicable depuis le 30/09/2025: le dernier mémoire déposé par une partie devant la chambre de l'instruction doit récapituler l'ensemble des moyens de nullité. À défaut, ils sont réputés abandonnés. (Art. 198 CPP modifié.) PARTIE IV DROIT PÉNAL GÉNÉRAL Le droit pénal général pose les principes fondamentaux qui gouvernent toute infraction: classification des infractions, application de la loi dans le temps et l'espace, responsabilité pénale, causes d'irresponsabilité, tentative, complicité, coaction, sanctions, récidive, concours. Sans maîtrise de ces principes, aucune qualification pénale rigoureuse n'est possible.

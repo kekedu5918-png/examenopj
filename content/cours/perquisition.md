@@ -1,66 +1,36 @@
 ---
-title: "Perquisition, visite domiciliaire et saisies"
-tags: ["procédure", "fondamentaux", "F12"]
-description: "Perquisitions selon le cadre (flagrance, préliminaire, instruction), horaires, assentiment, autorisation JLD, lieux protégés (avocat, presse, magistrat) et saisies."
+title: "Perquisitions, visites et saisies"
+description: "Perquisitions, visites et saisies — Fiche synthèse (session JUIN 2026). Art. 61-1 CPP 6.1 L'audition libre DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une personne qui est soupçonnée pour les besoins d'une enquête, lorsque le recours à la GAV …"
+tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
+partie: "II"
+chapitre: 6
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 61-1"
+  - "art. 61-3"
 ---
 
-# Perquisition
+![p. 20](/fondamentaux/perquisition-tableau-p20.jpg)
 
-> **En 30 secondes.** Une perquisition est une **recherche d'éléments à conviction au domicile** d'une personne. Conditions très différentes selon le **cadre** (flagrance / préliminaire / instruction) et la **qualité du lieu** (domicile, cabinet d'avocat, presse, magistrat). Toujours respecter les **horaires légaux** (6h–21h) sauf dérogation.
+# Perquisitions, visites et saisies
 
-## Définition
+> Art. 61-1 CPP
 
-- **Perquisition** : recherche d'éléments à conviction dans un lieu **clos** (domicile, dépendances, véhicule fermé, locaux professionnels…) — art. 56 et s. C.P.P.
-- À distinguer de la **fouille** sur la voie publique et de la **visite domiciliaire administrative** (douanes, fisc, JLD).
+## 6.1 L'audition libre
 
-## Cadres et conditions
+> DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une personne qui est soupçonnée pour les besoins d'une enquête, lorsque le recours à la GAV n'est pas strictement nécessaire. La personne doit consentir à cette audition et peut la quitter à tout moment. Droit Précisions Nature et qualification Information sur l'infraction présumée, date et lieu Droit de partir Quitter les locaux à tout moment — droit à notifier explicitement Droit à un avocat Pour les délits punis d'emprisonnement uniquement Droit au silence Se taire sur les faits reprochés Droit à interprète Si la personne ne comprend pas le français Droit Précisions Pièces essentielles Consultation de certaines pièces (moins large que GAV)
 
-| Cadre | Texte | Assentiment | Horaires | Autorisation préalable |
-|-------|-------|-------------|----------|------------------------|
-| **Flagrance** | 56 C.P.P. | **Non requis** (de plein droit) | 6h–21h (al. 1 art. 59) | Avis procureur |
-| **Enquête préliminaire — accord** | 76 al. 1 | **Assentiment écrit** de l'occupant | 6h–21h | Avis procureur |
-| **Enquête préliminaire — sans accord** | 76 al. 4 | Refus / silence de l'occupant | 6h–21h | **Ordonnance motivée du JLD** sur réquisitions du procureur (délit puni ≥ 5 ans) |
-| **Information judiciaire** | 92 et s. | Sur **commission rogatoire** | 6h–21h | Décision du JI |
-| **Criminalité organisée — nuit** | 706-89 et s. | — | **Possible la nuit** | Ordonnance JLD |
-| **Terrorisme — nuit dans domicile** | 706-91 | — | Nuit autorisée si urgence | Ordonnance JLD |
+> CLÉ Si, en cours d'audition libre, la personne signifie sa volonté de partir et que l'OPJ estime nécessaire de la retenir, il doit immédiatement la placer en garde à vue. Continuer l'audition serait une atteinte à la liberté constitutive d'une nullité.
 
-## Modalités impératives
+## 6.2 Les différents statuts d'audition
 
-- **Présence de l'occupant** ou, à défaut, d'un représentant ou de **deux témoins** requis par l'OPJ et étrangers à l'autorité de police (57 C.P.P.).
-- **Inventaire immédiat** des objets saisis, **mise sous scellés** (art. 56 al. 4).
-- **Procès-verbal** signé par l'occupant et les témoins ; mention en cas de refus.
-- **Secret** garanti (art. 11 C.P.P.).
+Statut Article Régime Victime / plaignant 10-2 CPP Notification des droits: information, constitution partie civile, indemnisation, traduction, accompagnement Témoin simple 62 CPP Obligation de comparaître, déposer et prêter serment. Pas de droit au silence Témoin assisté 113-1 à 113-8 CPP Indices rendant vraisemblable une participation. Avocat obligatoire. Peut demander mise en examen ou non-lieu. Pas de contrôle judiciaire ni de DP possible Suspect en audition libre 61-1 CPP Raisons plausibles. Notification des 5 droits. Quitter à tout moment Gardé à vue 63 et suiv. CPP Contrainte + raisons plausibles + 62-2. Tous droits notifiés Mis en examen 80-1 CPP Devant JI. Indices graves OU concordants. Représentation obligatoire par avocat
 
-## Lieux protégés (régimes spéciaux)
+## 6.3 La confrontation
 
-| Lieu | Texte | Règle particulière |
-|------|-------|---------------------|
-| Cabinet d'**avocat** ou domicile | 56-1 C.P.P. | **Magistrat** (procureur ou JI) sur place + bâtonnier ou délégué + décision écrite motivée |
-| Cabinet de **médecin, notaire, huissier** | 56-3 C.P.P. | Magistrat + représentant de l'ordre |
-| Local d'une **entreprise de presse / journaliste** | 56-2 C.P.P. | Magistrat + uniquement pour faits visés par décision écrite et motivée |
-| **Magistrat** | 56-4 C.P.P. | Premier président de la cour d'appel + magistrat |
-| Lieu **militaire** sensible | Codes spéciaux | Conditions DGSI/DRSD |
+Acte d'audition simultanée de plusieurs personnes entendues séparément, pour clarifier des déclarations contradictoires. La confrontation suit le régime de la personne la plus protégée (si un GAV est présent, ses droits s'appliquent: avocat, silence, enregistrement).
 
-## Saisies
+## 6.4 La parade d'identification (art. 61-3 CPP)
 
-- **Tout objet utile** à la manifestation de la vérité (art. 54, 56, 97 C.P.P.).
-- **Scellés** clos et inventaire détaillé immédiat. Scellés ouverts possibles (objets volumineux).
-- **Restitution** : sur décision du procureur (41-4 C.P.P.) ou du JI (99) ; refus motivé susceptible de recours.
-- **Données informatiques** : copie possible (57-1 C.P.P.), accès aux systèmes connectés autorisé sur réquisition.
-
-## Réflexes OPJ
-
-- Vérifier le **cadre** AVANT d'agir : pas de perquisition EP sans assentiment écrit (ou ordonnance JLD si délit ≥ 5 ans).
-- Respecter les **horaires** (6h–21h) sauf régime dérogatoire visé.
-- En lieu protégé : **prévenir le magistrat** + autorité de l'ordre AVANT.
-- **Inventaire immédiat** + scellés sans délai pour préserver la chaîne de preuve.
-- Aviser le parquet si une saisie en révèle une autre (extension de saisine).
-
-## Pièges examen
-
-- ❌ Confondre **perquisition** (judiciaire) et **visite domiciliaire** (administrative, JLD compétent).
-- ❌ Perquisitionner en EP sans assentiment **écrit** (cause de nullité).
-- ❌ Oublier les **deux témoins** quand l'occupant est absent (57 C.P.P.).
-- ❌ Pénétrer la nuit hors régime CO/terrorisme/sécurité (sauf flagrance pour certains lieux ouverts au public).
-- ❌ Saisir chez un avocat sans bâtonnier ni magistrat (nullité absolue).
-- ❌ Croire que la perquisition est consentie tacitement : il faut un **écrit signé** de l'occupant.
+Technique d'identification visuelle par la victime ou un témoin parmi plusieurs personnes présentées. Conditions: • Au moins 4 personnes présentant une similitude d'apparence générale • Information préalable du suspect de son droit à un avocat • Présence possible de l'avocat • Procès-verbal détaillé: composition, déclarations du témoin/victime, résultats • Interdiction de toute mise en scène manifestement discriminante

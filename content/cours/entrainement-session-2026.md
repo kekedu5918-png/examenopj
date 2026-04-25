@@ -1,0 +1,47 @@
+---
+title: "Dernière ligne droite, session 2026"
+description: "Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de révision finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur pour l'oral OPJ 2026. A. CADRES D'ENQUÊTE (1-7) • FLAGRANCE: 8 jours + 8 jours (PR, ≥5 ans,…"
+tags: ["fondamentaux","Partie VI","2F.1.b","transversal","OPJ 2026"]
+partie: "VI"
+chapitre: 46
+derniereMiseAJour: "2025-12-01"
+loi2025: true
+articlesCites:
+  - "art. 14"
+  - "art. 171"
+  - "art. 198"
+  - "art. 20"
+  - "art. 21-3"
+  - "art. 53"
+  - "art. 56"
+  - "art. 59"
+  - "art. 59-1"
+  - "art. 62-2"
+  - "art. 63-3-1"
+  - "art. 64-1"
+  - "art. 68"
+  - "art. 73"
+  - "art. 75-78"
+  - "art. 76"
+  - "art. 802"
+  - "L. 234-1"
+  - "L. 235-1"
+  - "L. 317-8"
+---
+
+![p. 70](/fondamentaux/entrainement-session-2026-tableau-p70.jpg)
+![p. 71](/fondamentaux/entrainement-session-2026-tableau-p71.jpg)
+
+# Dernière ligne droite, session 2026
+
+Cette fiche de révision finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur pour l'oral OPJ 2026. A. CADRES D'ENQUÊTE (1-7) • FLAGRANCE: 8 jours + 8 jours (PR, ≥5 ans, investigations ne peuvent être différées) = 16 jours max • FLAGRANCE art. 53 CPP — 4 cas: flagrant / récent / clameur publique / indices extérieurs • FLAGRANCE requiert une infraction punie d'emprisonnement (pas pour contraventions) • PRÉLIMINAIRE: 2 ans + 1 an (art. 75-78 CPP). Assentiment écrit en perquisition • Bascule flagrance en cours de préliminaire: possible dès indices apparents (Cass. crim. 12/05/2009) • Continuité d'actes d'investigations obligatoire en flagrance — non celle des actes de procédure • Personnes protégées: Président République (totale), parlementaires (limitée), agents diplomatiques (totale) B. GARDE À VUE (8-15) • 24h + 24h = 48h (PR) — GAV exige des RAISONS PLAUSIBLES (art. 62-2) • 96h (48+48 JLD): criminalité organisée — 144h: terrorisme (706-88-1)
+
+• DROITS: nature infraction, durée, avis (proche, employeur, consulat), examen médical, AVOCAT, interprète, SILENCE, pièces essentielles • Avis avocat sous 3h — Art. 63-3-1 CPP: nature + date présumée • Enregistrement audiovisuel OBLIGATOIRE pour CRIME (art. 64-1) et MINEURS (toute infraction) • Les 6 objectifs de 62-2 doivent être motivés concrètement (jamais standardisés) • Placement GAV = compétence EXCLUSIVE de l'OPJ • Passeur in corpore: hyper-prolongation (706-88-2 rétabli loi 2025-532) C. PERQUISITIONS / SAISIES / RÉQUISITIONS (16-22) • Horaires légaux: 6h-21h • FLAGRANCE (art. 56): sans assentiment — présence personne/représentant/2 témoins À PEINE DE NULLITÉ • PRÉLIMINAIRE (art. 76): assentiment ÉCRIT — JLD si ≥ 3 ans sans assentiment • Nuit (art. 59-1): JLD — crime contre personnes hors CO • Cabinet avocat: magistrat + bâtonnier + ordonnance motivée JLD • Nullités textuelles (art. 59 CPP): présence, secret pro, droits défense • Réquisitions: 60/60-1/60-3 (flagrance) - 77-1/77-1-1 (préliminaire, autorisation PR) D. ACTEURS (23-29) • OPJ: compétence générale — constate, rassemble preuves, recherche auteurs (art. 14) • OPJ égaux en prérogatives et responsabilité (art. D. 2 CPP) • APJ: seconde OPJ, constate, procède aux auditions sur instructions (art. 20) • APJA: compétence limitée, appréhension art. 73, rapport d'intervention si non habilité PV • AE (art. 21-3): sur instructions expresses OPJ/APJ — notifications, convocations, réquisitions • PR dessaisit l'OPJ par son arrivée sur scène de crime (art. 68 CPP) • Extension compétence: mise à disposition temporaire, réquisition PR, ressort limitrophe E. NULLITÉS (30-33) • Textuelles (prévues par loi): art. 59 (perquisitions), 60-1/77-1-1 (réquis.), 100-7 (interceptions), 78-3 (vérif. id.) • Substantielles: art. 171 CPP — atteinte aux intérêts de la partie concernée • Pas de nullité sans grief (art. 802 CPP) sauf ordre public (compétence, délégation expertise OPJ par CR) • Dernier mémoire récapitulatif à partir du 30/09/2025 (art. 198 CPP) F. DROIT PÉNAL GÉNÉRAL (34-42) • Classification tripartite: CRIMES (Cour d'assises), DÉLITS (T. correctionnel), CONTRAV. (T. police) • Prescription AP: 20 / 6 / 1 an — Peine: 20 / 6 / 3 ans. Imprescriptibilité crimes contre humanité • Responsabilité PM (121-2): organe OU représentant + pour le COMPTE — sauf l'État • Amende PM = 5× celle des PP. Peines 131-39 (dissolution, interdictions, confiscation...) • Causes irresponsabilité: 122-1 (psy), 122-2 (contrainte), 122-3 (erreur), 122-4 (ordre loi), 122-5/6 (LD), 122-7 (EN), 122-8 (-13 ans), 122-9 (lanceur alerte) • Complicité (121-6, 121-7): fait principal + acte + intention — complice = auteur
+
+• Tentative: TOUJOURS crimes; délits si texte; JAMAIS contraventions • Dol général vs spécial vs aggravé (préméditation) vs praeter intentionnel (222-7 CP) • Minorité: <13 ans non capables discernement présumés; 13-16 atténuation OBLIGATOIRE; 16-18 facultative G. SANCTIONS / RÉCIDIVE (43-49) • Récidive 132-8 (crime/délit 10 ans → crime): perpétuité/30 ans, pas de délai • Récidive 132-9 al. 1 (crime/délit 10 ans → délit 10 ans): doublement, délai 10 ans • Récidive 132-9 al. 2 (crime/délit 10 ans → délit 1-10 ans): doublement, 5 ans • Récidive 132-10 (délit → délit identique/assimilé): doublement, 5 ans • Récidive 132-11 (contrav. 5e): 1 an — amende portée à 3000 € • Concours (132-2): peine cumulée max légal le + élevé — Confusion possible (132-4) • Assimilations récidive: 132-16 (vols...), 132-16-1 (sex.), 132-16-2 (homicide/blessures routiers loi 2025-622) H. DROIT PÉNAL SPÉCIAL — INFRACTIONS CONTRE LES PERSONNES (50-55) • Meurtre (221-1): 30 ans — Assassinat (221-3, préméditation): perpétuité • Empoisonnement (221-5): infraction formelle, 30 ans • VIOL (222-23) — NOUVEAU 2025: pénétration OU bucco-génital/bucco-anal + absence consentement • Violences: 222-7 (mort sans intention) 15 ans / 222-9 (mutilation) 10 ans / 222-11 (ITT >8j) 3 ans / 222-13 (ITT ≤8j) contravention ou délit • Tortures/barbarie (222-1): 15 ans — aggravations jusqu'à perpétuité • Harcèlement sexuel (222-33): 2 ans. Harcèlement moral (222-33-2): 2 ans travail, 3 ans conjugal I. INFRACTIONS CONTRE LES BIENS (56-60) • Vol (311-3): 3 ans + 45 k€ — Vol arme (311-8): 20 ans réclusion • Vol en BO avec arme (311-9): 30 ans — Vol avec barbarie (311-10): perpétuité • Escroquerie (313-1): 5 ans + 375 k€ — Abus de confiance (314-1): 5 ans + 375 k€ • Recel (321-1): 5 ans + 375 k€ — Peut dépasser la peine de l'infraction d'origine • Extorsion (312-1): 7 ans + 100 k€ — Chantage (312-10): 5 ans + 75 k€ J. CIRCULATION ROUTIÈRE / STUPS / ARMES (61-66) • Alcool délit L. 234-1 CR: ≥ 0,40 mg/l air OU 0,80 g/l sang — 4 ans + 9 k€ (loi 2025-622) • Stup conduite L. 235-1 CR: 3 ans + 9 k€ - Cumul avec alcool: 5 ans + 15 k€ • NOUVEAU loi 2025-622: homicide routier (221-18), blessures routières (221-19, 221-20) • Trafic stup (222-37): 10 ans + 7,5 M€ — Direction (222-34): perpétuité • Armes cat A/B sans autor. (222-52): 5 à 7 ans + 75 à 100 k€ • Port/transport C ou D sans motif (L. 317-8 CSI): 3 ans + 45 k€ K. JURIDICTIONNEL / POURSUITES (67-70) • Instruction: OBLIGATOIRE crime, facultative délit, exceptionnelle contrav. (requête PR) • Statuts: témoin assisté (113-1) / mis en examen (80-1) / partie civile (85) • Mandats: recherche (70) / comparution (122) / amener (122-1) / arrêt (131) / dépôt (137 JLD)
+
+• Saisines: COPJ (390-1) / CPV (394) / comparution immédiate (395: délit flagrant ≥ 6 mois OU charges ≥ 2 ans) / CRPC (495-7)
+
+CONCLUSION Un mot pour finir Tu tiens entre les mains une synthèse dense mais structurée du programme complet de l'examen OPJ session juin 2026. Elle intègre les dernières évolutions législatives de 2025 — toutes majeures — et couvre l'ensemble des fascicules officiels SDCP/DOCPRO dans leur version mise à jour au 1er décembre 2025. Ne cherche pas à tout mémoriser d'un coup. Travaille par parties en suivant le plan proposé. Commence par les cadres d'enquête (partie I) et les mesures de contrainte (partie II) — ce sont les fondations procédurales. Consolide ensuite la phase juridictionnelle (III) et le droit pénal général (IV). Puis attaque les infractions spéciales (V) par grandes thématiques (personnes, biens, routier, stups, armes, mineurs, nation). Termine par l'actualisation 2025 et la fiche des 70 points clés (VI). Entraîne-toi à l'oral avec la trame en 3 temps (chapeau / déroulé / suites). Simule des affaires avec des camarades ou ton trainer. Chronomètre tes exposés. Cible les sujets les plus probables: violences aggravées, vol avec arme, conduite sous alcool/stup, trafic stupéfiants, viol (réforme 2025), agressions sur mineurs, délits routiers nouveaux, criminalité organisée. Le jour J, fais confiance à ta préparation. Respire. Prends 30 secondes pour structurer ta pensée avant de parler. Ne te précipite pas — un exposé structuré et posé vaut mieux qu'une récitation hachée. Cite les articles avec précision. Rappelle systématiquement les durées-clés (24h GAV, 3h avis avocat, 8 jours flagrance...). Si tu hésites, ne t'invente pas une règle: dis que tu vérifierais, c'est professionnel.
+
+> CLÉ La clé du succès: maîtriser les fondamentaux (cadres, droits GAV, causes de nullité) + actualité 2025 (consentement viol, homicide routier, passeur in corpore) + méthodologie de présentation (trame en 3 temps). Bonne chance pour l'examen OPJ — Session Juin 2026 Synthèse consolidée à partir des fascicules SDCP/DOCPRO – Académie de Police Mise à jour au 01/12/2025 — Lois n° 2025-532, 2025-622, 2025-623, 2025-1057

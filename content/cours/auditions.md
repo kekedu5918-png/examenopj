@@ -1,99 +1,46 @@
 ---
-title: "Auditions — libre, GAV, témoin, victime, mineurs"
-tags: ["procédure", "fondamentaux", "F11", "auditions"]
-description: "Auditions OPJ : audition libre (61-1), suspect en GAV, témoin, victime, mineurs (706-52, NICHEM/MELANIE), enregistrement audiovisuel obligatoire."
+title: "Auditions, mineurs, expertises"
+description: "Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des perquisitions Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction) DÉFINITION – PERQUISITION Acte d'investigation par lequel les enquêteurs pénètrent d…"
+tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
+partie: "II"
+chapitre: 7
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 131-21"
+  - "art. 56"
+  - "art. 56-1"
+  - "art. 56-2"
+  - "art. 56-3"
+  - "art. 56-5"
+  - "art. 56-59"
+  - "art. 59"
+  - "art. 59-1"
+  - "art. 706-73"
+  - "art. 706-89"
+  - "art. 706-94"
+  - "art. 76"
+  - "art. 94"
+  - "art. 94-97"
 ---
 
-# Auditions
+![p. 21](/fondamentaux/auditions-tableau-p21.jpg)
+![p. 22](/fondamentaux/auditions-tableau-p22.jpg)
 
-> **En 30 secondes.** Quatre régimes principaux : **audition libre** (61-1, suspect non contraint), **audition en GAV** (63-1 et s.), **audition de témoin** (62, 78), **audition de victime** (10-2). Pour les **mineurs victimes** d'infractions sexuelles ou violentes : enregistrement audiovisuel obligatoire (706-52). Pour les crimes : audition de suspect/GAV enregistrée (64-1).
+# Auditions, mineurs, expertises
 
-## Audition libre du suspect (art. 61-1 C.P.P.)
+## 7.1 Régime des perquisitions
 
-Quand : raisons plausibles de soupçonner mais **sans contrainte** nécessaire. La personne doit être **libre de quitter** les locaux à tout moment.
+> Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction)
 
-### Notification AVANT audition (61-1 al. 1)
+> DÉFINITION – PERQUISITION Acte d'investigation par lequel les enquêteurs pénètrent dans un domicile, un local ou un véhicule pour rechercher des objets, documents ou données utiles à la manifestation de la vérité. La perquisition porte atteinte au droit fondamental à la vie privée, et son régime est strictement encadré. Cadre / paramètre FLAGRANCE (art. 56) PRÉLIMINAIRE (art. 76) INSTRUCTION (art. 94) Horaires 6 h — 21 h 6 h — 21 h 6 h — 21 h Base d'action Pas d'assentiment Assentiment écrit préalable Ordonnance du JI Présence personne OBLIGATOIRE ou représentant choix OU 2 témoins (nullité) En principe présente Oui Sans présence ni assentiment JLD si hors horaires (59-1) en crime contre personnes hors CO JLD si ≥ 3 ans — risques spéciaux (706-94) Sur commission rogatoire CO (art. 706-73) JLD hors horaires (706-89, 706-90, 706-92) Idem Idem Cabinet avocat Magistrat + bâtonnier + ordonnance motivée JLD Identique Identique Professions protégées Médecin, notaire, huissier, presse: représentant ordre pro Identique Identique Formalités peine nullité (59 CPP) Oui — présence et respect secret Oui Oui
 
-| Droit notifié | Détail |
-|---------------|--------|
-| Qualification, date et lieu présumé de l'infraction | Doit être **précis** |
-| Droit de **quitter à tout moment** | Mention écrite |
-| Droit à un **interprète** | Si besoin |
-| Droit de **garder le silence** | Notification expresse — cause de nullité si oubli |
-| Droit d'être assisté par un **avocat** | Désigné ou commis d'office (si infraction punie d'emprisonnement) |
-| Droit d'être assisté gratuitement par un **avocat** | Si crime ou délit puni d'emprisonnement |
-| Information du **conseil** sur les frais d'avocat | — |
+> ATTENTION Nullités textuelles des perquisitions (art. 59 CPP): le défaut de présence de la personne ou de son représentant (ou à défaut de 2 témoins), le non-respect du secret professionnel et des droits de la défense, sont des causes de nullité. Ces formalités sont prescrites à peine de nullité — pas besoin de démontrer un grief.
 
-> Avocat : entretien confidentiel possible, assiste l'audition. **Pas** d'accès au dossier (61-1 al. 2).
+## 7.2 Les cas particuliers de perquisition
 
-## Audition du suspect en GAV (art. 63-1 et s.)
+Cas spécifique Article Régime Nuit (21h-6h) Art. 59-1 CPP Crime contre les personnes hors CO: autorisation JLD par ordonnance écrite et motivée CO hors horaires Art. 706-89 à 706-92 Requête PR, JLD, ordonnance motivée, contrôle renforcé Perquisition sans présence/assentiment Art. 706-94 Préliminaire + GAV: si risque grave de trouble ordre public, d'évasion, de disparition des preuves Saisie de biens confiscables Art. 131-21 CP + 706-148 JLD sur requête PR pour confiscation patrimoniale Cabinet d'avocat / domicile Art. 56-1 CPP Magistrat + bâtonnier (ou délégué) + ordonnance motivée JLD précisant nature, raisons, objet, proportionnalité Local de journaliste / organe de presse Art. 56-2 CPP Magistrat obligatoire + information représentant. Protection sources Cabinet médical / office notarial Art. 56-3 CPP Représentant ordre professionnel Secret du délibéré (magistrats) Art. 56-5 CPP JLD statue en cas d'opposition
 
-- Notification GAV + **6 droits** (cf. fiche Garde à vue).
-- **Avocat présent** à toutes les auditions et confrontations (63-4-2).
-- Mention horaire **début/fin** chaque audition + repos.
-- **Enregistrement audiovisuel** obligatoire en matière de **crime** (64-1 C.P.P.) — sauf exceptions terrorisme/CO.
+## 7.3 Les saisies et scellés
 
-## Audition du témoin (art. 62, 78 C.P.P.)
-
-| Cadre | Texte | Spécificité |
-|-------|-------|-------------|
-| Flagrance | 62 | Témoin **convoqué** ; possibilité de **rétention** strictement nécessaire (4h max) |
-| Préliminaire | 78 | Convocation et obligation de comparaître ; force publique possible (62 al. 2) |
-| Information judiciaire | 101 et s. | Sur convocation JI ; serment exigé |
-
-- **Pas** d'avocat lors de l'audition (sauf témoin assisté en IJ — 113-3).
-- **Serment** : exigé en IJ (103) ; non en EP/EF.
-- **Refus de témoigner** : amende (434-15-1 C.P.) ; **faux témoignage** : 5 ans / 75 000 € (434-13).
-
-## Audition de la victime (art. 10-2 C.P.P.)
-
-Information **dès le premier contact** :
-
-- Droit d'obtenir réparation et de se constituer partie civile.
-- Droit à un **avocat** (commis d'office si défavorisée).
-- Droit à un **interprète** et traduction.
-- Droit à l'**aide aux victimes** (associations agréées).
-- Droit à la **protection** (audition à huis clos, anonymat dans certains cas — 706-58 et s.).
-
-> Victime mineure : audition par OPJ **spécialement formé**, en présence éventuelle de l'**administrateur ad hoc**.
-
-## Mineurs — protocoles spéciaux
-
-### Mineur victime (art. 706-52 C.P.P. — protocole NICHEM / MELANIE)
-
-- **Enregistrement audiovisuel obligatoire** dès lors que la victime est mineure et l'infraction sexuelle (ou certaines violences).
-- Audition dans une **salle adaptée** (Mélanie), par OPJ formé.
-- Possibilité de présence d'un **psychologue** ou **médecin**.
-- Restrictions de **diffusion** (706-52 al. 6) : sanction pénale en cas de diffusion non autorisée.
-
-### Mineur suspect (CJPM L.413-1 et s.)
-
-- **Représentant légal** avisé sans délai.
-- **Avocat obligatoire** (commis d'office si pas de désignation).
-- **Audition enregistrée** en matière criminelle (4-2 CJPM) ou en GAV.
-- Examen médical et psychologique (4-3) si demandé.
-
-## Confrontation
-
-- Possible en EF, EP, IJ.
-- Chaque partie présente avec son **avocat** (si suspect en GAV/IJ).
-- PV unique récapitulant déclarations croisées.
-- Enregistrement audiovisuel si crime (64-1).
-
-## Réflexes OPJ
-
-- **Notifier les droits AVANT** toute question de fond (audition libre comme GAV).
-- Si la situation se durcit (suspicion plus forte, refus de partir) : **basculer en GAV** et re-notifier les droits.
-- **Enregistrement crime** : vérifier matériel, débuter avant la première question.
-- Mention horaire **début/fin** systématique + signature de la personne page par page.
-- Pour mineurs et victimes vulnérables : **salle adaptée**, OPJ formé, psychologue si possible.
-
-## Pièges examen
-
-- ❌ Auditionner en libre puis prolonger sans permettre de partir → **GAV de fait** (nullité).
-- ❌ Oublier la notification du **droit de se taire** (Cass. crim., toujours sanctionné).
-- ❌ Refuser un avocat à une audition libre quand l'infraction est punie d'emprisonnement.
-- ❌ Auditionner un mineur sans aviser le **représentant légal**.
-- ❌ Ne pas **enregistrer** une audition de crime (64-1) — nullité.
-- ❌ Diffuser ou recopier des extraits d'auditions Mélanie sans cadre (706-52 al. 6).
-- ❌ Confondre **témoin** (sans avocat) et **témoin assisté** (avec avocat, en IJ).
+Toute saisie doit être contemporaine de la constatation et consignée au procès-verbal. L'objet saisi est immédiatement placé sous scellé. On distingue trois catégories: Type Description Scellé fermé Objet placé sous enveloppe, cachet, étiquette avec N° d'ordre. Ouverture ultérieure en présence de la personne ou avocat Scellé ouvert Objet volumineux, inventorié sur place, étiqueté. Accessible par les parties à la procédure Scellé provisoire Pour exploitation immédiate (téléphone pour extraction). Requalification en scellé fermé après exploitation Mentions obligatoires du PV de saisie Le PV de saisie doit comporter: date, heure, lieu, identités et qualités des enquêteurs et personnes présentes, description précise de l'objet, n° de scellé, conditions matérielles, signatures.

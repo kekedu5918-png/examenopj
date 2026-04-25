@@ -1,70 +1,37 @@
 ---
-title: "Police judiciaire — statut OPJ / APJ / APJA"
-tags: ["procédure", "fondamentaux", "F10", "statut"]
-description: "Statut, attributions et compétences de l'OPJ, APJ, APJA, agents des douanes — articles 12 à 29 C.P.P., habilitation, contrôle hiérarchique du parquet."
+title: "Acteurs, statut, direction et contrôle de la police judiciaire"
+description: "Acteurs, statut, direction et contrôle de la police judiciaire — Fiche synthèse (session JUIN 2026). Articles 18, R. 15-18 à R. 15-31 CPP 4.1 Principe de compétence ordinaire Les OPJ sont compétents dans les limites territoriales où ils exercent leurs fonctions habituelles (art. 18 al. 1 CPP). Le res…"
+tags: ["fondamentaux","Partie I","2F.1.b","procédure"]
+partie: "I"
+chapitre: 4
+derniereMiseAJour: "2025-12-01"
+loi2025: false
+articlesCites:
+  - "art. 18 al. 1"
+  - "art. 18 al. 2"
+  - "art. 18 al. 3"
+  - "art. 18 al. 4"
 ---
 
-# Police judiciaire — Statut
+![p. 15](/fondamentaux/police-judiciaire-statut-tableau-p15.jpg)
+![p. 16](/fondamentaux/police-judiciaire-statut-tableau-p16.jpg)
 
-> **En 30 secondes.** La police judiciaire est exercée sous **direction du procureur**, **surveillance du procureur général** et **contrôle de la chambre de l'instruction** (art. 12 et 13 C.P.P.). Quatre catégories : **OPJ** (le seul à diriger une enquête), **APJ** (assiste l'OPJ), **APJA** (constate les contraventions), **fonctionnaires/agents** chargés de fonctions PJ par lois spéciales.
+# Acteurs, statut, direction et contrôle de la police judiciaire
 
-## Qui fait la police judiciaire ?
+*Articles 18, R. 15-18 à R. 15-31 CPP*
 
-| Catégorie | Texte | Pouvoirs principaux |
-|-----------|-------|---------------------|
-| **Officier de police judiciaire (OPJ)** | 16 C.P.P. | Constate, reçoit plaintes, mène enquêtes, place en GAV, perquisitionne, exécute CR |
-| **Agent de police judiciaire (APJ)** | 20 C.P.P. | Assiste l'OPJ, constate infractions, dresse PV, n'a **pas** pouvoir de GAV ni perquisition |
-| **APJ adjoint (APJA)** | 21 C.P.P. | Constate **contraventions** au code de la route, seconde l'OPJ |
-| Fonctionnaires/agents chargés de fonctions PJ | 22 à 28 C.P.P. | Eaux et forêts, douanes, contributions… (compétences spéciales) |
+## 4.1 Principe de compétence ordinaire
 
-## OPJ : conditions de qualité (art. 16 C.P.P.)
+Les OPJ sont compétents dans les limites territoriales où ils exercent leurs fonctions habituelles (art. 18 al. 1 CPP). Le ressort varie selon le service d'affectation: national, zonal, départemental, ou spécifique (transports en commun). Échelle Services concernés Précisions NATIONALE (art. R. 15-18 CPP) DNPJ, DNPAF, IGPN, DGSI, SNPS Détachés auprès de la DNRED (direction nationale des enquêtes douanières) ZONALE (art. R. 15-19 CPP) Directions zonales PN Services zonaux PJ et PAF; directions interdépartementales; aérodromes parisiens DÉPARTEMENTALE Services départementaux DDSP, circonscriptions PN, STPJ, STSP des directions territoriales PN TRANSPORTS (art. R. 15-30) Réseaux transports collectifs OPJ/APJ de certains services compétents sur réseaux, lignes, stations, gares, arrêts, couloirs ZONE DE DÉFENSE IDF Région parisienne Étendue sur l'ensemble de la zone Île-de-France + lignes prolongeant les réseaux
 
-Trois étapes cumulatives :
+## 4.2 Extensions de compétence (art. 18 al. 2 à 4 CPP)
 
-1. **Statut** : appartenir à une catégorie habilitée (officier/sous-officier de gendarmerie, commissaire/officier/gardien de la paix titularisé après examen, maire et adjoints…).
-2. **Examen d'OPJ** : avoir réussi l'examen technique d'OPJ.
-3. **Habilitation personnelle** : décision écrite du **procureur général** près la cour d'appel — peut être **suspendue ou retirée** (16-2, 16-3).
+Type d'extension Article Régime Mise à disposition temporaire Art. 18 al. 2 OPJ acquiert la compétence du service d'accueil — typiquement GIR Réquisition du PR Art. 18 al. 3; D. 15-4 Tout OPJ peut être requis sur l'ensemble du territoire national par le PR Poursuite d'investigations Art. 18 al. 2 Possible hors du ressort avec information du PR saisi. Ressort limitrophe: pas d'information préalable nécessaire Territoire étranger Art. 18 al. 4 Auditions possibles avec accord des autorités étrangères et prescription du PR/JI
 
-> Compétence territoriale : ressort de leur affectation (18 C.P.P.) ; extension nationale possible sur autorisation du parquet ou en cas d'urgence/flagrance (18 al. 4).
+> CLÉ Paris et les départements des Hauts-de-Seine, Seine-Saint-Denis et Val-de-Marne sont considérés comme un seul département pour l'application des règles de compétence territoriale. En cas de transport limitrophe, l'information préalable du magistrat n'est pas nécessaire.
 
-## Attributions de l'OPJ (art. 17 C.P.P.)
+## 4.3 Conséquences du défaut de compétence
 
-- Constater les infractions à la loi pénale.
-- Recevoir les **plaintes et dénonciations**.
-- Faire les **enquêtes** (préliminaire ou flagrance).
-- En cas d'**information ouverte**, exécuter les **commissions rogatoires** des juges d'instruction et déférer à leurs **réquisitions**.
-- Procéder à toutes les **opérations** prévues par la loi (perquisition, garde à vue, audition libre, scellés, réquisitions…).
+> ATTENTION Le défaut de compétence territoriale d'un OPJ est une nullité d'ordre public qui peut être relevée à tout moment et d'office par les juridictions. Elle entraîne l'annulation de tous les actes accomplis en dehors du ressort légal, et de tous les actes subséquents.
 
-## Subordination et contrôle
-
-| Niveau | Texte | Fonction |
-|--------|-------|----------|
-| **Procureur de la République** | 12, 41 C.P.P. | Dirige et contrôle l'activité PJ dans son ressort |
-| **Procureur général** | 38, 16-2 et s. C.P.P. | Surveillance, habilitation OPJ, notation |
-| **Chambre de l'instruction** | 224 et s. C.P.P. | Contrôle disciplinaire OPJ (suspension, retrait habilitation) |
-
-## APJ et APJA — distinctions
-
-- **APJ** (gardiens de la paix, gendarmes non-OPJ, autres) : assistance, PV, **pas** de GAV, **pas** de perquisition autonome.
-- **APJA** : compétence très limitée — relevés d'identité (78-6), constatation contraventions code de la route, présence dans certaines opérations.
-
-## Fonctions de PJ par lois spéciales
-
-- **Douanes judiciaires** (art. 28-1 C.P.P.) — infractions douanières et financières graves.
-- **Inspecteurs des finances publiques** (28-2) — fraude fiscale.
-- **Garde particuliers** assermentés (29) — constat sur propriétés dont ils ont la garde.
-
-## Réflexes OPJ
-
-- Vérifier en permanence sa **compétence territoriale** + sa **qualité OPJ** (habilitation à jour).
-- Avant toute mesure restrictive, s'assurer d'être **OPJ habilité et en service**.
-- Tenir un **registre** des interventions ; agir sous **avis** ou **autorité** du parquet.
-- Pour un acte hors ressort : se référer à 18 al. 4 + avis parquets (TJ origine + TJ exécution).
-
-## Pièges examen
-
-- ❌ Confondre **qualité d'OPJ** (statut + examen + habilitation) et **simple appartenance** au corps.
-- ❌ Croire qu'un APJ peut placer en GAV (impossible — réservé OPJ).
-- ❌ Oublier que l'habilitation peut être **suspendue** (16-2) — l'acte d'un OPJ non habilité = nullité.
-- ❌ Ignorer la **subordination au parquet** (avis sans délai des actes significatifs).
-- ❌ Mélanger contrôle hiérarchique **administratif** (police/gendarmerie) et contrôle **judiciaire** (parquet/CI).
+> JURISPRUDENCE Cass. crim. 29/05/2013 — Une GAV ordonnée par un OPJ territorialement incompétent est annulée en raison de la violation d'une règle d'ordre public, même en l'absence de grief démontré. PARTIE II MESURES DE CONTRAINTE ET DE RECHERCHE Cette partie couvre les actes coercitifs — garde à vue, perquisition, saisie, réquisition, contrôle d'identité — qui constituent le cœur de l'enquête. Leur régime strict, fondé sur le principe constitutionnel de protection des libertés individuelles, impose à l'OPJ une maîtrise absolue des conditions, délais et formalités. Les nullités en matière de contrainte sont fréquentes et lourdes de conséquences.
