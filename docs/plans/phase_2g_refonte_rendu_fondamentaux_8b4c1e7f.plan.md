@@ -1,9 +1,48 @@
 # Phase 2G — Refonte qualité de rendu des fondamentaux
 
 **Fichier** : `docs/plans/phase_2g_refonte_rendu_fondamentaux_8b4c1e7f.plan.md`  
-**Statut** : brouillon soumis à validation utilisateur — **aucune implémentation tant que le plan n’est pas approuvé**  
+**Statut** : **validé sur le fond** (déc. 2026) — l’exécution se fait par vagues (2G.0 → 2G.4) après validation de chaque jalon.  
 **Remplace** : l’enrichissement « contenu seul » de **2F.1.b** (annulé côté qualité de rendu) et la logique d’amélioration **2F.3** jugée insuffisante sur le plan pédagogique.  
 **Conservé** : **2F.2** (deep-links, redirections 301, migration Supabase) — considéré comme correct.
+
+---
+
+## 0. Décisions d’arbitrage (actées)
+
+1. **Stack extraction** : **Node uniquement** — `pdfjs-dist` pour le texte et les positions ; **reconstruction de tableaux par clustering** des coordonnées x/y. **Pas de Python.** Tableaux trop complexes (irécupérables) : **suppression** plutôt que paragraphe-bouillie (règle §2.3).
+2. **Doublon H1** : un seul `<h1>` sur la page, rendu par `fondamentaux/[slug]/page.tsx` depuis `data.title`. Le pipeline OCR supprime en régénération la **première ligne** du corps si c’est un `# Titre` (strip du H1 body). **Test e2e** : **aucune** fiche ne doit avoir une première ligne de corps commençant par `#` .
+3. **Articles clés (UI)** : composant **`<FicheArticlesCles articles={data.articlesCles} />`** dans `fondamentaux/[slug]/page.tsx`, **juste après** le `<h1>` (titre page) et **avant** `<MarkdownArticle>`. Style : **pastilles** `font-ij-mono`, `bg-ij-surface-2`, `text-ij-accent`, **séparées**, en **ligne** (wrap autorisé). Rien de tout cela dans le body markdown.
+4. **articlesCites → articlesCles (remplacement)** : **dépréciation totale** de `articlesCites`. Remplacement par `articlesCles: string[]` — **exactement 5** entrées, normalisées. En **2G.2**, script one-shot : lire chaque fiche, extraire les articles du corps (regex), compter, prendre les **5** plus fréquents, appliquer une **liste noire** (à figer en 2G.1 sur les pilotes) pour exclure les références trop génériques ; supprimer partout `articlesCites` dans le frontmatter.
+5. **Zéro image (strict)** : **aucune** image dans le corps des fiches. Suppression de toutes les `![](...)` pointant vers `public/fondamentaux/`, puis suppression des `*.jpg` devenus **non référencés**. **DETTE** (phase ultérieure) : recréation en **SVG** ou **Mermaid** des schémas pédagogiques utiles (timelines, arbres de décision flagrance / préliminaire) — **à consigner dans `docs/TECH_DEBT.md` en 2G.4** (pas avant).
+
+**Périmètre fiches** : tout fichier `content/cours/*.md` servi en `/fondamentaux/[slug]` (nombre **variable** : auditer le repo ; l’audit 2G.0 utilise **tous** les `.md` du dossier `cours`).
+
+### 0.1 Audit 2G.0 (avant 2G.1) — rapport HTML enrichi
+
+**Livrable** : `docs/audits/2g0-rapport-corpus.html` (génération : `node scripts/audit-2g0-corpus.mjs` — relecture seule sur le disque, **aucune** modification des `.md`).
+
+En **tête du rapport** — synthèse globale :
+
+- Nombre de fiches par score qualité estimé : **propre** / **moyen** / **cassé** (règles documentées dans le HTML).
+- **Top 10** des blocs texte les plus longs (caractères) avec **extrait 100 caractères** (slug d’origine) — pour repérer murs de texte / tableaux écrasés.
+- Total de références `![](...)` — **images à supprimer** en 2G.x.
+- Total de fichiers `public/fondamentaux/*.jpg` **orphelins** après suppression des références (fichiers présents sur disque, non cités par aucun `.md`).
+
+**Tableau (une ligne par fiche)** :
+
+| Métrique | Description |
+|----------|-------------|
+| Slug | identifiant URL |
+| Images | nombre de `![](...)` dans le corps |
+| Tableaux GFM | blocs reconnus (lignes `\|...|` + séparateur `---`) |
+| Parag. > 6 lignes | nombre de blocs (séparés par double saut) avec &gt; 6 lignes |
+| Max lignes / bloc | plus grand bloc (heuristique) |
+| Doublon H1 | `oui` si la 1ʳᵉ ligne du corps est un `# ...` (à supprimer côté pipeline) |
+| len(description) | alerter si &gt; 300 car. (mur de texte) |
+| articlesCites | `oui` / `non` (legacy, à migrer en 2G.2) |
+| Score | `propre` / `moyen` / `cassé` (heuristique — à utiliser pour choisir les **3 pilotes 2G.1** : un de chaque catégorie : cassé, moyen, propre) |
+
+**Usage** : calibrer le chantier et **prioriser les 3 chapitres pilotes** 2G.1.
 
 ---
 
@@ -28,9 +67,9 @@
 - **Décompte au grep** (non interactif) : **37** fichiers `content/cours/*.md` contiennent au moins une image sous `/fondamentaux/…`.
 - **Stockage** : **53** fichiers `*.jpg` dans `public/fondamentaux/` — à recouper en **2G.4** (référencés vs orphelins).
 - Exemples de fiches concernées (liste non exhaustive) : `police-judiciaire-statut`, `enquete-flagrance`, `nullites-procedure`, `parquet-instruction`, `causes-irresponsabilite-attenuation`, `actualisation-lois-2025`, `viol-agressions-sexuelles`, `classification-tripartite-application-loi`, `entrainement-session-2026`, etc.  
-- Les **~9** autres fiches du corpus (~46) peuvent n’avoir **aucune** image mais souffrir du même problème de **texte tabulaire aplati** — le script **2G.0** devra le mesurer fiche par fiche.
+- D’autres fiches n’ont **aucune** image mais souffrent du **texte tabulaire aplati** — l’**audit 2G.0** (§0.1) le mesure fiche par fiche.
 
-**Arbitrage à valider (utilisateur)** : certaines fiches possèdent déjà un champ `articlesCites` (liste longue) dans le frontmatter — voir section 4 pour la cohabitation avec `articlesCles` (5 articles « phares »).
+**articlesCles** : voir section 4 (remplacement de `articlesCites`, décidé).
 
 ---
 
@@ -48,26 +87,22 @@
 - **Hiérarchie** : `##` = sections numérotées du chapitre (4.1, 4.2, …) ; `###` = sous-sections.
 - **Articles de loi** : post-traitement par **regex** sur le texte produit, pour enrober en **backticks** inline les motifs du type : `art. 123 CPP`, `art. 123-45 CP`, `L. 123-45`, `R. 12-34 CPP`, variantes alinéa, etc. (liste exacte de motifs : à figer en spec dans **2G.1** et tests unitaires sur chaînes réelles).
 
-### 2.3 Choix d’outils (réaliste, à valider en 2G.1 sur pilotes)
+### 2.3 Choix d’outils — **décision** : **Node + pdfjs-dist uniquement**
 
 | Option | Rôle | Limite franche |
 |--------|------|-----------------|
-| **pdf-parse (actuel) + heuristiques** | Texte + tentatives de reconstruction | Tableaux : souvent coller des colonnes en une ligne — **insuffisant seul** pour 2G. |
-| **pdfjs-dist (Mozilla)** | Texte + **positions (x, y, page)** pour regroupement en lignes/colonnes | Nécessite algorithme de **clustering** (alignement vertical des `y`, tri `x`) — coût dev non trivial, mais courant en « layout reconstruction ». |
-| **Outils Python (Camelot, tabula, pdfplumber)** | Excellents tableaux sur PDF vectoriels | Intégration = sous-processus ou script hors Next ; CI à définir — **à discuter** si l’équipe accepte un pipeline bilingue. |
-| **Reconstruction manuelle assistée** | Fiches sensibles (notes du formateur) | Candidat de secours quand l’OCR ne peut **rien** propre (tableau 7 colonnes, scan pourri) : **omettre** le tableau plutôt qu’en livrer un faux positif. |
+| **pdf-parse (actuel, hors pipeline 2G cible)** | Extraction texte seule (legacy) | Ne suffit pas pour la reconstruction tabulaire fiable. |
+| **pdfjs-dist** | Texte + **positions (x, y, page)** → **clustering** lignes/colonnes, sortie GFM | Tableaux denses / scans dégradés : **supprimer** plutôt qu’inventer. |
+| **Relecture ciblée** | Cas limites (contestation formateur) | Dernier recours si ambiguïté ; pas d’automatisation Python dans le dépôt pour 2G. |
 
 **Position du plan (honnête)** : un tableau **complexe, mal scanné, ou en image bitmap dans le PDF** ne sera **pas** magiquement « réparé » à 100 % — le livrable acceptable est : **(a)** GFM propre, **(b)** absence volontaire, **(c)** jamais paragraphe-bouillie.
 
-**Décision requise (utilisateur)** : priorité outillage **100 % Node/TS** vs **script Python** pour la phase de génération des `.md` (hors runtime Next).
+### 2.4 Pilotes 2G.1 (sélection)
 
-### 2.4 Pilotes 2G.1 (proposition)
+- Choisir **3** fiches à partir du **rapport 2G.0** : **1** scorée **cassé**, **1** **moyen**, **1** **propre** (dès qu’il existe un exemplaire propre post-regénération partielle, sinon ajuster).
+- Exemples historiques (avant 2G) : beaucoup de tableaux — `police-judiciaire-statut`, `nullites-procedure` ; articles denses, listes — à caler sur l’audit.
 
-- **Pilote A — beaucoup de tableaux** : ex. `police-judiciaire-statut` ou `nullites-procedure` (2 images aujourd’hui, structure dense).
-- **Pilote B — beaucoup d’articles** : ex. chapitre procédure avec citations CPP denses.
-- **Pilote C — listes complexes** : conditions, GAV, ou mesures coercitives.
-
-Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, voir section 6).
+Ces **3** fiches servent de **filet de régression** (e2e snapshot visuel post-2G.1, voir section 6).
 
 ### 2.5 Callout « En 30 secondes » (obligatoire)
 
@@ -133,17 +168,14 @@ Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, vo
 
 - `a` : `text-ij-accent underline-offset-2 hover:underline` (éviter `violet-300` actuel)
 
-### 3.10 Section « Articles clés » générée (hors Markdown brut — **arbitrage**)
+### 3.10 Section « Articles clés » — **décision** : composant React
 
-- L’exigence produit : **sous le titre de page, avant le callout** : « Articles clés : … ».
-- **Deux** implémentations possibles (décision utilisateur) :
-  - **(A)** Générer ce bloc en **composant React** sur la page `fondamentaux/[slug]/page.tsx` à partir de `data.articlesCles` (recommandé : pas de duplication avec un `#` dans le body).
-  - **(B)** L’inclure **dans** le markdown en première position (pipeline) — attention au double titre.
+- **`<FicheArticlesCles articles={data.articlesCles} />`** dans `fondamentaux/[slug]/page.tsx` : **après** le `<h1>` (titre = `data.title`), **avant** `<MarkdownArticle>`. Pastilles `font-ij-mono`, `bg-ij-surface-2`, `text-ij-accent`, en ligne, espacées. **Pas** dans le markdown.
+- `articlesCles` : exactement **5** chaînes (voir §4) ; rendu : libellé type « **Articles clés** » + pastilles (sans symbole § en UI, conformément aux règles produit).
 
-### 3.11 Doublon H1 (arbitrage bloquant)
+### 3.11 Doublon H1 — **décision** : un seul `<h1>`, body sans `#` en tête
 
-- Aujourd’ui le **body** contient souvent `# Titre` alors que le layout **ne réaffiche pas** le `title` frontmatter en pleine page.  
-- Pour 2G : soit **titre** uniquement côté page (`<h1>` depuis `data.title`) et body sans `#` ; soit conserver un seul `#` dans le body. **À trancher** avant 2G.2 en masse.
+- Titre de page = **un seul** `<h1>` depuis `data.title` (page). Le pipeline de régénération **strip** la première ligne du body si c’est un `# ...`. Test e2e : **aucune** fiche avec **`#` en première ligne** du corps après 2G.2.
 
 ---
 
@@ -155,15 +187,14 @@ Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, vo
 - `tags`
 - `partie`, `chapitre`, `loi2025`, `derniereMiseAJour` (ou équivalent) — **inchangés en sémantique** sauf ajustement doc
 
-### 4.2 Nouveau champ : `articlesCles`
+### 4.2 Champ : `articlesCles` (seul retenu pour les 5 « phares »)
 
-- Type : `articlesCles: string[]` — **exactement 5** entrées cibles, normalisées (ex. `art. 18 CPP`, `art. R. 15-18 CPP`).
-- Règle de remplissage : **extraction** par regex + **fréquence** sur le texte du chapitre, prise des 5 **plus fréquents** — avec liste noire (articles trop génériques) si besoin. **Revue manuelle** possible sur échantillon pilote.
+- Type : `articlesCles: string[]` — **exactement 5** entrées, normalisées (ex. `art. 18 CPP`, `art. R. 15-18 CPP`).
+- Règle de remplissage (2G.2) : **extraction** par regex sur le **corps** + **comptage** + **Top 5** + **liste noire** d’exclusion (génériques) — **figée en 2G.1** sur les pilotes.
 
-### 4.3 Cohabitation avec `articlesCites` (existant)
+### 4.3 Remplacement de `articlesCites` (dépréciation)
 
-- Plusieurs fiches possèdent déjà `articlesCites` (liste longue, parfois alinéa).  
-- **Proposition** : conserver en archive ou fusionner : soit **déprécier** `articlesCites` au profit de `articlesCles` + corps structuré, soit **renommer** proprement avec script one-shot. **Validation utilisateur** requise.
+- **Suppression** de tout `articlesCites` du frontmatter. **Migration** : script one-shot en **2G.2** (voir §0). Aucune cohabitation long terme.
 
 ---
 
@@ -171,11 +202,11 @@ Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, vo
 
 | Vague | Contenu | Sortie |
 |--------|---------|--------|
-| **2G.0** | Audit rendu actuel : script (Node ou Playwright) générant un **rapport HTML** (liste des 46 fiches, indicateurs : longueur max paragraphe, nb `![](/fondamentaux`, présence `|----|` table GFM, etc.) + captures optionnelles. | `docs/audits/2g0-…` (chemin exact à définir) |
-| **2G.1** | Refonte pipeline + **3 pilotes** régénérés + **2G.3** partielle min sur `MarkdownArticle` si besoin pour lire tableaux. | 3 fiches + tests |
-| **2G.2** | Régénération des **43** autres chapitres + relecture spot (échantillon). | 46/46 fiches |
-| **2G.3** | `MarkdownArticle` final : tableaux, blockquote, `code`, H2/H3, listes, page fiche (Articles clés). | UI stable |
-| **2G.4** | Nettoyage `public/fondamentaux/*.jpg` **non référencés** + vérif qu’**aucun** `![](` ne reste vers ce dossier. | Repo propre |
+| **2G.0** | Rapport HTML enrichi (§0.1) sur **tout** `content/cours/*.md` ; génère `2g0-rapport-corpus.html` via `node scripts/audit-2g0-corpus.mjs`. Aucun changement de contenu. | `docs/audits/2g0-rapport-corpus.html` |
+| **2G.1** | Refonte pipeline (pdfjs-dist + clustering) + **3 pilotes** + snapshots e2e ; liste noire articles ; 2G.3 **minimale** seulement si besoin d’afficher tableaux. | 3 fiches + tests |
+| **2G.2** | Régénération du **reste** des fiches + **migration** `articlesCites` → `articlesCles` (script) + **strip** H1 body partout. | N/N fiches |
+| **2G.3** | `MarkdownArticle` + intégration `FicheArticlesCles` sur la page fiche. | UI stable |
+| **2G.4** | Nettoyage `public/fondamentaux/*.jpg` orphelins + vérif zéro `![](` + entrée **TECH_DEBT** (Mermaid / SVG schémas). | Repo propre + dette tracée |
 
 ---
 
@@ -183,7 +214,8 @@ Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, vo
 
 - `npm run lint`, `npx tsc --noEmit`, `npx vitest run`, `npm run build` : **verts**.
 - **E2E existants** : non régression (y compris 2F.2 301, hub fondamentaux).
-- **Nouveau e2e (2G.1+)** : snapshots visuels **des 3 fiches pilotes** après refonte (chemin type `/fondamentaux/...` sur Chromium), + assertion **absence d’**`<img`** dans le corps si la spec « zéro image » est testable en DOM (ou `expect(page.locator('article img')).toHaveCount(0)` sur ces URLs).
+- **E2E (2G.1+)** : snapshots visuels **des 3 fiches pilotes** ; `expect(page.locator('article').filter(...))` : **0** `img` dans le contenu fiche.
+- **E2E (2G.2+)** : sur l’échantillon ou tout le hub — **aucun** `content` markdown ne commence par une ligne `#` (assertion contenu / build check selon le plus fiable) ; règle alignée sur strip H1.
 
 ---
 
@@ -202,12 +234,10 @@ Ces trois fiches servent de **filet de régression** (e2e snapshot post-2G.1, vo
 
 ---
 
-## 9. Synthèse des arbitrages à valider côté utilisateur
+## 9. Synthèse : arbitrages **clos** (réf. §0)
 
-1. Pipeline **Node uniquement** vs **Python** pour extraction tableaux.
-2. Titre de fiche : **un seul** `<h1>` (page) vs **markdown** : strip ou pas.
-3. **Articles clés** : rendu en composant page vs premier bloc markdown.
-4. `articlesCites` vs `articlesCles` : fusion, dépréciation, ou cohabitation.
-5. Tolerance **zéro image** : confirmer qu’**aucun** schéma en image n’est accepté (même pédagogique) — actuellement schémas timeline / viol 2025 en JPG.
+Les cinq points sont actés (Node + pdfjs-dist ; H1 page + strip body ; `FicheArticlesCles` ; `articlesCles` only ; zéro image + dette SVG/Mermaid en 2G.4 / `TECH_DEBT`).
 
-**Fin du plan — en attente de validation utilisateur avant toute implémentation.**
+**Prochaine étape** : exécuter **2G.0** (rapport) → **validation** des 3 **pilotes** 2G.1 → refonte pipeline (hors scope de ce document jusqu’au feu vert par vague).
+
+**Fin du plan (version validée sur le fond).**
