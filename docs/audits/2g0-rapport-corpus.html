@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <title>2G.0 — Audit corpus fondamentaux (pré-refonte)</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; line-height: 1.4; }
+    body { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; color: #111; }
+    h1 { font-size: 1.4rem; }
+    h2 { font-size: 1.1rem; margin-top: 2rem; }
+    .meta { color: #444; font-size: 0.9rem; margin: 0.5rem 0 1.5rem; }
+    .summary { background: #f5f5f5; border: 1px solid #ddd; border-radius: 8px; padding: 1rem 1.25rem; }
+    .summary table { width: 100%; border-collapse: collapse; }
+    .summary th, .summary td { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #e0e0e0; }
+    .ok { color: #0a0; }
+    .mid { color: #a60; }
+    .bad { color: #a00; }
+    table.grid { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+    table.grid th, table.grid td { border: 1px solid #ccc; padding: 0.4rem; vertical-align: top; }
+    table.grid th { background: #eee; }
+    tr.score-propre { background: #f0fff4; }
+    tr.score-moyen { background: #fff8f0; }
+    tr.score-casse { background: #fff0f0; }
+    .excerpt { font-size: 0.75rem; color: #333; }
+    .note { font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Phase 2G.0 — Rapport d’audit du corpus (pré-refonte)</h1>
+  <p class="meta">Généré le 2026-04-25T14:46:23.968Z — lecture seule sur <code>content/cours/*.md</code> — <strong>54</strong> fiche(s) auditée(s)</p>
+  <p class="note">Règles de score (estimé) : <span class="bad">cassé</span> si images, doublon H1 (1ʳᵉ ligne du corps = <code>#</code>), au moins un bloc « paragraphe » &gt; 6 lignes, ou <code>description</code> &gt; 300 car. ; <span class="mid">moyen</span> si description &gt; 200, max lignes/par. &gt; 5, pas de tableau GFM sur long corps, ou <code>articlesCites</code> (legacy) ; sinon <span class="ok">propre</span>. Les listes / blockquotes comptent comme des blocs (même heuristique par double saut de ligne).</p>
+
+  <h2>Synthèse</h2>
+  <div class="summary">
+    <table>
+      <tr><th>Fiches — score « propre »</th><td class="ok">0</td></tr>
+      <tr><th>Fiches — score « moyen »</th><td class="mid">0</td></tr>
+      <tr><th>Fiches — score « cassé »</th><td class="bad">54</td></tr>
+      <tr><th>Total références <code>![](…)</code> (tous chemins) dans le corps</th><td>53</td></tr>
+      <tr><th>Fichiers <code>public/fondamentaux/*.jpg</code> référencés (nom de fichier)</th><td>53</td></tr>
+      <tr><th>Fichiers <code>*.jpg</code> orphelins (présents sur disque, non référés par aucune fiche)</th><td>0</td></tr>
+    </table>
+  </div>
+
+  <h2>Top 10 des blocs (paragraphes) les plus longs (caractères)</h2>
+  <p class="note">Extrait 100 premiers caractères — à utiliser pour repérer « murs » de texte / tableaux écrasés.</p>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Slug</th>
+        <th>Car.</th>
+        <th>Lignes</th>
+        <th>Extrait (100 car.)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>entrainement-session-2026</code></td>
+        <td>2695</td>
+        <td>1</td>
+        <td class="excerpt">• Tentative: TOUJOURS crimes; délits si texte; JAMAIS contraventions • Dol général vs spécial vs agg…</td>
+      </tr>
+      <tr>
+        <td><code>entrainement-session-2026</code></td>
+        <td>2678</td>
+        <td>1</td>
+        <td class="excerpt">• DROITS: nature infraction, durée, avis (proche, employeur, consulat), examen médical, AVOCAT, inte…</td>
+      </tr>
+      <tr>
+        <td><code>entrainement-session-2026</code></td>
+        <td>1616</td>
+        <td>1</td>
+        <td class="excerpt">CONCLUSION Un mot pour finir Tu tiens entre les mains une synthèse dense mais structurée du programm…</td>
+      </tr>
+      <tr>
+        <td><code>armes-materiel-guerre</code></td>
+        <td>1559</td>
+        <td>1</td>
+        <td class="excerpt">Infraction Article Peine Abandon de famille (non-paiement pension) 227-3 CP 2 ans + 15 000 € Non-not…</td>
+      </tr>
+      <tr>
+        <td><code>garde-a-vue</code></td>
+        <td>1465</td>
+        <td>1</td>
+        <td class="excerpt">La notification des droits est un acte essentiel dont le défaut entraîne la nullité pour atteinte au…</td>
+      </tr>
+      <tr>
+        <td><code>mise-en-examen-instruction</code></td>
+        <td>1403</td>
+        <td>1</td>
+        <td class="excerpt">&gt; Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une ou …</td>
+      </tr>
+      <tr>
+        <td><code>outils-oral-entrainement</code></td>
+        <td>1239</td>
+        <td>1</td>
+        <td class="excerpt">&gt; CLÉ Suis systématiquement cette structure en trois temps. Elle est attendue par tous les jurys et …</td>
+      </tr>
+      <tr>
+        <td><code>classification-tripartite-application-loi</code></td>
+        <td>1203</td>
+        <td>1</td>
+        <td class="excerpt">&gt; Art. 113-2 à 113-12 CP Critère Principe Précisions Territoire Loi française applicable Exceptions:…</td>
+      </tr>
+      <tr>
+        <td><code>actualisation-lois-2025</code></td>
+        <td>1192</td>
+        <td>1</td>
+        <td class="excerpt">Cette loi majeure réforme en profondeur le régime pénal des infractions routières. Modification Arti…</td>
+      </tr>
+      <tr>
+        <td><code>garde-a-vue</code></td>
+        <td>1175</td>
+        <td>1</td>
+        <td class="excerpt"># Condition Caractérisation 1 Raisons plausibles Une ou plusieurs raisons plausibles de soupçonner q…</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Orphelins <code>public/fondamentaux/*.jpg</code> (hors référencement)</h2>
+  <p class="note">Aucun.</p>
+  <p>(aucun)</p>
+
+  <h2>Détail par fiche</h2>
+  <table class="grid">
+    <thead>
+      <tr>
+        <th>Slug</th>
+        <th>Images</th>
+        <th>Tableaux GFM</th>
+        <th>Parag. &gt; 6 lignes</th>
+        <th>Max lignes / bloc</th>
+        <th>Doublon H1 (1ʳᵉ ligne)</th>
+        <th>len(description)</th>
+        <th>articlesCites (legacy)</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="score-casse">
+        <td><code>action-publique-opportunite</code></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>286</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>actualisation-lois-2025</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>270</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>armes-materiel-guerre</code></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>277</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>assises-appel</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>283</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>atteintes-autorite-corruption</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>284</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>atteintes-aux-biens</code></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>280</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>atteintes-nation-terrorisme</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>288</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>auditions</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>270</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>blanchiment-infractions-economiques</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>278</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>cadres-enquete</code></td>
+        <td>0</td>
+        <td>3</td>
+        <td>1</td>
+        <td>7</td>
+        <td>oui</td>
+        <td>155</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>causes-irresponsabilite-attenuation</code></td>
+        <td>1</td>
+        <td>5</td>
+        <td>0</td>
+        <td>3</td>
+        <td>oui</td>
+        <td>180</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>classification-tripartite-application-loi</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>293</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>complicite-concours</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>284</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>controle-identite</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>275</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>crimes-biens</code></td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>2</td>
+        <td>oui</td>
+        <td>0</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>crimes-personnes</code></td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>3</td>
+        <td>oui</td>
+        <td>0</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>delits-circulation-routiere</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>277</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>enlevement-sequestration</code></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>265</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>enquete-flagrance</code></td>
+        <td>1</td>
+        <td>5</td>
+        <td>0</td>
+        <td>2</td>
+        <td>oui</td>
+        <td>116</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>enquete-preliminaire</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>262</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>entrainement-session-2026</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>275</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>fouille-vehicule</code></td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+        <td>2</td>
+        <td>oui</td>
+        <td>0</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>garde-a-vue</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>254</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>homicides-atteintes-vie</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>269</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>information-judiciaire</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>264</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>infractions-numeriques</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>280</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>instruction-mandats</code></td>
+        <td>0</td>
+        <td>5</td>
+        <td>0</td>
+        <td>6</td>
+        <td>oui</td>
+        <td>160</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>jld-mandats</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>285</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>juridictions-jugement</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>282</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>libertes-publiques</code></td>
+        <td>0</td>
+        <td>3</td>
+        <td>0</td>
+        <td>5</td>
+        <td>oui</td>
+        <td>147</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>loi-penale-responsabilite</code></td>
+        <td>0</td>
+        <td>4</td>
+        <td>0</td>
+        <td>5</td>
+        <td>oui</td>
+        <td>165</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>mineurs-cjpm</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>277</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>mise-en-examen-instruction</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>274</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>nullites-procedure</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>273</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>outils-oral-entrainement</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>276</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>parquet-instruction</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>276</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>peines-modes-individuation</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>280</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>perquisition</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>273</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>personne-morale-mineurs</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>278</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>police-judiciaire-statut</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>302 ⚠</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>prescription-extinction</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>286</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>requisition-commission-rogatoire</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>290</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>responsabilite-penale-personnes-physiques</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>288</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>saisies-scelles</code></td>
+        <td>0</td>
+        <td>3</td>
+        <td>0</td>
+        <td>6</td>
+        <td>oui</td>
+        <td>141</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>sanction-penale</code></td>
+        <td>2</td>
+        <td>0</td>
+        <td>0</td>
+        <td>2</td>
+        <td>non</td>
+        <td>291</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>stupefiants-trafic</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>281</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>stupefiants-usage</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>279</td>
+        <td>non</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>tentative-recidive-circonstances</code></td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>296</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>traites-dignite-personne</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>297</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>usage-armes-forces-ordre</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>281</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>viol-agressions-sexuelles</code></td>
+        <td>1</td>
+        <td>3</td>
+        <td>0</td>
+        <td>1</td>
+        <td>oui</td>
+        <td>217</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>violences-involontaires-integrite</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>279</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>violences-menaces-harcelement</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>271</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+      <tr class="score-casse">
+        <td><code>vols-escroquerie-extorsion</code></td>
+        <td>1</td>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>non</td>
+        <td>286</td>
+        <td>oui</td>
+        <td><strong>cassé</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="note" style="margin-top:2rem;">Livrable : <code>docs/audits/2g0-rapport-corpus.html</code> — Regénérer : <code>node scripts/audit-2g0-corpus.mjs</code></p>
+</body>
+</html>
