@@ -4,6 +4,50 @@
 **Fichier source** : `content/_sources/fondamentaux-2026/FONDAMENTAUX.pdf` (74 pages, synthèse JUIN 2026, MAJ 01/12/2025).  
 **Chapitres livrés** : 1 (procédure), 19 (DPG), 31 (DPS, loi 2025).
 
+**Relecture ciblée (OPJ)** : les fiches `content/cours/*.md` **ne portent pas** de marqueurs `<!-- OCR_REVIEW: -->` (consigne : ne pas les modifier en même temps que ces livrables d’audit). L’**équivalent** pour cibler la relecture est le tableau **§ « Extrait : passages [OCR_INCERTAIN] »** ci-dessous : chaque ligne correspond à l’**intention** d’un `<!-- OCR_REVIEW: ... -->` au-dessus du passage concerné, avec **numéro de ligne** pour ouvrir le fichier directement. Liste des **articles** extraits avec lignes : `docs/audits/2f1a-articles-cites.md`.
+
+---
+
+## 0. Extrait : passages [OCR_INCERTAIN] (conversion ou source fragile)
+
+*Légende* : **l.** = numéro de ligne dans le fichier `content/cours/<slug>.md` au moment de l’export.
+
+### `enquete-flagrance.md`
+
+| l. | Marqueur logique | Motif (relecture ciblée) |
+|----|------------------|-------------------------|
+| 31 | `[OCR_INCERTAIN]` | Formule « (art. 53) » sans C.P.P. — homogénéité avec le reste de la fiche. |
+| 33 | `[OCR_INCERTAIN]` | Renvoi **global** *art. 53 à 74* : utile pédagogiquement ; pas le détail article par article. |
+| 86 | `[OCR_INCERTAIN]` | Renvoi raccourci **« 62-2 »** (finalités de GAV) — vérifier que le texte d’accompagnement aligne bien sur **art. 62-2 C.P.P.** et la chaîne 62-2/63. |
+| 90 | `[OCR_INCERTAIN]` | *Cass. crim.* « sans date » (jurisprudence abondante) — ne constitue pas une citation d’arrêt vérifiable telle quelle. |
+| 54, 66, 67, 71, 73 | `[OCR_INCERTAIN]` | Arrêts **Cass. crim.** (dates) : reprise depuis la **synthèse PDF** — contrôle sur version publiable des arrêts si besoin d’examen. |
+| 100, 101 | `[OCR_INCERTAIN]` | Conventions de **Vienne 1961 / 1963** (immunités) : hors C.P.P. ; teneur des engagements conventionnels, pas de « coquille OCR » proprement dite, mais **matière à relecture spécialisée**. |
+
+### `causes-irresponsabilite-attenuation.md`
+
+| l. | Marqueur logique | Motif (relecture ciblée) |
+|----|------------------|-------------------------|
+| 3, 10–20 | `[OCR_INCERTAIN]` | Frontmatter / liste `articlesCites` : cohérence entre libellés et tableaux. |
+| 27 | `[OCR_INCERTAIN]` | *« loi 2016-1691 »* vs *loi n° 2016-1691* (l. 105) — homogénéité des références. |
+| 62, 64 | `[OCR_INCERTAIN]` | Bloc *L. 11-1 … R. 11-1* : relecture d’**identifiants d’articles** sur le code **CJPM** (numérotation). |
+| **67, 68** | **`[OCR_INCERTAIN]`** | **`Art. L. 121-5` / `L. 121-7` CJPM** : reprise **telle** sur la filière **mineurs** — **susceptible d’écart** avec la numérotation législative (signal déjà en § 2) ; **priorité haute** pour l’OPJ. |
+| 99, 101 | `[OCR_INCERTAIN]` | *État de nécessité* : formulation mêlant *danger injuste* / urgence (doctrine) — cadrage strict **art. 122-7** à valider. |
+| 36 | `[OCR_INCERTAIN]` | « *ch. d’instruction* » (abréviation) dans un tableau. |
+
+### `viol-agressions-sexuelles.md`
+
+| l. | Marqueur logique | Motif (relecture ciblée) |
+|----|------------------|-------------------------|
+| 28 | `[OCR_INCERTAIN]` | Bloc **nouveautés 2025** (lois, dates, consentement) : densité législative — **relecture** contre les **JO** et le C. pén. consolidé. |
+| 32 | `[OCR_INCERTAIN]` | Énoncé des **qualifications 2025** (consentement, bucco-anaux) : sensible aux amendements successifs. |
+| 36 | `[OCR_INCERTAIN]` | Abréviations **V** / **A** (victime / auteur) dans un tableau — clarté pédago., pas un bug OCR. |
+| 43, 44 | `[OCR_INCERTAIN]` | Ligne « **etc.** » et *liste législative* : insistance à citer le **texte** pour les circonstances **222-24** et suivantes. |
+| 52 | `[OCR_INCERTAIN]` | *Romeo law* (expression) + conditions d’**écart d’âge** — droit national, pas l’anglais ; valider chiffres et **exceptions** sur le C. pén. |
+| **62–64** | **`[OCR_INCERTAIN]`** | **§ 31.5** *soumission chimique* : le texte indique d’**insérer l’article exact** de session — **numéro manquant volontairement** ; relecture **bloquante** si l’on fige l’examen. |
+| 64 | `[OCR_INCERTAIN]` | *« ordre »* 5 ans / 75 000 € — teneur pénale à confirmer sur l’**article** visé. |
+| 60 | `[OCR_INCERTAIN]` | Renvoi *222-24 s.* pour aggravations. |
+| 68, 77 | `[OCR_INCERTAIN]` | Niveaux de peines (exposition, harcèlement) — **vérification législative** mentionnée dans la fiche. |
+
 ---
 
 ## 1. Nature du source et extraction
@@ -67,3 +111,5 @@
 
 *Livrable validé côté CI : lint, tsc, vitest, build, `test:e2e`.*  
 *Pas de `git push` sans validation produit (consigne 2F.1.a).*
+
+**Complément relecture** : liste d’**articles** avec numéros de ligne — [2f1a-articles-cites.md](./2f1a-articles-cites.md).
