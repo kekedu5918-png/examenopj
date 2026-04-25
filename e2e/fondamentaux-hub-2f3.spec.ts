@@ -1,9 +1,11 @@
 import { expect, test } from './fixtures';
 
 async function gotoFondamentauxHub(page: import('@playwright/test').Page) {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/fondamentaux', { waitUntil: 'domcontentloaded' });
   await expect(page.getByRole('heading', { name: /Les bases pour réussir/i })).toBeVisible({ timeout: 30_000 });
   await expect(page.getByTestId('fondamentaux-grid')).toBeVisible({ timeout: 30_000 });
+  await expect(page.getByTestId('fondamentaux-filter-partie').locator('option')).toHaveCount(7, { timeout: 20_000 });
 }
 
 test.describe('/fondamentaux — 2F.3 (hub)', () => {
@@ -19,8 +21,8 @@ test.describe('/fondamentaux — 2F.3 (hub)', () => {
     await gotoFondamentauxHub(page);
     const select = page.getByTestId('fondamentaux-filter-partie');
     expect(await page.locator('[data-partie-index="5"]').count()).toBeGreaterThan(0);
-    await select.selectOption({ value: '1' });
-    await expect(select).toHaveValue('1');
+    await select.selectOption('1');
+    await expect(select).toHaveValue('1', { timeout: 10_000 });
     // Aucune fiche de la partie V ne doit rester (plus robuste qu’un slug seul, charge parallèle Playwright)
     await expect
       .poll(async () => page.locator('[data-partie-index="5"]').count(), { timeout: 15_000 })

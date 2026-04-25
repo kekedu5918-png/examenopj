@@ -33,9 +33,18 @@ test.describe('Pages publiques', () => {
 
   test('les cinq rubriques pédagogiques répondent 200', async ({ page }) => {
     for (const path of ['/fondamentaux', '/infractions', '/enquetes', '/epreuves', '/entrainement']) {
+      if (path === '/fondamentaux') {
+        // Révèle toutes les cartes sans animation (sinon axe peut mesurer un contraste faussé sur li opacity < 1).
+        await page.emulateMedia({ reducedMotion: 'reduce' });
+      } else {
+        await page.emulateMedia({ reducedMotion: 'no-preference' });
+      }
       const res = await page.goto(path);
       expect(res?.ok(), `${path} doit répondre OK`).toBeTruthy();
       await expect(page.locator('body')).toBeVisible();
+      if (path === '/fondamentaux') {
+        await expect(page.getByTestId('fondamentaux-grid')).toBeVisible({ timeout: 15_000 });
+      }
       await expectNoSeriousA11yViolations(page, path);
     }
   });

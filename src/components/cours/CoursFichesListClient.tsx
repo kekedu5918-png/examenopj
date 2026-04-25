@@ -161,7 +161,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                   <span className='min-w-0 font-ij-sans font-semibold text-ij-text'>{it.title}</span>
                   {it.chapitre != null ? (
                     <span
-                      className='shrink-0 rounded-md border border-ij-border/90 bg-ij-surface-2/90 px-2 py-0.5 font-ij-sans text-[10px] font-semibold text-ij-text-muted'
+                      className='shrink-0 rounded-md border border-ij-border/90 bg-ij-surface-2/90 px-2 py-0.5 font-ij-sans text-xs font-semibold text-ij-text'
                       aria-label={`Chapitre ${it.chapitre}`}
                     >
                       Ch. {it.chapitre}
