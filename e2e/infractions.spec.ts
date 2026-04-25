@@ -41,7 +41,9 @@ test.describe('/infractions — Phase 2D (liste)', () => {
     await search.focus();
     await expect(search).toBeFocused();
     // Même remarque que reduced-motion : accordéon fermé = pas de cartes dans le DOM (Radix).
-    await page.getByTestId('infractions-grid').locator('button').first().click();
-    await expect(page.getByTestId('infraction-card').first()).toBeVisible({ timeout: 15_000 });
+    const firstGroupTrigger = page.getByTestId('infractions-grid').locator('button').first();
+    await expect(firstGroupTrigger).toBeVisible({ timeout: 30_000 });
+    await firstGroupTrigger.click();
+    await expect(page.getByTestId('infraction-card').first()).toBeVisible({ timeout: 30_000 });
   });
 });

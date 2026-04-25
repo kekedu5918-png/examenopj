@@ -171,7 +171,7 @@ Fichiers **runtime** (dashboard, enquêtes, parcours, révision) + `fondamentaux
 ## Annexe B — Mapping des 46 chapitres (slugs + titres)
 
 **Révision sommaire PDF** : ch. **16–20** recalés ; **ch. 16 = nullités** (réutilisation `nullites-procedure`) ; ch. **17–20** = bloc DPG tel que le sommaire (sans entrée erronée « éléments constitutifs et qualification » à ces rangs).  
-**Partie III** : **ch. 15** conserve une entrée *Cour d'assises, appel* ; **l’exécution des peines / JAP (F13)** n’est **pas** redondante avec *nullité* (ch. 16) — vérifier au PDF si un chapitre *exécution* autonome existe et ajuster le numéro (ex. 15 bis / fusion) en **2F.1.b** si le sommaire l’impose (note de reprise).
+**Partie III** : **ch. 15** conserve une entrée *Cour d'assises, appel* ; **l’exécution des peines / JAP (F13)** n’est **pas** redondante avec *nullité* (ch. 16) — vérifier au PDF si un chapitre *exécution* autonome existe et ajuster le numéro (ex. 15 bis / fusion) en **2F.1.b** si le sommaire l’impose (note de reprise). **2F.1.b (OCR complet)** : recouper explicitement le thème **exécution des peines / JAP** avec le sommaire des 46 chapitres — emplacement **probable** : ch. **24** (*Sanctions et échelle des peines*) ou un sous-chapitre connexe, **sans** poser cela en contrainte avant lecture intégrale du PDF. **Non bloquant** pour 2F.1.a.
 
 | Ch. | Titre (aligné sommaire / proposition) | Slug | Part. | Note réutil. §2.1 |
 |-----|----------------------------------------|------|--------|-------------------|
@@ -238,7 +238,7 @@ Fichiers **runtime** (dashboard, enquêtes, parcours, révision) + `fondamentaux
 | `instruction-mandats` | **Orphelin** | `jld-mandats` / `parquet-instruction` (2F.2) | **Oui** |
 | `juridictions-jugement` | **Réutilisé** | Ch. 14 | Non |
 | `libertes-publiques` | **Orphelin** | Aucun 1:1 | **Oui** |
-| `loi-penale-responsabilite` | **Orphelin** (remplacé par ch. 17 + 18 **sans** reprise de ce slug) | 2F.2 : cibles `classification-tripartite-application-loi` / `responsabilite-penale-personnes-physiques` | **Oui** (si pas de renommage volontaire pour récupérer l’URL) |
+| `loi-penale-responsabilite` | **Orphelin** (remplacé par ch. 17 + 18 **sans** reprise de ce slug) | **301 unique** (décision produit) : **uniquement** vers **`/fondamentaux/classification-tripartite-application-loi`** (ch. 17) — **pas** vers le **hub** ; **ne pas** doubler en 301 vers ch. 18 (liens profonds 2F.2). | **Oui** |
 | `mineurs-cjpm` | **Réutilisé** | Ch. 32 | Non |
 | `nullites-procedure` | **Réutilisé** | **Ch. 16** (sommaire) | **Non** |
 | `perquisition` | **Réutilisé** | Ch. 6 | Non |

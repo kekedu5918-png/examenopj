@@ -5,7 +5,7 @@
 **Référence** : [Annexe C](../plans/phase_2f_integration_fondamentaux_9d2e7f4a.plan.md#annexe-c--les-17-anciens-slugs-stratégie-réutilisation--orphelin--301) du plan Phase 2F (stratégie réutilisé / orphelin / 301).  
 **Hors scope** : extraction ZIP, génération markdown, édition des fichiers de données (réservé **2F.2** après validation de cet audit).
 
-**Statut** : **PAUSE** — relecture utilisateur ; validation avant **2F.1.a** (3 chapitres pilote).
+**Statut** : **2F.1.a** — décisions d’audit incrustées (§3 *audition* / `next.config` ; *loi-penale* **301 → ch. 17**) ; relecture utilisateur sur les **3** fiches + rapport `docs/audits/2f1a-rapport-qualite-ocr.md` ; **2F.1.b** (43 ch.) après feu vert.
 
 ---
 
@@ -23,7 +23,7 @@
 | `instruction-mandats` | Orphelin (301) | p.ex. `jld-mandats` / `parquet-instruction` |
 | `juridictions-jugement` | Réutilisé | ch. 14 `juridictions-jugement` |
 | `libertes-publiques` | Orphelin (301) | — |
-| `loi-penale-responsabilite` | Orphelin (301) | p.ex. `classification-tripartite-application-loi` + `responsabilite-penale-personnes-physiques` |
+| `loi-penale-responsabilite` | Orphelin (301) | **301 unique** : `classification-tripartite-application-loi` **(ch. 17)** — **pas** le hub (décision produit ; voir plan Annexe C) |
 | `mineurs-cjpm` | Réutilisé | ch. 32 `mineurs-cjpm` |
 | `nullites-procedure` | Réutilisé | ch. 16 `nullites-procedure` |
 | `perquisition` | Réutilisé | ch. 6 `perquisition` |
@@ -49,7 +49,7 @@
 | 6 | idem | 18 | `mineurs-cjpm` | Mappage F06 | **Réutilisé** (ch. 32) | Conserver URL ; vérifier libellé |
 | 7 | idem | 19 | `fouille-vehicule` | Mappage F07 | Orphelin | Cible p.ex. `delits-circulation-routiere` ou hub |
 | 8 | idem | 20 | `libertes-publiques` | Mappage F08 | Orphelin | Cible 46 dédiée ou hub |
-| 9 | idem | 21 | `loi-penale-responsabilite` | Mappage F09 | Orphelin | Cible ch. 17/18 (nouveaux slugs) ou 301 + MAJ liens |
+| 9 | idem | 21 | `loi-penale-responsabilite` | Mappage F09 | Orphelin | **301 → ch. 17** `classification-tripartite-application-loi` (pas hub) + MAJ liens 2F.2 |
 | 10 | idem | 22 | `sanction-penale` | Mappage F10 | **Réutilisé** (ch. 26) | Conserver |
 | 11 | idem | 23 | `cadres-enquete` | Mappage F11 | Orphelin | Hub ou `enquete-flagrance` / `enquete-preliminaire` / `information-judiciaire` |
 | 12 | idem | 24 | `instruction-mandats` | Mappage F12 | Orphelin | `jld-mandats` / `mise-en-examen-instruction` / split |
@@ -111,8 +111,9 @@
 
 - **`cadres-enquete`** : thème ventilé sur ch. 1–3 (aucun slug identique) → **301** (bookmark) + **reliens 2F.2** vers le hub ou 3 cibles.  
 - **`crimes-biens` / `crimes-personnes`** : synthèses « fourre-tout » remplacées par des chapitres DPS ciblés → **301** + MAJ de tous les `href` en **§2** vers slugs 46.  
-- **`fouille-vehicule`**, **`libertes-publiques`**, **`instruction-mandats`**, **`saisies-scelles`**, **`loi-penale-responsabilite`** : pas de **réutilisation** de l’identifiant d’URL (Annexe C) → **301** pour résidu bookmark **ou** remplacement de liens uniquement.  
-- **`/fondamentaux/audition`** (`ParcoursOpjPedagogyBlock`) : **n’est pas** un des 17 slugs (le fichier s’appelle `auditions.md`) — **anomalie** : recommandation **correction** vers `auditions` (pas de 301, bugfix).
+- **`fouille-vehicule`**, **`libertes-publiques`**, **`instruction-mandats`**, **`saisies-scelles`** : pas de **réutilisation** de l’identifiant d’URL (Annexe C) → **301** pour résidu bookmark **ou** remplacement de liens uniquement.  
+- **`loi-penale-responsabilite`** : **301** **ciblée** vers **ch. 17** `classification-tripartite-application-loi` (décision tranchée — **pas** le hub) ; voir **Annexe C** du plan.  
+- **`/fondamentaux/audition`** (`ParcoursOpjPedagogyBlock`) : **n’est pas** un des 17 slugs (fiche réelle : `auditions.md` → URL `/fondamentaux/auditions`). **Vérification `next.config.js`** : **aucun** `rewrite` / `redirect` spécifique vers `audition` (héritage utile = `/cours/:slug` → `/fondamentaux/:slug` seulement) ; le segment **`audition`** n’est **jamais** mappé par la plateforme vers `auditions`. **Conclusion** : **anomalie = lien (slug) erroné dans le code** → correction **2F.2** vers `/fondamentaux/auditions` ; **pas** de **301** « plateforme ». *(Si l’on souhaitait un filet serveur, ce serait un choix 2F.2 explicite — aujourd’hui inutile si le `href` est corrigé.)*
 
 ---
 
