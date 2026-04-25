@@ -3,7 +3,8 @@ import type { Fiche } from './fondamentaux-types';
 /** Fiches 1–10 : procédure + début acteurs (source prompt ExamenOPJ V2) */
 export const FONDAMENTAUX_PART1: Fiche[] = [
   {
-    id: 'cadres-enquete',
+    /** Aligné sur la fiche cours `enquete-preliminaire.md` (Phase 2F — ancien id `cadres-enquete`). */
+    id: 'enquete-preliminaire',
     categorie: 'procedure',
     titre: "Les cadres d'enquête",
     accroche:

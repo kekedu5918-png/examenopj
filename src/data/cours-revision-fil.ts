@@ -34,7 +34,7 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     dureeIndicative: '1 à 2 jours',
     objectifs: ['Maîtriser durées et visas', 'Relier chaque acte au bon état procédural'],
     liens: [
-      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Cadres d’enquête' },
       { href: '/fondamentaux/garde-a-vue', label: 'Garde à vue' },
     ],
   },
@@ -58,7 +58,7 @@ export const COURS_REVISION_FIL: CoursRevisionEtape[] = [
     dureeIndicative: '3 à 4 jours',
     objectifs: ['Distinguer éléments matériel / moral par famille', 'Quiz ciblé DPS patrimoine'],
     liens: [
-      { href: '/fondamentaux/crimes-biens', label: 'Synthèse — atteintes aux biens' },
+      { href: '/fondamentaux/atteintes-aux-biens', label: 'Synthèse — atteintes aux biens' },
       { href: '/quiz?f=f02', label: 'Quiz thème 02' },
     ],
   },

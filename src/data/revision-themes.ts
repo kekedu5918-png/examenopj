@@ -113,7 +113,7 @@ export const REVISION_THEMES: RevisionTheme[] = [
     ],
     etapes: [
       etape('conditions', [
-        { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
+        { href: '/fondamentaux/enquete-preliminaire', label: 'Cadres d’enquête' },
         { href: '/fondamentaux/garde-a-vue', label: 'Garde à vue' },
         { href: '/fondamentaux', label: 'Index fondamentaux' },
       ]),
@@ -152,8 +152,8 @@ export const REVISION_THEMES: RevisionTheme[] = [
       'Titres PRQC exacts depuis le référentiel',
     ],
     etapes: [
-      etape('conditions', [{ href: '/fondamentaux/crimes-personnes', label: 'Synthèse — atteintes aux personnes' }]),
-      etape('cours', [{ href: '/fondamentaux/crimes-personnes', label: 'Lecture guidée' }]),
+      etape('conditions', [{ href: '/fondamentaux/violences-menaces-harcelement', label: 'Synthèse — atteintes aux personnes' }]),
+      etape('cours', [{ href: '/fondamentaux/violences-menaces-harcelement', label: 'Lecture guidée' }]),
       etape('rubriques', [
         { href: '/infractions?q=violences', label: 'Référentiel — violences' },
         { href: '/entrainement/recapitulatif?f=f01p1', label: 'Récap partie 1' },
@@ -185,8 +185,8 @@ export const REVISION_THEMES: RevisionTheme[] = [
       'Lien avec constatations et PV (Alpha, scellés)',
     ],
     etapes: [
-      etape('conditions', [{ href: '/fondamentaux/crimes-biens', label: 'Synthèse — atteintes aux biens' }]),
-      etape('cours', [{ href: '/fondamentaux/crimes-biens', label: 'Lecture guidée' }]),
+      etape('conditions', [{ href: '/fondamentaux/atteintes-aux-biens', label: 'Synthèse — atteintes aux biens' }]),
+      etape('cours', [{ href: '/fondamentaux/atteintes-aux-biens', label: 'Lecture guidée' }]),
       etape('rubriques', [
         { href: '/infractions?q=vol', label: 'Référentiel — biens' },
         { href: '/entrainement/recapitulatif', label: 'Récap comparatif' },

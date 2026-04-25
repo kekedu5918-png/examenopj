@@ -38,7 +38,7 @@ const GAV_TIMELINE: TimelineStepItem[] = [
 const RELATED_FICHE: Record<string, string> = {
   GAV: '/fondamentaux/garde-a-vue',
   Perquisition: '/fondamentaux/perquisition',
-  Audition: '/fondamentaux/audition',
+  Audition: '/fondamentaux/auditions',
 };
 
 /**

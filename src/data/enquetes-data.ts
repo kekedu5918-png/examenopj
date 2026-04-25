@@ -66,8 +66,8 @@ export const ENQUETES: EnqueteMeta[] = [
     ],
     premium: false,
     liensModules: [
-      { href: '/fondamentaux/crimes-biens', label: 'Crimes contre les biens' },
-      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
+      { href: '/fondamentaux/atteintes-aux-biens', label: 'Atteintes aux biens' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Cadres d’enquête' },
     ],
   },
   {
@@ -100,8 +100,8 @@ export const ENQUETES: EnqueteMeta[] = [
     ],
     premium: true,
     liensModules: [
-      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
-      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
+      { href: '/fondamentaux/violences-menaces-harcelement', label: 'Atteintes aux personnes' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Cadres d’enquête' },
     ],
   },
   fichePedago({
@@ -120,7 +120,7 @@ export const ENQUETES: EnqueteMeta[] = [
       'PV et articulation : distinguer faits bruts, résultats des investigations et rapports hiérarchiques.',
     ],
     liensModules: [
-      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
+      { href: '/fondamentaux/viol-agressions-sexuelles', label: 'Violences et agressions sexuelles' },
       { href: '/fondamentaux/perquisition', label: 'Perquisition & actes d’enquête' },
     ],
   }),
@@ -141,7 +141,7 @@ export const ENQUETES: EnqueteMeta[] = [
     ],
     liensModules: [
       { href: '/fondamentaux/controle-identite', label: 'Contrôle d’identité' },
-      { href: '/fondamentaux/cadres-enquete', label: 'Cadres d’enquête' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Cadres d’enquête' },
     ],
   }),
   fichePedago({
@@ -178,8 +178,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Enchaîner constatations, expertises et transmissions sans anticiper des qualifications non posées par le sujet.',
     ],
     liensModules: [
-      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
-      { href: '/fondamentaux/cadres-enquete', label: 'Actes d’enquête' },
+      { href: '/fondamentaux/homicides-atteintes-vie', label: 'Homicides & scène' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Actes d’enquête' },
     ],
   }),
   fichePedago({
@@ -196,7 +196,7 @@ export const ENQUETES: EnqueteMeta[] = [
     objectifsEpreuve2: [
       'Gérer plusieurs mis en cause et victimes : un fil PV clair par acte majeur.',
     ],
-    liensModules: [{ href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' }],
+    liensModules: [{ href: '/fondamentaux/enlevement-sequestration', label: 'Enlèvement & séquestration' }],
   }),
   fichePedago({
     id: 'india',
@@ -213,8 +213,8 @@ export const ENQUETES: EnqueteMeta[] = [
       'Mettre en évidence les actes spécifiques (audition adaptée, AEMO, etc.) dans l’articulation.',
     ],
     liensModules: [
-      { href: '/fondamentaux/crimes-personnes', label: 'Crimes contre les personnes' },
-      { href: '/fondamentaux/cadres-enquete', label: 'Police judiciaire & cadres' },
+      { href: '/fondamentaux/mineurs-cjpm', label: 'Mineurs, famille, mœurs' },
+      { href: '/fondamentaux/enquete-preliminaire', label: 'Police judiciaire & cadres' },
     ],
   }),
   fichePedago({
@@ -231,7 +231,7 @@ export const ENQUETES: EnqueteMeta[] = [
     objectifsEpreuve2: [
       'Hiérarchiser constatations techniques et auditions dans des PV courts.',
     ],
-    liensModules: [{ href: '/fondamentaux/crimes-personnes', label: 'Accidentologie & personnes' }],
+    liensModules: [{ href: '/fondamentaux/delits-circulation-routiere', label: 'Accidentologie & route' }],
   }),
   fichePedago({
     id: 'patrimoniale',
@@ -248,7 +248,7 @@ export const ENQUETES: EnqueteMeta[] = [
       'Comparer votre articulation aux fiches Alpha (vol) et à la fiche « crimes contre les biens ».',
     ],
     liensModules: [
-      { href: '/fondamentaux/crimes-biens', label: 'Crimes contre les biens' },
+      { href: '/fondamentaux/atteintes-aux-biens', label: 'Atteintes aux biens' },
       { href: '/infractions', label: 'Référentiel infractions (DPG)' },
     ],
   }),

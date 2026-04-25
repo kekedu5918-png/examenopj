@@ -9,19 +9,20 @@
  * dans le composant appelant.
  */
 
+/** Slugs alignés sur les fiches `content/cours` (Phase 2F — Annexe B). */
 const FASCICULE_TO_COURS_SLUG: Readonly<Record<number, string>> = {
-  1: 'crimes-personnes',
-  2: 'crimes-biens',
-  3: 'crimes-personnes',
-  4: 'crimes-biens',
-  5: 'crimes-personnes',
+  1: 'violences-menaces-harcelement',
+  2: 'atteintes-aux-biens',
+  3: 'violences-menaces-harcelement',
+  4: 'atteintes-aux-biens',
+  5: 'violences-menaces-harcelement',
   6: 'mineurs-cjpm',
-  7: 'fouille-vehicule',
-  8: 'libertes-publiques',
-  9: 'loi-penale-responsabilite',
+  7: 'delits-circulation-routiere',
+  8: 'controle-identite',
+  9: 'classification-tripartite-application-loi',
   10: 'sanction-penale',
-  11: 'cadres-enquete',
-  12: 'instruction-mandats',
+  11: 'enquete-preliminaire',
+  12: 'jld-mandats',
   13: 'juridictions-jugement',
   14: 'police-judiciaire-statut',
   15: 'nullites-procedure',
@@ -34,7 +35,7 @@ const FASCICULE_TO_COURS_SLUG: Readonly<Record<number, string>> = {
 const FASCICULE_SECONDARY_SLUGS: Readonly<Record<number, readonly string[]>> = {
   6: ['auditions'],
   11: ['garde-a-vue', 'controle-identite', 'auditions', 'perquisition'],
-  12: ['perquisition', 'saisies-scelles', 'instruction-mandats'],
+  12: ['perquisition', 'mise-en-examen-instruction', 'requisition-commission-rogatoire'],
   14: ['police-judiciaire-statut'],
   15: ['nullites-procedure'],
 };

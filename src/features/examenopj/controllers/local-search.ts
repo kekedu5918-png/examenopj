@@ -4,7 +4,8 @@
  *
  * Pourquoi ? Le candidat tape "garde à vue" → doit immédiatement tomber sur
  * la fiche `/fondamentaux/garde-a-vue` et les QCM correspondants, sans qu'on
- * dépende d'un index Supabase qui n'inclut pas ces contenus.
+ * dépende d'un index Supabase qui n'inclut pas ces contenus. Les slugs suivent
+ * `content/cours/*.md` (corpus 46 fiches, Phase 2F).
  */
 import { ENQUETES } from '@/data/enquetes-data';
 import { quizQuestions } from '@/data/quiz-questions';
