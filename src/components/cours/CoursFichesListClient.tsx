@@ -13,20 +13,40 @@ type Props = {
   basePath?: string;
 };
 
+const PARTIE_OPTIONS: { value: string; label: string }[] = [
+  { value: '', label: 'Toutes les parties' },
+  { value: '1', label: 'Partie I' },
+  { value: '2', label: 'Partie II' },
+  { value: '3', label: 'Partie III' },
+  { value: '4', label: 'Partie IV' },
+  { value: '5', label: 'Partie V' },
+  { value: '6', label: 'Partie VI' },
+];
+
 export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Props) {
   const [q, setQ] = useState('');
+  const [partieFilter, setPartieFilter] = useState('');
   const listRef = useRef<HTMLUListElement>(null);
   const shouldReduceMotion = usePrefersReducedMotion();
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
 
   const filtered = useMemo(() => {
+    let list = items;
     const s = q.trim().toLowerCase();
-    if (!s) return items;
-    return items.filter((it) => {
-      const hay = `${it.title} ${it.tags.join(' ')}`.toLowerCase();
-      return hay.includes(s);
-    });
-  }, [items, q]);
+    if (s) {
+      list = list.filter((it) => {
+        const hay = `${it.title} ${it.tags.join(' ')}`.toLowerCase();
+        return hay.includes(s);
+      });
+    }
+    if (partieFilter) {
+      const n = Number(partieFilter);
+      if (n >= 1 && n <= 6) {
+        list = list.filter((it) => it.partieIndex === n);
+      }
+    }
+    return list;
+  }, [items, q, partieFilter]);
 
   useEffect(() => {
     if (shouldReduceMotion) {
@@ -63,21 +83,48 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
 
   return (
     <div className='space-y-6'>
+      <p className='font-ij-sans text-sm text-ij-text-muted' data-testid='fondamentaux-count-total'>
+        <span className='font-medium text-ij-text'>{items.length} fiches</span> — ordre des chapitres (contenu
+        pédagogique)
+      </p>
       <div className='rounded-2xl border border-ij-border bg-ij-surface p-5'>
-        <label htmlFor='fondamentaux-filter' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
-          Filtrer les fiches
-        </label>
-        <input
-          id='fondamentaux-filter'
-          data-testid='fondamentaux-search'
-          type='search'
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder='Titre, thème, tag…'
-          className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-4 py-3 font-ij-sans text-ij-text outline-none placeholder:text-ij-text-subtle focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
-        />
-        <p className='mt-2 font-ij-sans text-xs text-ij-text-muted'>
-          Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat.
+        <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-end'>
+          <div className='min-w-0 flex-1'>
+            <label htmlFor='fondamentaux-filter' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
+              Filtrer les fiches
+            </label>
+            <input
+              id='fondamentaux-filter'
+              data-testid='fondamentaux-search'
+              type='search'
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              placeholder='Titre, thème, tag…'
+              className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-4 py-3 font-ij-sans text-ij-text outline-none placeholder:text-ij-text-subtle focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
+            />
+          </div>
+          <div className='w-full sm:w-56'>
+            <label htmlFor='fondamentaux-partie' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
+              Partie (programme)
+            </label>
+            <select
+              id='fondamentaux-partie'
+              data-testid='fondamentaux-filter-partie'
+              value={partieFilter}
+              onChange={(e) => setPartieFilter(e.target.value)}
+              className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-3 py-3 font-ij-sans text-ij-text outline-none focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
+            >
+              {PARTIE_OPTIONS.map((o) => (
+                <option key={o.value || 'all'} value={o.value}>
+                  {o.label}
+                </option>
+              ))}
+            </select>
+          </div>
+        </div>
+        <p className='font-ij-sans text-xs text-ij-text-muted'>
+          Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat. Les fiches sans
+          numéro de partie dans le source ne s’affichent que lorsque « Toutes les parties » est sélectionné.
         </p>
       </div>
 
@@ -93,6 +140,8 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
             <li
               key={it.slug}
               data-fiche-slug={it.slug}
+              data-chapitre={it.chapitre != null ? String(it.chapitre) : ''}
+              data-partie-index={it.partieIndex != null ? String(it.partieIndex) : ''}
               data-testid='fondamentaux-card'
               data-reduced-motion={rm}
               className={cn(
@@ -108,7 +157,25 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                   'hover:border-ij-accent/35 hover:bg-ij-text/[0.06]',
                 )}
               >
-                <span className='font-ij-sans font-semibold text-ij-text'>{it.title}</span>
+                <div className='flex items-start justify-between gap-2'>
+                  <span className='min-w-0 font-ij-sans font-semibold text-ij-text'>{it.title}</span>
+                  {it.chapitre != null ? (
+                    <span
+                      className='shrink-0 rounded-md border border-ij-border/90 bg-ij-surface-2/90 px-2 py-0.5 font-ij-sans text-[10px] font-semibold text-ij-text-muted'
+                      aria-label={`Chapitre ${it.chapitre}`}
+                    >
+                      Ch. {it.chapitre}
+                    </span>
+                  ) : null}
+                </div>
+                {it.loi2025 ? (
+                  <span
+                    className='mt-2 inline-flex w-fit items-center rounded-md border border-ij-accent/35 bg-ij-accent/10 px-2 py-0.5 font-ij-sans text-[10px] font-semibold text-ij-accent'
+                    data-testid='fondamentaux-badge-2025'
+                  >
+                    Mise à jour 2025
+                  </span>
+                ) : null}
                 {it.tags.length > 0 ? (
                   <div className='mt-2 flex flex-wrap gap-1.5'>
                     {it.tags.map((t) => (

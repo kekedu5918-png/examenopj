@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { COURS_REVISION_FIL } from '@/data/cours-revision-fil';
 import { ENQUETES } from '@/data/enquetes-data';
 import { REVISION_THEMES } from '@/data/revision-themes';
+import { getCourseSummaries } from '@/lib/content/courses';
 import { getCoursPathForFascicule, getSecondaryCoursPathsForFascicule } from '@/lib/content/fascicule-cours-map';
 import { listMarkdownBasenames, slugFromBasename } from '@/lib/content/markdown';
 
@@ -23,6 +24,16 @@ function slugFromFondamentauxHref(href: string): string | null {
   const rest = href.slice('/fondamentaux/'.length).split('/')[0];
   return rest || null;
 }
+
+describe('2F.1.b / 2F.3 — métadonnées cours (fondamentaux)', () => {
+  it('partie I et partie V mappées correctement (lision YAML)', async () => {
+    const items = await getCourseSummaries();
+    const v = items.find((i) => i.slug === 'viol-agressions-sexuelles');
+    const f = items.find((i) => i.slug === 'enquete-flagrance');
+    expect(v?.partieIndex).toBe(5);
+    expect(f?.partieIndex).toBe(1);
+  });
+});
 
 describe('2F.2 — deep-links fondamentaux', () => {
   it('chaque lien /fondamentaux/:slug pointe vers un .md cours existant', async () => {
