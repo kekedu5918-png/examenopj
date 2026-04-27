@@ -202,6 +202,15 @@
     --ij-warning: 251 191 36;
     --ij-danger: 248 113 113;
     --ij-focus-ring: rgba(212, 168, 83, 0.55);
+    /* Phase 2H.1 — V3 fiche premium (dark uniquement, opacités via /5–/20 en utilitaires) */
+    --ij-info: 6 182 212;
+    --ij-glass-bg: 255 255 255;
+    --ij-glass-border: 255 255 255;
+    --ij-glow-accent: 212 168 83;
+    --ij-glow-cyan: 6 182 212;
+    --ij-memo: 232 217 178;
+    --ij-aurora-1: 26 18 51;
+    --ij-aurora-2: 51 33 64;
   }
 
   ::selection {

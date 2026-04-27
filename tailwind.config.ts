@@ -125,6 +125,14 @@ const config: Config = {
           success: 'rgb(var(--ij-success) / <alpha-value>)',
           warning: 'rgb(var(--ij-warning) / <alpha-value>)',
           danger: 'rgb(var(--ij-danger) / <alpha-value>)',
+          'aurora-1': 'rgb(var(--ij-aurora-1) / <alpha-value>)',
+          'aurora-2': 'rgb(var(--ij-aurora-2) / <alpha-value>)',
+          'glass-bg': 'rgb(var(--ij-glass-bg) / <alpha-value>)',
+          'glass-border': 'rgb(var(--ij-glass-border) / <alpha-value>)',
+          'glow-accent': 'rgb(var(--ij-glow-accent) / <alpha-value>)',
+          'glow-cyan': 'rgb(var(--ij-glow-cyan) / <alpha-value>)',
+          info: 'rgb(var(--ij-info) / <alpha-value>)',
+          memo: 'rgb(var(--ij-memo) / <alpha-value>)',
         },
       },
       boxShadow: {
@@ -217,6 +225,17 @@ const config: Config = {
           '50%': { backgroundColor: 'rgba(34, 197, 94, 0.15)' },
           '100%': { backgroundColor: 'rgba(34, 197, 94, 0.1)' },
         },
+        /** Phase 2H.1 — fond hero V3 (stops --ij-aurora-1 / --ij-aurora-2 en layer séparé 2H.3) */
+        'aurora-shift': {
+          '0%, 100%': {
+            transform: 'translate(0%, 0%) scale(1)',
+            opacity: '0.6',
+          },
+          '50%': {
+            transform: 'translate(5%, -3%) scale(1.05)',
+            opacity: '0.8',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -227,6 +246,7 @@ const config: Config = {
         'ex-pulse-dot': 'ex-pulse-dot 2s ease-in-out infinite',
         'hero-quiz-shake': 'hero-quiz-shake 0.35s ease-out 1',
         'hero-quiz-correct': 'hero-quiz-correct 0.4s ease-out 1',
+        'aurora-shift': 'aurora-shift 18s ease-in-out infinite',
       },
     },
   },
