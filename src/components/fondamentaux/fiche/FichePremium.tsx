@@ -4,6 +4,7 @@ import { useSyncExternalStore } from 'react';
 import { motion, MotionConfig } from 'framer-motion';
 import type { ComponentProps, ReactNode } from 'react';
 
+import { MarkdownArticle } from '@/components/content/MarkdownArticle';
 import type { FicheFrontmatterV3 } from '@/lib/fondamentaux/fiche-frontmatter-v3';
 
 import { fadeUpVariants, staggerContainerVariants } from './fiche-motion';
@@ -51,6 +52,8 @@ export type FichePremiumProps = {
   heroDureeIndicative?: string;
   /** Sections « plan détaillé » (accordéons) — alimentées par le frontmatter ou le loader MD. */
   accordionItems?: FicheAccordionItem[];
+  /** Découpe H2 du cours : chaque section est rendue en markdown dans un accordéon. */
+  accordionMarkdownSections?: Array<{ id: string; title: string; bodyMd: string }>;
 };
 
 export function FichePremium({
@@ -65,12 +68,29 @@ export function FichePremium({
   readingProgress,
   heroDureeIndicative,
   accordionItems,
+  accordionMarkdownSections,
 }: FichePremiumProps) {
   const mediaReducedMotion = useSyncExternalStore(
     subscribePrefersReducedMotion,
     getPrefersReducedMotionClient,
     () => false,
   );
+
+  const accordionMarkdownItems: FicheAccordionItem[] | undefined = accordionMarkdownSections?.length
+    ? accordionMarkdownSections.map((s) => ({
+        id: s.id,
+        title: s.title,
+        content: (
+          <MarkdownArticle
+            markdown={s.bodyMd}
+            className='prose prose-sm prose-invert max-w-none prose-headings:font-sans prose-p:text-ij-text-muted prose-li:text-ij-text-muted prose-strong:text-ij-text prose-a:text-violet-300 prose-li:marker:text-violet-400'
+          />
+        ),
+      }))
+    : undefined;
+
+  const resolvedAccordion =
+    accordionItems?.length ? accordionItems : accordionMarkdownItems?.length ? accordionMarkdownItems : undefined;
 
   return (
     <MotionConfig reducedMotion='user'>
@@ -123,9 +143,9 @@ export function FichePremium({
             </motion.div>
           ) : null}
 
-          {accordionItems?.length ? (
+          {resolvedAccordion?.length ? (
             <motion.div variants={fadeUpVariants}>
-              <FicheAccordion items={accordionItems} />
+              <FicheAccordion items={resolvedAccordion} />
             </motion.div>
           ) : null}
 

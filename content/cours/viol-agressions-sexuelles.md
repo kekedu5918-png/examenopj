@@ -1,24 +1,42 @@
 ---
 title: "Viol et agressions sexuelles"
-description: "Viol, agressions, consentement (loi 2025-1057 notamment), mineurs, inceste, soumission chimique, exhibition, harcèlement — C. pén. art. 222-22 à 222-33. Voir dette 2F.1.c (rattachement lois 2025 dans la synthèse PDF)."
-tags: ["droit pénal spécial", "fondamentaux", "C. pén.", "atteintes sexuelles", "2025", "2F.1.a"]
-partie: "V"
 chapitre: 31
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: "Viol et agressions : consentement (loi 2025-1057), actes bucco-anaux, qualifications aggravées, mineurs — C. pén. 222-22 à 222-33 ; ne pas confondre avec loi 2025-532 (stupéfiants)."
+tags: ["droit pénal spécial", "fondamentaux", "C. pén.", "violences sexuelles", "2025"]
 loi2025: true
-articlesCites:
-  - "art. 222-22 C. pén."
-  - "art. 222-23 C. pén."
-  - "art. 222-23-1 C. pén."
-  - "art. 222-23-2 C. pén."
-  - "art. 222-24 C. pén."
-  - "art. 222-25 C. pén."
-  - "art. 222-26 C. pén."
-  - "art. 222-32 C. pén."
-  - "art. 222-33 C. pén."
-  - "loi n° 2025-1057"
-  - "loi n° 2025-532"
-  - "loi n° 2025-623"
+derniereMiseAJour: "2025-12-01"
+articlesCles:
+  - "Art. 222-23 CP — Viol (loi 2025-1057)"
+  - "Art. 222-23-1 CP — Viol majeur / mineur <15 ans"
+  - "Art. 222-23-2 CP — Viol incestueux"
+  - "Art. 222-24 CP — Viol aggravé"
+  - "Art. 222-22 CP — Agression sexuelle autre que viol"
+stats:
+  - { num: "15 ans", label: "Réclusion viol simple" }
+  - { num: "2025-1057", label: "Consentement + bucco-anal" }
+  - { num: "20 ans", label: "Viol 222-23-1 (repère)" }
+  - { num: "5 ans", label: "Agression sexuelle 222-22" }
+schemaMemo:
+  type: acronyme
+  titre: "Viol — éléments P.V.A.M."
+  acronyme: "P.V.A.M."
+  cards:
+    - { lettre: "P", mot: "Pénétration / bucco", desc: "Pénétration sexuelle ou actes bucco-génital ou bucco-anal." }
+    - { lettre: "V", mot: "Victime ou auteur", desc: "Acte sur la personne de la victime ou de l'auteur." }
+    - { lettre: "A", mot: "Absent de consentement", desc: "Violence, contrainte, menace ou surprise." }
+    - { lettre: "M", mot: "Moral", desc: "Conscience de l'absence de consentement et volonté d'imposer l'acte." }
+blocs:
+  definition: "Le viol (222-23, modifié par la loi 2025-1057) est tout acte de pénétration ou bucco-génital/bucco-anal sur la victime ou l'auteur, sans consentement, avec conscience et volonté (élément moral bicéphale)."
+  piege: "Ne pas attribuer la réforme consentement/bucco-anal à la loi 2025-532 (passeur / stupéfiants) : texte distinct."
+  pointCle: "Les actes bucco-anaux sont inclus dans l'élément matériel du viol ; l'agression sexuelle « autre que viol » vise le reste (222-22)."
+  memo: "Viol = pénétration OU bucco + absence de consentement · Majeur/mineur <15 ans (222-23-1) · 2025-623 : aggravantes pros de santé."
+plan:
+  - { num: "1", titre: "Viol simple (222-23)", duree: "12 min" }
+  - { num: "2", titre: "Viol aggravé (222-24 à 222-26)", duree: "10 min" }
+  - { num: "3", titre: "Régimes spéciaux (222-23-1–2)", duree: "10 min" }
+  - { num: "4", titre: "Agressions et infractions connexes", duree: "8 min" }
+  - { num: "5", titre: "Nouveautés 2025 à maîtriser", duree: "8 min" }
 ---
 
 # Viol et agressions sexuelles

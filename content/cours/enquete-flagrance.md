@@ -1,29 +1,46 @@
 ---
 title: "L'enquête de flagrance"
-description: "Définition, quatre hypothèses, durée 8+8 jours, pouvoirs, immunités et sorties de flagrance. Articles 53 à 74 C.P.P."
-tags: ["procédure", "fondamentaux", "CPP", "F11", "enquete-flagrance"]
-partie: "I"
 chapitre: 1
-derniereMiseAJour: "2025-12-01"
+partie: 1
+description: "Cadre d'exception art. 53–74 CPP : quatre hypothèses, durées 8+8 jours, pouvoirs renforcés, immunités et sorties — qualification stricte et nullités d'ordre public possibles."
+tags: ["procédure", "fondamentaux", "CPP", "F11", "enquete-flagrance"]
 loi2025: false
-articlesCites:
-  - "art. 53 C.P.P."
-  - "art. 54 C.P.P."
-  - "art. 55-1 C.P.P."
-  - "art. 56 C.P.P."
-  - "art. 57 C.P.P."
-  - "art. 60 C.P.P."
-  - "art. 60-1 C.P.P."
-  - "art. 60-2 C.P.P."
-  - "art. 61 C.P.P."
-  - "art. 61-1 C.P.P."
-  - "art. 62-2 C.P.P."
-  - "art. 63 C.P.P."
-  - "art. 67 C.P.P."
-  - "art. 73 C.P.P."
-  - "art. 78-2 C.P.P."
-  - "art. 78-2-2 C.P.P."
-  - "art. 78-2-3 C.P.P."
+derniereMiseAJour: "2025-12-01"
+articlesCles:
+  - "Art. 53 CPP — Définition et quatre cas de flagrance"
+  - "Art. 67 CPP — Infraction punie d'emprisonnement requise"
+  - "Art. 56 CPP — Perquisitions en flagrance"
+  - "Art. 61 CPP — Interdiction de s'éloigner (4 h)"
+  - "Art. 73 CPP — Arrestation (citoyen / OPJ)"
+stats:
+  - { num: "4", label: "Cas déclencheurs (art. 53)" }
+  - { num: "8 j", label: "Durée initiale" }
+  - { num: "+8 j", label: "Prolongation motivée (cumul)" }
+  - { num: "16 j", label: "Plafond avant bascule" }
+schemaMemo:
+  type: acronyme
+  titre: "Les quatre cas (F.R.C.I.)"
+  acronyme: "F.R.C.I."
+  cards:
+    - { lettre: "F", mot: "Flagrant", desc: "Infraction en cours de commission." }
+    - { lettre: "R", mot: "Récent", desc: "Infraction terminée depuis très peu de temps." }
+    - { lettre: "C", mot: "Clameur", desc: "Poursuite par la clameur publique." }
+    - { lettre: "I", mot: "Indices", desc: "Indices matériels apparents sur la personne." }
+blocs:
+  definition: "L'enquête de flagrance est un cadre juridique d'exception offrant des pouvoirs renforcés à la PJ, déclenché par une infraction en cours, récente ou révélée par indices apparents, et exigeant une infraction punie d'emprisonnement."
+  piege: "Qualifier la flagrance sans remplir l'art. 53 expose les actes à nullité d'ordre public : motivation rigoureuse au PV de constatation."
+  pointCle: "La contravention est exclue : peine d'emprisonnement requise (art. 67 CPP)."
+  memo: "F.R.C.I. + emprisonnement → 8 j + 8 j (PR motivé, ≥5 ans + urgence) → bascule préliminaire obligatoire au-delà de 16 j."
+timeline:
+  - { temps: "J0", event: "Constatation judiciaire", detail: "Départ des délais (art. 53)." }
+  - { temps: "J+8", event: "Fin durée initiale", detail: "Huit jours sans discontinuer (art. 53 al. 1)." }
+  - { temps: "J+16", event: "Maximum absolu", detail: "Prolongations cumulées respectées ; au-delà : préliminaire obligatoire." }
+plan:
+  - { num: "1", titre: "Conditions de déclenchement", duree: "10 min" }
+  - { num: "2", titre: "Durées et prolongation", duree: "8 min" }
+  - { num: "3", titre: "Pouvoirs élargis", duree: "10 min" }
+  - { num: "4", titre: "Personnes protégées", duree: "8 min" }
+  - { num: "5", titre: "Sortie de flagrance", duree: "6 min" }
 ---
 
 # L'enquête de flagrance

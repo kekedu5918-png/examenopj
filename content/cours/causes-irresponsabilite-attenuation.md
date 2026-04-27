@@ -1,23 +1,45 @@
 ---
 title: "Les causes d'irresponsabilité et d'atténuation"
-description: "Trouble psychique, contrainte, erreur, minorité, ordre, légitime défense, état de nécessité, lanceur d'alerte (C. pén. et CJPM) — C. pén. art. 122-1 et s., CJPM, jurisprudence clé."
-tags: ["droit pénal général", "fondamentaux", "C. pén.", "CJPM", "atténuation", "2F.1.a"]
-partie: "IV"
 chapitre: 19
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: "Trouble psychique, contrainte, erreur, faits justificatifs (ordre, LD, nécessité), minorité, lanceur d'alerte — arts. 122-1 à 122-9 C. pén."
+tags: ["droit pénal général", "fondamentaux", "C. pén.", "irresponsabilité", "2F.1.a"]
 loi2025: false
-articlesCites:
-  - "art. 122-1 C. pén."
-  - "art. 122-2 C. pén."
-  - "art. 122-3 C. pén."
-  - "art. 122-4 C. pén."
-  - "art. 122-5 C. pén."
-  - "art. 122-6 C. pén."
-  - "art. 122-7 C. pén."
-  - "art. 122-8 C. pén."
-  - "art. 122-9 C. pén."
-  - "art. L. 11-1 à L. 11-7 CJPM"
-  - "art. R. 11-1 CJPM"
+derniereMiseAJour: "2025-12-01"
+articlesCles:
+  - "Art. 122-1 CP — Trouble psychique (abolition / altération)"
+  - "Art. 122-4 CP — Ordre de la loi / commandement"
+  - "Art. 122-5 CP — Légitime défense"
+  - "Art. 122-6 CP — Présomptions de légitime défense"
+  - "Art. 122-7 CP — État de nécessité"
+stats:
+  - { num: "9", label: "Causes (122-1 → 122-9)" }
+  - { num: "2/3", label: "Atténuation si altération (122-1 al. 2)" }
+  - { num: "2", label: "Cas présomption LD (122-6)" }
+  - { num: "<13 ans", label: "Présomption non-capacité (122-8)" }
+schemaMemo:
+  type: comparatif
+  titre: "Les neuf causes — repères"
+  rows:
+    - { Art: "122-1", Cause: "Trouble psychique", Type: "Non-imputabilité", Effet: "Irresponsabilité ou atténuation 2/3" }
+    - { Art: "122-2", Cause: "Contrainte", Type: "Non-imputabilité", Effet: "Irrésistible et imprévisible" }
+    - { Art: "122-3", Cause: "Erreur de droit", Type: "Non-imputabilité", Effet: "Si non évitable (rare)" }
+    - { Art: "122-4", Cause: "Ordre de la loi", Type: "Fait justificatif", Effet: "Sauf ordre manifestement illégal" }
+    - { Art: "122-5", Cause: "Légitime défense", Type: "Fait justificatif", Effet: "Proportionnée et concomitante" }
+    - { Art: "122-6", Cause: "Présomption LD", Type: "Fait justificatif", Effet: "Nuit + effraction / vols violents" }
+    - { Art: "122-7", Cause: "État de nécessité", Type: "Fait justificatif", Effet: "Danger actuel, proportionné" }
+    - { Art: "122-8", Cause: "Minorité", Type: "Non-imputabilité", Effet: "<13 ans : pas de peine; 13-16 : 1/2" }
+    - { Art: "122-9", Cause: "Lanceur d'alerte", Type: "Fait justificatif", Effet: "Divulgation nécessaire et proportionnée" }
+blocs:
+  definition: "Les causes d'irresponsabilité ou d'atténuation suppriment ou réduisent la responsabilité pénale, soit par altération du discernement, soit par la justification de l'acte par des circonstances extérieures."
+  piege: "Ordre manifestement illégal : le subordonné doit refuser ; s'il obéit (torture, atteinte à la vie), il reste responsable (Cass. crim. 25/02/1998)."
+  pointCle: "Légitime défense : riposte concomitante à l'attaque injuste ; postérieure = vengeance. Les présomptions 122-6 sont simples et réfutables."
+  memo: "Abolition = irresponsabilité totale · Altération = peine divisée par 2/3 · LD = actuelle + injuste + proportionnée + concomitante · <13 ans = mesures éducatives."
+plan:
+  - { num: "1", titre: "Trouble psychique (122-1)", duree: "12 min" }
+  - { num: "2", titre: "Contrainte et erreur (122-2–3)", duree: "10 min" }
+  - { num: "3", titre: "Légitime défense (122-5–6)", duree: "12 min" }
+  - { num: "4", titre: "Ordre, nécessité, lanceur (122-4–7–9) ; minorité", duree: "12 min" }
 ---
 
 # Les causes d'irresponsabilité et d'atténuation
