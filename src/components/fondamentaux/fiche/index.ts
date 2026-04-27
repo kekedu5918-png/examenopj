@@ -35,3 +35,4 @@ export type { FicheTabsProps } from './FicheTabs';
 export { FicheTabs } from './FicheTabs';
 export type { FicheTimelineProps } from './FicheTimeline';
 export { FicheTimeline } from './FicheTimeline';
+export { FicheV3DesignPreview } from './FicheV3DesignPreview';

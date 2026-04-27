@@ -1,7 +1,11 @@
 'use client';
 
+import { motion, useReducedMotion } from 'framer-motion';
+
 import type { FicheFrontmatterV3 } from '@/lib/fondamentaux/fiche-frontmatter-v3';
 import { cn } from '@/utils/cn';
+
+import { hoverLiftVariants, shouldDisableFicheMotion } from './fiche-motion';
 
 export type FicheBlocsSyntheseProps = {
   blocs: FicheFrontmatterV3['blocs'];
@@ -15,6 +19,9 @@ const blocStyles = {
 } as const;
 
 export function FicheBlocsSynthese({ blocs }: FicheBlocsSyntheseProps) {
+  const reducedMotion = useReducedMotion();
+  const reduced = shouldDisableFicheMotion(Boolean(reducedMotion));
+
   const items: Array<{ key: keyof typeof blocStyles; title: string; body: string }> = [
     { key: 'definition', title: 'Définition', body: blocs.definition },
     { key: 'piege', title: 'Piège', body: blocs.piege },
@@ -25,16 +32,20 @@ export function FicheBlocsSynthese({ blocs }: FicheBlocsSyntheseProps) {
   return (
     <section className='mt-10 grid gap-4 sm:grid-cols-2' aria-label='Synthèse'>
       {items.map((item) => (
-        <article
+        <motion.article
           key={item.key}
           className={cn(
             'rounded-xl border p-4',
             blocStyles[item.key],
           )}
+          variants={hoverLiftVariants}
+          initial='rest'
+          whileHover={reduced ? undefined : 'hover'}
+          data-reduced-motion={reduced ? 'true' : 'false'}
         >
           <h3 className='text-sm font-semibold uppercase tracking-wide text-ij-text'>{item.title}</h3>
           <p className='mt-2 text-sm leading-relaxed text-ij-text-muted'>{item.body}</p>
-        </article>
+        </motion.article>
       ))}
     </section>
   );

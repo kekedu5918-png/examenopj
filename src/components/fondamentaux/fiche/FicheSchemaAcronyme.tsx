@@ -10,7 +10,7 @@ export type FicheSchemaAcronymeProps = {
 
 export function FicheSchemaAcronyme({ titre, acronyme, cards }: FicheSchemaAcronymeProps) {
   return (
-    <div className='rounded-xl border border-ij-border/40 bg-ij-surface/50 p-5'>
+    <div className='rounded-xl border border-ij-border/40 bg-ij-surface p-5 text-ij-text'>
       <h3 className='font-ij-display text-lg font-semibold text-ij-text'>{titre}</h3>
       {acronyme ? (
         <p className='mt-1 text-sm font-medium tracking-wide text-ij-accent'>{acronyme}</p>
@@ -21,7 +21,7 @@ export function FicheSchemaAcronyme({ titre, acronyme, cards }: FicheSchemaAcron
             <li
               key={`${c.lettre}-${c.mot}`}
               className={cn(
-                'rounded-lg border border-ij-border/35 bg-ij-bg/60 p-3',
+                'rounded-lg border border-ij-border/40 bg-ij-surface-2 p-3 text-ij-text',
               )}
             >
               <span className='font-ij-display text-lg font-bold text-ij-accent'>{c.lettre}</span>

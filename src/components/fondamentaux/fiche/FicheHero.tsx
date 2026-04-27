@@ -34,6 +34,31 @@ export function FicheHero({
       )}
       data-testid='fiche-hero'
     >
+      <div className='pointer-events-none absolute inset-0 overflow-hidden rounded-2xl' aria-hidden>
+        <div
+          className={cn(
+            'absolute -left-1/4 -top-1/2 h-[120%] w-[70%] rounded-full blur-3xl',
+            'bg-gradient-to-br from-ij-glow-accent/25 via-aurora-1/35 to-ij-glow-cyan/20',
+            'motion-safe:animate-aurora-shift motion-reduce:animate-none',
+          )}
+        />
+        <div
+          className={cn(
+            'absolute -right-1/4 top-0 h-[90%] w-[60%] rounded-full blur-3xl',
+            'bg-gradient-to-tl from-aurora-2/45 via-ij-glow-cyan/18 to-transparent',
+            'motion-safe:animate-aurora-shift motion-reduce:animate-none [animation-delay:-6s]',
+          )}
+        />
+        <div
+          className={cn(
+            'absolute inset-0 opacity-[0.06]',
+            'bg-[linear-gradient(rgb(var(--ij-glass-border)/0.4)_1px,transparent_1px),linear-gradient(90deg,rgb(var(--ij-glass-border)/0.4)_1px,transparent_1px)]',
+            '[background-size:24px_24px]',
+          )}
+        />
+      </div>
+
+      <div className='relative z-[1]'>
       <nav aria-label='Fil d’Ariane' className='mb-6 text-sm text-ij-text-muted'>
         <ol className='flex flex-wrap items-center gap-2'>
           {breadcrumbItems.map((item, i) => (
@@ -77,6 +102,7 @@ export function FicheHero({
       {dureeIndicative ? (
         <p className='mt-2 text-sm text-ij-text-subtle'>Durée indicative : {dureeIndicative}</p>
       ) : null}
+      </div>
     </header>
   );
 }

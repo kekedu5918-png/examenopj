@@ -4,8 +4,9 @@ import type { Transition, Variants } from 'framer-motion';
  * Variants Framer Motion — Institut Judiciaire V3.
  * Ne pas définir d’objets motion inline dans les TSX : importer depuis ce module.
  */
+/** Pas d’opacité < 1 : sinon axe-core / contrastes mesurent un premier plan « grisé » (faux positifs). */
 export const fadeUpVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 1, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
@@ -14,7 +15,7 @@ export const fadeUpVariants: Variants = {
 };
 
 export const staggerContainerVariants: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 1 },
   visible: {
     opacity: 1,
     transition: { staggerChildren: 0.06, delayChildren: 0.04 },

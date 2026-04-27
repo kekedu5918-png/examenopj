@@ -28,6 +28,7 @@ export function FicheFooterCTA({ progress, ctas }: FicheFooterCTAProps) {
           <div
             className='h-1.5 overflow-hidden rounded-full bg-ij-surface-2'
             role='progressbar'
+            aria-label={`Progression de lecture : ${Math.round(pct)} pour cent`}
             aria-valuenow={Math.round(pct)}
             aria-valuemin={0}
             aria-valuemax={100}

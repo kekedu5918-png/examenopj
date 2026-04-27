@@ -37,7 +37,7 @@ export function FicheAccordion({ items }: FicheAccordionProps) {
             >
               {item.title}
               <ChevronDown
-                className='h-4 w-4 shrink-0 text-ij-text-muted transition-transform duration-200'
+                className='h-4 w-4 shrink-0 text-ij-text-muted motion-safe:transition-transform motion-safe:duration-200 motion-reduce:transition-none'
                 strokeWidth={2}
                 aria-hidden
               />
@@ -45,7 +45,8 @@ export function FicheAccordion({ items }: FicheAccordionProps) {
           </AccordionPrimitive.Header>
           <AccordionPrimitive.Content
             className={cn(
-              'overflow-hidden data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down',
+              'overflow-hidden motion-safe:data-[state=closed]:animate-accordion-up motion-safe:data-[state=open]:animate-accordion-down',
+              'motion-reduce:data-[state=closed]:animate-none motion-reduce:data-[state=open]:animate-none',
             )}
           >
             <div className='border-t border-ij-border/30 px-4 pb-4 pt-2 text-sm text-ij-text-muted'>

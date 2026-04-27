@@ -1,13 +1,20 @@
 'use client';
 
+import { motion, useReducedMotion } from 'framer-motion';
+
 import type { FicheStatEntry } from '@/lib/fondamentaux/fiche-frontmatter-v3';
 import { cn } from '@/utils/cn';
+
+import { hoverLiftVariants, shouldDisableFicheMotion } from './fiche-motion';
 
 export type FicheStatsGlassProps = {
   stats: FicheStatEntry[];
 };
 
 export function FicheStatsGlass({ stats }: FicheStatsGlassProps) {
+  const reducedMotion = useReducedMotion();
+  const reduced = shouldDisableFicheMotion(Boolean(reducedMotion));
+
   return (
     <section
       aria-label='Statistiques clés'
@@ -16,16 +23,20 @@ export function FicheStatsGlass({ stats }: FicheStatsGlassProps) {
     >
       <ul className='grid gap-4 sm:grid-cols-2 lg:grid-cols-4'>
         {stats.map((s) => (
-          <li
+          <motion.li
             key={`${s.label}-${s.num}`}
             className={cn(
-              'rounded-xl border border-ij-glass-border/12 bg-ij-glass-bg/8 p-4 backdrop-blur-md',
-              'transition-shadow hover:shadow-ij-card',
+              'rounded-xl border border-ij-glass-border/12 bg-ij-surface-2/95 p-4',
+              'motion-safe:transition-shadow motion-safe:hover:shadow-ij-card',
             )}
+            variants={hoverLiftVariants}
+            initial='rest'
+            whileHover={reduced ? undefined : 'hover'}
+            data-reduced-motion={reduced ? 'true' : 'false'}
           >
             <p className='font-ij-display text-2xl font-semibold text-ij-accent'>{s.num}</p>
             <p className='mt-1 text-sm text-ij-text-muted'>{s.label}</p>
-          </li>
+          </motion.li>
         ))}
       </ul>
     </section>

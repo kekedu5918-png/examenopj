@@ -1,9 +1,12 @@
 'use client';
 
+import { useSyncExternalStore } from 'react';
+import { motion, MotionConfig } from 'framer-motion';
 import type { ComponentProps, ReactNode } from 'react';
 
 import type { FicheFrontmatterV3 } from '@/lib/fondamentaux/fiche-frontmatter-v3';
 
+import { fadeUpVariants, staggerContainerVariants } from './fiche-motion';
 import { FicheAccordion, type FicheAccordionItem } from './FicheAccordion';
 import { FicheArticlesCles } from './FicheArticlesCles';
 import { FicheBlocsSynthese } from './FicheBlocsSynthese';
@@ -17,9 +20,27 @@ import { FicheTimeline } from './FicheTimeline';
 
 const FICHE_HERO_TITLE_ID = 'fiche-hero-title';
 
+function subscribePrefersReducedMotion(onStoreChange: () => void) {
+  if (typeof window.matchMedia !== 'function') {
+    return () => {};
+  }
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  mq.addEventListener('change', onStoreChange);
+  return () => mq.removeEventListener('change', onStoreChange);
+}
+
+function getPrefersReducedMotionClient() {
+  if (typeof window.matchMedia !== 'function') {
+    return false;
+  }
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
 export type FichePremiumProps = {
   data: FicheFrontmatterV3;
   slug: string;
+  /** Remplace le préfixe `/fondamentaux/<slug>` pour la barre d’ancres (preview DS). */
+  tabsBasePath?: string;
   children?: ReactNode;
   /** Texte court pour l’encart 30 s (souvent dérivé du corpus). */
   callout30s?: string;
@@ -35,6 +56,7 @@ export type FichePremiumProps = {
 export function FichePremium({
   data,
   slug,
+  tabsBasePath,
   children,
   callout30s,
   breadcrumbItems,
@@ -44,47 +66,84 @@ export function FichePremium({
   heroDureeIndicative,
   accordionItems,
 }: FichePremiumProps) {
+  const mediaReducedMotion = useSyncExternalStore(
+    subscribePrefersReducedMotion,
+    getPrefersReducedMotionClient,
+    () => false,
+  );
+
   return (
-    <main
-      aria-labelledby={FICHE_HERO_TITLE_ID}
-      className='mx-auto max-w-4xl px-4 py-8'
-      data-testid='fiche-premium'
-    >
-      <FicheHero
-        title={data.title}
-        description={data.description}
-        chapitre={data.chapitre}
-        partie={data.partie}
-        loi2025={data.loi2025}
-        breadcrumbItems={breadcrumbItems}
-        dureeIndicative={heroDureeIndicative}
-      />
+    <MotionConfig reducedMotion='user'>
+      <main
+        aria-labelledby={FICHE_HERO_TITLE_ID}
+        className='mx-auto max-w-4xl px-4 py-8'
+        data-testid='fiche-premium'
+        data-reduced-motion={mediaReducedMotion ? 'true' : 'false'}
+      >
+        <FicheHero
+          title={data.title}
+          description={data.description}
+          chapitre={data.chapitre}
+          partie={data.partie}
+          loi2025={data.loi2025}
+          breadcrumbItems={breadcrumbItems}
+          dureeIndicative={heroDureeIndicative}
+        />
 
-      <FicheStatsGlass stats={data.stats} />
+        <motion.div variants={staggerContainerVariants} initial='hidden' animate='visible'>
+          <motion.div variants={fadeUpVariants}>
+            <FicheStatsGlass stats={data.stats} />
+          </motion.div>
 
-      <FicheTabs slug={slug} quizHref={quizHref} />
+          <motion.div variants={fadeUpVariants}>
+            <FicheTabs slug={slug} basePath={tabsBasePath} quizHref={quizHref} />
+          </motion.div>
 
-      {callout30s ? <FicheCallout30s text={callout30s} /> : null}
+          {callout30s ? (
+            <motion.div variants={fadeUpVariants}>
+              <FicheCallout30s text={callout30s} />
+            </motion.div>
+          ) : null}
 
-      <FicheSchemaMemo schema={data.schemaMemo} />
+          <motion.div variants={fadeUpVariants}>
+            <FicheSchemaMemo schema={data.schemaMemo} />
+          </motion.div>
 
-      <FicheArticlesCles articles={data.articlesCles} />
+          <motion.div variants={fadeUpVariants}>
+            <FicheArticlesCles articles={data.articlesCles} />
+          </motion.div>
 
-      <FicheBlocsSynthese blocs={data.blocs} />
+          <motion.div variants={fadeUpVariants}>
+            <FicheBlocsSynthese blocs={data.blocs} />
+          </motion.div>
 
-      {data.timeline?.length ? <FicheTimeline items={data.timeline} /> : null}
+          {data.timeline?.length ? (
+            <motion.div variants={fadeUpVariants}>
+              <FicheTimeline items={data.timeline} />
+            </motion.div>
+          ) : null}
 
-      {accordionItems?.length ? <FicheAccordion items={accordionItems} /> : null}
+          {accordionItems?.length ? (
+            <motion.div variants={fadeUpVariants}>
+              <FicheAccordion items={accordionItems} />
+            </motion.div>
+          ) : null}
 
-      {children ? (
-        <div id='fiche-cours' className='mt-10 scroll-mt-24'>
-          {children}
-        </div>
-      ) : null}
+          {children ? (
+            <motion.div variants={fadeUpVariants}>
+              <div id='fiche-cours' className='mt-10 scroll-mt-24'>
+                {children}
+              </div>
+            </motion.div>
+          ) : null}
 
-      {footerCtas?.length ? (
-        <FicheFooterCTA progress={readingProgress} ctas={footerCtas} />
-      ) : null}
-    </main>
+          {footerCtas?.length ? (
+            <motion.div variants={fadeUpVariants}>
+              <FicheFooterCTA progress={readingProgress} ctas={footerCtas} />
+            </motion.div>
+          ) : null}
+        </motion.div>
+      </main>
+    </MotionConfig>
   );
 }
