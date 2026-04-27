@@ -308,7 +308,7 @@ function hasLoi2025Any(blocks, titre) {
   return blocks.some((b) => hasLoi2025(b, titre));
 }
 
-/** @param {string} block */
+/** @param {string} block texte brut d’un chapitre synthèse */
 function schemaMemoFromBlock(block) {
   const schemaSection = sliceBetween(block, '🔷 Schéma mémo', ['📘 Définition']);
   return parseSchema(schemaSection);
