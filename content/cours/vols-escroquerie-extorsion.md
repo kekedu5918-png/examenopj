@@ -1,17 +1,67 @@
 ---
-title: "Vol, escroquerie, abus de confiance, extorsion"
-description: "Vol, escroquerie, abus de confiance, extorsion — Fiche synthèse (session JUIN 2026). Art. 311-1 à 311-16 CP 34.1 Définition et éléments constitutifs DÉFINITION – VOL Soustraction frauduleuse de la chose d'autrui (art. 311-1 CP). Peine de base: 3 ans d'emprisonnement et 45 000 € d'amen…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Vol, escroquerie, abus de confiance, extorsion
 chapitre: 34
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Vol, escroquerie, abus de confiance, extorsion — Fiche synthèse (session JUIN 2026). Art. 311-1 à
+  311-16 CP 34.1 Définition et éléments constitutifs DÉFINITION – VOL Soustraction frauduleuse de la
+  ch…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "art. 132-73"
-  - "art. 311-1"
-  - "art. 311-12"
-  - "art. 311-13"
-  - "art. 311-4"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 132-73
+  - Art. 311-1
+  - Art. 311-12
+  - Art. 311-13
+  - Art. 311-4
+stats:
+  - num: '34'
+    label: Chapitre 34 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Définition et éléments constitutifs
+    - Étapes: '2'
+      Thème: Tableau des vols aggravés
+    - Étapes: '3'
+      Thème: Principales circonstances aggravantes du vol (art. 311-4)
+blocs:
+  definition: >-
+    > DÉFINITION – VOL Soustraction frauduleuse de la chose d'autrui (art. 311-1 CP). Peine de base:
+    3 ans d'emprisonnement et 45 000 € d'amende. Le vol est l'infraction de référence en matière
+    patrimoniale. Élément Caractérisation MATÉRIEL 1) LA SOUSTRACTION — retrait contre le gré du
+    propriétaire/possesseur. Appropriation même momentanée. Peut résulter d'une remise viciée
+    (scissiparité) 2) LA CHOSE — mobilière, corporelle ou incorporelle (énergie électrique,
+    information, donné…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    DÉFINITION – VOL Soustraction frauduleuse de la chose d'autrui (art. 311-1 CP). Peine de base: 3
+    ans d'emprisonnement et 45 000 € d'amende. Le vol est l'infraction de référence en matière
+    patrimonial…
+  memo: 3 ans d'emprisonnement et 45 000 € d'amen…
+plan:
+  - num: '1'
+    titre: Définition et éléments constitutifs
+    duree: ~10 min
+  - num: '2'
+    titre: Tableau des vols aggravés
+    duree: ~10 min
+  - num: '3'
+    titre: Principales circonstances aggravantes du vol (art. 311-4)
+    duree: ~10 min
 ---
 
 ![p. 56](/fondamentaux/vols-escroquerie-extorsion-schema-p56.jpg)

@@ -1,13 +1,68 @@
 ---
-title: "Armes, matériels de guerre, munitions"
-description: "Armes, matériels de guerre, munitions — Fiche synthèse (session JUIN 2026). Art. 227-1 à 227-33 CP (livre II, titre II) 40.1 Tableau synthétique complet Infraction Article Peine Abandon de famille (non-paiement pension) 227-3 CP 2 ans + 15 000 € Non-notification changement do…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Armes, matériels de guerre, munitions
 chapitre: 40
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Armes, matériels de guerre, munitions — Fiche synthèse (session JUIN 2026). Art. 227-1 à 227-33 CP
+  (livre II, titre II) 40.1 Tableau synthétique complet Infraction Article Peine Abandon de famille
+  (n…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 227-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 227-1
+  - Art. 227-1 — repère
+  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 1)
+  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 2)
+  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 3)
+stats:
+  - num: '40'
+    label: Chapitre 40 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '1'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: acronyme
+  titre: Repères — Armes, matériels de guerre, munitions
+  acronyme: L.I.R.E.
+  cards:
+    - lettre: L
+      mot: Lire
+      desc: Structurer Armes, matériels de guerre, munitions avant l’oral.
+    - lettre: I
+      mot: Indices
+      desc: Repérer faits, qualifications et textes applicables.
+    - lettre: R
+      mot: Régime
+      desc: Procédure, juridiction et nullités éventuelles.
+    - lettre: E
+      mot: Examen
+      desc: Entraînement quiz et articulation avec les autres fiches.
+blocs:
+  definition: >-
+    Infraction Article Peine Abandon de famille (non-paiement pension) 227-3 CP 2 ans + 15 000 €
+    Non-notification changement domicile créancier 227-4-3 CP 6 mois + 7 500 € Non-respect
+    ordonnance de protection 227-4-2 CP 2 ans + 15 000 € Non-représentation d'enfant mineur 227-5 CP
+    1 an + 15 000 € Défaut notif. transfert domicile (DVH) 227-6 CP 6 mois + 7 500 € Soustraction
+    mineur par ascendant 227-7 CP 1 an + 15 000 € (3 ans si hors France) Soustraction mineur par
+    tiers sans frau…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Art. 227-1 à 227-33 CP (livre II, titre II)
+  memo: >-
+    Armes, matériels de guerre, munitions — Fiche synthèse (session JUIN 2026). Art. 227-1 à 227-33
+    CP (livre II, titre II) 40.1 Tableau synthétique complet Infraction Article Peine Abandon de
+    famille (no
+plan:
+  - num: '1'
+    titre: Tableau synthétique complet
+    duree: ~10 min
 ---
 
 # Armes, matériels de guerre, munitions

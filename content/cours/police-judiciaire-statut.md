@@ -1,16 +1,72 @@
 ---
-title: "Acteurs, statut, direction et contrôle de la police judiciaire"
-description: "Acteurs, statut, direction et contrôle de la police judiciaire — Fiche synthèse (session JUIN 2026). Articles 18, R. 15-18 à R. 15-31 CPP 4.1 Principe de compétence ordinaire Les OPJ sont compétents dans les limites territoriales où ils exercent leurs fonctions habituelles (art. 18 al. 1 CPP). Le res…"
-tags: ["fondamentaux","Partie I","2F.1.b","procédure"]
-partie: "I"
+title: Acteurs, statut, direction et contrôle de la police judiciaire
 chapitre: 4
-derniereMiseAJour: "2025-12-01"
+partie: 1
+description: >-
+  Acteurs, statut, direction et contrôle de la police judiciaire — Fiche synthèse (session JUIN
+  2026). Articles 18, R. 15-18 à R. 15-31 CPP 4.1 Principe de compétence ordinaire Les OPJ sont
+  compétents…
+tags:
+  - fondamentaux
+  - Partie I
+  - 2F.1.b
+  - procédure
 loi2025: false
-articlesCites:
-  - "art. 18 al. 1"
-  - "art. 18 al. 2"
-  - "art. 18 al. 3"
-  - "art. 18 al. 4"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 18 al. 1
+  - Art. 18 al. 2
+  - Art. 18 al. 3
+  - Art. 18 al. 4
+  - Art. 18 al. 1 — repère
+stats:
+  - num: '4'
+    label: Chapitre 4 (annexe B)
+  - num: I
+    label: Partie 1 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Principe de compétence ordinaire
+    - Étapes: '2'
+      Thème: Extensions de compétence (art. 18 al. 2 à 4 CPP)
+    - Étapes: '3'
+      Thème: Conséquences du défaut de compétence
+blocs:
+  definition: >-
+    Les OPJ sont compétents dans les limites territoriales où ils exercent leurs fonctions
+    habituelles (art. 18 al. 1 CPP). Le ressort varie selon le service d'affectation: national,
+    zonal, départemental, ou spécifique (transports en commun). Échelle Services concernés
+    Précisions NATIONALE (art. R. 15-18 CPP) DNPJ, DNPAF, IGPN, DGSI, SNPS Détachés auprès de la
+    DNRED (direction nationale des enquêtes douanières) ZONALE (art. R. 15-19 CPP) Directions
+    zonales PN Services zonaux PJ…
+  piege: >-
+    Confondre les cadres procéduraux (flagrance, préliminaire, instruction) : pouvoirs et délais
+    diffèrent.
+  pointCle: >-
+    CLÉ Paris et les départements des Hauts-de-Seine, Seine-Saint-Denis et Val-de-Marne sont
+    considérés comme un seul département pour l'application des règles de compétence territoriale.
+    En cas de trans…
+  memo: >-
+    Acteurs, statut, direction et contrôle de la police judiciaire — Fiche synthèse (session JUIN
+    2026). Articles 18, R. 15-18 à R. 15-31 CPP 4.1 Principe de compétence ordinaire Les OPJ sont
+    compétents d
+plan:
+  - num: '1'
+    titre: Principe de compétence ordinaire
+    duree: ~10 min
+  - num: '2'
+    titre: Extensions de compétence (art. 18 al. 2 à 4 CPP)
+    duree: ~10 min
+  - num: '3'
+    titre: Conséquences du défaut de compétence
+    duree: ~10 min
 ---
 
 ![p. 15](/fondamentaux/police-judiciaire-statut-tableau-p15.jpg)

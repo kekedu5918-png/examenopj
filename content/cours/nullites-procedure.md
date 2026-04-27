@@ -1,25 +1,75 @@
 ---
-title: "La nullité des actes de procédure"
-description: "La nullité des actes de procédure — Fiche synthèse (session JUIN 2026). Art. 170 à 174, 802 CPP 16.1 Finalité et distinction Le régime des nullités a pour objet d'assurer le respect des règles procédurales. Il s'agit d'annuler l'acte procédural vicié (et éventuellement le…"
-tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
-partie: "III"
+title: La nullité des actes de procédure
 chapitre: 16
-derniereMiseAJour: "2025-12-01"
+partie: 3
+description: >-
+  La nullité des actes de procédure — Fiche synthèse (session JUIN 2026). Art. 170 à 174, 802 CPP
+  16.1 Finalité et distinction Le régime des nullités a pour objet d'assurer le respect des règles
+  procéd…
+tags:
+  - fondamentaux
+  - Partie III
+  - 2F.1.b
+  - phase juridictionnelle
 loi2025: false
-articlesCites:
-  - "art. 100-7"
-  - "art. 105"
-  - "art. 170"
-  - "art. 171"
-  - "art. 174"
-  - "art. 198"
-  - "art. 56"
-  - "art. 59"
-  - "art. 60-1"
-  - "art. 706-81"
-  - "art. 706-95-14"
-  - "art. 78-3"
-  - "art. 802"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 100-7
+  - Art. 105
+  - Art. 170
+  - Art. 171
+  - Art. 174
+stats:
+  - num: '16'
+    label: Chapitre 16 (annexe B)
+  - num: III
+    label: Partie 3 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Finalité et distinction
+    - Étapes: '2'
+      Thème: Nullités d'ordre privé vs d'ordre public
+    - Étapes: '3'
+      Thème: Les principales causes de nullité
+    - Étapes: '4'
+      Thème: Effets de la nullité (art. 174 CPP)
+blocs:
+  definition: >-
+    Le régime des nullités a pour objet d'assurer le respect des règles procédurales. Il s'agit
+    d'annuler l'acte procédural vicié (et éventuellement les actes qui en découlent), afin d'en
+    détruire les effets juridiques et les preuves engendrées. ARBRE DE DÉCISION - LES NULLITÉS DES
+    ACTES DE PROCÉDURE Irrégularité constatée? Nullité TEXTUELLE (loi prévoit expressément) Nullité
+    SUBSTANTIELLE (art. 171 CPP) Cas visés par la loi: • Perquisitions (art. 59) • Réquisitions
+    (60-1, 77-1-…
+  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+  pointCle: >-
+    CLÉ Règle applicable depuis le 30/09/2025: le dernier mémoire déposé par une partie devant la
+    chambre de l'instruction doit récapituler l'ensemble des moyens de nullité. À défaut, ils sont
+    réputés ab…
+  memo: >-
+    La nullité des actes de procédure — Fiche synthèse (session JUIN 2026). Art. 170 à 174, 802 CPP
+    16.1 Finalité et distinction Le régime des nullités a pour objet d'assurer le respect des règles
+    procédu
+plan:
+  - num: '1'
+    titre: Finalité et distinction
+    duree: ~10 min
+  - num: '2'
+    titre: Nullités d'ordre privé vs d'ordre public
+    duree: ~10 min
+  - num: '3'
+    titre: Les principales causes de nullité
+    duree: ~10 min
+  - num: '4'
+    titre: Effets de la nullité (art. 174 CPP)
+    duree: ~10 min
 ---
 
 ![p. 34](/fondamentaux/nullites-procedure-tableau-p34.jpg)

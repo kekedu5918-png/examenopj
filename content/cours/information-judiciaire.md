@@ -1,37 +1,91 @@
 ---
-title: "L'information judiciaire"
-description: "L'information judiciaire — Fiche synthèse (session JUIN 2026). Articles 12 à 21-3 CPP — Organisation de la police judiciaire 3.1 Hiérarchie d'ensemble ORGANIGRAMME DES ACTEURS DE LA PROCÉDURE PÉNALE PROCUREUR DE LA RÉPUBLIQUE Direction de la police judiciaire - A…"
-tags: ["fondamentaux","Partie I","2F.1.b","procédure"]
-partie: "I"
+title: L'information judiciaire
 chapitre: 3
-derniereMiseAJour: "2025-12-01"
+partie: 1
+description: >-
+  L'information judiciaire — Fiche synthèse (session JUIN 2026). Articles 12 à 21-3 CPP —
+  Organisation de la police judiciaire 3.1 Hiérarchie d'ensemble ORGANIGRAMME DES ACTEURS DE LA
+  PROCÉDURE PÉNALE…
+tags:
+  - fondamentaux
+  - Partie I
+  - 2F.1.b
+  - procédure
 loi2025: false
-articlesCites:
-  - "art. 1"
-  - "art. 10-2"
-  - "art. 100-5"
-  - "art. 12"
-  - "art. 14"
-  - "art. 14-19"
-  - "art. 16"
-  - "art. 17"
-  - "art. 20"
-  - "art. 20-1"
-  - "art. 21"
-  - "art. 21-3"
-  - "art. 390-1"
-  - "art. 40"
-  - "art. 60"
-  - "art. 60-1"
-  - "art. 62-3"
-  - "art. 63-2"
-  - "art. 63-3"
-  - "art. 63-3-1"
-  - "art. 63-7 al. 2"
-  - "art. 68"
-  - "art. 70"
-  - "art. 73"
-  - "art. 76"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 1
+  - Art. 10-2
+  - Art. 100-5
+  - Art. 12
+  - Art. 14
+stats:
+  - num: '3'
+    label: Chapitre 3 (annexe B)
+  - num: I
+    label: Partie 1 — synthèse
+  - num: '7'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Hiérarchie d'ensemble
+    - Étapes: '2'
+      Thème: Le Procureur de la République
+    - Étapes: '3'
+      Thème: L'Officier de Police Judiciaire (OPJ)
+    - Étapes: '4'
+      Thème: L'Agent de Police Judiciaire (APJ)
+    - Étapes: '5'
+      Thème: L'Agent de Police Judiciaire Adjoint (APJA)
+    - Étapes: '6'
+      Thème: Les Assistants d'Enquête (AE)
+    - Étapes: '7'
+      Thème: Tableau consolidé des compétences en flagrance
+blocs:
+  definition: >-
+    ORGANIGRAMME DES ACTEURS DE LA PROCÉDURE PÉNALE PROCUREUR DE LA RÉPUBLIQUE Direction de la
+    police judiciaire - Art. 12 CPP OFFICIER DE POLICE JUDICIAIRE Art. 14-19 CPP - Art. D.2
+    (égalité) AGENT DE POLICE JUDICIAIRE Art. 20 CPP - Sous contrôle OPJ AGENT DE POLICE JUDICIAIRE
+    ADJOINT Art. 21 CPP - Compétence limitée ASSISTANT D'ENQUÊTE Art. 21-3 CPP - Ne peut agir qu'à
+    la demande expresse
+  piege: >-
+    Confondre les cadres procéduraux (flagrance, préliminaire, instruction) : pouvoirs et délais
+    diffèrent.
+  pointCle: >-
+    DÉFINITION – PROCUREUR DE LA RÉPUBLIQUE Magistrat du parquet, représentant du ministère public
+    près le tribunal judiciaire. Dirige la police judiciaire (art. 12 CPP), exerce l'action
+    publique, appréc…
+  memo: >-
+    L'information judiciaire — Fiche synthèse (session JUIN 2026). Articles 12 à 21-3 CPP —
+    Organisation de la police judiciaire 3.1 Hiérarchie d'ensemble ORGANIGRAMME DES ACTEURS DE LA
+    PROCÉDURE PÉNALE P
+plan:
+  - num: '1'
+    titre: Hiérarchie d'ensemble
+    duree: ~10 min
+  - num: '2'
+    titre: Le Procureur de la République
+    duree: ~10 min
+  - num: '3'
+    titre: L'Officier de Police Judiciaire (OPJ)
+    duree: ~10 min
+  - num: '4'
+    titre: L'Agent de Police Judiciaire (APJ)
+    duree: ~10 min
+  - num: '5'
+    titre: L'Agent de Police Judiciaire Adjoint (APJA)
+    duree: ~10 min
+  - num: '6'
+    titre: Les Assistants d'Enquête (AE)
+    duree: ~10 min
+  - num: '7'
+    titre: Tableau consolidé des compétences en flagrance
+    duree: ~10 min
 ---
 
 ![p. 14](/fondamentaux/information-judiciaire-schema-p14.jpg)

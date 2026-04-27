@@ -1,16 +1,72 @@
 ---
-title: "La responsabilité pénale des personnes physiques"
-description: "La responsabilité pénale des personnes physiques — Fiche synthèse (session JUIN 2026). Art. 121-1 à 121-7 CP 18.1 Principes fondateurs CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de son propre fait'. La responsabilité pénale individuelle est un principe fondamental qui int…"
-tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
-partie: "IV"
+title: La responsabilité pénale des personnes physiques
 chapitre: 18
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: >-
+  La responsabilité pénale des personnes physiques — Fiche synthèse (session JUIN 2026). Art. 121-1
+  à 121-7 CP 18.1 Principes fondateurs CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de
+  son…
+tags:
+  - fondamentaux
+  - Partie IV
+  - 2F.1.b
+  - droit pénal général
 loi2025: false
-articlesCites:
-  - "art. 121-1"
-  - "art. 121-3"
-  - "art. 121-3 al. 3"
-  - "art. 121-3 al. 4"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 121-1
+  - Art. 121-3
+  - Art. 121-3 al. 3
+  - Art. 121-3 al. 4
+  - Art. 121-1 — repère
+stats:
+  - num: '18'
+    label: Chapitre 18 (annexe B)
+  - num: IV
+    label: Partie 4 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Principes fondateurs
+    - Étapes: '2'
+      Thème: Les deux composantes de la responsabilité
+    - Étapes: '3'
+      Thème: 'L''élément moral : la faute intentionnelle'
+    - Étapes: '4'
+      Thème: 'L''élément moral : la faute non intentionnelle'
+blocs:
+  definition: >-
+    > CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de son propre fait'. La
+    responsabilité pénale individuelle est un principe fondamental qui interdit toute responsabilité
+    collective ou par ricochet. Il s'applique aux personnes physiques comme aux personnes morales.
+  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+  pointCle: >-
+    CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de son propre fait'. La responsabilité
+    pénale individuelle est un principe fondamental qui interdit toute responsabilité collective ou
+    par ri…
+  memo: >-
+    La responsabilité pénale des personnes physiques — Fiche synthèse (session JUIN 2026). Art.
+    121-1 à 121-7 CP 18.1 Principes fondateurs CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement
+    que de son
+plan:
+  - num: '1'
+    titre: Principes fondateurs
+    duree: ~10 min
+  - num: '2'
+    titre: Les deux composantes de la responsabilité
+    duree: ~10 min
+  - num: '3'
+    titre: 'L''élément moral : la faute intentionnelle'
+    duree: ~10 min
+  - num: '4'
+    titre: 'L''élément moral : la faute non intentionnelle'
+    duree: ~10 min
 ---
 
 ![p. 39](/fondamentaux/responsabilite-penale-personnes-physiques-tableau-p39.jpg)

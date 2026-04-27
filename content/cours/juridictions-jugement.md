@@ -1,16 +1,70 @@
 ---
-title: "Renvoi, jugement, juridictions répressives"
-description: "Renvoi, jugement, juridictions répressives — Fiche synthèse (session JUIN 2026). 14.1 Les alternatives aux poursuites (art. 41-1 CPP) Le PR dispose d'un pouvoir d'appréciation de l'opportunité des poursuites (art. 40 CPP). Il peut, avant toute décision sur l'action publique, recou…"
-tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
-partie: "III"
+title: Renvoi, jugement, juridictions répressives
 chapitre: 14
-derniereMiseAJour: "2025-12-01"
+partie: 3
+description: >-
+  Renvoi, jugement, juridictions répressives — Fiche synthèse (session JUIN 2026). 14.1 Les
+  alternatives aux poursuites (art. 41-1 CPP) Le PR dispose d'un pouvoir d'appréciation de
+  l'opportunité des po…
+tags:
+  - fondamentaux
+  - Partie III
+  - 2F.1.b
+  - phase juridictionnelle
 loi2025: false
-articlesCites:
-  - "art. 40"
-  - "art. 41-1"
-  - "art. 41-2"
-  - "art. 44-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 40
+  - Art. 41-1
+  - Art. 41-2
+  - Art. 44-1
+  - Art. 40 — repère
+stats:
+  - num: '14'
+    label: Chapitre 14 (annexe B)
+  - num: III
+    label: Partie 3 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Les alternatives aux poursuites (art. 41-1 CPP)
+    - Étapes: '2'
+      Thème: La composition pénale (art. 41-2 CPP)
+    - Étapes: '3'
+      Thème: Les modes de saisine du tribunal
+blocs:
+  definition: >-
+    Le PR dispose d'un pouvoir d'appréciation de l'opportunité des poursuites (art. 40 CPP). Il
+    peut, avant toute décision sur l'action publique, recourir à des mesures alternatives lorsque
+    ces mesures sont de nature à assurer la réparation du dommage, mettre fin au trouble résultant
+    de l'infraction ou contribuer au reclassement. Mesure Précisions Rappel à la loi Art. 41-1 1°
+    CPP (supprimé en 2022, remplacé par avertissement pénal probatoire) Avertissement pénal
+    probatoire Nouve…
+  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+  pointCle: >-
+    ASTUCE JURY Pour l'oral, sache articuler les modes de saisine: une affaire en flagrance avec
+    charges suffisantes et délit ≥ 6 mois → comparution immédiate si affaire en état. Sinon COPJ ou
+    convocatio…
+  memo: >-
+    Renvoi, jugement, juridictions répressives — Fiche synthèse (session JUIN 2026). 14.1 Les
+    alternatives aux poursuites (art. 41-1 CPP) Le PR dispose d'un pouvoir d'appréciation de
+    l'opportunité des pou
+plan:
+  - num: '1'
+    titre: Les alternatives aux poursuites (art. 41-1 CPP)
+    duree: ~10 min
+  - num: '2'
+    titre: La composition pénale (art. 41-2 CPP)
+    duree: ~10 min
+  - num: '3'
+    titre: Les modes de saisine du tribunal
+    duree: ~10 min
 ---
 
 ![p. 31](/fondamentaux/juridictions-jugement-tableau-p31.jpg)

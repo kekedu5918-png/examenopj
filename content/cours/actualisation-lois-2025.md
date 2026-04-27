@@ -1,33 +1,86 @@
 ---
-title: "Actualisation législative 2025"
-description: "Actualisation législative 2025 — Fiche synthèse (session JUIN 2026). ATTENTION Ce chapitre récapitule les évolutions législatives majeures de 2025, TOUTES susceptibles d'être testées à l'examen OPJ de juin 2026. Le cahier de mise à jour officiel SDCP/DOCPRO (juillet-dé…"
-tags: ["fondamentaux","Partie VI","2F.1.b","transversal","OPJ 2026"]
-partie: "VI"
+title: Actualisation législative 2025
 chapitre: 44
-derniereMiseAJour: "2025-12-01"
+partie: 6
+description: >-
+  Actualisation législative 2025 — Fiche synthèse (session JUIN 2026). ATTENTION Ce chapitre
+  récapitule les évolutions législatives majeures de 2025, TOUTES susceptibles d'être testées à
+  l'examen OPJ d…
+tags:
+  - fondamentaux
+  - Partie VI
+  - 2F.1.b
+  - transversal
+  - OPJ 2026
 loi2025: true
-articlesCites:
-  - "art. 132-16-2 al. 2"
-  - "art. 198"
-  - "art. 221-18"
-  - "art. 221-19"
-  - "art. 221-20"
-  - "art. 221-6-1"
-  - "art. 222-12"
-  - "art. 222-22"
-  - "art. 222-23"
-  - "art. 222-28"
-  - "art. 222-8"
-  - "art. 311-4"
-  - "art. 434-10"
-  - "art. 60"
-  - "art. 706-88-2"
-  - "L. 234-1"
-  - "L. 235-1"
-  - "Loi n° 2025-1057"
-  - "Loi n° 2025-532"
-  - "Loi n° 2025-622"
-  - "Loi n° 2025-623"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 132-16-2 al. 2
+  - Art. 198
+  - Art. 221-18
+  - Art. 221-19
+  - Art. 221-20
+stats:
+  - num: '44'
+    label: Chapitre 44 (annexe B)
+  - num: VI
+    label: Partie 6 — synthèse
+  - num: '6'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Loi n° 2025-622 du 09/07/2025 — Sécurité routière
+    - Étapes: '2'
+      Thème: Loi n° 2025-532 du 13/06/2025 — Stupéfiants
+    - Étapes: '3'
+      Thème: Loi n° 2025-1057 du 06/11/2025 — Violences sexuelles
+    - Étapes: '4'
+      Thème: Loi n° 2025-623 du 09/07/2025 — Protection professionnels
+    - Étapes: '5'
+      Thème: Autres évolutions procédurales 2025
+    - Étapes: '6'
+      Thème: Fiches suspendues (en attente)
+blocs:
+  definition: >-
+    Cette loi majeure réforme en profondeur le régime pénal des infractions routières. Modification
+    Article Détail Création homicide routier Art. 221-18 CP Infraction autonome détachée de
+    l'homicide involontaire. Peines renforcées. Remplace les anciennes aggravations Création
+    blessures routières ITT > 3 mois Art. 221-19 CP Nouvelle fiche Création blessures routières ITT
+    ≤ 3 mois Art. 221-20 CP Nouvelle fiche Suppression aggravantes anciennes Art. 221-6-1, 222-19-1,
+    222-20-1 CP A…
+  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+  pointCle: >-
+    ATTENTION Ce chapitre récapitule les évolutions législatives majeures de 2025, TOUTES
+    susceptibles d'être testées à l'examen OPJ de juin 2026. Le cahier de mise à jour officiel
+    SDCP/DOCPRO (juillet-d…
+  memo: >-
+    Actualisation législative 2025 — Fiche synthèse (session JUIN 2026). ATTENTION Ce chapitre
+    récapitule les évolutions législatives majeures de 2025, TOUTES susceptibles d'être testées à
+    l'examen OPJ de
+plan:
+  - num: '1'
+    titre: Loi n° 2025-622 du 09/07/2025 — Sécurité routière
+    duree: ~10 min
+  - num: '2'
+    titre: Loi n° 2025-532 du 13/06/2025 — Stupéfiants
+    duree: ~10 min
+  - num: '3'
+    titre: Loi n° 2025-1057 du 06/11/2025 — Violences sexuelles
+    duree: ~10 min
+  - num: '4'
+    titre: Loi n° 2025-623 du 09/07/2025 — Protection professionnels
+    duree: ~10 min
+  - num: '5'
+    titre: Autres évolutions procédurales 2025
+    duree: ~10 min
+  - num: '6'
+    titre: Fiches suspendues (en attente)
+    duree: ~10 min
 ---
 
 ![p. 67](/fondamentaux/actualisation-lois-2025-tableau-p67.jpg)

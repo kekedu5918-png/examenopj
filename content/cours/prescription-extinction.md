@@ -1,20 +1,74 @@
 ---
-title: "Prescription, amnistie, extinction de l'action"
-description: "Prescription, amnistie, extinction de l'action — Fiche synthèse (session JUIN 2026). 25.1 Les termes de la récidive La récidive suppose: (1) une première condamnation définitive passée en force de chose jugée (1er terme); (2) une seconde infraction ultérieure (2nd terme). La condamnat…"
-tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
-partie: "IV"
+title: Prescription, amnistie, extinction de l'action
 chapitre: 25
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: >-
+  Prescription, amnistie, extinction de l'action — Fiche synthèse (session JUIN 2026). 25.1 Les
+  termes de la récidive La récidive suppose: (1) une première condamnation définitive passée en
+  force de ch…
+tags:
+  - fondamentaux
+  - Partie IV
+  - 2F.1.b
+  - droit pénal général
 loi2025: true
-articlesCites:
-  - "art. 132-16"
-  - "art. 132-16-1"
-  - "art. 132-16-2"
-  - "art. 132-16-4"
-  - "art. 132-16-4-1"
-  - "art. 132-2"
-  - "art. 132-4"
-  - "art. 321-5"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 132-16
+  - Art. 132-16-1
+  - Art. 132-16-2
+  - Art. 132-16-4
+  - Art. 132-16-4-1
+stats:
+  - num: '25'
+    label: Chapitre 25 (annexe B)
+  - num: IV
+    label: Partie 4 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Les termes de la récidive
+    - Étapes: '2'
+      Thème: Les délits assimilés pour la récidive correctionnelle
+    - Étapes: '3'
+      Thème: Le concours d'infractions (art. 132-2 à 132-4)
+    - Étapes: '4'
+      Thème: Le cumul en récidive — personnes physiques
+blocs:
+  definition: >-
+    La récidive suppose: (1) une première condamnation définitive passée en force de chose jugée
+    (1er terme); (2) une seconde infraction ultérieure (2nd terme). La condamnation peut être
+    française ou d'un État membre de l'UE. LES 4 CAS DE RÉCIDIVE (articles 132-8 à 132-11 CP) 132-8:
+    Crime/Délit 10 ans → CRIME Pas de délai - Générale - Perpétuelle PERPÉTUITÉ ou 30 ans selon
+    peine encourue du 2nd crime 132-9 al. 1: Crime/Délit 10 ans → DÉLIT 10 ans Délai 10 ans -
+    Générale - Tempor…
+  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+  pointCle: >-
+    DÉFINITION – CONCOURS RÉEL D'INFRACTIONS Situation où plusieurs infractions sont commises par
+    une même personne avant qu'une condamnation définitive soit intervenue pour l'une d'elles.
+    Distinguer du…
+  memo: >-
+    (1) une première condamnation définitive passée en force de chose jugée (1er terme); (2) une
+    seconde infraction ultérieure (2nd terme). La condamnat…
+plan:
+  - num: '1'
+    titre: Les termes de la récidive
+    duree: ~10 min
+  - num: '2'
+    titre: Les délits assimilés pour la récidive correctionnelle
+    duree: ~10 min
+  - num: '3'
+    titre: Le concours d'infractions (art. 132-2 à 132-4)
+    duree: ~10 min
+  - num: '4'
+    titre: Le cumul en récidive — personnes physiques
+    duree: ~10 min
 ---
 
 ![p. 46](/fondamentaux/prescription-extinction-tableau-p46.jpg)

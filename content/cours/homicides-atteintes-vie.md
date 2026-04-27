@@ -1,16 +1,67 @@
 ---
-title: "Homicides, atteintes à la vie"
-description: "Homicides, atteintes à la vie — Fiche synthèse (session JUIN 2026). Art. 221-1 à 221-5-2 CP 27.1 Le meurtre (art. 221-1 CP) DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui. Peine: 30 ans de réclusion criminelle. Éléments constitutifs Élément Caract…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Homicides, atteintes à la vie
 chapitre: 27
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Homicides, atteintes à la vie — Fiche synthèse (session JUIN 2026). Art. 221-1 à 221-5-2 CP 27.1
+  Le meurtre (art. 221-1 CP) DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui.
+  Peine:…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "art. 221-1"
-  - "art. 221-2"
-  - "art. 221-5"
-  - "art. 223-13"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 221-1
+  - Art. 221-2
+  - Art. 221-5
+  - Art. 223-13
+  - Art. 221-1 — repère
+stats:
+  - num: '27'
+    label: Chapitre 27 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Le meurtre (art. 221-1 CP)
+    - Étapes: '2'
+      Thème: L'empoisonnement (art. 221-5 CP)
+    - Étapes: '3'
+      Thème: Provocation au suicide (art. 223-13 CP)
+blocs:
+  definition: >-
+    > DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui. Peine: 30 ans de
+    réclusion criminelle. Éléments constitutifs Élément Caractérisation MATÉRIEL Acte positif de
+    violence — sur la personne d'autrui — lien de causalité entre l'acte et le décès MORAL Intention
+    homicide (DOL SPÉCIAL: intention de tuer) Circonstances aggravantes (art. 221-2 à 221-4 CP)
+    Perpétuité encourue dans les cas suivants: préméditation (assassinat); guet-apens;
+    précédé/accompagné/suivi d…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui. Peine: 30 ans de réclusion
+    criminelle. Éléments constitutifs Élément Caractérisation MATÉRIEL Acte positif de violence —
+    sur la pe…
+  memo: 30 ans de réclusion criminelle. Éléments constitutifs Élément Caract…
+plan:
+  - num: '1'
+    titre: Le meurtre (art. 221-1 CP)
+    duree: ~10 min
+  - num: '2'
+    titre: L'empoisonnement (art. 221-5 CP)
+    duree: ~10 min
+  - num: '3'
+    titre: Provocation au suicide (art. 223-13 CP)
+    duree: ~10 min
 ---
 
 ![p. 49](/fondamentaux/homicides-atteintes-vie-tableau-p49.jpg)

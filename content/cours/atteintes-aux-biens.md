@@ -1,13 +1,68 @@
 ---
-title: "Atteintes aux biens, recel, destructions"
-description: "Atteintes aux biens, recel, destructions — Fiche synthèse (session JUIN 2026). Art. 226-1 à 226-32 CP Infraction Article Peine Précisions Atteinte à l'intimité de la vie privée 226-1 CP 1 an + 45 000 € Captation paroles/image lieu privé, localisation GPS sans consentement Conser…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Atteintes aux biens, recel, destructions
 chapitre: 33
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Atteintes aux biens, recel, destructions — Fiche synthèse (session JUIN 2026). Art. 226-1 à 226-32
+  CP Infraction Article Peine Précisions Atteinte à l'intimité de la vie privée 226-1 CP 1 an + 45
+  000…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 226-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 226-1
+  - Art. 226-1 — repère
+  - Texte / doctrine — Atteintes aux biens, recel, destructions (complément 1)
+  - Texte / doctrine — Atteintes aux biens, recel, destructions (complément 2)
+  - Texte / doctrine — Atteintes aux biens, recel, destructions (complément 3)
+stats:
+  - num: '33'
+    label: Chapitre 33 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '1'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: acronyme
+  titre: Repères — Atteintes aux biens, recel, destructions
+  acronyme: L.I.R.E.
+  cards:
+    - lettre: L
+      mot: Lire
+      desc: Structurer Atteintes aux biens, recel, destructions avant l’oral.
+    - lettre: I
+      mot: Indices
+      desc: Repérer faits, qualifications et textes applicables.
+    - lettre: R
+      mot: Régime
+      desc: Procédure, juridiction et nullités éventuelles.
+    - lettre: E
+      mot: Examen
+      desc: Entraînement quiz et articulation avec les autres fiches.
+blocs:
+  definition: >-
+    Atteintes aux biens, recel, destructions — Fiche synthèse (session JUIN 2026). Art. 226-1 à
+    226-32 CP Infraction Article Peine Précisions Atteinte à l'intimité de la vie privée 226-1 CP 1
+    an + 45 000 € Captation paroles/image lieu privé, localisation GPS sans consentement Conser…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    Art. 226-1 à 226-32 CP Infraction Article Peine Précisions Atteinte à l'intimité de la vie
+    privée 226-1 CP 1 an + 45 000 € Captation paroles/image lieu privé, localisation GPS sans
+    consentement Conse…
+  memo: >-
+    Atteintes aux biens, recel, destructions — Fiche synthèse (session JUIN 2026). Art. 226-1 à
+    226-32 CP Infraction Article Peine Précisions Atteinte à l'intimité de la vie privée 226-1 CP 1
+    an + 45 000
+plan:
+  - num: '1'
+    titre: Vue d’ensemble
+    duree: ~10 min
 ---
 
 # Atteintes aux biens, recel, destructions

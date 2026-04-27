@@ -1,14 +1,75 @@
 ---
-title: "Perquisitions, visites et saisies"
-description: "Perquisitions, visites et saisies — Fiche synthèse (session JUIN 2026). Art. 61-1 CPP 6.1 L'audition libre DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une personne qui est soupçonnée pour les besoins d'une enquête, lorsque le recours à la GAV …"
-tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
-partie: "II"
+title: Perquisitions, visites et saisies
 chapitre: 6
-derniereMiseAJour: "2025-12-01"
+partie: 2
+description: >-
+  Perquisitions, visites et saisies — Fiche synthèse (session JUIN 2026). Art. 61-1 CPP 6.1
+  L'audition libre DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une
+  personne qui es…
+tags:
+  - fondamentaux
+  - Partie II
+  - 2F.1.b
+  - mesures enquête
 loi2025: false
-articlesCites:
-  - "art. 61-1"
-  - "art. 61-3"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 61-1
+  - Art. 61-3
+  - Art. 61-1 — repère
+  - Art. 61-3 — repère
+  - Texte / doctrine — Perquisitions, visites et saisies (complément 1)
+stats:
+  - num: '6'
+    label: Chapitre 6 (annexe B)
+  - num: II
+    label: Partie 2 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: L'audition libre
+    - Étapes: '2'
+      Thème: Les différents statuts d'audition
+    - Étapes: '3'
+      Thème: La confrontation
+    - Étapes: '4'
+      Thème: La parade d'identification (art. 61-3 CPP)
+blocs:
+  definition: >-
+    > DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une personne qui est
+    soupçonnée pour les besoins d'une enquête, lorsque le recours à la GAV n'est pas strictement
+    nécessaire. La personne doit consentir à cette audition et peut la quitter à tout moment. Droit
+    Précisions Nature et qualification Information sur l'infraction présumée, date et lieu Droit de
+    partir Quitter les locaux à tout moment — droit à notifier explicitement Droit à un avocat Pour
+    le…
+  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
+  pointCle: >-
+    DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une personne qui est
+    soupçonnée pour les besoins d'une enquête, lorsque le recours à la GAV n'est pas strictement
+    nécessaire.…
+  memo: >-
+    Perquisitions, visites et saisies — Fiche synthèse (session JUIN 2026). Art. 61-1 CPP 6.1
+    L'audition libre DÉFINITION – AUDITION LIBRE Mesure sans contrainte permettant d'entendre une
+    personne qui est
+plan:
+  - num: '1'
+    titre: L'audition libre
+    duree: ~10 min
+  - num: '2'
+    titre: Les différents statuts d'audition
+    duree: ~10 min
+  - num: '3'
+    titre: La confrontation
+    duree: ~10 min
+  - num: '4'
+    titre: La parade d'identification (art. 61-3 CPP)
+    duree: ~10 min
 ---
 
 ![p. 20](/fondamentaux/perquisition-tableau-p20.jpg)

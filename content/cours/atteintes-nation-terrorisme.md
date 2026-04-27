@@ -1,19 +1,62 @@
 ---
-title: "Atteintes à la nation, terrorisme, paix publique"
-description: "Atteintes à la nation, terrorisme, paix publique — Fiche synthèse (session JUIN 2026). Art. 222-52 à 222-67 CP | L. 311-1 et suiv. CSI 39.1 La classification légale des armes (art. R. 311-2 CSI) Cat. Régime Exemples A1 Armes interdites (civiles) Armes d'épaule semi-auto 3 coups, matérie…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Atteintes à la nation, terrorisme, paix publique
 chapitre: 39
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Atteintes à la nation, terrorisme, paix publique — Fiche synthèse (session JUIN 2026). Art. 222-52
+  à 222-67 CP | L. 311-1 et suiv. CSI 39.1 La classification légale des armes (art. R. 311-2 CSI)
+  Cat.…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 222-52"
-  - "L. 311-1"
-  - "L. 317-2"
-  - "L. 317-5"
-  - "L. 317-6"
-  - "L. 317-7"
-  - "L. 317-8"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 222-52
+  - L. 311-1
+  - L. 317-2
+  - L. 317-5
+  - L. 317-6
+stats:
+  - num: '39'
+    label: Chapitre 39 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: La classification légale des armes (art. R. 311-2 CSI)
+    - Étapes: '2'
+      Thème: Principales infractions en matière d'armes
+blocs:
+  definition: >-
+    Cat. Régime Exemples A1 Armes interdites (civiles) Armes d'épaule semi-auto > 3 coups, matériels
+    de guerre partie A, répétition à pompe à canon rayé, couteaux à lame fixe avec pointe/denture,
+    coup de poing américain A2 Matériels de guerre Armes automatiques, munitions
+    perforantes/explosives, matériels combat, gaz combat B Soumises à AUTORISATION Armes de poing,
+    armes à feu certains calibres (5,56×45; 7,62×39; 5,45×39...), armes à impulsion électrique à
+    distance, aérosols lac…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Art. 222-52 à 222-67 CP | L. 311-1 et suiv. CSI
+  memo: >-
+    Atteintes à la nation, terrorisme, paix publique — Fiche synthèse (session JUIN 2026). Art.
+    222-52 à 222-67 CP | L. 311-1 et suiv. CSI 39.1 La classification légale des armes (art. R.
+    311-2 CSI) Cat.
+plan:
+  - num: '1'
+    titre: La classification légale des armes (art. R. 311-2 CSI)
+    duree: ~10 min
+  - num: '2'
+    titre: Principales infractions en matière d'armes
+    duree: ~10 min
 ---
 
 ![p. 62](/fondamentaux/atteintes-nation-terrorisme-tableau-p62.jpg)

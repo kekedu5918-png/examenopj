@@ -1,14 +1,78 @@
 ---
-title: "Outils, méthode et entraînement oral"
-description: "Outils, méthode et entraînement oral — Fiche synthèse (session JUIN 2026). 45.1 L'enjeu de l'oral : une démonstration de méthode L'oral OPJ évalue ta capacité à mener une procédure de manière structurée et conforme. Le jury n'attend pas une récitation mais une démonstration …"
-tags: ["fondamentaux","Partie VI","2F.1.b","transversal","OPJ 2026"]
-partie: "VI"
+title: Outils, méthode et entraînement oral
 chapitre: 45
-derniereMiseAJour: "2025-12-01"
+partie: 6
+description: >-
+  Outils, méthode et entraînement oral — Fiche synthèse (session JUIN 2026). 45.1 L'enjeu de l'oral
+  : une démonstration de méthode L'oral OPJ évalue ta capacité à mener une procédure de manière
+  structu…
+tags:
+  - fondamentaux
+  - Partie VI
+  - 2F.1.b
+  - transversal
+  - OPJ 2026
 loi2025: false
-articlesCites:
-  - "art. 105"
-  - "art. 53"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 105
+  - Art. 53
+  - Art. 105 — repère
+  - Art. 53 — repère
+  - Texte / doctrine — Outils, méthode et entraînement oral (complément 1)
+stats:
+  - num: '45'
+    label: Chapitre 45 (annexe B)
+  - num: VI
+    label: Partie 6 — synthèse
+  - num: '5'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: 'L''enjeu de l''oral : une démonstration de méthode'
+    - Étapes: '2'
+      Thème: La trame en 3 temps — structure type
+    - Étapes: '3'
+      Thème: Les 10 réflexes à adopter
+    - Étapes: '4'
+      Thème: Les 5 pièges à éviter
+    - Étapes: '5'
+      Thème: Le ton et l'attitude devant le jury
+blocs:
+  definition: >-
+    L'oral OPJ évalue ta capacité à mener une procédure de manière structurée et conforme. Le jury
+    n'attend pas une récitation mais une démonstration de méthode, de rigueur procédurale et de
+    maîtrise des textes. Sur une affaire soumise, tu dois savoir: (1) qualifier les faits, (2)
+    déterminer le cadre juridique, (3) dérouler les actes, (4) anticiper les suites.
+  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+  pointCle: >-
+    CLÉ Suis systématiquement cette structure en trois temps. Elle est attendue par tous les jurys
+    et te permet de ne rien oublier. Temps Nature Contenu 1. CHAPEAU INTRODUCTIF Présenter le cadre
+    • Identi…
+  memo: >-
+    une démonstration de méthode L'oral OPJ évalue ta capacité à mener une procédure de manière
+    structurée et conforme. Le jury n'attend pas une récitation mais une démonstration …
+plan:
+  - num: '1'
+    titre: 'L''enjeu de l''oral : une démonstration de méthode'
+    duree: ~10 min
+  - num: '2'
+    titre: La trame en 3 temps — structure type
+    duree: ~10 min
+  - num: '3'
+    titre: Les 10 réflexes à adopter
+    duree: ~10 min
+  - num: '4'
+    titre: Les 5 pièges à éviter
+    duree: ~10 min
+  - num: '5'
+    titre: Le ton et l'attitude devant le jury
+    duree: ~10 min
 ---
 
 ![p. 69](/fondamentaux/outils-oral-entrainement-tableau-p69.jpg)

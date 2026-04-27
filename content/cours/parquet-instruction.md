@@ -1,30 +1,80 @@
 ---
-title: "Parquet, instruction : cadre général"
-description: "Parquet, instruction : cadre général — Fiche synthèse (session JUIN 2026). Art. 79 à 190 CPP 11.1 Caractère et ouverture L'instruction est la phase d'information judiciaire menée par un juge indépendant, le juge d'instruction. Elle vise à établir si les charges sont suffisan…"
-tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
-partie: "III"
+title: 'Parquet, instruction : cadre général'
 chapitre: 11
-derniereMiseAJour: "2025-12-01"
+partie: 3
+description: >-
+  Parquet, instruction : cadre général — Fiche synthèse (session JUIN 2026). Art. 79 à 190 CPP 11.1
+  Caractère et ouverture L'instruction est la phase d'information judiciaire menée par un juge
+  indépend…
+tags:
+  - fondamentaux
+  - Partie III
+  - 2F.1.b
+  - phase juridictionnelle
 loi2025: false
-articlesCites:
-  - "art. 100"
-  - "art. 101"
-  - "art. 105"
-  - "art. 113-1"
-  - "art. 113-6"
-  - "art. 151"
-  - "art. 151-152"
-  - "art. 156-169"
-  - "art. 175"
-  - "art. 177"
-  - "art. 181"
-  - "art. 434-7-2"
-  - "art. 79"
-  - "art. 80"
-  - "art. 80-1"
-  - "art. 81"
-  - "art. 85"
-  - "art. 94-97"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 100
+  - Art. 101
+  - Art. 105
+  - Art. 113-1
+  - Art. 113-6
+stats:
+  - num: '11'
+    label: Chapitre 11 (annexe B)
+  - num: III
+    label: Partie 3 — synthèse
+  - num: '5'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Caractère et ouverture
+    - Étapes: '2'
+      Thème: Pouvoirs du juge d'instruction
+    - Étapes: '3'
+      Thème: Les statuts sous instruction
+    - Étapes: '4'
+      Thème: La commission rogatoire (CR)
+    - Étapes: '5'
+      Thème: Clôture de l'instruction (art. 175 et suiv.)
+blocs:
+  definition: >-
+    L'instruction est la phase d'information judiciaire menée par un juge indépendant, le juge
+    d'instruction. Elle vise à établir si les charges sont suffisantes pour renvoyer la personne
+    devant une juridiction de jugement. Aspect Règle Caractère OBLIGATOIRE en matière criminelle
+    (art. 79 CPP) Facultative En matière délictuelle (opportunité du PR) Exceptionnelle En matière
+    contraventionnelle (sur requête PR) Saisine Réquisitoire introductif du PR (art. 80) OU plainte
+    avec CPC (a…
+  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+  pointCle: >-
+    CLÉ Le témoin assisté est un statut protecteur de l'intérêt de la personne: elle bénéficie d'un
+    avocat sans être mise en examen. Elle peut demander sa mise en examen à tout moment (art. 113-6
+    CPP). À…
+  memo: >-
+    cadre général — Fiche synthèse (session JUIN 2026). Art. 79 à 190 CPP 11.1 Caractère et
+    ouverture L'instruction est la phase d'information judiciaire menée par un juge indépendant, le
+    juge d'instructi
+plan:
+  - num: '1'
+    titre: Caractère et ouverture
+    duree: ~10 min
+  - num: '2'
+    titre: Pouvoirs du juge d'instruction
+    duree: ~10 min
+  - num: '3'
+    titre: Les statuts sous instruction
+    duree: ~10 min
+  - num: '4'
+    titre: La commission rogatoire (CR)
+    duree: ~10 min
+  - num: '5'
+    titre: Clôture de l'instruction (art. 175 et suiv.)
+    duree: ~10 min
 ---
 
 ![p. 25](/fondamentaux/parquet-instruction-tableau-p25.jpg)

@@ -1,16 +1,61 @@
 ---
-title: "Traite, atteintes à la dignité, prostitution (hors 31/32)"
-description: "Traite, atteintes à la dignité, prostitution (hors 31/32) — Fiche synthèse (session JUIN 2026). Code de la justice pénale des mineurs — L. 11-1 et suiv. 41.1 Principes fondateurs Tranche Article Règle < 13 ans L. 11-1 CJPM Présumés non capables de discernement. Aucune peine. Mesures éducatives s…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Traite, atteintes à la dignité, prostitution (hors 31/32)
 chapitre: 41
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Traite, atteintes à la dignité, prostitution (hors 31/32) — Fiche synthèse (session JUIN 2026).
+  Code de la justice pénale des mineurs — L. 11-1 et suiv. 41.1 Principes fondateurs Tranche Article
+  Règl…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "L. 11-1"
-  - "L. 11-1 CJPM"
-  - "l. 16-18"
-  - "R. 11-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - L. 11-1
+  - L. 11-1 CJPM
+  - l. 16-18
+  - R. 11-1
+  - L. 11-1 — repère
+stats:
+  - num: '41'
+    label: Chapitre 41 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Principes fondateurs
+    - Étapes: '2'
+      Thème: Règles procédurales spécifiques aux mineurs
+blocs:
+  definition: >-
+    Tranche Article Règle < 13 ans L. 11-1 CJPM Présumés non capables de discernement. Aucune peine.
+    Mesures éducatives si discernement 13-16 ans L. 11-1, 121-5 CJPM Discernement présumé.
+    Atténuation de peine OBLIGATOIRE (1/2) 16-18 ans L. 11-1, 121-7 CJPM Atténuation FACULTATIVE.
+    Motivation spéciale pour écarter Discernement R. 11-1 CJPM Appréciation souveraine. Éléments:
+    déclarations, entourage, circonstances, antécédents, expertise
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Code de la justice pénale des mineurs — L. 11-1 et suiv.
+  memo: >-
+    Traite, atteintes à la dignité, prostitution (hors 31/32) — Fiche synthèse (session JUIN 2026).
+    Code de la justice pénale des mineurs — L. 11-1 et suiv. 41.1 Principes fondateurs Tranche
+    Article Règle
+plan:
+  - num: '1'
+    titre: Principes fondateurs
+    duree: ~10 min
+  - num: '2'
+    titre: Règles procédurales spécifiques aux mineurs
+    duree: ~10 min
 ---
 
 ![p. 63](/fondamentaux/traites-dignite-personne-tableau-p63.jpg)

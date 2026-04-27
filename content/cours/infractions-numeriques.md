@@ -1,13 +1,64 @@
 ---
-title: "Infractions numériques, cyberdélinquance"
-description: "Infractions numériques, cyberdélinquance — Fiche synthèse (session JUIN 2026). Art. 410-1 à 450-5 CP 42.1 Atteintes aux intérêts fondamentaux de la Nation Infraction Article Peine Trahison, espionnage 411-1 et suiv. 15 ans à perpétuité Atteintes à la défense nationale 413-1 et s…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Infractions numériques, cyberdélinquance
 chapitre: 42
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Infractions numériques, cyberdélinquance — Fiche synthèse (session JUIN 2026). Art. 410-1 à 450-5
+  CP 42.1 Atteintes aux intérêts fondamentaux de la Nation Infraction Article Peine Trahison,
+  espionnag…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 410-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 410-1
+  - Art. 410-1 — repère
+  - Texte / doctrine — Infractions numériques, cyberdélinquance (complément 1)
+  - Texte / doctrine — Infractions numériques, cyberdélinquance (complément 2)
+  - Texte / doctrine — Infractions numériques, cyberdélinquance (complément 3)
+stats:
+  - num: '42'
+    label: Chapitre 42 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Atteintes aux intérêts fondamentaux de la Nation
+    - Étapes: '2'
+      Thème: Atteintes à l'administration publique par agents
+    - Étapes: '3'
+      Thème: Atteintes à l'action de la justice
+blocs:
+  definition: >-
+    Infraction Article Peine Trahison, espionnage 411-1 et suiv. 15 ans à perpétuité Atteintes à la
+    défense nationale 413-1 et suiv. 5 ans à perpétuité Atteintes à la République 412-1 15 ans à
+    perpétuité
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Articuler définition, conditions de fond, procédure et sanctions pour le jury.
+  memo: >-
+    Infractions numériques, cyberdélinquance — Fiche synthèse (session JUIN 2026). Art. 410-1 à
+    450-5 CP 42.1 Atteintes aux intérêts fondamentaux de la Nation Infraction Article Peine
+    Trahison, espionnage
+plan:
+  - num: '1'
+    titre: Atteintes aux intérêts fondamentaux de la Nation
+    duree: ~10 min
+  - num: '2'
+    titre: Atteintes à l'administration publique par agents
+    duree: ~10 min
+  - num: '3'
+    titre: Atteintes à l'action de la justice
+    duree: ~10 min
 ---
 
 ![p. 64](/fondamentaux/infractions-numeriques-tableau-p64.jpg)

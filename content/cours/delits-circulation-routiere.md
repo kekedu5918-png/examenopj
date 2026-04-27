@@ -1,30 +1,66 @@
 ---
-title: "Infractions à la circulation routière"
-description: "Infractions à la circulation routière — Fiche synthèse (session JUIN 2026). Code de la route (CR) — Articles L. 221-1 et suiv. ATTENTION RÉFORME LOI N° 2025-622 DU 09/07/2025: • Suppression des circonstances aggravantes de l'homicide et atteintes involontaires liées à la cond…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Infractions à la circulation routière
 chapitre: 37
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Infractions à la circulation routière — Fiche synthèse (session JUIN 2026). Code de la route (CR)
+  — Articles L. 221-1 et suiv. ATTENTION RÉFORME LOI N° 2025-622 DU 09/07/2025: • Suppression des
+  circo…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "L. 221-1"
-  - "L. 221-2"
-  - "L. 224-16"
-  - "L. 231-1"
-  - "L. 233-1"
-  - "L. 233-1-1"
-  - "L. 234-1"
-  - "L. 234-3"
-  - "L. 234-8"
-  - "L. 235-1"
-  - "L. 235-3"
-  - "L. 236-1"
-  - "L. 236-2"
-  - "L. 317-2"
-  - "L. 317-3"
-  - "L. 324-2"
-  - "L. 413-1"
-  - "LOI N° 2025-622"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - L. 221-1
+  - L. 221-2
+  - L. 224-16
+  - L. 231-1
+  - L. 233-1
+stats:
+  - num: '37'
+    label: Chapitre 37 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Conduite sous l'empire d'un état alcoolique (L. 234-1 CR)
+    - Étapes: '2'
+      Thème: Conduite sous usage de stupéfiants (L. 235-1 CR)
+    - Étapes: '3'
+      Thème: Autres infractions routières majeures
+blocs:
+  definition: >-
+    Qualification Seuil / Caractérisation Peine Contraventionnel (4e cl.) ≥ 0,25 mg/l air OU 0,50
+    g/l sang ET < 0,40 mg/l OU 0,80 g/l 135-750 € + perte 6 pts Délit — état alcoolique ≥ 0,40 mg/l
+    air OU 0,80 g/l sang 4 ans empr. + 9 000 € (loi 2025-622) Délit — ivresse manifeste État
+    d'ivresse manifeste établi par constats 4 ans empr. + 9 000 € Refus vérifications alcool Art. L.
+    234-8 CR 4 ans empr. + 9 000 € Cas de contrôle de l'alcoolémie (art. L. 234-3 CR) • OBLIGATOIRE:
+    auteur…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Code de la route (CR) — Articles L. 221-1 et suiv.
+  memo: >-
+    • Suppression des circonstances aggravantes de l'homicide et atteintes involontaires liées à la
+    cond…
+plan:
+  - num: '1'
+    titre: Conduite sous l'empire d'un état alcoolique (L. 234-1 CR)
+    duree: ~10 min
+  - num: '2'
+    titre: Conduite sous usage de stupéfiants (L. 235-1 CR)
+    duree: ~10 min
+  - num: '3'
+    titre: Autres infractions routières majeures
+    duree: ~10 min
 ---
 
 ![p. 59](/fondamentaux/delits-circulation-routiere-tableau-p59.jpg)

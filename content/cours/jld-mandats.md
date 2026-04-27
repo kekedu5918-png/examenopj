@@ -1,14 +1,65 @@
 ---
-title: "JLD, détention provisoire, mandats de justice"
-description: "JLD, détention provisoire, mandats de justice — Fiche synthèse (session JUIN 2026). Art. 137-1 CPP et suiv. 12.1 Le Juge des Libertés et de la Détention DÉFINITION – JLD Magistrat du siège du tribunal judiciaire statuant sur les mesures privatives ou restrictives de liberté. Il est s…"
-tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
-partie: "III"
+title: JLD, détention provisoire, mandats de justice
 chapitre: 12
-derniereMiseAJour: "2025-12-01"
+partie: 3
+description: >-
+  JLD, détention provisoire, mandats de justice — Fiche synthèse (session JUIN 2026). Art. 137-1 CPP
+  et suiv. 12.1 Le Juge des Libertés et de la Détention DÉFINITION – JLD Magistrat du siège du
+  tribuna…
+tags:
+  - fondamentaux
+  - Partie III
+  - 2F.1.b
+  - phase juridictionnelle
 loi2025: false
-articlesCites:
-  - "art. 122"
-  - "art. 137-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 122
+  - Art. 137-1
+  - Art. 122 — repère
+  - Art. 137-1 — repère
+  - Texte / doctrine — JLD, détention provisoire, mandats de justice (complément 1)
+stats:
+  - num: '12'
+    label: Chapitre 12 (annexe B)
+  - num: III
+    label: Partie 3 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Le Juge des Libertés et de la Détention
+    - Étapes: '2'
+      Thème: Les mandats de justice
+blocs:
+  definition: >-
+    > DÉFINITION – JLD Magistrat du siège du tribunal judiciaire statuant sur les mesures privatives
+    ou restrictives de liberté. Il est saisi par le JI ou le PR. Son rôle est central dans la
+    protection des libertés individuelles. Compétence Article Précisions Détention provisoire 143-1
+    à 148 CPP Placement, prolongation, mise en liberté Contrôle judiciaire 138, 145 CPP Peut refuser
+    la DP et imposer un CJ ARSE 142-5 à 142-13 CPP Assignation à résidence surveillance électronique
+    Pr…
+  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+  pointCle: >-
+    DÉFINITION – JLD Magistrat du siège du tribunal judiciaire statuant sur les mesures privatives
+    ou restrictives de liberté. Il est saisi par le JI ou le PR. Son rôle est central dans la
+    protection des…
+  memo: >-
+    JLD, détention provisoire, mandats de justice — Fiche synthèse (session JUIN 2026). Art. 137-1
+    CPP et suiv. 12.1 Le Juge des Libertés et de la Détention DÉFINITION – JLD Magistrat du siège du
+    tribunal
+plan:
+  - num: '1'
+    titre: Le Juge des Libertés et de la Détention
+    duree: ~10 min
+  - num: '2'
+    titre: Les mandats de justice
+    duree: ~10 min
 ---
 
 ![p. 28](/fondamentaux/jld-mandats-tableau-p28.jpg)

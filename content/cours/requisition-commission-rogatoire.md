@@ -1,16 +1,65 @@
 ---
-title: "Réquisition, commission rogatoire, actes d'enquête"
-description: "Réquisition, commission rogatoire, actes d'enquête — Fiche synthèse (session JUIN 2026). Art. 78-1 à 78-6 CPP 9.1 Les contrôles d'identité Type de contrôle Base Précisions Contrôle judiciaire (78-2 al. 1) Raisons plausibles de soupçonner une infraction / tentative Par OPJ ou APJ sur instr…"
-tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
-partie: "II"
+title: Réquisition, commission rogatoire, actes d'enquête
 chapitre: 9
-derniereMiseAJour: "2025-12-01"
+partie: 2
+description: >-
+  Réquisition, commission rogatoire, actes d'enquête — Fiche synthèse (session JUIN 2026). Art. 78-1
+  à 78-6 CPP 9.1 Les contrôles d'identité Type de contrôle Base Précisions Contrôle judiciaire (78-2
+  a…
+tags:
+  - fondamentaux
+  - Partie II
+  - 2F.1.b
+  - mesures enquête
 loi2025: false
-articlesCites:
-  - "art. 55-1"
-  - "art. 78-1"
-  - "art. 78-3"
-  - "L. 611-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 55-1
+  - Art. 78-1
+  - Art. 78-3
+  - L. 611-1
+  - Art. 55-1 — repère
+stats:
+  - num: '9'
+    label: Chapitre 9 (annexe B)
+  - num: II
+    label: Partie 2 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Les contrôles d'identité
+    - Étapes: '2'
+      Thème: La vérification d'identité (art. 78-3 CPP)
+blocs:
+  definition: >-
+    Type de contrôle Base Précisions Contrôle judiciaire (78-2 al. 1) Raisons plausibles de
+    soupçonner une infraction / tentative Par OPJ ou APJ sur instructions OPJ. Pour crimes et délits
+    Contrôle réquisitionné (78-2 al. 2) Réquisition écrite du PR Durée limitée, lieu et infractions
+    spécifiés Contrôle préventif (78-2 al. 3) Pour prévenir atteinte à l'ordre public Menace
+    imminente — tempéré par la jurisprudence Contrôle administratif Vérification régularité séjour
+    Art. L. 611-1…
+  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
+  pointCle: >-
+    ATTENTION Nullité textuelle: le dépassement du délai de 4 heures sans décision de placement en
+    GAV ni de libération est une nullité textuelle prévue par l'art. 78-3 CPP — à peine de
+    non-respect. PART…
+  memo: >-
+    Réquisition, commission rogatoire, actes d'enquête — Fiche synthèse (session JUIN 2026). Art.
+    78-1 à 78-6 CPP 9.1 Les contrôles d'identité Type de contrôle Base Précisions Contrôle
+    judiciaire (78-2 al
+plan:
+  - num: '1'
+    titre: Les contrôles d'identité
+    duree: ~10 min
+  - num: '2'
+    titre: La vérification d'identité (art. 78-3 CPP)
+    duree: ~10 min
 ---
 
 ![p. 24](/fondamentaux/requisition-commission-rogatoire-tableau-p24.jpg)

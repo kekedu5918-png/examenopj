@@ -1,17 +1,80 @@
 ---
-title: "Mise en examen, juge d'instruction"
-description: "Mise en examen, juge d'instruction — Fiche synthèse (session JUIN 2026). 13.1 Le contrôle judiciaire (CJ) Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une ou plusieurs obligations parmi celles listées à l'art. 138 CPP. Les pers…"
-tags: ["fondamentaux","Partie III","2F.1.b","phase juridictionnelle"]
-partie: "III"
+title: Mise en examen, juge d'instruction
 chapitre: 13
-derniereMiseAJour: "2025-12-01"
+partie: 3
+description: >-
+  Mise en examen, juge d'instruction — Fiche synthèse (session JUIN 2026). 13.1 Le contrôle
+  judiciaire (CJ) Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le
+  JLD impose un…
+tags:
+  - fondamentaux
+  - Partie III
+  - 2F.1.b
+  - phase juridictionnelle
 loi2025: false
-articlesCites:
-  - "art. 138"
-  - "art. 142-5"
-  - "art. 143-1"
-  - "art. 144"
-  - "art. 706-45"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 138
+  - Art. 142-5
+  - Art. 143-1
+  - Art. 144
+  - Art. 706-45
+stats:
+  - num: '13'
+    label: Chapitre 13 (annexe B)
+  - num: III
+    label: Partie 3 — synthèse
+  - num: '5'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Le contrôle judiciaire (CJ)
+    - Étapes: '2'
+      Thème: L'Assignation à Résidence sous Surveillance Électronique
+    - Étapes: '3'
+      Thème: La détention provisoire (DP)
+    - Étapes: '4'
+      Thème: Durées de la DP — MATIÈRE CRIMINELLE (majeurs)
+    - Étapes: '5'
+      Thème: Durées DP — MATIÈRE CORRECTIONNELLE (majeurs)
+blocs:
+  definition: >-
+    > Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une
+    ou plusieurs obligations parmi celles listées à l'art. 138 CPP. Les personnes morales peuvent
+    également être placées sous CJ (art. 706-45 CPP). Catégorie Obligations types Surveillance Se
+    présenter périodiquement / Fournir cautionnement / Remettre passeport / Ne pas quitter
+    circonscription Assistance Pointage commissariat / Accompagnement professionnel / Traitement
+    médical ou sev…
+  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+  pointCle: >-
+    Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une
+    ou plusieurs obligations parmi celles listées à l'art. 138 CPP. Les personnes morales peuvent
+    également…
+  memo: >-
+    Mise en examen, juge d'instruction — Fiche synthèse (session JUIN 2026). 13.1 Le contrôle
+    judiciaire (CJ) Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le
+    JLD impose une
+plan:
+  - num: '1'
+    titre: Le contrôle judiciaire (CJ)
+    duree: ~10 min
+  - num: '2'
+    titre: L'Assignation à Résidence sous Surveillance Électronique
+    duree: ~10 min
+  - num: '3'
+    titre: La détention provisoire (DP)
+    duree: ~10 min
+  - num: '4'
+    titre: Durées de la DP — MATIÈRE CRIMINELLE (majeurs)
+    duree: ~10 min
+  - num: '5'
+    titre: Durées DP — MATIÈRE CORRECTIONNELLE (majeurs)
+    duree: ~10 min
 ---
 
 ![p. 29](/fondamentaux/mise-en-examen-instruction-tableau-p29.jpg)

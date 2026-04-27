@@ -1,25 +1,72 @@
 ---
-title: "La classification tripartite et application de la loi"
-description: "La classification tripartite et application de la loi — Fiche synthèse (session JUIN 2026). Art. 111-1 à 113-12 CP 17.1 La classification tripartite des infractions L'article 111-1 CP classe les infractions en trois catégories selon leur gravité: crimes, délits, contraventions. Cette classif…"
-tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
-partie: "IV"
+title: La classification tripartite et application de la loi
 chapitre: 17
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: >-
+  La classification tripartite et application de la loi — Fiche synthèse (session JUIN 2026). Art.
+  111-1 à 113-12 CP 17.1 La classification tripartite des infractions L'article 111-1 CP classe les
+  infr…
+tags:
+  - fondamentaux
+  - Partie IV
+  - 2F.1.b
+  - droit pénal général
 loi2025: false
-articlesCites:
-  - "art. 111-1"
-  - "art. 112-1"
-  - "art. 112-1 al. 3"
-  - "art. 112-2"
-  - "art. 113-2"
-  - "art. 113-6"
-  - "art. 113-7"
-  - "art. 113-8-2"
-  - "art. 133-2"
-  - "art. 133-9"
-  - "art. 462-10"
-  - "art. 65"
-  - "art. 65-3"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 111-1
+  - Art. 112-1
+  - Art. 112-1 al. 3
+  - Art. 112-2
+  - Art. 113-2
+stats:
+  - num: '17'
+    label: Chapitre 17 (annexe B)
+  - num: IV
+    label: Partie 4 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: La classification tripartite des infractions
+    - Étapes: '2'
+      Thème: Prescriptions dérogatoires
+    - Étapes: '3'
+      Thème: Application de la loi dans le temps
+    - Étapes: '4'
+      Thème: Application de la loi dans l'espace
+blocs:
+  definition: >-
+    L'article 111-1 CP classe les infractions en trois catégories selon leur gravité: crimes,
+    délits, contraventions. Cette classification produit des effets sur la compétence
+    juridictionnelle, les règles procédurales, la prescription, la tentative et la complicité.
+    Critère CRIMES DÉLITS CONTRAVENTIONS Juridiction Cour d'assises / CCD Tribunal correctionnel
+    Tribunal de police Flagrance Possible si flagrance Possible si empr. encourue NON applicable
+    Instruction OBLIGATOIRE Facult…
+  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+  pointCle: >-
+    JURISPRUDENCE Imprescriptibilité absolue — Les crimes contre l'humanité sont imprescriptibles
+    (art. 133-2 CP). Les crimes de guerre: action publique imprescriptible depuis la loi du 26
+    juillet 2019 p…
+  memo: crimes, délits, contraventions. Cette classif…
+plan:
+  - num: '1'
+    titre: La classification tripartite des infractions
+    duree: ~10 min
+  - num: '2'
+    titre: Prescriptions dérogatoires
+    duree: ~10 min
+  - num: '3'
+    titre: Application de la loi dans le temps
+    duree: ~10 min
+  - num: '4'
+    titre: Application de la loi dans l'espace
+    duree: ~10 min
 ---
 
 ![p. 37](/fondamentaux/classification-tripartite-application-loi-tableau-p37.jpg)

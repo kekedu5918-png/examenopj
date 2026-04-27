@@ -1,21 +1,69 @@
 ---
-title: "L'enquête préliminaire"
-description: "L'enquête préliminaire — Fiche synthèse (session JUIN 2026). Articles 75 à 78 CPP — Régime procédural de droit commun 2.1 Définition et caractéristiques L'enquête préliminaire constitue le cadre procédural de droit commun. Elle est menée lorsque les conditions …"
-tags: ["fondamentaux","Partie I","2F.1.b","procédure"]
-partie: "I"
+title: L'enquête préliminaire
 chapitre: 2
-derniereMiseAJour: "2025-12-01"
+partie: 1
+description: >-
+  L'enquête préliminaire — Fiche synthèse (session JUIN 2026). Articles 75 à 78 CPP — Régime
+  procédural de droit commun 2.1 Définition et caractéristiques L'enquête préliminaire constitue le
+  cadre proc…
+tags:
+  - fondamentaux
+  - Partie I
+  - 2F.1.b
+  - procédure
 loi2025: false
-articlesCites:
-  - "art. 53"
-  - "art. 56"
-  - "art. 61"
-  - "art. 63"
-  - "art. 73"
-  - "art. 75"
-  - "art. 76"
-  - "art. 77-1"
-  - "art. 78-2 al. 1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 53
+  - Art. 56
+  - Art. 61
+  - Art. 63
+  - Art. 73
+stats:
+  - num: '2'
+    label: Chapitre 2 (annexe B)
+  - num: I
+    label: Partie 1 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Définition et caractéristiques
+    - Étapes: '2'
+      Thème: Caractéristiques fondamentales
+    - Étapes: '3'
+      Thème: Comparatif FLAGRANCE vs PRÉLIMINAIRE
+blocs:
+  definition: >-
+    L'enquête préliminaire constitue le cadre procédural de droit commun. Elle est menée lorsque les
+    conditions de la flagrance ne sont pas (ou plus) réunies, ou lorsque les enquêteurs choisissent
+    d'opérer dans ce cadre. Les pouvoirs y sont plus limités mais sa durée est bien plus longue.
+  piege: >-
+    Confondre les cadres procéduraux (flagrance, préliminaire, instruction) : pouvoirs et délais
+    diffèrent.
+  pointCle: >-
+    CLÉ En préliminaire, les perquisitions exigent l'assentiment écrit préalable de la personne
+    (art. 76 CPP). À défaut, l'autorisation motivée du JLD est nécessaire lorsque l'infraction est
+    punie d'au m…
+  memo: >-
+    L'enquête préliminaire — Fiche synthèse (session JUIN 2026). Articles 75 à 78 CPP — Régime
+    procédural de droit commun 2.1 Définition et caractéristiques L'enquête préliminaire constitue
+    le cadre procé
+plan:
+  - num: '1'
+    titre: Définition et caractéristiques
+    duree: ~10 min
+  - num: '2'
+    titre: Caractéristiques fondamentales
+    duree: ~10 min
+  - num: '3'
+    titre: Comparatif FLAGRANCE vs PRÉLIMINAIRE
+    duree: ~10 min
 ---
 
 ![p. 8](/fondamentaux/enquete-preliminaire-tableau-p8.jpg)

@@ -1,22 +1,82 @@
 ---
-title: "La garde à vue"
-description: "La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de contrainte par laquelle une personne soupçonnée est maintenue à …"
-tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
-partie: "II"
+title: La garde à vue
 chapitre: 5
-derniereMiseAJour: "2025-12-01"
+partie: 2
+description: >-
+  La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et
+  suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de
+  contrainte…
+tags:
+  - fondamentaux
+  - Partie II
+  - 2F.1.b
+  - mesures enquête
 loi2025: true
-articlesCites:
-  - "art. 62-2"
-  - "art. 63 al. 1"
-  - "art. 63-1"
-  - "art. 63-3-1"
-  - "art. 706-73"
-  - "art. 706-88"
-  - "art. 706-88-1"
-  - "art. 706-88-2"
-  - "L. 413-1"
-  - "loi n° 2025-532"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 62-2
+  - Art. 63 al. 1
+  - Art. 63-1
+  - Art. 63-3-1
+  - Art. 706-73
+stats:
+  - num: '5'
+    label: Chapitre 5 (annexe B)
+  - num: II
+    label: Partie 2 — synthèse
+  - num: '6'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Définition et nature juridique
+    - Étapes: '2'
+      Thème: Conditions cumulatives de placement (art. 62-2 CPP)
+    - Étapes: '3'
+      Thème: Durées de la garde à vue
+    - Étapes: '4'
+      Thème: Les droits du gardé à vue (art. 63-1 CPP)
+    - Étapes: '5'
+      Thème: L'avocat en garde à vue
+    - Étapes: '6'
+      Thème: Obligations procédurales de l'OPJ
+blocs:
+  definition: >-
+    > DÉFINITION – GARDE À VUE Mesure de contrainte par laquelle une personne soupçonnée est
+    maintenue à la disposition des enquêteurs, dans les locaux de police ou de gendarmerie, pour les
+    nécessités de l'enquête. Elle suppose des raisons plausibles de soupçonner la commission ou la
+    tentative d'une infraction punie d'emprisonnement. La GAV est la mesure privative de liberté la
+    plus courante. Elle obéit à un régime très encadré par la CEDH, le Conseil constitutionnel et le
+    légis…
+  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
+  pointCle: Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et suiv. CJPM (mineurs)
+  memo: >-
+    La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1
+    et suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de
+    contrainte
+plan:
+  - num: '1'
+    titre: Définition et nature juridique
+    duree: ~10 min
+  - num: '2'
+    titre: Conditions cumulatives de placement (art. 62-2 CPP)
+    duree: ~10 min
+  - num: '3'
+    titre: Durées de la garde à vue
+    duree: ~10 min
+  - num: '4'
+    titre: Les droits du gardé à vue (art. 63-1 CPP)
+    duree: ~10 min
+  - num: '5'
+    titre: L'avocat en garde à vue
+    duree: ~10 min
+  - num: '6'
+    titre: Obligations procédurales de l'OPJ
+    duree: ~10 min
 ---
 
 ![p. 17](/fondamentaux/garde-a-vue-schema-p17.jpg)

@@ -8,7 +8,7 @@ import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { resolveCourseBasename } from '@/lib/content/courses';
 import { listMarkdownBasenames, readMarkdownFile, slugFromBasename } from '@/lib/content/markdown';
-import { loadPilotFicheV3 } from '@/lib/fondamentaux/load-pilot-fiche-v3';
+import { loadCourseFicheV3 } from '@/lib/fondamentaux/load-course-fiche-v3';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 export async function generateStaticParams() {
@@ -19,9 +19,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const base = await resolveCourseBasename(params.slug);
   if (!base) return {};
-  const pilot = await loadPilotFicheV3(base);
-  if (pilot) {
-    const { title, description } = pilot.data;
+  const ficheV3 = await loadCourseFicheV3(base);
+  if (ficheV3) {
+    const { title, description } = ficheV3.data;
     return {
       title: `${title} | Fondamentaux | Examen OPJ`,
       description,
@@ -44,28 +44,30 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 export default async function FondamentauxFichePage({ params }: { params: { slug: string } }) {
   const base = await resolveCourseBasename(params.slug);
   if (!base) notFound();
-  const pilot = await loadPilotFicheV3(base);
+  const ficheV3 = await loadCourseFicheV3(base);
 
-  if (pilot) {
+  if (ficheV3) {
     const slug = slugFromBasename(base);
     return (
       <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
         <FichePremium
-          data={pilot.data}
+          data={ficheV3.data}
           slug={slug}
-          callout30s={pilot.data.blocs.pointCle}
+          callout30s={ficheV3.data.blocs.pointCle}
           breadcrumbItems={[
             { href: '/fondamentaux', label: 'Fondamentaux' },
-            { href: `/fondamentaux/${params.slug}`, label: pilot.data.title },
+            { href: `/fondamentaux/${params.slug}`, label: ficheV3.data.title },
           ]}
           quizHref='/entrainement/quiz'
           footerCtas={[
             { href: '/fondamentaux', label: 'Retour au hub' },
             { href: '/entrainement/articulation', label: 'Articulation' },
           ]}
-          accordionMarkdownSections={pilot.accordionSections}
+          accordionMarkdownSections={ficheV3.accordionSections}
         >
-          {pilot.accordionSections.length === 0 ? <MarkdownArticle markdown={pilot.courseMarkdown} /> : null}
+          {ficheV3.accordionSections.length === 0 ? (
+            <MarkdownArticle markdown={ficheV3.courseMarkdown} />
+          ) : null}
         </FichePremium>
       </InteriorPageShell>
     );

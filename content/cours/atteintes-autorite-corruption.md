@@ -1,25 +1,67 @@
 ---
-title: "Atteintes à l'autorité, corruptions, fausses"
-description: "Atteintes à l'autorité, corruptions, fausses — Fiche synthèse (session JUIN 2026). Art. 222-34 à 222-43-1 CP | L. 3421-1 et suiv. Code santé publique 38.1 Le régime dérogatoire de la criminalité organisée Les infractions de trafic de stupéfiants relèvent de la criminalité organisée …"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Atteintes à l'autorité, corruptions, fausses
 chapitre: 38
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Atteintes à l'autorité, corruptions, fausses — Fiche synthèse (session JUIN 2026). Art. 222-34 à
+  222-43-1 CP | L. 3421-1 et suiv. Code santé publique 38.1 Le régime dérogatoire de la criminalité
+  orga…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "art. 222-34"
-  - "art. 63-4-2"
-  - "art. 706-148"
-  - "art. 706-73"
-  - "art. 706-81"
-  - "art. 706-88"
-  - "art. 706-88-2"
-  - "art. 706-89"
-  - "art. 706-95"
-  - "L. 235-3"
-  - "L. 3421-1"
-  - "L. 3421-4"
-  - "loi n° 2025-532"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 222-34
+  - Art. 63-4-2
+  - Art. 706-148
+  - Art. 706-73
+  - Art. 706-81
+stats:
+  - num: '38'
+    label: Chapitre 38 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Le régime dérogatoire de la criminalité organisée
+    - Étapes: '2'
+      Thème: Tableau des infractions en stupéfiants
+    - Étapes: '3'
+      Thème: Le cas du passeur 'in corpore' (art. 706-88-2 CPP)
+blocs:
+  definition: >-
+    Les infractions de trafic de stupéfiants relèvent de la criminalité organisée (art. 706-73 CPP),
+    ce qui ouvre: • GAV 96 h (2 × 24 h) — art. 706-88 CPP • Hyper-prolongation pour passeur in
+    corpore — art. 706-88-2 (rétabli loi 2025-532) • Perquisitions de nuit sur autorisation JLD —
+    art. 706-89, 706-92 • Infiltration — art. 706-81 • Interceptions, sonorisation, captation de
+    données informatiques — art. 706-95 • Gel de patrimoine — art. 706-148 • Garde à vue sans avocat
+    possibl…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Art. 222-34 à 222-43-1 CP | L. 3421-1 et suiv. Code santé publique
+  memo: >-
+    Atteintes à l'autorité, corruptions, fausses — Fiche synthèse (session JUIN 2026). Art. 222-34 à
+    222-43-1 CP | L. 3421-1 et suiv. Code santé publique 38.1 Le régime dérogatoire de la
+    criminalité organ
+plan:
+  - num: '1'
+    titre: Le régime dérogatoire de la criminalité organisée
+    duree: ~10 min
+  - num: '2'
+    titre: Tableau des infractions en stupéfiants
+    duree: ~10 min
+  - num: '3'
+    titre: Le cas du passeur 'in corpore' (art. 706-88-2 CPP)
+    duree: ~10 min
 ---
 
 ![p. 61](/fondamentaux/atteintes-autorite-corruption-tableau-p61.jpg)

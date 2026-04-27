@@ -1,16 +1,71 @@
 ---
-title: "Complicité, coaction, concours d'infractions"
-description: "Complicité, coaction, concours d'infractions — Fiche synthèse (session JUIN 2026). Art. 121-2 CP 21.1 Les personnes morales concernées Qualité Règle Précisions Responsable Toutes PM de droit public ou privé Y compris sociétés, associations, syndicats, PACS, CE... NON responsable SEU…"
-tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
-partie: "IV"
+title: Complicité, coaction, concours d'infractions
 chapitre: 21
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: >-
+  Complicité, coaction, concours d'infractions — Fiche synthèse (session JUIN 2026). Art. 121-2 CP
+  21.1 Les personnes morales concernées Qualité Règle Précisions Responsable Toutes PM de droit
+  public o…
+tags:
+  - fondamentaux
+  - Partie IV
+  - 2F.1.b
+  - droit pénal général
 loi2025: false
-articlesCites:
-  - "art. 121-2"
-  - "art. 121-2 al. 2"
-  - "art. 121-2 al. 3"
-  - "art. 131-38"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 121-2
+  - Art. 121-2 al. 2
+  - Art. 121-2 al. 3
+  - Art. 131-38
+  - Art. 121-2 — repère
+stats:
+  - num: '21'
+    label: Chapitre 21 (annexe B)
+  - num: IV
+    label: Partie 4 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Les personnes morales concernées
+    - Étapes: '2'
+      Thème: Les deux conditions cumulatives
+    - Étapes: '3'
+      Thème: Cumul avec responsabilité des personnes physiques
+    - Étapes: '4'
+      Thème: Les peines applicables aux PM
+blocs:
+  definition: >-
+    Qualité Règle Précisions Responsable Toutes PM de droit public ou privé Y compris sociétés,
+    associations, syndicats, PACS, CE... NON responsable SEUL l'État Exclusion expresse
+    Collectivités territoriales Responsabilité LIMITÉE Uniquement infractions commises dans
+    activités pouvant faire l'objet d'une convention de délégation de service public (art. 121-2 al.
+    2) Exclusions Délits de presse (loi 1881) Communication audiovisuelle
+  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+  pointCle: Articuler définition, conditions de fond, procédure et sanctions pour le jury.
+  memo: >-
+    Complicité, coaction, concours d'infractions — Fiche synthèse (session JUIN 2026). Art. 121-2 CP
+    21.1 Les personnes morales concernées Qualité Règle Précisions Responsable Toutes PM de droit
+    public ou
+plan:
+  - num: '1'
+    titre: Les personnes morales concernées
+    duree: ~10 min
+  - num: '2'
+    titre: Les deux conditions cumulatives
+    duree: ~10 min
+  - num: '3'
+    titre: Cumul avec responsabilité des personnes physiques
+    duree: ~10 min
+  - num: '4'
+    titre: Les peines applicables aux PM
+    duree: ~10 min
 ---
 
 ![p. 43](/fondamentaux/complicite-concours-tableau-p43.jpg)

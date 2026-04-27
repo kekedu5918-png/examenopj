@@ -1,14 +1,61 @@
 ---
-title: "Mineurs, famille, mœurs, proxénétisme"
-description: "Mineurs, famille, mœurs, proxénétisme — Fiche synthèse (session JUIN 2026). 32.1 Le harcèlement moral (art. 222-33-2) Cadre Article Caractérisation / Peine Cadre professionnel 222-33-2 Agissements répétés ayant pour objet ou pour effet une dégradation des conditions de travai…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Mineurs, famille, mœurs, proxénétisme
 chapitre: 32
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Mineurs, famille, mœurs, proxénétisme — Fiche synthèse (session JUIN 2026). 32.1 Le harcèlement
+  moral (art. 222-33-2) Cadre Article Caractérisation / Peine Cadre professionnel 222-33-2
+  Agissements ré…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 222-33-2"
-  - "art. 225-4-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 222-33-2
+  - Art. 225-4-1
+  - Art. 222-33-2 — repère
+  - Art. 225-4-1 — repère
+  - Texte / doctrine — Mineurs, famille, mœurs, proxénétisme (complément 1)
+stats:
+  - num: '32'
+    label: Chapitre 32 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Le harcèlement moral (art. 222-33-2)
+    - Étapes: '2'
+      Thème: Traite des êtres humains et exploitation (art. 225-4-1 et suiv.)
+blocs:
+  definition: >-
+    Cadre Article Caractérisation / Peine Cadre professionnel 222-33-2 Agissements répétés ayant
+    pour objet ou pour effet une dégradation des conditions de travail... — 2 ans + 30 000 € Cadre
+    conjugal 222-33-2-1 Par conjoint/concubin/PACS ou ex — 3 ans + 45 000 € Harcèlement scolaire
+    222-33-2-2 Aggravation si ITT > 8 j, viol, violences... Jusqu'à 10 ans si suicide Harcèlement
+    moral général 222-33-2-2 Hors cadre pro/conjugal - 1 an + 15 000 €. Aggravations
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Articuler définition, conditions de fond, procédure et sanctions pour le jury.
+  memo: >-
+    Mineurs, famille, mœurs, proxénétisme — Fiche synthèse (session JUIN 2026). 32.1 Le harcèlement
+    moral (art. 222-33-2) Cadre Article Caractérisation / Peine Cadre professionnel 222-33-2
+    Agissements rép
+plan:
+  - num: '1'
+    titre: Le harcèlement moral (art. 222-33-2)
+    duree: ~10 min
+  - num: '2'
+    titre: Traite des êtres humains et exploitation (art. 225-4-1 et sui…
+    duree: ~10 min
 ---
 
 ![p. 55](/fondamentaux/mineurs-cjpm-tableau-p55.jpg)

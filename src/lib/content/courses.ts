@@ -21,6 +21,8 @@ const PARTIE_ROMAIN_TO_INDEX: Readonly<Record<string, number>> = {
   VI: 6,
 };
 
+const PARTIE_INDEX_TO_ROMAIN: ReadonlyArray<string> = ['I', 'II', 'III', 'IV', 'V', 'VI'];
+
 function parseChapitre(value: unknown): number | undefined {
   if (typeof value === 'number' && Number.isFinite(value) && value > 0) return Math.trunc(value);
   if (typeof value === 'string' && /^\d+$/.test(value.trim())) return Math.trunc(Number(value));
@@ -61,7 +63,12 @@ export async function getCourseSummaries(): Promise<CourseSummary[]> {
     const chapitre = parseChapitre(data.chapitre);
     const partieIndex = parsePartieIndex(data);
     const pl = data.partie;
-    const partieLabel = typeof pl === 'string' ? pl : undefined;
+    const partieLabel =
+      typeof pl === 'string'
+        ? pl
+        : typeof pl === 'number' && Number.isInteger(pl) && pl >= 1 && pl <= 6
+          ? PARTIE_INDEX_TO_ROMAIN[pl - 1]
+          : undefined;
     const loi2025 = parseLoi2025(data);
 
     out.push({

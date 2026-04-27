@@ -1,32 +1,69 @@
 ---
-title: "Dernière ligne droite, session 2026"
-description: "Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de révision finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur pour l'oral OPJ 2026. A. CADRES D'ENQUÊTE (1-7) • FLAGRANCE: 8 jours + 8 jours (PR, ≥5 ans,…"
-tags: ["fondamentaux","Partie VI","2F.1.b","transversal","OPJ 2026"]
-partie: "VI"
+title: Dernière ligne droite, session 2026
 chapitre: 46
-derniereMiseAJour: "2025-12-01"
+partie: 6
+description: >-
+  Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de révision
+  finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur pour l'oral
+  OPJ…
+tags:
+  - fondamentaux
+  - Partie VI
+  - 2F.1.b
+  - transversal
+  - OPJ 2026
 loi2025: true
-articlesCites:
-  - "art. 14"
-  - "art. 171"
-  - "art. 198"
-  - "art. 20"
-  - "art. 21-3"
-  - "art. 53"
-  - "art. 56"
-  - "art. 59"
-  - "art. 59-1"
-  - "art. 62-2"
-  - "art. 63-3-1"
-  - "art. 64-1"
-  - "art. 68"
-  - "art. 73"
-  - "art. 75-78"
-  - "art. 76"
-  - "art. 802"
-  - "L. 234-1"
-  - "L. 235-1"
-  - "L. 317-8"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 14
+  - Art. 171
+  - Art. 198
+  - Art. 20
+  - Art. 21-3
+stats:
+  - num: '46'
+    label: Chapitre 46 (annexe B)
+  - num: VI
+    label: Partie 6 — synthèse
+  - num: '1'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: acronyme
+  titre: Repères — Dernière ligne droite, session 2026
+  acronyme: L.I.R.E.
+  cards:
+    - lettre: L
+      mot: Lire
+      desc: Structurer Dernière ligne droite, session 2026 avant l’oral.
+    - lettre: I
+      mot: Indices
+      desc: Repérer faits, qualifications et textes applicables.
+    - lettre: R
+      mot: Régime
+      desc: Procédure, juridiction et nullités éventuelles.
+    - lettre: E
+      mot: Examen
+      desc: Entraînement quiz et articulation avec les autres fiches.
+blocs:
+  definition: >-
+    Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de
+    révision finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur
+    pour l'oral OPJ 2026. A. CADRES D'ENQUÊTE (1-7) • FLAGRANCE: 8 jours + 8 jours (PR, ≥5 ans,…
+  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+  pointCle: >-
+    CLÉ La clé du succès: maîtriser les fondamentaux (cadres, droits GAV, causes de nullité) +
+    actualité 2025 (consentement viol, homicide routier, passeur in corpore) + méthodologie de
+    présentation (tra…
+  memo: >-
+    CLÉ La clé du succès: maîtriser les fondamentaux (cadres, droits GAV, causes de nullité) +
+    actualité 2025 (consentement viol, homicide routier, passeur in corpore) + méthodologie de
+    présentation (tra…
+plan:
+  - num: '1'
+    titre: Vue d’ensemble
+    duree: ~10 min
 ---
 
 ![p. 70](/fondamentaux/entrainement-session-2026-tableau-p70.jpg)

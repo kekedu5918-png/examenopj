@@ -1,13 +1,62 @@
 ---
-title: "Tentative, récidive, circonstances, causes d'aggravation"
-description: "Tentative, récidive, circonstances, causes d'aggravation — Fiche synthèse (session JUIN 2026). Art. 121-6, 121-7 CP 22.1 La coaction DÉFINITION – COACTION Situation où plusieurs personnes participent à égalité à la réalisation de l'infraction — elles sont coauteurs. Chacune commet personnelleme…"
-tags: ["fondamentaux","Partie IV","2F.1.b","droit pénal général"]
-partie: "IV"
+title: Tentative, récidive, circonstances, causes d'aggravation
 chapitre: 22
-derniereMiseAJour: "2025-12-01"
+partie: 4
+description: >-
+  Tentative, récidive, circonstances, causes d'aggravation — Fiche synthèse (session JUIN 2026).
+  Art. 121-6, 121-7 CP 22.1 La coaction DÉFINITION – COACTION Situation où plusieurs personnes
+  participent…
+tags:
+  - fondamentaux
+  - Partie IV
+  - 2F.1.b
+  - droit pénal général
 loi2025: false
-articlesCites:
-  - "art. 121-6"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 121-6
+  - Art. 121-6 — repère
+  - Texte / doctrine — Tentative, récidive, circonstances, causes d'aggravation (complément 1)
+  - Texte / doctrine — Tentative, récidive, circonstances, causes d'aggravation (complément 2)
+  - Texte / doctrine — Tentative, récidive, circonstances, causes d'aggravation (complément 3)
+stats:
+  - num: '22'
+    label: Chapitre 22 (annexe B)
+  - num: IV
+    label: Partie 4 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: La coaction
+    - Étapes: '2'
+      Thème: La complicité — les 3 conditions cumulatives
+blocs:
+  definition: >-
+    > DÉFINITION – COACTION Situation où plusieurs personnes participent à égalité à la réalisation
+    de l'infraction — elles sont coauteurs. Chacune commet personnellement les éléments matériel et
+    moral sanctionnés par la loi. Tous les coauteurs sont punis comme auteurs à part entière.
+  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+  pointCle: >-
+    DÉFINITION – COACTION Situation où plusieurs personnes participent à égalité à la réalisation de
+    l'infraction — elles sont coauteurs. Chacune commet personnellement les éléments matériel et
+    moral san…
+  memo: >-
+    Tentative, récidive, circonstances, causes d'aggravation — Fiche synthèse (session JUIN 2026).
+    Art. 121-6, 121-7 CP 22.1 La coaction DÉFINITION – COACTION Situation où plusieurs personnes
+    participent
+plan:
+  - num: '1'
+    titre: La coaction
+    duree: ~10 min
+  - num: '2'
+    titre: La complicité — les 3 conditions cumulatives
+    duree: ~10 min
 ---
 
 # Tentative, récidive, circonstances, causes d'aggravation

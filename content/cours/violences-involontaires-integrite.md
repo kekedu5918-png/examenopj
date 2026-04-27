@@ -1,21 +1,74 @@
 ---
-title: "Atteintes involontaires, mise en danger"
-description: "Atteintes involontaires, mise en danger — Fiche synthèse (session JUIN 2026). Art. 221-6 à 221-20 CP 28.1 L'homicide involontaire (art. 221-6) DÉFINITION – HOMICIDE INVOLONTAIRE Fait de causer la mort d'autrui par maladresse, imprudence, inattention, négligence ou manquement à …"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Atteintes involontaires, mise en danger
 chapitre: 28
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Atteintes involontaires, mise en danger — Fiche synthèse (session JUIN 2026). Art. 221-6 à 221-20
+  CP 28.1 L'homicide involontaire (art. 221-6) DÉFINITION – HOMICIDE INVOLONTAIRE Fait de causer la
+  mor…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "art. 121-3 al. 3"
-  - "art. 221-18"
-  - "art. 221-19"
-  - "art. 221-20"
-  - "art. 221-6"
-  - "art. 222-19"
-  - "art. 222-20"
-  - "art. 222-20-1"
-  - "Loi n° 2025-622"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 121-3 al. 3
+  - Art. 221-18
+  - Art. 221-19
+  - Art. 221-20
+  - Art. 221-6
+stats:
+  - num: '28'
+    label: Chapitre 28 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '4'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: L'homicide involontaire (art. 221-6)
+    - Étapes: '2'
+      Thème: Atteintes involontaires à l'intégrité
+    - Étapes: '3'
+      Thème: 'NOUVEAU : L''homicide routier (art. 221-18 CP)'
+    - Étapes: '4'
+      Thème: 'NOUVEAU : Les blessures routières'
+blocs:
+  definition: >-
+    > DÉFINITION – HOMICIDE INVOLONTAIRE Fait de causer la mort d'autrui par maladresse, imprudence,
+    inattention, négligence ou manquement à une obligation de sécurité. Peine: 3 ans
+    d'emprisonnement et 45 000 €. Éléments constitutifs Élément Caractérisation MATÉRIEL Acte
+    involontaire (la faute) + lien de causalité + sur la personne d'autrui + un dommage (la mort)
+    MORAL Faute d'imprudence, négligence ou manquement (art. 121-3 al. 3)
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    DÉFINITION – HOMICIDE INVOLONTAIRE Fait de causer la mort d'autrui par maladresse, imprudence,
+    inattention, négligence ou manquement à une obligation de sécurité. Peine: 3 ans
+    d'emprisonnement et 45…
+  memo: >-
+    Atteintes involontaires, mise en danger — Fiche synthèse (session JUIN 2026). Art. 221-6 à
+    221-20 CP 28.1 L'homicide involontaire (art. 221-6) DÉFINITION – HOMICIDE INVOLONTAIRE Fait de
+    causer la mort
+plan:
+  - num: '1'
+    titre: L'homicide involontaire (art. 221-6)
+    duree: ~10 min
+  - num: '2'
+    titre: Atteintes involontaires à l'intégrité
+    duree: ~10 min
+  - num: '3'
+    titre: 'NOUVEAU : L''homicide routier (art. 221-18 CP)'
+    duree: ~10 min
+  - num: '4'
+    titre: 'NOUVEAU : Les blessures routières'
+    duree: ~10 min
 ---
 
 ![p. 50](/fondamentaux/violences-involontaires-integrite-tableau-p50.jpg)

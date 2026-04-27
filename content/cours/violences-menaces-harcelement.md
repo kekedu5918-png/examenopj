@@ -1,15 +1,64 @@
 ---
-title: "Violences, menaces, harcèlement"
-description: "Violences, menaces, harcèlement — Fiche synthèse (session JUIN 2026). 30.1 Tortures et actes de barbarie (art. 222-1 CP) DÉFINITION – TORTURE / BARBARIE Actes cruels, inhumains, dégradants infligés volontairement à autrui. Peine: 15 ans de réclusion criminelle. Aggravat…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Violences, menaces, harcèlement
 chapitre: 30
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Violences, menaces, harcèlement — Fiche synthèse (session JUIN 2026). 30.1 Tortures et actes de
+  barbarie (art. 222-1 CP) DÉFINITION – TORTURE / BARBARIE Actes cruels, inhumains, dégradants
+  infligés v…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 222-1"
-  - "art. 222-16"
-  - "art. 222-17"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 222-1
+  - Art. 222-16
+  - Art. 222-17
+  - Art. 222-1 — repère
+  - Art. 222-16 — repère
+stats:
+  - num: '30'
+    label: Chapitre 30 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Tortures et actes de barbarie (art. 222-1 CP)
+    - Étapes: '2'
+      Thème: Les menaces (art. 222-17, 222-18 CP)
+    - Étapes: '3'
+      Thème: Appels téléphoniques et messages malveillants (art. 222-16)
+blocs:
+  definition: >-
+    > DÉFINITION – TORTURE / BARBARIE Actes cruels, inhumains, dégradants infligés volontairement à
+    autrui. Peine: 15 ans de réclusion criminelle. Aggravations: 20 ans si circ. aggravantes; 30 ans
+    si précédé/accompagné d'autre crime; perpétuité si mort sans intention.
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    DÉFINITION – TORTURE / BARBARIE Actes cruels, inhumains, dégradants infligés volontairement à
+    autrui. Peine: 15 ans de réclusion criminelle. Aggravations: 20 ans si circ. aggravantes; 30 ans
+    si précé…
+  memo: 15 ans de réclusion criminelle. Aggravat…
+plan:
+  - num: '1'
+    titre: Tortures et actes de barbarie (art. 222-1 CP)
+    duree: ~10 min
+  - num: '2'
+    titre: Les menaces (art. 222-17, 222-18 CP)
+    duree: ~10 min
+  - num: '3'
+    titre: Appels téléphoniques et messages malveillants (art. 222-16)
+    duree: ~10 min
 ---
 
 ![p. 51](/fondamentaux/violences-menaces-harcelement-tableau-p51.jpg)

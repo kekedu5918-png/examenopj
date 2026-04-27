@@ -1,14 +1,64 @@
 ---
-title: "Blanchiment, économie, DPS transversal"
-description: "Blanchiment, économie, DPS transversal — Fiche synthèse (session JUIN 2026). 43.1 Les faux (art. 441-1 et suiv. CP) Infraction Article Peine Précisions Faux en écriture privée 441-1 CP 3 ans + 45 000 € Altération frauduleuse de la vérité de nature à causer un préjudice Usage d…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Blanchiment, économie, DPS transversal
 chapitre: 43
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Blanchiment, économie, DPS transversal — Fiche synthèse (session JUIN 2026). 43.1 Les faux (art.
+  441-1 et suiv. CP) Infraction Article Peine Précisions Faux en écriture privée 441-1 CP 3 ans + 45
+  000…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: false
-articlesCites:
-  - "art. 441-1"
-  - "art. 450-1"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 441-1
+  - Art. 450-1
+  - Art. 441-1 — repère
+  - Art. 450-1 — repère
+  - Texte / doctrine — Blanchiment, économie, DPS transversal (complément 1)
+stats:
+  - num: '43'
+    label: Chapitre 43 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Les faux (art. 441-1 et suiv. CP)
+    - Étapes: '2'
+      Thème: L'association de malfaiteurs (art. 450-1 CP)
+blocs:
+  definition: >-
+    Infraction Article Peine Précisions Faux en écriture privée 441-1 CP 3 ans + 45 000 € Altération
+    frauduleuse de la vérité de nature à causer un préjudice Usage de faux 441-1 CP 3 ans + 45 000 €
+    Personne qui fait usage d'un faux en connaissance de cause Faux document administratif délivré
+    par administration 441-2 CP 5 ans + 75 000 € Aggravation si accomplie par dépositaire autorité
+    Faux en écriture publique 441-4 CP 15 ans réclusion + 225 000 € Par magistrat/officier public d…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: >-
+    DÉFINITION – ASSOCIATION DE MALFAITEURS Groupement formé ou entente établie en vue de la
+    préparation, caractérisée par un ou plusieurs faits matériels, de crimes ou de délits punis d'au
+    moins 5 ans d…
+  memo: >-
+    Blanchiment, économie, DPS transversal — Fiche synthèse (session JUIN 2026). 43.1 Les faux (art.
+    441-1 et suiv. CP) Infraction Article Peine Précisions Faux en écriture privée 441-1 CP 3 ans +
+    45 000
+plan:
+  - num: '1'
+    titre: Les faux (art. 441-1 et suiv. CP)
+    duree: ~10 min
+  - num: '2'
+    titre: L'association de malfaiteurs (art. 450-1 CP)
+    duree: ~10 min
 ---
 
 ![p. 65](/fondamentaux/blanchiment-infractions-economiques-tableau-p65.jpg)

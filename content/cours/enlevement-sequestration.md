@@ -1,13 +1,62 @@
 ---
-title: "Enlèvement, séquestration"
-description: "Enlèvement, séquestration — Fiche synthèse (session JUIN 2026). Art. 222-7 à 222-16-3 CP 29.1 Tableau synthétique des violences Résultat Base légale Peine de base Avec aggravantes Violences ayant entraîné la mort sans intention 222-7 CP 15 ans réclusion 20 / 30 an…"
-tags: ["fondamentaux","Partie V","2F.1.b","droit pénal spécial"]
-partie: "V"
+title: Enlèvement, séquestration
 chapitre: 29
-derniereMiseAJour: "2025-12-01"
+partie: 5
+description: >-
+  Enlèvement, séquestration — Fiche synthèse (session JUIN 2026). Art. 222-7 à 222-16-3 CP 29.1
+  Tableau synthétique des violences Résultat Base légale Peine de base Avec aggravantes Violences
+  ayant ent…
+tags:
+  - fondamentaux
+  - Partie V
+  - 2F.1.b
+  - droit pénal spécial
 loi2025: true
-articlesCites:
-  - "art. 222-7"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 222-7
+  - Art. 222-7 — repère
+  - Texte / doctrine — Enlèvement, séquestration (complément 1)
+  - Texte / doctrine — Enlèvement, séquestration (complément 2)
+  - Texte / doctrine — Enlèvement, séquestration (complément 3)
+stats:
+  - num: '29'
+    label: Chapitre 29 (annexe B)
+  - num: V
+    label: Partie 5 — synthèse
+  - num: '2'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Tableau synthétique des violences
+    - Étapes: '2'
+      Thème: Principales circonstances aggravantes communes
+blocs:
+  definition: >-
+    Résultat Base légale Peine de base Avec aggravantes Violences ayant entraîné la mort sans
+    intention 222-7 CP 15 ans réclusion 20 / 30 ans / perpétuité Mutilation / infirmité permanente
+    222-9 CP 10 ans + 150 000 € 15 / 20 ans ITT > 8 jours 222-11 CP 3 ans + 45 000 € 5 / 7 / 10 / 15
+    ans selon aggravantes ITT ≤ 8 jours 222-13 CP Contravention 5e cl. Délit 3 à 10 ans si
+    aggravantes Violences habituelles sur mineur -15 ans, conjoint, vulnérable 222-14 CP 5 ans + 75
+    000 € 10 à 30…
+  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+  pointCle: Art. 222-7 à 222-16-3 CP
+  memo: >-
+    Enlèvement, séquestration — Fiche synthèse (session JUIN 2026). Art. 222-7 à 222-16-3 CP 29.1
+    Tableau synthétique des violences Résultat Base légale Peine de base Avec aggravantes Violences
+    ayant entr
+plan:
+  - num: '1'
+    titre: Tableau synthétique des violences
+    duree: ~10 min
+  - num: '2'
+    titre: Principales circonstances aggravantes communes
+    duree: ~10 min
 ---
 
 # Enlèvement, séquestration

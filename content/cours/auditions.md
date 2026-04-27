@@ -1,27 +1,61 @@
 ---
-title: "Auditions, mineurs, expertises"
-description: "Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des perquisitions Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction) DÉFINITION – PERQUISITION Acte d'investigation par lequel les enquêteurs pénètrent d…"
-tags: ["fondamentaux","Partie II","2F.1.b","mesures enquête"]
-partie: "II"
+title: Auditions, mineurs, expertises
 chapitre: 7
-derniereMiseAJour: "2025-12-01"
+partie: 2
+description: >-
+  Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des perquisitions
+  Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction) DÉFINITION
+  – P…
+tags:
+  - fondamentaux
+  - Partie II
+  - 2F.1.b
+  - mesures enquête
 loi2025: false
-articlesCites:
-  - "art. 131-21"
-  - "art. 56"
-  - "art. 56-1"
-  - "art. 56-2"
-  - "art. 56-3"
-  - "art. 56-5"
-  - "art. 56-59"
-  - "art. 59"
-  - "art. 59-1"
-  - "art. 706-73"
-  - "art. 706-89"
-  - "art. 706-94"
-  - "art. 76"
-  - "art. 94"
-  - "art. 94-97"
+derniereMiseAJour: '2025-12-01'
+articlesCles:
+  - Art. 131-21
+  - Art. 56
+  - Art. 56-1
+  - Art. 56-2
+  - Art. 56-3
+stats:
+  - num: '7'
+    label: Chapitre 7 (annexe B)
+  - num: II
+    label: Partie 2 — synthèse
+  - num: '3'
+    label: Sections (titres H2)
+  - num: '2026'
+    label: Objectif concours OPJ
+schemaMemo:
+  type: tableau
+  titre: Plan — grandes lignes
+  rows:
+    - Étapes: '1'
+      Thème: Régime des perquisitions
+    - Étapes: '2'
+      Thème: Les cas particuliers de perquisition
+    - Étapes: '3'
+      Thème: Les saisies et scellés
+blocs:
+  definition: '> Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction)'
+  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
+  pointCle: Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction)
+  memo: >-
+    Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des
+    perquisitions Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP
+    (instruction) DÉFINITION – PE
+plan:
+  - num: '1'
+    titre: Régime des perquisitions
+    duree: ~10 min
+  - num: '2'
+    titre: Les cas particuliers de perquisition
+    duree: ~10 min
+  - num: '3'
+    titre: Les saisies et scellés
+    duree: ~10 min
 ---
 
 ![p. 21](/fondamentaux/auditions-tableau-p21.jpg)
