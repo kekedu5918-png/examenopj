@@ -1,3 +1,7 @@
+import {
+  estimateReadingMinutesFromPlan,
+  extractFasciculeTag,
+} from '@/lib/content/course-plan-meta';
 import { listMarkdownBasenames, readMarkdownFile, slugFromBasename } from '@/lib/content/markdown';
 
 export type CourseSummary = {
@@ -5,6 +9,10 @@ export type CourseSummary = {
   title: string;
   /** Accroche SEO / carte hub (frontmatter V3) */
   description?: string;
+  /** Somme des durées du plan détaillé (minutes), pour repère « temps de lecture » */
+  dureeLectureMinutes?: number;
+  /** Tag fascicule SDCP type `F11` si présent */
+  fasciculeTag?: string;
   tags: string[];
   /** I–VI si présent dans le frontmatter */
   partieLabel?: string;
@@ -74,11 +82,15 @@ export async function getCourseSummaries(): Promise<CourseSummary[]> {
           ? PARTIE_INDEX_TO_ROMAIN[pl - 1]
           : undefined;
     const loi2025 = parseLoi2025(data);
+    const dureeLectureMinutes = estimateReadingMinutesFromPlan(data);
+    const fasciculeTag = extractFasciculeTag(tags);
 
     out.push({
       slug: slugFromBasename(base),
       title,
       description,
+      dureeLectureMinutes,
+      fasciculeTag,
       tags,
       partieLabel,
       partieIndex,

@@ -3,9 +3,9 @@ title: Renvoi, jugement, juridictions répressives
 chapitre: 14
 partie: 3
 description: >-
-  Les juridictions répressives sont les juridictions spécialisées dans le jugement des infractions
-  pénales, organisées selon la classification tripartite crimes/délits/contraventions, avec des
-  règles d…
+  Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
+  victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
+  gravit…
 tags:
   - fondamentaux
   - Partie III
@@ -15,59 +15,58 @@ tags:
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 231 CPP — Compétence de la cour d'assises
-  - Art. 381 CPP — Compétence du tribunal correctionnel
-  - Art. 521 CPP — Compétence du tribunal de police
-  - L. 11-1 CJPM — Juridictions spécialisées mineurs
-  - Loi 2021-1729 — Création de la CCD (5 magistrats professionnels)
+  - Art. 40 CPP — Opportunité des poursuites (PR)
+  - Art. 41-1 CPP — Alternatives aux poursuites
+  - Art. 390-1 CPP — COPJ (convocation en justice par OPJ)
+  - Art. 395 CPP — Comparution immédiate
+  - Art. 495-7 CPP — CRPC (plaider-coupable)
 stats:
-  - num: 4 j
-    label: 4 juridictions de 1er degré (TP, TC, CA, CCD)
-  - num: '5'
-    label: 5 magistrats professionnels composent la Cour Criminelle…
-  - num: 9 j
-    label: 9 jurés en appel d'assises (contre 6 en 1er degré)
-  - num: '4'
-    label: CCD compétente pour crimes punis ≤ 20 ans, non-récidivist…
+  - num: '8'
+    label: 8 modes de saisine du tribunal (citation directe, COPJ, C…
+  - num: '6'
+    label: 6 mois minimum pour la comparution immédiate en délit fla…
+  - num: 2 ans
+    label: 2 ans = délai maximal de la comparution à délai différé (…
+  - num: '41'
+    label: 41-1 CPP = 8 mesures alternatives aux poursuites disponib…
 schemaMemo:
   type: arbre
-  titre: Organisation pyramidale
+  titre: Arbre de décision des poursuites
   rows:
-    - Repère: COUR DE CASSATION (Chambre criminelle)
-    - Repère: COUR D'APPEL (Chambre correctionnelle /
-    - Repère: Chambre de l'instruction)
-    - Repère: ╱ │ ╲
-    - Repère: COUR D'ASSISES T. CORRECTIONNEL T. DE POLICE
-    - Repère: CRIMES DÉLITS CONTRAV.
-    - Repère: 3 mag. + 6 jurés 3 mag. / juge Juge unique
-    - Repère: + CCD (5 mag.) unique (certains)
-    - Repère: ══════════ CJPM (mineurs) ══════════
-    - Repère: JE · TPE · CA mineurs · TC mineurs
+    - Repère: INFRACTION CONSTATÉE
+    - Repère: CRIME → Réquisitoire introductif → JI (obligatoire)
+    - Repère: DÉLIT / CONTRAVENTION
+    - Repère: Flagrant ≥ 6 mois + en état → COMPARUTION IMMÉDIATE (art. 395)
+    - Repère: Charges suffisantes ≥ 2 ans → COMPARUTION IMMÉDIATE
+    - Repère: Après défèrement → CONVOCATION PAR PV (art. 394)
+    - Repère: Sans défèrement → COPJ (art. 390-1)
+    - Repère: Culpabilité reconnue → CRPC (art. 495-7)
+    - Repère: Amende uniquement → ORDONNANCE PÉNALE (art. 495)
 blocs:
   definition: >-
-    Les juridictions répressives sont les juridictions spécialisées dans le jugement des infractions
-    pénales, organisées selon la classification tripartite crimes/délits/contraventions, avec des
-    règles de composition et de compétence strictement adaptées à la gravité des faits.
+    Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
+    victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
+    gravité de l'infraction, ainsi qu'à la situation procédurale de l'affaire.
   piege: >-
-    La CCD (Cour Criminelle Départementale, loi 2021-1729) ne juge que les crimes punis ≤ 20 ans
-    commis par des non-récidivistes — pour les crimes punis de plus de 20 ans ou commis par des
-    récidivistes, c'est la cour d'assises qui reste compétente.
+    La comparution immédiate (art. 395 CPP) exige : délit flagrant puni d'au moins 6 mois OU charges
+    suffisantes punie d'au moins 2 ans ET affaire en état d'être jugée — une seule condition
+    manquante et le mode est inapplicable.
   pointCle: >-
-    En appel d'une cour d'assises, le jury est composé de 9 jurés (contre 6 en 1er degré) et siège
-    avec 3 magistrats — la cour d'assises d'appel rejuge l'affaire entièrement, sans se limiter aux
-    points appelés.
+    La composition pénale (art. 41-2 CPP) validée par le président du tribunal éteint l'action
+    publique — c'est la différence fondamentale avec les simples alternatives aux poursuites de
+    l'art. 41-1 CPP qui n'éteignent pas l'AP.
   memo: >-
-    Crime = CA ou CCD · Délit = TC · Contravention = TP · CCD = 5 magistrats, crimes ≤ 20 ans,
-    non-récidiviste · Appel assises = 9 jurés.
+    Crime = JI obligatoire · Délit flagrant ≥ 6 mois en état = CI · Défèrement = CPV · Sans
+    défèrement = COPJ · Aveu = CRPC.
 plan:
   - num: '1'
-    titre: Les juridictions du 1er degré
+    titre: Les alternatives aux poursuites (art. 41-1 CPP)
     duree: 10 min
   - num: '2'
-    titre: Les juridictions de recours
+    titre: La composition pénale (art. 41-2 CPP)
     duree: 12 min
   - num: '3'
-    titre: Juridictions spécialisées mineurs (CJPM)
+    titre: Les 8 modes de saisine
     duree: 10 min
 ---
 

@@ -3,9 +3,9 @@ title: 'Parquet, instruction : cadre général'
 chapitre: 11
 partie: 3
 description: >-
-  Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
-  victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
-  gravit…
+  L'instruction préparatoire est la phase d'information judiciaire menée par un juge indépendant,
+  agissant à charge et à décharge, visant à établir si les charges sont suffisantes pour renvoyer
+  une per…
 tags:
   - fondamentaux
   - Partie III
@@ -15,59 +15,84 @@ tags:
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 40 CPP — Opportunité des poursuites (PR)
-  - Art. 41-1 CPP — Alternatives aux poursuites
-  - Art. 390-1 CPP — COPJ (convocation en justice par OPJ)
-  - Art. 395 CPP — Comparution immédiate
-  - Art. 495-7 CPP — CRPC (plaider-coupable)
+  - Art. 79 CPP — Instruction obligatoire en matière criminelle
+  - Art. 81 CPP — JI agit à charge ET à décharge
+  - 'Art. 105 CPP — Règle cardinale : stop témoin si indices graves/concordants'
+  - Art. 151-152 CPP — Commission rogatoire
+  - Art. 175 CPP — Clôture de l'instruction
 stats:
-  - num: '8'
-    label: 8 modes de saisine du tribunal (citation directe, COPJ, C…
-  - num: '6'
-    label: 6 mois minimum pour la comparution immédiate en délit fla…
-  - num: 2 ans
-    label: 2 ans = délai maximal de la comparution à délai différé (…
-  - num: '41'
-    label: 41-1 CPP = 8 mesures alternatives aux poursuites disponib…
+  - num: '1'
+    label: Obligatoire en matière criminelle (art. 79 CPP) — jamais…
+  - num: '4'
+    label: '4 statuts sous instruction : témoin, témoin assisté, mis…'
+  - num: '3'
+    label: '3 issues possibles : renvoi, mise en accusation, non-lieu'
+  - num: '1'
+    label: 1 mois (MCI détenu) / 3 mois (libre) pour soulever les nu…
 schemaMemo:
-  type: arbre
-  titre: Arbre de décision des poursuites
+  type: tableau
+  titre: Les 4 statuts sous instruction (T → TA → MeX → PC)
   rows:
-    - Repère: INFRACTION CONSTATÉE
-    - Repère: CRIME → Réquisitoire introductif → JI (obligatoire)
-    - Repère: DÉLIT / CONTRAVENTION
-    - Repère: Flagrant ≥ 6 mois + en état → COMPARUTION IMMÉDIATE (art. 395)
-    - Repère: Charges suffisantes ≥ 2 ans → COMPARUTION IMMÉDIATE
-    - Repère: Après défèrement → CONVOCATION PAR PV (art. 394)
-    - Repère: Sans défèrement → COPJ (art. 390-1)
-    - Repère: Culpabilité reconnue → CRPC (art. 495-7)
-    - Repère: Amende uniquement → ORDONNANCE PÉNALE (art. 495)
+    - Statut: Témoin
+      Indices requis: Aucun
+      Avocat: NON
+      DP / CJ possible: NON
+    - Statut: Témoin assisté
+      Indices requis: Indices vraisemblables
+      Avocat: OBLIGATOIRE
+      DP / CJ possible: NON
+    - Statut: Mis en examen
+      Indices requis: Graves OU concordants
+      Avocat: OBLIGATOIRE
+      DP / CJ possible: OUI
+    - Statut: Partie civile
+      Indices requis: Victime
+      Avocat: Via avocat
+      DP / CJ possible: N/A
 blocs:
   definition: >-
-    Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
-    victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
-    gravité de l'infraction, ainsi qu'à la situation procédurale de l'affaire.
+    L'instruction préparatoire est la phase d'information judiciaire menée par un juge indépendant,
+    agissant à charge et à décharge, visant à établir si les charges sont suffisantes pour renvoyer
+    une personne devant une juridiction de jugement.
   piege: >-
-    La comparution immédiate (art. 395 CPP) exige : délit flagrant puni d'au moins 6 mois OU charges
-    suffisantes punie d'au moins 2 ans ET affaire en état d'être jugée — une seule condition
-    manquante et le mode est inapplicable.
+    Dès qu'apparaissent des indices graves et concordants à l'encontre d'une personne entendue comme
+    témoin, elle ne peut plus être entendue comme telle (art. 105 CPP) — violation = nullité d'ordre
+    public, relevable d'office.
   pointCle: >-
-    La composition pénale (art. 41-2 CPP) validée par le président du tribunal éteint l'action
-    publique — c'est la différence fondamentale avec les simples alternatives aux poursuites de
-    l'art. 41-1 CPP qui n'éteignent pas l'AP.
+    Le juge d'instruction agit à charge ET à décharge (art. 81 CPP) ; la commission rogatoire ne
+    peut être déléguée qu'à un OPJ — jamais à un APJ seul — sous peine de nullité d'ordre public.
   memo: >-
-    Crime = JI obligatoire · Délit flagrant ≥ 6 mois en état = CI · Défèrement = CPV · Sans
-    défèrement = COPJ · Aveu = CRPC.
+    Instruction = JI indépendant + à charge ET décharge + secret · Art. 105 = dès indices
+    graves/concordants → stop témoin → MeX obligatoire.
 plan:
   - num: '1'
-    titre: Les alternatives aux poursuites (art. 41-1 CPP)
+    titre: Caractère et ouverture
     duree: 10 min
   - num: '2'
-    titre: La composition pénale (art. 41-2 CPP)
+    titre: Pouvoirs du juge d'instruction
     duree: 12 min
   - num: '3'
-    titre: Les 8 modes de saisine
+    titre: Les 4 statuts sous instruction
     duree: 10 min
+  - num: '4'
+    titre: La commission rogatoire
+    duree: 14 min
+  - num: '5'
+    titre: Clôture (art. 175 et suiv.)
+    duree: 10 min
+timeline:
+  - temps: Étape 1
+    event: Avis de fin d'instruction (art
+    detail: Avis de fin d'instruction (art. 175 CPP)
+  - temps: Étape 2
+    event: 1 mois (détenu) / 3 mois (libre) pour soule…
+    detail: 1 mois (détenu) / 3 mois (libre) pour soulever nullités
+  - temps: Étape 3
+    event: Ordonnance de RENVOI (charges suffisantes d…
+    detail: Ordonnance de RENVOI (charges suffisantes délit → T. correctionnel)
+  - temps: Étape 4
+    event: Ordonnance de MISE EN ACCUSATION (crime → C…
+    detail: Ordonnance de MISE EN ACCUSATION (crime → CA/CCD)
 ---
 
 ![p. 25](/fondamentaux/parquet-instruction-tableau-p25.jpg)

@@ -21,6 +21,9 @@ export const metadata: Metadata = {
 
 export default async function FondamentauxPage() {
   const items = await getCourseSummaries();
+  const countLoi2025 = items.filter((i) => i.loi2025).length;
+  const countAvecDuree = items.filter((i) => i.dureeLectureMinutes != null).length;
+  const partiesCouvertes = new Set(items.map((i) => i.partieIndex).filter((n): n is number => n != null)).size;
 
   return (
     <InteriorPageShell maxWidth='6xl' glow={SHELL_GLOW.coursHub} pad='default'>
@@ -42,6 +45,29 @@ export default async function FondamentauxPage() {
           <li>Le contenu détaillé est structuré en interne pour garantir la justesse ; vous voyez seulement la synthèse utile le jour J.</li>
         </ul>
       </GlassCard>
+
+      <div
+        className='mb-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4'
+        data-testid='fondamentaux-kpi'
+        aria-label='Indicateurs du hub fondamentaux'
+      >
+        <div className='rounded-2xl border border-ij-border bg-ij-surface/80 px-4 py-3'>
+          <p className='font-ij-sans text-2xl font-bold tabular-nums text-ij-text'>{items.length}</p>
+          <p className='font-ij-sans text-xs text-ij-text-muted'>Fiches publiées</p>
+        </div>
+        <div className='rounded-2xl border border-ij-border bg-ij-surface/80 px-4 py-3'>
+          <p className='font-ij-sans text-2xl font-bold tabular-nums text-ij-text'>{partiesCouvertes}</p>
+          <p className='font-ij-sans text-xs text-ij-text-muted'>Parties du programme (I–VI) couvertes</p>
+        </div>
+        <div className='rounded-2xl border border-ij-border bg-ij-surface/80 px-4 py-3'>
+          <p className='font-ij-sans text-2xl font-bold tabular-nums text-ij-text'>{countAvecDuree}</p>
+          <p className='font-ij-sans text-xs text-ij-text-muted'>Avec repère durée (plan)</p>
+        </div>
+        <div className='rounded-2xl border border-ij-border bg-ij-surface/80 px-4 py-3'>
+          <p className='font-ij-sans text-2xl font-bold tabular-nums text-ij-accent'>{countLoi2025}</p>
+          <p className='font-ij-sans text-xs text-ij-text-muted'>Mention loi / réforme 2025</p>
+        </div>
+      </div>
 
       <CoursFichesListClient items={items} basePath='/fondamentaux' />
     </InteriorPageShell>

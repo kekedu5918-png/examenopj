@@ -15,10 +15,13 @@ export const SLUG_TO_SYNTHESE_CHAPTER = {
   'controle-identite': 9,
   'requisition-commission-rogatoire': 8,
   'action-publique-opportunite': 10,
-  'parquet-instruction': 14,
+  /** Corps = instruction (JI) ; même chapitre synthèse que `information-judiciaire`. */
+  'parquet-instruction': 11,
   'jld-mandats': 12,
   'mise-en-examen-instruction': 13,
-  'juridictions-jugement': 15,
+  /** Poursuites, alternatives, modes de saisine (CH14). */
+  'juridictions-jugement': 14,
+  /** Cour d’assises, appel, juridictions répressives (CH15). */
   'assises-appel': 15,
   'nullites-procedure': 16,
   'classification-tripartite-application-loi': 17,

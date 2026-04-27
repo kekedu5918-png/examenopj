@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 
+import { useDebouncedValue } from '@/hooks/use-debounced-value';
 import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import type { CourseSummary } from '@/lib/content/courses';
 import { cn } from '@/utils/cn';
@@ -29,10 +30,11 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
   const listRef = useRef<HTMLUListElement>(null);
   const shouldReduceMotion = usePrefersReducedMotion();
   const [revealed, setRevealed] = useState<Record<string, boolean>>({});
+  const debouncedQ = useDebouncedValue(q, 150);
 
   const filtered = useMemo(() => {
     let list = items;
-    const s = q.trim().toLowerCase();
+    const s = debouncedQ.trim().toLowerCase();
     if (s) {
       list = list.filter((it) => {
         const hay = `${it.title} ${it.description ?? ''} ${it.tags.join(' ')}`.toLowerCase();
@@ -46,7 +48,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
       }
     }
     return list;
-  }, [items, q, partieFilter]);
+  }, [items, debouncedQ, partieFilter]);
 
   useEffect(() => {
     if (shouldReduceMotion) {
@@ -159,15 +161,30 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
               >
                 <div className='flex items-start justify-between gap-2'>
                   <span className='min-w-0 font-ij-sans font-semibold text-ij-text'>{it.title}</span>
-                  {it.chapitre != null ? (
-                    <span
-                      className='shrink-0 rounded-md border border-ij-border/90 bg-ij-surface-2/90 px-2 py-0.5 font-ij-sans text-xs font-semibold text-ij-text'
-                      aria-label={`Chapitre ${it.chapitre}`}
-                    >
-                      Ch. {it.chapitre}
-                    </span>
-                  ) : null}
+                  <div className='flex shrink-0 flex-col items-end gap-1'>
+                    {it.chapitre != null ? (
+                      <span
+                        className='rounded-md border border-ij-border/90 bg-ij-surface-2/90 px-2 py-0.5 font-ij-sans text-xs font-semibold text-ij-text'
+                        aria-label={`Chapitre ${it.chapitre}`}
+                      >
+                        Ch. {it.chapitre}
+                      </span>
+                    ) : null}
+                    {it.fasciculeTag ? (
+                      <span
+                        className='rounded-md border border-ij-border/70 bg-ij-surface-2/60 px-2 py-0.5 font-ij-sans text-[10px] font-semibold uppercase tracking-wide text-ij-text-muted'
+                        title='Référence fascicule SDCP'
+                      >
+                        {it.fasciculeTag}
+                      </span>
+                    ) : null}
+                  </div>
                 </div>
+                {it.dureeLectureMinutes != null ? (
+                  <p className='mt-1 font-ij-sans text-xs text-ij-text-subtle'>
+                    ~{it.dureeLectureMinutes} min de lecture (plan détaillé)
+                  </p>
+                ) : null}
                 {it.description ? (
                   <p className='mt-2 line-clamp-2 font-ij-sans text-sm leading-snug text-ij-text-muted'>
                     {it.description}
@@ -189,6 +206,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                           t !== 'fondamentaux' &&
                           t !== 'synthèse-46' &&
                           t !== '2F.1.b' &&
+                          t !== it.fasciculeTag &&
                           !/^Partie [IVX]+$/i.test(t),
                       )
                       .slice(0, 5)
