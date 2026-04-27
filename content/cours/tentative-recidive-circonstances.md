@@ -3,9 +3,9 @@ title: Tentative, récidive, circonstances, causes d'aggravation
 chapitre: 22
 partie: 4
 description: >-
-  La récidive suppose une première condamnation définitive (1er terme) suivie d'une nouvelle
-  infraction (2nd terme), entraînant un doublement des peines ou une aggravation spécifique selon le
-  type de r…
+  La tentative (art. 121-5 CP) est la manifestation extérieure d'une résolution criminelle par un
+  commencement d'exécution qui n'a été interrompu que par des circonstances indépendantes de la
+  volonté d…
 tags:
   - fondamentaux
   - Partie IV
@@ -15,80 +15,73 @@ tags:
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 132-8 CP — Récidive criminelle générale perpétuelle
-  - Art. 132-10 CP — Récidive correctionnelle spéciale
-  - Art. 132-16 CP — Délits assimilés (vol, escroquerie…)
-  - Art. 132-16-2 CP — Assimilation homicide/blessures routiers (loi 2025-622)
-  - Art. 132-4 CP — Confusion des peines en concours
+  - Art. 121-4 CP — Auteur de la tentative puni comme auteur de l'infraction
+  - Art. 311-13 CP — Tentative de vol punissable (exemple de délit)
+  - Art. 132-78 CP — Repentir actif en matière de terrorisme (atténuation spéciale)
+  - Art. 706-26 CPP — Repentir actif en matière de stupéfiants
+  - Voir références détaillées dans le corps de la fiche.
 stats:
+  - num: '1'
+    label: 'Tentative de crime : TOUJOURS punissable (art. 121-4 CP)'
+  - num: '2'
+    label: 'Tentative de délit : punissable uniquement si le texte d''…'
   - num: '4'
     label: 4 cas de récidive codifiés (art. 132-8 à 132-11 CP)
   - num: '2'
     label: 'Récidive 132-8 : perpétuelle, générale, sans délai (crime…'
-  - num: 5 ans
-    label: 5 ans = délai pour la récidive correctionnelle spéciale (…
-  - num: '4'
-    label: 'Principe non-cumul atténué : une seule peine max légal le…'
 schemaMemo:
-  type: tableau
-  titre: Les 4 cas de récidive
+  type: arbre
+  titre: Conditions T.C.D. (Tentative · Commencement · Désistement)
   rows:
-    - Art.: 132-8
-      1er terme: Crime/délit ≥10 ans
-      2e terme: CRIME
-      Délai: Aucun
-      Type: Générale perpétuelle
-      Conséquence: Perpétuité ou 30 ans
-    - Art.: 132-9 al.1
-      1er terme: Crime/délit ≥10 ans
-      2e terme: Délit ≥10 ans
-      Délai: 10 ans
-      Type: Générale temporaire
-      Conséquence: Doublement
-    - Art.: 132-9 al.2
-      1er terme: Crime/délit ≥10 ans
-      2e terme: Délit 1-10 ans
-      Délai: 5 ans
-      Type: Générale temporaire
-      Conséquence: Doublement
-    - Art.: 132-10
-      1er terme: Délit qqconque
-      2e terme: Délit identique/assimilé
-      Délai: 5 ans
-      Type: Spéciale temporaire
-      Conséquence: Doublement
-    - Art.: 132-11
-      1er terme: Contrav. 5e cl.
-      2e terme: Contrav. identique
-      Délai: 1 an
-      Type: Spéciale
-      Conséquence: Amende → 3 000 €
+    - Repère: RÉSOLUTION CRIMINELLE
+    - Repère: Actes PRÉPARATOIRES → NON punissables
+    - Repère: COMMENCEMENT D'EXÉCUTION
+    - Repère: (acte tendant DIRECTEMENT à la consommation + volonté non équivoque)
+    - Repère: Désistement VOLONTAIRE → IMPUNITÉ (repentir actif)
+    - Repère: Interruption par circonstances EXTÉRIEURES
+    - Repère: → TENTATIVE PUNISSABLE
+    - Repère: (comme l'infraction consommée)
 blocs:
   definition: >-
-    La récidive suppose une première condamnation définitive (1er terme) suivie d'une nouvelle
-    infraction (2nd terme), entraînant un doublement des peines ou une aggravation spécifique selon
-    le type de récidive (générale/spéciale, temporaire/perpétuelle), la condamnation pouvant être
-    française ou d'un État membre de l'UE.
+    La tentative (art. 121-5 CP) est la manifestation extérieure d'une résolution criminelle par un
+    commencement d'exécution qui n'a été interrompu que par des circonstances indépendantes de la
+    volonté de l'auteur — se distinguant des actes préparatoires (non punissables) par le caractère
+    direct et univoque de l'acte vers la consommation. La récidive suppose une première condamnation
+    définitive (1er terme) suivie d'une nouvelle infraction (2nd terme), entraînant un doublement
+    des peines ou une aggravation spécifique s…
   piege: >-
-    Ne pas confondre récidive (infraction après condamnation définitive) et concours d'infractions
-    (plusieurs infractions commises avant toute condamnation définitive). La frontière est la
-    première condamnation passée en force de chose jugée — c'est elle qui ouvre la récidive.
+    Le désistement volontaire — même tardif, au dernier moment — emporte impunité complète pour la
+    tentative, à condition qu'il soit antérieur à la consommation. Une fois l'infraction consommée,
+    l'attitude postérieure (restitution, réparation) est sans influence sur la responsabilité
+    pénale. Ne pas confondre récidive (infraction après condamnation définitive) et concours
+    d'infractions (plusieurs infractions commises avant toute condamnation définiti…
   pointCle: >-
-    En cas de concours d'infractions (art. 132-2 à 132-4 CP), le principe du non-cumul atténué
-    s'applique : peines de même nature = une seule peine dans la limite du maximum légal le plus
-    élevé ; peines de natures différentes = cumul possible (emprisonnement + amende) ; confusion
-    totale ou partielle possible (art. 132-4).
+    La distinction cruciale est entre commencement d'exécution (acte tendant directement à la
+    consommation) et actes préparatoires (actes d'organisation ne tendant pas encore directement à
+    la consommation) — seul le premier déclenche la punissabilité de la tentative. En cas de
+    concours d'infractions (art. 132-2 à 132-4 CP), le principe du non-cumul atténué s'ap…
   memo: >-
-    Récidive 132-8 = perpétuelle + sans délai · 132-10 = spéciale + 5 ans + identique/assimilé ·
-    Concours = non-cumul atténué · Récidive = après condamnation définitive uniquement.
+    Crime = tentative TOUJOURS · Délit = si texte · Contravention = JAMAIS · Désistement volontaire
+    avant consommation = impunité · Peine tentative = peine infraction consommée. | Récidive 132-8 =
+    perpétuelle + sans délai · 132-10 = spéciale + 5 ans + identique/assimilé · Concours = non-cumul
+    atténué · Récidive = après condamnation définitive uniquement.
 plan:
   - num: '1'
-    titre: Les 4 cas de récidive
+    titre: Les 2 conditions cumulatives
     duree: 10 min
   - num: '2'
-    titre: Délits assimilés pour la récidive
+    titre: Régime selon la catégorie d'infraction
     duree: 12 min
   - num: '3'
+    titre: Le repentir actif
+    duree: 10 min
+  - num: '4'
+    titre: Les 4 cas de récidive
+    duree: 10 min
+  - num: '5'
+    titre: Délits assimilés pour la récidive
+    duree: 12 min
+  - num: '6'
     titre: Le concours d'infractions (art. 132-2 à 132-4)
     duree: 10 min
 ---

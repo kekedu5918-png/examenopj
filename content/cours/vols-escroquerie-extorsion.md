@@ -3,9 +3,9 @@ title: Vol, escroquerie, abus de confiance, extorsion
 chapitre: 34
 partie: 5
 description: >-
-  L'escroquerie (art. 313-1 CP) est le fait d'obtenir la remise de fonds ou valeurs en trompant une
-  personne physique ou morale par l'usage d'un faux nom, d'une fausse qualité ou de manœuvres
-  frauduleu…
+  Le vol (art. 311-1 CP) est la soustraction frauduleuse de la chose d'autrui — nécessitant un acte
+  de soustraction contre le gré du propriétaire/possesseur, portant sur une chose mobilière
+  appartenant…
 tags:
   - fondamentaux
   - Partie V
@@ -15,66 +15,101 @@ tags:
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
+  - Art. 311-1 CP — Définition du vol
   - Art. 312-1 CP — Extorsion simple (7 ans + 100 000 €)
-  - Art. 312-10 CP — Chantage (5 ans + 75 000 €)
   - Art. 313-1 CP — Escroquerie (5 ans + 375 000 €)
-  - Art. 313-5 CP — Filouterie (6 mois + 7 500 €)
   - Art. 314-1 CP — Abus de confiance (5 ans + 375 000 €)
+  - Voir références détaillées dans le corps de la fiche.
 stats:
+  - num: 3 ans
+    label: 3 ans + 45 000 € pour le vol simple (art. 311-3 CP)
+  - num: '2'
+    label: Perpétuité pour vol avec actes de barbarie ou torture (ar…
   - num: 7 ans
     label: 7 ans + 100 000 € pour extorsion simple (art. 312-1 CP)
   - num: 5 ans
     label: 5 ans + 375 000 € pour escroquerie simple (art. 313-1 CP)
-  - num: 5 ans
-    label: 5 ans + 375 000 € pour abus de confiance simple (art. 314…
-  - num: 5 ans
-    label: 5 ans + 75 000 € pour chantage simple (art. 312-10 CP)
 schemaMemo:
   type: tableau
-  titre: Les 4 infractions (E.C.E.A.)
+  titre: Échelle des vols aggravés
   rows:
-    - Infraction: Extorsion
-      Mécanisme: Violence/menace/contrainte → remise forcée
-      Peine simple: 7 ans + 100 k€
-    - Infraction: Chantage
-      Mécanisme: Menace révélations diffamatoires → remise
-      Peine simple: 5 ans + 75 k€
-    - Infraction: Escroquerie
-      Mécanisme: Tromperie (faux nom/manœuvres) → remise volontaire
-      Peine simple: 5 ans + 375 k€
-    - Infraction: Abus de confiance
-      Mécanisme: Remise précaire préalable → détournement
-      Peine simple: 5 ans + 375 k€
+    - Qualification: Vol simple
+      Art.: 311-3
+      Peine: 3 ans + 45 k€
+    - Qualification: Vol avec 1 circ. aggrav.
+      Art.: 311-4
+      Peine: 5 ans + 75 k€
+    - Qualification: Vol avec 2 circ. aggrav.
+      Art.: 311-4-1
+      Peine: 7 ans + 100 k€
+    - Qualification: Vol avec 3 circ. aggrav.
+      Art.: 311-4-2
+      Peine: 10 ans + 150 k€
+    - Qualification: Vol avec violence ITT ≤ 8 j
+      Art.: 311-5
+      Peine: 7 ans + 100 k€
+    - Qualification: Vol avec violence ITT > 8 j
+      Art.: 311-6
+      Peine: 10 ans + 150 k€
+    - Qualification: Vol avec mutilation/infirmité
+      Art.: 311-7
+      Peine: 15 ans + 150 k€
+    - Qualification: Vol avec arme
+      Art.: 311-8
+      Peine: 20 ans + 150 k€
+    - Qualification: Vol en BO avec arme
+      Art.: 311-9
+      Peine: 30 ans + 150 k€
+    - Qualification: Vol avec barbarie/torture
+      Art.: 311-10
+      Peine: Perpétuité
 blocs:
   definition: >-
-    L'escroquerie (art. 313-1 CP) est le fait d'obtenir la remise de fonds ou valeurs en trompant
-    une personne physique ou morale par l'usage d'un faux nom, d'une fausse qualité ou de manœuvres
-    frauduleuses, entraînant un préjudice, se distinguant du vol par le consentement vicié de la
-    victime.
+    Le vol (art. 311-1 CP) est la soustraction frauduleuse de la chose d'autrui — nécessitant un
+    acte de soustraction contre le gré du propriétaire/possesseur, portant sur une chose mobilière
+    appartenant à autrui, avec conscience de soustraire et volonté de se comporter en maître de la
+    chose (animus domini). L'escroquerie (art. 313-1 CP) est le fait d'obtenir la remise de fonds ou
+    valeurs en trompant une personne physique ou morale par l'usage d'un faux nom, d'une fausse
+    qualité ou de manœuvres frauduleuses, entraînan…
   piege: >-
-    L'abus de confiance (art. 314-1 CP) exige une remise préalable précaire (prêt, dépôt, mandat,
-    louage...) — la chose devait donc être remise légitimement avant d'être détournée. Sans remise
-    préalable légitime, il peut y avoir vol, mais pas abus de confiance. Le point de départ de la
-    prescription est le jour où la victime s'est aperçue du détournement.
+    L'immunité familiale (art. 311-12 CP) protège les poursuites pour vol entre époux,
+    ascendants/descendants — mais elle est levée en cas de violences, menaces, ou de soustraction de
+    biens indispensables à la victime. Ne jamais oublier ces exceptions devant le jury. L'abus de
+    confiance (art. 314-1 CP) exige une remise préalable précaire (prêt, dépôt, mandat, louage...) —
+    la chose devait donc être remise légitimement avant d'être détournée. Sans rem…
   pointCle: >-
-    La différence fondamentale entre extorsion et escroquerie est la nature du consentement : dans
-    l'extorsion, la remise est arrachée par la force ou la contrainte (consentement inexistant) ;
-    dans l'escroquerie, la remise est volontaire mais viciée par la tromperie (consentement vicié).
+    Le vol peut porter sur une chose incorporelle (énergie électrique, informations, données
+    informatiques) — en revanche, les res nullius (choses sans maître) et res derelictae (choses
+    abandonnées) sont exclues de l'objet du vol, faute d'appartenir à autrui. La différence
+    fondamentale entre extorsion et escroquerie est la nature du consentement : dans l'extors…
   memo: >-
+    Vol = soustraction + chose d'autrui + animus domini · Arme = 20 ans · BO + arme = 30 ans ·
+    Barbarie/torture = perpétuité · Immunité familiale sauf violences/biens indispensables. |
     Extorsion = remise forcée (violence/contrainte) · Chantage = menace révélations · Escroquerie =
-    tromperie → remise volontaire viciée · Abus confiance = remise précaire préalable +
-    détournement.
+    tromperie → remise volontaire viciée · Abus confiance = remise précaire préalable…
 plan:
   - num: '1'
-    titre: L'extorsion (art. 312-1 à 312-9 CP)
+    titre: Éléments constitutifs
     duree: 10 min
   - num: '2'
-    titre: Le chantage (art. 312-10 CP)
+    titre: Principales circonstances aggravantes (art. 311-4 CP)
     duree: 12 min
   - num: '3'
-    titre: L'escroquerie (art. 313-1 et 313-2 CP)
+    titre: Vol avec arme et bande organisée
     duree: 10 min
   - num: '4'
+    titre: Immunité familiale et tentative
+    duree: 14 min
+  - num: '5'
+    titre: L'extorsion (art. 312-1 à 312-9 CP)
+    duree: 10 min
+  - num: '6'
+    titre: Le chantage (art. 312-10 CP)
+    duree: 12 min
+  - num: '7'
+    titre: L'escroquerie (art. 313-1 et 313-2 CP)
+    duree: 10 min
+  - num: '8'
     titre: L'abus de confiance (art. 314-1 à 314-3 CP)
     duree: 14 min
 ---

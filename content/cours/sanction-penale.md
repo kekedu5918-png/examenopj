@@ -16,19 +16,19 @@ loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
   - Art. 131-1 CP — Peines criminelles (réclusion)
-  - Art. 131-2 CP — Peines criminelles (détention, infractions politiques)
-  - 'Art. 131-3 CP — Peines correctionnelles : liste'
-  - Art. 131-10 CP — Peines complémentaires
-  - Art. 131-12 CP — Peines contraventionnelles (5 classes)
+  - Art. 768 CPP — Mentions inscrites au casier judiciaire
+  - 'Art. 775 CPP — Bulletin n°2 : contenu et destinataires'
+  - 'Art. 777 CPP — Bulletin n°3 : seul accessible à la personne'
+  - Art. 133-9 CP — Effets de l'amnistie sur les mentions
 stats:
   - num: '1'
     label: Perpétuité, 30, 20, 15, 10 ans = paliers de la réclusion…
   - num: 10 ans
     label: 10 ans maximum d'emprisonnement pour les délits (art. 131…
-  - num: 3 750 €
-    label: 3 750 € = amende correctionnelle minimale (art. 131-3 CP)
-  - num: 1 500 €
-    label: 1 500 € max pour contravention de 5e classe (3 000 € en r…
+  - num: '3'
+    label: 3 bulletins distincts (B1, B2, B3) avec des accès stricte…
+  - num: '2'
+    label: B1 = intégral, réservé aux magistrats et certaines admini…
 schemaMemo:
   type: arbre
   titre: Pyramide des peines C.D.C.
@@ -53,18 +53,25 @@ blocs:
     L'échelle des peines est l'ensemble des sanctions pénales hiérarchisées selon la classification
     tripartite des infractions, allant de la réclusion criminelle à perpétuité (crimes) à l'amende
     contraventionnelle de 38€ (1re classe), chaque peine devant être proportionnée à la gravité des
-    faits.
+    faits. Le casier judiciaire est le registre officiel des condamnations pénales d'une personne
+    physique ou morale, organisé en trois bulletins à accessibilité différenciée, permettant
+    notamment d'établir la récidive et de vérifier le…
   piege: >-
     La DDSE (détention à domicile sous surveillance électronique) est une peine correctionnelle
     alternative à l'emprisonnement, limitée à 6 mois — ne pas la confondre avec l'ARSE qui est une
-    mesure de sûreté avant jugement dans le cadre de l'instruction.
+    mesure de sûreté avant jugement dans le cadre de l'instruction. Une personne ne peut obtenir que
+    son B3 — jamais son B1 ni son B2. Si une personne prétend avoir obtenu son "casier vierge",
+    c'est son B3 qui est vierge, mais son B1 peut contenir des mentions que l…
   pointCle: >-
     Les peines complémentaires (art. 131-10 CP) s'ajoutent aux peines principales et peuvent être
     prononcées à titre de peine principale lorsque la loi le prévoit ; elles comprennent privations
-    et restrictions de droits (permis, armes, civique, familial, professionnel).
+    et restrictions de droits (permis, armes, civique, familial, professionnel). Le B1 fait preuve
+    de la récidive devant le juge ; si la condamnation antérieure est contesté…
   memo: >-
     Crimes = réclusion/détention · Délits = empr. ≤ 10 ans + amende ≥ 3 750€ · 5e cl. = 1 500€ max
-    (3 000€ récidive) · DDSE = alternative empr. ≤ 6 mois.
+    (3 000€ récidive) · DDSE = alternative empr. ≤ 6 mois. | B1 = magistrats uniquement · B2 =
+    administrations · B3 = moi-même · B1 = preuve récidive · Amnistie/réhabilitation = effacement
+    mentions.
 plan:
   - num: '1'
     titre: Peines criminelles (art. 131-1 et 131-2 CP)
@@ -75,6 +82,18 @@ plan:
   - num: '3'
     titre: Peines contraventionnelles (art. 131-12 à 131-18)
     duree: 10 min
+  - num: '4'
+    titre: Le bulletin n°1 (B1)
+    duree: 10 min
+  - num: '5'
+    titre: Le bulletin n°2 (B2)
+    duree: 12 min
+  - num: '6'
+    titre: Le bulletin n°3 (B3)
+    duree: 10 min
+  - num: '7'
+    titre: Communication et effets
+    duree: 14 min
 ---
 
 ![p. 47](/fondamentaux/sanction-penale-tableau-p47.jpg)

@@ -13,6 +13,7 @@ import yaml from 'js-yaml';
 
 import { FONDAMENTAUX_CHAPITRES } from './lib/fondamentaux-annexe-b.mjs';
 import {
+  normalizeSyntheseChapters,
   SLUG_TO_SYNTHESE_CHAPTER,
   SYNTHESE_ENRICH_SKIP_SLUGS,
 } from './lib/fondamentaux-synthese-chapter-map.mjs';
@@ -220,8 +221,88 @@ function hasLoi2025(block, titre) {
   return /2025|loi\s*n[°o]?\s*2025/i.test(block) || /2025/i.test(titre);
 }
 
-function annexeRowForSlug(slug) {
-  return FONDAMENTAUX_CHAPITRES.find((r) => r.slug === slug);
+/** @param {string[]} blocks */
+function mergeStatsFromBlocks(blocks) {
+  if (blocks.length === 1) {
+    const statsSection = sliceBetween(blocks[0], '📊 4 Stats clés', ['🔷 Schéma mémo']);
+    return parseStats(statsSection);
+  }
+  const out = [];
+  for (const block of blocks) {
+    const statsSection = sliceBetween(block, '📊 4 Stats clés', ['🔷 Schéma mémo']);
+    const parsed = parseStats(statsSection);
+    out.push(...parsed.slice(0, 2));
+  }
+  while (out.length < 4) out.push({ num: '—', label: 'Repère — approfondir dans le corps de fiche.' });
+  return out.slice(0, 4);
+}
+
+/** @param {string[]} blocks */
+function mergePlanFromBlocks(blocks) {
+  if (blocks.length === 1) {
+    const p = parsePlan(blocks[0]);
+    return p.length ? p : [{ num: '1', titre: 'Vue densemble', duree: '12 min' }];
+  }
+  const durees = ['10 min', '12 min', '10 min', '14 min', '10 min', '12 min', '10 min', '15 min'];
+  const out = [];
+  let idx = 0;
+  for (const block of blocks) {
+    const p = parsePlan(block);
+    for (const item of p) {
+      if (out.length >= 8) break;
+      out.push({
+        num: String(++idx),
+        titre: item.titre,
+        duree: item.duree || durees[(idx - 1) % durees.length],
+      });
+    }
+    if (out.length >= 8) break;
+  }
+  return out.length ? out : [{ num: '1', titre: 'Vue densemble', duree: '12 min' }];
+}
+
+/** @param {string[]} blocks */
+function mergeArticlesFromBlocks(blocks) {
+  if (blocks.length === 1) return parseArticles(blocks[0]);
+  const seen = new Set();
+  const out = [];
+  for (const block of blocks) {
+    for (const a of parseArticles(block)) {
+      const key = a.split(/[—\-]/)[0].trim().toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      out.push(a);
+      if (out.length >= 5) return out;
+    }
+  }
+  while (out.length < 5) out.push('Voir références détaillées dans le corps de la fiche.');
+  return out.slice(0, 5);
+}
+
+/** @param {string[]} blocks */
+function mergeBlocsFromBlocks(blocks) {
+  if (blocks.length === 1) return parseBlocs(blocks[0]);
+  const parts = blocks.map((b) => parseBlocs(b));
+  return {
+    definition: clip(parts.map((p) => p.definition).join(' '), 520),
+    piege: clip(parts.map((p) => p.piege).join(' '), 450),
+    pointCle: clip(parts.map((p) => p.pointCle).join(' '), 360),
+    memo: clip(parts.map((p) => p.memo).join(' | '), 360),
+  };
+}
+
+/** @param {string[]} blocks */
+function mergeTimelineFromBlocks(blocks) {
+  for (const block of blocks) {
+    const t = parseTimeline(block);
+    if (t?.length) return t;
+  }
+  return undefined;
+}
+
+/** @param {string[]} blocks @param {string} titre */
+function hasLoi2025Any(blocks, titre) {
+  return blocks.some((b) => hasLoi2025(b, titre));
 }
 
 async function main() {
@@ -237,31 +318,37 @@ async function main() {
       console.log(`skip (pilote main)\t${slug}`);
       continue;
     }
-    const synthNum = SLUG_TO_SYNTHESE_CHAPTER[slug];
-    if (!synthNum) {
+    const spec = SLUG_TO_SYNTHESE_CHAPTER[slug];
+    const synthNums = normalizeSyntheseChapters(spec);
+    if (synthNums.length === 0) {
       console.warn(`pas de map synthèse\t${slug}`);
       continue;
     }
-    const block = chapters.get(synthNum);
-    if (!block) {
-      console.warn(`bloc synthèse absent\t${slug} → CH${synthNum}`);
-      continue;
+    const blocks = [];
+    for (const n of synthNums) {
+      const block = chapters.get(n);
+      if (!block) {
+        console.warn(`bloc synthèse absent\t${slug} → CH${n}`);
+      } else {
+        blocks.push(block);
+      }
     }
+    if (blocks.length === 0) continue;
 
     const fp = path.join(coursDir, `${slug}.md`);
     const fileRaw = await fs.readFile(fp, 'utf8');
     const parsed = matter(fileRaw);
     const { content, data: prev } = parsed;
 
-    const statsSection = sliceBetween(block, '📊 4 Stats clés', ['🔷 Schéma mémo']);
-    const schemaSection = sliceBetween(block, '🔷 Schéma mémo', ['📘 Définition']);
+    const primary = blocks[0];
+    const schemaSection = sliceBetween(primary, '🔷 Schéma mémo', ['📘 Définition']);
 
-    const stats = parseStats(statsSection);
+    const stats = mergeStatsFromBlocks(blocks);
     const schemaMemo = parseSchema(schemaSection);
-    const blocs = parseBlocs(block);
-    const plan = parsePlan(block);
-    const articlesCles = parseArticles(block);
-    const timeline = parseTimeline(block);
+    const blocs = mergeBlocsFromBlocks(blocks);
+    const plan = mergePlanFromBlocks(blocks);
+    const articlesCles = mergeArticlesFromBlocks(blocks);
+    const timeline = mergeTimelineFromBlocks(blocks);
     const description = clip(blocs.definition, 200);
 
     const tags = new Set(['fondamentaux', `Partie ${row.partie}`, 'synthèse-46']);
@@ -280,7 +367,7 @@ async function main() {
       partie: ROMAN_TO_NUM[row.partie],
       description,
       tags: [...tags],
-      loi2025: hasLoi2025(block, row.titre) || prev.loi2025 === true,
+      loi2025: hasLoi2025Any(blocks, row.titre) || prev.loi2025 === true,
       derniereMiseAJour:
         typeof prev.derniereMiseAJour === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(prev.derniereMiseAJour)
           ? prev.derniereMiseAJour
@@ -301,7 +388,8 @@ async function main() {
     const front = yaml.dump(newData, { lineWidth: 100, noRefs: true }).trimEnd();
     const out = `---\n${front}\n---\n\n${content.replace(/^\s+/, '')}`;
     await fs.writeFile(fp, out, 'utf8');
-    console.log(`enrichi\t${slug}\t← synthèse CH${synthNum}`);
+    const chLabel = synthNums.map((n) => `CH${n}`).join('+');
+    console.log(`enrichi\t${slug}\t← synthèse ${chLabel}`);
   }
   console.log('Terminé.');
 }

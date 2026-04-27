@@ -12,23 +12,23 @@ tags:
   - synthèse-46
   - 2F.1.b
   - droit pénal général
-loi2025: false
+loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
   - 'Art. 121-2 CP — Responsabilité pénale des PM : conditions'
-  - Art. 121-2 al. 3 CP — Cumul responsabilité PM et PP
   - Art. 131-38 CP — Amende PM = 5× PP
-  - Art. 131-39 CP — Liste des peines applicables aux PM
   - Art. 706-45 CPP — Contrôle judiciaire des personnes morales
+  - Art. 227-25 CP — Atteinte sexuelle MDS 15 ans (10 ans + 150 000 €)
+  - Voir références détaillées dans le corps de la fiche.
 stats:
   - num: '2'
     label: '2 conditions cumulatives : infraction par organe/représen…'
   - num: '2'
     label: Amende PM = 5× l'amende prévue pour la personne physique…
-  - num: 1 000 000 €
-    label: 1 000 000 € d'amende si crime sans amende prévue pour la…
-  - num: '4'
-    label: L'État seul est expressément exclu de toute responsabilit…
+  - num: 10 ans
+    label: 10 ans + 150 000 € pour atteinte sexuelle sur mineur de 1…
+  - num: 7 ans
+    label: 7 ans + 150 000 € pour provocation d'un mineur à commettr…
 schemaMemo:
   type: arbre
   titre: Les 2 conditions (O.C.)
@@ -47,18 +47,25 @@ blocs:
     La responsabilité pénale des personnes morales (art. 121-2 CP) est engagée lorsqu'une infraction
     est commise par un organe ou un représentant de la PM pour le compte de celle-ci, à l'exclusion
     de l'État, et sans exclure le cumul avec la responsabilité des personnes physiques auteurs ou
-    complices.
+    complices. L'atteinte sexuelle sur mineur de 15 ans (art. 227-25 CP) est tout acte de nature
+    sexuelle commis sans violence, contrainte, menace ni surprise sur la personne d'un mineur de 15
+    ans par un majeur, punissable de 10 ans d'e…
   piege: >-
     Si l'infraction est commise au seul profit personnel de l'organe (ex. un PDG qui détourne à
     titre personnel), la PM n'est pas engagée — la condition "pour le compte" n'est pas remplie. Ne
-    pas confondre intérêt de la PM et intérêt personnel de son dirigeant.
+    pas confondre intérêt de la PM et intérêt personnel de son dirigeant. L'atteinte sexuelle (art.
+    227-25 CP) est constituée même avec consentement du mineur — ce consentement est juridiquement
+    indifférent pour un mineur de moins de 15 ans. Ne pas confondre avec l…
   pointCle: >-
     La responsabilité de la PM n'exclut pas celle des personnes physiques auteurs ou complices (art.
     121-2 al. 3 CP) — le cumul est la règle, sauf pour les infractions non intentionnelles à
     causalité indirecte où la PM peut être seule poursuivie si la PP n'a commis qu'une faute simple.
+    La consultation habituelle de sites pédopornographiques (art. 227-23 al. 5 C…
   memo: >-
     PM = organe/représentant + pour le compte · État = jamais responsable · Amende PM = 5× PP ·
-    Cumul PP + PM = règle.
+    Cumul PP + PM = règle. | Atteinte sexuelle < 15 ans = 10 ans (consentement indifférent) ·
+    Atteinte sexuelle 15-18 par autorité = 7 ans · Consultation pédoporno = 2 ans · Soustraction
+    mineur hors France = 3 ans.
 plan:
   - num: '1'
     titre: Personnes morales concernées
@@ -72,6 +79,15 @@ plan:
   - num: '4'
     titre: Peines applicables aux PM
     duree: 14 min
+  - num: '5'
+    titre: Infractions sexuelles contre mineurs
+    duree: 10 min
+  - num: '6'
+    titre: Infractions de soustraction et abandon
+    duree: 12 min
+  - num: '7'
+    titre: Infractions de provocation et privation
+    duree: 10 min
 ---
 
 ![p. 44](/fondamentaux/personne-morale-mineurs-tableau-p44.jpg)

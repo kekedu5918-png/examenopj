@@ -1,9 +1,25 @@
 /**
- * Correspondance slug annexe B (`content/cours`) → numéro de chapitre dans
- * `content/_sources/synthese-46-chapitres/chapitres-*.md` (1–46).
- * Quand la granularité diffère (ex. deux fiches stupéfiants → un chapitre synthèse),
- * on pointe vers le bloc le plus pertinent.
+ * Correspondance slug annexe B (`content/cours`) → chapitre(s) dans
+ * `content/_sources/synthese-46-chapitres/chapitres-*.md` (titres `CHAPITRE N —`).
+ *
+ * Valeur : nombre unique ou tableau ordonné [primaire, secondaire, …]. L’enrichissement
+ * fusionne stats (2+2…), plans, articles et blocs texte ; le schéma mémo provient du premier bloc.
+ *
+ * Référence rapide (écarts annexe vs synthèse) :
+ * - `information-judiciaire` → CH11 (instruction) : pas de chapitre « IJ » isolé dans la synthèse.
+ * - `auditions` / `perquisition` : numéros annexe 6–7 inversés par rapport à CH6/CH7 synthèse ; la carte suit la synthèse pour le contenu enrichi.
+ * - `enlevement-sequestration` : absent de la synthèse sous ce thème → enrich manuel, slug dans SYNTHESE_ENRICH_SKIP_SLUGS.
+ * - Paires fusionnées : vol+escroquerie 34+35 ; tentative+récidive 23+25 ; menaces+harcèlement 30+32 ; PM+mineurs/famille 21+40 ; sanctions+échelle/casier 24+26.
+ *
+ * @typedef {number | number[]} SyntheseChapterSpec
  */
+
+/** @param {SyntheseChapterSpec | undefined | null} spec */
+export function normalizeSyntheseChapters(spec) {
+  if (spec == null) return [];
+  return Array.isArray(spec) ? [...spec] : [spec];
+}
+
 export const SLUG_TO_SYNTHESE_CHAPTER = {
   'enquete-flagrance': 1,
   'enquete-preliminaire': 2,
@@ -29,19 +45,23 @@ export const SLUG_TO_SYNTHESE_CHAPTER = {
   'causes-irresponsabilite-attenuation': 19,
   'usage-armes-forces-ordre': 20,
   'complicite-concours': 22,
-  'tentative-recidive-circonstances': 25,
-  'personne-morale-mineurs': 21,
+  /** Tentative / repentir (CH23) + récidive, concours, cumul (CH25). */
+  'tentative-recidive-circonstances': [23, 25],
+  /** Personnes morales (CH21) + mineurs / famille synthèse (CH40). */
+  'personne-morale-mineurs': [21, 40],
   'peines-modes-individuation': 24,
   'prescription-extinction': 17,
-  'sanction-penale': 24,
+  /** Échelle des peines (CH24) + casier / mentions (CH26). */
+  'sanction-penale': [24, 26],
   'homicides-atteintes-vie': 27,
   'violences-involontaires-integrite': 28,
-  'enlevement-sequestration': 29,
-  'violences-menaces-harcelement': 30,
+  /** Menaces, torture, barbarie (CH30) + harcèlement, dignité (CH32). */
+  'violences-menaces-harcelement': [30, 32],
   'viol-agressions-sexuelles': 31,
   'mineurs-cjpm': 41,
   'atteintes-aux-biens': 36,
-  'vols-escroquerie-extorsion': 35,
+  /** Vol et circonstances (CH34) + extorsion, escroquerie, abus de confiance (CH35). */
+  'vols-escroquerie-extorsion': [34, 35],
   'stupefiants-usage': 38,
   'stupefiants-trafic': 38,
   'delits-circulation-routiere': 37,
@@ -61,4 +81,6 @@ export const SYNTHESE_ENRICH_SKIP_SLUGS = new Set([
   'enquete-flagrance',
   'causes-irresponsabilite-attenuation',
   'viol-agressions-sexuelles',
+  /** Thème non couvert par un chapitre dédié dans la synthèse 46 — fiche maintenue à la main. */
+  'enlevement-sequestration',
 ]);
