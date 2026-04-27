@@ -3,13 +3,14 @@
  * `content/_sources/synthese-46-chapitres/chapitres-*.md` (titres `CHAPITRE N —`).
  *
  * Valeur : nombre unique ou tableau ordonné [primaire, secondaire, …]. L’enrichissement
- * fusionne stats (2+2…), plans, articles et blocs texte ; le schéma mémo provient du premier bloc.
+ * fusionne stats (2+2…), plans, articles et blocs texte ; si plusieurs blocs sont tous en
+ * « tableau » ou « comparatif », le schéma mémo fusionne les lignes (sinon : premier bloc seul).
  *
  * Référence rapide (écarts annexe vs synthèse) :
  * - `information-judiciaire` → CH11 (instruction) : pas de chapitre « IJ » isolé dans la synthèse.
  * - `auditions` / `perquisition` : numéros annexe 6–7 inversés par rapport à CH6/CH7 synthèse ; la carte suit la synthèse pour le contenu enrichi.
  * - `enlevement-sequestration` : absent de la synthèse sous ce thème → enrich manuel, slug dans SYNTHESE_ENRICH_SKIP_SLUGS.
- * - Paires fusionnées : vol+escroquerie 34+35 ; tentative+récidive 23+25 ; menaces+harcèlement 30+32 ; PM+mineurs/famille 21+40 ; sanctions+échelle/casier 24+26.
+ * - Paires fusionnées : acteurs PJ + compétences territoriales 3+4 ; vol+escroquerie 34+35 ; tentative+récidive 23+25 ; menaces+harcèlement 30+32 ; PM+mineurs/famille 21+40 ; sanctions+échelle/casier 24+26 ; recel/blanchiment + faux/AM 36+43.
  *
  * @typedef {number | number[]} SyntheseChapterSpec
  */
@@ -24,7 +25,8 @@ export const SLUG_TO_SYNTHESE_CHAPTER = {
   'enquete-flagrance': 1,
   'enquete-preliminaire': 2,
   'information-judiciaire': 11,
-  'police-judiciaire-statut': 3,
+  /** Acteurs judiciaires (CH3) + compétences territoriales (CH4). */
+  'police-judiciaire-statut': [3, 4],
   'garde-a-vue': 5,
   'perquisition': 7,
   'auditions': 6,
@@ -70,7 +72,8 @@ export const SLUG_TO_SYNTHESE_CHAPTER = {
   'armes-materiel-guerre': 39,
   'traites-dignite-personne': 32,
   'infractions-numeriques': 33,
-  'blanchiment-infractions-economiques': 36,
+  /** Recel, blanchiment, destructions (CH36) + faux, association de malfaiteurs (CH43). */
+  'blanchiment-infractions-economiques': [36, 43],
   'actualisation-lois-2025': 44,
   'outils-oral-entrainement': 45,
   'entrainement-session-2026': 46,

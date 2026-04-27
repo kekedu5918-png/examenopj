@@ -30,39 +30,49 @@ stats:
   - num: 5 ans
     label: 5 ans + 375 000 € pour escroquerie simple (art. 313-1 CP)
 schemaMemo:
-  type: tableau
-  titre: Échelle des vols aggravés
+  type: comparatif
+  titre: Synthèse CH34 + CH35
   rows:
-    - Qualification: Vol simple
+    - Bloc: CH34
+      Qualification: Vol simple
       Art.: 311-3
       Peine: 3 ans + 45 k€
-    - Qualification: Vol avec 1 circ. aggrav.
+    - Bloc: CH34
+      Qualification: Vol avec 1 circ. aggrav.
       Art.: 311-4
       Peine: 5 ans + 75 k€
-    - Qualification: Vol avec 2 circ. aggrav.
+    - Bloc: CH34
+      Qualification: Vol avec 2 circ. aggrav.
       Art.: 311-4-1
       Peine: 7 ans + 100 k€
-    - Qualification: Vol avec 3 circ. aggrav.
+    - Bloc: CH34
+      Qualification: Vol avec 3 circ. aggrav.
       Art.: 311-4-2
       Peine: 10 ans + 150 k€
-    - Qualification: Vol avec violence ITT ≤ 8 j
+    - Bloc: CH34
+      Qualification: Vol avec violence ITT ≤ 8 j
       Art.: 311-5
       Peine: 7 ans + 100 k€
-    - Qualification: Vol avec violence ITT > 8 j
+    - Bloc: CH34
+      Qualification: Vol avec violence ITT > 8 j
       Art.: 311-6
       Peine: 10 ans + 150 k€
-    - Qualification: Vol avec mutilation/infirmité
-      Art.: 311-7
-      Peine: 15 ans + 150 k€
-    - Qualification: Vol avec arme
-      Art.: 311-8
-      Peine: 20 ans + 150 k€
-    - Qualification: Vol en BO avec arme
-      Art.: 311-9
-      Peine: 30 ans + 150 k€
-    - Qualification: Vol avec barbarie/torture
-      Art.: 311-10
-      Peine: Perpétuité
+    - Bloc: CH35
+      Infraction: Extorsion
+      Mécanisme: Violence/menace/contrainte → remise forcée
+      Peine simple: 7 ans + 100 k€
+    - Bloc: CH35
+      Infraction: Chantage
+      Mécanisme: Menace révélations diffamatoires → remise
+      Peine simple: 5 ans + 75 k€
+    - Bloc: CH35
+      Infraction: Escroquerie
+      Mécanisme: Tromperie (faux nom/manœuvres) → remise volontaire
+      Peine simple: 5 ans + 375 k€
+    - Bloc: CH35
+      Infraction: Abus de confiance
+      Mécanisme: Remise précaire préalable → détournement
+      Peine simple: 5 ans + 375 k€
 blocs:
   definition: >-
     Le vol (art. 311-1 CP) est la soustraction frauduleuse de la chose d'autrui — nécessitant un

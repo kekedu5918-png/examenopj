@@ -25,10 +25,10 @@ stats:
     label: 5 niveaux d'acteurs hiérarchisés (PR → OPJ → APJ → APJA →…
   - num: '6'
     label: 6 missions fondamentales de l'OPJ (art. 14 CPP)
-  - num: '3'
-    label: AE créés par loi 2023-1059 (art. 21-3 CPP)
-  - num: '4'
-    label: GAV = compétence EXCLUSIVE de l'OPJ (jamais APJ/APJA)
+  - num: '5'
+    label: 5 échelles de compétence (nationale, zonale, départementa…
+  - num: '2'
+    label: Paris + 92, 93, 94 = un seul département pour la compéten…
 schemaMemo:
   type: arbre
   titre: Organigramme O.A.A.A.
@@ -45,16 +45,25 @@ blocs:
   definition: >-
     L'OPJ est le fonctionnaire habilité par le procureur général près la cour d'appel pour constater
     les infractions, rassembler les preuves, rechercher les auteurs et mener toutes enquêtes sous
-    l'autorité du Procureur de la République.
+    l'autorité du Procureur de la République. La compétence territoriale d'un OPJ est limitée aux
+    ressorts où il exerce ses fonctions habituelles, sauf extension légale par mise à disposition,
+    réquisition du PR ou poursuite d'investigations hors ressort.
   piege: >-
     Un APJ ne peut jamais décider d'un placement en GAV (compétence exclusive OPJ), procéder seul à
     une perquisition ou saisie, ni communiquer directement avec le PR — ses PV sont transmis par
-    l'OPJ.
+    l'OPJ. Le défaut de compétence territoriale est une nullité d'ordre public relevable d'office à
+    tout moment — elle annule tous les actes accomplis hors ressort ET tous les actes subséquents
+    (Cass. crim. 29/05/2013).
   pointCle: >-
     Tous les OPJ sont égaux en prérogatives et en responsabilité (art. D.2 CPP) ; les attributions
     d'OPJ sont momentanément suspendues lors d'une opération de maintien de l'ordre en unité
-    constituée.
-  memo: OPJ seul place en GAV · APJ seconde · APJA appréhende en flagrance · AE notifie seulement.
+    constituée. Hors **ressort limitrophe**, l'OPJ qui se transporte pour **poursuivre des
+    investigations** sur le territoire national doit **aviser préalablement** (art. **18 al.…
+  memo: >-
+    OPJ seul place en GAV · APJ seconde · APJA appréhende en flagrance · AE notifie seulement. |
+    Extension « poursuite d'enquête » = **3 avis préalables** (art. 18 al. 3) · Limitrophe =
+    dérogation pour le magistrat **saisi** · Mise à disposition = art. 18 **al. 2** · Réquisition PR
+    (exécution nationale) = **D. 15-4** CPP.
 plan:
   - num: '1'
     titre: Le Procureur de la République
@@ -70,6 +79,15 @@ plan:
     duree: 14 min
   - num: '5'
     titre: Tableau des compétences en flagrance
+    duree: 10 min
+  - num: '6'
+    titre: Principe de compétence ordinaire
+    duree: 10 min
+  - num: '7'
+    titre: Cas particulier IDF
+    duree: 12 min
+  - num: '8'
+    titre: Extensions de compétence
     duree: 10 min
 ---
 

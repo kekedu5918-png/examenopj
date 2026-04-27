@@ -30,41 +30,59 @@ stats:
   - num: 3 ans
     label: 3 ans + 45 000 € pour harcèlement moral conjugal (art. 22…
 schemaMemo:
-  type: tableau
-  titre: Infractions M.T.A. (Menaces · Torture · Appels)
+  type: comparatif
+  titre: Synthèse CH30 + CH32
   rows:
-    - Infraction: Tortures/barbarie simple
+    - Bloc: CH30
+      Infraction: Tortures/barbarie simple
       Art.: 222-1
       Peine: 15 ans
       Particularité: Actes cruels, inhumains, dégradants
-    - Infraction: Torture + autre crime
+    - Bloc: CH30
+      Infraction: Torture + autre crime
       Art.: 222-3/222-4
       Peine: 20 ou 30 ans
       Particularité: Accompagnée/précédée d'un crime
-    - Infraction: Torture ayant causé mort
+    - Bloc: CH30
+      Infraction: Torture ayant causé mort
       Art.: 222-6
       Peine: Perpétuité
       Particularité: Résultat non intentionnel
-    - Infraction: Menace simple réitérée
+    - Bloc: CH30
+      Infraction: Menace simple réitérée
       Art.: 222-17 al.1
       Peine: 6 mois + 7 500 €
       Particularité: Crime/délit contre personnes
-    - Infraction: Menace de mort
+    - Bloc: CH30
+      Infraction: Menace de mort
       Art.: 222-17 al.2
       Peine: 3 ans + 45 000 €
       Particularité: Aggravation de la menace simple
-    - Infraction: Menace avec condition
+    - Bloc: CH30
+      Infraction: Menace avec condition
       Art.: 222-18
       Peine: 3 ans + 45 000 €
       Particularité: Contraint la victime
-    - Infraction: Menace de mort + condition
-      Art.: 222-18 al.2
-      Peine: 5 ans + 75 000 €
-      Particularité: Forme la plus grave
-    - Infraction: Appels malveillants réitérés
-      Art.: 222-16
-      Peine: 1 an + 15 000 €
-      Particularité: Aggravé si conjoint/PACS
+    - Bloc: CH32
+      Cadre: Professionnel
+      Art.: 222-33-2
+      Peine: 2 ans + 30 k€
+      Condition: Agissements répétés → dégradation conditions travail
+    - Bloc: CH32
+      Cadre: Conjugal
+      Art.: 222-33-2-1
+      Peine: 3 ans + 45 k€
+      Condition: Par conjoint/concubin/PACS ou ex
+    - Bloc: CH32
+      Cadre: Scolaire
+      Art.: 222-33-2-2
+      Peine: Jusqu'à 10 ans
+      Condition: Réitéré en milieu scolaire → suicide
+    - Bloc: CH32
+      Cadre: Général
+      Art.: 222-33-2-2
+      Peine: 1 an + 15 k€
+      Condition: Hors cadre pro/conjugal, aggravations possibles
 blocs:
   definition: >-
     Les tortures et actes de barbarie (art. 222-1 CP) sont des actes cruels, inhumains ou dégradants

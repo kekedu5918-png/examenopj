@@ -33,6 +33,9 @@ const SYNTHESE_FILES = [
 
 const ROMAN_TO_NUM = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6 };
 
+/** Plafond des lignes fusionnées multi-blocs (schéma mémo). */
+const SCHEMA_MEMO_ROW_CAP = 12;
+
 function clip(s, max) {
   if (!s || typeof s !== 'string') return '';
   const t = s.replace(/\s+/g, ' ').trim();
@@ -305,6 +308,47 @@ function hasLoi2025Any(blocks, titre) {
   return blocks.some((b) => hasLoi2025(b, titre));
 }
 
+/** @param {string} block */
+function schemaMemoFromBlock(block) {
+  const schemaSection = sliceBetween(block, '🔷 Schéma mémo', ['📘 Définition']);
+  return parseSchema(schemaSection);
+}
+
+/**
+ * Si tous les blocs ont un schéma « tableau » ou « comparatif », fusionne les lignes (colonne Bloc).
+ * Sinon conserve le schéma du premier bloc.
+ * @param {string[]} blocks
+ * @param {number[]} synthNums
+ */
+function mergeSchemaMemoFromBlocks(blocks, synthNums) {
+  if (blocks.length === 1) {
+    return schemaMemoFromBlock(blocks[0]);
+  }
+  const schemas = blocks.map((b) => schemaMemoFromBlock(b));
+  const tableLike = (s) => s && (s.type === 'tableau' || s.type === 'comparatif');
+  if (!schemas.every(tableLike)) {
+    return schemas[0];
+  }
+  const rows = [];
+  const chLabels = synthNums.map((n) => `CH${n}`);
+  for (let i = 0; i < schemas.length; i++) {
+    const chunk = (schemas[i].rows || []).slice(0, 6);
+    for (const r of chunk) {
+      if (rows.length >= SCHEMA_MEMO_ROW_CAP) break;
+      rows.push({ Bloc: chLabels[i], ...r });
+    }
+    if (rows.length >= SCHEMA_MEMO_ROW_CAP) break;
+  }
+  if (rows.length === 0) {
+    return schemas[0];
+  }
+  return {
+    type: 'comparatif',
+    titre: clip(`Synthèse ${chLabels.join(' + ')}`, 72),
+    rows,
+  };
+}
+
 async function main() {
   const chapters = await loadSyntheseChapters();
   if (chapters.size < 40) {
@@ -340,11 +384,8 @@ async function main() {
     const parsed = matter(fileRaw);
     const { content, data: prev } = parsed;
 
-    const primary = blocks[0];
-    const schemaSection = sliceBetween(primary, '🔷 Schéma mémo', ['📘 Définition']);
-
     const stats = mergeStatsFromBlocks(blocks);
-    const schemaMemo = parseSchema(schemaSection);
+    const schemaMemo = mergeSchemaMemoFromBlocks(blocks, synthNums);
     const blocs = mergeBlocsFromBlocks(blocks);
     const plan = mergePlanFromBlocks(blocks);
     const articlesCles = mergeArticlesFromBlocks(blocks);
