@@ -3,59 +3,88 @@ title: Auditions, mineurs, expertises
 chapitre: 7
 partie: 2
 description: >-
-  Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des perquisitions
-  Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction) DÉFINITION
-  – P…
+  L'audition libre est une mesure sans contrainte permettant d'entendre un suspect pour les besoins
+  de l'enquête sans recourir à la GAV, à condition que la personne consente à rester et soit
+  informée q…
 tags:
   - fondamentaux
   - Partie II
+  - synthèse-46
   - 2F.1.b
   - mesures enquête
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 131-21
-  - Art. 56
-  - Art. 56-1
-  - Art. 56-2
-  - Art. 56-3
+  - 'Art. 61-1 CPP — Audition libre : définition et droits'
+  - Art. 61-3 CPP — Parade d'identification
+  - 'Art. 62 CPP — Témoin simple : obligations'
+  - Art. 113-1 CPP — Témoin assisté
+  - Art. 80-1 CPP — Mise en examen (indices graves OU concordants)
 stats:
-  - num: '7'
-    label: Chapitre 7 (annexe B)
-  - num: II
-    label: Partie 2 — synthèse
-  - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '5'
+    label: 5 droits à notifier lors d'une audition libre (art. 61-1…
+  - num: '6'
+    label: 6 statuts d'audition distincts (victime, témoin simple, t…
+  - num: '4'
+    label: 4 personnes minimum pour une parade d'identification (art…
+  - num: '4'
+    label: 'Immédiat : bascule en GAV si suspect veut partir et que l…'
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Échelle des statuts (V→T→TA→SAL→GAV→MeX)
   rows:
-    - Étapes: '1'
-      Thème: Régime des perquisitions
-    - Étapes: '2'
-      Thème: Les cas particuliers de perquisition
-    - Étapes: '3'
-      Thème: Les saisies et scellés
+    - Statut: Victime
+      Droit au silence: N/A
+      Avocat: Sur demande
+      Contrainte: Aucune
+    - Statut: Témoin simple
+      Droit au silence: NON
+      Avocat: NON
+      Contrainte: Comparaître obligatoire
+    - Statut: Témoin assisté
+      Droit au silence: OUI
+      Avocat: OBLIGATOIRE
+      Contrainte: Aucune (pas DP, CJ)
+    - Statut: Suspect AL
+      Droit au silence: OUI
+      Avocat: OUI (délit empr.)
+      Contrainte: Peut partir
+    - Statut: GAV
+      Droit au silence: OUI
+      Avocat: OBLIGATOIRE
+      Contrainte: Contrainte physique
+    - Statut: Mis en examen
+      Droit au silence: OUI
+      Avocat: OBLIGATOIRE
+      Contrainte: DP/CJ/ARSE possibles
 blocs:
-  definition: '> Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction)'
-  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
-  pointCle: Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP (instruction)
+  definition: >-
+    L'audition libre est une mesure sans contrainte permettant d'entendre un suspect pour les
+    besoins de l'enquête sans recourir à la GAV, à condition que la personne consente à rester et
+    soit informée qu'elle peut quitter les locaux à tout moment.
+  piege: >-
+    Si la personne signifie sa volonté de partir et que l'OPJ estime nécessaire de la retenir, il
+    doit immédiatement la placer en GAV — continuer l'audition serait une atteinte à la liberté
+    constitutive de nullité.
+  pointCle: >-
+    La confrontation suit le régime de la personne la plus protégée présente (si un GAV est
+    confronté à un témoin, les droits du GAV s'appliquent : avocat, silence, enregistrement).
   memo: >-
-    Auditions, mineurs, expertises — Fiche synthèse (session JUIN 2026). 7.1 Régime des
-    perquisitions Art. 56-59 CPP (flagrance) | Art. 76 CPP (préliminaire) | Art. 94-97 CPP
-    (instruction) DÉFINITION – PE
+    Audition libre = consentement + liberté de partir + 5 droits ; si la personne veut partir → GAV
+    immédiat ou libération.
 plan:
   - num: '1'
-    titre: Régime des perquisitions
-    duree: ~10 min
+    titre: Conditions de l'audition libre
+    duree: 10 min
   - num: '2'
-    titre: Les cas particuliers de perquisition
-    duree: ~10 min
+    titre: Les 6 statuts d'audition
+    duree: 12 min
   - num: '3'
-    titre: Les saisies et scellés
-    duree: ~10 min
+    titre: La confrontation
+    duree: 10 min
+  - num: '4'
+    titre: La parade d'identification (art. 61-3 CPP)
+    duree: 14 min
 ---
 
 ![p. 21](/fondamentaux/auditions-tableau-p21.jpg)

@@ -3,72 +3,95 @@ title: Prescription, amnistie, extinction de l'action
 chapitre: 25
 partie: 4
 description: >-
-  Prescription, amnistie, extinction de l'action — Fiche synthèse (session JUIN 2026). 25.1 Les
-  termes de la récidive La récidive suppose: (1) une première condamnation définitive passée en
-  force de ch…
+  La classification tripartite des infractions (art. 111-1 CP) distingue crimes, délits et
+  contraventions selon leur gravité, produisant des effets déterminants sur la compétence
+  juridictionnelle, les…
 tags:
   - fondamentaux
   - Partie IV
+  - synthèse-46
   - 2F.1.b
   - droit pénal général
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 132-16
-  - Art. 132-16-1
-  - Art. 132-16-2
-  - Art. 132-16-4
-  - Art. 132-16-4-1
+  - Art. 111-1 CP — Classification tripartite des infractions
+  - Art. 112-1 CP — Non-rétroactivité et rétroactivité in mitius
+  - Art. 133-2 CP — Prescription de l'action publique
+  - Art. 113-2 CP — Territorialité de la loi française
+  - Art. 113-6 CP — Double incrimination pour Français auteur à l'étranger
 stats:
-  - num: '25'
-    label: Chapitre 25 (annexe B)
-  - num: IV
-    label: Partie 4 — synthèse
+  - num: '3'
+    label: '3 catégories : crimes (20 ans prescription), délits (6 an…'
+  - num: '2'
+    label: 'Imprescriptibles : crimes contre l''humanité (art. 133-2 C…'
+  - num: 30 ans
+    label: 30 ans de prescription pour trafic stupéfiants, crimes su…
   - num: '4'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: 'Rétroactivité in mitius : la loi nouvelle plus douce s''ap…'
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Tableau tripartite C.D.C.
   rows:
-    - Étapes: '1'
-      Thème: Les termes de la récidive
-    - Étapes: '2'
-      Thème: Les délits assimilés pour la récidive correctionnelle
-    - Étapes: '3'
-      Thème: Le concours d'infractions (art. 132-2 à 132-4)
-    - Étapes: '4'
-      Thème: Le cumul en récidive — personnes physiques
+    - Critère: Juridiction
+      CRIMES: CA / CCD
+      DÉLITS: TC
+      CONTRAVENTIONS: TP
+    - Critère: Prescription AP
+      CRIMES: 20 ans
+      DÉLITS: 6 ans
+      CONTRAVENTIONS: 1 an
+    - Critère: Prescription peine
+      CRIMES: 20 ans
+      DÉLITS: 6 ans
+      CONTRAVENTIONS: 3 ans
+    - Critère: Tentative
+      CRIMES: TOUJOURS
+      DÉLITS: Si texte
+      CONTRAVENTIONS: JAMAIS
+    - Critère: Complicité
+      CRIMES: OUI
+      DÉLITS: OUI
+      CONTRAVENTIONS: Si texte
+    - Critère: Peine max
+      CRIMES: Perpétuité
+      DÉLITS: 10 ans +
+      CONTRAVENTIONS: 3 000 €
+    - Critère: Instruction
+      CRIMES: OBLIGATOIRE
+      DÉLITS: Facultative
+      CONTRAVENTIONS: Exceptionnelle
 blocs:
   definition: >-
-    La récidive suppose: (1) une première condamnation définitive passée en force de chose jugée
-    (1er terme); (2) une seconde infraction ultérieure (2nd terme). La condamnation peut être
-    française ou d'un État membre de l'UE. LES 4 CAS DE RÉCIDIVE (articles 132-8 à 132-11 CP) 132-8:
-    Crime/Délit 10 ans → CRIME Pas de délai - Générale - Perpétuelle PERPÉTUITÉ ou 30 ans selon
-    peine encourue du 2nd crime 132-9 al. 1: Crime/Délit 10 ans → DÉLIT 10 ans Délai 10 ans -
-    Générale - Tempor…
-  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+    La classification tripartite des infractions (art. 111-1 CP) distingue crimes, délits et
+    contraventions selon leur gravité, produisant des effets déterminants sur la compétence
+    juridictionnelle, les règles de prescription, la punissabilité de la tentative et de la
+    complicité.
+  piege: >-
+    Pour une infraction continue (ex. recel), la prescription court à partir du moment où l'état
+    délictueux a cessé — non du jour de début. Pour abus de confiance, elle court du jour où la
+    victime s'est aperçue du détournement. Pour infractions sur mineurs : à compter de la majorité
+    de la victime.
   pointCle: >-
-    DÉFINITION – CONCOURS RÉEL D'INFRACTIONS Situation où plusieurs infractions sont commises par
-    une même personne avant qu'une condamnation définitive soit intervenue pour l'une d'elles.
-    Distinguer du…
+    Le principe de non-rétroactivité (art. 112-1 CP) cède devant la rétroactivité in mitius : la loi
+    nouvelle plus douce s'applique aux faits antérieurs non définitivement jugés ; les lois de
+    procédure s'appliquent, elles, immédiatement aux procédures en cours.
   memo: >-
-    (1) une première condamnation définitive passée en force de chose jugée (1er terme); (2) une
-    seconde infraction ultérieure (2nd terme). La condamnat…
+    Prescription AP : 20/6/1 · Tentative : toujours/si texte/jamais · In mitius = loi douce
+    rétroactive · Procédure = application immédiate.
 plan:
   - num: '1'
-    titre: Les termes de la récidive
-    duree: ~10 min
+    titre: La classification tripartite (art. 111-1 CP)
+    duree: 10 min
   - num: '2'
-    titre: Les délits assimilés pour la récidive correctionnelle
-    duree: ~10 min
+    titre: Prescriptions dérogatoires
+    duree: 12 min
   - num: '3'
-    titre: Le concours d'infractions (art. 132-2 à 132-4)
-    duree: ~10 min
+    titre: Application de la loi dans le temps
+    duree: 10 min
   - num: '4'
-    titre: Le cumul en récidive — personnes physiques
-    duree: ~10 min
+    titre: Application de la loi dans l'espace (art. 113-2 à 113-12 CP)
+    duree: 14 min
 ---
 
 ![p. 46](/fondamentaux/prescription-extinction-tableau-p46.jpg)

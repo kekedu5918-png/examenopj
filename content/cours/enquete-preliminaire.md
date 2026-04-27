@@ -3,67 +3,94 @@ title: L'enquête préliminaire
 chapitre: 2
 partie: 1
 description: >-
-  L'enquête préliminaire — Fiche synthèse (session JUIN 2026). Articles 75 à 78 CPP — Régime
-  procédural de droit commun 2.1 Définition et caractéristiques L'enquête préliminaire constitue le
-  cadre proc…
+  L'enquête préliminaire est le cadre procédural de droit commun applicable en l'absence de
+  flagrance, aux pouvoirs plus limités mais à la durée bien plus longue, ouverte d'initiative ou sur
+  instructio…
 tags:
   - fondamentaux
   - Partie I
+  - synthèse-46
   - 2F.1.b
   - procédure
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 53
-  - Art. 56
-  - Art. 61
-  - Art. 63
-  - Art. 73
+  - Art. 75 CPP — Ouverture de l'enquête préliminaire
+  - Art. 76 CPP — Perquisitions avec assentiment écrit
+  - Art. 77-1 CPP — Réquisitions avec autorisation PR
+  - Art. 77-1-1 CPP — Remise de documents (vidéoprotection)
+  - Art. 78 CPP — Clôture et transmission au PR
 stats:
-  - num: '2'
-    label: Chapitre 2 (annexe B)
-  - num: I
-    label: Partie 1 — synthèse
+  - num: 2 ans
+    label: 2 ans de durée initiale à compter du 1er acte
+  - num: '+1'
+    label: +1 an de prolongation par le PR pour affaires complexes
   - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: Assentiment écrit obligatoire pour toute perquisition
+  - num: 3 ans
+    label: 3 ans minimum d'emprisonnement pour solliciter le JLD san…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: comparatif
+  titre: FLAGRANCE vs PRÉLIMINAIRE
   rows:
-    - Étapes: '1'
-      Thème: Définition et caractéristiques
-    - Étapes: '2'
-      Thème: Caractéristiques fondamentales
-    - Étapes: '3'
-      Thème: Comparatif FLAGRANCE vs PRÉLIMINAIRE
+    - Critère: Durée
+      FLAGRANCE: 16 jours max
+      PRÉLIMINAIRE: 2 ans + 1 an
+    - Critère: Perquisition
+      FLAGRANCE: Sans assentiment
+      PRÉLIMINAIRE: Assentiment ÉCRIT
+    - Critère: Contrôles identité
+      FLAGRANCE: Élargis
+      PRÉLIMINAIRE: Restrictifs
+    - Critère: Interdiction s'éloigner
+      FLAGRANCE: OUI (art. 61)
+      PRÉLIMINAIRE: NON
+    - Critère: Réquisitions
+      FLAGRANCE: Sans autorisation
+      PRÉLIMINAIRE: Autorisation PR
+    - Critère: Bascule
+      FLAGRANCE: → Préliminaire
+      PRÉLIMINAIRE: → Flagrance si indices
 blocs:
   definition: >-
-    L'enquête préliminaire constitue le cadre procédural de droit commun. Elle est menée lorsque les
-    conditions de la flagrance ne sont pas (ou plus) réunies, ou lorsque les enquêteurs choisissent
-    d'opérer dans ce cadre. Les pouvoirs y sont plus limités mais sa durée est bien plus longue.
+    L'enquête préliminaire est le cadre procédural de droit commun applicable en l'absence de
+    flagrance, aux pouvoirs plus limités mais à la durée bien plus longue, ouverte d'initiative ou
+    sur instructions du Procureur de la République.
   piege: >-
-    Confondre les cadres procéduraux (flagrance, préliminaire, instruction) : pouvoirs et délais
-    diffèrent.
+    En cas de doute sur le cadre, toujours préférer la préliminaire : une flagrance contestable
+    suivie d'une bascule en préliminaire expose à des nullités en chaîne — l'inverse est plus solide
+    juridiquement.
   pointCle: >-
-    CLÉ En préliminaire, les perquisitions exigent l'assentiment écrit préalable de la personne
-    (art. 76 CPP). À défaut, l'autorisation motivée du JLD est nécessaire lorsque l'infraction est
-    punie d'au m…
-  memo: >-
-    L'enquête préliminaire — Fiche synthèse (session JUIN 2026). Articles 75 à 78 CPP — Régime
-    procédural de droit commun 2.1 Définition et caractéristiques L'enquête préliminaire constitue
-    le cadre procé
+    Les perquisitions en préliminaire exigent l'assentiment écrit préalable de la personne (art. 76
+    CPP) — à défaut, l'autorisation motivée du JLD est nécessaire si l'infraction est punie d'au
+    moins 3 ans.
+  memo: PRÉ = préférable + précautionneux → assentiment écrit + durée longue + pouvoirs limités.
 plan:
   - num: '1'
-    titre: Définition et caractéristiques
-    duree: ~10 min
+    titre: Ouverture et durée
+    duree: 10 min
   - num: '2'
-    titre: Caractéristiques fondamentales
-    duree: ~10 min
+    titre: Régime des perquisitions
+    duree: 12 min
   - num: '3'
-    titre: Comparatif FLAGRANCE vs PRÉLIMINAIRE
-    duree: ~10 min
+    titre: Réquisitions et actes coercitifs
+    duree: 10 min
+  - num: '4'
+    titre: Sortie et transmission
+    duree: 14 min
+timeline:
+  - temps: Étape 1
+    event: 1er acte d'enquête
+    detail: 1er acte d'enquête
+  - temps: Étape 2
+    event: 2 ans
+    detail: '2 ans : durée initiale (art. 75 CPP)'
+  - temps: Étape 3
+    event: +1 an
+    detail: '+1 an : prolongation PR motivée (affaires complexes)'
+  - temps: Étape 4
+    event: → Classement / Poursuites / Instruction / B…
+    detail: → Classement / Poursuites / Instruction / Bascule flagrance
 ---
 
 ![p. 8](/fondamentaux/enquete-preliminaire-tableau-p8.jpg)

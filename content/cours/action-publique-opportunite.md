@@ -3,64 +3,83 @@ title: Action publique, opportunité, politique pénale
 chapitre: 10
 partie: 3
 description: >-
-  Action publique, opportunité, politique pénale — Fiche synthèse (session JUIN 2026). Art. 1 à 10
-  CPP 10.1 Distinction fondamentale DÉFINITION – ACTION PUBLIQUE Action exercée par les magistrats
-  du mi…
+  L'action publique est l'action exercée par le Ministère public au nom de la société pour faire
+  prononcer une peine contre l'auteur d'une infraction, tandis que l'action civile permet à la
+  victime d'o…
 tags:
   - fondamentaux
   - Partie III
+  - synthèse-46
   - 2F.1.b
   - phase juridictionnelle
-loi2025: false
+loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 1
-  - Art. 1 — repère
-  - Texte / doctrine — Action publique, opportunité, politique pénale (complément 1)
-  - Texte / doctrine — Action publique, opportunité, politique pénale (complément 2)
-  - Texte / doctrine — Action publique, opportunité, politique pénale (complément 3)
+  - 'Art. 1er CPP — Action publique : définition et exercice'
+  - 'Art. 2 CPP — Action civile : définition et exercice'
+  - Art. 3 CPP — Jonction des deux actions
+  - Art. 40 CPP — Opportunité des poursuites (PR)
+  - Art. 85 CPP — Constitution de partie civile devant le JI
 stats:
-  - num: '10'
-    label: Chapitre 10 (annexe B)
-  - num: III
-    label: Partie 3 — synthèse
-  - num: '1'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '2'
+    label: '2 actions distinctes : publique (peine) et civile (répara…'
+  - num: '7'
+    label: 7 causes d'extinction de l'action publique (décès, abroga…
+  - num: '3'
+    label: 'Règle "le criminel tient le civil en état" : le juge civi…'
+  - num: '4'
+    label: 'Prescription : 20 ans (crimes) / 6 ans (délits) / 1 an (c…'
 schemaMemo:
-  type: acronyme
-  titre: Repères — Action publique, opportunité, politique pénale
-  acronyme: L.I.R.E.
-  cards:
-    - lettre: L
-      mot: Lire
-      desc: Structurer Action publique, opportunité, politique pénale avant l’oral.
-    - lettre: I
-      mot: Indices
-      desc: Repérer faits, qualifications et textes applicables.
-    - lettre: R
-      mot: Régime
-      desc: Procédure, juridiction et nullités éventuelles.
-    - lettre: E
-      mot: Examen
-      desc: Entraînement quiz et articulation avec les autres fiches.
+  type: comparatif
+  titre: Comparatif PUBLIC vs CIVIL
+  rows:
+    - Critère: Origine
+      ACTION PUBLIQUE: Infraction seule
+      ACTION CIVILE: Infraction + préjudice
+    - Critère: Objet
+      ACTION PUBLIQUE: Faire appliquer une peine
+      ACTION CIVILE: Obtenir réparation
+    - Critère: Sujet actif
+      ACTION PUBLIQUE: Ministère public
+      ACTION CIVILE: Personne lésée/héritiers
+    - Critère: Sujet passif
+      ACTION PUBLIQUE: Auteur de l'infraction
+      ACTION CIVILE: Auteur, héritiers, civilement resp.
+    - Critère: Juridictions
+      ACTION PUBLIQUE: Répressives uniquement
+      ACTION CIVILE: Répressives ET civiles
+    - Critère: Clôture
+      ACTION PUBLIQUE: Condamnation à une peine
+      ACTION CIVILE: Condamnation à réparation
 blocs:
   definition: >-
-    > DÉFINITION – ACTION PUBLIQUE Action exercée par les magistrats du ministère public au nom de
-    la société, visant à faire prononcer une peine contre l'auteur d'une infraction.
-  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+    L'action publique est l'action exercée par le Ministère public au nom de la société pour faire
+    prononcer une peine contre l'auteur d'une infraction, tandis que l'action civile permet à la
+    victime d'obtenir réparation de son préjudice devant les juridictions répressives ou civiles.
+  piege: >-
+    Ne pas confondre : la victime qui porte son action civile devant le juge pénal (constitution de
+    partie civile) déclenche l'action publique si celle-ci n'a pas été mise en œuvre par le PR —
+    c'est une voie de contournement du classement sans suite.
   pointCle: >-
-    DÉFINITION – ACTION PUBLIQUE Action exercée par les magistrats du ministère public au nom de la
-    société, visant à faire prononcer une peine contre l'auteur d'une infraction.
+    Le principe "le criminel tient le civil en état" impose au juge civil saisi d'une action civile
+    de surseoir à statuer jusqu'à ce que la juridiction pénale se soit définitivement prononcée sur
+    les mêmes faits.
   memo: >-
-    Action publique, opportunité, politique pénale — Fiche synthèse (session JUIN 2026). Art. 1 à 10
-    CPP 10.1 Distinction fondamentale DÉFINITION – ACTION PUBLIQUE Action exercée par les magistrats
-    du min
+    AP = société + peine · AC = victime + réparation · CPC devant juge pénal = déclenche AP ·
+    Criminel tient civil en état.
 plan:
   - num: '1'
-    titre: Distinction fondamentale
-    duree: ~10 min
+    titre: 'L''action publique : définition et titulaires'
+    duree: 10 min
+  - num: '2'
+    titre: 'L''action civile : exercice et choix de juridiction'
+    duree: 12 min
+  - num: '3'
+    titre: Extinction de l'action publique
+    duree: 10 min
+  - num: '4'
+    titre: Interaction entre les deux actions
+    duree: 14 min
 ---
 
 # Action publique, opportunité, politique pénale

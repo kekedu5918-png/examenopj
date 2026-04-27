@@ -3,65 +3,82 @@ title: Homicides, atteintes à la vie
 chapitre: 27
 partie: 5
 description: >-
-  Homicides, atteintes à la vie — Fiche synthèse (session JUIN 2026). Art. 221-1 à 221-5-2 CP 27.1
-  Le meurtre (art. 221-1 CP) DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui.
-  Peine:…
+  Le meurtre (art. 221-1 CP) est le fait de donner volontairement la mort à autrui, caractérisé par
+  un acte positif de violence entraînant le décès et par le dol spécial — l'intention homicide — qui
+  le…
 tags:
   - fondamentaux
   - Partie V
+  - synthèse-46
   - 2F.1.b
   - droit pénal spécial
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 221-1
-  - Art. 221-2
-  - Art. 221-5
-  - Art. 223-13
-  - Art. 221-1 — repère
+  - 'Art. 221-1 CP — Meurtre : définition et peine (30 ans)'
+  - Art. 221-3 CP — Assassinat (préméditation → perpétuité)
+  - Art. 221-4 CP — Circonstances aggravantes du meurtre
+  - Art. 221-5 CP — Empoisonnement (infraction formelle)
+  - Art. 223-13 CP — Provocation au suicide
 stats:
-  - num: '27'
-    label: Chapitre 27 (annexe B)
-  - num: V
-    label: Partie 5 — synthèse
+  - num: 30 ans
+    label: 30 ans de réclusion criminelle pour le meurtre simple (ar…
+  - num: '2'
+    label: Perpétuité pour l'assassinat (meurtre avec préméditation,…
   - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: 'Infraction formelle : l''empoisonnement (art. 221-5 CP) es…'
+  - num: 3 ans
+    label: 3 ans + 45 000 € pour provocation au suicide (art. 223-13…
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les infractions (M.A.E.P.)
   rows:
-    - Étapes: '1'
-      Thème: Le meurtre (art. 221-1 CP)
-    - Étapes: '2'
-      Thème: L'empoisonnement (art. 221-5 CP)
-    - Étapes: '3'
-      Thème: Provocation au suicide (art. 223-13 CP)
+    - Infraction: Meurtre
+      Art.: 221-1
+      Peine: 30 ans
+      Particularité: Dol spécial = intention de tuer
+    - Infraction: Asassinat
+      Art.: 221-3
+      Peine: Perpétuité
+      Particularité: Meurtre + préméditation ou guet-apens
+    - Infraction: Empoisonnement
+      Art.: 221-5
+      Peine: 30 ans
+      Particularité: 'Infraction formelle : consommée dès administration'
+    - Infraction: Provocation suicide
+      Art.: 223-13
+      Peine: 3 ans
+      Particularité: Aggravé si victime < 15 ans
 blocs:
   definition: >-
-    > DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui. Peine: 30 ans de
-    réclusion criminelle. Éléments constitutifs Élément Caractérisation MATÉRIEL Acte positif de
-    violence — sur la personne d'autrui — lien de causalité entre l'acte et le décès MORAL Intention
-    homicide (DOL SPÉCIAL: intention de tuer) Circonstances aggravantes (art. 221-2 à 221-4 CP)
-    Perpétuité encourue dans les cas suivants: préméditation (assassinat); guet-apens;
-    précédé/accompagné/suivi d…
-  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+    Le meurtre (art. 221-1 CP) est le fait de donner volontairement la mort à autrui, caractérisé
+    par un acte positif de violence entraînant le décès et par le dol spécial — l'intention homicide
+    — qui le distingue des atteintes involontaires à la vie.
+  piege: >-
+    L'empoisonnement (art. 221-5 CP) est une infraction formelle — elle est consommée dès
+    l'administration de la substance mortelle, peu importe que la mort survienne ou non. Ne pas
+    confondre avec le meurtre qui est une infraction matérielle exigeant le décès effectif.
   pointCle: >-
-    DÉFINITION – MEURTRE Fait de donner VOLONTAIREMENT la mort à autrui. Peine: 30 ans de réclusion
-    criminelle. Éléments constitutifs Élément Caractérisation MATÉRIEL Acte positif de violence —
-    sur la pe…
-  memo: 30 ans de réclusion criminelle. Éléments constitutifs Élément Caract…
+    La préméditation (résolution prise avant l'action) est la circonstance aggravante qui transforme
+    le meurtre en assassinat (perpétuité), tout comme le guet-apens (attendre la victime dans un
+    lieu prédéterminé) — dans les deux cas, pas de possibilité de perpétuité réelle incompressible
+    sauf récidive.
+  memo: >-
+    Meurtre = intention tuer + 30 ans · Assassinat = préméditation/guet-apens + perpétuité ·
+    Empoisonnement = formelle + 30 ans · Dol spécial obligatoire pour meurtre.
 plan:
   - num: '1'
     titre: Le meurtre (art. 221-1 CP)
-    duree: ~10 min
+    duree: 10 min
   - num: '2'
-    titre: L'empoisonnement (art. 221-5 CP)
-    duree: ~10 min
+    titre: Circonstances aggravantes (art. 221-2 à 221-4 CP)
+    duree: 12 min
   - num: '3'
+    titre: L'empoisonnement (art. 221-5 CP)
+    duree: 10 min
+  - num: '4'
     titre: Provocation au suicide (art. 223-13 CP)
-    duree: ~10 min
+    duree: 14 min
 ---
 
 ![p. 49](/fondamentaux/homicides-atteintes-vie-tableau-p49.jpg)

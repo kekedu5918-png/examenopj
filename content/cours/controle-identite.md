@@ -3,60 +3,93 @@ title: Identité, rétention, interpellation
 chapitre: 8
 partie: 2
 description: >-
-  Identité, rétention, interpellation — Fiche synthèse (session JUIN 2026). Art. 60, 60-1, 60-2,
-  60-3 CPP (flagrance) | 77-1 et suiv. (préliminaire) 8.1 Principe et typologie DÉFINITION –
-  RÉQUISITION A…
+  Le contrôle d'identité est l'acte par lequel un OPJ ou APJ (sur instructions) invite une personne
+  à justifier de son identité selon des bases légales strictement définies, pouvant conduire à une
+  véri…
 tags:
   - fondamentaux
   - Partie II
+  - synthèse-46
   - 2F.1.b
   - mesures enquête
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 60
-  - Art. 60-1
-  - Art. 60-2
-  - Art. 60-3
-  - Art. 77-1
+  - Art. 78-2 al. 1 CPP — Contrôle d'identité judiciaire
+  - Art. 78-2 al. 2 CPP — Contrôle réquisitionné (PR)
+  - Art. 78-3 CPP — Vérification d'identité (4h max, nullité textuelle)
+  - Art. 55-1 CPP — Relevé signalétique
+  - Art. L. 611-1 CESEDA — Contrôle administratif du séjour
 stats:
-  - num: '8'
-    label: Chapitre 8 (annexe B)
-  - num: II
-    label: Partie 2 — synthèse
-  - num: '2'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '6'
+    label: 6 types de contrôles d'identité distincts (art. 78-1 à 78…
+  - num: 4 h
+    label: 4 heures = durée maximale absolue de vérification d'ident…
+  - num: 8 h
+    label: 8 heures pour les ressortissants étrangers en matière de…
+  - num: '4'
+    label: Nullité textuelle automatique si 4h dépassées sans GAV ni…
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les 6 contrôles (J.R.P.A.F.S.)
   rows:
-    - Étapes: '1'
-      Thème: Principe et typologie
-    - Étapes: '2'
-      Thème: Formalisme de la réquisition
+    - Type: Judiciaire
+      Base: Art. 78-2 al. 1
+      Motif: Raisons plausibles d'infraction
+    - Type: Réquisitionné
+      Base: Art. 78-2 al. 2
+      Motif: Réquisition écrite du PR
+    - Type: Préventif
+      Base: Art. 78-2 al. 3
+      Motif: Prévenir atteinte à l'ordre public
+    - Type: Administratif
+      Base: Art. L.611-1 CESEDA
+      Motif: Régularité du séjour
+    - Type: Frontalier
+      Base: Art. 78-2 al. 4
+      Motif: Zone 20 km frontière
+    - Type: Schengen
+      Base: Art. 78-2 al. 5
+      Motif: Gares, zones frontalières
 blocs:
   definition: >-
-    > DÉFINITION – RÉQUISITION Acte par lequel les enquêteurs sollicitent d'un organisme ou d'une
-    personne (expert, opérateur télécom, administration, laboratoire...) l'accomplissement d'un acte
-    technique ou la remise d'informations. La réquisition est adressée à la personne compétente et
-    doit être précise quant à son objet et à sa base légale. Article Objet Conditions Art. 60
-    Examens techniques / constatations Expert ou laboratoire. Recherche d'indices matériels ou
-    biologiques…
-  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
-  pointCle: Art. 60, 60-1, 60-2, 60-3 CPP (flagrance) | 77-1 et suiv. (préliminaire)
+    Le contrôle d'identité est l'acte par lequel un OPJ ou APJ (sur instructions) invite une
+    personne à justifier de son identité selon des bases légales strictement définies, pouvant
+    conduire à une vérification d'identité en cas de refus ou d'impossibilité.
+  piege: >-
+    Le dépassement du délai de 4 heures de vérification d'identité sans décision de placement en GAV
+    ni libération est une nullité textuelle prévue expressément par l'art. 78-3 CPP — pas besoin de
+    démontrer un grief.
+  pointCle: >-
+    Lors d'une vérification d'identité, la fouille à corps est interdite sans raison plausible
+    d'infraction ; en revanche, un relevé signalétique (art. 55-1 CPP) et un avis à un proche sont
+    possibles.
   memo: >-
-    Identité, rétention, interpellation — Fiche synthèse (session JUIN 2026). Art. 60, 60-1, 60-2,
-    60-3 CPP (flagrance) | 77-1 et suiv. (préliminaire) 8.1 Principe et typologie DÉFINITION –
-    RÉQUISITION Ac
+    Vérification d'identité = 4h max · Info PR dès que possible · Fouille = NON · Relevé
+    signalétique = OUI · Dépassement 4h → nullité textuelle.
 plan:
   - num: '1'
-    titre: Principe et typologie
-    duree: ~10 min
+    titre: Contrôle judiciaire (art. 78-2 al. 1)
+    duree: 10 min
   - num: '2'
-    titre: Formalisme de la réquisition
-    duree: ~10 min
+    titre: Contrôle réquisitionné (art. 78-2 al. 2)
+    duree: 12 min
+  - num: '3'
+    titre: Contrôles préventif, administratif, frontalier
+    duree: 10 min
+  - num: '4'
+    titre: Vérification d'identité (art. 78-3 CPP)
+    duree: 14 min
+timeline:
+  - temps: Étape 1
+    event: Info PR dès que possible
+    detail: Info PR dès que possible
+  - temps: Étape 2
+    event: 4h max ──────── Si infraction apparaît → GA…
+    detail: 4h max ──────── Si infraction apparaît → GAV immédiat
+  - temps: Étape 3
+    event: → Libération obligatoire (ou GAV) à 4h — NU…
+    detail: → Libération obligatoire (ou GAV) à 4h — NULLITÉ TEXTUELLE si dépassé
 ---
 
 ![p. 23](/fondamentaux/controle-identite-tableau-p23.jpg)

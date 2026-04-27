@@ -3,89 +3,96 @@ title: L'information judiciaire
 chapitre: 3
 partie: 1
 description: >-
-  L'information judiciaire — Fiche synthèse (session JUIN 2026). Articles 12 à 21-3 CPP —
-  Organisation de la police judiciaire 3.1 Hiérarchie d'ensemble ORGANIGRAMME DES ACTEURS DE LA
-  PROCÉDURE PÉNALE…
+  L'instruction préparatoire est la phase d'information judiciaire menée par un juge indépendant,
+  agissant à charge et à décharge, visant à établir si les charges sont suffisantes pour renvoyer
+  une per…
 tags:
   - fondamentaux
   - Partie I
+  - synthèse-46
   - 2F.1.b
   - procédure
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 1
-  - Art. 10-2
-  - Art. 100-5
-  - Art. 12
-  - Art. 14
+  - Art. 79 CPP — Instruction obligatoire en matière criminelle
+  - Art. 81 CPP — JI agit à charge ET à décharge
+  - 'Art. 105 CPP — Règle cardinale : stop témoin si indices graves/concordants'
+  - Art. 151-152 CPP — Commission rogatoire
+  - Art. 175 CPP — Clôture de l'instruction
 stats:
+  - num: '1'
+    label: Obligatoire en matière criminelle (art. 79 CPP) — jamais…
+  - num: '4'
+    label: '4 statuts sous instruction : témoin, témoin assisté, mis…'
   - num: '3'
-    label: Chapitre 3 (annexe B)
-  - num: I
-    label: Partie 1 — synthèse
-  - num: '7'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: '3 issues possibles : renvoi, mise en accusation, non-lieu'
+  - num: '1'
+    label: 1 mois (MCI détenu) / 3 mois (libre) pour soulever les nu…
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les 4 statuts sous instruction (T → TA → MeX → PC)
   rows:
-    - Étapes: '1'
-      Thème: Hiérarchie d'ensemble
-    - Étapes: '2'
-      Thème: Le Procureur de la République
-    - Étapes: '3'
-      Thème: L'Officier de Police Judiciaire (OPJ)
-    - Étapes: '4'
-      Thème: L'Agent de Police Judiciaire (APJ)
-    - Étapes: '5'
-      Thème: L'Agent de Police Judiciaire Adjoint (APJA)
-    - Étapes: '6'
-      Thème: Les Assistants d'Enquête (AE)
-    - Étapes: '7'
-      Thème: Tableau consolidé des compétences en flagrance
+    - Statut: Témoin
+      Indices requis: Aucun
+      Avocat: NON
+      DP / CJ possible: NON
+    - Statut: Témoin assisté
+      Indices requis: Indices vraisemblables
+      Avocat: OBLIGATOIRE
+      DP / CJ possible: NON
+    - Statut: Mis en examen
+      Indices requis: Graves OU concordants
+      Avocat: OBLIGATOIRE
+      DP / CJ possible: OUI
+    - Statut: Partie civile
+      Indices requis: Victime
+      Avocat: Via avocat
+      DP / CJ possible: N/A
 blocs:
   definition: >-
-    ORGANIGRAMME DES ACTEURS DE LA PROCÉDURE PÉNALE PROCUREUR DE LA RÉPUBLIQUE Direction de la
-    police judiciaire - Art. 12 CPP OFFICIER DE POLICE JUDICIAIRE Art. 14-19 CPP - Art. D.2
-    (égalité) AGENT DE POLICE JUDICIAIRE Art. 20 CPP - Sous contrôle OPJ AGENT DE POLICE JUDICIAIRE
-    ADJOINT Art. 21 CPP - Compétence limitée ASSISTANT D'ENQUÊTE Art. 21-3 CPP - Ne peut agir qu'à
-    la demande expresse
+    L'instruction préparatoire est la phase d'information judiciaire menée par un juge indépendant,
+    agissant à charge et à décharge, visant à établir si les charges sont suffisantes pour renvoyer
+    une personne devant une juridiction de jugement.
   piege: >-
-    Confondre les cadres procéduraux (flagrance, préliminaire, instruction) : pouvoirs et délais
-    diffèrent.
+    Dès qu'apparaissent des indices graves et concordants à l'encontre d'une personne entendue comme
+    témoin, elle ne peut plus être entendue comme telle (art. 105 CPP) — violation = nullité d'ordre
+    public, relevable d'office.
   pointCle: >-
-    DÉFINITION – PROCUREUR DE LA RÉPUBLIQUE Magistrat du parquet, représentant du ministère public
-    près le tribunal judiciaire. Dirige la police judiciaire (art. 12 CPP), exerce l'action
-    publique, appréc…
+    Le juge d'instruction agit à charge ET à décharge (art. 81 CPP) ; la commission rogatoire ne
+    peut être déléguée qu'à un OPJ — jamais à un APJ seul — sous peine de nullité d'ordre public.
   memo: >-
-    L'information judiciaire — Fiche synthèse (session JUIN 2026). Articles 12 à 21-3 CPP —
-    Organisation de la police judiciaire 3.1 Hiérarchie d'ensemble ORGANIGRAMME DES ACTEURS DE LA
-    PROCÉDURE PÉNALE P
+    Instruction = JI indépendant + à charge ET décharge + secret · Art. 105 = dès indices
+    graves/concordants → stop témoin → MeX obligatoire.
 plan:
   - num: '1'
-    titre: Hiérarchie d'ensemble
-    duree: ~10 min
+    titre: Caractère et ouverture
+    duree: 10 min
   - num: '2'
-    titre: Le Procureur de la République
-    duree: ~10 min
+    titre: Pouvoirs du juge d'instruction
+    duree: 12 min
   - num: '3'
-    titre: L'Officier de Police Judiciaire (OPJ)
-    duree: ~10 min
+    titre: Les 4 statuts sous instruction
+    duree: 10 min
   - num: '4'
-    titre: L'Agent de Police Judiciaire (APJ)
-    duree: ~10 min
+    titre: La commission rogatoire
+    duree: 14 min
   - num: '5'
-    titre: L'Agent de Police Judiciaire Adjoint (APJA)
-    duree: ~10 min
-  - num: '6'
-    titre: Les Assistants d'Enquête (AE)
-    duree: ~10 min
-  - num: '7'
-    titre: Tableau consolidé des compétences en flagrance
-    duree: ~10 min
+    titre: Clôture (art. 175 et suiv.)
+    duree: 10 min
+timeline:
+  - temps: Étape 1
+    event: Avis de fin d'instruction (art
+    detail: Avis de fin d'instruction (art. 175 CPP)
+  - temps: Étape 2
+    event: 1 mois (détenu) / 3 mois (libre) pour soule…
+    detail: 1 mois (détenu) / 3 mois (libre) pour soulever nullités
+  - temps: Étape 3
+    event: Ordonnance de RENVOI (charges suffisantes d…
+    detail: Ordonnance de RENVOI (charges suffisantes délit → T. correctionnel)
+  - temps: Étape 4
+    event: Ordonnance de MISE EN ACCUSATION (crime → C…
+    detail: Ordonnance de MISE EN ACCUSATION (crime → CA/CCD)
 ---
 
 ![p. 14](/fondamentaux/information-judiciaire-schema-p14.jpg)

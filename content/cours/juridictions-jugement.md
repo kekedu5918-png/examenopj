@@ -3,68 +3,72 @@ title: Renvoi, jugement, juridictions répressives
 chapitre: 14
 partie: 3
 description: >-
-  Renvoi, jugement, juridictions répressives — Fiche synthèse (session JUIN 2026). 14.1 Les
-  alternatives aux poursuites (art. 41-1 CPP) Le PR dispose d'un pouvoir d'appréciation de
-  l'opportunité des po…
+  Les juridictions répressives sont les juridictions spécialisées dans le jugement des infractions
+  pénales, organisées selon la classification tripartite crimes/délits/contraventions, avec des
+  règles d…
 tags:
   - fondamentaux
   - Partie III
+  - synthèse-46
   - 2F.1.b
   - phase juridictionnelle
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 40
-  - Art. 41-1
-  - Art. 41-2
-  - Art. 44-1
-  - Art. 40 — repère
+  - Art. 231 CPP — Compétence de la cour d'assises
+  - Art. 381 CPP — Compétence du tribunal correctionnel
+  - Art. 521 CPP — Compétence du tribunal de police
+  - L. 11-1 CJPM — Juridictions spécialisées mineurs
+  - Loi 2021-1729 — Création de la CCD (5 magistrats professionnels)
 stats:
-  - num: '14'
-    label: Chapitre 14 (annexe B)
-  - num: III
-    label: Partie 3 — synthèse
-  - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: 4 j
+    label: 4 juridictions de 1er degré (TP, TC, CA, CCD)
+  - num: '5'
+    label: 5 magistrats professionnels composent la Cour Criminelle…
+  - num: 9 j
+    label: 9 jurés en appel d'assises (contre 6 en 1er degré)
+  - num: '4'
+    label: CCD compétente pour crimes punis ≤ 20 ans, non-récidivist…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: arbre
+  titre: Organisation pyramidale
   rows:
-    - Étapes: '1'
-      Thème: Les alternatives aux poursuites (art. 41-1 CPP)
-    - Étapes: '2'
-      Thème: La composition pénale (art. 41-2 CPP)
-    - Étapes: '3'
-      Thème: Les modes de saisine du tribunal
+    - Repère: COUR DE CASSATION (Chambre criminelle)
+    - Repère: COUR D'APPEL (Chambre correctionnelle /
+    - Repère: Chambre de l'instruction)
+    - Repère: ╱ │ ╲
+    - Repère: COUR D'ASSISES T. CORRECTIONNEL T. DE POLICE
+    - Repère: CRIMES DÉLITS CONTRAV.
+    - Repère: 3 mag. + 6 jurés 3 mag. / juge Juge unique
+    - Repère: + CCD (5 mag.) unique (certains)
+    - Repère: ══════════ CJPM (mineurs) ══════════
+    - Repère: JE · TPE · CA mineurs · TC mineurs
 blocs:
   definition: >-
-    Le PR dispose d'un pouvoir d'appréciation de l'opportunité des poursuites (art. 40 CPP). Il
-    peut, avant toute décision sur l'action publique, recourir à des mesures alternatives lorsque
-    ces mesures sont de nature à assurer la réparation du dommage, mettre fin au trouble résultant
-    de l'infraction ou contribuer au reclassement. Mesure Précisions Rappel à la loi Art. 41-1 1°
-    CPP (supprimé en 2022, remplacé par avertissement pénal probatoire) Avertissement pénal
-    probatoire Nouve…
-  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+    Les juridictions répressives sont les juridictions spécialisées dans le jugement des infractions
+    pénales, organisées selon la classification tripartite crimes/délits/contraventions, avec des
+    règles de composition et de compétence strictement adaptées à la gravité des faits.
+  piege: >-
+    La CCD (Cour Criminelle Départementale, loi 2021-1729) ne juge que les crimes punis ≤ 20 ans
+    commis par des non-récidivistes — pour les crimes punis de plus de 20 ans ou commis par des
+    récidivistes, c'est la cour d'assises qui reste compétente.
   pointCle: >-
-    ASTUCE JURY Pour l'oral, sache articuler les modes de saisine: une affaire en flagrance avec
-    charges suffisantes et délit ≥ 6 mois → comparution immédiate si affaire en état. Sinon COPJ ou
-    convocatio…
+    En appel d'une cour d'assises, le jury est composé de 9 jurés (contre 6 en 1er degré) et siège
+    avec 3 magistrats — la cour d'assises d'appel rejuge l'affaire entièrement, sans se limiter aux
+    points appelés.
   memo: >-
-    Renvoi, jugement, juridictions répressives — Fiche synthèse (session JUIN 2026). 14.1 Les
-    alternatives aux poursuites (art. 41-1 CPP) Le PR dispose d'un pouvoir d'appréciation de
-    l'opportunité des pou
+    Crime = CA ou CCD · Délit = TC · Contravention = TP · CCD = 5 magistrats, crimes ≤ 20 ans,
+    non-récidiviste · Appel assises = 9 jurés.
 plan:
   - num: '1'
-    titre: Les alternatives aux poursuites (art. 41-1 CPP)
-    duree: ~10 min
+    titre: Les juridictions du 1er degré
+    duree: 10 min
   - num: '2'
-    titre: La composition pénale (art. 41-2 CPP)
-    duree: ~10 min
+    titre: Les juridictions de recours
+    duree: 12 min
   - num: '3'
-    titre: Les modes de saisine du tribunal
-    duree: ~10 min
+    titre: Juridictions spécialisées mineurs (CJPM)
+    duree: 10 min
 ---
 
 ![p. 31](/fondamentaux/juridictions-jugement-tableau-p31.jpg)

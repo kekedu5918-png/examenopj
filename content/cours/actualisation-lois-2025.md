@@ -3,84 +3,88 @@ title: Actualisation législative 2025
 chapitre: 44
 partie: 6
 description: >-
-  Actualisation législative 2025 — Fiche synthèse (session JUIN 2026). ATTENTION Ce chapitre
-  récapitule les évolutions législatives majeures de 2025, TOUTES susceptibles d'être testées à
-  l'examen OPJ d…
+  Les nouveautés législatives 2025 constituent des évolutions majeures du droit pénal et de la
+  procédure pénale, toutes susceptibles d'être testées à l'examen OPJ de juin 2026, intégrées dans
+  les fasci…
 tags:
   - fondamentaux
   - Partie VI
+  - synthèse-46
   - 2F.1.b
   - transversal
   - OPJ 2026
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 132-16-2 al. 2
-  - Art. 198
-  - Art. 221-18
-  - Art. 221-19
-  - Art. 221-20
+  - Art. 706-88-2 CPP — Hyper-prolongation passeur in corpore (loi 2025-532)
+  - Art. 221-18 CP — Homicide routier autonome (loi 2025-622)
+  - Art. 311-4 CP — Vol aggravé (ajout établissements santé, loi 2025-623)
+  - Art. 222-23 CP — Viol actualisé (consentement + bucco-anal, loi 2025-1057)
+  - Art. 198 CPP — Dernier mémoire récapitulatif (depuis 30/09/2025)
 stats:
-  - num: '44'
-    label: Chapitre 44 (annexe B)
-  - num: VI
-    label: Partie 6 — synthèse
-  - num: '6'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '4'
+    label: '4 lois majeures à maîtriser : 2025-532, 2025-622, 2025-62…'
+  - num: '09'
+    label: '09/07/2025 : double promulgation (loi 2025-622 sécurité r…'
+  - num: '30'
+    label: '30/09/2025 : nouvelle règle du dernier mémoire récapitula…'
+  - num: '06'
+    label: '06/11/2025 : loi 2025-1057 — introduction du consentement…'
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les 4 lois 2025 (S.R.P.V.)
   rows:
-    - Étapes: '1'
-      Thème: Loi n° 2025-622 du 09/07/2025 — Sécurité routière
-    - Étapes: '2'
-      Thème: Loi n° 2025-532 du 13/06/2025 — Stupéfiants
-    - Étapes: '3'
-      Thème: Loi n° 2025-1057 du 06/11/2025 — Violences sexuelles
-    - Étapes: '4'
-      Thème: Loi n° 2025-623 du 09/07/2025 — Protection professionnels
-    - Étapes: '5'
-      Thème: Autres évolutions procédurales 2025
-    - Étapes: '6'
-      Thème: Fiches suspendues (en attente)
+    - Loi: 2025-532
+      Date: 13/06/2025
+      Thème: Stupéfiants
+      Impact principal: Rétablissement passeur in corpore (art. 706-88-2 CPP)
+    - Loi: 2025-622
+      Date: 09/07/2025
+      Thème: Routier
+      Impact principal: Homicide routier autonome (art. 221-18 CP) + peines alcool doublées
+    - Loi: 2025-623
+      Date: 09/07/2025
+      Thème: Professions santé
+      Impact principal: Professions de santé = nouvelle aggravante violences/vol
+    - Loi: 2025-1057
+      Date: 06/11/2025
+      Thème: Viol
+      Impact principal: Consentement + actes bucco-anaux dans définition du viol
 blocs:
   definition: >-
-    Cette loi majeure réforme en profondeur le régime pénal des infractions routières. Modification
-    Article Détail Création homicide routier Art. 221-18 CP Infraction autonome détachée de
-    l'homicide involontaire. Peines renforcées. Remplace les anciennes aggravations Création
-    blessures routières ITT > 3 mois Art. 221-19 CP Nouvelle fiche Création blessures routières ITT
-    ≤ 3 mois Art. 221-20 CP Nouvelle fiche Suppression aggravantes anciennes Art. 221-6-1, 222-19-1,
-    222-20-1 CP A…
-  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+    Les nouveautés législatives 2025 constituent des évolutions majeures du droit pénal et de la
+    procédure pénale, toutes susceptibles d'être testées à l'examen OPJ de juin 2026, intégrées dans
+    les fascicules officiels SDCP/DOCPRO mis à jour au 1er décembre 2025.
+  piege: >-
+    Fiche suspendue : la "contrainte exercée sur une personne en vue de lui faire subir une atteinte
+    sexuelle de la part d'un tiers" est en attente de précisions législatives ou réglementaires — ne
+    pas l'évoquer à l'examen, au risque d'introduire une règle incertaine dans le raisonnement
+    procédural.
   pointCle: >-
-    ATTENTION Ce chapitre récapitule les évolutions législatives majeures de 2025, TOUTES
-    susceptibles d'être testées à l'examen OPJ de juin 2026. Le cahier de mise à jour officiel
-    SDCP/DOCPRO (juillet-d…
+    La loi 2025-622 supprime les anciennes circonstances aggravantes de l'homicide et des atteintes
+    involontaires liées à la conduite d'un VTM (art. 221-6-1, 222-19-1, 222-20-1 CP supprimés) — ces
+    circonstances sont désormais absorbées dans les nouvelles infractions autonomes d'homicide et
+    blessures routiers.
   memo: >-
-    Actualisation législative 2025 — Fiche synthèse (session JUIN 2026). ATTENTION Ce chapitre
-    récapitule les évolutions législatives majeures de 2025, TOUTES susceptibles d'être testées à
-    l'examen OPJ de
+    2025-532 = passeur in corpore · 2025-622 = homicide routier + alcool 4 ans · 2025-623 = prof.
+    santé aggravante · 2025-1057 = consentement viol + bucco-anal · 30/09/2025 = dernier mémoire
+    récapitulatif.
 plan:
   - num: '1'
-    titre: Loi n° 2025-622 du 09/07/2025 — Sécurité routière
-    duree: ~10 min
+    titre: Loi 2025-532 du 13/06/2025 (Stupéfiants)
+    duree: 10 min
   - num: '2'
-    titre: Loi n° 2025-532 du 13/06/2025 — Stupéfiants
-    duree: ~10 min
+    titre: Loi 2025-622 du 09/07/2025 (Sécurité routière)
+    duree: 12 min
   - num: '3'
-    titre: Loi n° 2025-1057 du 06/11/2025 — Violences sexuelles
-    duree: ~10 min
+    titre: Loi 2025-623 du 09/07/2025 (Protection professions de santé)
+    duree: 10 min
   - num: '4'
-    titre: Loi n° 2025-623 du 09/07/2025 — Protection professionnels
-    duree: ~10 min
+    titre: Loi 2025-1057 du 06/11/2025 (Violences sexuelles)
+    duree: 14 min
   - num: '5'
     titre: Autres évolutions procédurales 2025
-    duree: ~10 min
-  - num: '6'
-    titre: Fiches suspendues (en attente)
-    duree: ~10 min
+    duree: 10 min
 ---
 
 ![p. 67](/fondamentaux/actualisation-lois-2025-tableau-p67.jpg)

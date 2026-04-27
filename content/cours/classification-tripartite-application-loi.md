@@ -3,70 +3,95 @@ title: La classification tripartite et application de la loi
 chapitre: 17
 partie: 4
 description: >-
-  La classification tripartite et application de la loi — Fiche synthèse (session JUIN 2026). Art.
-  111-1 à 113-12 CP 17.1 La classification tripartite des infractions L'article 111-1 CP classe les
-  infr…
+  La classification tripartite des infractions (art. 111-1 CP) distingue crimes, délits et
+  contraventions selon leur gravité, produisant des effets déterminants sur la compétence
+  juridictionnelle, les…
 tags:
   - fondamentaux
   - Partie IV
+  - synthèse-46
   - 2F.1.b
   - droit pénal général
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 111-1
-  - Art. 112-1
-  - Art. 112-1 al. 3
-  - Art. 112-2
-  - Art. 113-2
+  - Art. 111-1 CP — Classification tripartite des infractions
+  - Art. 112-1 CP — Non-rétroactivité et rétroactivité in mitius
+  - Art. 133-2 CP — Prescription de l'action publique
+  - Art. 113-2 CP — Territorialité de la loi française
+  - Art. 113-6 CP — Double incrimination pour Français auteur à l'étranger
 stats:
-  - num: '17'
-    label: Chapitre 17 (annexe B)
-  - num: IV
-    label: Partie 4 — synthèse
+  - num: '3'
+    label: '3 catégories : crimes (20 ans prescription), délits (6 an…'
+  - num: '2'
+    label: 'Imprescriptibles : crimes contre l''humanité (art. 133-2 C…'
+  - num: 30 ans
+    label: 30 ans de prescription pour trafic stupéfiants, crimes su…
   - num: '4'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: 'Rétroactivité in mitius : la loi nouvelle plus douce s''ap…'
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Tableau tripartite C.D.C.
   rows:
-    - Étapes: '1'
-      Thème: La classification tripartite des infractions
-    - Étapes: '2'
-      Thème: Prescriptions dérogatoires
-    - Étapes: '3'
-      Thème: Application de la loi dans le temps
-    - Étapes: '4'
-      Thème: Application de la loi dans l'espace
+    - Critère: Juridiction
+      CRIMES: CA / CCD
+      DÉLITS: TC
+      CONTRAVENTIONS: TP
+    - Critère: Prescription AP
+      CRIMES: 20 ans
+      DÉLITS: 6 ans
+      CONTRAVENTIONS: 1 an
+    - Critère: Prescription peine
+      CRIMES: 20 ans
+      DÉLITS: 6 ans
+      CONTRAVENTIONS: 3 ans
+    - Critère: Tentative
+      CRIMES: TOUJOURS
+      DÉLITS: Si texte
+      CONTRAVENTIONS: JAMAIS
+    - Critère: Complicité
+      CRIMES: OUI
+      DÉLITS: OUI
+      CONTRAVENTIONS: Si texte
+    - Critère: Peine max
+      CRIMES: Perpétuité
+      DÉLITS: 10 ans +
+      CONTRAVENTIONS: 3 000 €
+    - Critère: Instruction
+      CRIMES: OBLIGATOIRE
+      DÉLITS: Facultative
+      CONTRAVENTIONS: Exceptionnelle
 blocs:
   definition: >-
-    L'article 111-1 CP classe les infractions en trois catégories selon leur gravité: crimes,
-    délits, contraventions. Cette classification produit des effets sur la compétence
-    juridictionnelle, les règles procédurales, la prescription, la tentative et la complicité.
-    Critère CRIMES DÉLITS CONTRAVENTIONS Juridiction Cour d'assises / CCD Tribunal correctionnel
-    Tribunal de police Flagrance Possible si flagrance Possible si empr. encourue NON applicable
-    Instruction OBLIGATOIRE Facult…
-  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+    La classification tripartite des infractions (art. 111-1 CP) distingue crimes, délits et
+    contraventions selon leur gravité, produisant des effets déterminants sur la compétence
+    juridictionnelle, les règles de prescription, la punissabilité de la tentative et de la
+    complicité.
+  piege: >-
+    Pour une infraction continue (ex. recel), la prescription court à partir du moment où l'état
+    délictueux a cessé — non du jour de début. Pour abus de confiance, elle court du jour où la
+    victime s'est aperçue du détournement. Pour infractions sur mineurs : à compter de la majorité
+    de la victime.
   pointCle: >-
-    JURISPRUDENCE Imprescriptibilité absolue — Les crimes contre l'humanité sont imprescriptibles
-    (art. 133-2 CP). Les crimes de guerre: action publique imprescriptible depuis la loi du 26
-    juillet 2019 p…
-  memo: crimes, délits, contraventions. Cette classif…
+    Le principe de non-rétroactivité (art. 112-1 CP) cède devant la rétroactivité in mitius : la loi
+    nouvelle plus douce s'applique aux faits antérieurs non définitivement jugés ; les lois de
+    procédure s'appliquent, elles, immédiatement aux procédures en cours.
+  memo: >-
+    Prescription AP : 20/6/1 · Tentative : toujours/si texte/jamais · In mitius = loi douce
+    rétroactive · Procédure = application immédiate.
 plan:
   - num: '1'
-    titre: La classification tripartite des infractions
-    duree: ~10 min
+    titre: La classification tripartite (art. 111-1 CP)
+    duree: 10 min
   - num: '2'
     titre: Prescriptions dérogatoires
-    duree: ~10 min
+    duree: 12 min
   - num: '3'
     titre: Application de la loi dans le temps
-    duree: ~10 min
+    duree: 10 min
   - num: '4'
-    titre: Application de la loi dans l'espace
-    duree: ~10 min
+    titre: Application de la loi dans l'espace (art. 113-2 à 113-12 CP)
+    duree: 14 min
 ---
 
 ![p. 37](/fondamentaux/classification-tripartite-application-loi-tableau-p37.jpg)

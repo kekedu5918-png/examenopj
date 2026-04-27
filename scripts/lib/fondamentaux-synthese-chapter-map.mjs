@@ -1,0 +1,61 @@
+/**
+ * Correspondance slug annexe B (`content/cours`) → numéro de chapitre dans
+ * `content/_sources/synthese-46-chapitres/chapitres-*.md` (1–46).
+ * Quand la granularité diffère (ex. deux fiches stupéfiants → un chapitre synthèse),
+ * on pointe vers le bloc le plus pertinent.
+ */
+export const SLUG_TO_SYNTHESE_CHAPTER = {
+  'enquete-flagrance': 1,
+  'enquete-preliminaire': 2,
+  'information-judiciaire': 11,
+  'police-judiciaire-statut': 3,
+  'garde-a-vue': 5,
+  'perquisition': 7,
+  'auditions': 6,
+  'controle-identite': 9,
+  'requisition-commission-rogatoire': 8,
+  'action-publique-opportunite': 10,
+  'parquet-instruction': 14,
+  'jld-mandats': 12,
+  'mise-en-examen-instruction': 13,
+  'juridictions-jugement': 15,
+  'assises-appel': 15,
+  'nullites-procedure': 16,
+  'classification-tripartite-application-loi': 17,
+  'responsabilite-penale-personnes-physiques': 18,
+  'causes-irresponsabilite-attenuation': 19,
+  'usage-armes-forces-ordre': 20,
+  'complicite-concours': 22,
+  'tentative-recidive-circonstances': 25,
+  'personne-morale-mineurs': 21,
+  'peines-modes-individuation': 24,
+  'prescription-extinction': 17,
+  'sanction-penale': 24,
+  'homicides-atteintes-vie': 27,
+  'violences-involontaires-integrite': 28,
+  'enlevement-sequestration': 29,
+  'violences-menaces-harcelement': 30,
+  'viol-agressions-sexuelles': 31,
+  'mineurs-cjpm': 41,
+  'atteintes-aux-biens': 36,
+  'vols-escroquerie-extorsion': 35,
+  'stupefiants-usage': 38,
+  'stupefiants-trafic': 38,
+  'delits-circulation-routiere': 37,
+  'atteintes-autorite-corruption': 42,
+  'atteintes-nation-terrorisme': 42,
+  'armes-materiel-guerre': 39,
+  'traites-dignite-personne': 32,
+  'infractions-numeriques': 33,
+  'blanchiment-infractions-economiques': 36,
+  'actualisation-lois-2025': 44,
+  'outils-oral-entrainement': 45,
+  'entrainement-session-2026': 46,
+};
+
+/** Fiches déjà rédigées « main » : ne pas écraser le frontmatter par la synthèse. */
+export const SYNTHESE_ENRICH_SKIP_SLUGS = new Set([
+  'enquete-flagrance',
+  'causes-irresponsabilite-attenuation',
+  'viol-agressions-sexuelles',
+]);

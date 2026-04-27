@@ -3,69 +3,79 @@ title: Complicité, coaction, concours d'infractions
 chapitre: 21
 partie: 4
 description: >-
-  Complicité, coaction, concours d'infractions — Fiche synthèse (session JUIN 2026). Art. 121-2 CP
-  21.1 Les personnes morales concernées Qualité Règle Précisions Responsable Toutes PM de droit
-  public o…
+  La complicité (art. 121-7 CP) est la participation punissable d'une personne à l'infraction
+  principale d'autrui par provocation, fourniture d'instructions ou aide/assistance, moyennant la
+  réunion d'u…
 tags:
   - fondamentaux
   - Partie IV
+  - synthèse-46
   - 2F.1.b
   - droit pénal général
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 121-2
-  - Art. 121-2 al. 2
-  - Art. 121-2 al. 3
-  - Art. 131-38
-  - Art. 121-2 — repère
+  - Art. 121-6 CP — Le complice est puni comme l'auteur
+  - Art. 121-7 CP — Définition et modes de complicité
+  - Art. 321-1 CP — Recel (aide postérieure ≠ complicité)
+  - Art. 132-73 CP — Circonstances aggravantes réelles (arme)
+  - Voir références détaillées dans le corps de la fiche.
 stats:
-  - num: '21'
-    label: Chapitre 21 (annexe B)
-  - num: IV
-    label: Partie 4 — synthèse
+  - num: '3'
+    label: '3 conditions cumulatives pour la complicité : fait princi…'
+  - num: '2'
+    label: Le complice est puni comme l'auteur (art. 121-6 CP) — mêm…
+  - num: '3'
+    label: '3 modes d''actes de complicité : provocation, fourniture d…'
   - num: '4'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: Circonstances aggravantes réelles (usage d'arme, en réuni…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: comparatif
+  titre: COACTION vs COMPLICITÉ
   rows:
-    - Étapes: '1'
-      Thème: Les personnes morales concernées
-    - Étapes: '2'
-      Thème: Les deux conditions cumulatives
-    - Étapes: '3'
-      Thème: Cumul avec responsabilité des personnes physiques
-    - Étapes: '4'
-      Thème: Les peines applicables aux PM
+    - Critère: Rôle
+      COACTION: Participe directement à l'infraction
+      COMPLICITÉ: Aide, provoque, instruit l'auteur
+    - Critère: Élément matériel
+      COACTION: Accomplit personnellement des actes
+      COMPLICITÉ: Actes antérieurs ou concomitants
+    - Critère: Peine
+      COACTION: Auteur à part entière
+      COMPLICITÉ: Puni comme l'auteur
+    - Critère: Intention
+      COACTION: Dol propre de l'infraction
+      COMPLICITÉ: Connaissance du caractère délictueux
+    - Critère: Guet
+      COACTION: OUI, coauteur possible (Cass. 1984)
+      COMPLICITÉ: Possible si aide/assistance
 blocs:
   definition: >-
-    Qualité Règle Précisions Responsable Toutes PM de droit public ou privé Y compris sociétés,
-    associations, syndicats, PACS, CE... NON responsable SEUL l'État Exclusion expresse
-    Collectivités territoriales Responsabilité LIMITÉE Uniquement infractions commises dans
-    activités pouvant faire l'objet d'une convention de délégation de service public (art. 121-2 al.
-    2) Exclusions Délits de presse (loi 1881) Communication audiovisuelle
-  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
-  pointCle: Articuler définition, conditions de fond, procédure et sanctions pour le jury.
+    La complicité (art. 121-7 CP) est la participation punissable d'une personne à l'infraction
+    principale d'autrui par provocation, fourniture d'instructions ou aide/assistance, moyennant la
+    réunion d'un fait principal punissable, d'un acte positif de complicité et d'une intention
+    criminelle.
+  piege: >-
+    Les circonstances aggravantes personnelles (récidive, qualité d'ascendant...) ne s'appliquent
+    qu'à la personne qu'elles concernent. Mais les circonstances aggravantes réelles (usage d'arme,
+    commission en réunion, violences) s'appliquent à tous — y compris aux complices qui n'ont pas
+    personnellement utilisé l'arme.
+  pointCle: >-
+    L'acte de complicité doit être un acte positif (provocation, instructions, aide) — antérieur ou
+    concomitant au fait principal. L'aide postérieure aux faits ne constitue pas de la complicité
+    mais peut être constitutive de recel (art. 321-1 CP).
   memo: >-
-    Complicité, coaction, concours d'infractions — Fiche synthèse (session JUIN 2026). Art. 121-2 CP
-    21.1 Les personnes morales concernées Qualité Règle Précisions Responsable Toutes PM de droit
-    public ou
+    Complicité = fait principal + acte positif antérieur/concomitant + intention · Complice = puni
+    comme auteur · Circ. réelles → complice aussi · Aide postérieure → recel, pas complicité.
 plan:
   - num: '1'
-    titre: Les personnes morales concernées
-    duree: ~10 min
+    titre: La coaction
+    duree: 10 min
   - num: '2'
-    titre: Les deux conditions cumulatives
-    duree: ~10 min
+    titre: Les 3 conditions de la complicité
+    duree: 12 min
   - num: '3'
-    titre: Cumul avec responsabilité des personnes physiques
-    duree: ~10 min
-  - num: '4'
-    titre: Les peines applicables aux PM
-    duree: ~10 min
+    titre: Régime et effets
+    duree: 10 min
 ---
 
 ![p. 43](/fondamentaux/complicite-concours-tableau-p43.jpg)

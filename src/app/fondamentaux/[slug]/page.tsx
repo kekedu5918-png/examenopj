@@ -53,7 +53,7 @@ export default async function FondamentauxFichePage({ params }: { params: { slug
         <FichePremium
           data={ficheV3.data}
           slug={slug}
-          callout30s={ficheV3.data.blocs.pointCle}
+          callout30s={ficheV3.data.blocs.memo}
           breadcrumbItems={[
             { href: '/fondamentaux', label: 'Fondamentaux' },
             { href: `/fondamentaux/${params.slug}`, label: ficheV3.data.title },

@@ -3,67 +3,88 @@ title: Dernière ligne droite, session 2026
 chapitre: 46
 partie: 6
 description: >-
-  Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de révision
-  finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur pour l'oral
-  OPJ…
+  Cette fiche finale rassemble les 70 notions, articles, durées et chiffres clés à connaître
+  impérativement pour l'oral OPJ session juin 2026 — constituant le socle minimum de maîtrise exigé
+  par le jur…
 tags:
   - fondamentaux
   - Partie VI
+  - synthèse-46
   - 2F.1.b
   - transversal
   - OPJ 2026
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 14
-  - Art. 171
-  - Art. 198
-  - Art. 20
-  - Art. 21-3
+  - Voir références détaillées dans le corps de la fiche.
+  - Voir références détaillées dans le corps de la fiche.
+  - Voir références détaillées dans le corps de la fiche.
+  - Voir références détaillées dans le corps de la fiche.
+  - Voir références détaillées dans le corps de la fiche.
 stats:
-  - num: '46'
-    label: Chapitre 46 (annexe B)
-  - num: VI
-    label: Partie 6 — synthèse
-  - num: '1'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '70'
+    label: 70 points clés répartis en 11 thèmes (A à K)
+  - num: 8 j
+    label: 8 jours + 8 jours = durée maximale de la flagrance à conn…
+  - num: 24h
+    label: 24h + 24h = 48h = durée maximale de la GAV de droit commun
+  - num: '4'
+    label: '"La clé du succès" : fondamentaux + actualité 2025 + méth…'
 schemaMemo:
-  type: acronyme
-  titre: Repères — Dernière ligne droite, session 2026
-  acronyme: L.I.R.E.
-  cards:
-    - lettre: L
-      mot: Lire
-      desc: Structurer Dernière ligne droite, session 2026 avant l’oral.
-    - lettre: I
-      mot: Indices
-      desc: Repérer faits, qualifications et textes applicables.
-    - lettre: R
-      mot: Régime
-      desc: Procédure, juridiction et nullités éventuelles.
-    - lettre: E
-      mot: Examen
-      desc: Entraînement quiz et articulation avec les autres fiches.
+  type: tableau
+  titre: Les 11 thèmes (A→K)
+  rows:
+    - Thème: A
+      Points: 1-7
+      Domaine: Cadres d'enquête (flagrance, préliminaire)
+    - Thème: B
+      Points: 8-15
+      Domaine: Garde à vue
+    - Thème: C
+      Points: 16-22
+      Domaine: Perquisitions / Saisies / Réquisitions
+    - Thème: D
+      Points: 23-29
+      Domaine: Acteurs judiciaires (OPJ, APJ, APJA, AE)
+    - Thème: E
+      Points: 30-33
+      Domaine: Nullités
+    - Thème: F
+      Points: 34-42
+      Domaine: Droit pénal général
+    - Thème: G
+      Points: 43-49
+      Domaine: Sanctions / Récidive
+    - Thème: H
+      Points: 50-55
+      Domaine: Infractions contre les personnes
+    - Thème: I
+      Points: 56-60
+      Domaine: Infractions contre les biens
+    - Thème: J
+      Points: 61-66
+      Domaine: Routier / Stups / Armes
+    - Thème: K
+      Points: 67-70
+      Domaine: Juridictionnel / Poursuites
 blocs:
   definition: >-
-    Dernière ligne droite, session 2026 — Fiche synthèse (session JUIN 2026). Cette fiche de
-    révision finale rassemble les notions, articles, durées et chiffres clés à connaître par cœur
-    pour l'oral OPJ 2026. A. CADRES D'ENQUÊTE (1-7) • FLAGRANCE: 8 jours + 8 jours (PR, ≥5 ans,…
-  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+    Cette fiche finale rassemble les 70 notions, articles, durées et chiffres clés à connaître
+    impérativement pour l'oral OPJ session juin 2026 — constituant le socle minimum de maîtrise
+    exigé par le jury, organisé en 11 thèmes couvrant l'intégralité du programme.
+  piege: >-
+    Ne jamais inventer une règle par peur du silence — il vaut mieux dire "je vérifierais le texte
+    de l'article" que d'énoncer une règle approximative devant le jury. Les jurys OPJ sanctionnent
+    les affirmations erronées bien plus que les hésitations honnêtement formulées.
   pointCle: >-
-    CLÉ La clé du succès: maîtriser les fondamentaux (cadres, droits GAV, causes de nullité) +
-    actualité 2025 (consentement viol, homicide routier, passeur in corpore) + méthodologie de
-    présentation (tra…
-  memo: >-
-    CLÉ La clé du succès: maîtriser les fondamentaux (cadres, droits GAV, causes de nullité) +
-    actualité 2025 (consentement viol, homicide routier, passeur in corpore) + méthodologie de
-    présentation (tra…
+    La clé du succès selon la synthèse : maîtriser les fondamentaux (cadres, droits GAV, causes de
+    nullité) + actualité 2025 (consentement viol, homicide routier, passeur in corpore) +
+    méthodologie de présentation (trame en 3 temps C.D.S.).
+  memo: Fondamentaux + Actualité 2025 + Méthode C.D.S. = réussite OPJ.
 plan:
   - num: '1'
-    titre: Vue d’ensemble
-    duree: ~10 min
+    titre: Vue densemble
+    duree: 12 min
 ---
 
 ![p. 70](/fondamentaux/entrainement-session-2026-tableau-p70.jpg)

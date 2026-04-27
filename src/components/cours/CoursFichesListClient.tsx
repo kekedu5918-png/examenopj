@@ -35,7 +35,7 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
     const s = q.trim().toLowerCase();
     if (s) {
       list = list.filter((it) => {
-        const hay = `${it.title} ${it.tags.join(' ')}`.toLowerCase();
+        const hay = `${it.title} ${it.description ?? ''} ${it.tags.join(' ')}`.toLowerCase();
         return hay.includes(s);
       });
     }
@@ -168,6 +168,11 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                     </span>
                   ) : null}
                 </div>
+                {it.description ? (
+                  <p className='mt-2 line-clamp-2 font-ij-sans text-sm leading-snug text-ij-text-muted'>
+                    {it.description}
+                  </p>
+                ) : null}
                 {it.loi2025 ? (
                   <span
                     className='mt-2 inline-flex w-fit items-center rounded-md border border-ij-accent/35 bg-ij-accent/10 px-2 py-0.5 font-ij-sans text-[10px] font-semibold text-ij-accent'
@@ -178,14 +183,23 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
                 ) : null}
                 {it.tags.length > 0 ? (
                   <div className='mt-2 flex flex-wrap gap-1.5'>
-                    {it.tags.map((t) => (
-                      <span
-                        key={t}
-                        className='rounded-md border border-ij-border bg-ij-surface-2 px-2 py-0.5 font-ij-sans text-[11px] font-medium text-ij-text'
-                      >
-                        {t}
-                      </span>
-                    ))}
+                    {it.tags
+                      .filter(
+                        (t) =>
+                          t !== 'fondamentaux' &&
+                          t !== 'synthèse-46' &&
+                          t !== '2F.1.b' &&
+                          !/^Partie [IVX]+$/i.test(t),
+                      )
+                      .slice(0, 5)
+                      .map((t) => (
+                        <span
+                          key={t}
+                          className='rounded-md border border-ij-border bg-ij-surface-2 px-2 py-0.5 font-ij-sans text-[11px] font-medium text-ij-text'
+                        >
+                          {t}
+                        </span>
+                      ))}
                   </div>
                 ) : null}
               </Link>

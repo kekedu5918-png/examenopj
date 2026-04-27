@@ -3,76 +3,88 @@ title: Outils, méthode et entraînement oral
 chapitre: 45
 partie: 6
 description: >-
-  Outils, méthode et entraînement oral — Fiche synthèse (session JUIN 2026). 45.1 L'enjeu de l'oral
-  : une démonstration de méthode L'oral OPJ évalue ta capacité à mener une procédure de manière
-  structu…
+  L'oral OPJ évalue la capacité à mener une procédure de manière structurée et conforme — le jury
+  n'attend pas une récitation mais une démonstration de méthode, de rigueur procédurale et de
+  maîtrise de…
 tags:
   - fondamentaux
   - Partie VI
+  - synthèse-46
   - 2F.1.b
   - transversal
   - OPJ 2026
-loi2025: false
+loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 105
-  - Art. 53
-  - Art. 105 — repère
-  - Art. 53 — repère
-  - Texte / doctrine — Outils, méthode et entraînement oral (complément 1)
+  - Art. 53 CPP — Conditions de flagrance (à citer dans le chapeau)
+  - Art. 62-2 CPP — Conditions et objectifs de la GAV
+  - Art. 105 CPP — Règle cardinale témoin → MeX (piège 4)
+  - Art. 395 CPP — Comparution immédiate (mode de saisine CI)
+  - Art. 175 CPP — Délais de nullités post-instruction
 stats:
-  - num: '45'
-    label: Chapitre 45 (annexe B)
-  - num: VI
-    label: Partie 6 — synthèse
+  - num: '3'
+    label: '3 temps structurent tout exposé oral OPJ : chapeau introd…'
+  - num: '10'
+    label: 10 réflexes à adopter systématiquement devant le jury
   - num: '5'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: 5 pièges majeurs identifiés susceptibles de faire échouer…
+  - num: '30'
+    label: 30 secondes de structuration mentale recommandées avant d…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: arbre
+  titre: Trame en 3 temps (C.D.S.)
   rows:
-    - Étapes: '1'
-      Thème: 'L''enjeu de l''oral : une démonstration de méthode'
-    - Étapes: '2'
-      Thème: La trame en 3 temps — structure type
-    - Étapes: '3'
-      Thème: Les 10 réflexes à adopter
-    - Étapes: '4'
-      Thème: Les 5 pièges à éviter
-    - Étapes: '5'
-      Thème: Le ton et l'attitude devant le jury
+    - Repère: ╔══════════════════════════════════════════════════╗
+    - Repère: ║ TEMPS 1 — CHAPEAU INTRODUCTIF ║
+    - Repère: ║ • Identité + qualité (OPJ Brigade/Chef...) ║
+    - Repère: ║ • Qualification pénale (art. précis) ║
+    - Repère: ║ • Cadre retenu (flagrance/préliminaire/CR) ║
+    - Repère: ║ • Saisine + mis en cause + victime + faits ║
+    - Repère: ╠══════════════════════════════════════════════════╣
+    - Repère: ║ TEMPS 2 — DÉROULÉ CIRCONSTANCIÉ ║
+    - Repère: ║ • Chronologie avec horodatage ║
+    - Repère: '║ • Pour chaque acte : auteur + base légale ║'
+    - Repère: ║ • Formalités (présences, assentiments, autor.) ║
+    - Repère: '║ • GAV : droits, durées, avocat, enregistrement ║'
+    - Repère: ║ • Perquisitions, saisies, scellés, réquisitions║
+    - Repère: ║ • Auditions, confrontations, expertises ║
+    - Repère: ╠══════════════════════════════════════════════════╣
+    - Repère: ║ TEMPS 3 — SUITES JUDICIAIRES ║
 blocs:
   definition: >-
-    L'oral OPJ évalue ta capacité à mener une procédure de manière structurée et conforme. Le jury
+    L'oral OPJ évalue la capacité à mener une procédure de manière structurée et conforme — le jury
     n'attend pas une récitation mais une démonstration de méthode, de rigueur procédurale et de
-    maîtrise des textes. Sur une affaire soumise, tu dois savoir: (1) qualifier les faits, (2)
-    déterminer le cadre juridique, (3) dérouler les actes, (4) anticiper les suites.
-  piege: 'Oublier les actualisations 2026 : vérifier les textes consolidés et la veille législative.'
+    maîtrise des textes : qualifier les faits, déterminer le cadre, dérouler les actes, anticiper
+    les suites.
+  piege: >-
+    — Les 5 pièges à éviter absolument Piège 1 : Mélanger flagrance et préliminaire → toute la
+    procédure tombe si la flagrance est contestable Piège 2 : Oublier l'enregistrement audiovisuel
+    pour mineurs ou pour crime → nullité automatique Piège 3 : Dépasser les durées de GAV sans
+    prolongation formalisée → nullité textuelle Piège 4 : Continuer à entendre comme témoin une
+    personne avec indices graves/concordants (art. 105 CPP) → nullité d'ordre public…
   pointCle: >-
-    CLÉ Suis systématiquement cette structure en trois temps. Elle est attendue par tous les jurys
-    et te permet de ne rien oublier. Temps Nature Contenu 1. CHAPEAU INTRODUCTIF Présenter le cadre
-    • Identi…
+    La clé de la réussite à l'oral est la trame en 3 temps systématiquement respectée : un jury
+    préfère un exposé moins riche mais parfaitement structuré à une démonstration de connaissances
+    désordonnée — la forme et la méthode comptent autant que le fond.
   memo: >-
-    une démonstration de méthode L'oral OPJ évalue ta capacité à mener une procédure de manière
-    structurée et conforme. Le jury n'attend pas une récitation mais une démonstration …
+    C.D.S. = Chapeau + Déroulé + Suites · 30 sec de structuration avant de parler · Article précis à
+    chaque acte · Durées clés citées · Dire "je vérifierais" si hésitation plutôt qu'inventer.
 plan:
   - num: '1'
-    titre: 'L''enjeu de l''oral : une démonstration de méthode'
-    duree: ~10 min
+    titre: Le chapeau introductif (Temps 1)
+    duree: 10 min
   - num: '2'
-    titre: La trame en 3 temps — structure type
-    duree: ~10 min
+    titre: Le déroulé circonstancié (Temps 2)
+    duree: 12 min
   - num: '3'
-    titre: Les 10 réflexes à adopter
-    duree: ~10 min
+    titre: Les suites judiciaires (Temps 3)
+    duree: 10 min
   - num: '4'
-    titre: Les 5 pièges à éviter
-    duree: ~10 min
+    titre: Les 10 réflexes à adopter
+    duree: 14 min
   - num: '5'
-    titre: Le ton et l'attitude devant le jury
-    duree: ~10 min
+    titre: Ton et attitude devant le jury
+    duree: 10 min
 ---
 
 ![p. 69](/fondamentaux/outils-oral-entrainement-tableau-p69.jpg)

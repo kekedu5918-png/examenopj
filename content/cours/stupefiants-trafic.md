@@ -3,68 +3,88 @@ title: 'Stupéfiants : trafic, bandes, blanchiment'
 chapitre: 36
 partie: 5
 description: >-
-  Stupéfiants : trafic, bandes, blanchiment — Fiche synthèse (session JUIN 2026). 36.1 Le recel
-  (art. 321-1 CP) DÉFINITION – RECEL Dissimulation, détention, transmission d'une chose, ou action
-  d'en fai…
+  Les infractions en matière de stupéfiants relèvent de la criminalité organisée (art. 706-73 CPP),
+  ouvrant un régime procédural dérogatoire (GAV 96h, perquisitions de nuit, infiltration,
+  interceptions…
 tags:
   - fondamentaux
   - Partie V
+  - synthèse-46
   - 2F.1.b
   - droit pénal spécial
-loi2025: false
+loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 321-1
-  - Art. 322-1
-  - Art. 324-1
-  - Art. 321-1 — repère
-  - Art. 322-1 — repère
+  - Art. 222-34 CP — Direction/organisation réseau (perpétuité + 7,5 M€)
+  - Art. 222-37 CP — Transport/détention/offre/cession (10 ans + 7,5 M€)
+  - Art. 706-73 CPP — Régime dérogatoire criminalité organisée
+  - Art. 706-88 CPP — GAV prolongée en CO (96h)
+  - Art. 706-88-2 CPP — Hyper-prolongation passeur in corpore (loi 2025-532)
 stats:
-  - num: '36'
-    label: Chapitre 36 (annexe B)
-  - num: V
-    label: Partie 5 — synthèse
+  - num: '1'
+    label: Perpétuité + 7,5 M€ pour direction/organisation d'un rése…
+  - num: 96 h
+    label: 96 heures de GAV maximum (criminalité organisée, art. 706…
   - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: 'Loi 2025-532 : rétablissement de la hyper-prolongation pa…'
+  - num: 200 €
+    label: '200 € : amende forfaitaire possible pour usage illicite s…'
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Tableau des infractions stup.
   rows:
-    - Étapes: '1'
-      Thème: Le recel (art. 321-1 CP)
-    - Étapes: '2'
-      Thème: Le blanchiment (art. 324-1 et suiv. CP)
-    - Étapes: '3'
-      Thème: Destructions, dégradations, détériorations (art. 322-1 et
+    - Infraction: Direction/organisation réseau
+      Art.: 222-34 CP
+      Peine: Perpétuité + 7,5 M€
+    - Infraction: Production/fabrication
+      Art.: 222-35 CP
+      Peine: 20 ans + 7,5 M€ (30 si BO)
+    - Infraction: Importation/exportation
+      Art.: 222-36 CP
+      Peine: 10 ans + 7,5 M€ (30 si BO)
+    - Infraction: Transport/détention/offre/cession
+      Art.: 222-37 al.1 CP
+      Peine: 10 ans + 7,5 M€
+    - Infraction: Cession/offre à personne (conso perso)
+      Art.: 222-39 al.1 CP
+      Peine: 5 ans + 75 000 €
+    - Infraction: Cession à mineur ou établ. enseignt.
+      Art.: 222-39 al.2 CP
+      Peine: 10 ans + 100 000 €
+    - Infraction: Usage illicite simple
+      Art.: L. 3421-1 CSP
+      Peine: 1 an + 3 750 € (AF 200 €)
+    - Infraction: Conduite sous stup.
+      Art.: L. 235-1 CR
+      Peine: 3 ans + 9 000 €
 blocs:
   definition: >-
-    > DÉFINITION – RECEL Dissimulation, détention, transmission d'une chose, ou action d'en faire
-    office d'intermédiaire, en sachant qu'elle provient d'un crime ou d'un délit. Peine: 5 ans + 375
-    000 €. Le recel peut excéder la peine de l'infraction d'origine. Infraction Article Peine Recel
-    simple 321-1 CP 5 ans + 375 000 € Recel habituel / par PM exerçant activité prof. 321-2 CP 10
-    ans + 750 000 € Recel en bande organisée 321-2 10 ans + 750 000 € Non-justification de
-    ressources…
-  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
+    Les infractions en matière de stupéfiants relèvent de la criminalité organisée (art. 706-73
+    CPP), ouvrant un régime procédural dérogatoire (GAV 96h, perquisitions de nuit, infiltration,
+    interceptions, gel de patrimoine) ; l'usage illicite simple (L. 3421-1 CSP) est punissable d'1
+    an d'emprisonnement mais peut faire l'objet d'une amende forfaitaire de 200 €.
+  piege: >-
+    Le passeur in corpore (personne ayant dissimulé des stupéfiants dans son corps) bénéficie depuis
+    la loi 2025-532 d'un régime dérogatoire rétabli (art. 706-88-2 CPP) : hyper-prolongation de GAV,
+    examen médical d'office, modèles de PV spécifiques — ne pas appliquer le régime standard à ce
+    cas particulier.
   pointCle: >-
-    DÉFINITION – RECEL Dissimulation, détention, transmission d'une chose, ou action d'en faire
-    office d'intermédiaire, en sachant qu'elle provient d'un crime ou d'un délit. Peine: 5 ans + 375
-    000 €. Le…
+    Le régime de la criminalité organisée (art. 706-73 CPP) ouvre notamment la possibilité d'une
+    garde à vue sans avocat jusqu'à 72h (art. 63-4-2 CPP) sur autorisation du JLD — c'est l'une des
+    restrictions les plus importantes aux droits de la défense autorisée par la loi.
   memo: >-
-    trafic, bandes, blanchiment — Fiche synthèse (session JUIN 2026). 36.1 Le recel (art. 321-1 CP)
-    DÉFINITION – RECEL Dissimulation, détention, transmission d'une chose, ou action d'en faire
-    office d'int
+    Stup = CO (706-73) = GAV 96h · Direction réseau = perpétuité + 7,5 M€ · Usage = 1 an ou AF 200 €
+    · Passeur in corpore = hyper-prolongation (loi 2025-532).
 plan:
   - num: '1'
-    titre: Le recel (art. 321-1 CP)
-    duree: ~10 min
+    titre: Régime dérogatoire CO (art. 706-73 CPP)
+    duree: 10 min
   - num: '2'
-    titre: Le blanchiment (art. 324-1 et suiv. CP)
-    duree: ~10 min
+    titre: Tableau des infractions (de la plus grave à la moins grave)
+    duree: 12 min
   - num: '3'
-    titre: Destructions, dégradations, détériorations (art. 322-1 et
-    duree: ~10 min
+    titre: Usage illicite et passeur in corpore
+    duree: 10 min
 ---
 
 ![p. 58](/fondamentaux/stupefiants-trafic-tableau-p58.jpg)

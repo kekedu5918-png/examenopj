@@ -3,66 +3,78 @@ title: Armes, matériels de guerre, munitions
 chapitre: 40
 partie: 5
 description: >-
-  Armes, matériels de guerre, munitions — Fiche synthèse (session JUIN 2026). Art. 227-1 à 227-33 CP
-  (livre II, titre II) 40.1 Tableau synthétique complet Infraction Article Peine Abandon de famille
-  (n…
+  La classification légale des armes (art. R. 311-2 CSI) répartit les armes en 5 sous-catégories
+  (A1, A2, B, C, D) selon leur dangerosité et leur usage, déterminant le régime applicable à leur
+  acquisit…
 tags:
   - fondamentaux
   - Partie V
+  - synthèse-46
   - 2F.1.b
   - droit pénal spécial
-loi2025: false
+loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 227-1
-  - Art. 227-1 — repère
-  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 1)
-  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 2)
-  - Texte / doctrine — Armes, matériels de guerre, munitions (complément 3)
+  - Art. R. 311-2 CSI — Classification légale des armes (A1, A2, B, C, D)
+  - Art. 222-52 CP — Acquisition/détention non autorisée A ou B (5-7 ans)
+  - Art. 222-54 CP — Port/transport sans motif A ou B (5 ans)
+  - Art. L. 317-8 CSI — Port/transport sans motif C ou D (3 ans)
+  - Voir références détaillées dans le corps de la fiche.
 stats:
-  - num: '40'
-    label: Chapitre 40 (annexe B)
-  - num: V
-    label: Partie 5 — synthèse
-  - num: '1'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '4'
+    label: 4 catégories d'armes (A1, A2, B, C, D) selon leur régime…
+  - num: '5'
+    label: 5 à 7 ans + 75 000 à 100 000 € pour acquisition/détention…
+  - num: '20'
+    label: 20 à 30 ans pour trafic d'armes en bande organisée (art.…
+  - num: '4'
+    label: Arrêté du 04/07/2025 modifie la liste des armes de catégo…
 schemaMemo:
-  type: acronyme
-  titre: Repères — Armes, matériels de guerre, munitions
-  acronyme: L.I.R.E.
-  cards:
-    - lettre: L
-      mot: Lire
-      desc: Structurer Armes, matériels de guerre, munitions avant l’oral.
-    - lettre: I
-      mot: Indices
-      desc: Repérer faits, qualifications et textes applicables.
-    - lettre: R
-      mot: Régime
-      desc: Procédure, juridiction et nullités éventuelles.
-    - lettre: E
-      mot: Examen
-      desc: Entraînement quiz et articulation avec les autres fiches.
+  type: tableau
+  titre: Classification A.B.C.D.
+  rows:
+    - Catégorie: A1
+      Régime: INTERDITES (civils)
+      Exemples: Semi-auto > 3 coups, pompe à canon rayé, coup de poing américain
+    - Catégorie: A2
+      Régime: Matériels de guerre
+      Exemples: Armes automatiques, munitions perforantes/explosives
+    - Catégorie: B
+      Régime: AUTORISATION requise
+      Exemples: Armes de poing, certains calibres militaires, TASER à distance, lacrymogènes > 100 ml
+    - Catégorie: C
+      Régime: DÉCLARATION requise
+      Exemples: Semi-auto ≤ 3 coups, répétition manuelle ≤ 11 coups
+    - Catégorie: D
+      Régime: Acquisition/détention LIBRE
+      Exemples: Poignards, matraques, lacrymogènes ≤ 100 ml, TASER contact (arrêté 04/07/2025 modifié)
 blocs:
   definition: >-
-    Infraction Article Peine Abandon de famille (non-paiement pension) 227-3 CP 2 ans + 15 000 €
-    Non-notification changement domicile créancier 227-4-3 CP 6 mois + 7 500 € Non-respect
-    ordonnance de protection 227-4-2 CP 2 ans + 15 000 € Non-représentation d'enfant mineur 227-5 CP
-    1 an + 15 000 € Défaut notif. transfert domicile (DVH) 227-6 CP 6 mois + 7 500 € Soustraction
-    mineur par ascendant 227-7 CP 1 an + 15 000 € (3 ans si hors France) Soustraction mineur par
-    tiers sans frau…
-  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
-  pointCle: Art. 227-1 à 227-33 CP (livre II, titre II)
+    La classification légale des armes (art. R. 311-2 CSI) répartit les armes en 5 sous-catégories
+    (A1, A2, B, C, D) selon leur dangerosité et leur usage, déterminant le régime applicable à leur
+    acquisition, détention, transport et port — toute violation de ce régime constituant une
+    infraction pénale spécifique.
+  piege: >-
+    Le TASER de contact (et non à distance) est désormais classé en catégorie D (libre) depuis
+    l'arrêté du 04/07/2025 — à ne pas confondre avec les armes à impulsion électrique à distance qui
+    restent en catégorie B (autorisation requise).
+  pointCle: >-
+    Le port ou transport sans motif légitime d'armes de catégories A ou B est puni de 5 ans + 75 000
+    € (art. 222-54 CP) ; pour les catégories C ou D, c'est 3 ans + 45 000 € (art. L. 317-8 CSI) — la
+    notion de "motif légitime" est appréciée in concreto (profession, sport...).
   memo: >-
-    Armes, matériels de guerre, munitions — Fiche synthèse (session JUIN 2026). Art. 227-1 à 227-33
-    CP (livre II, titre II) 40.1 Tableau synthétique complet Infraction Article Peine Abandon de
-    famille (no
+    A/B = autorisation · C = déclaration · D = libre · TASER contact = D · TASER distance = B · Port
+    A/B sans motif = 5 ans · Port C/D sans motif = 3 ans.
 plan:
   - num: '1'
-    titre: Tableau synthétique complet
-    duree: ~10 min
+    titre: Classification légale (art. R. 311-2 CSI)
+    duree: 10 min
+  - num: '2'
+    titre: Principales infractions
+    duree: 12 min
+  - num: '3'
+    titre: Infractions graves en matière d'armes
+    duree: 10 min
 ---
 
 # Armes, matériels de guerre, munitions

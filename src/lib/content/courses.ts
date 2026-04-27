@@ -3,6 +3,8 @@ import { listMarkdownBasenames, readMarkdownFile, slugFromBasename } from '@/lib
 export type CourseSummary = {
   slug: string;
   title: string;
+  /** Accroche SEO / carte hub (frontmatter V3) */
+  description?: string;
   tags: string[];
   /** I–VI si présent dans le frontmatter */
   partieLabel?: string;
@@ -57,6 +59,8 @@ export async function getCourseSummaries(): Promise<CourseSummary[]> {
     const { data: raw } = await readMarkdownFile(`cours/${base}.md`);
     const data = raw as Record<string, unknown>;
     const title = typeof data.title === 'string' ? data.title : base.replace(/-/g, ' ');
+    const description =
+      typeof data.description === 'string' && data.description.trim() ? data.description.trim() : undefined;
     const tags = Array.isArray(data.tags)
       ? data.tags.filter((t): t is string => typeof t === 'string')
       : [];
@@ -74,6 +78,7 @@ export async function getCourseSummaries(): Promise<CourseSummary[]> {
     out.push({
       slug: slugFromBasename(base),
       title,
+      description,
       tags,
       partieLabel,
       partieIndex,

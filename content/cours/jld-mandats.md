@@ -3,63 +3,85 @@ title: JLD, détention provisoire, mandats de justice
 chapitre: 12
 partie: 3
 description: >-
-  JLD, détention provisoire, mandats de justice — Fiche synthèse (session JUIN 2026). Art. 137-1 CPP
-  et suiv. 12.1 Le Juge des Libertés et de la Détention DÉFINITION – JLD Magistrat du siège du
-  tribuna…
+  Le JLD est un magistrat du siège du tribunal judiciaire statuant sur les mesures privatives ou
+  restrictives de liberté, saisi par le JI ou le PR, dont le rôle est central dans la protection des
+  liber…
 tags:
   - fondamentaux
   - Partie III
+  - synthèse-46
   - 2F.1.b
   - phase juridictionnelle
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 122
-  - Art. 137-1
-  - Art. 122 — repère
-  - Art. 137-1 — repère
-  - Texte / doctrine — JLD, détention provisoire, mandats de justice (complément 1)
+  - Art. 137-1 CPP — Définition et rôle du JLD
+  - Art. 122-1 CPP — Mandat d'amener
+  - Art. 131 CPP — Mandat d'arrêt
+  - Art. 137 CPP — Mandat de dépôt (JLD → DP)
+  - Art. 695-23 CPP — Mandat d'arrêt européen (MAE)
 stats:
-  - num: '12'
-    label: Chapitre 12 (annexe B)
-  - num: III
-    label: Partie 3 — synthèse
-  - num: '2'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '10'
+    label: 10 compétences majeures du JLD (DP, CJ, ARSE, GAV CO, GAV…
+  - num: '6'
+    label: 6 types de mandats de justice (recherche, comparution, am…
+  - num: '137'
+    label: 137 CPP = mandat de dépôt = JLD → détention provisoire
+  - num: '695'
+    label: 695-23 CPP = mandat d'arrêt européen dans l'espace UE
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les 6 mandats (R.C.A.A.D.E.)
   rows:
-    - Étapes: '1'
-      Thème: Le Juge des Libertés et de la Détention
-    - Étapes: '2'
-      Thème: Les mandats de justice
+    - Lettre: Recherche
+      Mandat: Art. 70 CPP
+      Autorité: PR ou JI
+      Effet: Rechercher la personne
+    - Lettre: Comparution
+      Mandat: Art. 122 CPP
+      Autorité: JI
+      Effet: Mise en demeure de se présenter
+    - Lettre: Amener
+      Mandat: Art. 122-1 CPP
+      Autorité: JI
+      Effet: Conduite immédiate devant JI
+    - Lettre: Arrêt
+      Mandat: Art. 131 CPP
+      Autorité: JI
+      Effet: Personne en fuite → maison d'arrêt
+    - Lettre: Dépôt
+      Mandat: Art. 137 CPP
+      Autorité: JLD
+      Effet: Placement en détention provisoire
+    - Lettre: Européen (MAE)
+      Mandat: Art. 695-23 CPP
+      Autorité: Autorité judiciaire
+      Effet: Espace UE
 blocs:
   definition: >-
-    > DÉFINITION – JLD Magistrat du siège du tribunal judiciaire statuant sur les mesures privatives
-    ou restrictives de liberté. Il est saisi par le JI ou le PR. Son rôle est central dans la
-    protection des libertés individuelles. Compétence Article Précisions Détention provisoire 143-1
-    à 148 CPP Placement, prolongation, mise en liberté Contrôle judiciaire 138, 145 CPP Peut refuser
-    la DP et imposer un CJ ARSE 142-5 à 142-13 CPP Assignation à résidence surveillance électronique
-    Pr…
-  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+    Le JLD est un magistrat du siège du tribunal judiciaire statuant sur les mesures privatives ou
+    restrictives de liberté, saisi par le JI ou le PR, dont le rôle est central dans la protection
+    des libertés individuelles lors de la phase judiciaire.
+  piege: >-
+    En cas d'appréhension sous mandat d'amener : la personne est conduite devant le JI avec
+    notification préalable. Si la personne est en fuite sous mandat d'amener, le mandat devient
+    caduc à la fin de l'information — le mandat d'arrêt, lui, conduit directement en maison d'arrêt.
   pointCle: >-
-    DÉFINITION – JLD Magistrat du siège du tribunal judiciaire statuant sur les mesures privatives
-    ou restrictives de liberté. Il est saisi par le JI ou le PR. Son rôle est central dans la
-    protection des…
+    Le mandat de dépôt (art. 137 CPP) est l'acte du JLD — et non du JI — qui place la personne en
+    détention provisoire ; le JI ne peut qu'en faire la demande, mais ne peut le décerner lui-même.
   memo: >-
-    JLD, détention provisoire, mandats de justice — Fiche synthèse (session JUIN 2026). Art. 137-1
-    CPP et suiv. 12.1 Le Juge des Libertés et de la Détention DÉFINITION – JLD Magistrat du siège du
-    tribunal
+    JI décerne amener/arrêt · JLD décerne dépôt · PR ou JI décerne recherche · MAE = espace UE
+    uniquement.
 plan:
   - num: '1'
-    titre: Le Juge des Libertés et de la Détention
-    duree: ~10 min
+    titre: Les 10 compétences du JLD
+    duree: 10 min
   - num: '2'
-    titre: Les mandats de justice
-    duree: ~10 min
+    titre: Les 6 mandats de justice
+    duree: 12 min
+  - num: '3'
+    titre: Formalités d'appréhension
+    duree: 10 min
 ---
 
 ![p. 28](/fondamentaux/jld-mandats-tableau-p28.jpg)

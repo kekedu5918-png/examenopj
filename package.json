@@ -19,7 +19,8 @@
     "og:image": "node scripts/generate-og-image.mjs",
     "hooks:graphify": "node scripts/install-graphify-hook.mjs",
     "fondamentaux:2f1b": "node scripts/generate-fondamentaux-2f1b.mjs",
-    "fondamentaux:migrate-v3-frontmatter": "node scripts/migrate-cours-frontmatter-v3.mjs"
+    "fondamentaux:migrate-v3-frontmatter": "node scripts/migrate-cours-frontmatter-v3.mjs",
+    "fondamentaux:enrich-v3-synthese": "node scripts/enrich-cours-v3-from-synthese.mjs"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",

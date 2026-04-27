@@ -3,70 +3,85 @@ title: La responsabilité pénale des personnes physiques
 chapitre: 18
 partie: 4
 description: >-
-  La responsabilité pénale des personnes physiques — Fiche synthèse (session JUIN 2026). Art. 121-1
-  à 121-7 CP 18.1 Principes fondateurs CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de
-  son…
+  La responsabilité pénale repose sur deux composantes cumulatives : la culpabilité (faute pénale
+  intentionnelle ou non intentionnelle) et l'imputabilité (capacité de discernement et
+  libre-arbitre), co…
 tags:
   - fondamentaux
   - Partie IV
+  - synthèse-46
   - 2F.1.b
   - droit pénal général
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 121-1
-  - Art. 121-3
-  - Art. 121-3 al. 3
-  - Art. 121-3 al. 4
-  - Art. 121-1 — repère
+  - Art. 121-1 CP — Principe de responsabilité personnelle
+  - 'Art. 121-3 al. 1 CP — Dol général : intentionnalité requise'
+  - Art. 121-3 al. 3 CP — Fautes d'imprudence et de négligence
+  - Art. 121-3 al. 4 CP — Mise en danger délibérée et causalité indirecte
+  - Art. 121-7 CP — Complicité (lien avec la responsabilité)
 stats:
-  - num: '18'
-    label: Chapitre 18 (annexe B)
-  - num: IV
-    label: Partie 4 — synthèse
+  - num: '2'
+    label: '2 composantes cumulatives : culpabilité (faute) + imputab…'
+  - num: '6'
+    label: '6 types de dol : général, spécial, aggravé, déterminé, in…'
+  - num: Art. 121-1
+    label: 'Art. 121-1 CP = principe absolu : nul n''est responsable q…'
   - num: '4'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+    label: Lien de causalité indirect exige une faute caractérisée (…
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les types de dol (G.S.A.D.I.P.)
   rows:
-    - Étapes: '1'
-      Thème: Principes fondateurs
-    - Étapes: '2'
-      Thème: Les deux composantes de la responsabilité
-    - Étapes: '3'
-      Thème: 'L''élément moral : la faute intentionnelle'
-    - Étapes: '4'
-      Thème: 'L''élément moral : la faute non intentionnelle'
+    - Type: Général
+      Caractérisation: Conscience illégalité + volonté d'agir
+      Exemple: Tous crimes/délits intentionnels
+    - Type: Spécial
+      Caractérisation: Intention particulière requise par la loi
+      Exemple: Meurtre = intention de tuer
+    - Type: Aggravé
+      Caractérisation: Préméditation
+      Exemple: Assassinat
+    - Type: Déterminé
+      Caractérisation: Résultat = résultat prévu
+      Exemple: Cas standard
+    - Type: Indéterminé
+      Caractérisation: Résultat non connu à l'avance
+      Exemple: Sanctionné selon résultat
+    - Type: Praeter int.
+      Caractérisation: Résultat dépasse l'intention
+      Exemple: Violences ayant entraîné la mort (222-7 CP)
 blocs:
   definition: >-
-    > CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de son propre fait'. La
-    responsabilité pénale individuelle est un principe fondamental qui interdit toute responsabilité
-    collective ou par ricochet. Il s'applique aux personnes physiques comme aux personnes morales.
-  piege: Négliger l’élément intentionnel, la tentative ou les causes d’aggravation en DPG.
+    La responsabilité pénale repose sur deux composantes cumulatives : la culpabilité (faute pénale
+    intentionnelle ou non intentionnelle) et l'imputabilité (capacité de discernement et
+    libre-arbitre), conformément au principe "nul n'est responsable que de son propre fait" (art.
+    121-1 CP).
+  piege: >-
+    Pour un lien de causalité indirect entre la faute et le dommage (art. 121-3 al. 4 CP), une
+    simple négligence ne suffit plus : il faut prouver une faute caractérisée exposant autrui à un
+    risque d'une particulière gravité — sans cela, pas de responsabilité pénale de la personne
+    physique.
   pointCle: >-
-    CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement que de son propre fait'. La responsabilité
-    pénale individuelle est un principe fondamental qui interdit toute responsabilité collective ou
-    par ri…
+    Il n'y a point de crime ou délit sans intention de le commettre (art. 121-3 al. 1 CP) — le dol
+    est la règle, les fautes non intentionnelles sont l'exception et doivent être prévues
+    expressément par la loi.
   memo: >-
-    La responsabilité pénale des personnes physiques — Fiche synthèse (session JUIN 2026). Art.
-    121-1 à 121-7 CP 18.1 Principes fondateurs CLÉ Art. 121-1 CP — 'Nul n'est responsable pénalement
-    que de son
+    Culpabilité + Imputabilité = responsabilité · Dol = règle · Faute non intentionnelle = exception
+    légale · Causalité indirecte = faute caractérisée obligatoire.
 plan:
   - num: '1'
     titre: Principes fondateurs
-    duree: ~10 min
+    duree: 10 min
   - num: '2'
-    titre: Les deux composantes de la responsabilité
-    duree: ~10 min
+    titre: La faute intentionnelle (le dol)
+    duree: 12 min
   - num: '3'
-    titre: 'L''élément moral : la faute intentionnelle'
-    duree: ~10 min
+    titre: La faute non intentionnelle
+    duree: 10 min
   - num: '4'
-    titre: 'L''élément moral : la faute non intentionnelle'
-    duree: ~10 min
+    titre: Lien de causalité
+    duree: 14 min
 ---
 
 ![p. 39](/fondamentaux/responsabilite-penale-personnes-physiques-tableau-p39.jpg)

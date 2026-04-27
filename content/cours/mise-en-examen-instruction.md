@@ -3,78 +3,76 @@ title: Mise en examen, juge d'instruction
 chapitre: 13
 partie: 3
 description: >-
-  Mise en examen, juge d'instruction — Fiche synthèse (session JUIN 2026). 13.1 Le contrôle
-  judiciaire (CJ) Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le
-  JLD impose un…
+  L'**ARSE** suppose que la personne encourt une peine d'emprisonnement **correctionnel d'au moins 2
+  ans** ou une peine plus grave (art. 142-5 al. 1), avant d'envisager la **détention provisoire** :
+  ce…
 tags:
   - fondamentaux
   - Partie III
+  - synthèse-46
   - 2F.1.b
   - phase juridictionnelle
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 138
-  - Art. 142-5
-  - Art. 143-1
-  - Art. 144
-  - Art. 706-45
+  - 'Art. 138 CPP — Contrôle judiciaire : liste des obligations'
+  - 'Art. 142-5 CPP — ARSE : seuil **2 ans** (al. 1) ; bracelet fixe ou mobile'
+  - Art. 143-1 CPP — Conditions de la détention provisoire (**≥ 3 ans**)
+  - Art. 144 CPP — Les 7 finalités justifiant la DP
+  - Art. 706-24-3 CPP — DP jusqu'à **3 ans** (association de malfaiteurs, terrorisme)
 stats:
-  - num: '13'
-    label: Chapitre 13 (annexe B)
-  - num: III
-    label: Partie 3 — synthèse
-  - num: '5'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '20'
+    label: 20 obligations possibles en contrôle judiciaire (art. 138…
+  - num: '2'
+    label: '**2 ans minimum** d''emprisonnement **correctionnel** (ou…'
+  - num: '7'
+    label: 7 finalités justifiant la DP (art. 144 CPP)
+  - num: 4 ans
+    label: 4 ans 8 mois = durée maximale indiquée au tableau fascicu…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: arbre
+  titre: Échelle des mesures restrictives (CJ → ARSE → DP)
   rows:
-    - Étapes: '1'
-      Thème: Le contrôle judiciaire (CJ)
-    - Étapes: '2'
-      Thème: L'Assignation à Résidence sous Surveillance Électronique
-    - Étapes: '3'
-      Thème: La détention provisoire (DP)
-    - Étapes: '4'
-      Thème: Durées de la DP — MATIÈRE CRIMINELLE (majeurs)
-    - Étapes: '5'
-      Thème: Durées DP — MATIÈRE CORRECTIONNELLE (majeurs)
+    - Repère: LIBERTÉ ←──────────────────────────────→ CONTRAINTE
+    - Repère: CJ (art. 138) ARSE (art. 142-5) DP (art. 143-1)
+    - Repère: Obligations Bracelet électronique Prison
+    - Repère: À domicile **≥ 2 ans** empr. corr. ≥ 3 ans empr. requis
+    - Repère: requis (al. 1) Débat contradictoire
+    - Repère: GPS si **> 7 ans** **et**
+    - Repère: '**suivi socio-judiciaire**'
+    - Repère: encouru (mobile)
 blocs:
   definition: >-
-    > Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une
-    ou plusieurs obligations parmi celles listées à l'art. 138 CPP. Les personnes morales peuvent
-    également être placées sous CJ (art. 706-45 CPP). Catégorie Obligations types Surveillance Se
-    présenter périodiquement / Fournir cautionnement / Remettre passeport / Ne pas quitter
-    circonscription Assistance Pointage commissariat / Accompagnement professionnel / Traitement
-    médical ou sev…
-  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+    L'**ARSE** suppose que la personne encourt une peine d'emprisonnement **correctionnel d'au moins
+    2 ans** ou une peine plus grave (art. 142-5 al. 1), avant d'envisager la **détention
+    provisoire** : cette dernière, mesure d'exception du JLD, n'est possible que si l'infraction est
+    punie d'**au moins 3 ans** d'emprisonnement et si le CJ ou l'ARSE sont **insuffisants** pour
+    satisfaire aux **7 finalités** de l'art. 144 CPP.
+  piege: >-
+    Toute décision de placement ou prolongation en DP suppose un débat contradictoire — l'absence de
+    débat est une cause de nullité. La DP est une mesure d'exception : la juridiction doit motiver
+    spécialement l'insuffisance du CJ et de l'ARSE avant de l'ordonner.
   pointCle: >-
-    Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le JLD impose une
-    ou plusieurs obligations parmi celles listées à l'art. 138 CPP. Les personnes morales peuvent
-    également…
+    L'**ARSE** n'est possible que si la personne encourt une peine d'emprisonnement **correctionnel
+    d'au moins 2 ans** ou une peine plus grave (art. **142-5 al. 1** CPP). La **surveillance
+    électronique mobile** (GPS) s'applique si la peine encourue est **supérieure à 7 ans** **et** si
+    le **suivi socio-judiciaire est encouru** (fascicule : pas le seul couple « r…
   memo: >-
-    Mise en examen, juge d'instruction — Fiche synthèse (session JUIN 2026). 13.1 Le contrôle
-    judiciaire (CJ) Art. 138 et suiv. CPP Mesure alternative à la détention provisoire. Le JI ou le
-    JLD impose une
+    CJ = obligations libres · ARSE = **2 ans** min. (al. 1) + bracelet · DP = **3 ans** + finalités
+    art. 144 + CJ/ARSE insuffisants · GPS = **> 7 ans** + **suivi socio-judiciaire**.
 plan:
   - num: '1'
-    titre: Le contrôle judiciaire (CJ)
-    duree: ~10 min
+    titre: Le contrôle judiciaire (CJ, art. 138 CPP)
+    duree: 10 min
   - num: '2'
-    titre: L'Assignation à Résidence sous Surveillance Électronique
-    duree: ~10 min
+    titre: L'ARSE (art. 142-5 à 142-13 CPP)
+    duree: 12 min
   - num: '3'
-    titre: La détention provisoire (DP)
-    duree: ~10 min
+    titre: La détention provisoire (art. 143-1 à 148 CPP)
+    duree: 10 min
   - num: '4'
-    titre: Durées de la DP — MATIÈRE CRIMINELLE (majeurs)
-    duree: ~10 min
-  - num: '5'
-    titre: Durées DP — MATIÈRE CORRECTIONNELLE (majeurs)
-    duree: ~10 min
+    titre: Durées de la DP
+    duree: 14 min
 ---
 
 ![p. 29](/fondamentaux/mise-en-examen-instruction-tableau-p29.jpg)

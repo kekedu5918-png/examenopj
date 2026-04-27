@@ -3,78 +3,71 @@ title: 'Parquet, instruction : cadre général'
 chapitre: 11
 partie: 3
 description: >-
-  Parquet, instruction : cadre général — Fiche synthèse (session JUIN 2026). Art. 79 à 190 CPP 11.1
-  Caractère et ouverture L'instruction est la phase d'information judiciaire menée par un juge
-  indépend…
+  Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
+  victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
+  gravit…
 tags:
   - fondamentaux
   - Partie III
+  - synthèse-46
   - 2F.1.b
   - phase juridictionnelle
 loi2025: false
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 100
-  - Art. 101
-  - Art. 105
-  - Art. 113-1
-  - Art. 113-6
+  - Art. 40 CPP — Opportunité des poursuites (PR)
+  - Art. 41-1 CPP — Alternatives aux poursuites
+  - Art. 390-1 CPP — COPJ (convocation en justice par OPJ)
+  - Art. 395 CPP — Comparution immédiate
+  - Art. 495-7 CPP — CRPC (plaider-coupable)
 stats:
-  - num: '11'
-    label: Chapitre 11 (annexe B)
-  - num: III
-    label: Partie 3 — synthèse
-  - num: '5'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '8'
+    label: 8 modes de saisine du tribunal (citation directe, COPJ, C…
+  - num: '6'
+    label: 6 mois minimum pour la comparution immédiate en délit fla…
+  - num: 2 ans
+    label: 2 ans = délai maximal de la comparution à délai différé (…
+  - num: '41'
+    label: 41-1 CPP = 8 mesures alternatives aux poursuites disponib…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: arbre
+  titre: Arbre de décision des poursuites
   rows:
-    - Étapes: '1'
-      Thème: Caractère et ouverture
-    - Étapes: '2'
-      Thème: Pouvoirs du juge d'instruction
-    - Étapes: '3'
-      Thème: Les statuts sous instruction
-    - Étapes: '4'
-      Thème: La commission rogatoire (CR)
-    - Étapes: '5'
-      Thème: Clôture de l'instruction (art. 175 et suiv.)
+    - Repère: INFRACTION CONSTATÉE
+    - Repère: CRIME → Réquisitoire introductif → JI (obligatoire)
+    - Repère: DÉLIT / CONTRAVENTION
+    - Repère: Flagrant ≥ 6 mois + en état → COMPARUTION IMMÉDIATE (art. 395)
+    - Repère: Charges suffisantes ≥ 2 ans → COMPARUTION IMMÉDIATE
+    - Repère: Après défèrement → CONVOCATION PAR PV (art. 394)
+    - Repère: Sans défèrement → COPJ (art. 390-1)
+    - Repère: Culpabilité reconnue → CRPC (art. 495-7)
+    - Repère: Amende uniquement → ORDONNANCE PÉNALE (art. 495)
 blocs:
   definition: >-
-    L'instruction est la phase d'information judiciaire menée par un juge indépendant, le juge
-    d'instruction. Elle vise à établir si les charges sont suffisantes pour renvoyer la personne
-    devant une juridiction de jugement. Aspect Règle Caractère OBLIGATOIRE en matière criminelle
-    (art. 79 CPP) Facultative En matière délictuelle (opportunité du PR) Exceptionnelle En matière
-    contraventionnelle (sur requête PR) Saisine Réquisitoire introductif du PR (art. 80) OU plainte
-    avec CPC (a…
-  piege: Mélanger rôles parquet / juge d’instruction / juridictions de jugement et leurs recours.
+    Les modes de saisine sont les actes juridiques par lesquels le Procureur de la République ou la
+    victime portent une affaire devant la juridiction de jugement, chacun adapté à la nature et à la
+    gravité de l'infraction, ainsi qu'à la situation procédurale de l'affaire.
+  piege: >-
+    La comparution immédiate (art. 395 CPP) exige : délit flagrant puni d'au moins 6 mois OU charges
+    suffisantes punie d'au moins 2 ans ET affaire en état d'être jugée — une seule condition
+    manquante et le mode est inapplicable.
   pointCle: >-
-    CLÉ Le témoin assisté est un statut protecteur de l'intérêt de la personne: elle bénéficie d'un
-    avocat sans être mise en examen. Elle peut demander sa mise en examen à tout moment (art. 113-6
-    CPP). À…
+    La composition pénale (art. 41-2 CPP) validée par le président du tribunal éteint l'action
+    publique — c'est la différence fondamentale avec les simples alternatives aux poursuites de
+    l'art. 41-1 CPP qui n'éteignent pas l'AP.
   memo: >-
-    cadre général — Fiche synthèse (session JUIN 2026). Art. 79 à 190 CPP 11.1 Caractère et
-    ouverture L'instruction est la phase d'information judiciaire menée par un juge indépendant, le
-    juge d'instructi
+    Crime = JI obligatoire · Délit flagrant ≥ 6 mois en état = CI · Défèrement = CPV · Sans
+    défèrement = COPJ · Aveu = CRPC.
 plan:
   - num: '1'
-    titre: Caractère et ouverture
-    duree: ~10 min
+    titre: Les alternatives aux poursuites (art. 41-1 CPP)
+    duree: 10 min
   - num: '2'
-    titre: Pouvoirs du juge d'instruction
-    duree: ~10 min
+    titre: La composition pénale (art. 41-2 CPP)
+    duree: 12 min
   - num: '3'
-    titre: Les statuts sous instruction
-    duree: ~10 min
-  - num: '4'
-    titre: La commission rogatoire (CR)
-    duree: ~10 min
-  - num: '5'
-    titre: Clôture de l'instruction (art. 175 et suiv.)
-    duree: ~10 min
+    titre: Les 8 modes de saisine
+    duree: 10 min
 ---
 
 ![p. 25](/fondamentaux/parquet-instruction-tableau-p25.jpg)

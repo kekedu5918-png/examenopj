@@ -3,80 +3,98 @@ title: La garde à vue
 chapitre: 5
 partie: 2
 description: >-
-  La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et
-  suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de
-  contrainte…
+  La GAV est la mesure de contrainte par laquelle une personne soupçonnée est maintenue à la
+  disposition des enquêteurs dans les locaux de police ou gendarmerie, nécessitant des raisons
+  plausibles de s…
 tags:
   - fondamentaux
   - Partie II
+  - synthèse-46
   - 2F.1.b
   - mesures enquête
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 62-2
-  - Art. 63 al. 1
-  - Art. 63-1
-  - Art. 63-3-1
-  - Art. 706-73
+  - Art. 62-2 CPP — Conditions et 6 objectifs du placement en GAV
+  - Art. 63-1 CPP — Notification des droits (12 droits)
+  - Art. 63-3-1 CPP — Assistance de l'avocat en GAV
+  - Art. 64-1 CPP — Enregistrement audiovisuel obligatoire (crimes)
+  - Art. 706-88 CPP — Prolongation GAV en criminalité organisée
 stats:
-  - num: '5'
-    label: Chapitre 5 (annexe B)
-  - num: II
-    label: Partie 2 — synthèse
-  - num: '6'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: 24h
+    label: 24h + 24h = 48h en régime de droit commun
+  - num: 96h
+    label: 96h maximum en criminalité organisée (art. 706-73/88)
+  - num: 144h
+    label: 144h maximum en matière terroriste (art. 706-88-1)
+  - num: '12'
+    label: 12 droits à notifier impérativement à la personne (art. 6…
 schemaMemo:
   type: tableau
-  titre: Plan — grandes lignes
+  titre: Les 6 objectifs (P.G.P.P.C.G.)
   rows:
-    - Étapes: '1'
-      Thème: Définition et nature juridique
-    - Étapes: '2'
-      Thème: Conditions cumulatives de placement (art. 62-2 CPP)
-    - Étapes: '3'
-      Thème: Durées de la garde à vue
-    - Étapes: '4'
-      Thème: Les droits du gardé à vue (art. 63-1 CPP)
-    - Étapes: '5'
-      Thème: L'avocat en garde à vue
-    - Étapes: '6'
-      Thème: Obligations procédurales de l'OPJ
+    - '#': '1'
+      Lettre: Présence
+      Objectif: Investigations impliquant la présence de la personne
+    - '#': '2'
+      Lettre: Garantir
+      Objectif: Présentation devant le PR
+    - '#': '3'
+      Lettre: Preuves
+      Objectif: Empêcher destruction/modification des preuves
+    - '#': '4'
+      Lettre: Pression
+      Objectif: Empêcher pressions sur témoins/victimes
+    - '#': '5'
+      Lettre: Concertation
+      Objectif: Empêcher concertation avec coauteurs/complices
+    - '#': '6'
+      Lettre: Garantir
+      Objectif: Mise en œuvre des mesures pour faire cesser l'infraction
 blocs:
   definition: >-
-    > DÉFINITION – GARDE À VUE Mesure de contrainte par laquelle une personne soupçonnée est
-    maintenue à la disposition des enquêteurs, dans les locaux de police ou de gendarmerie, pour les
-    nécessités de l'enquête. Elle suppose des raisons plausibles de soupçonner la commission ou la
-    tentative d'une infraction punie d'emprisonnement. La GAV est la mesure privative de liberté la
-    plus courante. Elle obéit à un régime très encadré par la CEDH, le Conseil constitutionnel et le
-    légis…
-  piege: Oublier assentiment, JLD ou délais légaux sur les actes de voie de fait et la garde à vue.
-  pointCle: Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1 et suiv. CJPM (mineurs)
-  memo: >-
-    La garde à vue — Fiche synthèse (session JUIN 2026). Art. 62-2 à 64-1 CPP (majeurs) — L. 413-1
-    et suiv. CJPM (mineurs) 5.1 Définition et nature juridique DÉFINITION – GARDE À VUE Mesure de
-    contrainte
+    La GAV est la mesure de contrainte par laquelle une personne soupçonnée est maintenue à la
+    disposition des enquêteurs dans les locaux de police ou gendarmerie, nécessitant des raisons
+    plausibles de soupçonner la commission d'une infraction punie d'emprisonnement et la réalisation
+    d'au moins un des 6 objectifs de l'art. 62-2 CPP.
+  piege: >-
+    Indiquer au PV une motivation générique ou standardisée ("nécessités de l'enquête", "éviter une
+    concertation") expose à une nullité — chaque objectif de l'art. 62-2 doit être rattaché aux
+    faits concrets de l'espèce.
+  pointCle: >-
+    Le placement en GAV est la compétence EXCLUSIVE de l'OPJ (jamais APJ ni APJA) ; le point de
+    départ est l'interpellation effective ou la présentation volontaire à l'OPJ, et le PR doit être
+    avisé immédiatement.
+  memo: Raisons plausibles + Unique moyen + Notification = RUN pour placer en GAV.
 plan:
   - num: '1'
-    titre: Définition et nature juridique
-    duree: ~10 min
+    titre: Conditions cumulatives de placement
+    duree: 10 min
   - num: '2'
-    titre: Conditions cumulatives de placement (art. 62-2 CPP)
-    duree: ~10 min
+    titre: Durées selon le régime
+    duree: 12 min
   - num: '3'
-    titre: Durées de la garde à vue
-    duree: ~10 min
+    titre: Les 12 droits du gardé à vue
+    duree: 10 min
   - num: '4'
-    titre: Les droits du gardé à vue (art. 63-1 CPP)
-    duree: ~10 min
+    titre: L'avocat en GAV
+    duree: 14 min
   - num: '5'
-    titre: L'avocat en garde à vue
-    duree: ~10 min
-  - num: '6'
-    titre: Obligations procédurales de l'OPJ
-    duree: ~10 min
+    titre: Obligations procédurales OPJ
+    duree: 10 min
+timeline:
+  - temps: Étape 1
+    event: 0h ──── 24h ──── 48h ──── 72h ──── 96h ────…
+    detail: 0h ──── 24h ──── 48h ──── 72h ──── 96h ──────── 144h
+  - temps: Étape 2
+    event: Début PR PR JLD CrimOrg JLD CrimOrg Terro
+    detail: Début PR PR JLD CrimOrg JLD CrimOrg Terro.
+  - temps: Étape 3
+    event: (droit commun) (art
+    detail: (droit commun) (art.706-88) (art.706-88-1)
+  - temps: Étape 4
+    event: Passeur in corpore
+    detail: 'Passeur in corpore : hyper-prolongation'
 ---
 
 ![p. 17](/fondamentaux/garde-a-vue-schema-p17.jpg)

@@ -3,65 +3,72 @@ title: Atteintes à l'autorité, corruptions, fausses
 chapitre: 38
 partie: 5
 description: >-
-  Atteintes à l'autorité, corruptions, fausses — Fiche synthèse (session JUIN 2026). Art. 222-34 à
-  222-43-1 CP | L. 3421-1 et suiv. Code santé publique 38.1 Le régime dérogatoire de la criminalité
-  orga…
+  Les atteintes à l'administration publique commises par des agents publics (art. 432-7 à 432-15 CP)
+  couvrent les abus d'autorité (discrimination, atteinte au domicile), la corruption passive, le
+  trafi…
 tags:
   - fondamentaux
   - Partie V
+  - synthèse-46
   - 2F.1.b
   - droit pénal spécial
 loi2025: true
 derniereMiseAJour: '2025-12-01'
 articlesCles:
-  - Art. 222-34
-  - Art. 63-4-2
-  - Art. 706-148
-  - Art. 706-73
-  - Art. 706-81
+  - Art. 432-11 CP — Corruption passive + trafic d'influence (10 ans + 1 M€)
+  - Art. 432-14 CP — Favoritisme (2 ans + 200 000 €)
+  - Art. 433-5 CP — Outrage (1 an / 2 ans si magistrats)
+  - Art. 433-6 CP — Rébellion (voies de fait)
+  - Art. 434-1 CP — Non-dénonciation de crime (3 ans)
 stats:
-  - num: '38'
-    label: Chapitre 38 (annexe B)
-  - num: V
-    label: Partie 5 — synthèse
-  - num: '3'
-    label: Sections (titres H2)
-  - num: '2026'
-    label: Objectif concours OPJ
+  - num: '1'
+    label: Perpétuité pour atteinte aux intérêts fondamentaux de la…
+  - num: 10 ans
+    label: 10 ans + 1 000 000 € pour corruption passive et trafic d'…
+  - num: 3 ans
+    label: 3 ans + 45 000 € pour non-dénonciation de crime (art. 434…
+  - num: '1'
+    label: 1 an + 15 000 € pour outrage à magistrat/juré/fonctionnai…
 schemaMemo:
-  type: tableau
-  titre: Plan — grandes lignes
+  type: arbre
+  titre: 3 catégories d'infractions
   rows:
-    - Étapes: '1'
-      Thème: Le régime dérogatoire de la criminalité organisée
-    - Étapes: '2'
-      Thème: Tableau des infractions en stupéfiants
-    - Étapes: '3'
-      Thème: Le cas du passeur 'in corpore' (art. 706-88-2 CPP)
+    - Repère: CONTRE LA NATION CONTRE L'ADMIN. PUBLIQUE CONTRE LA JUSTICE
+    - Repère: Trahison (411-1) Corruption passive (432-11) Outrage (433-5)
+    - Repère: Espionnage (411-1) Trafic d'influence (432-11) Rébellion (433-6)
+    - Repère: Atteintes défense nat. Prise illégale intérêts (432-12) Non-dénonciation crime (434-1)
+    - Repère: (413-1) Favoritisme (432-14) Usurpation fonction (433-12)
+    - Repère: Atteintes Répub. (412-1) Détournement fonds pub. (432-15) Évasion (434-27)
+    - Repère: 15 ans → perpétuité 2 ans → 10 ans + 1 M€ 6 mois → 10 ans
 blocs:
   definition: >-
-    Les infractions de trafic de stupéfiants relèvent de la criminalité organisée (art. 706-73 CPP),
-    ce qui ouvre: • GAV 96 h (2 × 24 h) — art. 706-88 CPP • Hyper-prolongation pour passeur in
-    corpore — art. 706-88-2 (rétabli loi 2025-532) • Perquisitions de nuit sur autorisation JLD —
-    art. 706-89, 706-92 • Infiltration — art. 706-81 • Interceptions, sonorisation, captation de
-    données informatiques — art. 706-95 • Gel de patrimoine — art. 706-148 • Garde à vue sans avocat
-    possibl…
-  piege: Qualifier sans citer les éléments matériels et moraux précis du type d’infraction.
-  pointCle: Art. 222-34 à 222-43-1 CP | L. 3421-1 et suiv. Code santé publique
+    Les atteintes à l'administration publique commises par des agents publics (art. 432-7 à 432-15
+    CP) couvrent les abus d'autorité (discrimination, atteinte au domicile), la corruption passive,
+    le trafic d'influence, la prise illégale d'intérêts, le favoritisme et le détournement de fonds
+    publics — infractions spécifiques aux dépositaires de l'autorité publique.
+  piege: >-
+    La non-dénonciation de crime (art. 434-1 CP) est punissable à condition que la personne pouvait
+    aviser sans risque pour elle ou ses proches — elle n'est pas applicable aux
+    ascendants/descendants/frère-sœur/conjoint de l'auteur, ni aux avocats, médecins et autres
+    personnes tenues au secret professionnel.
+  pointCle: >-
+    L'outrage à agent (art. 433-5 CP) est puni d'1 an + 15 000 € en règle générale, mais porté à 2
+    ans si commis envers un magistrat ou un juré — l'outrage se distingue de la rébellion (art.
+    433-6 CP) qui implique des voies de fait contre l'agent.
   memo: >-
-    Atteintes à l'autorité, corruptions, fausses — Fiche synthèse (session JUIN 2026). Art. 222-34 à
-    222-43-1 CP | L. 3421-1 et suiv. Code santé publique 38.1 Le régime dérogatoire de la
-    criminalité organ
+    Corruption passive = 10 ans + 1 M€ · Favoritisme = 2 ans + 200 k€ · Non-dénonciation crime = 3
+    ans (sauf famille + secret pro) · Outrage magistrat = 2 ans · Rébellion = voies de fait (≠
+    outrage = paroles).
 plan:
   - num: '1'
-    titre: Le régime dérogatoire de la criminalité organisée
-    duree: ~10 min
+    titre: Atteintes aux intérêts fondamentaux de la Nation
+    duree: 10 min
   - num: '2'
-    titre: Tableau des infractions en stupéfiants
-    duree: ~10 min
+    titre: Atteintes à l'administration publique par agents
+    duree: 12 min
   - num: '3'
-    titre: Le cas du passeur 'in corpore' (art. 706-88-2 CPP)
-    duree: ~10 min
+    titre: Atteintes à l'action de la justice
+    duree: 10 min
 ---
 
 ![p. 61](/fondamentaux/atteintes-autorite-corruption-tableau-p61.jpg)
