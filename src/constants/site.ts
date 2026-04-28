@@ -1,6 +1,30 @@
-/** Date affichée (contenu / déploiement) — mettre à jour lors des releases majeures. */
-export const SITE_LAST_UPDATED_ISO = '2026-04-08';
-export const SITE_LAST_UPDATED_LABEL = '8 avril 2026';
+/**
+ * Date ISO (YYYY-MM-DD) utilisée si `NEXT_PUBLIC_SITE_LAST_UPDATED_ISO` est absent.
+ * En CI / Vercel : définir `NEXT_PUBLIC_SITE_LAST_UPDATED_ISO` au moment du build pour refléter la release.
+ */
+const FALLBACK_SITE_LAST_UPDATED_ISO = '2026-04-08';
+
+export function getSiteLastUpdatedIso(): string {
+  const env = process.env.NEXT_PUBLIC_SITE_LAST_UPDATED_ISO?.trim();
+  if (env && /^\d{4}-\d{2}-\d{2}$/.test(env)) return env;
+  return FALLBACK_SITE_LAST_UPDATED_ISO;
+}
+
+/** Libellé français pour le hero / footer (fuseau Europe/Paris). */
+export function getSiteLastUpdatedLabel(): string {
+  const iso = getSiteLastUpdatedIso();
+  const [y, m, d] = iso.split('-').map(Number);
+  const date = new Date(Date.UTC(y, m - 1, d));
+  return new Intl.DateTimeFormat('fr-FR', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'Europe/Paris',
+  }).format(date);
+}
+
+/** @deprecated Utiliser `getSiteLastUpdatedIso()` pour les métadonnées dynamiques. */
+export const SITE_LAST_UPDATED_ISO = FALLBACK_SITE_LAST_UPDATED_ISO;
 
 /** Preuve sociale (valeurs éditoriales — à ajuster si stats réelles disponibles). */
 export const SITE_SOCIAL_PROOF = {

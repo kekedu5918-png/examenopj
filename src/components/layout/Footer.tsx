@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { BrandWordmark } from '@/components/layout/BrandWordmark';
-import { SITE_LAST_UPDATED_LABEL } from '@/constants/site';
+import { getSiteLastUpdatedLabel } from '@/constants/site';
 
 const colLink =
   'text-sm text-ij-text-muted transition-colors duration-150 hover:text-ij-text hover:translate-x-0.5 inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ij-accent/50 focus-visible:ring-offset-2 focus-visible:ring-offset-ij-bg';
@@ -128,7 +128,7 @@ export function Footer() {
             © {new Date().getFullYear()} ExamenOPJ.fr · Tous droits réservés
           </p>
           <p className='text-xs text-ij-text-muted'>
-            Dernière mise à jour : {SITE_LAST_UPDATED_LABEL}
+            Dernière mise à jour : {getSiteLastUpdatedLabel()}
           </p>
         </div>
       </div>

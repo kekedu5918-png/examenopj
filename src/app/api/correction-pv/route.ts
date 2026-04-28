@@ -3,6 +3,10 @@ import { z } from 'zod';
 
 import { getSujetRedactionPVById } from '@/data/sujets-redaction-pv';
 import { hasPremiumAccess } from '@/features/account/controllers/has-premium-access';
+import { getPvCorrectionUsageToday } from '@/lib/pv-correction-quota';
+import { createSupabaseServerClient } from '@/libs/supabase/supabase-server-client';
+import type { Database, Json } from '@/libs/supabase/types';
+import type { SupabaseClient } from '@supabase/supabase-js';
 
 const bodySchema = z.object({
   sujetId: z.string().min(1).max(200),
@@ -49,6 +53,8 @@ avec cette structure exacte :
 }`;
 
 const UNAVAILABLE = 'La correction est temporairement indisponible. Réessayez.';
+
+const DAILY_LIMIT = Number(process.env.PV_CORRECTION_DAILY_LIMIT ?? '5') || 5;
 
 function extractJsonObject(raw: string): string {
   const t = raw.trim();
@@ -103,7 +109,25 @@ async function fetchAnthropicCorrection(userText: string, apiKey: string): Promi
 
 export async function POST(req: Request) {
   if (!(await hasPremiumAccess())) {
-    return NextResponse.json({ error: 'Abonnement Premium requis.' }, { status: 403 });
+    return NextResponse.json({ error: 'Abonnement Premium requis.', upgrade_url: '/pricing' }, { status: 403 });
+  }
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    return NextResponse.json({ error: 'Non authentifié.' }, { status: 401 });
+  }
+
+  const usedToday = await getPvCorrectionUsageToday(user.id);
+  if (usedToday >= DAILY_LIMIT) {
+    return NextResponse.json(
+      {
+        error: `Limite de ${DAILY_LIMIT} corrections par jour atteinte. Réessayez demain.`,
+      },
+      { status: 429 },
+    );
   }
 
   let json: unknown;
@@ -141,5 +165,22 @@ Copie du candidat : ${redaction}`;
     return NextResponse.json({ error: UNAVAILABLE }, { status: 503 });
   }
 
-  return NextResponse.json({ result });
+  const row: Database['public']['Tables']['pv_corrections']['Insert'] = {
+    user_id: user.id,
+    sujet_id: sujetId,
+    pv_type: 'atelier_redaction_pv',
+    pv_text: redaction,
+    result: result as unknown as Json,
+    score: Math.round(Number(result.note)),
+  };
+
+  const { error: persistErr } = await (supabase as unknown as SupabaseClient<Database>).from('pv_corrections').insert(row);
+  if (persistErr) {
+    console.error('[correction-pv] persist', persistErr);
+  }
+
+  return NextResponse.json({
+    result,
+    usage: { today: usedToday + 1, limit: DAILY_LIMIT },
+  });
 }

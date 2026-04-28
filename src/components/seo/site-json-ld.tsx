@@ -14,6 +14,12 @@ export function SiteJsonLd() {
         url,
         description: APP_TAGLINE,
         inLanguage: 'fr-FR',
+        areaServed: 'FR',
+        educationalCredentialAwarded: 'Préparation examen OPJ — Police nationale',
+        audience: {
+          '@type': 'Audience',
+          audienceType: 'Gardiens de la paix candidats à l’OPJ',
+        },
       },
       {
         '@type': 'WebSite',

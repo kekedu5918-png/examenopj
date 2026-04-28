@@ -32,10 +32,11 @@ const HomeProgrammeCompletSection = dynamic(
 );
 
 export type HomePageClientProps = {
+  catalogTotal: number;
   infractionPreview: InfractionPreviewItem[];
 };
 
-export function HomePageClient({ infractionPreview }: HomePageClientProps) {
+export function HomePageClient({ catalogTotal, infractionPreview }: HomePageClientProps) {
   const shouldReduce = useReducedMotion();
   const belowHeroContainerVariants = getHomeBelowHeroContainerVariants(shouldReduce);
   const belowHeroItemVariants = getHomeBelowHeroItemVariants(shouldReduce);
@@ -74,7 +75,7 @@ export function HomePageClient({ infractionPreview }: HomePageClientProps) {
           <HomeFinalPricingSection />
         </motion.div>
         <motion.div variants={belowHeroItemVariants} className='w-full'>
-          <HomeProgrammeCompletSection items={infractionPreview} />
+          <HomeProgrammeCompletSection catalogTotal={catalogTotal} items={infractionPreview} />
         </motion.div>
       </motion.div>
     </>

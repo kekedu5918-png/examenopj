@@ -1,4 +1,10 @@
+import type { Metadata } from 'next';
 import type { PropsWithChildren } from 'react';
+
+/** Pages internes — non indexées en prod (snapshots Playwright / QA). */
+export const metadata: Metadata = {
+  robots: { index: false, follow: false },
+};
 
 /**
  * Layout dédié à la page interne /design-system (Phase 1).

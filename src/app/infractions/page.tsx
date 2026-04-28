@@ -6,6 +6,7 @@ import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { APP_NAME } from '@/constants/site';
 import { getInfractionsCatalog } from '@/data/recapitulatif-data';
+import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,6 +27,7 @@ type Props = {
 
 export default function InfractionsPage({ searchParams }: Props) {
   const initialQuery = typeof searchParams.q === 'string' ? searchParams.q : '';
+  const catalog = enrichInfractionCatalog(getInfractionsCatalog());
 
   return (
     <Suspense
@@ -42,7 +44,7 @@ export default function InfractionsPage({ searchParams }: Props) {
         </InteriorPageShell>
       }
     >
-      <InfractionsPageClient initialQuery={initialQuery} />
+      <InfractionsPageClient catalog={catalog} initialQuery={initialQuery} />
     </Suspense>
   );
 }

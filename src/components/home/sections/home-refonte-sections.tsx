@@ -510,9 +510,12 @@ export function HomeTestimonialsSection() {
             Trois façons de réviser avec ExamenOPJ
           </h2>
           <p className='mx-auto mt-3 max-w-xl text-sm text-ij-text-muted'>
-            Profils-types illustrant les parcours possibles. Les vrais témoignages, recueillis avec
-            consentement, seront publiés progressivement à mesure que les candidats acceptent de
-            partager leur expérience.
+            Profils-types pour illustrer comment structurer sa préparation. Pour partager votre retour d&apos;expérience,
+            utilisez la{' '}
+            <Link href='/contact' className='text-ij-accent underline underline-offset-2 hover:opacity-90'>
+              page Contact
+            </Link>
+            .
           </p>
         </div>
 
@@ -638,6 +641,13 @@ export function HomeFinalPricingSection() {
           </div>
         </div>
 
+        <p className='mt-10 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-xs text-ij-text-muted'>
+          <span>Paiement par carte bancaire via Stripe (PCI DSS).</span>
+          <Link href='/cgv' className='text-ij-accent underline underline-offset-2 hover:opacity-90'>
+            Modalités de rétractation — CGV
+          </Link>
+        </p>
+
         <p className='mt-10 text-center text-xs text-ij-text-subtle'>
           Rédigé par un gardien de la paix en formation OPJ présentielle · Paris · Session 2026
         </p>
@@ -646,7 +656,13 @@ export function HomeFinalPricingSection() {
   );
 }
 
-export function HomeProgrammeCompletSection({ items }: { items: InfractionPreviewItem[] }) {
+export function HomeProgrammeCompletSection({
+  catalogTotal,
+  items,
+}: {
+  catalogTotal: number;
+  items: InfractionPreviewItem[];
+}) {
   const shouldReduce = useReducedMotion();
   const MotionLink = motion(Link);
   return (
@@ -665,8 +681,8 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
               titleId='home-infractions-title'
               badge='ÉPREUVE 1'
               badgeClassName='bg-amber-500/20 text-amber-200'
-              title='55 infractions à maîtriser pour l’épreuve 1'
-          subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
+              title={`${catalogTotal} infractions à maîtriser pour l’épreuve 1`}
+              subtitle="Chaque infraction : élément légal, matériel, moral, et les pièges de l'examen. Aucune ne doit t'échapper."
               className='mb-8 text-left'
             />
             <Accordion type='single' collapsible className='w-full space-y-2'>
@@ -701,7 +717,7 @@ export function HomeProgrammeCompletSection({ items }: { items: InfractionPrevie
                 whileHover={shouldReduce ? {} : { scale: 1.02 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 20 }}
               >
-                Voir les 55 infractions
+                Voir les {catalogTotal} infractions
                 <ArrowRight className='h-4 w-4' aria-hidden />
               </MotionLink>
             </div>

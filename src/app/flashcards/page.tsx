@@ -12,7 +12,7 @@ type PageProps = {
   searchParams?: Record<string, string | string[] | undefined>;
 };
 
-/** Ancienne URL : redirection vers la route canonique /entrainement/flashcards */
+/** Ancienne URL : redirection 308 (permanentRedirect) vers `/entrainement/flashcards`. */
 export default function FlashcardsLegacyRedirect({ searchParams = {} }: PageProps) {
   permanentRedirect(pathWithSearchParams('/entrainement/flashcards', searchParams));
 }

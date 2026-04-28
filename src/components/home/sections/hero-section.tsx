@@ -7,7 +7,7 @@ import { ArrowRight, CheckCircle2, HelpCircle, RotateCcw, Trophy, XCircle } from
 
 import { HERO_QUIZ_QUESTIONS, type HeroQuizQuestion } from '@/components/home/hero-quiz-data';
 import { LANDING_EASE, MOTION_INITIAL_FOR_SEO } from '@/components/home/motion';
-import { SITE_LAST_UPDATED_LABEL, SITE_SOCIAL_PROOF } from '@/constants/site';
+import { getSiteLastUpdatedLabel, SITE_SOCIAL_PROOF } from '@/constants/site';
 import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import { formatExamCountdownBadge } from '@/lib/exam-countdown';
 import { cn } from '@/utils/cn';
@@ -114,7 +114,7 @@ export function HeroSection() {
               {countdownLabel}
             </span>
             <span className='h-3 w-px bg-ij-border' />
-            <span className='text-xs text-ij-text-muted'>Mis à jour : {SITE_LAST_UPDATED_LABEL}</span>
+            <span className='text-xs text-ij-text-muted'>Mis à jour : {getSiteLastUpdatedLabel()}</span>
           </motion.div>
 
           {/* Titre principal — dégradé doux type premium (pas de cyan flashy) */}

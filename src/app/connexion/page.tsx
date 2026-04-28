@@ -1,10 +1,18 @@
 import type { Metadata } from 'next';
-import { redirect } from 'next/navigation';
+import { permanentRedirect } from 'next/navigation';
+
+import { pathWithSearchParams } from '@/utils/redirect-with-search-params';
 
 export const metadata: Metadata = {
-  robots: { index: false, follow: false },
+  title: 'Connexion — Examen OPJ',
+  robots: { index: false, follow: true },
 };
 
-export default function ConnexionAliasPage() {
-  redirect('/login');
+type PageProps = {
+  searchParams?: Record<string, string | string[] | undefined>;
+};
+
+/** Ancienne URL française : redirection canonique 308 vers `/login` (query préservée). */
+export default function ConnexionAliasPage({ searchParams = {} }: PageProps) {
+  permanentRedirect(pathWithSearchParams('/login', searchParams));
 }

@@ -24,7 +24,6 @@ import {
   matchesInfractionFamily,
 } from '@/data/infractions-family-filter';
 import {
-  getInfractionsCatalog,
   type InfractionCatalogItem,
   infractionToRecapFilter,
   PRIORITE_EXAMEN_BADGE,
@@ -34,7 +33,6 @@ import {
 import { useDebouncedValue } from '@/hooks/use-debounced-value';
 import { usePrefersReducedMotion } from '@/hooks/use-prefers-reduced-motion';
 import { cn } from '@/utils/cn';
-import { enrichInfractionCatalog } from '@/utils/enrich-infractions-catalog';
 import { derivePeineFromLegal, peineTierTextClass } from '@/utils/infraction-display-derive';
 
 function stripForSearch(s: string): string {
@@ -83,9 +81,11 @@ function groupFilteredForListAccordion(
 
 type InfractionsPageClientProps = {
   initialQuery?: string;
+  /** Catalogue enrichi (SSR) pour HTML initial indexable et éviter divergence client/serveur. */
+  catalog: InfractionCatalogItem[];
 };
 
-export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClientProps) {
+export function InfractionsPageClient({ initialQuery = '', catalog }: InfractionsPageClientProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -118,8 +118,6 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
       window.history.replaceState(null, '', path);
     }
   }, [debouncedQuery]);
-
-  const catalog = useMemo(() => enrichInfractionCatalog(getInfractionsCatalog()), []);
 
   const catalogIndex = useMemo(() => {
     const m = new Map<string, number>();
@@ -188,7 +186,7 @@ export function InfractionsPageClient({ initialQuery = '' }: InfractionsPageClie
         titleAs='h1'
         titleGradient
         size='display'
-        subtitle='55 infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par famille (personnes, biens, etc.) et probabilité ; la recherche affine ta sélection.'
+        subtitle={`${catalog.length} infractions à maîtriser pour l’épreuve 1. Pour chacune : élément légal, matériel, moral et repères d’examen. Filtre par famille (personnes, biens, etc.) et probabilité ; la recherche affine ta sélection.`}
         className='mb-6'
       />
 

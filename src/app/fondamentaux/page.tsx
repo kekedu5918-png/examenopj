@@ -8,12 +8,14 @@ import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { getCourseSummaries } from '@/lib/content/courses';
 import { openGraphForPage } from '@/utils/seo-metadata';
 
-const title = 'Fondamentaux — Examen OPJ';
+/** Titre absolu — évite d’hériter du template du layout ou d’un titre de fiche en snippet SEO. */
+const title =
+  'Fondamentaux OPJ — 46 fiches de procédure pénale | ExamenOPJ';
 const description =
-  'Cadres d’enquête, mesures coercitives, infractions clés : fiches courtes en synthèses, tableaux et checklists — pas de pavés.';
+  "Le socle complet de l'examen OPJ : cadres d'enquête, GAV, perquisitions, nullités — 46 fiches avec repères d'examen, pièges et méthode.";
 
 export const metadata: Metadata = {
-  title,
+  title: { absolute: title },
   description,
   alternates: { canonical: '/fondamentaux' },
   ...openGraphForPage('/fondamentaux', title, description),
@@ -31,7 +33,7 @@ export default async function FondamentauxPage() {
         badge='FONDAMENTAUX'
         badgeClassName='bg-ij-accent/15 text-ij-accent'
         title='Les bases pour réussir'
-        subtitle='Procédure et opérationnels : une entrée unique, des fiches lisibles en quelques minutes (puces, tableaux, encadrés).'
+        subtitle='Procédure pénale et opérationnel : une entrée par thème, des synthèses complètes et actionnables (repères, tableaux, méthode du jour J).'
         size='display'
         titleGradient
         titleAs='h1'
@@ -41,8 +43,10 @@ export default async function FondamentauxPage() {
       <GlassCard className='mb-10 p-5' padding='' topGlow>
         <p className='font-ij-sans text-sm font-semibold text-ij-text'>Comment lire cette rubrique</p>
         <ul className='mt-3 list-inside list-disc space-y-1 font-ij-sans text-sm text-ij-text-muted'>
-          <li>Chaque fiche va droit au but : repères d’examen, pièges, méthode.</li>
-          <li>Le contenu détaillé est structuré en interne pour garantir la justesse ; vous voyez seulement la synthèse utile le jour J.</li>
+          <li>
+            Chaque fiche va droit au but : ce que l’examinateur attend, les pièges classiques, les articles clés.
+          </li>
+          <li>Accès complet aux fiches détaillées et aux parcours d’entraînement avec le compte Premium.</li>
         </ul>
       </GlassCard>
 

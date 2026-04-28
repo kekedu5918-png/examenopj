@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 import { ENQUETES } from '@/data/enquetes-data';
+import { getInfractionsCatalog } from '@/data/recapitulatif-data';
 import { listMarkdownBasenames, slugFromBasename } from '@/lib/content/markdown';
 import { getSiteUrl } from '@/utils/site-url';
 
@@ -10,6 +11,7 @@ function priorityForPath(path: string): number {
   if (path === '/pricing' || path.startsWith('/epreuves')) return 0.8;
   if (path.startsWith('/entrainement')) return 0.65;
   if (path.startsWith('/fondamentaux/')) return 0.75;
+  if (path.startsWith('/infractions/')) return 0.72;
   if (path.startsWith('/enquetes/')) return 0.75;
   return 0.7;
 }
@@ -72,6 +74,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
+  const infractionSlugEntries: MetadataRoute.Sitemap = getInfractionsCatalog().map((row) => {
+    const p = `/infractions/${row.id}`;
+    return {
+      url: `${base}${p}`,
+      lastModified: now,
+      changeFrequency: 'monthly' as const,
+      priority: priorityForPath(p),
+    };
+  });
+
   /** Enquêtes dynamiques — chaque scénario a une URL canonique indexable. */
   const enqueteEntries: MetadataRoute.Sitemap = ENQUETES.map((e) => {
     const p = `/enquetes/${e.id}`;
@@ -83,5 +95,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   });
 
-  return [...staticEntries, ...fondamentauxFicheEntries, ...enqueteEntries];
+  return [...staticEntries, ...fondamentauxFicheEntries, ...infractionSlugEntries, ...enqueteEntries];
 }

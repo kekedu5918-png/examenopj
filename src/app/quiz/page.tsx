@@ -12,7 +12,7 @@ type PageProps = {
   searchParams?: Record<string, string | string[] | undefined>;
 };
 
-/** Ancienne URL : redirection vers la route canonique /entrainement/quiz */
+/** Ancienne URL : redirection 308 (permanentRedirect) vers `/entrainement/quiz`. */
 export default function QuizLegacyRedirect({ searchParams = {} }: PageProps) {
   permanentRedirect(pathWithSearchParams('/entrainement/quiz', searchParams));
 }

@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { MarkdownArticle } from '@/components/content/MarkdownArticle';
 import { FichePremium } from '@/components/fondamentaux/fiche/FichePremium';
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
+import { FondamentauxFicheJsonLd } from '@/components/seo/fondamentaux-fiche-json-ld';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
 import { resolveCourseBasename } from '@/lib/content/courses';
 import { listMarkdownBasenames, readMarkdownFile, slugFromBasename } from '@/lib/content/markdown';
@@ -31,8 +32,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
   const { data } = await readMarkdownFile(`cours/${base}.md`);
   const title = typeof data.title === 'string' ? data.title : params.slug;
-  const description =
-    typeof data.description === 'string' ? data.description : `Fiche fondamentaux — ${title}`;
+  const description = typeof data.description === 'string' ? data.description : `Fiche fondamentaux — ${title}`;
   return {
     title: `${title} | Fondamentaux | Examen OPJ`,
     description,
@@ -48,45 +48,53 @@ export default async function FondamentauxFichePage({ params }: { params: { slug
 
   if (ficheV3) {
     const slug = slugFromBasename(base);
+    const { title, description } = ficheV3.data;
     return (
-      <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
-        <FichePremium
-          data={ficheV3.data}
-          slug={slug}
-          callout30s={ficheV3.data.blocs.memo}
-          breadcrumbItems={[
-            { href: '/fondamentaux', label: 'Fondamentaux' },
-            { href: `/fondamentaux/${params.slug}`, label: ficheV3.data.title },
-          ]}
-          quizHref='/entrainement/quiz'
-          footerCtas={[
-            { href: '/fondamentaux', label: 'Retour au hub' },
-            { href: '/entrainement/articulation', label: 'Articulation' },
-          ]}
-          accordionMarkdownSections={ficheV3.accordionSections}
-        >
-          {ficheV3.accordionSections.length === 0 ? (
-            <MarkdownArticle markdown={ficheV3.courseMarkdown} />
-          ) : null}
-        </FichePremium>
-      </InteriorPageShell>
+      <>
+        <FondamentauxFicheJsonLd description={description} slug={params.slug} title={title} />
+        <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
+          <FichePremium
+            data={ficheV3.data}
+            slug={slug}
+            callout30s={ficheV3.data.blocs.memo}
+            breadcrumbItems={[
+              { href: '/fondamentaux', label: 'Fondamentaux' },
+              { href: `/fondamentaux/${params.slug}`, label: ficheV3.data.title },
+            ]}
+            quizHref='/entrainement/quiz'
+            footerCtas={[
+              { href: '/fondamentaux', label: 'Retour au hub' },
+              { href: '/entrainement/articulation', label: 'Articulation' },
+            ]}
+            accordionMarkdownSections={ficheV3.accordionSections}
+          >
+            {ficheV3.accordionSections.length === 0 ? <MarkdownArticle markdown={ficheV3.courseMarkdown} /> : null}
+          </FichePremium>
+        </InteriorPageShell>
+      </>
     );
   }
 
-  const { content } = await readMarkdownFile(`cours/${base}.md`);
+  const { content, data } = await readMarkdownFile(`cours/${base}.md`);
+  const legacyTitle = typeof data.title === 'string' ? data.title : params.slug;
+  const legacyDescription =
+    typeof data.description === 'string' ? data.description : `Fiche fondamentaux — ${legacyTitle}`;
 
   return (
-    <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
-      <nav className='mb-8 font-ij-sans text-sm text-ij-text-muted'>
-        <Link href='/fondamentaux' className='text-ij-accent hover:text-ij-accent/80'>
-          Fondamentaux
-        </Link>
-        <span className='mx-2' aria-hidden>
-          /
-        </span>
-        <span className='text-ij-text-subtle'>Fiche</span>
-      </nav>
-      <MarkdownArticle markdown={content} />
-    </InteriorPageShell>
+    <>
+      <FondamentauxFicheJsonLd description={legacyDescription} slug={params.slug} title={legacyTitle} />
+      <InteriorPageShell maxWidth='4xl' glow={SHELL_GLOW.coursHub} pad='default'>
+        <nav className='mb-8 font-ij-sans text-sm text-ij-text-muted'>
+          <Link href='/fondamentaux' className='text-ij-accent hover:text-ij-accent/80'>
+            Fondamentaux
+          </Link>
+          <span className='mx-2' aria-hidden>
+            /
+          </span>
+          <span className='text-ij-text-subtle'>Fiche</span>
+        </nav>
+        <MarkdownArticle markdown={content} />
+      </InteriorPageShell>
+    </>
   );
 }

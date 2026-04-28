@@ -86,11 +86,11 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
   return (
     <div className='space-y-6'>
       <p className='font-ij-sans text-sm text-ij-text-muted' data-testid='fondamentaux-count-total'>
-        <span className='font-medium text-ij-text'>{items.length} fiches</span> — ordre des chapitres (contenu
-        pédagogique)
+        <span className='font-medium text-ij-text'>{items.length} fiches</span> — liste complète, ordre officiel du
+        programme OPJ
       </p>
       <div className='rounded-2xl border border-ij-border bg-ij-surface p-5'>
-        <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-end'>
+        <div className='mb-4 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between'>
           <div className='min-w-0 flex-1'>
             <label htmlFor='fondamentaux-filter' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
               Filtrer les fiches
@@ -105,29 +105,38 @@ export function CoursFichesListClient({ items, basePath = '/fondamentaux' }: Pro
               className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-4 py-3 font-ij-sans text-ij-text outline-none placeholder:text-ij-text-subtle focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
             />
           </div>
-          <div className='w-full sm:w-56'>
-            <label htmlFor='fondamentaux-partie' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
-              Partie (programme)
-            </label>
-            <select
-              id='fondamentaux-partie'
-              data-testid='fondamentaux-filter-partie'
-              value={partieFilter}
-              onChange={(e) => setPartieFilter(e.target.value)}
-              className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-3 py-3 font-ij-sans text-ij-text outline-none focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
+          <div className='flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-end'>
+            <div className='w-full sm:w-56'>
+              <label htmlFor='fondamentaux-partie' className='mb-2 block font-ij-sans text-sm font-medium text-ij-text'>
+                Partie (programme)
+              </label>
+              <select
+                id='fondamentaux-partie'
+                data-testid='fondamentaux-filter-partie'
+                value={partieFilter}
+                onChange={(e) => setPartieFilter(e.target.value)}
+                className='w-full rounded-xl border border-ij-border bg-ij-surface-2/80 px-3 py-3 font-ij-sans text-ij-text outline-none focus:border-ij-accent/40 focus:ring-2 focus:ring-ij-accent/20'
+              >
+                {PARTIE_OPTIONS.map((o) => (
+                  <option key={o.value || 'all'} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <p
+              className='shrink-0 rounded-xl border border-ij-border/80 bg-ij-surface-2/50 px-3 py-2 text-center font-ij-sans text-sm text-ij-text-muted sm:py-3'
+              aria-live='polite'
+              data-testid='fondamentaux-filter-count'
             >
-              {PARTIE_OPTIONS.map((o) => (
-                <option key={o.value || 'all'} value={o.value}>
-                  {o.label}
-                </option>
-              ))}
-            </select>
+              Affichage :{' '}
+              <span className='font-semibold tabular-nums text-ij-text'>{filtered.length}</span>
+              <span className='text-ij-text-subtle'> / </span>
+              <span className='tabular-nums text-ij-text'>{items.length}</span> fiche
+              {filtered.length > 1 ? 's' : ''}
+            </p>
           </div>
         </div>
-        <p className='font-ij-sans text-xs text-ij-text-muted'>
-          Fiches éditoriales (sources internes vérifiées) — présentation synthétique pour le candidat. Les fiches sans
-          numéro de partie dans le source ne s’affichent que lorsque « Toutes les parties » est sélectionné.
-        </p>
       </div>
 
       <ul

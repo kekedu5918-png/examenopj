@@ -707,6 +707,39 @@ export interface Database {
         };
         Relationships: [];
       };
+      pv_corrections: {
+        Row: {
+          id: string;
+          user_id: string;
+          sujet_id: string | null;
+          pv_type: string | null;
+          pv_text: string;
+          result: Json;
+          score: number | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          user_id: string;
+          sujet_id?: string | null;
+          pv_type?: string | null;
+          pv_text: string;
+          result: Json;
+          score?: number | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          user_id?: string;
+          sujet_id?: string | null;
+          pv_type?: string | null;
+          pv_text?: string;
+          result?: Json;
+          score?: number | null;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
       user_node_progress: {
         Row: {
           best_score_pct: number | null;
@@ -852,6 +885,188 @@ export interface Database {
         | 'past_due'
         | 'unpaid'
         | 'paused';
+    };
+    CompositeTypes: {
+      [_ in never]: never;
+    };
+  };
+  /** Progression cours OPJ — cf. migrations learning_path_* */
+  learning_path: {
+    Tables: {
+      lessons: {
+        Row: {
+          client_key: string | null;
+          created_at: string;
+          estimated_minutes: number;
+          href: string | null;
+          id: string;
+          min_score_unlock: number;
+          module_id: string;
+          order_index: number;
+          slug: string;
+          title: string;
+          type: 'discover' | 'practice' | 'consolidate' | 'case' | 'exam';
+          xp_reward: number;
+        };
+        Insert: {
+          client_key?: string | null;
+          created_at?: string;
+          estimated_minutes?: number;
+          href?: string | null;
+          id?: string;
+          min_score_unlock?: number;
+          module_id: string;
+          order_index: number;
+          slug: string;
+          title: string;
+          type: 'discover' | 'practice' | 'consolidate' | 'case' | 'exam';
+          xp_reward?: number;
+        };
+        Update: {
+          client_key?: string | null;
+          created_at?: string;
+          estimated_minutes?: number;
+          href?: string | null;
+          id?: string;
+          min_score_unlock?: number;
+          module_id?: string;
+          order_index?: number;
+          slug?: string;
+          title?: string;
+          type?: 'discover' | 'practice' | 'consolidate' | 'case' | 'exam';
+          xp_reward?: number;
+        };
+        Relationships: [];
+      };
+      modules: {
+        Row: {
+          color: string;
+          created_at: string;
+          description: string | null;
+          icon: string;
+          id: string;
+          order_index: number;
+          slug: string;
+          title: string;
+          total_lessons: number;
+        };
+        Insert: {
+          color: string;
+          created_at?: string;
+          description?: string | null;
+          icon: string;
+          id?: string;
+          order_index: number;
+          slug: string;
+          title: string;
+          total_lessons?: number;
+        };
+        Update: {
+          color?: string;
+          created_at?: string;
+          description?: string | null;
+          icon?: string;
+          id?: string;
+          order_index?: number;
+          slug?: string;
+          title?: string;
+          total_lessons?: number;
+        };
+        Relationships: [];
+      };
+      user_progress: {
+        Row: {
+          attempts: number;
+          completed_at: string | null;
+          id: string;
+          lesson_id: string;
+          needs_review_at: string | null;
+          score: number;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          attempts?: number;
+          completed_at?: string | null;
+          id?: string;
+          lesson_id: string;
+          needs_review_at?: string | null;
+          score?: number;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          attempts?: number;
+          completed_at?: string | null;
+          id?: string;
+          lesson_id?: string;
+          needs_review_at?: string | null;
+          score?: number;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
+      user_streaks: {
+        Row: {
+          current_streak: number;
+          longest_streak: number;
+          last_activity_date: string | null;
+          streak_freeze_available: number;
+          updated_at: string;
+          user_id: string;
+        };
+        Insert: {
+          current_streak?: number;
+          last_activity_date?: string | null;
+          longest_streak?: number;
+          streak_freeze_available?: number;
+          updated_at?: string;
+          user_id: string;
+        };
+        Update: {
+          current_streak?: number;
+          last_activity_date?: string | null;
+          longest_streak?: number;
+          streak_freeze_available?: number;
+          updated_at?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
+      xp_events: {
+        Row: {
+          amount: number;
+          created_at: string;
+          id: string;
+          reason: string;
+          user_id: string;
+        };
+        Insert: {
+          amount: number;
+          created_at?: string;
+          id?: string;
+          reason: string;
+          user_id: string;
+        };
+        Update: {
+          amount?: number;
+          created_at?: string;
+          id?: string;
+          reason?: string;
+          user_id?: string;
+        };
+        Relationships: [];
+      };
+    };
+    Views: {
+      [_ in never]: never;
+    };
+    Functions: {
+      [_ in never]: never;
+    };
+    Enums: {
+      [_ in never]: never;
     };
     CompositeTypes: {
       [_ in never]: never;

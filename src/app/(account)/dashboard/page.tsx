@@ -15,6 +15,9 @@ import { getOnboardingPlan } from '@/features/onboarding/actions/onboarding-acti
 import { getLoginResumeData } from '@/features/onboarding/controllers/get-login-resume';
 import { getCoursPathForFascicule, getQuizPathForFascicule } from '@/lib/content/fascicule-cours-map';
 import { getTodayReviews, getUserFullProgress, pickNextLessonFromProgress } from '@/lib/learningPath';
+import { getDashboardStats } from '@/lib/supabase/dashboard-queries';
+
+import { DashboardStatsGauges } from './dashboard-stats-gauges';
 
 function formatQuizMode(row: { mode: string; fascicule_num: number | null; domain_key: string | null }): string {
   if ((row.mode === 'fascicule' || row.mode === 'module') && row.fascicule_num != null) {
@@ -32,7 +35,7 @@ function fasciculeModuleFromAttempt(row: { mode: string; fascicule_num: number |
 
 export default async function DashboardPage() {
   const session = await getSession();
-  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan, todayReviews, pathProgress] =
+  const [modules, revisionStats, recentAttempts, gamification, loginResume, onboardingPlan, todayReviews, pathProgress, dashboardStats] =
     session
       ? await Promise.all([
           getModules(),
@@ -43,6 +46,7 @@ export default async function DashboardPage() {
           getOnboardingPlan(),
           getTodayReviews(session.user.id),
           getUserFullProgress(session.user.id).catch(() => [] as Awaited<ReturnType<typeof getUserFullProgress>>),
+          getDashboardStats(session.user.id),
         ])
       : await Promise.all([
           getModules(),
@@ -53,6 +57,7 @@ export default async function DashboardPage() {
           Promise.resolve(null),
           Promise.resolve([]),
           Promise.resolve([]),
+          Promise.resolve(null),
         ]);
 
   const todayReviewCount = todayReviews.length;
@@ -91,6 +96,8 @@ export default async function DashboardPage() {
 
   return (
     <AccountDashboardSection spacing='relaxed'>
+      {session && dashboardStats ? <DashboardStatsGauges stats={dashboardStats} /> : null}
+
       {session ? (
         <DashboardNextAction
           loginResume={loginResume}

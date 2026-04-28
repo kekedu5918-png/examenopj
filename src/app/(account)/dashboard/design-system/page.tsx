@@ -1,6 +1,13 @@
+import type { Metadata } from 'next';
+
 import { InteriorPageShell } from '@/components/layout/InteriorPageShell';
 import { Button } from '@/components/ui/button';
 import { SHELL_GLOW } from '@/constants/interior-shell-glow';
+
+export const metadata: Metadata = {
+  title: 'Design system — tokens',
+  robots: { index: false, follow: false },
+};
 
 /**
  * Page interne : repères tokens `--ds-*` et états courants (hors prod si besoin : restreindre par env).
