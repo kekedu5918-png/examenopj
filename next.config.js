@@ -2,6 +2,33 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
+const withPWA = require('next-pwa')({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV === 'development',
+  runtimeCaching: [
+    {
+      urlPattern:
+        /^https?:\/\/[^/]+\/(fondamentaux|infractions)\/.+/,
+      handler: 'CacheFirst',
+      options: {
+        cacheName: 'content-html-cache',
+        expiration: { maxEntries: 220, maxAgeSeconds: 7 * 24 * 60 * 60 },
+      },
+    },
+    {
+      urlPattern: /^https?:\/\/[^/]+\/api\/(?!correction-pv|correction-rapport).*$/,
+      handler: 'NetworkFirst',
+      options: {
+        cacheName: 'api-cache',
+        networkTimeoutSeconds: 5,
+        expiration: { maxEntries: 64, maxAgeSeconds: 24 * 60 * 60 },
+      },
+    },
+  ],
+});
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   poweredByHeader: false,
@@ -146,4 +173,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withBundleAnalyzer(nextConfig);
+module.exports = withPWA(withBundleAnalyzer(nextConfig));

@@ -110,7 +110,23 @@ export const metadata: Metadata = {
   keywords: [...SEO_KEYWORDS],
   authors: [{ name: APP_NAME, url: siteUrl }],
   category: 'education',
-  manifest: '/manifest.webmanifest',
+  manifest: '/manifest.json',
+  icons: {
+    icon: [
+      { url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icons/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/icons/icon-192x192.png', sizes: '192x192', type: 'image/png' }],
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: APP_NAME,
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+    'msapplication-TileColor': '#0F1117',
+  },
 };
 
 export const viewport: Viewport = {
